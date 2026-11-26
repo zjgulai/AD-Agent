@@ -1,0 +1,618 @@
+# Cross-Border E-Commerce AI Skills
+
+**58 AI-powered skill templates for cross-border e-commerce — from brand strategy to Amazon operations to DTC growth to finance & capital ops to affiliate-program building to EU channel entry to overseas-buyer prospecting + earned-media press discovery + Reddit pre-purchase VOC.**
+
+Compatible with Claude Code (`~/.claude/commands/`), Google Antigravity (`SKILL.md`), and any AI IDE with skill/prompt support.
+
+[中文说明](#中文说明) | [English](#english)
+
+---
+
+## English
+
+### What is this?
+
+A collection of **58 AI agent skills** (structured prompt templates) that automate the entire cross-border e-commerce workflow — brand strategy, market research, product selection, listing optimization, advertising, DTC site operations, **finance & capital management**, **affiliate-program building**, **EU channel & market entry**, social media, influencer marketing, **overseas-buyer outbound prospecting**, **earned-media press discovery**, and **Reddit pre-purchase VOC**.
+
+Two formats:
+- **Single-file skills** (53) — one `.md` file each, drop into your AI IDE's skill directory.
+- **Multi-file skill packages** (5, under `brand-strategy/`, `outbound-prospecting/`, and `voc-tools/`) — `SKILL.md` + `references/` + `templates/` (incl. Python scripts and CSV trackers). Point your AI IDE at the package directory.
+
+Plus **7 standalone tools** under `tools/` (Python utilities used by skills, also runnable independently): `backlink-kol-extractor`, `trustpilot`, `linktree-expander`, `contact-extractor`, `api-pacer`, `fetchlib`, `browser-fetch`.
+
+### Skill Map (58 skills across 13 chains)
+
+```
+                        ┌─────────────────────────────────────┐
+                        │     Brand Strategy Chain (10)        │
+                        │                                     │
+  Market Scan ──► Track Hypothesis ──► Deep Validation ──► Strategy Plan
+       │                                                       │
+       │         Annual Plan ◄── Budget Ops                    │
+       │                                                       ▼
+       │                                    IMC Framework ──► Knowledge Base
+       │                                         │
+       │              A/B Compare    Chart Visualize   GTM Launch
+       │                                         │
+       ▼                                         ▼
+  ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
+  │ Amazon Chain (14) │   │ DTC Site (5)     │   │ Social & KOL (5) │
+  │                  │   │                  │   │                  │
+  │ Selection        │   │ SEO Diagnostic   │   │ TikTok Growth    │
+  │ Shortlist        │   │ SEO Playbook     │   │ YouTube Ops      │
+  │ Market Research  │   │ SEM Ads          │   │ Content Calendar │
+  │ IP Risk          │   │ Conversion UX    │   │ Influencer Mktg  │
+  │ Supplier         │   └──────────────────┘   │ User Lifecycle   │
+  │ Keywords         │                          └──────────────────┘
+  │ Listing Copy     │   ┌──────────────────┐   ┌──────────────────┐
+  │ Main Image       │   │ Offline (1)      │   │ VOC Tools (3)    │
+  │ A+ Content       │   │                  │   │                  │
+  │ Compliance       │   │ US Retail        │   │ Reddit VOC (NEW) │
+  │ Pre-Launch       │   └──────────────────┘   │ Trustpilot Quick │
+  │ Ad Architecture  │                          │ Trustpilot Deep  │
+  │ Weekly Ad Review │                          └──────────────────┘
+  │ Ad Diagnosis     │
+  └──────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────┐
+  │ Finance & Capital (8) — NEW                                    │
+  │ Unit-Economics · FX/Payout · Tax-Nexus · Cashflow             │
+  │ Pricing · Reconciliation · Entity-Structure · Capital-Stack   │
+  └──────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────┐
+  │ Affiliate & Partnership (2) — NEW                              │
+  │ Readiness-Audit (affiliate's-POV mirror of CRO) ·             │
+  │ Program-Ops (AI: DB → score → outreach → activate → report)   │
+  └──────────────────────────────────────────────────────────────┘
+
+  ┌──────────────────────────────────────────────────────────────┐
+  │ Channel & Market Entry (2) — NEW                               │
+  │ EU-Channel-Entry (SSPV · RCS · growth flywheel) ·            │
+  │ Price-System & Channel-Conflict Guard                         │
+  └──────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Brand Strategy Chain (11 skills)
+
+**4-Round Analysis Pipeline + Planning + Execution + Tools**
+
+| Skill | What it does |
+|-------|-------------|
+| [brand-market-scan](brand-strategy/brand-market-scan.md) | Round 1: Market panoramic scan — 4-layer user insight, VOC matrix, competitive landscape, Semrush auto-scan |
+| [brand-track-hypothesis](brand-strategy/brand-track-hypothesis.md) | Round 2: Track hypothesis generation — 3-5 market tracks, DTNICE classification, GTM flywheel |
+| [brand-deep-validation](brand-strategy/brand-deep-validation.md) | Round 3: Deep hypothesis validation — 5D framework, SEO traffic model, benchmark cases, Zone 4 |
+| [brand-strategy-plan](brand-strategy/brand-strategy-plan.md) | Round 4: Brand strategy & execution — 7-element positioning, 4 pillars, pricing, narrative, roadmap |
+| [brand-imc-framework](brand-strategy/brand-imc-framework.md) | IMC integrated marketing — Audience/User dual-path, 6-stage funnel, channel mix, execution calendar |
+| [brand-event-marketing](brand-strategy/brand-event-marketing.md) | Moment/event marketing — 4 event types, calendar + trend-jacking SOPs, ambush-marketing legal gate |
+| [crowdfunding-launch](brand-strategy/crowdfunding-launch.md) | Kickstarter/Indiegogo launch — FTC delivery gate, verified fee stack, 4-phase SOP, post-campaign DTC flywheel |
+| [attribution-measurement](brand-strategy/attribution-measurement.md) | Measurement stack — MMM + incrementality + attribution triangulation, geo-test design, Meridian vs Robyn |
+| [brand-annual-plan](brand-strategy/brand-annual-plan.md) | Annual planning — BSC scorecard, 52-week calendar, quarterly OKRs, resource allocation |
+| [brand-budget-ops](brand-strategy/brand-budget-ops.md) | Budget planning & control — 10-category budget model, monthly tracking, ROI by channel |
+| [brand-knowledge-base](brand-strategy/brand-knowledge-base.md) | Obsidian knowledge base — batch-creates 30-50 interlinked .md files from all rounds |
+| [brand-ab-compare](brand-strategy/brand-ab-compare.md) | 8-dimension A/B quality comparison between two brand strategy report sets |
+| [brand-chart-visualize](brand-strategy/brand-chart-visualize.md) | Auto-generate charts (radar, bar, waterfall, scatter, etc.) via AntV API for all reports |
+| [report-pdf-export](brand-strategy/report-pdf-export.md) | Convert any finished report Markdown into a house-styled PDF (A4 landscape, dark-blue headers, zebra rows, page numbers). The most-reused skill in the repo — **37 other skills chain into it** for their final deliverable |
+
+### Amazon Operations Chain (14 skills) — UPGRADED v3.14 (2026 algorithm & policy refresh)
+
+| Phase | Skill | What it does |
+|-------|-------|-------------|
+| Selection | [amazon-product-selection](amazon/amazon-product-selection.md) | Score and rank Top 30 potential products |
+| Selection | [amazon-product-shortlist](amazon/amazon-product-shortlist.md) | Feasibility screening, GTM flywheel check, Go-List |
+| Research | [amazon-market-research](amazon/amazon-market-research.md) | Full market research: VOC matrix, competitor teardown, SWOT |
+| Research | [amazon-ip-risk-assessment](amazon/amazon-ip-risk-assessment.md) | Patent + trademark risk, design comparison, risk rating |
+| Research | [amazon-supplier-decision](amazon/amazon-supplier-decision.md) | Supplier evaluation, cost breakdown, red flag detection |
+| Listing | [amazon-keyword-research](amazon/amazon-keyword-research.md) | Keyword library: 3-tier CPC, COSMO + Alexa-for-Shopping AI-search SEO |
+| Listing | [amazon-listing-copywriter](amazon/amazon-listing-copywriter.md) | Title + Item Highlights (3 candidate versions each), bullet points, A+ description, Search Terms |
+| Listing | [amazon-main-image-prompt](amazon/amazon-main-image-prompt.md) | Main + secondary image design briefs and AI prompts |
+| Listing | [amazon-aplus-image-prompt](amazon/amazon-aplus-image-prompt.md) | A+ Content module layout, Brand Story, image prompts |
+| Launch | [amazon-compliance-review](amazon/amazon-compliance-review.md) | 3-dimension audit: platform rules, legal/IP, AI-agent readiness |
+| Launch | [amazon-pre-launch-review](amazon/amazon-pre-launch-review.md) | Final pre-launch checklist across all SKILL outputs |
+| Ads | [amazon-ad-architecture](amazon/amazon-ad-architecture.md) | PPC structure: SP/SB/SD + Prompts ads, AMC, placement/bid strategy |
+| Ads | [amazon-weekly-ad-review](amazon/amazon-weekly-ad-review.md) | Weekly ad review: ACoS/TACoS, Search Terms, action list |
+| Ads | [amazon-ad-diagnosis](amazon/amazon-ad-diagnosis.md) | Existing product diagnosis: 4-stage optimization pipeline |
+
+### DTC Site & Traffic (5 skills)
+
+| Skill | What it does |
+|-------|-------------|
+| [dsite-seo-diagnostic](brand-strategy/dsite-seo-diagnostic.md) | **NEW** — Entry-orchestrator skill for live-site SEO traffic-drop diagnostics. 7-dimension diagnosis (traffic curve / keyword loss / single-point risk / i18n pollution / backlink quality / content ROI / KPI audit) → algorithm-event alignment → restart roadmap. Chains `xlsx` / `dsite-seo-playbook` / `trustpilot-voc-deep` / `competitors-analysis` / `backlink-kol-extractor` / `report-pdf-export`. Output: deliverable PDF (A4 landscape, hides internal SKILL refs). |
+| [dsite-seo-playbook](brand-strategy/dsite-seo-playbook.md) | Full SEO playbook: technical audit, keyword strategy, content plan, Core Web Vitals |
+| [dsite-sem-ads](brand-strategy/dsite-sem-ads.md) | SEM & paid ads: 10-platform comparison, AIPL funnel, budget allocation |
+| [dsite-conversion-ux](brand-strategy/dsite-conversion-ux.md) — **UPGRADED v3.7** | Live-site **CRO audit / 转化率检测**, rebuilt for **multi-agent concurrency on Claude Code**. **Step 0** fans out 5 parallel recon subagents (PDP / discovery / trust / checkout / competitor) via the `Workflow` tool with `StructuredOutput` schemas → reconPool → parallel **6-module framework** (trust / discovery / product-info / checkout / AOV-LTV / urgency) — retail-analogy CRO × Shopify benchmarks × ICE A/B × AICPL LPO × 35-day welcome flow. v3.7 adds a **technical-health & tracking-integrity check** (console errors / pixel firing / CWV / 404 / mobile-sticky — broken tracking silently invalidates all measurement → highest-priority finding), a mandatory **copy-rewrite table** (current → A/B) + **objection-handling table**, a **quick-win vs high-impact dual-bucket** with wall-clock effort, and A/B **stop-rule discipline**. Honesty preserved — data-credibility statement kept, lift figures stay ⚠️ hypotheses (no fabricated funnel numbers). Uses **browser-class MCP** (Claude in Chrome / Preview) for what static fetch can't see; chains `/dsite-seo-playbook` / `/dsite-sem-ads` / `/report-pdf-export`. |
+| [serp-content-teardown](brand-strategy/serp-content-teardown/SKILL.md) — **NEW v3.6** | Multi-file skill: deterministic (no-LLM) SERP/content reverse-engineering from local Semrush xlsx + competitor HTML. Parses serp_urls + broad-match, curl-fetches top competitor articles (html5lib void-tag-safe), computes per-article structure → **8 article archetypes** + opening/closing patterns, then keyword distribution + core keywords, backlink/authority thresholds (Page AS / Ref.Domains / Backlinks) + weak-link winners, AI-Overview (GEO) saturation + schema readiness, on-page SEO. Output: per-topic content blueprint (which archetype / word / H2 / schema / FAQ / keyword / authority / GEO posture). Pairs with `backlink-kol-extractor` (links) + `structured-data-buildout` (schema). |
+
+### Finance & Capital (8 skills) — NEW v3.8
+
+Operator-facing finance/CFO chain for China→US/EU DTC + Amazon sellers — the actuals / profitability / tax / cash / financing side that the planning-oriented `brand-budget-ops` doesn't cover. Every skill is grounded in real tools + 2026 regulations, carries an explicit **YMYL disclaimer** (planning aid, NOT professional tax/legal/accounting advice — verify with a licensed CPA), and tags every rate/threshold/date as point-in-time. Built and cross-validated from a dual-source research pass (multi-agent web research + an independent deep-research report).
+
+| Skill | What it does |
+|-------|-------------|
+| [finance-landed-cost-unit-economics](finance/finance-landed-cost-unit-economics.md) | **Anchor** — fully-loaded landed cost → **CM1/CM2/CM3** waterfall → break-even ROAS/ACoS → per-SKU keep/kill/reprice + tariff/return sensitivity. Folds in Amazon 2026 fee changes (inbound placement ↑, Low-Inventory-Level Fee, fuel/inflation surcharge). |
+| [finance-fx-payout-optimizer](finance/finance-fx-payout-optimizer.md) | Collection · 结汇 · FX hedging. The "two numbers" (gross revenue vs RMB cash-landed) + FX-drag %, provider benchmark (PingPong/WorldFirst/Airwallex/Payoneer/Wise vs ACCS), natural-hedge plan, and a SAFE / 单证一致 compliance checklist (incl. the 2026-01-01 ≥¥5,000 AML monitoring). |
+| [finance-tax-nexus-vat-diagnostic](finance/finance-tax-nexus-vat-diagnostic.md) | Per-jurisdiction registration-obligation map + filing calendar + EPR streams. Covers EU OSS/IOSS, the **€3 fixed customs duty** (Reg (EU) 2026/382 — kept distinct from the not-yet-law ~€2 handling fee), UK £135, US economic nexus, and China 9610/9710/9810 + 出口退税. |
+| [finance-cashflow-runway-forecaster](finance/finance-cashflow-runway-forecaster.md) | CCC (DIO/DSO/DPO) + a **13-week** rolling direct-method forecast that models the Amazon DD+7/DDBR reserve correctly + a reorder-point capital trade-off → flags the week cash goes negative. |
+| [finance-pricing-margin-guard](finance/finance-pricing-margin-guard.md) | Dynamic price floor/ceiling, break-even ROAS = 1/CM%, FX-sensitivity-per-1%, marketplace price-parity + anti-gouging guardrails — fixes the static-floor trap when 2026 fees rise. |
+| [finance-reconciliation-bookkeeping](finance/finance-reconciliation-bookkeeping.md) | Multi-channel gross-to-net reconciliation (Amazon settlement / Shopify-Stripe-PayPal payouts → bank) via the clearing-account-to-zero method, an ecommerce chart of accounts, COGS/inventory valuation. Tools: A2X / Link My Books / Synder / Finlens → QuickBooks / Xero. |
+| [finance-entity-structure-advisor](finance/finance-entity-structure-advisor.md) | Entity tier (single HK Ltd → ODI → HK/SG holding → US LLC) with a "you don't need this yet" guardrail, the LRD transfer-pricing model, HK TP-doc exemption, and the 4-gate China profit repatriation. **YMYL-heavy.** |
+| [finance-capital-stack-advisor](finance/finance-capital-stack-advisor.md) | Normalizes any RBF/MCA flat-fee quote to a true **effective APR** at real repayment speed (Monte-Carlo), a provider-fit matrix (Wayflyer/Clearco/8fig/Amazon Lending), UCC-1-lien / exclusivity contract traps, and chargeback/VAMP defense. |
+
+### Social Media & Content (3 skills)
+
+| Skill | What it does |
+|-------|-------------|
+| [tiktok-growth](brand-strategy/tiktok-growth.md) | TikTok full-funnel growth: content strategy, TikTok Shop, livestream, paid ads |
+| [youtube-channel-ops](brand-strategy/youtube-channel-ops.md) | YouTube channel operations: content strategy, SEO, monetization |
+| [social-content-calendar](brand-strategy/social-content-calendar.md) | Social media content calendar: multi-platform scheduling, content pillars |
+
+### VOC & Review Analysis (3 skills) — NEW v3.5 adds pre-purchase VOC
+
+VOC tools split by decision stage. Reddit / Quora capture **pre-purchase** intent (still-deciding users), while Trustpilot / Amazon Review capture **post-purchase** experience (already-bought users). Use them together for full decision-funnel coverage.
+
+| Skill | What it does |
+|-------|-------------|
+| [reddit-voc](voc-tools/reddit-voc/SKILL.md) — **NEW v3.5** | Multi-file package for **pre-purchase** Reddit VOC mining. 5-step playbook (find subs across 4 dimensions → filter Top + 6 post-flair → 6-axis post teardown → insight-to-action mapping → optional 2D positioning matrix). References: 4-dimension community framework / Reddit slang dictionary (BIFL / YMMV / AITA / DAE / etc.) / 6-class post taxonomy with business-action mapping / 3 real listing+ad rewrite cases / functional-importance × satisfaction matrix. CSV templates for community map, post analysis, insight-action map. Pairs with `/trustpilot-voc-deep` for post-purchase view. |
+| [trustpilot-voc-quick](brand-strategy/trustpilot-voc-quick.md) | 5-min WebFetch scan: overall rating, star distribution, recent review summaries. Ideal for brand scanning Step 0 or competitor comparison |
+| [trustpilot-voc-deep](brand-strategy/trustpilot-voc-deep.md) | Full pipeline (15-40 min): Selenium scraper with proxy rotation + sentiment analysis + LDA topic modeling + AI-powered deep insights. Uses `tools/trustpilot/` Python toolkit with **AntV visualization** for report-style consistency |
+
+### KOL & User Operations (2 skills)
+
+| Skill | What it does |
+|-------|-------------|
+| [influencer-marketing](brand-strategy/influencer-marketing.md) | KOL/influencer marketing: 5-tier pyramid, ROI tracking, contract templates |
+| [user-lifecycle-ops](brand-strategy/user-lifecycle-ops.md) | User lifecycle management: 5-stage funnel, retention curves, churn analysis |
+
+### GTM & Offline (2 skills)
+
+| Skill | What it does |
+|-------|-------------|
+| [brand-gtm-launch](brand-strategy/brand-gtm-launch.md) | New product GTM launch: 7-step framework, timeline, channel coordination |
+| [offline-retail-us](brand-strategy/offline-retail-us.md) | US offline retail: 8-tier channel analysis, readiness assessment, cost model |
+
+### Affiliate & Partnership (2 skills) — NEW v3.13
+
+Building an affiliate/partnership program from the **affiliate's economics** — audit first (is your product even worth promoting?), then run the AI-automated recruit → score → outreach → activate loop. Complements `influencer-marketing` (content/relationship lens) without overlap: this is the performance/ROI lens.
+
+| Skill | What it does |
+|-------|-------------|
+| [affiliate-readiness-audit](brand-strategy/affiliate-readiness-audit.md) — **NEW v3.13** | Audits a product/Listing from the **affiliate's wallet POV** — the mirror of `dsite-conversion-ux` (CRO): CRO audits "why users won't buy," this audits "why affiliates won't promote you." Affiliate ROI ledger + EPC + 3-layer arbitrage, 6-dim recruitability scorecard with score bands, admission buckets, 6 silent-rejection red flags, traffic-catch self-check + 30-day fix roadmap. Multi-agent fan-out over the 6 scoring dimensions + competitor-offer benchmark |
+| [affiliate-program-ops](brand-strategy/affiliate-program-ops.md) — **NEW v3.13** | AI-automated affiliate operations pipeline: database → find candidates across the **6 affiliate ecosystems** → 100-pt AI scoring with priority bands → standardized contact collection (10 sources) → AI personalized outreach (5-element email, not mass blast) → Partner Resource Hub activation → 4-layer KPI + AI weekly report → 30-day minimum loop. Fan-out per ecosystem type via `Workflow`; reuses `outbound-prospecting` infra + `backlink-kol-extractor` |
+
+### Channel & Market Entry (2 skills) — NEW v3.13
+
+| Skill | What it does |
+|-------|-------------|
+| [eu-channel-market-entry](brand-strategy/eu-channel-market-entry.md) — **NEW v3.13** | Channel/distributor-driven Europe market entry for **US-entity brands**: US-vs-EU market logic (growth vs mature-replacement), competitive-positioning quadrant, **SSPV** user-value model (JTBD-based), **RCS** regional-combat model (Region × Channel × Service) across the 5 EU regions, channel development + enablement, price protection, overseas-org 3 stages, the 8-step Europe growth flywheel. Org/tax decisions hand off to `finance-*`. 5-region parallel analysis via `Workflow` |
+| [price-system-conflict-guard](brand-strategy/price-system-conflict-guard.md) — **NEW v3.13** | Multi-channel price-system & channel-conflict guard for brands running DTC + Amazon + distribution simultaneously: cross-channel real-price diagnosis (auto-flags conflicts), the 3-layer mechanism (unified price × promo-sync × regional protection), DTC-vs-channel boundary, T-60 promo SOP. Carries a US antitrust (MAP vs RPM / Sherman Act) compliance boundary. Pluggable impl of the flywheel's price-protection step |
+
+### Outbound Prospecting (3 skills) — v3.4 adds press discovery
+
+End-to-end pipelines for finding overseas B2B decision-makers, KOLs, and journalists, then converting them into ready-to-message lead sheets. Each skill is a multi-file package with `SKILL.md` + scripts + references + templates.
+
+| Skill | What it does |
+|-------|-------------|
+| [google-whatsapp-prospecting](outbound-prospecting/google-whatsapp-prospecting/SKILL.md) | Google-dork → WhatsApp lead pipeline. 15+ search formulas (mobile-prefix narrowed), 30+ countries with B2B-platform / time-zone / compliance flags, full GDPR-CASL-CCPA-UWG compliance reference, multi-language outreach playbook (EN/ES/PT/FR/AR), SerpAPI batch script + `wa.me` validator. |
+| [linkedin-prospecting](outbound-prospecting/linkedin-prospecting/SKILL.md) | Google/Bing/Yandex/Wayback reverse-search of LinkedIn → enrichment via Apollo/Snov/Hunter/Lusha/Wiza → 4-touch outreach (CR → DM → follow-up → channel-switch). 50+ localized role keywords across 8 languages, LinkedIn ToS + quota reference, 12 DM templates across 5 archetypes (incl. voice-note opener), reply-handling matrix. |
+| [media-press-discovery](outbound-prospecting/media-press-discovery/SKILL.md) — **NEW v3.4** | Muckrack-anchored journalist DB pipeline. 5 scripts (`discover_journalists` / `find_articles` / `guess_emails` / `score_and_export` / `merge_partitions`) + shared `_fetcher.py` with 4 backends (requests / remote-chrome / apify / html-dir for Cloudflare-protected pages). Multi-machine partition-merge workflow. Outputs ranked `pitch_db.csv` with journalist contacts + last topical coverage. |
+
+Sister skills — same 4-stage shape (Search → Enrich → Outreach → Compliance), different channels. Designed to run in parallel for the same lead set.
+
+### Tools (standalone utilities)
+
+Standalone Python utilities under `tools/`. Each is a multi-file package with own `SKILL.md` + `scripts/` + `references/` + `templates/`. Used by skills above conditionally; also runnable independently. The three **fetch tools** — `api-pacer`, `fetchlib`, `browser-fetch` — compose into one compliant scraping pipeline (**pace → waterfall → browser L3**); the rest are data/enrichment utilities.
+
+| Tool | What it does | Used by |
+|------|-------------|---------|
+| [backlink-kol-extractor](tools/backlink-kol-extractor/SKILL.md) | Extract KOL / media / affiliate prospects from Semrush competitor backlink xlsx data — 3-step methodology (domain pattern → cross-competitor validation → social handle extraction) | `influencer-marketing` (Step 2.5), `dsite-seo-playbook` (Step 4.6) — both conditionally activated when Semrush data is provided |
+| [trustpilot](tools/trustpilot/) — **rebuilt v3.4** | Selenium-based Trustpilot review scraper with chained-proxy rotation, AI sentiment + topic analysis, multi-language. v3.4 rebuild: modern data-* attribute selectors (replaces 110-line sibling-XPath fallback chain), desktop-UA pin (Trustpilot serves snippet-only DOM to mobile UA), `--cutoff_date` arg, `--skip_ai` mode, redacted hardcoded proxy creds (env-var loading) | `trustpilot-voc-quick`, `trustpilot-voc-deep` |
+| [linktree-expander](tools/linktree-expander/SKILL.md) — **NEW v3.4** | Batch-enrich Linktree handles into per-creator profiles via `__NEXT_DATA__` JSON parsing. Extracts IG / TikTok / YouTube / Substack / Twitter / podcast handles + bio + outbound link categorization + handle-match-scored personal_site (with `NON_PERSONAL_HOSTS` blocklist for shorteners / aggregators / docs / scheduling) | KOL discovery pipelines downstream of `backlink-kol-extractor` |
+| [contact-extractor](tools/contact-extractor/SKILL.md) — **NEW v3.4** | Multi-source contact email extraction with confidence tiering. Sources: personal_site `/about` `/contact` `/press` paths (mailto/text) + YouTube Data API v3 description + Apple Podcasts RSS owner + email pattern guess (with `--verify` SMTP MX probe / Hunter.io). Outputs ranked `contact_email_1..3` + `confidence` (high / medium / low / none) | KOL outreach prep, post `linktree-expander` or `media-press-discovery` |
+| [api-pacer](tools/api-pacer/SKILL.md) — **NEW v3.9** | Polite, adaptive request pacer + AWS-style full-jitter backoff. Paces to the server's own `x-ratelimit-*` headers when present, else a configured RPS budget. Stdlib-only; rate-limit-respecting research use only. Rationale + usage in `SKILL.md`. | `reddit-voc` (wired) + `serp-content-teardown` / `media-press-discovery` / `trustpilot` / `outbound-prospecting` (opt-in) |
+| [fetchlib](tools/fetchlib/SKILL.md) — **NEW v3.10** | Compliant fetch **waterfall** — escalates one tier only on a real block: **L1 `curl_cffi`** → **L2 Jina Reader** → L3 browser → L4 managed (paid, opt-in). Control = `api-pacer` + AIMD + circuit breaker + Thompson-sampling backend selector. Honors robots; no barrier-defeat / IP-rotation / PII. Tiers, benchmarks + compliance red line in `SKILL.md`. Depends on `api-pacer`. | `serp-content-teardown` / `media-press-discovery` / `trustpilot` / `outbound-prospecting` / `reddit-voc` (opt-in) |
+| [browser-fetch](tools/browser-fetch/SKILL.md) — **NEW v3.12** | Optional shared **browser-render** backend for `fetchlib`'s **L3** (pluggable engine, **default Selenium**). Clears **Trustpilot-class** JS sites but not Cloudflare / DataDome fortresses (those need a residential IP or paid unblocker — full honest-scope benchmark in `SKILL.md`). No CAPTCHA-solving / barrier-defeat / PII; `tools/trustpilot` left untouched. | any JS-render need via `fetchlib` `browser` tier (opt-in) |
+
+See [tools/README.md](tools/README.md) for standalone usage.
+
+---
+
+### Key Features
+
+- **58 Skills, 13 Chains** — Complete coverage from brand strategy to daily operations to finance & capital to affiliate-program building to EU channel entry to overseas-buyer outbound to earned-media press discovery to pre-purchase Reddit VOC
+- **Affiliate & Channel Systems (2026 decks)** — a 2-skill affiliate chain built from the affiliate's own economics (`affiliate-readiness-audit` mirrors CRO — "why affiliates won't promote you"; `affiliate-program-ops` runs the AI recruit→score→outreach→activate loop), plus a US-entity Europe channel-entry strategy (SSPV / RCS / growth flywheel) and a multi-channel price-conflict guard. Framework skeletons only, each crediting its source deck in a methodology index
+- **Finance & YMYL Discipline** — the 8-skill finance chain carries explicit "planning aid, not professional tax/legal/accounting advice — verify with a CPA" disclaimers, point-in-time-stamped 2026 regulations, and ⚠️-flagged estimates (no fabricated numbers)
+- **Data Verification Layer** — Every skill includes mandatory verification; estimates are explicitly flagged with ⚠️
+- **Chart Visualization** — 21 skills auto-generate charts (radar, bar, waterfall, scatter, funnel, etc.) via AntV API
+- **Semrush Integration** — Brand strategy skills auto-scan local Semrush xlsx/PDF data as high-confidence source
+- **VOC Matrix** — Mention frequency × satisfaction matrix to identify unmet needs
+- **GTM Flywheel** — Market → Product → Marketing → Operations four-wheel evaluation
+- **AI Search Ready** — Optimized for Amazon Rufus, COSMO knowledge graph, and GEO
+- **Multi-Agent Concurrency (Claude Code-native)** — skills like `dsite-conversion-ux` orchestrate parallel recon + analysis subagents via the `Workflow` tool with `StructuredOutput` schemas, run as background tasks, and use browser-class MCP (Claude in Chrome / Preview) for live-site inspection — fan out the work, keep the conclusions
+- **Compliant Scraping Stack (2026-benchmarked)** — a free-first, US-compliant fetch pipeline the skills share: `api-pacer` (pacing + backoff) → `fetchlib` (waterfall: `curl_cffi` → Jina Reader → browser → paid) → `browser-fetch` (browser-render L3). Honors robots + rate limits; no barrier-defeat / IP-rotation / CAPTCHA-solving / PII. Benchmarks, tier mechanics, and the full compliance red line live in each tool's `SKILL.md`
+- **Linted, not just written** — every skill carries `name` + `description` frontmatter (the triggering surface), and a `Skill lint` CI gate blocks four regressions this repo actually hit: missing/mismatched frontmatter, the same skill living at two paths (copies drift apart silently), dead relative links, and any advice that would break the scraping red line. Run it locally with `python3 scripts/lint_skills.py`
+- **Multi-Platform** — Works on Claude Code, Google Antigravity, OpenClaw, and any AI IDE
+
+### Installation
+
+**Claude Code (recommended):**
+```bash
+git clone https://github.com/noique/cross-border-ecommerce-skills.git
+
+# Single-file skills → ~/.claude/commands/
+cp cross-border-ecommerce-skills/brand-strategy/*.md ~/.claude/commands/
+cp cross-border-ecommerce-skills/amazon/*.md ~/.claude/commands/
+cp cross-border-ecommerce-skills/finance/*.md ~/.claude/commands/
+
+# Multi-file skill packages → ~/.claude/skills/ (one directory per skill)
+cp -r cross-border-ecommerce-skills/outbound-prospecting/google-whatsapp-prospecting ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/outbound-prospecting/linkedin-prospecting ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/outbound-prospecting/media-press-discovery ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/voc-tools/reddit-voc ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/brand-strategy/serp-content-teardown ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/tools/backlink-kol-extractor ~/.claude/skills/
+```
+
+**Google Antigravity / OpenClaw / Any AI IDE:**
+Copy `.md` files (single-file skills) or whole directories (multi-file packages) into your skill directory.
+
+### Model Requirements
+
+**Judge by capability, not by model name.** What these skills actually need is three things — the model list below expires every few months, this bar doesn't:
+
+| Capability | Why these skills need it |
+|---|---|
+| **Instruction-following across long context** | A single skill runs 10-50KB; the model has to still follow the structure after reading the whole spec |
+| **Actually executing multi-step verification** | The library leans hard on self-checks — count the bytes, cite the source, mark `❌未获取` when it's missing. A model that skips verification and jumps to the conclusion turns every honesty guardrail into decoration |
+| **Short-delivering honestly instead of filling the gap** | When evidence is thin it has to write "insufficient data, no conclusion" rather than inventing a plausible number to complete the table |
+
+> 🔴 **The second and third are the dividing line.** Following a structure is easy — plenty of mid-size models emit a report that *looks* complete. The hard part is **leaving blank what should be blank**. Test a candidate model by feeding it an input with a key figure missing and seeing whether it flags the gap or invents a number.
+
+### 🔴 "The skill doesn't run" — check the runtime before the skill
+
+**Maintainer's field observation (not a controlled benchmark):** these skills behave best on **stock Claude Code running against Anthropic's own API/subscription**. Reports of a skill "not working" have mostly traced back to the runtime, not the skill file — Claude Code pointed at a third-party relay or reseller subscription, or a different harness (Codex-style and other agent CLIs) loading the file.
+
+Why the runtime matters more here than for a plain prompt:
+
+| What the skills rely on | What a substituted runtime often breaks |
+|---|---|
+| The harness **loading `SKILL.md` and honoring its frontmatter** | `SKILL.md` + frontmatter is a Claude Code convention. Another harness may treat the file as plain context — or not load it at all — so the skill silently never activates |
+| **Full-fidelity long context** (10-50KB per skill, plus your data) | Relays commonly truncate, compress, or re-chunk context. The verification rules live throughout the file — drop the tail and the honesty gates go with it |
+| **A specific model actually serving the request** | Some resellers route "Claude" traffic to a different or quantized model without saying so. You get output shaped like the skill with none of the self-checking behavior |
+| **Multi-step self-verification surviving the system prompt** | Harnesses that rewrite or prepend their own system prompt can override the skill's verification instructions |
+
+**Self-diagnose in this order before filing an issue:**
+
+1. **What's actually serving you?** Confirm the runtime and that requests hit the model you think they do — not a relay in between.
+2. **Did the skill load at all?** Ask the agent to restate the skill's required output sections. If it can't, the file never activated — that's a loading problem, not a skill problem.
+3. **Run the blank test.** Feed an input with a key figure missing. Correct behavior is flagging the gap (`❌未获取` / "insufficient data"). If it invents a number, the honesty scaffolding isn't running, whatever the model claims to be.
+
+If all three pass and it still misbehaves, that's a real skill bug — please open an issue with the transcript.
+
+> This is one maintainer's testing across the setups they had access to, not a benchmark of every provider. Third-party relays vary widely; some may be fine. The point is that **the runtime is the first thing to rule out**, because it accounts for most of the "doesn't work" reports.
+
+**Reference models (verified 2026-08 — will go stale)**
+
+| Tier | Quality | Models at the time |
+|------|---------|--------------------|
+| Recommended | Full execution, verification works | Claude Opus 5 / Sonnet 5 (and Fable 5), GPT-5.6 Sol / GPT-5.5 family, Gemini 3.1 Pro |
+| Usable | Structure OK, may skip verification | DeepSeek V4, Qwen 3.5, GLM-5.2, Llama 4, Claude Haiku 4.5 |
+| Not recommended | Sections missing, checks fail | Small models (empirically, under ~30B) |
+
+> ⚠️ **This table goes stale by design** — the previous version sat at April 2026 and was already two Claude generations behind. **Don't copy the names; use the capability bar above to test whatever you have.** Current lineups: [Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview) · [OpenAI](https://platform.openai.com/docs/models) · [Google](https://ai.google.dev/gemini-api/docs/models).
+> The Claude row comes from Anthropic's own docs; the rest is public reporting collated 2026-08 — vendors ship on different cadences, so treat each vendor's docs as authoritative.
+
+Key requirements: long context (8K+ input), strong instruction following, Chinese-English bilingual, tool use / web browsing.
+
+---
+
+## 中文说明
+
+### 这是什么？
+
+一套 **58 个跨境电商 AI 技能模板**，覆盖品牌战略→选品→调研→文案→广告→独立站→**财务资金**→**联盟营销**→**欧洲渠道进入**→社媒→红人→线下渠道→海外开发→媒体公关→**购买前 Reddit VOC** 全流程自动化。
+
+两种格式：
+- **单文件技能（53 个）** — 一个 `.md` 文件，放入 AI IDE 技能目录即可使用
+- **多文件技能包（5 个，分布在 `brand-strategy/`、`outbound-prospecting/` 和 `voc-tools/`）** — `SKILL.md` + `references/` + `templates/`（含 Python 脚本和 CSV 跟踪表），将整个目录指向 AI IDE
+
+外加 **7 个独立工具** 在 `tools/`（Python 工具，被 skill 调用也可独立使用）：`backlink-kol-extractor` / `trustpilot` / `linktree-expander` / `contact-extractor` / `api-pacer` / `fetchlib` / `browser-fetch`。
+
+### 技能矩阵（58 个技能，13 条链路）
+
+| 链路 | 数量 | 技能 |
+|------|------|------|
+| **品牌战略链** | 11 | 市场扫描 → 赛道假设 → 深度验证 → 品牌战略 → IMC框架 → 年度规划 → 预算管控 → 知识库 → A/B对比 → 图表可视化 → 报告 PDF 导出（全库被复用最多，37 个技能链它出终稿） |
+| **Amazon 运营链** | 14 | 选品 → 筛选 → 调研 → IP排查 → 供应商 → 关键词 → 文案 → 主图 → A+ → 合规 → 复查 → 广告架构 → 周报 → 诊断 |
+| **独立站流量** | 5 | SEO 全链路诊断（NEW v3.3）→ SEO全链路规划 → SEM广告 → **转化率优化 CRO（UPGRADED v3.7，多 Agent 并发实站检测：第零步 5 子代理并发侦察 + 6 模块 + 技术追踪健康层 + 文案改写/异议表 + 速赢双桶，Claude Code Workflow 编排）** → SERP 内容拆解（NEW v3.6，竞品文章结构 + 关键词 + 反链 + GEO 一起拆） |
+| **财务与资金（NEW v3.8）** | 8 | 落地成本与单位经济(CM1/CM2/CM3) → 收款·结汇·FX 对冲 → 税务合规(Nexus/VAT/IOSS/EPR，含 EU €3 关税与 ~€2 处理费之分) → 13 周现金流预测 → 定价·毛利护栏 → 多渠道对账记账 → 跨境架构与利润回流 → 融资真实成本与风控 |
+| **社媒与内容** | 3 | TikTok增长 → YouTube运营 → 内容日历 |
+| **VOC 评论分析** | 3 | **Reddit VOC（NEW v3.5，购买前用户洞察 / 4 维度找社区 / 6 类帖子分类 / 黑话词典 / 矩阵定位）** → Trustpilot 快速扫描 → Trustpilot 深度分析（爬虫+情感+LDA+AI 归纳） |
+| **红人与用户** | 2 | 红人营销 → 用户生命周期 |
+| **GTM 执行** | 1 | 新品上市规划 |
+| **线下渠道** | 1 | 美国线下零售 |
+| **联盟与合作伙伴（NEW v3.13）** | 2 | **联盟可推性审计**（联盟客视角，`dsite-conversion-ux` CRO 的镜像——审"联盟客为什么不推你"：ROI 账本 + EPC + 三层套利 + 六维评分 + 沉默拒绝红灯）→ **联盟运营流水线（AI）**（数据库→6 类生态找候选→100 分评分→10 来源采集→AI 个性化建联→素材库激活→4 层 KPI→30 天闭环，多 Agent 并发） |
+| **渠道与市场进入（NEW v3.13）** | 2 | **欧洲渠道进入战略**（美国主体进欧盟：美/欧市场逻辑 · 定位象限 · SSPV 用户价值 · RCS 区域作战 · 渠道赋能 · 组织三阶段 · 增长飞轮，5 区并发）→ **价格体系与渠道冲突护栏**（DTC+Amazon+分销：跨渠道真实价诊断 · 统一价×促销同步×区域保护三层 · T-60 促销 SOP · 含 MAP/反垄断边界） |
+| **海外开发与媒体公关（NEW v3.2 + v3.4）** | 3 | Google→WhatsApp 反查开发 → Google→LinkedIn 反查开发 → **媒体公关发现（NEW v3.4，Muckrack-anchored journalist DB pipeline，5 脚本 + Cloudflare-aware 4 后端 fetcher + 多机分片）** |
+
+### 核心特色
+
+- **58 技能 × 13 链路 + 7 独立工具** — 从战略到执行到财务资金到联盟营销到欧洲渠道进入到海外开发到媒体公关到购买前 Reddit VOC 全覆盖
+- **联盟与渠道体系（源自 2026 行业分享）** — 从联盟客的经济账反推的 2 技能联盟链（`affiliate-readiness-audit` 是 CRO 的镜像——审"联盟客为什么不推你"；`affiliate-program-ops` 跑 AI 招募→评分→建联→激活闭环），外加美国主体的欧洲渠道进入战略（SSPV / RCS / 增长飞轮）与多渠道价格冲突护栏。只抽方法论骨架，每个技能在"参考方法论索引"注明来源分享
+- **财务链 YMYL 纪律** — 8 个财务技能均带"规划辅助、非专业税务/法律/会计意见、需找 CPA 核实"免责，2026 法规打时间戳，估算标 ⚠️（不编造数字）
+- **数据验证层** — 每个技能内置强制验证，推测数据标 ⚠️
+- **图表可视化** — 21 个技能自动生成图表（雷达/柱状/瀑布/散点/漏斗等），调用 AntV API
+- **Semrush 集成** — 品牌战略技能自动扫描本地 Semrush 数据
+- **VOC 用户洞察** — 提及量×满意度二维分析
+- **GTM 飞轮** — 市场→产品→营销→运营四维评估
+- **AI 搜索适配** — Amazon Rufus / COSMO / GEO 优化
+- **多 Agent 并发（Claude Code 原生）** — `dsite-conversion-ux` 等技能用 `Workflow` 工具编排并发侦察+分析子代理（`StructuredOutput` schema），后台任务运行 + 浏览器类 MCP（Claude in Chrome / Preview）做实站检测——把活儿 fan out，只留结论
+- **合规抓取栈（2026 实测）** — 各 skill 共享的免费优先、美国合规取页流水线：`api-pacer`（限速 + 退避）→ `fetchlib`（waterfall：`curl_cffi` → Jina Reader → 浏览器 → 付费）→ `browser-fetch`（浏览器渲染 L3）。默认守 robots + 限速，不破壁 / 不换 IP / 不解 CAPTCHA / 不碰 PII。基准数据、分层机制与完整合规红线见各工具 `SKILL.md`
+- **有 lint 兜底,不只是写完** — 每个技能都带 `name` + `description` frontmatter(技能触发面),并有 `Skill lint` CI 门禁拦住本仓踩过的四类回归:frontmatter 缺失/名不符实、同一技能存在于两个路径(副本会静默分叉)、相对链接失效、以及任何违反抓取红线的写法。本地跑:`python3 scripts/lint_skills.py`
+- **多平台兼容** — Claude Code / Antigravity / OpenClaw / 任何 AI IDE
+
+### 安装方式
+
+```bash
+# Claude Code 一键安装
+git clone https://github.com/noique/cross-border-ecommerce-skills.git
+
+# 单文件技能 → ~/.claude/commands/
+cp cross-border-ecommerce-skills/brand-strategy/*.md ~/.claude/commands/
+cp cross-border-ecommerce-skills/amazon/*.md ~/.claude/commands/
+cp cross-border-ecommerce-skills/finance/*.md ~/.claude/commands/
+
+# 多文件技能包 → ~/.claude/skills/（每个技能一个目录）
+cp -r cross-border-ecommerce-skills/outbound-prospecting/google-whatsapp-prospecting ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/outbound-prospecting/linkedin-prospecting ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/outbound-prospecting/media-press-discovery ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/voc-tools/reddit-voc ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/brand-strategy/serp-content-teardown ~/.claude/skills/
+cp -r cross-border-ecommerce-skills/tools/backlink-kol-extractor ~/.claude/skills/
+```
+
+### 模型要求
+
+**先看能力门槛，再看型号。** 这些 skill 对模型的真实要求是三条——型号表每几个月就会过期，能力门槛不会：
+
+| 能力 | 为什么这些 skill 需要它 |
+|------|----------------------|
+| **长上下文里的指令遵循** | 单个 skill 有 10-50KB，模型要在读完整份规格后仍然照着结构走 |
+| **多步验证的执行力** | 本仓大量依赖「先算字节数 / 先查来源 / 缺了就标 ❌未获取」这类自检步骤。模型如果倾向于跳过验证直接给结论，诚信护栏就是摆设 |
+| **如实短交而非补齐** | 证据不足时要能写「数据不足，不下结论」，而不是编一个像样的数字把表格填满 |
+
+> 🔴 **第二条和第三条是本仓的分水岭。** 结构照着走很容易，很多中小模型都能生成看起来完整的报告——难的是**该空着的时候空着**。选型时请用这个测：给它一份缺关键数据的输入，看它是标注缺口，还是编一个数字。
+
+### 🔴 「skill 跑不通」——先排查运行环境，再怀疑 skill
+
+**维护者实测口径（非对照评测）：** 这些 skill 在**原版 Claude Code + Anthropic 官方 API/订阅**下表现最好。收到的「跑不通」反馈，绝大多数最后定位到的是**运行环境**而不是 skill 文件本身——要么 Claude Code 接的是第三方中转/转售订阅，要么换了别的 harness（Codex 一类的 agent CLI）在读这个文件。
+
+为什么这里比普通 prompt 更吃运行环境：
+
+| skill 依赖什么 | 换掉运行环境后常见的断点 |
+|---|---|
+| harness **真的加载 `SKILL.md` 并认 frontmatter** | `SKILL.md` + frontmatter 是 Claude Code 的约定。别的 harness 可能只当普通上下文、甚至根本不加载——skill **静默地压根没生效** |
+| **完整不打折的长上下文**（单个 skill 10-50KB，还要加你的数据） | 中转普遍会截断、压缩或重新分块。而验证规则是**散布在全文**的，尾部一丢，诚信闸就跟着丢了 |
+| **真的是那个模型在接请求** | 部分转售会把「Claude」流量路由到别的或量化过的模型且不告知。你会拿到一份**长得像** skill 输出、但完全没有自检行为的东西 |
+| **多步自检活过 system prompt** | 会改写或前置自己 system prompt 的 harness，可能直接盖掉 skill 的验证指令 |
+
+**报障前请按这个顺序自查：**
+
+1. **到底是谁在接你的请求？** 确认运行环境，以及请求真的打到了你以为的那个模型上——中间没有中转。
+2. **skill 到底加载了没？** 让 agent 复述这个 skill 要求输出哪几节。复述不出来 = 文件压根没生效，这是**加载问题不是 skill 问题**。
+3. **跑一次留白测试。** 喂一份缺关键数字的输入。正确行为是标出缺口（`❌未获取` / 「数据不足」）。**如果它编了一个数字，说明诚信脚手架没在跑**——不管它自称是什么模型。
+
+三条都过了还不对，那才是真 bug，欢迎带上对话记录提 issue。
+
+> 这是单个维护者在自己能接触到的环境里的实测，不是对所有服务商的评测。第三方中转差异很大，有些可能没问题。要点只有一个：**先把运行环境排除掉**，因为「跑不通」的报障大多出在这儿。
+
+**参考型号（2026-08 核实，会过期）**
+
+| 层级 | 效果 | 当时的代表型号 |
+|------|------|--------------|
+| 推荐 | 完整执行，验证步骤生效 | Claude Opus 5 / Sonnet 5（及 Fable 5）、GPT-5.6 Sol / GPT-5.5 家族、Gemini 3.1 Pro |
+| 可用 | 结构完整，可能跳过验证 | DeepSeek V4、Qwen 3.5、GLM-5.2、Llama 4、Claude Haiku 4.5 |
+| 不建议 | 章节缺失，检查失效 | 小参数量模型（经验上 30B 以下） |
+
+> ⚠️ **这张表按定义会过期**——上一版停留在 2026-04 就已经落后两代。**别照抄型号，用上面的能力门槛去测你手上的模型。**各家型号请查官方文档：[Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview) · [OpenAI](https://platform.openai.com/docs/models) · [Google](https://ai.google.dev/gemini-api/docs/models)。
+> Claude 一栏来自 Anthropic 官方文档；其余为 2026-08 公开资料整理，各家发布节奏不同，以官方为准。
+
+---
+
+## Changelog
+
+### v3.17 (2026-08-01) — three new skills: event marketing, crowdfunding, measurement
+Three gaps closed, each found by auditing the library against outside industry material rather than by brainstorming. The recurring lesson: **in all three, the most valuable part was not the framework — it was discovering that the source material's core premise had expired.** Every fact below was verified against primary sources at build time; none was taken on the source's word.
+
+- **New `brand-event-marketing`** — moment-driven marketing: the four event types by the question each answers (brand = who you are / product = what category you own / calendar = who you stand with / trend = where you're headed), a 7-step calendar-moment SOP and a 6-step trend-jacking SOP (four-plane trend read, competitor-axis reset, three value anchors, pyramid content matrix), plus a daily market-radar checklist. **What the source lacked and this adds: the ambush-marketing legal gate.** Newsjacking a big event is a legal act in the US — Olympic marks sit under the Ted Stevens Act with **no consumer-confusion requirement** (the USOPC has pursued "Olympian", "Team USA", even "Going for Gold"); FIFA's 2026 protection rests on the Lanham Act plus venue contracts and municipal clean zones rather than special legislation; and NFL enforcement is why every brand says "The Big Game". No rights, no reference — full stop. Also carries the practitioner's own measurement-honesty rule (PR counts page views not the outlet's monthly visits; creators count plays/likes/shares/comments not follower counts) and a no-hardcoded-event-dates freshness rule. Framework credited to its named speaker in the 参考方法论索引; **the source's own self-reported campaign results were deliberately excluded** — vendor self-reporting does not belong in a skill.
+- **New `crowdfunding-launch`** — reward-based launch on Kickstarter / Indiegogo as four jobs at once (production capital, demand validation, launch awareness, distribution path), with a four-phase SOP and the post-campaign DTC flywheel. **Opens with a delivery gate, because a reward campaign is an FTC-enforceable promise**: the Chevalier case (the FTC's first Kickstarter action — $122k raised on a $35k goal, settled with a $111,793.71 judgment) and the iBackPack case ($800k+ across four campaigns on both platforms, nothing shipped) are in the file as the reason the rule is *deliver or refund*. 🔴 **The stale premise caught here: Indiegogo retired Flexible Funding for new campaigns in October 2025** — both platforms are now all-or-nothing, so every "set a low goal and take the money via flexible" playbook (and every pre-2025 case screenshot showing a Flexible Goal) is teaching a route that no longer exists. Verified fee stack: Kickstarter 5% + 3% + $0.20 (small pledges 5% + $0.05, nothing at all if the goal is missed); Indiegogo 5% + ~3% + $0.30, InDemand now **Late Pledge** (5% native / 8% non-native). Includes a suitability gate that will tell a drop-ship or trading team its product is wrong for crowdfunding — **"don't do this" is a designed output.**
+- **New `attribution-measurement`** — the measurement stack the library was missing: attribution, incrementality and MMM answer three *different* questions and get calibrated against each other rather than chosen between. Covers why summing independently-reported platform conversions always overcounts, geo-test design that starts from the minimum detectable effect that would actually change a budget decision (an under-powered test is worse than no test), open-source MMM selection between **Google Meridian** (Bayesian, Apache-2.0, now open to everyone, Scenario Planner added February 2026 for no-code budget modelling) and **Meta Robyn** (frequentist/ML, MIT, still maintained), and Bayesian calibration of MMM priors with incrementality results. 🔴 **Two stale premises caught: the cookiepocalypse did not happen** — Google reversed third-party-cookie deprecation in July 2024 and confirmed in April 2025 that Chrome would neither run the choice prompt nor deprecate, so any strategy whose立论 is "cookies are going away, therefore X" needs rewriting from the premise up (while *not* over-correcting: click-level tracking was never complete, which is the actual reason to run incrementality and MMM); **and the rule-based attribution models are retiring on a live timeline** — GA4 dropped first-click / linear / time-decay / position-based in November 2023, and Google Ads retired the same four in 2026 (unselectable for new conversion actions from mid-July, force-migrated to data-driven attribution by September), which means accounts still sitting on them should choose their migration rather than be migrated.
+- **Validated against real data, not just linted.** Each skill was dry-run on real cases, and each run found a defect that was then fixed: `brand-event-marketing` had no operational way to grade an event's 势能 (now a table of observable signals — search-trend shape in the *target country*, whether the platform runs an official window, discussion breadth — with "does my category actually connect to this moment" as a **veto, not a bonus**); `crowdfunding-launch` had no way to size a pre-launch email list (now a back-solve from goal ÷ AOV ÷ list-conversion, and 🔴 the repo deliberately ships **no default conversion rate** — that number varies too much by category and list source for a borrowed one to be anything but precise and wrong). `attribution-measurement` was run against a real multi-year DTC dataset (~30k orders, six years, GA4 + GSC + keyword data all connected) and **correctly refused to produce a channel-ROI ranking**: no ad-spend data at all meant two of the three legs could not run, order-source coverage sat at 16-30% every year, and first-touch matched last-touch on all but 6 of 3,964 orders — so the output was "the data cannot answer which channel works" plus the gap list, which is exactly what the honest-shortfall rule exists to produce.
+- Total: **58 skills across 13 chains** (+3); standalone tools: 7.
+
+### v3.16 (2026-08-01) — the honesty-scaffolding sweep: reproducible scoring, honest quotas, evidence gates
+Closes the two design questions parked in v3.15, then follows the thread: a gap found in one skill turned out to be a *class* of gap, so all 62 skills were swept for it. The pattern throughout — the repo's honesty scaffolding existed in its vocabulary but was missing at specific spots, and **the spots it was missing were often the highest-consequence ones**. No skills added or removed.
+
+- **Output quotas are now targets, not pass marks ([#16](https://github.com/noique/cross-border-ecommerce-skills/issues/16)).** `brand-market-scan`, `brand-track-hypothesis` and `social-content-calendar` demanded *"≥8 rows + ≥3 user quotes per layer"*, *"≥10 features"*, *"exactly 5 strategic clues, each with ≥3 lines of numeric support"* — and when the data isn't there, a quota rewards filling the shape, which fights the **same file's** data-acquisition ledger and 推测值-labeling rules. Every quota is **kept**, but reframed with an honest shortfall path: state what's missing, why, and what it costs the conclusion; log it in the existing ledger; and — the load-bearing sentence — **an honest shortfall counts as completing the step**. Also separates 必出的章节 from 必出的结论: always emit the section, never force a conclusion the evidence won't carry.
+- **New [`docs/scoring-conventions.md`](docs/scoring-conventions.md) — the mechanical half of reproducible scoring ([#15](https://github.com/noique/cross-border-ecommerce-skills/issues/15)).** The repo runs four different scales (/100, 1-5 stars, six dims /30, 100-pt bands); differing scales are fine, but the same input should produce the same ranking twice. Scale-agnostic spec covering anchor-pair normalization with clamping (`log` for heavy-tailed inputs like BSR, reverse anchors for lower-is-better), missing values, tie-breaking, showing the arithmetic per dimension, and not manufacturing precision the inputs don't have. Wired into all four weighted-scoring skills (`amazon-product-selection`, `amazon-product-shortlist`, `affiliate-readiness-audit`, `affiliate-program-ops`).
+  - The single most important rule: **a missing dimension is dropped and the remaining weights renormalized** — never zero-filled, never averaged — and the output must carry `本分基于 N/M 维`. A 90 from 3 dimensions and a 90 from 5 mean different things, and hiding the count dresses "incomplete data" up as "scores well". Above **40% missing weight**, no total is produced at all.
+  - **Deliberately not done: universal anchor values.** *"月搜索 >10,000 = 高分"* is not the same claim in pet supplies as in consumer electronics. Existing thresholds are preserved verbatim as calibrate-me defaults that the skill must **print**; inventing universal ones would replace honest vagueness with false precision — the same disease #16 treats, pointed the other way.
+- **`amazon-listing-copywriter` — title and Item Highlights now ship as 3 candidate versions ([#21](https://github.com/noique/cross-border-ecommerce-skills/pull/21)).** Three strategy-distinct candidates each (volume-first / long-tail-first / scenario-first) with per-version character counts, closing with one recommended version whose rationale must state what traffic it prioritizes, what it gives up, and the condition under which to switch — a bare *"use version A"* is defined as not completing the step. **All three versions are character-counted and compliance-checked, not only the recommended one:** operators pick a non-recommended version routinely, and that previously meant shipping a string nothing had validated against the ≤75 limit, the same-word ≤2 rule, or the banned-character set.
+- **The Item Highlights output section was missing entirely.** The field is named in the skill's frontmatter and four times in its rules — *"migrate long-tail and scenario words into Item Highlights"* — but the report template went straight from title to bullet points. The skill had been telling the model to use a field it never asked it to write, ever since the **2026-07-27** policy created it. Section added and marked non-empty-able, since it is where everything the 75-char title had to drop now lands.
+  - Both new quotas follow the #16 convention rather than re-opening it: **3 is a target.** The fabrication risk here is not padded table rows but **invented product facts** — a third title needs a third *real* angle, and material / size / certification / audience are precisely what a model reaches for to manufacture one, after which those inventions ship on a live listing. Short-delivering with the reason stated (`实际 2/3 版，原因：无第二人群词`) completes the step, and a `多版本真实性` row was added to the compliance self-check table.
+- **Lint gained `/docs/` and a wider negation vocabulary.** `docs/` joins the support-file exemption (it holds conventions, not skills), and the deception check's negation list grew (`严禁` `不得` `避免` `不披露` `等于把`) after it false-positived on lines warning **against** disguising data gaps. Re-tested: genuine `伪装成订单更新` phrasing is still caught.
+- **`amazon-ip-risk-assessment` had no rule against inventing a patent number.** Found by sweeping the other 13 Amazon skills for the same defect class. It is the one skill in the chain that emits **legally consequential identifiers** — patent numbers, trademark registration numbers, holders, legal status — that a seller acts on with tooling money; its 数据验证（必做）held four items, all about *telling things apart correctly* (Assignee vs Security Interest vs Licensee, ® vs ™, Active vs Expired), and none about whether the record exists at all. Meanwhile `amazon-keyword-research` forbids inventing a **competitor keyword** and `brand-market-scan` forbids filling in an ASIN from memory. The lowest-stakes outputs in the repo were guarded and the highest-stakes one was not. Added: a top-of-file 🔴 evidence rule, a **search-execution record** (platforms reached, exact queries, date, success flag) that precedes the result tables, ✅/⚠️/❌ retrieval status + source + date columns on both the patent and trademark tables, "no hits" stated as an explicitly valid result, and — the load-bearing gate — **if the search did not execute, the tables are marked ❌未获取 and the overall risk grade is withheld** rather than guessed from category intuition. A fabricated `US D123,456 — Active — held by X` reads exactly like a real one, and the seller has no way to tell.
+- **`amazon-ad-diagnosis` flagged compliant bullets as too long.** Its listing-diagnosis table carried `每条 ≤200 字符` as a *健康标准* with 问题信号 *"超长 → 精简"* — an unsourced number that contradicts the official 2024-08-15 policy of **10–255 characters**, which `amazon-compliance-review`, `amazon-listing-copywriter`, `amazon-keyword-research`, `amazon-market-research` and `amazon-pre-launch-review` all carry correctly. The diagnosis would have told sellers to cut copy that was never over the limit. Corrected, with the ~1000-character total kept as a labeled soft budget that is explicitly **not** a diagnostic finding — the same de-mythologizing v3.14 applied everywhere else in the chain.
+- Swept and clean across all 14 Amazon skills: section numbering sequential, every `/amazon-*` cross-reference resolves, the 2026-07-27 dual-field policy reached both gates (`compliance-review` and `pre-launch-review` do check Item Highlights — the copywriter gap above was isolated, not systemic), 数据验证（必做）present 14/14, #20's scoring conventions genuinely wired into both scoring skills (anchors printed, `本分基于 N/5 维`, >40% circuit breaker), no fabricated ranking-weight percentages, and image specs consistent at ≥1600×1600.
+- **`trustpilot-voc-quick` had no "couldn't fetch" path — and a worked numeric example to copy from.** Its output template specified rating, review count, star distribution, high-frequency words and a trend call, with nothing tying any of them to the fetch actually succeeding; the fallback section listed what to *try* (Google cache, ask the user to paste) but never what **not** to do when all of it fails. Trustpilot throttles hard, so failure is the common path, not the edge case. Worse, the file shipped a fully-worked real example (`4.5/5, 269 reviews, 216/21/4/2/26`) — a model that couldn't fetch had a plausible numeric template sitting in its own prompt. Added a 🔴 data-acquisition rule binding every figure to the fetch, an explicit ❌未获取 output block, partial-retrieval handling (don't back-infer a distribution from an overall rating), failed brands kept as ❌ rows in comparison tables instead of filled in, and the example **rewritten to placeholders** with a warning not to transplant any number from it. The sharp edge: this skill **feeds `brand-market-scan` 第零步**, the very report #16 hardened with *"严禁用记忆或推断补齐…评论原文"* — the consumer was guarded and its producer was not.
+- **`media-press-discovery` handed over pattern-guessed emails for real, named journalists with no send gate.** `guess_emails.py` guesses `firstname.lastname@outlet.com` from a name and a domain; the schema even carried an `email_verified` column — but the quick-start ran the guesser **without** the `--verify` flag the script already supports, and nothing anywhere said *don't send to `unverified`*. A wrong guess bounces (degrading your sending domain), reaches **a different real person** at that outlet, or hits a spam trap. Sibling skills already knew this — `linkedin-prospecting` says pattern-guess → verify with NeverBounce/ZeroBounce, and `contact-extractor` ships confidence tiering plus `--verify`. Fixed: `--verify` promoted into both quick-start flows with its real ~60% SMTP-probe accuracy stated, `email_verified` documented as a **hard gate** rather than a note (`smtp_fail` = unproven, not disproven → manual queue, don't drop the journalist), a ban on reconstructing any journalist name / byline / URL / date from memory, and the CAN-SPAM / GDPR identify-yourself line the repo already enforces elsewhere.
+- **`reddit-voc`'s Top 5 quotas never got the #16 treatment.** *"核心痛点 Top 5（带原话引用）"* and *"竞品翻车点 Top 5"* are hard quotas in a skill whose entire value is verbatim user language — and Reddit now rate-limits and 403s routinely, so shortfall is normal. The skill's existing *"永远抄用户原话，别自己改写"* guards against **paraphrase**, not against **invention**, and quoting presupposes having something to quote. Added the standard shortfall path (3 real pain points → write 3 and label `实际 3/5` + reason), a ban on fabricating quotes, usernames, permalinks or upvote counts, an outright ❌未获取 report when scraping fails, and the 必出的章节 / 必出的结论 split. Also stopped the ≥2-community cross-check from becoming its own quota: single-community insights get labeled, not padded out with a lookalike.
+- Swept and clean across the other 45: `finance/` (8) uses a **different but real** convention — source table + confidence + timestamp + "须核实一手源" + disclaimer, with `finance-tax-nexus-vat-diagnostic` citing Council Reg (EU) 2026/382, HMRC and Wayfair and flagging its own 2026 moving targets · `trustpilot-voc-deep` carries a sample-size + credibility table and runs a real local scraper · `linkedin-prospecting` and `contact-extractor` already gate on verification · `serp-content-teardown` is deterministic by design (no LLM) · `tools/` (7) are deterministic scripts · `report-pdf-export` and `brand-chart-visualize` emit no facts. Structure clean repo-wide: section numbering, cross-references and count claims all check out.
+- Total: **55 skills across 13 chains** (unchanged); standalone tools: 7.
+
+### v3.15 (2026-07-26) — repo hygiene: dedupe, red-line fix, frontmatter, CI
+No skills added or removed; this release fixes structural debt found in an external audit, with each claim verified against the tree first.
+- **Deleted 14 stale duplicate skills (−2,704 lines).** Every Amazon skill existed *twice* — `amazon/<name>.md` **and** `amazon/<category>/<name>.md` — and **all 14 pairs had diverged**. The root copies are canonical (README links only to them, and they carry two sections the subdirectory copies had lost); the subdirectory copies were referenced nowhere. Left in place, an agent grepping the repo could hit the older, capability-poorer version.
+- **Closed a cross-file compliance conflict.** `google-whatsapp-prospecting` advised rotating IPs for high-volume search and rotating numbers past a ban — contradicting the repo-wide scraping red line in `tools/fetchlib` / `tools/browser-fetch` (*no access-barrier defeat, no IP rotation, no CAPTCHA solving*) **and** the skill's own rule to move to the WhatsApp Business API above 50 msgs/day. Both now point at the sanctioned path, with the instruction to cut the query set rather than the compliance.
+- **Frontmatter on all 53 remaining skills.** `name` + `description` now present repo-wide, matching the convention the multi-file packages already used. Descriptions were authored from each file's actual contents — what it produces, when to reach for it, bilingual EN/中文 triggers, sibling cross-refs — with explicit disambiguation between near neighbours (`amazon-ad-architecture` vs `-diagnosis` vs `weekly-ad-review`; `trustpilot-voc-quick` vs `-deep`; `dsite-seo-diagnostic` vs `-playbook`). Support files (`references/` `templates/` `scripts/` `examples/`) are deliberately exempt — they are not skills.
+- **New `Skill lint` CI gate** (`scripts/lint_skills.py`, stdlib-only) blocking all four regressions above: frontmatter presence + `name`-matches-filename, duplicate skill names across paths, dead relative `.md` links, and scraping-red-line violations (negation-aware, so the red-line statements themselves pass). Each check was negative-tested against a seeded fault.
+- **Removed a disguised-consent instruction and two folklore ban thresholds.** `google-whatsapp-prospecting`'s reference doc told readers to send a *"transactional-looking"* opt-in request to obtain consent — deceptive on its own terms, what Meta rejects templates for, and an FTC Act §5 exposure for a US operator; and it stated `3+ blocks → warning / 5+ block + 2+ report → 24h ban` as fact, which Meta does not publish. Both rewritten (identify yourself and ask plainly; enforcement described qualitatively). The lint gained two checks — **deception** and **unpublished-threshold folklore** — because none of the original four would have caught either.
+- **Skill count corrected 54 → 55.** No skill was added: `report-pdf-export` had always existed and is chained by **37 other skills**, but it was never listed in the skill map. It now appears in the Brand Strategy chain.
+- **Open design questions parked as issues** rather than guessed at: [#15](https://github.com/noique/cross-border-ecommerce-skills/issues/15) making the weighted scoring models reproducible (normalization / missing values / ties) and [#16](https://github.com/noique/cross-border-ecommerce-skills/issues/16) the tension between output quotas and honest "insufficient evidence". Input welcome on both.
+- Total: **55 skills across 13 chains** (count corrected, none added); standalone tools: 7.
+
+### v3.14 (2026-07-12)
+- **Amazon Operations Chain (14 skills) — 2026 algorithm & policy refresh.** Every fact was re-verified against first-party sources (Seller Central announcements, Amazon Ads *what's new*, the COSMO SIGMOD 2024 paper, Amazon Q4'25 / Q1'26 earnings) and corrected. No skills added; the flows are unchanged. Highlights:
+  - **Title char limit rewritten** — hard-coded `200 / 125 / 80` replaced with the **2026-07-27** policy: **≤75 chars** for non-media categories + the new searchable **Item Highlights** field (125 chars). Over-limit titles get AI-rewritten (brand owners get a 14-day Review-Listing-Changes window, others don't); the 2025-01 special-char ban + no-word-repeat rules are kept as still-stacking.
+  - **Rufus → "Alexa for Shopping"** — renamed across the chain (Rufus brand retired **2026-05-13**, folded into the main search bar; recommendation engine carried over). The mis-stated "300M active users / $120亿" is corrected to Amazon's actual cumulative-users / self-attributed annualized-incremental wording, with a "no seller-side AI attribution → don't cite % lift claims" honesty guardrail.
+  - **Removed a live TOS-violating tactic** — the "competitor-brand back-end Search Terms" instruction (violates G23501, risks ASIN suppression) is now a prohibited-items check. (SP ad targeting of competitor terms stays — that's compliant.)
+  - **De-mythologized unverifiable claims** — "bullets: only first 1000 bytes indexed" (no official basis; Amalytix self-test, and in *characters* not bytes) and COSMO "~10% of US search traffic" (a 2024 A/B-test bucket, not coverage) downgraded to labeled third-party / snapshot facts; fabricated ranking-weight percentages ("title first-80-chars = 60% weight") removed.
+  - **Premium A+** — kept the real (unchanged) eligibility per Amazon's 2026-05 forum-mod confirmation and added the real new **Content Quality Analysis** beta; explicitly flags the "$5M threshold removed / open to all / A+ Quality Score" rumors as false.
+  - **New 2026 realities added** — SP/SB **Prompts ads** (auto-enrolled, CPC-billed since 2026-03-25), free self-serve **AMC** (since 2025-09, + a 2026-06→12 free-signals window), **FBA** commingling end + mandatory FNSKU (2026-03-31) & paid-prep/labeling sunset (2026-01-01), **variant-review split** (2026-02-12, which shifts every "review-count" threshold), agentic-shopping / AI-agent-readiness checks, a corrected image policy (G1881, no AI-specific ban) and an external-AI / robots.txt reality section.
+  - **Housekeeping** — corrected tool references (TESS → USPTO Trademark Search; APEX scope), runtime-verify guards for referral / FBA fees, graceful fallback for the AntV chart endpoint, and removed internal build-file names from the design-inspiration notes.
+- Total: **54 skills across 13 chains** (unchanged); standalone tools: 7.
+
+### v3.13 (2026-07-04)
+- **New chain — Affiliate & Partnership (2 skills)**, built from three 2026 industry decks (each skill credits its source in a `参考方法论索引` table, per repo convention — framework skeletons only, no slide copy):
+  - **`affiliate-readiness-audit`** — the **mirror of `dsite-conversion-ux` (CRO)**: audits a product/Listing from the affiliate's wallet POV ("why affiliates won't promote you"). Affiliate ROI ledger + EPC + 3-layer arbitrage, 6-dim recruitability scorecard with score bands, admission buckets, 6 silent-rejection red flags, traffic-catch self-check + 30-day fix roadmap.
+  - **`affiliate-program-ops`** — AI-automated affiliate operations pipeline: database → find candidates across 6 affiliate ecosystems → 100-pt AI scoring → standardized contact collection (10 sources) → AI personalized outreach (5-element email) → Partner Resource Hub activation → 4-layer KPI + weekly report → 30-day minimum loop. Multi-agent fan-out per ecosystem; reuses `outbound-prospecting`. Complements `influencer-marketing` (content/relationship lens) without overlap.
+- **New chain — Channel & Market Entry (2 skills)**:
+  - **`eu-channel-market-entry`** — channel/distributor-driven Europe entry for **US-entity brands**: US-vs-EU market logic, positioning quadrant, **SSPV** user-value model, **RCS** regional-combat model across the 5 EU regions, channel enablement, overseas-org 3 stages, the 8-step growth flywheel. Org/tax hand off to `finance-*`. Reframed China-seller → US-entity.
+  - **`price-system-conflict-guard`** — multi-channel price-system & channel-conflict guard (DTC + Amazon + distribution): cross-channel real-price diagnosis, 3-layer mechanism (unified price × promo-sync × regional protection), DTC-vs-channel boundary, T-60 promo SOP, US antitrust (MAP vs RPM) boundary.
+- All four are Claude Code multi-agent-ready (`Workflow` fan-out + `StructuredOutput` schemas), US-jurisdiction framing, brand-neutral examples.
+- Total: **54 skills across 13 chains**; standalone tools: 7 (unchanged).
+
+### v3.12 (2026-06-29)
+- **New `tools/browser-fetch/`** — an optional shared **browser-render** backend for `fetchlib`'s **L3**, promoting the "real browser + optional proxy" capability (the kind in `tools/trustpilot`) into one reusable module (pluggable engine, **default Selenium**; `register_engine()` for nodriver / camoufox / scrapling). Drop-in: `fetchlib.register_backend("browser", browser_fetch.as_fetchlib_backend(engine="selenium"))`.
+  - **Benchmark-driven, honest scope**: real testing (Selenium + nodriver, from a datacenter IP) showed a browser clears **Trustpilot-class** sites `curl_cffi` can't render (Selenium got real content), but **no free tool — Selenium, nodriver, curl_cffi, Jina — beat Cloudflare Managed Challenge / DataDome (Muckrack, G2, cf-challenge) from a datacenter IP**. The bottleneck there is **IP reputation + Turnstile, not the browser library** → those need a residential IP (+ maybe Camoufox/Scrapling's Turnstile solver) or a paid unblocker. So Selenium is the proven default; other engines are opt-in "validate on a residential IP first."
+  - Normalizes a detected challenge page (incl. the Chinese Cloudflare interstitial "请稍候") to `403` so `fetchlib` flags it; `selenium` is a lazy import; self-test is browser-free. Also hardened `fetchlib`'s block-detector with the Chinese + a few more challenge markers.
+  - **Compliance (US)**: renders JS + optional proxy, but does NOT solve CAPTCHAs, defeat access barriers, use botnet proxies, or handle PII (caller's call under CFAA / hiQ / CCPA-CPRA). `tools/trustpilot`'s working Selenium is left untouched.
+- Total: 50 skills across 11 chains; **standalone tools: 7** (was 6).
+
+### v3.11 (2026-06-29)
+- **`fetchlib` batch 2 + `serp-content-teardown` migration** — after a real benchmark of the free tiers against representative targets (Shopify `products.json`, Trustpilot, a Cloudflare JS-challenge, Muckrack, G2, from a datacenter IP):
+  - **`serp-content-teardown/fetch_competitors.py` now uses `curl_cffi`** (real-browser TLS/JA3, free, local) with a **graceful fallback to plain `curl`** if it isn't installed — non-breaking, same `fetch_manifest.json` / outputs. The skill's "free + local, no paid APIs" red line is preserved (curl_cffi is a free local libcurl, not an API); no headless browser is added (it stays a deterministic offline analyzer).
+  - **`fetchlib` gains a `ThompsonSelector`** (per-domain Beta-Bernoulli bandit, `Fetcher(learn=True, selector_path=…)`) that learns which tier actually succeeds per site and tries the best first — because the benchmark showed the "best backend" is **site- and IP-dependent, not fixed** (e.g. `curl_cffi` matched plain `curl` and 403'd on Trustpilot/Cloudflare/Muckrack/G2 from a datacenter IP, while free **Jina Reader** cleared Trustpilot; the hard JS-challenge sites need `nodriver` + a residential IP or a paid unblocker). Self-test covers the selector.
+  - **Honest scope**: `nodriver` (L3) stays a documented `register_backend` plug-in — deferred until tested locally on a residential IP (it won't clear those sites from a datacenter IP either). `tools/trustpilot`'s working Selenium is left untouched per its owner.
+- No new skills/tools; counts unchanged (50 skills / 11 chains / 6 tools).
+
+### v3.10 (2026-06-29)
+- **New `tools/fetchlib/`** — a compliant fetch **waterfall** for the scraping skills, built from the 2026 dual-source scraping-stack research (multi-agent web research + a Gemini Deep Research report). Escalates one tier only on a real block (Markov-style state machine): **L1 `curl_cffi`** (TLS/JA3 impersonation, free, no JS) → **L2 Jina Reader** (`r.jina.ai` JS→clean-markdown, free\*) → L3 `nodriver` (batch-2 `register_backend` plug-in) → L4 managed unblocker (paid, opt-in).
+  - **Control layer**: `api-pacer` (header-adaptive pacing + full-jitter backoff) + **AIMD** (additive-increase / multiplicative-decrease per-domain rate — creep up, cut hard on block) + **circuit breaker** (cool down a target that keeps blocking) + per-fetch JSONL instrumentation.
+  - **Grounded conclusions**: `curl_cffi` is the free TLS-impersonation workhorse; `cloudscraper` / `FlareSolverr` / `undetected-chromedriver` / `puppeteer-stealth` are dead/declining vs 2026 WAFs and are NOT used; "human-like" delay distributions (Gaussian etc.) are cargo-cult for read-only research — header-driven pacing + full-jitter backoff is what matters.
+  - **Compliance-first / red line**: honors robots.txt; does NOT defeat access barriers, rotate IPs, forge fingerprints, solve CAPTCHAs, or handle PII (caller's duty); use only KYC/consent-audited proxies if any; legitimate rate-limit-respecting RESEARCH use only, NOT ToS-violating automation. Governing law is **US** (CFAA + state) with the hiQ / Meta-v-Bright-Data public-data safe harbor (public + logged-off + no-barrier-defeat + no-PII); GDPR / CCPA-CPRA apply only when collecting EU / California residents' personal data.
+  - Stdlib-runnable (`curl_cffi` optional with graceful urllib fallback); **depends on `api-pacer`**. Adoption is opt-in for `serp-content-teardown` / `media-press-discovery` / `trustpilot` / `outbound-prospecting` / `reddit-voc` (their working scrapers unchanged). Batch 2 will add the `nodriver` backend + a Thompson-sampling backend selector.
+- Total: 50 skills across 11 chains; **standalone tools: 6** (was 5).
+
+### v3.9 (2026-06-29)
+- **New `tools/api-pacer/`** — a shared, dependency-light **request pacer** (adaptive rate-limiting + AWS-style full-jitter backoff) for the scraping / API skills. Paces to the server's own `x-ratelimit-*` headers when present (else a configured RPS budget); full-jitter (uniform) backoff on 429/503/Retry-After; stdlib-only, `requests` optional.
+  - **Why it exists** — reads the REAL rate-limit budget instead of guessing a delay from a distribution. A Gaussian/uniform "human-like" sleep is *not* what avoids rate limits/blocks (platforms don't fit-test your delay distribution); the winners are (a) obeying the response-header budget and (b) full-jitter backoff for retries.
+  - **Adoption** — `reddit-voc` gets an integration note (`voc-tools/reddit-voc/references/rate-limiting.md`: PRAW + pacer, read-only research framing); `serp-content-teardown` / `media-press-discovery` / `trustpilot` / `outbound-prospecting` are documented as **opt-in** drop-ins (their working scrapers are left unchanged).
+  - **Scope / red line** — legitimate rate-limit-respecting research use only; NOT for ToS-violating automation (vote manipulation, spam, sockpuppets, ban evasion). It does not defeat anti-bot, rotate IPs, or forge fingerprints.
+- Total: 50 skills across 11 chains; **standalone tools: 5** (was 4).
+
+### v3.8 (2026-06-29)
+- **New `finance/` chain — 8 skills (Finance & Capital)** for China→US/EU DTC + Amazon sellers: `finance-landed-cost-unit-economics` (CM1/CM2/CM3 + break-even ROAS), `finance-fx-payout-optimizer` (收款/结汇/FX hedging + SAFE checklist), `finance-tax-nexus-vat-diagnostic` (registration-obligation map + EU €3 duty / IOSS / US nexus / EPR), `finance-cashflow-runway-forecaster` (13-week rolling forecast), `finance-pricing-margin-guard`, `finance-reconciliation-bookkeeping` (clearing-account-to-zero), `finance-entity-structure-advisor` (HK/SG/US LLC + repatriation, YMYL), `finance-capital-stack-advisor` (RBF/MCA true-APR + contract traps).
+  - **Dual-source, cross-validated** — built from a multi-agent web-research pass + an independent deep-research report, then merged. Example correction surfaced by the merge: the EU low-value-parcel change is a **fixed €3 customs duty** (Council Reg (EU) 2026/382, applies 2026-07-01, interim to 2028) — DISTINCT from the not-yet-law ~€2 per-consignment handling fee (UCC reform, only provisionally agreed 2026-03-26).
+  - **YMYL-first** — every finance skill carries an explicit "operator planning aid, NOT professional tax/legal/accounting/financial advice — verify with a licensed CPA before filing/binding decisions" disclaimer; all rates/thresholds/dates tagged point-in-time; estimates flagged ⚠️ hypotheses; no fabricated seller numbers.
+  - **Complements `brand-budget-ops`** (forward budgeting) with the actuals / profitability / tax / cash / financing side; cross-links into Amazon ops + DTC chains.
+- Total: **50 skills** across **11 chains** (was 42 / 10). Single-file skills: 45 (was 37).
+
+### v3.7 (2026-06-29)
+- **`brand-strategy/dsite-conversion-ux` upgraded** — the CRO skill is rebuilt as a **multi-agent, Claude Code-native live-site audit** (was a single-pass content audit):
+  - **Multi-agent concurrency execution architecture** — a new section documents running the skill on Claude Code's `Workflow` tool / subagents: **Step 0** fans out 5 parallel recon agents (PDP / discovery / trust / checkout / competitor) with `StructuredOutput` schemas → `reconPool` → parallel **6-module analysis**; background tasks; browser-class MCP (Claude in Chrome / Preview) for what static `WebFetch` can't see (console / pixel firing / sticky / mobile). Concurrency speeds it up and removes blind spots without changing data truth.
+  - **New Step 0 — live-site reconnaissance** — turns the skill from "wait for user-supplied data" into "actually go look first," pinning page-level facts with verbatim evidence before diagnosis.
+  - **New §1.6 technical-health & tracking-integrity check** — console errors / GA4-Pixel firing / Core Web Vitals / 404 / mobile-sticky. Broken tracking silently invalidates all downstream A/B + funnel data, so it ranks as a foundation-layer, highest-priority finding (a layer most content-only CRO audits miss).
+  - **New mandatory deliverables** — a **copy-rewrite table** (current → A/B), an **objection-handling table** (doubt → current handling → gap → fix), and a **quick-win vs high-impact dual-bucket** triage with wall-clock effort estimates.
+  - **A/B stop-rule discipline** — every test now carries sample-size + ≥7-14 days + 95% significance + a stop rule.
+  - **Honesty preserved** — keeps the data-credibility statement; lift figures stay ⚠️ hypotheses (no fabricated funnel numbers); adds explicit WebFetch tool-boundary disclosure.
+- Skill count unchanged at **42** (upgrade to an existing skill, not a new one).
+
+### v3.6 (2026-05-26)
+- **New `brand-strategy/serp-content-teardown/`** multi-file skill (DTC Site & Traffic chain) — deterministic (no-LLM) SERP/content reverse-engineering from local Semrush xlsx + competitor HTML. 8 scripts (`parse_serp` → `fetch_competitors` → `analyze_structure` → `classify_archetypes` → `keyword_analysis` → `backlink_analysis` → `geo_analysis` → `onpage_analysis`) + `run_all` orchestrator + shared `_config` (YAML topic-clusters / JSON brand-names).
+  - **Structure teardown**: parses Semrush `serp_urls` → ranked blog/info-article URL pool, fetches the top competitor articles (`curl` + browser UA, `html5lib` to survive Shopify void-tag body-nesting), computes per-article metrics (words, H1/H2/H3, lists, tables, JSON-LD `@type` set, author byline, dates, brand-mentions/1k, authority outlinks), classifies each into **8 article archetypes** (DEFINITION_QA / TUTORIAL_HOWTO / LISTICLE_TIPS / COMPARISON_VS / PILLAR_GUIDE / MYTH_DEBUNK / PRODUCT_MICROGUIDE / NEWS_EDITORIAL) + opening/closing patterns + cross-sample winning bands.
+  - **SEO/GEO/keyword/backlink layers**: keyword distribution + core keywords + difficulty-cliff (from `broad-match`); backlink/authority thresholds (Page AS / Ref.Domains / Backlinks) + "weak-link winners"; AI-Overview (GEO) saturation per topic + AI-cited domains + schema readiness of cited vs non-cited; on-page SEO (title/meta/H1/canonical/internal-links/SERP-features).
+  - **Output**: JSON artifacts + a per-topic content-strategy report (which archetype / word / H2 / schema / FAQ / opening-closing to use, which keywords to target, what authority is realistically needed, what GEO posture to take). Worked example under `examples/`: waterproof / stainless-steel jewelry niche (25 competitor articles).
+  - **Honest scope**: covers the ~20-30% code-side of what wins; content quality + domain age + backlinks are the other ~70-80%. Backlink data is page-level Authority Score, not domain DR. AI-Overview citation capture is sparse. Red line: `curl`-only fetch, no paid APIs, no live AI-citation probing. Pairs with `backlink-kol-extractor` (links) and `structured-data-buildout` (implements the schema this skill measures).
+- Total: **42 skills** across 10 chains. Multi-file packages: 5 (was 4).
+
+### v3.5 (2026-05-19)
+- **New `voc-tools/reddit-voc/`** multi-file skill — pre-purchase VOC mining from Reddit (complements post-purchase `trustpilot-voc-*`). Methodology:
+  - **4-dimension community discovery** — category/brand subs (D1) + lifestyle/demographic subs (D2) + problem/help subs (D3) + values/ideology subs (D4). Single-dimension findings are not credible; cross-dimension validation required.
+  - **6-class post taxonomy** with business-action mapping — Recommendation / Rant / Question / Comparison / Daily / Top-All-Time. Each class maps to a primary output (Listing copy / differentiation positioning / FAQ + IPQ / vs-matrix / content calendar / brand positioning) and a secondary output.
+  - **Reddit slang dictionary** — BIFL / YMMV / AITA / DAE / TIL / PSA / etc., grouped by VOC signal type (values / emotion intensity / moral-judgement / product-evaluation / community-platform / category-specific). Reading slang wrong = misreading user emotion and values.
+  - **3 listing+ad rewrite cases** — "7 pieces to clean" listing rewrite, "earbuds don't fall out" TikTok hook, "never scoop never clean" brand tagline. All sourced from real Reddit high-upvote threads, demonstrating *user-language > marketer-language*.
+  - **2D positioning matrix** (functional importance × satisfaction) — find the bottom-right "wants but unmet" quadrant. Includes simplified 30-min version and full 2-3-day data-driven version. Compatible with `tools/trustpilot/` `topic_modeling.py` + `sentiment.py` for auto-labeling at scale.
+  - 3 CSV templates: `community-map.csv` (8-15 subs across dimensions) / `post-analysis.csv` (30-80 post teardowns) / `insight-action-map.csv` (insight → action with P0/P1/P2 priority + owner + status).
+  - Pairs with: `/trustpilot-voc-deep` (post-purchase), `/amazon-market-research` (post-purchase), `/brand-market-scan` (pre-strategy VOC input), `/amazon-listing-copywriter` (user-language input), `/tiktok-growth` (ad-hook input).
+- Total: **41 skills** across 10 chains. Multi-file packages: 4 (was 3).
+
+### v3.4 (2026-05-06)
+- **New `outbound-prospecting/media-press-discovery/`** multi-file skill — Muckrack-anchored journalist DB pipeline. 5 scripts (`discover_journalists` / `find_articles` / `guess_emails` / `score_and_export` / `merge_partitions`) + shared `_fetcher.py` with 4 backends (`requests` / `remote-chrome` / `apify` / `html-dir`) for Cloudflare-protected pages. Multi-machine partition-merge workflow.
+- **New `tools/linktree-expander/`** — batch-enrich Linktree handles via `__NEXT_DATA__` JSON parsing. Handle-match scoring for `personal_site` + `NON_PERSONAL_HOSTS` blocklist (30+ shorteners / aggregators / docs / scheduling tools). Verified 44/45 ok on a 45-handle pilot.
+- **New `tools/contact-extractor/`** — multi-source email extraction with confidence tiering. Sources: `personal_site` `/about` `/contact` `/press` (mailto / text) + YouTube Data API v3 description + Apple Podcasts RSS owner + email pattern guess. Optional `--verify` SMTP MX probe / Hunter.io. Outputs ranked `contact_email_1..3` + `confidence` (high / medium / low / none).
+- **`tools/trustpilot/` rebuilt**: modern data-* attribute selectors (replaces 110-line sibling-XPath fallback chain that broke on Trustpilot's 2026 DOM update), desktop-UA pin (Trustpilot serves snippet-only DOM to mobile UAs — major silent failure mode), `?sort=recency` URL flag (relevance widget served snippet-only DOM for some brands), `--cutoff_date YYYY-MM-DD` arg (efficient time-bounded scrapes), `--skip_ai` mode bypasses broken `generate_report()` signature, redacted hardcoded SOCKS5 proxy creds in `config.py` (now env-var loaded).
+- Total: **40 skills** across 10 chains. Tools count: 4 (was 1).
+
+### v3.3 (2026-04-27)
+- **New entry-orchestrator skill** `dsite-seo-diagnostic` (single-file, under `brand-strategy/`) — for live-site SEO traffic-drop diagnostics + restart roadmap.
+  - **7-dimension diagnostic framework**: traffic curve (algorithm-downgrade signature) / keyword loss structure / single-point-failure risk / multilingual-Markets URL pollution / backlink quality (DS distribution + anchor text pathology) / content ROI (HCU-hit detection) / KPI body audit (process-volume vs outcome).
+  - **Algorithm-event alignment**: traffic curve auto-aligned with public Google Core / HCU / Spam Update timeline (rolling 24-month window).
+  - **Restart roadmap**: 4-phase plan (stop-the-bleeding → cleanse → content rebuild → off-site signals) anchored on the `dsite-seo-playbook` 6-step framework.
+  - **Multi-skill orchestration**: chains `xlsx` → `dsite-seo-playbook` → `trustpilot-voc-deep` / `competitors-analysis` / `backlink-kol-extractor` → `report-pdf-export`. Hides internal SKILL refs in deliverable.
+  - **Standard PDF deliverable** (A4 landscape, deep-blue header, zebra rows, page-numbered) via `report-pdf-export`.
+  - **Use cases**: traffic anomaly investigation, pre-vendor-replacement independent diagnostics, annual SEO health check, post-Core-Update impact assessment, post-migration audit, multilingual / Shopify Markets pollution audit.
+- Total: **39 skills** across 10 chains.
+
+### v3.2 (2026-04-26)
+- **New Outbound Prospecting chain (2 multi-file skill packages)** under `outbound-prospecting/`:
+  - `google-whatsapp-prospecting` — Google-dork → WhatsApp lead pipeline. 4-stage workflow (Search → Validate → Enrich → Outreach). 15+ search formula variants, 30+ countries with mobile-prefix narrowing + B2B platforms + time-zone send windows + compliance flags. Full GDPR / CASL / CCPA / UWG §7 / WhatsApp ToS compliance reference. Multi-language outreach playbook (EN/ES/PT/FR/AR). SerpAPI batch script + `wa.me` validator + lead-tracker CSV.
+  - `linkedin-prospecting` — Google + Bing + Yandex + Wayback reverse-search of LinkedIn. Post-2024 Auth Wall workarounds. 50+ decision-maker role keywords localized into 8 languages with company-size-band gating (CEO targeting only valid for ≤500 employees). Enrichment-tool comparison (Apollo / Snov / Hunter / Lusha / Wiza) with cost + accuracy + legal context. LinkedIn ToS § 8.2 + 2026 quota table + account warm-up protocol. 4-touch outreach (Connection Request → DM → Follow-up → Channel-switch) with 12 DM templates across 5 archetypes (incl. voice-note opener), reply-handling matrix, native templates in PT/ES/FR/DE/AR/JA.
+- **New format**: multi-file skill packages (SKILL.md + references/ + templates/ with Python helpers + CSV trackers), in addition to existing single-file `.md` skills.
+- Total: **38 skills** across 10 chains.
+
+### v3.1 (2026-04-14)
+- **New VOC chain (2 skills)**: `/trustpilot-voc-quick` (5-min surface scan) and `/trustpilot-voc-deep` (full pipeline with sentiment analysis, LDA topic modeling, and AI-powered insights)
+- **New tools directory**: `tools/trustpilot/` with Python toolkit for deep review analysis
+- Total: **36 skills** across 9 chains
+
+### v3.0 (2026-04-13)
+- **12 new skills**: annual-plan, budget-ops, gtm-launch, seo-playbook, sem-ads, conversion-ux, tiktok-growth, youtube-ops, influencer-marketing, user-lifecycle-ops, social-content-calendar, offline-retail-us
+- **Chart visualization**: 21 skills now auto-generate charts via AntV API (radar, bar, column, pie, waterfall, scatter, line, funnel, sankey)
+- **Unified footers**: All 36 skills now include GitHub open source link
+- Total: **34 skills** across 8 chains
+
+### v2.1 (2026-04-12)
+- Added `/brand-ab-compare` SKILL
+- Semrush local data auto-scan in Step 0
+- Data gap reporting, minimum depth constraints
+- SEO traffic model validation in Round 3
+- Auto knowledge base trigger in IMC
+
+### v2.0 (2026-04-11)
+- Real-time data collection layer added to 3 brand strategy SKILLs
+
+### v1.0 (2026-04-07)
+- Initial release: 6 brand strategy + 14 Amazon skills (20 total)
+
+---
+
+## License
+
+Licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+
+Free to use, share, and adapt with credit.
+
+## Author
+
+Created by **Alex / 黄子阳** — **WhaleBridge / 远鲸引力**
+
+- **官网 / Website** — [whalebridge.us](https://whalebridge.us)
+- **介绍 PPT / Deck** — [ckcm.us](https://ckcm.us)
+
+### Contact / 联系方式
+
+有定制化调研需求、品牌咨询、或技能使用问题，扫码加微信：
+
+<img src="wechat-qr.png" alt="WeChat QR Code" width="200">

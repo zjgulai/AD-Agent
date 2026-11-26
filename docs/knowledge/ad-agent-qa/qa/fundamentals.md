@@ -105,3 +105,27 @@ source: human+ai
 ### Q23. 这套生命周期策略和 Momcozy 广告 Agent 有什么关系？
 **A**：`[推断]`：S8 案例的「系列01 Hook素材实验（预热/测试思路）/系列02 出价策略实验/系列03 再营销人群实验」正是按阶段×实验类型设计的投放结构；Agent 做投放建议时，「产品处于哪个生命周期阶段」应是策略路由的第一维度——不同阶段北极星指标和出价方式完全不同。
 > 溯源：`cards/fundamentals/product-lifecycle-ad-strategy.md`
+
+### Q24. 各平台归因转化加起来超过真实订单，数据错了吗？
+**A**：不是错误是必然——每平台按自己归因窗口和口径认领转化，同一订单可被 Meta/Google/TikTok 同时认领。正确做法：以自有一方订单数据为分母，平台数字只用于渠道内部相对优化（哪条创意/词更好），绝不相加做跨渠道功劳分配。
+> 溯源：`cards/fundamentals/attribution-measurement.md`（CBE:attribution-measurement）
+
+### Q25. Cookie 没了要不要重做归因体系？
+**A**：不用。Google 2024-07 逆转淘汰计划、2025-04 确认维持现状、2026 年 Chrome 默认不屏蔽第三方 Cookie。正确认知是「点击级追踪从来就不完整」（ITP/ATT/跨设备缺口真实存在）——这正是需要增量测试而非重做归因的原因。任何「Cookie 将消失所以必须改 X」的策略需从前提重写。
+> 溯源：`cards/fundamentals/attribution-measurement.md`（CBE:attribution-measurement）
+
+### Q26. GA4/Google Ads 旧归因模型还在用怎么办？
+**A**：GA4 的 first-click/linear/time-decay/position-based 四规则模型 2023-11 已移除，只剩 DDA 默认+两个最终点击变体；Google Ads 同四模型 2026-07 中旬起新转化不可选、2026-09 全部强制迁 DDA。行动：盘点账户里还挂旧模型的转化操作，主动迁移而非被动等 9 月；DDA 结果在转化量低的账户不稳定，需标注。
+> 溯源：`cards/fundamentals/attribution-measurement.md`（CBE:attribution-measurement）
+
+### Q27. 怎么知道某渠道投放有没有真效果（因果）？
+**A**：增量测试（geo 实验）——地区分实验组（投放）/对照组（不投放），Lift%=(实验组转化−对照组转化)÷对照组转化×100。🔴 设计从 MDE 倒推：先定「多大效果才改变预算决定」，再算需要多少预算/时长；功效不足宁可不测——功效不足的实验比不做好（给出看似有结论的噪音）。窗口关闭后继续追踪 1-2 周。
+> 溯源：`cards/fundamentals/attribution-measurement.md`（CBE:attribution-measurement）
+
+### Q28. MMM 用什么工具？归因和 MMM 结论打架信哪个？
+**A**：开源两选——Google Meridian（贝叶斯回归、Apache-2.0、v1.7.x 有 Scenario Planner 无代码预算模拟）适合长期基建团队；Meta Robyn（频率派/ML、MIT、上手快出可执行建议）适合要快速结果的团队。两者假设必须披露，关键渠道用增量测试独立验证。归因和 MMM 打架时都不信——矛盾本身就是该安排增量测试的信号，增量结果回灌 MMM 先验做贝叶斯校准。
+> 溯源：`cards/fundamentals/attribution-measurement.md`（CBE:attribution-measurement）
+
+### Q29. 归因、增量测试、MMM 三者什么分工？
+**A**：三角测量不三选一——MMM 定战略层预算（月/季级）、归因做日常战术优化（天级，只看点击后路径）、增量测试在两者打架时做裁判（周级实验给因果）并反向校准 MMM。归因答「点击之后发生了什么」、增量答「这笔钱导致了多少本来不会发生的转化」、MMM 答「每渠道在更长周期贡献多少」。
+> 溯源：`cards/fundamentals/attribution-measurement.md`（CBE:attribution-measurement）

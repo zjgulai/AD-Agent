@@ -1,0 +1,936 @@
+{
+ "graph": "ad-ops",
+ "cluster": "s22-cbe-skills",
+ "generated": "2026-11-26",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-26"
+ },
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:amazon-sp",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:amazon-sd",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:amazon-amc",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:google-search-ads",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:google-shopping-ads",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:google-pmax",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:google-demand-gen",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:google-youtube-ads",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:google-display-remarketing",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:tiktok-spark-ads",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:tiktok-infeed-ads",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:cbe-3s-completion",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:cbe-mde",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:cbe-incremental-lift",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-amazon-ctr-cvr",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/weekly-ad-review.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-tiktok-3s-completion",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-tiktok-roas-breakeven",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-dsite-funnel-health",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-dsite-cpa-max",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-amazon-campaign-arch",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-amazon-weekly-ryg",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/weekly-ad-review.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-amazon-keyword-tiers",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/keyword-research.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-dsite-google-6c",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-dsite-meta-5c",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-dsite-tiktok-4c",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-dsite-aipl-budget",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-dsite-cold-start",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-dsite-promo-3phase",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-dsite-seo-sem",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-tiktok-content-system",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-tiktok-creator-5layer",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-tiktok-4step-adtest",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-tiktok-stage-budget",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-attribution-triangulation",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-attribution-mmm-select",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-amazon-day-checkpoints",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-amazon-budget-pct",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-amazon-listing-hard",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-diagnosis.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-amazon-neg-3cat",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-diagnosis.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-prompts-passive-billing",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-dsite-scale-20-3d",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-ab-1var-95",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-tiktok-budget-stage",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-attribution-no-sum",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-mde-first",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-dda-migration",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:cbe-amazon-launch-checkpoints",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:amazon/ad-architecture.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:cbe-dsite-coldstart-d1-30",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:cbe-dsite-cadence",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-sem-ads.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:cbe-tt-adtest-broad",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:cbe-tt-adtest-demo",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:cbe-tt-adtest-cohort",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:cbe-tt-adtest-targeted",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/tiktok-growth.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-amazon-ads-operations",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:platform-ops/amazon-ads-operations.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-amazon-keyword-listing-ops",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:platform-ops/amazon-keyword-listing-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:platform-ops/dsite-sem-ads-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-tiktok-content-ads-playbook",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:platform-ops/tiktok-content-ads-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-attribution-measurement",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:fundamentals/attribution-measurement.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ads-operations",
+   "target": "ad:playbook:cbe-amazon-campaign-arch",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ads-operations",
+   "target": "ad:playbook:cbe-amazon-weekly-ryg",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ads-operations",
+   "target": "ad:rule:cbe-amazon-day-checkpoints",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ads-operations",
+   "target": "ad:rule:cbe-amazon-budget-pct",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ads-operations",
+   "target": "ad:rule:cbe-prompts-passive-billing",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-keyword-listing-ops",
+   "target": "ad:playbook:cbe-amazon-keyword-tiers",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-keyword-listing-ops",
+   "target": "ad:rule:cbe-amazon-listing-hard",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-keyword-listing-ops",
+   "target": "ad:rule:cbe-amazon-neg-3cat",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:playbook:cbe-dsite-google-6c",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:playbook:cbe-dsite-meta-5c",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:playbook:cbe-dsite-tiktok-4c",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:playbook:cbe-dsite-aipl-budget",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:playbook:cbe-dsite-cold-start",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:playbook:cbe-dsite-promo-3phase",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:playbook:cbe-dsite-seo-sem",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:rule:cbe-dsite-scale-20-3d",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-sem-ads-playbook",
+   "target": "ad:rule:cbe-ab-1var-95",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-tiktok-content-ads-playbook",
+   "target": "ad:playbook:cbe-tiktok-content-system",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-tiktok-content-ads-playbook",
+   "target": "ad:playbook:cbe-tiktok-creator-5layer",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-tiktok-content-ads-playbook",
+   "target": "ad:playbook:cbe-tiktok-4step-adtest",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-tiktok-content-ads-playbook",
+   "target": "ad:playbook:cbe-tiktok-stage-budget",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-tiktok-content-ads-playbook",
+   "target": "ad:rule:cbe-tiktok-budget-stage",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-measurement",
+   "target": "ad:playbook:cbe-attribution-triangulation",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-measurement",
+   "target": "ad:playbook:cbe-attribution-mmm-select",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-measurement",
+   "target": "ad:rule:cbe-attribution-no-sum",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-measurement",
+   "target": "ad:rule:cbe-mde-first",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-measurement",
+   "target": "ad:rule:cbe-dda-migration",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-amazon-campaign-arch",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-amazon-weekly-ryg",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-amazon-keyword-tiers",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-dsite-google-6c",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-dsite-meta-5c",
+   "target": "ad:platform:meta",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-dsite-tiktok-4c",
+   "target": "ad:platform:tiktok",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-dsite-aipl-budget",
+   "target": "ad:platform:dtc-site",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-dsite-cold-start",
+   "target": "ad:platform:dtc-site",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-dsite-promo-3phase",
+   "target": "ad:platform:dtc-site",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-dsite-seo-sem",
+   "target": "ad:platform:dtc-site",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-tiktok-content-system",
+   "target": "ad:platform:tiktok",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-tiktok-creator-5layer",
+   "target": "ad:platform:tiktok",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-tiktok-4step-adtest",
+   "target": "ad:platform:tiktok",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:cbe-tiktok-stage-budget",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:amazon-sp",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:amazon-sd",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:amazon-amc",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:google-search-ads",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:google-shopping-ads",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:google-pmax",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:google-demand-gen",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:google-youtube-ads",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:google-display-remarketing",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:tiktok-spark-ads",
+   "target": "ad:platform:tiktok",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:tiktok-infeed-ads",
+   "target": "ad:platform:tiktok",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-amazon-day-checkpoints",
+   "target": "ad:playbook:cbe-amazon-campaign-arch",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-amazon-budget-pct",
+   "target": "ad:playbook:cbe-amazon-campaign-arch",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-prompts-passive-billing",
+   "target": "ad:playbook:cbe-amazon-campaign-arch",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-amazon-listing-hard",
+   "target": "ad:playbook:cbe-amazon-keyword-tiers",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-amazon-neg-3cat",
+   "target": "ad:playbook:cbe-amazon-keyword-tiers",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-dsite-scale-20-3d",
+   "target": "ad:playbook:cbe-dsite-cold-start",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-ab-1var-95",
+   "target": "ad:playbook:cbe-dsite-cold-start",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-tiktok-budget-stage",
+   "target": "ad:playbook:cbe-tiktok-stage-budget",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-attribution-no-sum",
+   "target": "ad:playbook:cbe-attribution-triangulation",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-mde-first",
+   "target": "ad:playbook:cbe-attribution-triangulation",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:cbe-dda-migration",
+   "target": "ad:playbook:cbe-attribution-triangulation",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:cbe-amazon-launch-checkpoints",
+   "target": "ad:playbook:cbe-amazon-campaign-arch",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:cbe-dsite-coldstart-d1-30",
+   "target": "ad:playbook:cbe-dsite-cold-start",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:cbe-dsite-cadence",
+   "target": "ad:playbook:cbe-dsite-cold-start",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:cbe-tt-adtest-broad",
+   "target": "ad:playbook:cbe-tiktok-4step-adtest",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:cbe-tt-adtest-demo",
+   "target": "ad:playbook:cbe-tiktok-4step-adtest",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:cbe-tt-adtest-cohort",
+   "target": "ad:playbook:cbe-tiktok-4step-adtest",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:cbe-tt-adtest-targeted",
+   "target": "ad:playbook:cbe-tiktok-4step-adtest",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:cbe-tt-adtest-broad",
+   "target": "ad:stage:cbe-tt-adtest-demo",
+   "ref": "tiktok-growth.md#四步测试",
+   "note": "顺序流:上一步优胜素材/人群进入下一步"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:cbe-tt-adtest-demo",
+   "target": "ad:stage:cbe-tt-adtest-cohort",
+   "ref": "tiktok-growth.md#四步测试",
+   "note": "顺序流:上一步优胜素材/人群进入下一步"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:cbe-tt-adtest-cohort",
+   "target": "ad:stage:cbe-tt-adtest-targeted",
+   "ref": "tiktok-growth.md#四步测试",
+   "note": "顺序流:上一步优胜素材/人群进入下一步"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:cbe-amazon-launch-checkpoints",
+   "target": "ad:metric:amazon-acos",
+   "ref": "operational-check"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:cbe-amazon-launch-checkpoints",
+   "target": "ad:metric:amazon-tacos",
+   "ref": "operational-check"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:cbe-dsite-coldstart-d1-30",
+   "target": "ad:metric:cpa",
+   "ref": "operational-check"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:cbe-dsite-cadence",
+   "target": "ad:metric:roas",
+   "ref": "operational-check"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:cbe-tt-adtest-broad",
+   "target": "ad:metric:cpa",
+   "ref": "operational-check"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:cbe-tt-adtest-targeted",
+   "target": "ad:metric:roas",
+   "ref": "operational-check"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:cbe-3s-completion",
+   "target": "ad:bench:cbe-tiktok-3s-completion",
+   "ref": "threshold-binding"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:ltv",
+   "target": "ad:bench:cbe-dsite-cpa-max",
+   "ref": "threshold-binding"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:ctr",
+   "target": "ad:bench:cbe-dsite-funnel-health",
+   "ref": "threshold-binding"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:cvr",
+   "target": "ad:bench:cbe-dsite-funnel-health",
+   "ref": "threshold-binding"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:roas",
+   "target": "ad:bench:cbe-dsite-funnel-health",
+   "ref": "threshold-binding"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:playbook:cbe-tiktok-content-system",
+   "target": "ad:bench:cbe-tiktok-3s-completion",
+   "ref": "hook-benchmark"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:playbook:cbe-tiktok-4step-adtest",
+   "target": "ad:bench:cbe-tiktok-roas-breakeven",
+   "ref": "roas-gate"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:adproduct:amazon-sp",
+   "target": "ad:metric:amazon-acos",
+   "ref": "ads-impact"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:adproduct:amazon-sp",
+   "target": "ad:metric:amazon-tacos",
+   "ref": "ads-impact"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:adproduct:amazon-sd",
+   "target": "ad:metric:amazon-tacos",
+   "ref": "ads-impact"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:adproduct:google-pmax",
+   "target": "ad:metric:roas",
+   "ref": "ads-impact"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:adproduct:google-shopping-ads",
+   "target": "ad:metric:cvr",
+   "ref": "ads-impact"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:adproduct:tiktok-spark-ads",
+   "target": "ad:metric:cpa",
+   "ref": "ads-impact"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:adproduct:tiktok-infeed-ads",
+   "target": "ad:metric:cpa",
+   "ref": "ads-impact"
+  },
+  {
+   "@type": "ad:alternative_to",
+   "source": "ad:adproduct:tiktok-spark-ads",
+   "target": "ad:adproduct:tiktok-infeed-ads",
+   "ref": "tiktok-growth.md#Spark对比",
+   "note": "场景互补:爆款放大vs精准转化;预算占比40-50/50-60"
+  },
+  {
+   "@type": "ad:alternative_to",
+   "source": "ad:adproduct:google-pmax",
+   "target": "ad:adproduct:google-search-ads",
+   "ref": "dsite-sem-ads.md#架构",
+   "note": "Pmax需转化数据;冷启动期Search/Shopping优先"
+  }
+ ]
+}

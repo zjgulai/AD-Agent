@@ -52,6 +52,7 @@ source: human+ai
 | [广告平台「算法自动」优化字段详解](cards/fundamentals/ad-algo-auto-fields.md) | 预算分配/智能出价/受众扩量/版位/关键词/素材组合/创意即定向/全托管各是什么逻辑？跨平台差异？何时不该放权？ | S9 |
 | [广告竞价全链路流程图（14 步）](cards/fundamentals/ad-bidding-full-chain.md) | 一次广告展示背后 14 步怎么走？eCPM/GSP/Pacing/SKAN 怎么工作？哪些配置字段影响哪个环节？ | S10 |
 | [产品不同阶段广告投放策略（8 阶段）](cards/fundamentals/product-lifecycle-ad-strategy.md) | 产品各生命周期阶段投什么目标/出价？每阶段必做实验？常见坑？ | S11 |
+| [归因与测量体系](cards/fundamentals/attribution-measurement.md) | 各平台归因转化为什么不能相加？Cookie 末日是不是谣言？GA4/Google Ads DDA 迁移？增量测试怎么设计？Meridian vs Robyn？ | S22 |
 
 ### 竞品分析
 
@@ -76,6 +77,10 @@ source: human+ai
 | [Amazon 广告打法](cards/platform-ops/amazon-ads-playbook.md) | ACoS/TACoS 分工？诊断顺序？否定词前置？SB+SP 协同？AI 广告能力？ | PO:* |
 | [达人商业合作能力与合规](cards/platform-ops/creator-commerce-compliance.md) | Partnership Ads/IG Marketplace/Shopify Collabs/YouTube Shopping？FTC 披露红线？organic 能投广告吗？ | PO:* |
 | [母婴类目跨平台增长 Overlay](cards/platform-ops/baby-maternity-growth-overlay.md) | 母婴资质三层？内容/claim 红线？跨平台上架顺序？Momcozy 案例证明什么？ | PO:* |
+| [Amazon 广告运营打法](cards/platform-ops/amazon-ads-operations.md) | Campaign 架构树？预算分配%？出价表？Day7/14/30 检查点？周复盘 RYG？Prompts 被动扣费？AMC？ | S22 |
+| [Amazon 关键词与 Listing 运营](cards/platform-ops/amazon-keyword-listing-ops.md) | T1/T2/T3 词库怎么分？否定词三类阈值？标题 75 字符等硬规则？VOC 挖词？广告反哺 Listing？ | S22 |
+| [独立站 SEM 广告打法](cards/platform-ops/dsite-sem-ads-playbook.md) | 10 平台怎么选？Google 6-Campaign 架构？AIPL 预算分配？冷启动 SOP？大促 SEM？SEO-SEM 协同？LTV→CPA？ | S22 |
+| [TikTok 内容×广告打法](cards/platform-ops/tiktok-content-ads-playbook.md) | 爆款公式/Hook/流量池？达人五层策略？四步广告测试？Spark vs In-Feed？CPA/ROAS 承受线？ | S22 |
 
 ## 按问题类型速查
 

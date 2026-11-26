@@ -93,3 +93,107 @@ source: human+ai
 ### Q20. 母婴类目跨平台上架顺序怎么定？
 **A**：can-sell（资质）→ can-claim（证据）→ can-explain（DTC proof+长评）→ can-amplify（creator route 有 disclosure+guardrail）→ can-convert（LP/PDP 答 FAQ）。高解释成本优先 DTC proof+YouTube review/TikTok sample，高搜索意图才优先 Amazon。
 > 溯源：`cards/platform-ops/baby-maternity-growth-overlay.md`（PO:scenario-baby-and-maternity-cross-platform-growth-us）
+
+### Q21. Amazon 新品广告架构怎么搭？
+**A**：SP-Auto（自动挖数据，20%）+ SP-Exact（核心出单，35%）+ SP-Broad（拓流量，20%）+ SP-ASIN（竞品定向，15%）+ SD-Retarget（再营销，10%）；Month 3+ 追加 SB-Brand 品牌词防御、SBV 视频、SD-Compete 竞品页拦截。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:amazon-ad-architecture）
+
+### Q22. Amazon 广告出价怎么定？
+**A**：Exact=建议 CPC 的 80-100%、Phrase 60-80%、Broad 50-70%、Auto 系统建议价、ASIN 定向 $0.50-1 起。14 天数据后按 ACoS 调：优→+10-20%，差→-20% 或暂停；新建 Exact 组出价=该词实际 CPC 的 110-120%。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:amazon-ad-architecture）
+
+### Q23. Amazon 每周广告复盘看什么？
+**A**：本周 vs 上周 vs 月均 KPI（ACoS/TACoS/CTR/CVR/CPC/自然单占比）→ Campaign 红绿灯（绿保持/黄调优/红降 20% 或暂停）→ STR 收割（高转化词提 Exact、烂词否定）→ 出价预算调整 → SB new-to-brand+SD 受众拆分 → Prompts 被动扣费单列 → 竞品扫描 → P0/P1/P2 清单。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:amazon-weekly-ad-review）
+
+### Q24. Amazon 广告 CTR/CVR 健康线是多少？
+**A**：Amazon 口径 CTR>0.4%（<0.3% 优化文案图）、CVR>10%（<8% 优化 Listing）、TACoS 健康带 8-15%、>25% 过度依赖广告——与 Meta 口径不同勿混用。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:amazon-weekly-ad-review）
+
+### Q25. Amazon 冷启动账户前 14 天能频繁调吗？
+**A**：不能。新像素前 100 个事件决定机器学习方向；日预算≥目标 CPA 5 倍；Day1-3 装像素预热→Day4-14 投 Traffic/Engagement 攒数据→Day15-30 切 Purchase 转化目标；扩量每次增幅≤20%、间隔≥3 天。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:dsite-sem-ads 冷启动 SOP + amazon-ad-architecture）
+
+### Q26. Prompts 广告会偷偷花钱吗？
+**A**：会。2026-03-25 起美国 SP/SB campaign 自动注册 Prompts 广告、沿用父 campaign 竞价 CPC 计费、无独立出价、文案 AI 自动生成——预算已在 AI 对话位花钱，必须纳入预算与周检（Ads Console→Reports→Prompts）。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:amazon-ad-architecture + amazon-ad-diagnosis + amazon-weekly-ad-review）
+
+### Q27. Amazon 广告 TACoS 多少算健康？
+**A**：8-15% 视阶段健康，>25% 过度依赖广告需提升自然位/品牌建设。周复盘关键判断：TACoS 降+自然单占比升=健康增长；TACoS 升+自然占比降=广告依赖加深。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:amazon-weekly-ad-review）
+
+### Q28. Amazon 周复盘调了还是不行说明什么？
+**A**：结构性问题——品牌词 CPC 持续升+搜索量不增=单渠道天花板（需品牌建设）；ACoS>盈亏平衡线持续 30 天+=结构性亏损；TACoS>25%=广告依赖。转深度诊断（市场/词库/Listing/广告四位一体 pipeline），不再周调。
+> 溯源：`cards/platform-ops/amazon-ads-operations.md`（CBE:amazon-ad-diagnosis）
+
+### Q29. Amazon 关键词怎么分层建词库？
+**A**：T1 主力词（CVR>目标稳定出单→Exact 高竞价）/ T2 锚位词（流量中等转化向好→Phrase）/ T3 长尾词（精准但量低→只进 Listing 不开精准）。筛选四维：搜索量/CPC/竞争度/转化意图。数据源优先级：SQP/OPQ（Brand Registry 一方数据）>前台扒词>第三方估算。
+> 溯源：`cards/platform-ops/amazon-keyword-listing-ops.md`（CBE:amazon-keyword-research + amazon-ad-diagnosis）
+
+### Q30. Amazon 标题最多多少字符？
+**A**：≤75 字符含空格（2026-07-27 起非媒体类目统一，旧分类目上限失效）。同词≤2 次（复数算重复）；长尾/场景词迁 Item Highlights（≤125 字符，可被搜索索引）。超限标题会被 Amazon 逐步 AI 改写。
+> 溯源：`cards/platform-ops/amazon-keyword-listing-ops.md`（CBE:amazon-keyword-research + amazon-ad-diagnosis）
+
+### Q31. Amazon 后台 Search Terms 怎么填？
+**A**：<250 字节按 UTF-8 字节算（建议≤249 留白），空格分隔不用逗号。只放标题/BP 未覆盖的同义词/长尾/多语言词；严禁品牌名（含自有）、ASIN、临时词（new/on sale）、主观词（best/cheapest）——违者 ASIN suppression+影响 Account Health。
+> 溯源：`cards/platform-ops/amazon-keyword-listing-ops.md`（CBE:amazon-keyword-research）
+
+### Q32. Amazon 五点描述有什么硬规则？
+**A**：每条 10-255 字符（200-255 不算超长勿砍）。BP1 必须是最大卖点（VOC 提及率高×满意度低的痛点）；前 3-4 词写 Benefit 非 Feature；T1 词覆盖 100%、T2 ≥70%；每条嵌一个使用场景/痛点词。
+> 溯源：`cards/platform-ops/amazon-keyword-listing-ops.md`（CBE:amazon-ad-diagnosis + amazon-listing-copywriter）
+
+### Q33. Amazon 广告数据怎么反哺 Listing？
+**A**：闭环——广告跑出高转化词→查 Listing 是否覆盖，未覆盖立即嵌入标题/BP/ST；高花费 0 转化词→查是否误导匹配，否定该词+修正文案。Listing 关键词覆盖目标：T1 100%/T2 70%+。
+> 溯源：`cards/platform-ops/amazon-keyword-listing-ops.md`（CBE:amazon-ad-diagnosis）
+
+### Q34. Amazon 否定词阈值和分类怎么定？
+**A**：运营期三类——属性不符词/用途不符词/品牌不符词（Negative Exact/Phrase 分治）。阈值：花费>2×目标 CPA 且 0 转化→Negative Exact；CTR<0.2% 且曝光>1000→查匹配度；需 ≥20-30 次点击数据量再判。投放前三层法见 amazon-ads-playbook 卡。
+> 溯源：`cards/platform-ops/amazon-keyword-listing-ops.md`（CBE:amazon-keyword-research + amazon-ad-diagnosis）
+
+### Q35. 独立站投广告先选哪个平台？
+**A**：按产品类型——视觉型→Meta/Pinterest/TikTok、功能型→Google Search/YouTube、高客单→Google Search、标品→Google Shopping、小众→Meta/TikTok/Reddit、日本→LINE 必投。按预算：$1-3k/月单平台集中、$3-10k 主70%+辅30%、$10k+ 多平台矩阵。
+> 溯源：`cards/platform-ops/dsite-sem-ads-playbook.md`（CBE:dsite-sem-ads）
+
+### Q36. Google Ads 新账户怎么搭架构？
+**A**：6 Campaign——Brand Search（品牌防御）、Non-Brand Search（品类/问题/竞品词三 Ad Group）、Shopping（Best Sellers/New/Sale 分组）、Performance Max（有转化数据后上）、Display Remarketing（弃购1-3d/浏览4-14d/老客15-30d）、YouTube（认知+考虑）。Meta 侧对应 5 Campaign 按 TOF/MOF/BOF/Retention/Testing 分层。
+> 溯源：`cards/platform-ops/dsite-sem-ads-playbook.md`（CBE:dsite-sem-ads）
+
+### Q37. AIPL 漏斗预算怎么分？新品牌和成熟期差别？
+**A**：新品牌 A15-20%/I20-25%/P45-55%/L5-10%（P 是转化主战场）；冷启动 M1-3 A/I 各 25% 向 P 倾斜（预算$3-10k/月），成熟期 M9+ P 升至 55%、L 升至 15%（$30k+）。Google 广告类型优先级：Search>Shopping>Display>Video>DemandGen>Pmax。
+> 溯源：`cards/platform-ops/dsite-sem-ads-playbook.md`（CBE:dsite-sem-ads）
+
+### Q38. 新广告账户学习期前 14 天注意什么？
+**A**：Day1-3 装像素全事件预热；Day4-14 投 Traffic/Engagement 攒 LPV/ATC（先优化 ATC 不切 Purchase）；日预算≥目标 CPA 5 倍；前 14 天不频繁调整；新像素前 100 事件定学习方向；Day31+ 扩量每次≤20%、间隔≥3 天。
+> 溯源：`cards/platform-ops/dsite-sem-ads-playbook.md`（CBE:dsite-sem-ads）
+
+### Q39. 大促 SEM 怎么打？
+**A**：T-4 周预热（策划/预算/素材/受众预建/素材测试/竞品情报/落地页/库存）；大促期 Brand Search 40-50%+Shopping 30-40%+Pmax 10-15%，出价+15-30%；实时监控销售额/CVR/CPA/库存/TTFB/竞品并配触发器（品牌词激增>200% 追加预算、素材 CTR>均值2倍追加、网站 503 停全部广告）；T+1 归档再营销、T+3 预算恢复。
+> 溯源：`cards/platform-ops/dsite-sem-ads-playbook.md`（CBE:dsite-sem-ads）
+
+### Q40. SEM 和 SEO 怎么协同？
+**A**：双向数据赋能（月度交叉：SEM 高转化词优先 SEO 覆盖、SEO 高曝光低点击词 SEM 补位）+SERP 双重占位（SEO 1-3 名降/停 SEM、10+ 名 SEM 补位、品牌词始终投防截流）+PMF 验证链（SEM 验需求→验产品→验受众→验规模→SEO 长期布局）。统一 KPI=搜索渠道总利润，避免内部竞价和资源浪费。
+> 溯源：`cards/platform-ops/dsite-sem-ads-playbook.md`（CBE:dsite-sem-ads）
+
+### Q41. LTV 口径下 CPA 承受线怎么算？
+**A**：最大可接受 CPA=LTV×目标利润率；LTV=首购 AOV×(1+复购率×平均复购次数)。例 AOV$60、复购率30%×2次→LTV$96、利润率40%→CPA 上限 $38.4。预算规划用 LTV 口径，日常优化用 ROAS 口径。
+> 溯源：`cards/platform-ops/dsite-sem-ads-playbook.md`（CBE:dsite-sem-ads）
+
+### Q42. TikTok 爆款视频怎么批量产？
+**A**：六叙事公式选 2-3 主力（F1痛点/F2惊喜/F3对比/F4测评/F5生活方式/F6互动）+六类 Hook（痛点共鸣/结果前置/争议/身份认同/FOMO/情绪触发；3秒完播率合格>40%/良好>55%/优秀>70%，每视频备3版Spark Ads A/B）+流量池递进（L1完播>30%→L2互动>5%→L3互动>8%分享>2%→L4爆款100K+）+70/30 内容矩阵（70%开箱/教程/测评/对比，30%生活方式/热点/互动）。
+> 溯源：`cards/platform-ops/tiktok-content-ads-playbook.md`（CBE:tiktok-growth）
+
+### Q43. TikTok 达人和广告怎么配合放大？
+**A**：五层策略——L1蓄水头部100K+ 20%/L2破圈中腰部10K-100K 30%/L3种草垂直达人 20%/L4转化带货达人 20%/L5投流Spark Ads放大 10%；启动顺序 L2/L3→L4→L1→L5。阶段预算：Launch 达人70%+广告30%（$20-50/天）→Growth 50/50（$100-500/天）→Scale 达人40%+广告60%（$500+/天）。达人 SOP：筛选→外联→协商→寄样→24h 审核→48h 跟踪→周复盘。
+> 溯源：`cards/platform-ops/tiktok-content-ads-playbook.md`（CBE:tiktok-growth）
+
+### Q44. TikTok 广告测试四步法是什么？
+**A**：Broad Reach（宽泛受众仅限国别+年龄+性别，5-10条素材 $20-30/条/天 3-5天，CPA>目标2倍淘汰）→Demographic（基于Step1转化画像细化兴趣标签，优胜3-5条 $30-50/组）→Cohort（自定义受众/购买Lookalike，$50-100/组 5-7天）→Targeted放量（最佳人群组合，每次加码≤20%，每周新素材2-3条防疲劳）。全程以 Complete Payment 为优化目标。
+> 溯源：`cards/platform-ops/tiktok-content-ads-playbook.md`（CBE:tiktok-growth）
+
+### Q45. TikTok Spark Ads 和信息流广告怎么选？
+**A**：Spark Ads 加热已有达人/自有内容——原生真实、互动归原视频、CPM 通常更低，适合爆款放大，建议占广告预算 40-50%；In-Feed Ads 全新创建素材——可更商业化、互动归广告、CPM 较高，适合精准转化，占 50-60%。
+> 溯源：`cards/platform-ops/tiktok-content-ads-playbook.md`（CBE:tiktok-growth）
+
+### Q46. TikTok 广告 CPA/ROAS 承受线怎么算？
+**A**：最大可承受 CPA=最低售价÷单位利润（最低售价=售价−平台佣金−物流成本，单位利润=最低售价−产品成本−包装成本）；最低 ROAS=售价÷单位利润；盈亏平衡 ROAS=最低 ROAS+0.2~0.5 安全边际（保守+0.5/均衡+0.3/激进+0.2）。例售价$30→CPA上限约$1.78、最低ROAS≈2.6、盈亏平衡2.8-3.1。
+> 溯源：`cards/platform-ops/tiktok-content-ads-playbook.md`（CBE:tiktok-growth）
