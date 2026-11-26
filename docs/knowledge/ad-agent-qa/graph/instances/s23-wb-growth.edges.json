@@ -1,0 +1,720 @@
+{
+ "graph": "ad-ops",
+ "cluster": "s23-wb-growth",
+ "generated": "2026-11-26",
+ "coverage_notes": "S23 workbuddy-expert-cross-border-growth蒸馏:listing语义化打造(理论+八步)+AI评分8维+评论VOC6类+ads-strategist角色/铁律。排除:RPA/MCP工具管道、sellersprite模板、tactical选品信号(用户不收)、fastmoss模板。概念层节点type=KnowledgeAsset(kind=algorithm-concept/listing-field)——schema无Concept类,用KnowledgeAsset承载。",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-26"
+ },
+ "nodes": [
+  {
+   "@id": "ad:src:wb-growth",
+   "@type": "ad:SourceDoc",
+   "label": "workbuddy-expert-cross-border-growth",
+   "props": {
+    "repo": "github.com/liangdabiao/workbuddy-expert-cross-border-growth",
+    "license": "无LICENSE(用户确认为内部知识库使用)",
+    "desc": "CodeBuddy插件16skill+5agent;本shard蒸馏listing-builder/alexa-optimizer/review-analysis/ads-strategist;原文存档raw/s23-wb-growth/"
+   },
+   "src": [
+    "raw/s23-wb-growth/README.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:cosmo",
+   "@type": "ad:KnowledgeAsset",
+   "label": "COSMO 电商常识知识系统",
+   "props": {
+    "kind": "algorithm-concept",
+    "desc": "Amazon Science公开:平台理解商品常识/用户任务/需求关系;Listing从词覆盖→语义覆盖的理论底座",
+    "as_of": "2026-11"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#COSMO"
+   ]
+  },
+  {
+   "@id": "ad:concept:alexa-for-shopping",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Alexa for Shopping / Rufus 对话式购物",
+   "props": {
+    "kind": "algorithm-concept",
+    "boundary": "非后台公布评分规则;代表自然语言购物趋势",
+    "trend": "短词搜索→完整自然语言问题"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#Alexa"
+   ]
+  },
+  {
+   "@id": "ad:field:item-highlights",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Item Highlights 字段",
+   "props": {
+    "kind": "listing-field",
+    "limit": "≤125字符",
+    "coverage": "材料/用途/场景/兼容/差异点/人群尺寸≥5项",
+    "as_of": "2026新字段"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#维度3"
+   ]
+  },
+  {
+   "@id": "ad:field:title-75char",
+   "@type": "ad:KnowledgeAsset",
+   "label": "标题75字符新规",
+   "props": {
+    "kind": "platform-policy",
+    "as_of": "2026-07-27起美国站非媒体类",
+    "transition": "至2026-09-30过渡期;之后超75字符最多5分"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#过渡期"
+   ]
+  },
+  {
+   "@id": "ad:playbook:wb-listing-8step",
+   "@type": "ad:Playbook",
+   "label": "Listing 八步工作流",
+   "props": {
+    "covers": "三库(关键词分层/用户问题/卖点证据)→五件(标题3版/五点决策链/描述A+7段式/ST差集/QA答案型)→四校验",
+    "iron_rule": "禁止跳过三库直接让AI写"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#八步"
+   ]
+  },
+  {
+   "@id": "ad:playbook:wb-listing-score-8dim",
+   "@type": "ad:Playbook",
+   "label": "Listing AI 8维评分体系",
+   "props": {
+    "dims": "买家问题/标题/ItemHighlights/五点/A+/Q&A评论/后台属性/关键词Prompts",
+    "scale": "8×0-10→100制;85+优秀/70+良好/55+需优化/40+需改进/<40高风险"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#总则"
+   ]
+  },
+  {
+   "@id": "ad:playbook:wb-review-voc-6cat",
+   "@type": "ad:Playbook",
+   "label": "差评6类痛点分析",
+   "props": {
+    "covers": "1-3星差评→6类归类→严重度分级→根源方向→三向输出(产品/客服/Listing)",
+    "cats": "结构组装/电子模块/设计缺陷/外观材质/描述不符/服务物流"
+   },
+   "src": [
+    "card:platform-ops/amazon-review-voc-ops.md#分类"
+   ]
+  },
+  {
+   "@id": "ad:rule:wb-na-neutral-score",
+   "@type": "ad:Rule",
+   "label": "N/A字段中性分规则",
+   "props": {
+    "type": "scoring",
+    "rule": "未提供字段按5/10中性计;不假设最差;不触发红线;行动清单提示核实",
+    "reason": "旧规则把未提供等同严重缺陷会失真"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#N/A"
+   ]
+  },
+  {
+   "@id": "ad:rule:wb-market-anchor",
+   "@type": "ad:Rule",
+   "label": "市场锚定评分原则",
+   "props": {
+    "type": "scoring",
+    "rule": "4.5★+≥10k评论→维度6得9-10;BSR Top1000/子类Top10→+3;Amazon'sChoice→+3;<4.0★或<10评论→不得进良好",
+    "reason": "避免头部品与差品同分"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#市场锚定"
+   ]
+  },
+  {
+   "@id": "ad:rule:wb-bullet-redlines",
+   "@type": "ad:Rule",
+   "label": "五点描述红线",
+   "props": {
+    "type": "policy",
+    "rules": "禁空话/必须有边界说明(第5条)/禁emoji·特殊字符·竞品品牌名=政策违规必扣分",
+    "boundary_examples": "转换插头注明非电压转换器;宠物水杯注明容量适用犬型"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#维度4"
+   ]
+  },
+  {
+   "@id": "ad:rule:wb-aplus-no-competitor",
+   "@type": "ad:Rule",
+   "label": "A+禁列竞品名",
+   "props": {
+    "type": "policy",
+    "rule": "不得直接列竞品ASIN/品牌名做对比;只能用vs leading competitor",
+    "reason": "亚马逊政策违规"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#维度5"
+   ]
+  },
+  {
+   "@id": "ad:rule:wb-keywords-layered",
+   "@type": "ad:Rule",
+   "label": "关键词分层规则",
+   "props": {
+    "type": "listing",
+    "mapping": "核心词→标题/场景词→ItemHighlights/痛点词→五点/长尾词→A+Q&A后台/属性词→后台字段;ST只放前台未覆盖有索引价值词"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#八步"
+   ]
+  },
+  {
+   "@id": "ad:rule:wb-data-mcp-first",
+   "@type": "ad:Rule",
+   "label": "数据源MCP优先",
+   "props": {
+    "type": "data-source",
+    "rule": "关键词/竞品详情/评论走MCP工具;浏览器只补MCP无覆盖(Reddit/QA板块/官网/认证);MCP失败标DATA_MISSING禁用浏览器凑数",
+    "reason": "Amazon反爬使简单HTTP只返回footer"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#数据来源"
+   ]
+  },
+  {
+   "@id": "ad:rule:wb-ads-iron-rules",
+   "@type": "ad:Rule",
+   "label": "广告策略师铁律",
+   "props": {
+    "type": "agent-conduct",
+    "rules": "无amazon-analyse历史数据不开新计划/竞品词必须设目标ACOS不为打曝光无限投/复盘每周一次且落到具体行动(哪词降价哪Listing改文案)",
+    "source_agent": "ads-strategist"
+   },
+   "src": [
+    "raw/s23-wb-growth/agents/ads-strategist.md"
+   ]
+  },
+  {
+   "@id": "ad:role:wb-ads-strategist",
+   "@type": "ad:Role",
+   "label": "广告策略师(谷精算)",
+   "props": {
+    "scope": "SP/SB/SD结构/关键词出价/ACOS控制/广告报表复盘",
+    "input": "Listing+目标ACOS+月预算+可接受亏损期",
+    "output": "结构化广告计划+周维度复盘模板",
+    "maxTurns": 80
+   },
+   "src": [
+    "raw/s23-wb-growth/agents/ads-strategist.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:wb-listing-score",
+   "@type": "ad:Benchmark",
+   "label": "Listing AI评分等级锚点",
+   "props": {
+    "excellent": "85-100",
+    "good": "70-84",
+    "optimize": "55-69",
+    "improve": "40-54",
+    "risk": "<40",
+    "revision": "2026-08-05 v2修订"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#等级锚点"
+   ]
+  },
+  {
+   "@id": "ad:bench:wb-dim6-review-anchor",
+   "@type": "ad:Benchmark",
+   "label": "评论维度市场锚点",
+   "props": {
+    "top": "4.5★+≥10k评论→9-10分",
+    "mid": "4.3★+≥500→7-8",
+    "low": "4.0★+≥50→5-6",
+    "floor": "<4.0★或<10评论→3-4以下"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md#维度6"
+   ]
+  },
+  {
+   "@id": "ad:stage:wb-listing-prepare",
+   "@type": "ad:WorkflowStage",
+   "label": "Listing准备阶段(三库)",
+   "props": {
+    "steps": "关键词分层词库→用户问题库→卖点证据库",
+    "output": "三份结构化数据"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#八步"
+   ]
+  },
+  {
+   "@id": "ad:stage:wb-listing-generate",
+   "@type": "ad:WorkflowStage",
+   "label": "Listing生成阶段(五件)",
+   "props": {
+    "steps": "标题3版→五点决策链→描述A+7段式→ST差集→QA答案型"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#八步"
+   ]
+  },
+  {
+   "@id": "ad:stage:wb-listing-validate",
+   "@type": "ad:WorkflowStage",
+   "label": "Listing校验阶段(四项)",
+   "props": {
+    "checks": "合规/关键词覆盖/语义覆盖/转化逻辑"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md#八步"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-amazon-listing-semantic-ops",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Listing语义化打造卡",
+   "props": {
+    "path": "cards/platform-ops/amazon-listing-semantic-ops.md",
+    "status": "review"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-semantic-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Listing AI评分细则卡",
+   "props": {
+    "path": "cards/platform-ops/amazon-listing-ai-score-rubric.md",
+    "status": "review"
+   },
+   "src": [
+    "card:platform-ops/amazon-listing-ai-score-rubric.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-amazon-review-voc-ops",
+   "@type": "ad:KnowledgeAsset",
+   "label": "评论洞察VOC卡",
+   "props": {
+    "path": "cards/platform-ops/amazon-review-voc-ops.md",
+    "status": "review"
+   },
+   "src": [
+    "card:platform-ops/amazon-review-voc-ops.md"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:cosmo",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-builder/reference/cosmo-alexa-algorithm.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:alexa-for-shopping",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/background.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:field:item-highlights",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:field:title-75char",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:wb-listing-8step",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-builder/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:wb-listing-score-8dim",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:wb-review-voc-6cat",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/review-analysis/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:wb-na-neutral-score",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:wb-market-anchor",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:wb-bullet-redlines",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:wb-aplus-no-competitor",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:wb-keywords-layered",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-builder/workflow/step-1-keyword-library.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:wb-data-mcp-first",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-builder/reference/mcp-mandatory-protocol.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:wb-ads-iron-rules",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/agents/ads-strategist.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:role:wb-ads-strategist",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/agents/ads-strategist.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:wb-listing-score",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:wb-dim6-review-anchor",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-alexa-optimizer/references/check-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:wb-listing-prepare",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-builder/workflow/"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:wb-listing-generate",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-builder/workflow/"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:wb-listing-validate",
+   "target": "ad:src:wb-growth",
+   "ref": "workbuddy-expert-cross-border-growth:s23-wb-growth/skills/amazon-listing-builder/workflow/"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-amazon-listing-semantic-ops",
+   "target": "ad:src:wb-growth",
+   "ref": "card:platform-ops/amazon-listing-semantic-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:src:wb-growth",
+   "ref": "card:platform-ops/amazon-listing-ai-score-rubric.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-amazon-review-voc-ops",
+   "target": "ad:src:wb-growth",
+   "ref": "card:platform-ops/amazon-review-voc-ops.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-semantic-ops",
+   "target": "ad:playbook:wb-listing-8step",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-semantic-ops",
+   "target": "ad:concept:cosmo",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-semantic-ops",
+   "target": "ad:concept:alexa-for-shopping",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-semantic-ops",
+   "target": "ad:rule:wb-keywords-layered",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-semantic-ops",
+   "target": "ad:rule:wb-data-mcp-first",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:bench:wb-listing-score",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:bench:wb-dim6-review-anchor",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:rule:wb-na-neutral-score",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:rule:wb-market-anchor",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:rule:wb-bullet-redlines",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:rule:wb-aplus-no-competitor",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:field:item-highlights",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-listing-ai-score-rubric",
+   "target": "ad:field:title-75char",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-review-voc-ops",
+   "target": "ad:playbook:wb-review-voc-6cat",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:wb-listing-8step",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:wb-listing-score-8dim",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:wb-review-voc-6cat",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:field:item-highlights",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:field:title-75char",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:concept:cosmo",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:concept:alexa-for-shopping",
+   "target": "ad:platform:amazon",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:wb-na-neutral-score",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:wb-market-anchor",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:wb-bullet-redlines",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:wb-aplus-no-competitor",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:wb-keywords-layered",
+   "target": "ad:playbook:wb-listing-8step",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:wb-data-mcp-first",
+   "target": "ad:playbook:wb-listing-8step",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:field:item-highlights",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:field:title-75char",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:wb-listing-prepare",
+   "target": "ad:playbook:wb-listing-8step",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:wb-listing-generate",
+   "target": "ad:playbook:wb-listing-8step",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:wb-listing-validate",
+   "target": "ad:playbook:wb-listing-8step",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:wb-listing-prepare",
+   "target": "ad:stage:wb-listing-generate",
+   "ref": "8step-flow"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:wb-listing-generate",
+   "target": "ad:stage:wb-listing-validate",
+   "ref": "8step-flow"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:wb-listing-validate",
+   "target": "ad:metric:amazon-acos",
+   "ref": "post-listing-impact"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:playbook:wb-listing-score-8dim",
+   "target": "ad:bench:wb-listing-score",
+   "ref": "scoring-anchor"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:playbook:wb-review-voc-6cat",
+   "target": "ad:bench:wb-dim6-review-anchor",
+   "ref": "review-signal-source"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:role:wb-ads-strategist",
+   "target": "ad:playbook:cbe-amazon-campaign-arch",
+   "ref": "role-playbook-link"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:role:wb-ads-strategist",
+   "target": "ad:playbook:wb-listing-8step",
+   "ref": "listing-input-dependency"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:wb-ads-iron-rules",
+   "target": "ad:role:wb-ads-strategist",
+   "ref": "agent-conduct"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:wb-review-voc-6cat",
+   "target": "ad:playbook:wb-listing-score-8dim",
+   "ref": "voc-feeds-dim6",
+   "note": "差评高频词是维度6评分与五点边界说明的数据源"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:wb-review-voc-6cat",
+   "target": "ad:stage:wb-listing-generate",
+   "ref": "voc-feeds-qa",
+   "note": "差评高频问题→QA必答清单"
+  }
+ ]
+}

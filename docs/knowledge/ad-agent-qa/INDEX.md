@@ -81,6 +81,9 @@ source: human+ai
 | [Amazon 关键词与 Listing 运营](cards/platform-ops/amazon-keyword-listing-ops.md) | T1/T2/T3 词库怎么分？否定词三类阈值？标题 75 字符等硬规则？VOC 挖词？广告反哺 Listing？ | S22 |
 | [独立站 SEM 广告打法](cards/platform-ops/dsite-sem-ads-playbook.md) | 10 平台怎么选？Google 6-Campaign 架构？AIPL 预算分配？冷启动 SOP？大促 SEM？SEO-SEM 协同？LTV→CPA？ | S22 |
 | [TikTok 内容×广告打法](cards/platform-ops/tiktok-content-ads-playbook.md) | 爆款公式/Hook/流量池？达人五层策略？四步广告测试？Spark vs In-Feed？CPA/ROAS 承受线？ | S22 |
+| [Amazon Listing 语义化打造](cards/platform-ops/amazon-listing-semantic-ops.md) | COSMO/Alexa 对 Listing 意味着什么？八步工作流？五点决策链？ST/QA 怎么写？数据从哪抓？ | S23 |
+| [Amazon Listing AI 评分细则](cards/platform-ops/amazon-listing-ai-score-rubric.md) | Listing 适不适合 AI 推荐？8 维怎么打分？75字符/Item Highlights 新规过渡期？N/A 怎么处理？ | S23 |
+| [Amazon 评论洞察 VOC](cards/platform-ops/amazon-review-voc-ops.md) | 差评怎么分类归因？6 类痛点+严重度？VOC 怎么反哺 Listing/广告/QA？ | S23 |
 
 ## 按问题类型速查
 

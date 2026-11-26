@@ -4,7 +4,7 @@ doc_type: knowledge
 module: ad-agent-qa
 topic: review-precheck
 status: review
-created: 2026-11-26
+created: 2026-11-27
 owner: self
 source: ai
 ---
@@ -14,7 +14,7 @@ source: ai
 > 由 `src/kb_audit.py` 生成——REVIEW.md 人工验收前的机器过滤层。
 > FAIL=结构性问题必修；WARN=需人眼判断；INFO=提示。
 
-**统计**：30 卡 / 7 QA 文件 / 164 Q 条目 / 382 链接检查
+**统计**：33 卡 / 7 QA 文件 / 176 Q 条目 / 412 链接检查
 
 **结果**：FAIL 0 · WARN 0 · INFO 4
 

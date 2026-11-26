@@ -197,3 +197,51 @@ source: human+ai
 ### Q46. TikTok 广告 CPA/ROAS 承受线怎么算？
 **A**：最大可承受 CPA=最低售价÷单位利润（最低售价=售价−平台佣金−物流成本，单位利润=最低售价−产品成本−包装成本）；最低 ROAS=售价÷单位利润；盈亏平衡 ROAS=最低 ROAS+0.2~0.5 安全边际（保守+0.5/均衡+0.3/激进+0.2）。例售价$30→CPA上限约$1.78、最低ROAS≈2.6、盈亏平衡2.8-3.1。
 > 溯源：`cards/platform-ops/tiktok-content-ads-playbook.md`（CBE:tiktok-growth）
+
+### Q47. COSMO 算法对 Amazon Listing 有什么影响？
+**A**：COSMO 是 Amazon Science 公开的电商常识知识系统——平台从「匹配商品文本」升级为「理解商品常识+用户任务+需求关系」。Listing 要从词覆盖升级为语义覆盖：讲清产品-场景-属性-问题-证据的关系，不是埋更多词。
+> 溯源：`cards/platform-ops/amazon-listing-semantic-ops.md`（WB:amazon-listing-builder）
+
+### Q48. Alexa/Rufus 时代 Listing 要怎么变？
+**A**：四个转变——关键词覆盖→语义覆盖（每词有对应语义模块）、产品名→用户任务（列 5 个任务全覆盖）、卖点声明→证据支撑（UV resistant 要证明为什么）、短词→自然语言问题（QA 板块权重提升、A+ 做场景语义模块）。
+> 溯源：`cards/platform-ops/amazon-listing-semantic-ops.md`（WB:amazon-listing-builder）
+
+### Q49. Amazon Listing 八步工作流是什么？
+**A**：准备三库（1关键词分层词库/2用户问题库/3卖点证据库）→生成五件（4标题3版/5五点决策链/6描述A+7段式/7 ST差集补充/8 QA答案型）→校验四项（合规/关键词覆盖/语义覆盖/转化逻辑）。铁律：禁止跳过三库直接让 AI 写——没有词库和证据库 AI 只会写漂亮废话。
+> 溯源：`cards/platform-ops/amazon-listing-semantic-ops.md`（WB:amazon-listing-builder）
+
+### Q50. 五点描述怎么写才不是卖点罗列？
+**A**：按决策链写——每点对应一个用户疑虑+一个核心卖点（用户会问什么→我们怎么回答），建议结构=用途/场景/功能/材质安全/边界（第5条边界最重要）。禁空话（high quality/easy to use）；红线：emoji/特殊字符/竞品品牌名=政策违规必扣分。
+> 溯源：`cards/platform-ops/amazon-listing-semantic-ops.md` + `cards/platform-ops/amazon-listing-ai-score-rubric.md`（WB:amazon-listing-builder + alexa-optimizer）
+
+### Q51. Search Terms 该填什么？
+**A**：只放前台（标题/五点/描述/A+/QA）未覆盖但有索引价值的词——与词库和标题做差集。不是垃圾桶也不是重复堆砌；机械规则（<250字节等）见 amazon-keyword-listing-ops 卡。
+> 溯源：`cards/platform-ops/amazon-listing-semantic-ops.md`（WB:amazon-listing-builder）
+
+### Q52. Listing 数据该从哪抓才可信？
+**A**：MCP 工具优先——关键词量/竞品详情/评论走 sellersprite 类 MCP（keyword_miner/asin_detail/review）；浏览器只补 MCP 无覆盖的数据（Reddit/QA板块/官网/认证）。Amazon 反爬会让简单 HTTP 只返回 footer；MCP 失败标 DATA_MISSING，禁止用浏览器凑 Amazon 数据。
+> 溯源：`cards/platform-ops/amazon-listing-semantic-ops.md`（WB:amazon-listing-builder 铁律0）
+
+### Q53. Listing 的 AI 评分怎么打？
+**A**：8 维×0-10 分（买家问题清单/标题/Item Highlights/五点/A+/Q&A评论/后台属性/关键词Prompts）→换算 100 制。等级：85+优秀/70+良好/55+需优化/40+需改进/<40 高风险。N/A 字段（A+/后台 ST/Prompts 未提供）按 5 分中性计入，不触发红线。
+> 溯源：`cards/platform-ops/amazon-listing-ai-score-rubric.md`（WB:amazon-listing-alexa-optimizer）
+
+### Q54. 标题 75 字符新规过渡期怎么评分？
+**A**：2026-07-27 起美国站非媒体类目标题≤75字符。过渡期（至 2026-09-30）：75-150 字符但产品身份清晰给 4-5 分、Item Highlights 未填给 4 分；09-30 后恢复严格——超 75 字符最多 5 分。
+> 溯源：`cards/platform-ops/amazon-listing-ai-score-rubric.md`（WB:amazon-listing-alexa-optimizer）
+
+### Q55. Item Highlights 是什么字段？
+**A**：2026 新字段 ≤125 字符，覆盖材料/用途/场景/兼容/差异点/人群尺寸 ≥5 项——比标题更适合放结构化卖点，AI 可读性高；未填过渡期给 4 分。
+> 溯源：`cards/platform-ops/amazon-listing-ai-score-rubric.md`（WB:amazon-listing-alexa-optimizer）
+
+### Q56. 五点描述评分红线是什么？
+**A**：全是形容词空话/无边界说明/重复标题/含 emoji·特殊字符·竞品品牌名（政策违规必扣分）。第 5 条应是「注意事项和边界」——评分细则认为最重要；边界信息示例：转换插头注明不是电压转换器、宠物水杯注明容量和适用犬型。
+> 溯源：`cards/platform-ops/amazon-listing-ai-score-rubric.md`（WB:amazon-listing-alexa-optimizer）
+
+### Q57. Amazon 差评怎么分类归因？
+**A**：6 大类——结构/组装、电子模块、设计/功能缺陷、外观/材质、描述不符、服务/物流（v7.0 新增服务维度，含收到二手品/配件缺失等细分）。每类按高/中/低严重度分级：高=影响核心功能或安全隐患、中=影响体验、低=外观细节。
+> 溯源：`cards/platform-ops/amazon-review-voc-ops.md`（WB:review-analysis）
+
+### Q58. VOC 评论洞察怎么反哺 Listing 和广告？
+**A**：三向闭环——高频负面词→五点「边界说明」补强+页面说明（评分维度6红线）；「描述不符」差评→文案/图片纠偏；差评高频问题→QA 必答清单；高频正面词→强化进 Listing。广告侧：差评暴露的真实痛点=素材「诚实边界」，承诺不能超出产品实际能力。
+> 溯源：`cards/platform-ops/amazon-review-voc-ops.md`（WB:review-analysis）

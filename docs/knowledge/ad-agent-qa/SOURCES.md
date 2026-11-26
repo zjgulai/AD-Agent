@@ -102,3 +102,10 @@ source: human+ai
 - **S5**：`docs +fetch` 全文 markdown，含内嵌表格。
 
 > 源文档更新后：重跑对应 raw 快照 → diff → 增量重蒸馏受影响卡片。
+
+## 第八批源（workbuddy-expert-cross-border-growth 蒸馏，2026-11-26 追加）
+
+- 来源：`github.com/liangdabiao/workbuddy-expert-cross-border-growth`（CodeBuddy 插件，16 skill + 5 agent，**无 LICENSE——用户确认为内部知识库使用并授权原文存档**）。
+- **原文已完整复制保存**至 `raw/s23-wb-growth/`（agents/ + amazon-listing-builder/ + amazon-listing-alexa-optimizer/ + review-analysis/ + sellersprite-amazon-research/ + README/settings，89 文件 740K）。
+- **蒸馏边界**：只收知识密度高的 4 块——listing-builder（COSMO/Alexa 理论+八步工作流）、alexa-optimizer（8 维评分细则）、review-analysis（6 类痛点 VOC）、agents/ads-strategist（铁律进图谱）。**排除**：全部 RPA/MCP 工具管道 skill（sorftime/sellersprite/fastmoss/keyword/product/category-research/amazon-analyse/sif/exa/xiyou/simple-review-analyzer）、sellersprite comprehensive 模板（无增量知识）、tactical 选品信号 ×18（用户明确不收）、fastmoss report 模板。
+- 蒸馏产出：`cards/platform-ops/amazon-listing-semantic-ops.md`、`amazon-listing-ai-score-rubric.md`、`amazon-review-voc-ops.md` + `qa/platform-ops.md` Q47-58 + `graph/instances/s23-wb-growth.*`。
