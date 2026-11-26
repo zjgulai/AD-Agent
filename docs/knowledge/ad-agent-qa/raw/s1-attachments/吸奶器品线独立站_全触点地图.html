@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吸奶器品线独立站 · 全触点地图</title>
+<style>
+  :root {
+    --bg:#fafafa; --surface:#fff; --raised:#f5f5f5; --muted:#f0f0f0;
+    --text1:#1a1a1a; --text2:#4a4a4a; --text3:#888; --text4:#aaa;
+    --border:#e0e0e0; --shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 12px rgba(0,0,0,0.04);
+    --c1:#2563eb;--c2:#dc2626;--c3:#16a34a;--c4:#7c3aed;--c5:#ea580c;--c6:#0891b2;--c7:#db2777;
+    --r:6px;--r2:10px;--r3:12px;
+  }
+  @media (prefers-color-scheme:dark) {
+    :root { --bg:#0f0f0f;--surface:#1a1a1a;--raised:#222;--muted:#1e1e1e;
+      --text1:#f0f0f0;--text2:#c0c0c0;--text3:#888;--text4:#666;--border:#333; }
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text1);line-height:1.6;max-width:1400px;margin:0 auto;padding:32px 20px}
+  h1{font-size:30px;font-weight:700;margin-bottom:6px}
+  .lead{color:var(--text3);font-size:15px;margin-bottom:20px}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+  .meta span{font-size:12px;padding:4px 12px;border-radius:20px;background:var(--muted);border:1px solid var(--border);color:var(--text2)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:20px 24px;margin-bottom:36px}
+  .toc h3{font-size:14px;margin-bottom:12px;color:var(--text2)}
+  .toc ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px}
+  .toc li{font-size:13px;color:var(--text3);padding-left:14px;position:relative}
+  .toc li::before{content:"→";position:absolute;left:0;color:var(--text4)}
+  .toc a{color:var(--c1);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+
+  /* Section */
+  .section{margin-bottom:44px}
+  .section>h2{font-size:20px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .section>h2 .dot{width:10px;height:10px;border-radius:50%}
+  .section>h3{font-size:16px;font-weight:600;margin:24px 0 12px;color:var(--text2)}
+
+  /* Journey Timeline */
+  .journey{display:flex;gap:4px;align-items:stretch;flex-wrap:wrap;padding:20px;background:var(--surface);border-radius:var(--r3);border:1px solid var(--border)}
+  .j-step{flex:1;min-width:120px;padding:14px;border-radius:var(--r2);background:var(--raised);border:1px solid var(--border);text-align:center}
+  .j-step .num{font-size:20px;font-weight:700}
+  .j-step .name{font-size:13px;font-weight:600;margin-top:4px}
+  .j-step .en{font-size:10px;color:var(--text4)}
+  .j-step .note{font-size:11px;color:var(--text3);margin-top:6px}
+  .j-arrow{display:flex;align-items:center;font-size:20px;color:var(--text4)}
+
+  /* Touchpoint Grid */
+  .tp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+  .tp-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:18px;box-shadow:var(--shadow)}
+  .tp-card .tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:10px}
+  .tp-card h4{font-size:14px;font-weight:600;margin-bottom:10px}
+  .tp-card ul{list-style:none}
+  .tp-card li{font-size:12.5px;color:var(--text2);padding:3px 0;padding-left:14px;position:relative}
+  .tp-card li::before{content:"·";position:absolute;left:0;color:var(--text4)}
+  .tp-card .highlight{background:var(--muted);padding:8px 12px;border-radius:var(--r2);margin-top:10px;font-size:12px;color:var(--text3);border-left:3px solid var(--c1)}
+
+  /* Channel Matrix */
+  .ch-grid{display:grid;grid-template-columns:120px repeat(7,1fr);gap:1px;background:var(--border);border-radius:var(--r3);overflow:hidden;border:1px solid var(--border)}
+  .ch-cell{background:var(--surface);padding:10px 8px;font-size:11.5px}
+  .ch-cell:hover{background:var(--raised)}
+  .ch-header{background:var(--muted);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--text3);text-align:center}
+  .ch-row-header{background:var(--muted);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--text2);writing-mode:vertical-rl;text-orientation:mixed;letter-spacing:2px}
+  .ch-yes{color:var(--c3);font-weight:700;text-align:center}
+  .ch-maybe{color:var(--c5);font-weight:600;text-align:center}
+  .ch-no{color:var(--text4);text-align:center}
+  .ch-cell strong{display:block;font-size:11px;color:var(--text1);margin-bottom:3px}
+
+  /* Comparison Table */
+  .comp-table{width:100%;border-collapse:collapse;font-size:13px}
+  .comp-table th,.comp-table td{padding:10px 12px;border:1px solid var(--border);text-align:left}
+  .comp-table th{background:var(--muted);font-weight:600;font-size:12px;color:var(--text2)}
+  .comp-table td{background:var(--surface);color:var(--text2)}
+  .comp-table tr:hover td{background:var(--raised)}
+
+  /* Checklist */
+  .checklist{background:var(--surface);border:1px solid var(--border);border-radius:var(--r3);padding:20px 24px}
+  .checklist h4{font-size:14px;margin-bottom:12px}
+  .check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+  .check-item{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--text2);padding:6px 0}
+  .check-item input{margin-top:2px}
+
+  /* Footer */
+  .footer{text-align:center;padding:24px;color:var(--text4);font-size:12px;border-top:1px solid var(--border);margin-top:20px}
+
+  @media(max-width:768px){
+    .ch-grid{grid-template-columns:70px repeat(7,1fr);font-size:10px}
+    .ch-cell{padding:6px 4px}
+    h1{font-size:22px}
+    .j-step{min-width:90px;padding:10px}
+  }
+</style>
+</head>
+<body>
+
+<h1>吸奶器品线独立站 · 全触点地图</h1>
+<p class="lead">以吸奶器为核心品线，覆盖从备孕认知到断奶复购的全生命周期，拆解独立站站内站外每一个用户触点</p>
+<div class="meta">
+  <span>7 大用户阶段</span>
+  <span>6 大运营维度</span>
+  <span>42 个策略模块</span>
+  <span>120+ 具体触点</span>
+  <span>对标 Momcozy / Spectra / Medela</span>
+</div>
+
+<!-- ===== TOC ===== -->
+<div class="toc">
+  <h3>📋 目录导航</h3>
+  <ul>
+    <li><a href="#journey">一、吸奶器用户全生命周期旅程</a></li>
+    <li><a href="#pre">二、购前触点（认知→兴趣→考虑）</a></li>
+    <li><a href="#purchase">三、购买触点（转化→下单）</a></li>
+    <li><a href="#post">四、购后触点（履约→使用→复购）</a></li>
+    <li><a href="#onsite">五、独立站站内触点矩阵</a></li>
+    <li><a href="#offsite">六、独立站站外触点矩阵</a></li>
+    <li><a href="#channel">七、渠道协同与触点归属</a></li>
+    <li><a href="#comp">八、竞品触点对标（Momcozy / Spectra / Medela）</a></li>
+    <li><a href="#check">九、吸奶器独立站触点自检清单</a></li>
+  </ul>
+</div>
+
+<!-- ===== 一、用户旅程 ===== -->
+<div class="section" id="journey">
+  <h2><span class="dot" style="background:var(--c1)"></span>一、吸奶器用户全生命周期旅程</h2>
+  <p style="font-size:13px;color:var(--text3);margin-bottom:16px">吸奶器用户生命周期约 12–18 个月（从备孕到断奶），但品牌触点应向前延伸至备孕阶段、向后延伸至二胎复购与口碑推荐</p>
+  <div class="journey">
+    <div class="j-step" style="border-color:var(--c1)"><div class="num" style="color:var(--c1)">1</div><div class="name">备孕 / 孕期</div><div class="en">Pre-pregnancy</div><div class="note">开始关注母婴用品<br>加入妈妈社群</div></div>
+    <div class="j-arrow">→</div>
+    <div class="j-step" style="border-color:var(--c2)"><div class="num" style="color:var(--c2)">2</div><div class="name">孕晚期囤货</div><div class="en">3rd Trimester</div><div class="note">清单研究<br>对比测评</div></div>
+    <div class="j-arrow">→</div>
+    <div class="j-step" style="border-color:var(--c3)"><div class="num" style="color:var(--c3)">3</div><div class="name">产后 0–7 天</div><div class="en">Newborn</div><div class="note">开奶 / 泌乳顾问<br>医院推荐</div></div>
+    <div class="j-arrow">→</div>
+    <div class="j-step" style="border-color:var(--c4)"><div class="num" style="color:var(--c4)">4</div><div class="name">哺乳期高频</div><div class="en">Active Nursing</div><div class="note">每日使用<br>配件耗材复购</div></div>
+    <div class="j-arrow">→</div>
+    <div class="j-step" style="border-color:var(--c5)"><div class="num" style="color:var(--c5)">5</div><div class="name">断奶 / 过渡</div><div class="en">Weaning</div><div class="note">二手转让<br>以旧换新</div></div>
+    <div class="j-arrow">→</div>
+    <div class="j-step" style="border-color:var(--c6)"><div class="num" style="color:var(--c6)">6</div><div class="name">二胎复购</div><div class="en">2nd Baby</div><div class="note">品牌忠诚<br>新品升级</div></div>
+    <div class="j-arrow">→</div>
+    <div class="j-step" style="border-color:var(--c7)"><div class="num" style="color:var(--c7)">7</div><div class="name">口碑推荐</div><div class="en">Advocacy</div><div class="note">推荐好友<br>内容共创</div></div>
+  </div>
+</div>
+
+<!-- ===== 二、购前触点 ===== -->
+<div class="section" id="pre">
+  <h2><span class="dot" style="background:var(--c2)"></span>二、购前触点：认知 → 兴趣 → 考虑</h2>
+
+  <h3>2.1 认知阶段（Awareness）— 让她第一次知道你</h3>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">搜索引擎</span>
+      <h4>SEO / SEM 搜索入口</h4>
+      <ul>
+        <li>品牌词占位（brand + breast pump）</li>
+        <li>场景词：best breast pump for working moms</li>
+        <li>痛点词：quiet breast pump / hands free pump</li>
+        <li>长尾词：how to choose a breast pump 2026</li>
+        <li>购物广告 PLA（Google Shopping）</li>
+        <li>知识面板 / 结构化数据标记</li>
+      </ul>
+      <div class="highlight">💡 吸奶器决策周期长，SEO 内容矩阵是低成本获客核心。Momcozy 覆盖 1300+ 搜索词，广告流量词占比 80%。</div>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">社交媒体</span>
+      <h4>社媒信息流种草</h4>
+      <ul>
+        <li>Meta（FB/IG）信息流广告：Lookalike 受众（已购用户 1–3%）</li>
+        <li>TikTok 短视频：#breastfeeding #pumpingmom #momlife</li>
+        <li>Pinterest 视觉种草：待产包清单 Pin 图</li>
+        <li>YouTube 品牌广告 / TrueView</li>
+        <li>Reddit 子版块 r/breastfeeding / r/babybumps 软植入</li>
+        <li>Podcast 赞助：母婴 / 职场妈妈类播客</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">KOL / KOC</span>
+      <h4>达人测评与真实体验</h4>
+      <ul>
+        <li>头部母婴博主背书（YouTube 开箱测评）</li>
+        <li>中腰部垂类达人：泌乳顾问 / 儿科护士</li>
+        <li>素人妈妈真实测评（TikTok ASMR 吸奶实录）</li>
+        <li>医院 / 月子中心推荐清单</li>
+        <li>联盟客分销（ShareASale / Impact）</li>
+        <li>专属折扣码追踪 ROI（momcozy20 等）</li>
+      </ul>
+      <div class="highlight">💡 Momcozy 策略：美国本土达人占比近 50%，佣金最高 13.5%，达人手握专属链接做销售代理。</div>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">内容营销</span>
+      <h4>品牌内容资产</h4>
+      <ul>
+        <li>品牌博客：How to build a pumping schedule</li>
+        <li>待产包清单（PDF 下载留资）</li>
+        <li>哺乳知识科普视频</li>
+        <li>用户真实故事（Mom Diary）</li>
+        <li>品牌纪录片 / 幕后故事</li>
+        <li>可打印的喂养记录表（Lead Magnet）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c5-light);color:var(--c5)">社群裂变</span>
+      <h4>妈妈社群与口碑</h4>
+      <ul>
+        <li>Facebook Mom Groups 话题植入</li>
+        <li>WhatsApp / 微信群（华人市场）</li>
+        <li>Naver Café / 小红书（亚洲市场）</li>
+        <li>医院待产包推荐清单</li>
+        <li>母婴展 / 线下快闪店</li>
+        <li>老客推荐返利计划</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c6-light);color:var(--c6)">线下触点</span>
+      <h4>医院与零售渠道</h4>
+      <ul>
+        <li>医院产科 / 泌乳顾问推荐</li>
+        <li>母婴店（Buy Buy Baby / Target）陈列</li>
+        <li>沃尔玛 / 山姆会员店货架</li>
+        <li>月子中心合作展示</li>
+        <li>孕博会 / 母婴展展位</li>
+        <li>产品试用装派发</li>
+      </ul>
+      <div class="highlight">💡 韩国市场数据：医院推荐是 crucial influence point，线下体验对首购决策影响极大。</div>
+    </div>
+  </div>
+
+  <h3>2.2 兴趣阶段（Interest）— 让她想深入了解</h3>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">独立站首页</span>
+      <h4>首屏体验与价值主张</h4>
+      <ul>
+        <li>首屏大图：职场妈妈隐形穿戴场景</li>
+        <li>核心卖点一句话：解放双手，安静到同事听不见</li>
+        <li>信任徽章：FDA 认证 / BPA Free / 100万+妈妈选择</li>
+        <li>邮件订阅弹窗：免费待产包清单</li>
+        <li>用户评分展示（4.8/5 from 50,000+ reviews）</li>
+        <li>快速导航：按场景选泵（职场 / 居家 / 医院级）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">产品发现</span>
+      <h4>产品浏览与场景化展示</h4>
+      <ul>
+        <li>场景化分类：职场隐形 / 居家舒适 / 医院级大吸力</li>
+        <li>产品对比工具（M3 vs M5 vs S12）</li>
+        <li>360° 产品展示 / 3D 模型</li>
+        <li>Lookbook：真实妈妈使用场景图</li>
+        <li>视频：15 分钟双侧吸出 21oz（效果可视化）</li>
+        <li>配件兼容性说明</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">内容中心</span>
+      <h4>教育内容与信任建立</h4>
+      <ul>
+        <li>吸奶器选购指南（按场景 / 预算 / 需求）</li>
+        <li>尺码测量工具（ flange size calculator）</li>
+        <li>FAQ：吸力会痛吗？可以躺着用吗？</li>
+        <li>博客：How to pump at work without anyone knowing</li>
+        <li>泌乳顾问合作内容</li>
+        <li>产品技术白皮书（电机 / 降噪技术）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">社媒内容</span>
+      <h4>社交媒体深度内容</h4>
+      <ul>
+        <li>TikTok：真实使用场景 + 街头采访</li>
+        <li>Instagram Reels：Before/After 对比</li>
+        <li>YouTube：详细测评 + 使用教程</li>
+        <li>Pinterest：待产包清单 Pin</li>
+        <li>品牌账号日常内容（Momcozy 36万 TikTok 粉丝）</li>
+        <li>UGC 内容墙（#MomcozyMoments）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c5-light);color:var(--c5)">邮件培育</span>
+      <h4>EDM 自动化培育序列</h4>
+      <ul>
+        <li>欢迎邮件：品牌故事 + 首单 10% OFF</li>
+        <li>待产包系列（孕晚期每周一封）</li>
+        <li>产品对比邮件（3 款型号怎么选）</li>
+        <li>用户真实故事分享</li>
+        <li>尺码指南 + 测量教程</li>
+        <li>限时优惠倒计时</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c6-light);color:var(--c6)">再营销</span>
+      <h4>精准再营销触达</h4>
+      <ul>
+        <li>网站访客再营销（Meta / Google RLSA）</li>
+        <li>浏览未加购用户动态产品广告</li>
+        <li>加购未结账用户限时优惠</li>
+        <li>弃购 1h / 24h / 72h 邮件序列</li>
+        <li>SMS 弃购提醒（高打开率）</li>
+        <li>浏览器推送通知（Web Push）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>2.3 考虑阶段（Consideration）— 让她决定买你的</h3>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">商品详情页</span>
+      <h4>PDP 决策支持</h4>
+      <ul>
+        <li>高清产品图 + 使用场景图（8+ 张）</li>
+        <li>产品视频（开箱 + 使用演示 + 清洗）</li>
+        <li>用户评价与星级（带图评价优先展示）</li>
+        <li>Q&A 问答区（已购用户回答）</li>
+        <li>尺码选择器（flange size guide）</li>
+        <li>实时库存与预计送达时间</li>
+        <li>运费与税费透明计算</li>
+        <li>30 天无理由退换 + 1 年保修</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">评价与 UGC</span>
+      <h4>社会证明体系</h4>
+      <ul>
+        <li>独立站评价系统（Judge.me / Yotpo）</li>
+        <li>带图 / 视频评价激励</li>
+        <li>Amazon 评价同步展示</li>
+        <li>Trustpilot / Google Reviews</li>
+        <li>媒体报道与 PR 背书</li>
+        <li>医院 / 泌乳顾问推荐语</li>
+      </ul>
+      <div class="highlight">💡 Momcozy 独立站设置用户分享专区，真实反馈极大增强购买信心。</div>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">客服咨询</span>
+      <h4>售前答疑与信任建立</h4>
+      <ul>
+        <li>Live Chat 实时客服（Gorgias / Zendesk）</li>
+        <li>AI 聊天机器人（常见问题自动回复）</li>
+        <li>尺码咨询（发送测量指南）</li>
+        <li>产品对比推荐（根据需求匹配型号）</li>
+        <li>WhatsApp / Messenger 客服</li>
+        <li>电话客服（高客单价用户）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">促销策略</span>
+      <h4>临门一脚转化</h4>
+      <ul>
+        <li>首单立减（New Mom 10% OFF）</li>
+        <li>限时闪购（Flash Sale 24h）</li>
+        <li>套装优惠（泵 + 储奶袋 + 文胸）</li>
+        <li>免邮门槛（满 $50 免邮）</li>
+        <li>分期付款（Afterpay / Klarna）</li>
+        <li>倒计时与库存紧张提示</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c5-light);color:var(--c5)">竞品对比</span>
+      <h4>差异化说服</h4>
+      <ul>
+        <li>产品对比页（vs Medela / Spectra / Willow）</li>
+        <li>参数对比表（吸力 / 噪音 / 续航 / 价格）</li>
+        <li>换购计划（trade-in old pump）</li>
+        <li>价格匹配承诺</li>
+        <li>试用期承诺（30 天不满意全额退）</li>
+        <li>保险报销指南（部分国家医保覆盖）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c6-light);color:var(--c6)">社群验证</span>
+      <h4>妈妈社群口碑验证</h4>
+      <ul>
+        <li>Facebook Mom Groups 真实讨论</li>
+        <li>Reddit r/breastfeeding 口碑</li>
+        <li>母婴论坛 / Naver Café 测评</li>
+        <li>朋友推荐与口碑传播</li>
+        <li>社群专属优惠码验证</li>
+        <li>真实用户视频证言</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 三、购买触点 ===== -->
+<div class="section" id="purchase">
+  <h2><span class="dot" style="background:var(--c3)"></span>三、购买触点：转化 → 下单</h2>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">购物车</span>
+      <h4>加购与购物车优化</h4>
+      <ul>
+        <li>购物车页面推荐配件（储奶袋 / 文胸 / 清洁刷）</li>
+        <li>凑单免邮提示（还差 $15 免邮）</li>
+        <li>套装优惠提醒（买套装省 $30）</li>
+        <li>库存紧张提示（仅剩 5 件）</li>
+        <li>优惠券输入框 + 自动应用</li>
+        <li>安全支付标识展示</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">结账流程</span>
+      <h4>结账体验优化</h4>
+      <ul>
+        <li>一键结账（Shop Pay / Apple Pay / PayPal）</li>
+        <li>访客结账（无需注册）</li>
+        <li>地址自动填充（Google Autocomplete）</li>
+        <li>多支付方式：信用卡 / PayPal / Klarna / Afterpay</li>
+        <li>运费与税费实时计算</li>
+        <li>预计送达日期展示</li>
+        <li>订单摘要确认（商品 / 价格 / 优惠）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">订单确认</span>
+      <h4>下单后即时触点</h4>
+      <ul>
+        <li>订单确认邮件（含订单号与物流追踪链接）</li>
+        <li>订单确认页面：感谢 + 使用指南下载</li>
+        <li>加入会员邀请（注册享积分）</li>
+        <li>推荐好友得奖励</li>
+        <li>社群加入邀请（Facebook Group）</li>
+        <li>产品使用教程视频链接</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">支付安全</span>
+      <h4>信任与保障</h4>
+      <ul>
+        <li>SSL 安全标识</li>
+        <li>PCI DSS 合规展示</li>
+        <li>退换货政策明确展示</li>
+        <li>隐私政策链接</li>
+        <li>客服联系方式显眼</li>
+        <li>价格匹配与退款承诺</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 四、购后触点 ===== -->
+<div class="section" id="post">
+  <h2><span class="dot" style="background:var(--c4)"></span>四、购后触点：履约 → 使用 → 复购 → 口碑</h2>
+
+  <h3>4.1 履约体验（Fulfillment）</h3>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">物流通知</span>
+      <h4>物流履约沟通</h4>
+      <ul>
+        <li>发货通知邮件 + SMS</li>
+        <li>物流追踪页面（品牌化）</li>
+        <li>配送状态更新（运输中 / 派送中 / 已送达）</li>
+        <li>延迟预警与补偿方案</li>
+        <li>预计送达日期更新</li>
+        <li>签收确认与满意度调研</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">开箱体验</span>
+      <h4>开箱触点与品牌记忆</h4>
+      <ul>
+        <li>品牌定制化包装（柔和色调 / 母婴友好）</li>
+        <li>开箱仪式感设计（撕拉式 / 磁吸盒）</li>
+        <li>品牌感谢卡 + 手写体印刷</li>
+        <li>产品使用快速指南（图文版）</li>
+        <li>QR 码扫码观看视频教程</li>
+        <li>配件清单与清洗说明</li>
+        <li>保修卡与注册邀请（注册延保）</li>
+        <li>环保包装与可持续理念</li>
+      </ul>
+      <div class="highlight">💡 吸奶器是情感产品，开箱体验直接影响品牌好感度与社媒分享意愿。</div>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)"> onboarding</span>
+      <h4>产品上手引导</h4>
+      <ul>
+        <li>欢迎邮件序列（Day 1/3/7/14）</li>
+        <li>视频教程：如何正确佩戴 flange</li>
+        <li>尺码不适？免费换 flange 服务</li>
+        <li>使用技巧：如何达到最大泌乳效率</li>
+        <li>清洗与消毒指南</li>
+        <li>常见问题排查（吸力不足 / 漏奶）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">客服支持</span>
+      <h4>售后与技术支持</h4>
+      <ul>
+        <li>7×24 在线客服（Live Chat）</li>
+        <li>视频客服（指导佩戴与使用）</li>
+        <li>退换货自助入口</li>
+        <li>维修与配件更换服务</li>
+        <li>知识库与帮助中心</li>
+        <li>用户社区论坛（ troubleshooting）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>4.2 使用阶段（Usage）— 哺乳期高频触点</h3>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">App 连接</span>
+      <h4>智能 App 触点（如有）</h4>
+      <ul>
+        <li>吸奶数据记录（时长 / 容量 / 频率）</li>
+        <li>个性化吸奶计划推荐</li>
+        <li>远程控制吸力与模式</li>
+        <li>喂养提醒与日程管理</li>
+        <li>社区功能：妈妈交流区</li>
+        <li>固件升级与功能更新</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">配件复购</span>
+      <h4>耗材与配件复购触点</h4>
+      <ul>
+        <li>储奶袋复购提醒（预计用完时间）</li>
+        <li>Flange / 阀门 / 隔膜更换提醒</li>
+        <li>哺乳内衣 / 防溢乳垫推荐</li>
+        <li>背奶包 / 冰袋配件</li>
+        <li>清洗刷 / 消毒器</li>
+        <li>配件订阅包（每月自动配送）</li>
+      </ul>
+      <div class="highlight">💡 配件复购是吸奶器品线利润核心。Momcozy 从泵延伸到储奶袋、文胸、背奶包，形成生态。</div>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">内容陪伴</span>
+      <h4>哺乳期内容陪伴</h4>
+      <ul>
+        <li>邮件周刊：本周哺乳小贴士</li>
+        <li>社群每日话题讨论</li>
+        <li>泌乳顾问在线答疑（固定时段）</li>
+        <li>职场背奶攻略分享</li>
+        <li>母乳储存与解冻指南</li>
+        <li>堵奶 / 乳腺炎预防与处理</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">社群互动</span>
+      <h4>私域社群运营</h4>
+      <ul>
+        <li>Facebook Private Group（Mom Village）</li>
+        <li>晒单打卡活动（#MomcozyMoments）</li>
+        <li>使用心得征集与奖励</li>
+        <li>新品内测招募</li>
+        <li>妈妈互助问答</li>
+        <li>线下妈妈聚会（城市级）</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>4.3 复购与忠诚（Retention & Advocacy）</h3>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">会员体系</span>
+      <h4>会员忠诚度计划</h4>
+      <ul>
+        <li>积分体系：购买 / 评价 / 晒单 / 推荐均积分</li>
+        <li>等级权益：青铜→白银→黄金→钻石</li>
+        <li>会员专属价（配件 9 折）</li>
+        <li>生日礼遇（优惠券 + 小礼品）</li>
+        <li>会员日专属活动（每月 8 号）</li>
+        <li>新品优先体验权</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">复购触发</span>
+      <h4>自动化复购营销</h4>
+      <ul>
+        <li>配件用完前 7 天自动提醒</li>
+        <li>储奶袋补货通知</li>
+        <li>二胎备孕提醒（18 个月后）</li>
+        <li>产品升级换购（旧泵抵扣 $50）</li>
+        <li>订阅制自动配送（每月配件包）</li>
+        <li>交叉销售：哺乳文胸 / 防溢乳垫</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">口碑裂变</span>
+      <h4>推荐与倡导计划</h4>
+      <ul>
+        <li>推荐好友双方各得 $20</li>
+        <li>联盟客计划（CPS 10–15%）</li>
+        <li>品牌大使计划（KOC 孵化）</li>
+        <li>UGC 内容激励（优质内容奖励积分）</li>
+        <li>医院 / 泌乳顾问推荐返利</li>
+        <li>二手转让平台合作（以旧换新）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">品牌延伸</span>
+      <h4>品类扩展与用户生命周期延长</h4>
+      <ul>
+        <li>子品牌延伸（BabyCozy 婴儿用品）</li>
+        <li>孕期产品（孕妇装 / 托腹带）</li>
+        <li>断奶后产品（辅食工具 / 奶瓶）</li>
+        <li>妈妈自我关怀（产后修复 / 护肤品）</li>
+        <li>两个独立站互导流</li>
+        <li>全周期育儿生态布局</li>
+      </ul>
+      <div class="highlight">💡 Momcozy 策略：不盲目扩 SKU，顺着 18 个月人生契约，一个环节一个环节往后接。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 五、站内触点矩阵 ===== -->
+<div class="section" id="onsite">
+  <h2><span class="dot" style="background:var(--c5)"></span>五、独立站站内触点矩阵</h2>
+  <p style="font-size:13px;color:var(--text3);margin-bottom:16px">按页面维度拆解独立站内每一个可能产生交互的触点</p>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">首页</span>
+      <h4>Homepage 触点</h4>
+      <ul>
+        <li>首屏 Hero Banner（场景图 + UVP）</li>
+        <li>导航栏（按场景 / 按产品 / 按需求）</li>
+        <li>信任徽章条（FDA / BPA Free / 100万+用户）</li>
+        <li>明星产品推荐位</li>
+        <li>用户评分汇总展示</li>
+        <li>邮件订阅弹窗（Lead Magnet）</li>
+        <li>限时优惠横幅</li>
+        <li>UGC 内容墙（Instagram Feed）</li>
+        <li>媒体报道 Logo 墙</li>
+        <li>Footer（客服 / 退换货 / 隐私政策）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">分类页</span>
+      <h4>Collection / Category 触点</h4>
+      <ul>
+        <li>场景化分类导航（职场 / 居家 / 医院级）</li>
+        <li>筛选器（价格 / 吸力 / 噪音 / 穿戴方式）</li>
+        <li>产品对比快捷入口</li>
+        <li>畅销榜 / 新品榜 / 好评榜</li>
+        <li>套装推荐（Bundle & Save）</li>
+        <li>用户评价摘要（分类页直接展示）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">产品页</span>
+      <h4>Product Page 触点</h4>
+      <ul>
+        <li>产品标题与核心卖点</li>
+        <li>价格 + 会员价 + 分期提示</li>
+        <li>尺码选择器 + 测量指南</li>
+        <li>颜色 / 配置选项</li>
+        <li>主图 Gallery（8+ 张 + 视频）</li>
+        <li>Add to Cart 按钮（Sticky）</li>
+        <li>预计送达日期</li>
+        <li>运费计算器</li>
+        <li>库存状态</li>
+        <li>用户评价标签云（静音 / 舒适 / 高效）</li>
+        <li>Q&A 问答区</li>
+        <li>相关产品推荐（配件 / 套装）</li>
+        <li>Trust Badge（安全支付 / 退换货）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">购物车</span>
+      <h4>Cart Page 触点</h4>
+      <ul>
+        <li>商品清单与图片</li>
+        <li>数量调整与删除</li>
+        <li>优惠券输入与自动应用</li>
+        <li>运费计算与免邮提示</li>
+        <li>配件加购推荐（Frequently Bought Together）</li>
+        <li>安全保障标识</li>
+        <li>退换货政策摘要</li>
+        <li>结账按钮（多支付方式图标）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c5-light);color:var(--c5)">结账页</span>
+      <h4>Checkout 触点</h4>
+      <ul>
+        <li>联系信息（邮箱 + 电话）</li>
+        <li>配送地址（自动填充）</li>
+        <li>配送方式选择（标准 /  expedited）</li>
+        <li>支付方式选择</li>
+        <li>账单地址</li>
+        <li>订单摘要（商品 / 优惠 / 运费 / 总计）</li>
+        <li>优惠码输入</li>
+        <li>条款同意勾选</li>
+        <li>安全支付标识</li>
+        <li>客服联系方式（结账页常驻）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c6-light);color:var(--c6)">内容页</span>
+      <h4>Blog / Guide / FAQ 触点</h4>
+      <ul>
+        <li>选购指南（How to Choose）</li>
+        <li>使用教程（How to Use）</li>
+        <li>尺码指南（Flange Size Guide）</li>
+        <li>清洗保养指南</li>
+        <li> troubleshooting 故障排除</li>
+        <li>妈妈真实故事</li>
+        <li>产品对比文章</li>
+        <li>页面内产品推荐卡片</li>
+        <li>邮件订阅 CTA</li>
+        <li>社媒分享按钮</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c7-light);color:var(--c7)">会员页</span>
+      <h4>Account / Member 触点</h4>
+      <ul>
+        <li>订单历史与追踪</li>
+        <li>积分余额与等级</li>
+        <li>优惠券管理</li>
+        <li> wishlist / 收藏夹</li>
+        <li>地址簿管理</li>
+        <li>订阅管理（配件自动配送）</li>
+        <li>产品注册与保修</li>
+        <li>推荐好友入口</li>
+        <li>个人资料与偏好设置</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">其他页面</span>
+      <h4>辅助页面触点</h4>
+      <ul>
+        <li>About Us（品牌故事与使命）</li>
+        <li>Contact Us（多渠道客服入口）</li>
+        <li>Shipping & Returns（物流与退换政策）</li>
+        <li>Warranty（保修政策与注册）</li>
+        <li>Size Guide（尺码测量工具）</li>
+        <li>Compare（产品对比工具）</li>
+        <li>Reviews（全部评价聚合页）</li>
+        <li>Affiliate（联盟客招募）</li>
+        <li>Wholesale（批发合作）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 六、站外触点矩阵 ===== -->
+<div class="section" id="offsite">
+  <h2><span class="dot" style="background:var(--c6)"></span>六、独立站站外触点矩阵</h2>
+  <div class="tp-grid">
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c1-light);color:var(--c1)">搜索</span>
+      <h4>搜索生态触点</h4>
+      <ul>
+        <li>Google 搜索广告（品牌词 + 竞品词 + 场景词）</li>
+        <li>Google Shopping 产品 Listing</li>
+        <li>SEO 自然搜索（博客 / 指南 / 对比）</li>
+        <li>Bing 搜索广告</li>
+        <li>本地搜索（Google Business Profile）</li>
+        <li>知识面板优化</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c2-light);color:var(--c2)">社交媒体</span>
+      <h4>社媒生态触点</h4>
+      <ul>
+        <li>Instagram：Feed / Reels / Stories / Shop</li>
+        <li>TikTok：短视频 + 直播 + TikTok Shop</li>
+        <li>Facebook：Page / Group / Marketplace / Shop</li>
+        <li>YouTube：品牌频道 / 达人合作 / 广告</li>
+        <li>Pinterest：Pin 图 / 购物标签</li>
+        <li>Twitter / X：品牌声量与客服</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c3-light);color:var(--c3)">邮件 SMS</span>
+      <h4>直效营销触点</h4>
+      <ul>
+        <li>欢迎邮件序列（5–7 封）</li>
+        <li>促销邮件（节日 / 会员日 / 闪购）</li>
+        <li>交易邮件（订单 / 发货 / 送达）</li>
+        <li>弃购挽回邮件（1h / 24h / 72h）</li>
+        <li>复购提醒邮件</li>
+        <li>SMS 营销（高打开率，需合规）</li>
+        <li>WhatsApp 客服与营销</li>
+        <li>浏览器推送通知（Web Push）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c4-light);color:var(--c4)">广告再营销</span>
+      <h4>付费再营销触点</h4>
+      <ul>
+        <li>Meta 再营销（浏览 / 加购 / 购买）</li>
+        <li>Google RLSA（搜索再营销）</li>
+        <li>YouTube 再营销广告</li>
+        <li>TikTok 再营销</li>
+        <li>Display 展示广告网络</li>
+        <li>Native Ads（Taboola / Outbrain）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c5-light);color:var(--c5)">第三方平台</span>
+      <h4>平台与生态触点</h4>
+      <ul>
+        <li>Amazon（评价同步 / 品牌引流）</li>
+        <li>Target / Walmart 线上店</li>
+        <li>Buy Buy Baby</li>
+        <li>母婴垂直电商</li>
+        <li>医院 / 保险渠道</li>
+        <li>团购 / 闪购平台（Zulily 等）</li>
+      </ul>
+    </div>
+    <div class="tp-card">
+      <span class="tag" style="background:var(--c6-light);color:var(--c6)">PR & 媒体</span>
+      <h4>公关与媒体触点</h4>
+      <ul>
+        <li>母婴媒体评测（What to Expect / BabyCenter）</li>
+        <li>科技媒体（TechCrunch / The Verge）</li>
+        <li>职场妈妈媒体（Working Mother）</li>
+        <li>Product Hunt 首发</li>
+        <li>行业奖项（JPMA / NAPPA）</li>
+        <li>CES / ABC Kids Expo 展会</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 七、渠道协同 ===== -->
+<div class="section" id="channel">
+  <h2><span class="dot" style="background:var(--c7)"></span>七、渠道协同与触点归属</h2>
+  <p style="font-size:13px;color:var(--text3);margin-bottom:16px">吸奶器独立站不是孤岛，需与 Amazon、社媒电商、线下零售、医院渠道形成协同，统一数据中台管理全渠道触点</p>
+  <div style="overflow-x:auto">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>触点 / 渠道</th>
+          <th>独立站</th>
+          <th>Amazon</th>
+          <th>TikTok Shop</th>
+          <th>线下零售</th>
+          <th>医院 / 顾问</th>
+          <th>社媒内容</th>
+          <th>邮件 SMS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>品牌认知</strong></td><td class="ch-yes">✓ SEO/SEM</td><td class="ch-maybe">△ 搜索曝光</td><td class="ch-maybe">△ 内容算法</td><td class="ch-maybe">△ 货架曝光</td><td class="ch-yes">✓ 推荐清单</td><td class="ch-yes">✓ 种草内容</td><td class="ch-no">—</td></tr>
+        <tr><td><strong>产品教育</strong></td><td class="ch-yes">✓ 博客/视频</td><td class="ch-maybe">△ A+ 页面</td><td class="ch-maybe">△ 短视频</td><td class="ch-yes">✓ 现场演示</td><td class="ch-yes">✓ 使用指导</td><td class="ch-yes">✓ 教程内容</td><td class="ch-maybe">△ 培育序列</td></tr>
+        <tr><td><strong>信任建立</strong></td><td class="ch-yes">✓ UGC/评价</td><td class="ch-yes">✓ 大量评价</td><td class="ch-maybe">△ 直播信任</td><td class="ch-yes">✓ 实物体验</td><td class="ch-yes">✓ 专业背书</td><td class="ch-yes">✓ 真实分享</td><td class="ch-maybe">△ 用户故事</td></tr>
+        <tr><td><strong>转化下单</strong></td><td class="ch-yes">✓ 高毛利</td><td class="ch-yes">✓ 高转化</td><td class="ch-yes">✓ 冲动消费</td><td class="ch-maybe">△ 即时购买</td><td class="ch-no">—</td><td class="ch-maybe">△ 链接转化</td><td class="ch-yes">✓ 促销转化</td></tr>
+        <tr><td><strong>履约体验</strong></td><td class="ch-yes">✓ 品牌包装</td><td class="ch-maybe">△ FBA 标准</td><td class="ch-maybe">△ 平台物流</td><td class="ch-yes">✓ 即时带走</td><td class="ch-no">—</td><td class="ch-no">—</td><td class="ch-yes">✓ 物流通知</td></tr>
+        <tr><td><strong>售后支持</strong></td><td class="ch-yes">✓ 专属客服</td><td class="ch-maybe">△ 平台客服</td><td class="ch-maybe">△ 平台售后</td><td class="ch-maybe">△ 门店退换</td><td class="ch-yes">✓ 使用咨询</td><td class="ch-maybe">△ 社群互助</td><td class="ch-yes">✓ 工单系统</td></tr>
+        <tr><td><strong>复购配件</strong></td><td class="ch-yes">✓ 订阅制</td><td class="ch-yes">✓ Subscribe</td><td class="ch-maybe">△ 复购入口</td><td class="ch-maybe">△ 货架复购</td><td class="ch-no">—</td><td class="ch-maybe">△ 内容提醒</td><td class="ch-yes">✓ 自动提醒</td></tr>
+        <tr><td><strong>数据沉淀</strong></td><td class="ch-yes">✓ 第一方数据</td><td class="ch-no">× 平台封闭</td><td class="ch-no">× 平台封闭</td><td class="ch-no">× 数据缺失</td><td class="ch-maybe">△ 间接反馈</td><td class="ch-maybe">△ 像素追踪</td><td class="ch-yes">✓ 完整数据</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="highlight" style="margin-top:16px">💡 策略建议：Amazon 负责开疆拓土（65% 新客），独立站负责玩留存与复购（35% 高价值用户）。通过 Amazon 包裹插卡、售后邮件等方式向独立站导流，积累第一方数据。</div>
+</div>
+
+<!-- ===== 八、竞品对标 ===== -->
+<div class="section" id="comp">
+  <h2><span class="dot" style="background:var(--c1)"></span>八、竞品触点对标</h2>
+  <div style="overflow-x:auto">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>触点维度</th>
+          <th>Momcozy（中国）</th>
+          <th>Spectra（韩国）</th>
+          <th>Medela（瑞士）</th>
+          <th>Willow（美国）</th>
+          <th>Haakaa（新西兰）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>定位</strong></td><td>穿戴式 / 职场妈妈 / 性价比</td><td>医院级 / 专业级 / 亚洲市场</td><td>高端专业 / 医疗背景</td><td>全隐形 / 科技高端</td><td>手动 / 极简 / 环保</td></tr>
+        <tr><td><strong>独立站策略</strong></td><td>亚马逊 + 独立站双轨，独立站价格更低</td><td>官网直销 + 医院渠道</td><td>品牌官网 + 医疗渠道</td><td>DTC 为主，高端定位</td><td>独立站 + 亚马逊</td></tr>
+        <tr><td><strong>社媒主力</strong></td><td>TikTok + Instagram（36万粉丝）</td><td>Instagram + Naver</td><td>Facebook + Instagram</td><td>Instagram + PR</td><td>Instagram + 环保社群</td></tr>
+        <tr><td><strong>内容策略</strong></td><td>真实场景 + 街头采访 + ASMR</td><td>专业测评 + 医院背书</td><td>医学科普 + 专家内容</td><td>科技生活方式</td><td>极简美学 + 环保理念</td></tr>
+        <tr><td><strong>KOL 策略</strong></td><td>素人妈妈 + 中腰部达人，佣金 13.5%</td><td>泌乳顾问 + 医院推荐</td><td>医疗专家 + 高端博主</td><td>科技博主 + 名人</td><td>环保博主 + 新手妈妈</td></tr>
+        <tr><td><strong>社群运营</strong></td><td>Mom Village Facebook Group</td><td>Naver Café 社区</td><td>Medela Mom 社群</td><td>Willow Moms 社群</td><td>Instagram 话题互动</td></tr>
+        <tr><td><strong>会员体系</strong></td><td>积分 + 推荐返利 + 会员日</td><td>医院会员 + 积分兑换</td><td>Medela Club 会员</td><td>订阅配件服务</td><td>环保积分计划</td></tr>
+        <tr><td><strong>品类延伸</strong></td><td>哺乳文胸 → 储奶袋 → BabyCozy 子品牌</td><td>配件 + 奶瓶 + 消毒器</td><td>全品类母婴喂养</td><td>配件 + 清洁用品</td><td>硅胶喂养全系列</td></tr>
+        <tr><td><strong>线下触点</strong></td><td>沃尔玛 / 山姆 / 快闪店</td><td>医院产科 / 母婴店</td><td>医院 / 药店 / 母婴店</td><td>Target / 高端百货</td><td>有机店 / 精品母婴店</td></tr>
+        <tr><td><strong>差异化触点</strong></td><td>本土化内容（50% 美国达人）</td><td>医院推荐清单（韩国 crucial）</td><td>医学研究背书</td><td>全隐形科技卖点</td><td>环保硅胶 + 极简设计</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== 九、自检清单 ===== -->
+<div class="section" id="check">
+  <h2><span class="dot" style="background:var(--c2)"></span>九、吸奶器独立站触点自检清单</h2>
+  <div class="checklist">
+    <h4>✅ 认知阶段检查</h4>
+    <div class="check-grid">
+      <label class="check-item"><input type="checkbox"> 品牌词 SEO 占位（前 3 位）</label>
+      <label class="check-item"><input type="checkbox"> 场景词广告覆盖（职场 / 静音 / 免提）</label>
+      <label class="check-item"><input type="checkbox"> TikTok / IG 官方账号运营</label>
+      <label class="check-item"><input type="checkbox"> 垂类达人合作（>20 位/月）</label>
+      <label class="check-item"><input type="checkbox"> 医院 / 泌乳顾问推荐渠道</label>
+      <label class="check-item"><input type="checkbox"> 母婴社群话题植入</label>
+    </div>
+  </div>
+  <div class="checklist" style="margin-top:14px">
+    <h4>✅ 兴趣阶段检查</h4>
+    <div class="check-grid">
+      <label class="check-item"><input type="checkbox"> 首屏 UVP 清晰（3 秒内理解）</label>
+      <label class="check-item"><input type="checkbox"> 邮件订阅 Lead Magnet（待产包清单）</label>
+      <label class="check-item"><input type="checkbox"> 产品对比工具（3 款型号）</label>
+      <label class="check-item"><input type="checkbox"> 尺码测量工具（flange calculator）</label>
+      <label class="check-item"><input type="checkbox"> 博客内容矩阵（>20 篇指南）</label>
+      <label class="check-item"><input type="checkbox"> EDM 培育序列（5–7 封自动化）</label>
+    </div>
+  </div>
+  <div class="checklist" style="margin-top:14px">
+    <h4>✅ 考虑阶段检查</h4>
+    <div class="check-grid">
+      <label class="check-item"><input type="checkbox"> PDP 评价数 >1000，带图评价 >30%</label>
+      <label class="check-item"><input type="checkbox"> Q&A 问答区活跃（>50 条）</label>
+      <label class="check-item"><input type="checkbox"> Live Chat 客服在线（>12h/天）</label>
+      <label class="check-item"><input type="checkbox"> 首单优惠 + 分期付款选项</label>
+      <label class="check-item"><input type="checkbox"> 30 天无理由退换承诺</label>
+      <label class="check-item"><input type="checkbox"> 竞品对比页面</label>
+    </div>
+  </div>
+  <div class="checklist" style="margin-top:14px">
+    <h4>✅ 转化阶段检查</h4>
+    <div class="check-grid">
+      <label class="check-item"><input type="checkbox"> 一键结账（Shop Pay / Apple Pay）</label>
+      <label class="check-item"><input type="checkbox"> 访客结账（无需注册）</label>
+      <label class="check-item"><input type="checkbox"> 弃购挽回（邮件 + SMS）</label>
+      <label class="check-item"><input type="checkbox"> 配件加购推荐（购物车）</label>
+      <label class="check-item"><input type="checkbox"> 运费透明 + 预计送达</label>
+      <label class="check-item"><input type="checkbox"> 安全支付标识展示</label>
+    </div>
+  </div>
+  <div class="checklist" style="margin-top:14px">
+    <h4>✅ 履约阶段检查</h4>
+    <div class="check-grid">
+      <label class="check-item"><input type="checkbox"> 品牌定制化包装</label>
+      <label class="check-item"><input type="checkbox"> 开箱感谢卡 + 使用指南</label>
+      <label class="check-item"><input type="checkbox"> QR 码视频教程</label>
+      <label class="check-item"><input type="checkbox"> 物流追踪品牌化页面</label>
+      <label class="check-item"><input type="checkbox"> 到货满意度调研</label>
+      <label class="check-item"><input type="checkbox"> 产品注册延保邀请</label>
+    </div>
+  </div>
+  <div class="checklist" style="margin-top:14px">
+    <h4>✅ 复购忠诚阶段检查</h4>
+    <div class="check-grid">
+      <label class="check-item"><input type="checkbox"> 配件订阅制（自动配送）</label>
+      <label class="check-item"><input type="checkbox"> 积分体系 + 等级权益</label>
+      <label class="check-item"><input type="checkbox"> 社群运营（FB Group >1万人）</label>
+      <label class="check-item"><input type="checkbox"> 推荐返利计划（双方奖励）</label>
+      <label class="check-item"><input type="checkbox"> 二胎复购提醒（18 个月）</label>
+      <label class="check-item"><input type="checkbox"> 品类延伸（子品牌 / 配件生态）</label>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  吸奶器品线独立站 · 全触点地图 · 覆盖认知→兴趣→考虑→转化→履约→复购→口碑完整链路 · 对标 Momcozy / Spectra / Medela 最佳实践
+</div>
+
+</body>
+</html>

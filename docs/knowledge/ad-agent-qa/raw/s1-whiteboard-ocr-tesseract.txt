@@ -1,0 +1,467 @@
+持续自动发现 “产品 X 人群 x 市场 x REX 卖点”的广告增长机会，并形成可执行的投放机会
+
+池。
+
+Loop 节点
+
+市场/品类数据
+
+‘
+
+© Trend Agent
+
+SABLE. REND
+
+一 证
+
+‘
+
+@ Consumer Insight Agent
+
+分析用户希求/痛点/人群
+
+2 conpetitor Agent
+
+分析况曲投放变化
+
+4
+
+@ Product Agent
+
+匹配公司产品及卖点
+
+2A Meta, Google, TikTok Sal” SE SRM, HARRI Campaign, AH.
+
+® Opportunity Agent
+
+案、产品、落地页及投放变化; 通过 Al 自动识别竞品投放
+
+主推产品、
+
+心卖点、创意方 “一 三 —
+
+评估市场机会
+
+向、投放节奏和策略变化，最终输出竞品投放策略及对我方的机会建议。
+
+4
+
+四HITL 。
+
+汇总广告点击航化、GA4、订单、CRM、用户评论、社媒等数据，建立“人群一需求一痛点一卖
+
+市场/广告负责人确认机会
+
+‘
+
+点一广告素材一转化”的关联分析，识别高转化人群及其核心购买驱动，并输出人群定向和广告内
+
+消旨者广告家Wemt —
+
+© Strategy Agent
+
+容建议。
+
+形成广告机会策略
+
+接入 Google Trends、搜索词、广告数据、竞品数据、销售数据等，持续监测品类增长、产品需
+
+求、搜索趋势和竞品动作，识别快速卉长的细分需求，并输出“机会品类+目标人群+推荐产品+推
+
+SA一 一
+
+mene
+
+Pee eae.
+
+‘
+
+持续监控变化
+
+建立广告创意资产库，将素材拆解为 Hook、场吴、人物、卖点、产品、文案、CTA等结构化标
+
+=
+
+签，并关联 CTR、CVR、CPA、ROAS 等效果数据，通过历史数据识别高表现创意元素及组合，形
+
+ER 一
+
+成可复用的创意方法论。
+
+ET
+
+汇总各渠道Spend、Revenue、ROAS、CAC、CVR、新客占比、LTV 等数据，建立渠道效果及边
+
+广告投放策略制定Loop ©
+
+际收益模型，根据市场、产品、目标和预算自动评估各渠道的增长潜力，并输出媒体组合及预算“一 JESRMAgEnt —
+
+方向建议。
+
+新品广告冷启动Loop @
+
+形成: 洞察 一生成一 审核一 测试 一 识别诀家 > 变体生成
+
+用户输入产品、市场、目标、预算和周期后，Agent基于历史投放经验、竞品策略、消费者洞察
+
+的广告创意增长飞轮。
+
+和平台最佳实;
+
+自动生成Campaign Structure、目标人群、渠 道、预算、Bid Strategy、素材
+
+广告投放策略Agent —
+
+HR KPA
+
+试计划，形成标准化投放方案。
+
+loop节点
+
+接入 PLM/商品库、历史相似产品广告数据及市场洞察，自动识别新品核心卖点和目标人群，匹配
+
+sean
+
+策略
+
+历史成功投放案例，生成新品冷启动策略，包括首批渠道、Campaign、预算、人群、素材和测ii
+
+新品投放策略Agent
+
+PR
+
+aR
+
+nae
+
+© creative Inesont Agent
+
+基于渠道、Campaign、产品、人群等维度的历史 ROAS、CAC、CVR、边际收益和预算约束建立
+
+Rare
+
+预算优化模型，模拟不同预算组合下的预期收益，输出预算调整建议; 后续可通过API 自动执行
+
+预算分配Agent —
+
+cnsde strategy Agent
+
+预算调整。
+
+和HBrief
+
+& creative Generation
+
+§
+
+a)
+
+打通Meta、Google、TikTok等广告平台AP1， 将|
+
+言投放需求转换成标准 Campaign Be
+
+Mook / Copy / Script / Visual
+
+种，自动完成 Campaign、Ad Set/Ad Group, Audience, Budget. Bid, Creative SHH, +
+
+广告创建Agent —
+
+在创建前进行参数、命名、Tracking 和预算校验。
+
+aun +
+
+emam ARH
+
+© CrestiveAstntly
+
+TUE SRPSONLA, WAM ARBER Campaign, Audience SH. MEHR
+
+eerenn
+
+i
+
+化、无效广告、命名错误、Tracking 缺失等问题，生成账户健康度评分及治理任务，并支持批量
+
+k户治理Agent 一| 执行
+
+@ Ad Launch
+
+修复。
+
+pete
+
+© Aa Test
+
+i
+
+打通CMS/素材中心，根据广告策略自动第选适合的人群、产品和渠道素材，将视频、图片、
+
+sherman
+
+Hook, Copy. CTA等进行智能组合，自动生成多个广告变体，并按照平台规格完成素材适配和批
+
+素材组装Agent —
+
+量上架。
+
+@ Pertornance Analysts
+
+CCRVRDNS
+
+Agent loop
+
+4
+
+@ Winner Detection
+
+实时同步广告核心指标，建立Spend、CPM、CTR、CVR、CPA、ROAS等指标的历史基准和异!
+
+wana
+
+Bil, ASS SSMAASENIIA, HOT, RMS. TE. RCTS, 并 ——— 于要大豆 一
+
+© crantive ptiniation
+
+"异常原因+影响+建议动作”。
+
+amr
+
+广 ase
+
+=
+
+不只监控异常，而是主动扫措账户寻找增长机会，例如高 ROAS 但预算受限、高 CTR低消耗、高
+
+从: 人工打开 Meta/ Google 后台逐项配秆
+
+CVR 人群、表现优异素材等 ，通过边际收益分析判断增量空间，输出“建议加预算/扩大人和群/复制 ——— 机会发现Agent —
+
+变成: 自然语言需求一 Al生成 ~ 人工确认一 API自动创建 > 自动校验。
+
+素材”等增长机会。
+
+loop节点
+
+将素材表现数据与创意标签关联，分析 Hook、场员、卖点、人物、时长等元素对CTR/CVR/
+
+Ema ees
+
+ROAS 的影响，识别素材衰退原因，并自动生成下一轮 Hook、Copy、脚本和创意方向，最终进
+
+素材优化Agent —
+
+1
+
+A CMS 生成新素材并进行 NB Test,
+
+© Campaign Planning Agent
+
+生成平台配置
+
+持续读取 Campaign 的成本、转化和预算消耗情况，结合目标 ROAS/CPA、转化殉势和预算约束
+
+广告投放执行 Loop
+
+@ Creative Matching Agent
+
+判断是否需要调整 Bid或 Budget; WML “ALIEN” AE, PASSA TIRUGAT, RAE
+
+出价预算优化Agent —
+
+mere
+
+安全规则范围内自动调整。
+
+@ naming Agent
+
+42) Google/Amazon 等平台 Search Term 数据，对搜索词进行意图识别、转化分析和价值分
+
+检查命名
+
+级，自动发现高潜力新词、低效词和无效词，分别生成 “新增关键词、提高出价、降低出价、否
+
+ER —-— ffl
+
+1
+
+定关键词”建议，并支持批量执行。
+
+@ Tracking Agent
+
+检查Pixet / UM / Event
+
+汇总Audience、用户属性、
+
+告行为及订单转化数据，分析不同人群的CTR、CVR、CAC、
+
+1
+
+ROAS和 LTV，识别高价值/低价值人群，输出扩量、收罕、
+
+除和Lookalike拓展建议，并支持月 ——— ER —
+
+© Compliance Agent
+
+用广告平台 AP1执行。
+
+检查平台规范
+
+1
+
+@um-.
+
+分析 Campaign 一Ad Set > Ad 层级结构、预算、受众、素材及效果数据，识别 campaign 碎片
+
+投放负责人最终确认
+
+化、预算分散、受众重登、素材重复等问题，模拟不同账户结构的效果，输出合并、拆分、迁移
+
+‘Campaign stuff Agent —
+
+和预算重新分配方案。
+
+ads wr
+
+(Cesar
+
+Bap Campaign, Am, BE. AB. RMSSEAUE, WA DLBBRBE, Bap
+
+@ Validation
+
+识别关键变化并进行归因，形成“结果一变化-原因一问题-经验-下一步”的完整复盘报告，
+
+[SE Agent 一
+
+检查是否成功上线
+
+支持日报、周报、大促、新品等不同复盘场景。
+
+A
+
+[一 复盘
+
+@ Monitoring
+
+将每次投放的策略、素材、产品、人群、渠 道、结果和复盘结论结构化沉淀到广告知识库，建立
+
+进入投放监控
+
+“产品人群X渠道x创意X策略X效果”的知识关系; 新建广告时自动检索相似成功案例，为
+
+广告知识沉淀Agent —
+
+策略Agent 提供历史经验。
+
+告异常诊断与恢复 Loop -)
+
+广告增长优化 Loop -@)
+
+广告复盘与知识进化Loop 2)
+
+自动识别高潜力红人内容，将优质红人素材快速转化为广告资产并进行规模化加推，通过持续监
+
+测和优化找到高 ROI 的“红人素材 x AB x 广告策略”组合，最终实现红人内容从自然传播到
+
+付费增长的规模化转化。
+
+loop节点
+
+loop节点 (2)
+
+wee
+
+1 Amr oem
+
+回 广告优化 Agent
+
+上 wean
+
+上am
+
+上上 预算优化
+
+上em
+
+上em
+
+| maaan
+
+上上 人群优化
+
+|
+
+上mms
+
+上上 出价优化
+
+上上 matinee
+
+上 Campaign优化
+
+Parmsenmennn
+
+1
+
+ras soot
+
+@ HITL *
+
+ba
+
+FE Goons
+
+PBR A Tt
+
+FE aetece
+
+1
+
+加 持续投放
+
+Er
+
+g
+
+erase
+
+ore
+
+® Winning Creative识别
+
+1
+
+® TARMT SSR Agent
+
+be
+
+上mwmw
+
++
+
+Cline
+
+2 BARE Hert
+
+@ 广告分析报告
+
+© rams men
+
+1
+
+© 优质素材/策略/效果沉淀
+
+上sm
+
+bem
+
+四
+
+ben
+
+Fats
+
+回流红人素材池
+
+Erect won
+
+各

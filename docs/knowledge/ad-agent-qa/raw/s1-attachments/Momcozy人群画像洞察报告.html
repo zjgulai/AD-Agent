@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Momcozy 人群画像洞察 · 2025Q3–2026Q1</title>
+<style>
+  :root{
+    --bg:#0e1117; --bg2:#131722; --card:#1a1f2e; --card2:#202739;
+    --line:#2a3247; --txt:#e8edf6; --sub:#9aa6bd; --dim:#6b7690;
+    --blue:#5b8def; --purple:#8b5cf6; --pink:#f472b6; --green:#34d399;
+    --amber:#fbbf24; --red:#f87171;
+    --radius:16px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;
+    line-height:1.65; font-size:14px; padding:0 0 80px; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  header{padding:44px 0 26px; border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#141a2b 0%,#0e1117 100%);}
+  .kicker{color:var(--blue); font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:700;}
+  h1{font-size:30px; font-weight:800; margin:10px 0 8px; letter-spacing:-.5px;}
+  .subtitle{color:var(--sub); font-size:15px; max-width:820px;}
+  .meta{display:flex; gap:18px; margin-top:18px; flex-wrap:wrap; font-size:12px; color:var(--dim);}
+  .meta span{background:var(--card); border:1px solid var(--line); padding:4px 12px; border-radius:20px;}
+  section{margin-top:44px;}
+  h2{font-size:21px; font-weight:800; margin-bottom:6px; display:flex; align-items:center; gap:10px;}
+  h2 .no{background:var(--blue); color:#fff; width:28px; height:28px; border-radius:8px;
+    display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; flex:none;}
+  .sec-desc{color:var(--sub); font-size:13px; margin-bottom:20px;}
+  h3{font-size:15px; font-weight:700; margin-bottom:10px;}
+  h4{font-size:13px;}
+  .grid{display:grid; gap:16px;}
+  .g4{grid-template-columns:repeat(4,1fr);}
+  .g3{grid-template-columns:repeat(3,1fr);}
+  .g2{grid-template-columns:repeat(2,1fr);}
+  @media(max-width:900px){.g4,.g3,.g2{grid-template-columns:1fr;}}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px;}
+  .kpi{background:linear-gradient(160deg,var(--card) 0%,var(--card2) 100%); border:1px solid var(--line);
+    border-radius:var(--radius); padding:18px 18px 16px; position:relative; overflow:hidden;}
+  .kpi::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--pc,#5b8def);}
+  .kpi .label{font-size:12px; color:var(--sub);}
+  .kpi .val{font-size:26px; font-weight:800; margin:4px 0; letter-spacing:-.5px;}
+  .kpi .val small{font-size:13px; color:var(--dim); font-weight:600;}
+  .kpi .foot{font-size:11.5px; color:var(--dim);}
+  .tag{display:inline-block; font-size:11px; padding:2px 9px; border-radius:20px; font-weight:600; margin-right:6px;}
+  .t-blue{background:rgba(91,141,239,.15); color:#8fb0f5;}
+  .t-purple{background:rgba(139,92,246,.15); color:#b79cff;}
+  .t-pink{background:rgba(244,114,182,.15); color:#f8a6cc;}
+  .t-green{background:rgba(52,211,153,.15); color:#6fe3bc;}
+  .t-amber{background:rgba(251,191,36,.15); color:#f5cd6b;}
+  .persona{border-radius:var(--radius); border:1px solid var(--line); overflow:hidden; margin-bottom:20px;}
+  .persona-head{padding:20px 22px; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;
+    background:linear-gradient(120deg,var(--pc-dim,#1c2335) 0%,var(--card) 60%);}
+  .persona-head .pn{font-size:19px; font-weight:800; display:flex; align-items:center; gap:10px;}
+  .persona-head .pn .dot{width:12px; height:12px; border-radius:50%; background:var(--pc,#5b8def); flex:none;}
+  .persona-head .en{color:var(--dim); font-size:12px; font-weight:500;}
+  .persona-head .stats{display:flex; gap:22px; flex-wrap:wrap;}
+  .persona-head .stat{text-align:right;}
+  .persona-head .stat .v{font-size:20px; font-weight:800;}
+  .persona-head .stat .l{font-size:11px; color:var(--dim);}
+  .persona-body{padding:20px 22px; background:var(--card);}
+  .oneliner{font-size:14px; color:var(--txt); background:var(--card2); border-left:3px solid var(--pc,#5b8def);
+    padding:12px 16px; border-radius:8px; margin-bottom:18px;}
+  table{width:100%; border-collapse:collapse; font-size:12.5px;}
+  th{text-align:left; color:var(--dim); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.5px;
+    padding:8px 10px; border-bottom:1px solid var(--line);}
+  td{padding:9px 10px; border-bottom:1px solid rgba(42,50,71,.5);}
+  tr:last-child td{border-bottom:none;}
+  .num{text-align:right; font-variant-numeric:tabular-nums;}
+  .ctr{text-align:center;}
+  .rank{display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:6px;
+    background:var(--card2); font-size:11px; font-weight:700; color:var(--sub); margin-right:4px;}
+  .rank.r1{background:rgba(251,191,36,.2); color:#f5cd6b;}
+  .rank.r2{background:rgba(220,225,235,.14); color:#dde3ee;}
+  .rank.r3{background:rgba(205,150,120,.22); color:#e3b08a;}
+  .bar-row{display:grid; grid-template-columns:150px 1fr 56px; align-items:center; gap:10px; margin-bottom:9px; font-size:12.5px;}
+  .bar-row .bl{color:var(--sub); text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .bar-row .track{background:var(--bg2); height:20px; border-radius:6px; overflow:hidden;}
+  .bar-row .fill{height:100%; border-radius:6px; background:linear-gradient(90deg,var(--pc,#5b8def),var(--pc2,#5b8def));}
+  .bar-row .bv{font-variant-numeric:tabular-nums; font-weight:700; font-size:12.5px;}
+  .legend{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:14px; font-size:12px; color:var(--sub);}
+  .legend .li{display:flex; align-items:center; gap:6px;}
+  .legend .sw{width:12px; height:12px; border-radius:3px;}
+  .callout{background:linear-gradient(120deg,rgba(91,141,239,.12),rgba(139,92,246,.08));
+    border:1px solid rgba(91,141,239,.3); border-radius:12px; padding:16px 18px; margin-top:14px; font-size:13px;}
+  .callout b{color:var(--blue);}
+  .callout.warm{background:linear-gradient(120deg,rgba(251,191,36,.12),rgba(244,114,182,.08));
+    border-color:rgba(251,191,36,.3);}
+  .callout.warm b{color:var(--amber);}
+  .insight-list{list-style:none;}
+  .insight-list li{padding:10px 0 10px 26px; position:relative; border-bottom:1px solid rgba(42,50,71,.5); font-size:13.5px;}
+  .insight-list li:last-child{border-bottom:none;}
+  .insight-list li::before{content:"▸"; position:absolute; left:4px; color:var(--blue); font-weight:800;}
+  .pill-num{display:inline-flex; align-items:center; justify-content:center; min-width:20px; height:20px; padding:0 6px;
+    background:var(--blue); color:#fff; border-radius:6px; font-size:11px; font-weight:800; margin-right:8px;}
+  .conn-strip{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:10px 0;}
+  .conn-strip .pnode{padding:8px 16px; border-radius:10px; font-weight:700; font-size:13px; border:1px solid var(--line); background:var(--card);}
+  .conn-strip .link{color:var(--dim); font-weight:700; font-size:16px;}
+  .footer{margin-top:50px; padding-top:20px; border-top:1px solid var(--line); color:var(--dim); font-size:11.5px; text-align:center;}
+  .small-note{font-size:11px; color:var(--dim); margin-top:6px;}
+  .matrix{display:grid; gap:0; border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:12.5px;}
+  .matrix .cell{padding:12px; border-bottom:1px solid var(--line); border-right:1px solid var(--line);}
+  .matrix .cell:last-child{border-right:none;}
+  .matrix .head{background:var(--card2); font-weight:700; text-align:center;}
+  .matrix .rowh{background:var(--card2); font-weight:700; color:var(--sub); display:flex; align-items:center;}
+  .yes{color:var(--green); font-weight:700; text-align:center;}
+  .mid{color:var(--amber); font-weight:700; text-align:center;}
+  .no{color:var(--dim); text-align:center;}
+  .hm{display:grid; gap:3px;}
+  .hm .hm-cell{border-radius:6px; padding:9px 4px; text-align:center; font-weight:700; font-size:12.5px;
+    font-variant-numeric:tabular-nums; transition:transform .1s;}
+  .hm .hm-cell:hover{transform:scale(1.05);}
+  .hm .hm-head{font-weight:700; font-size:11px; color:var(--dim); text-align:center; padding:4px 0;}
+  .hm .hm-rowh{font-weight:600; font-size:11.5px; color:var(--sub); display:flex; align-items:center; padding-right:6px; justify-content:flex-end;}
+  .quad{position:relative; width:100%; height:320px; border:1px solid var(--line); border-radius:12px;
+    background:linear-gradient(90deg,transparent 49.5%,var(--line) 49.5%,var(--line) 50.5%,transparent 50.5%),
+               linear-gradient(0deg,transparent 49.5%,var(--line) 49.5%,var(--line) 50.5%,transparent 50.5%),var(--bg2);}
+  .quad .axis-x{position:absolute; bottom:6px; width:100%; text-align:center; font-size:11px; color:var(--dim);}
+  .quad .axis-y{position:absolute; top:50%; left:6px; transform:translateY(-50%) rotate(-90deg); font-size:11px; color:var(--dim);}
+  .quad .ql{position:absolute; font-size:11px; color:var(--dim); padding:4px 8px;}
+  .quad .pt{position:absolute; transform:translate(-50%,-50%); text-align:center;}
+  .quad .pt .b{width:16px; height:16px; border-radius:50%; margin:0 auto 2px; border:2px solid #fff;}
+  .quad .pt .n{font-size:11px; font-weight:700; white-space:nowrap;}
+  .tier-badge{display:inline-flex; align-items:center; padding:2px 10px; border-radius:6px; font-size:11px; font-weight:800;}
+  .tb0{background:rgba(251,191,36,.18); color:#f5cd6b;}
+  .tb1{background:rgba(91,141,239,.18); color:#8fb0f5;}
+  .tb2{background:rgba(139,92,246,.18); color:#b79cff;}
+  .tb3{background:rgba(107,118,144,.18); color:#9aa6bd;}
+  .up{color:var(--green); font-weight:700;}
+  .dn{color:var(--red); font-weight:700;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Momcozy · Audience Persona & DTC / Amazon Insight</div>
+    <h1>Momcozy 人群画像洞察报告</h1>
+    <div class="subtitle">孕期 · 哺乳期 · 育儿期 —— 全生命周期人群画像 · 跨渠道效率 · 复购矩阵 · 可执行人群包清单（数据窗口：广告 2026.1–7 / Amazon ASI 2025Q3–2026Q1）</div>
+    <div class="meta">
+      <span>📅 数据周期 2025Q3–2026Q1</span>
+      <span>🎯 广告受众 4 渠道 × 3 阶段</span>
+      <span>🛒 复购数据 56,938 条品类流</span>
+      <span>👶 核心人群：品质型新妈妈</span>
+      <span>📦 交付：画像报告 + 人群包清单</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ 0 执行摘要 ============ -->
+  <section>
+    <h2><span class="no">0</span>执行摘要</h2>
+    <p class="sec-desc">六路数据（Meta/Google/TikTok 引流 DTC、Amazon ASI 站内、首单×复购、高频搜索词）交叉汇总，核心结论：Momcozy 的人群是<b>一个「北美品质型新妈妈」</b>，沿「孕→哺→育」被连续承接 2–3 年。</p>
+    <div class="grid g4">
+      <div class="kpi" style="--pc:#fbbf24">
+        <div class="label">孕期 · 拉新入口</div>
+        <div class="val">$16.45<small> CPA</small></div>
+        <div class="foot">ROAS 6.77 · 全场获客成本最低 · 首单 32,276</div>
+      </div>
+      <div class="kpi" style="--pc:#f472b6">
+        <div class="label">哺乳期 · 价值核心</div>
+        <div class="val">18.8%<small> 复购率</small></div>
+        <div class="foot">订单复购率 27.7% · 全场最高 · 首单 28,829</div>
+      </div>
+      <div class="kpi" style="--pc:#5b8def">
+        <div class="label">育儿期 · 体量增量</div>
+        <div class="val">61,832<small> 首单</small></div>
+        <div class="foot">占 42% 全场最大 · 复购率 14%</div>
+      </div>
+      <div class="kpi" style="--pc:#8b5cf6">
+        <div class="label">Amazon 拉新金矿</div>
+        <div class="val">93.9%<small> NTB</small></div>
+        <div class="foot">New-to-category · SA 渗透率三季翻倍</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>🎯 四个最重要的结论</h3>
+      <ul class="insight-list">
+        <li><b>一个画像，不是四拨人：</b>Meta 产后投入 88.6%、Amazon 高 TGI 全是母婴 in-market、TikTok 最大归因「精明品质妈妈」——六路数据指向同一个「品质型新妈妈」沿孕→哺→育的完整生命周期。</li>
+        <li><b>孕期被系统性低估：</b>它是全渠道 CPA 最低（$8.95–16.45）+ ROAS 最高（Meta 6.77 / Google 7.73 / TikTok 4.43）的拉新入口，但 Meta 只给了 11.4% 预算。</li>
+        <li><b>哺乳期是耗材金矿：</b>复购率 18.8%、订单复购率 27.7%，吸奶器配件自复购 4,437 人全场最高——靠配件/储奶袋锁复购。</li>
+        <li><b>Amazon 画像正在收窄聚焦：</b>TGI 三季上升的全是站内婴儿硬件（+20~37），下降的全是站外 Off-Amazon 人群（-14~-21）；且「New-to-category」人群 NTB 高达 93.9%，是拉新金矿。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 1 数据口径 ============ -->
+  <section>
+    <h2><span class="no">1</span>数据口径说明</h2>
+    <p class="sec-desc">两条转化链路独立，指标不可混比。</p>
+    <div class="grid g2">
+      <div class="card">
+        <h3>① DTC 链路（Meta / Google / TikTok → 独立站）</h3>
+        <p style="color:var(--sub); font-size:13px">三条渠道引流到 Shopify 独立站，可横向对比 <b>CPA（获客成本 = Cost÷转化）、AOV（客单价 = 转化价值÷转化）、CVR、ROAS</b>。转化环境一致，口径可比。</p>
+      </div>
+      <div class="card">
+        <h3>② Amazon 链路（ASI → 站内）</h3>
+        <p style="color:var(--sub); font-size:13px">Amazon Search Insights 站内闭环，看 <b>TGI（购买集中度）、SA 渗透率、NTB 新客占比、CVR</b>。与 DTC 的 CVR 口径不同（站内 vs 独立站），<b>不可混在同一张表对比</b>。</p>
+      </div>
+    </div>
+    <div class="callout warm" style="margin-top:16px">📐 <b>衍生指标口径：</b>CPA = Cost ÷ 转化数；AOV = 转化价值 ÷ 转化数。TGI / SA 渗透率 / NTB 均为 Amazon ASI 原生指标，跨季度可比（相对指标）。</div>
+  </section>
+
+  <!-- ============ 2 三大阶段逐一画像 ============ -->
+  <section>
+    <h2><span class="no">2</span>三大生命周期阶段逐一画像</h2>
+    <p class="sec-desc">每个阶段按「定位 → 核心数据 → 高价值产品/搜索词 → 差异化」展开，完整交叉分析见第 3 节矩阵。</p>
+
+    <!-- 孕期 -->
+    <div class="persona">
+      <div class="persona-head" style="--pc:#fbbf24; --pc-dim:#241f12">
+        <div>
+          <div class="pn"><span class="dot"></span>① 孕期（Pregnancy）<span class="en">Acquisition · 拉新入口</span></div>
+          <div style="margin-top:8px"><span class="tag t-amber">拉新入口</span><span class="tag t-amber">CPA 最低</span><span class="tag t-amber">ROAS 最高</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v" style="color:#f5cd6b">6.77</div><div class="l">ROAS(Meta)</div></div>
+          <div class="stat"><div class="v" style="color:#f5cd6b">$16.45</div><div class="l">CPA</div></div>
+          <div class="stat"><div class="v">32,276</div><div class="l">首单用户</div></div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <div class="oneliner" style="border-color:#fbbf24">👤 <b>一句话画像：</b>孕晚期的待产妈妈，被「孕期不适 + 待产焦虑」驱动，是全渠道<b>获客成本最低、ROAS 最高</b>的漏斗顶部——但预算只给了 11.4%，被系统性低估。</div>
+        <div class="grid g2">
+          <div>
+            <h3>高价值搜索词 Top 6（按花费）</h3>
+            <table>
+              <tr><th>搜索词</th><th class="num">花费($)</th><th class="num">CVR</th></tr>
+              <tr><td><span class="rank r1">1</span> pregnancy pillow 孕妇枕</td><td class="num"><b>97,382</b></td><td class="num">6.7%</td></tr>
+              <tr><td><span class="rank r2">2</span> pregnancy belly band 托腹带</td><td class="num">36,022</td><td class="num">7.2%</td></tr>
+              <tr><td><span class="rank r3">3</span> momcozy pregnancy pillow</td><td class="num">30,197</td><td class="num">7.5%</td></tr>
+              <tr><td><span class="rank">4</span> momcozy belly band</td><td class="num">20,111</td><td class="num">11.6%</td></tr>
+              <tr><td><span class="rank">5</span> maternity bras 哺乳内衣</td><td class="num">10,928</td><td class="num">5.4%</td></tr>
+              <tr><td><span class="rank">6</span> maternity underwear</td><td class="num">4,275</td><td class="num">6.7%</td></tr>
+            </table>
+            <div class="small-note">孕妇枕 + 托腹带 + 哺乳内衣 = 孕期三件套，是锁客组合。</div>
+          </div>
+          <div>
+            <h3>各渠道孕期 ROAS</h3>
+            <div class="bar-row"><div class="bl">Google 关键词</div><div class="track"><div class="fill" style="width:100%; --pc:#fbbf24"></div></div><div class="bv">7.73</div></div>
+            <div class="bar-row"><div class="bl">Google 产品</div><div class="track"><div class="fill" style="width:87%"></div></div><div class="bv">6.76</div></div>
+            <div class="bar-row"><div class="bl">Meta</div><div class="track"><div class="fill" style="width:88%"></div></div><div class="bv">6.77</div></div>
+            <div class="bar-row"><div class="bl">TikTok</div><div class="track"><div class="fill" style="width:57%"></div></div><div class="bv">4.43</div></div>
+            <h3 style="margin-top:16px">孕期 CPA（越低越好）</h3>
+            <div class="bar-row"><div class="bl">Google 产品</div><div class="track"><div class="fill" style="width:36%; --pc:#34d399"></div></div><div class="bv" style="color:#34d399">$8.95</div></div>
+            <div class="bar-row"><div class="bl">TikTok</div><div class="track"><div class="fill" style="width:55%; --pc:#fbbf24"></div></div><div class="bv">$13.87</div></div>
+            <div class="bar-row"><div class="bl">Google 关键词</div><div class="track"><div class="fill" style="width:57%"></div></div><div class="bv">$14.49</div></div>
+            <div class="bar-row"><div class="bl">Meta</div><div class="track"><div class="fill" style="width:65%"></div></div><div class="bv">$16.45</div></div>
+          </div>
+        </div>
+        <div class="callout warm">💡 <b>关键洞察：</b>孕期 NTBR <b>26.82%</b> 是三阶段最高（Amazon 新客占比最大），印证「孕期是拉新入口」。且孕期→哺乳 720 人、孕期→育儿 1,521 人，孕期获客能贯穿整个生命周期。素材对齐「pregnancy pillow / belly band / maternity bra」+ 孕期健康焦虑（cholestasis 2845 / NIPT 1248）。</div>
+      </div>
+    </div>
+
+    <!-- 哺乳期 -->
+    <div class="persona">
+      <div class="persona-head" style="--pc:#f472b6; --pc-dim:#241420">
+        <div>
+          <div class="pn"><span class="dot"></span>② 产后哺乳期（Lactation）<span class="en">Cash Cow · 价值核心</span></div>
+          <div style="margin-top:8px"><span class="tag t-pink">复购率最高</span><span class="tag t-pink">耗材飞轮</span><span class="tag t-pink">存量金矿</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v" style="color:#f8a6cc">18.8%</div><div class="l">复购率</div></div>
+          <div class="stat"><div class="v" style="color:#f8a6cc">27.7%</div><div class="l">订单复购率</div></div>
+          <div class="stat"><div class="v">28,829</div><div class="l">首单用户</div></div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <div class="oneliner" style="border-color:#f472b6">👤 <b>一句话画像：</b>被「堵奶 / 乳腺炎 / 追奶」痛点驱动的新手哺乳妈妈，买吸奶器后持续回购<b>配件 + 储奶袋 + 清洁湿巾</b>，是价值密度最高、复购最强的存量盘。</div>
+        <div class="grid g2">
+          <div>
+            <h3>高价值搜索词 Top 6（按花费）</h3>
+            <table>
+              <tr><th>搜索词</th><th class="num">花费($)</th><th class="num">CVR</th></tr>
+              <tr><td><span class="rank r1">1</span> momcozy breast pump</td><td class="num"><b>306,142</b></td><td class="num">4.2%</td></tr>
+              <tr><td><span class="rank r2">2</span> breast pump 吸奶器</td><td class="num">160,906</td><td class="num">2.4%</td></tr>
+              <tr><td><span class="rank r3">3</span> nursing bras 哺乳内衣</td><td class="num">61,195</td><td class="num">6.6%</td></tr>
+              <tr><td><span class="rank">4</span> momcozy nursing bra</td><td class="num">28,916</td><td class="num">10.1%</td></tr>
+              <tr><td><span class="rank">5</span> momcozy replacement parts</td><td class="num">13,420</td><td class="num">10.6%</td></tr>
+              <tr><td><span class="rank">6</span> eufy s1 pro（竞品比价）</td><td class="num">10,780</td><td class="num">2.1%</td></tr>
+            </table>
+            <div class="small-note">「momcozy breast pump」品牌词花费 $306K 全场最大，品牌心智已建立。</div>
+          </div>
+          <div>
+            <h3>哺乳期复购关系 Top（用户数）</h3>
+            <div class="bar-row"><div class="bl">吸奶器配件→配件</div><div class="track"><div class="fill" style="width:100%; --pc:#f472b6"></div></div><div class="bv">4,437</div></div>
+            <div class="bar-row"><div class="bl">吸奶器→吸奶器</div><div class="track"><div class="fill" style="width:62%"></div></div><div class="bv">2,769</div></div>
+            <div class="bar-row"><div class="bl">吸奶器→配件</div><div class="track"><div class="fill" style="width:34%"></div></div><div class="bv">1,493</div></div>
+            <div class="bar-row"><div class="bl">哺乳内衣→吸奶器</div><div class="track"><div class="fill" style="width:19%"></div></div><div class="bv">859</div></div>
+            <h3 style="margin-top:16px">哺乳期客单价（Google $158 最高）</h3>
+            <div class="bar-row"><div class="bl">Google 关键词 AOV</div><div class="track"><div class="fill" style="width:100%; --pc:#f472b6"></div></div><div class="bv">$158</div></div>
+            <div class="bar-row"><div class="bl">Meta AOV</div><div class="track"><div class="fill" style="width:85%"></div></div><div class="bv">$134</div></div>
+            <div class="bar-row"><div class="bl">TikTok AOV</div><div class="track"><div class="fill" style="width:39%"></div></div><div class="bv">$61</div></div>
+          </div>
+        </div>
+        <div class="callout warm">💡 <b>关键洞察：</b>哺乳期 NTBR <b>23.52%</b> 三阶段最低 = 复购占比最高，印证「哺乳期是存量盘」。耗材飞轮：吸奶器首单 → 配件（法兰/鸭嘴阀）→ 储奶袋订阅。储奶袋 200pcs 复购率 23.5%、吸奶器 M9 复购率 22.9%。素材对齐「mastitis 3812 / power pumping 387 / flange size 527」。</div>
+      </div>
+    </div>
+
+    <!-- 育儿期 -->
+    <div class="persona">
+      <div class="persona-head" style="--pc:#5b8def; --pc-dim:#121b2a">
+        <div>
+          <div class="pn"><span class="dot"></span>③ 育儿期（Parenting）<span class="en">Volume Growth · 体量增量</span></div>
+          <div style="margin-top:8px"><span class="tag t-blue">体量最大</span><span class="tag t-blue">品类扩张</span><span class="tag t-blue">0–3 岁</span></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v" style="color:#8fb0f5">61,832</div><div class="l">首单用户</div></div>
+          <div class="stat"><div class="v" style="color:#8fb0f5">14.0%</div><div class="l">复购率</div></div>
+          <div class="stat"><div class="v">$312K</div><div class="l">清洗机花费</div></div>
+        </div>
+      </div>
+      <div class="persona-body">
+        <div class="oneliner" style="border-color:#5b8def">👤 <b>一句话画像：</b>0–3 岁幼儿家庭，被「带娃效率 + 清洁消毒」驱动，靠<b>品类扩张</b>（清洗机/推车/辅食机/监视器）而非耗材复购做大生意——首单体量最大，但复购率仅 14%。</div>
+        <div class="grid g2">
+          <div>
+            <h3>高价值搜索词 Top 6（按花费）</h3>
+            <table>
+              <tr><th>搜索词</th><th class="num">花费($)</th><th class="num">CVR</th></tr>
+              <tr><td><span class="rank r1">1</span> mom cozy bottle washer</td><td class="num"><b>103,462</b></td><td class="num">6.1%</td></tr>
+              <tr><td><span class="rank r2">2</span> momcozy stroller 推车</td><td class="num">56,215</td><td class="num">2.8%</td></tr>
+              <tr><td><span class="rank r3">3</span> baby monitor 监视器</td><td class="num">54,808</td><td class="num">2.8%</td></tr>
+              <tr><td><span class="rank">4</span> double stroller 双人推车</td><td class="num">53,788</td><td class="num">1.8%</td></tr>
+              <tr><td><span class="rank">5</span> baby carrier 背带</td><td class="num">32,215</td><td class="num">2.2%</td></tr>
+              <tr><td><span class="rank">6</span> momcozy baby monitor</td><td class="num">27,297</td><td class="num">4.2%</td></tr>
+            </table>
+            <div class="small-note">清洗机 BS03 是育儿期最大单品（Meta 花费 $312,873、购买 12,736）。</div>
+          </div>
+          <div>
+            <h3>Meta 育儿期产品花费 Top</h3>
+            <div class="bar-row"><div class="bl">清洗消毒机 BS03</div><div class="track"><div class="fill" style="width:100%; --pc:#5b8def"></div></div><div class="bv">$313K</div></div>
+            <div class="bar-row"><div class="bl">喂养电器品线</div><div class="track"><div class="fill" style="width:52%"></div></div><div class="bv">$164K</div></div>
+            <div class="bar-row"><div class="bl">婴儿监视器 BM04</div><div class="track"><div class="fill" style="width:20%"></div></div><div class="bv">$63K</div></div>
+            <div class="bar-row"><div class="bl">辅食机 FM03</div><div class="track"><div class="fill" style="width:18%"></div></div><div class="bv">$56K</div></div>
+            <div class="bar-row"><div class="bl">婴儿摇椅 AW03</div><div class="track"><div class="fill" style="width:16%"></div></div><div class="bv">$50K</div></div>
+            <h3 style="margin-top:16px">育儿期平均 LTV 领先产品</h3>
+            <div class="bar-row"><div class="bl">婴儿车 ST01</div><div class="track"><div class="fill" style="width:100%; --pc:#5b8def"></div></div><div class="bv">$808</div></div>
+            <div class="bar-row"><div class="bl">护理套装 CK19</div><div class="track"><div class="fill" style="width:48%"></div></div><div class="bv">$389</div></div>
+            <div class="bar-row"><div class="bl">清洗机 BW05</div><div class="track"><div class="fill" style="width:44%"></div></div><div class="bv">$353</div></div>
+          </div>
+        </div>
+        <div class="callout warm">💡 <b>关键洞察：</b>育儿期 NTBR 25.89% 居中。Amazon 婴儿硬件 in-market 人群 TGI 三季 <b>+20~37</b> 上升最快（奶瓶消毒器 +30.3、地板座椅 +27.0、背带 +22.3）——育儿期是 Amazon 增长的主引擎。素材对齐「bottle washer / stroller / baby monitor」+ 带娃效率。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3 洞察矩阵 ============ -->
+  <section>
+    <h2><span class="no">3</span>洞察矩阵（6 组）</h2>
+    <p class="sec-desc">把三阶段放到同一坐标下交叉，看清人群结构的差异与共性。</p>
+
+    <!-- 3.1 效率矩阵 -->
+    <div class="card" style="margin-bottom:16px">
+      <h3>3.1 跨渠道效率矩阵 —— 钱花在哪最值（仅 DTC 三渠道）</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px">CPA（获客成本，越低越好）与 AOV（客单价）跨渠道、跨阶段对比。</p>
+      <table>
+        <tr><th>阶段</th><th class="num">Meta CPA</th><th class="num">G关键词 CPA</th><th class="num">G产品 CPA</th><th class="num">TikTok CPA</th><th class="num">Meta AOV</th><th class="num">G关键词 AOV</th><th class="num">TikTok AOV</th></tr>
+        <tr><td style="color:#f5cd6b"><b>孕期</b></td><td class="num">$16.45</td><td class="num">$14.49</td><td class="num" style="color:#34d399"><b>$8.95</b></td><td class="num">$13.87</td><td class="num">$111</td><td class="num">$112</td><td class="num">$62</td></tr>
+        <tr><td style="color:#f8a6cc"><b>哺乳期</b></td><td class="num">$21.90</td><td class="num">$21.53</td><td class="num" style="color:#34d399"><b>$9.47</b></td><td class="num">$17.05</td><td class="num">$134</td><td class="num">$158</td><td class="num">$61</td></tr>
+        <tr><td style="color:#8fb0f5"><b>育儿期</b></td><td class="num">$19.69</td><td class="num">$22.56</td><td class="num">$12.06</td><td class="num" style="color:#f87171">$25.19</td><td class="num">$133</td><td class="num">$161</td><td class="num">$97</td></tr>
+      </table>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="callout" style="margin-top:0">🔎 <b>孕期 CPA 全场最低：</b>Google 产品 CPA 仅 $8.95，TikTok 孕期 $13.87 比育儿期 $25.19 便宜 45%——孕期是明显被低估的入口，应大幅加码。</div>
+        <div class="callout" style="margin-top:0">🔎 <b>渠道分工：</b>TikTok 客单价 $61–97 是「低价引流」，Google 关键词 $158–161 是「高价收割」，差约 2 倍。</div>
+      </div>
+    </div>
+
+    <!-- 3.2 生命周期热力图 -->
+    <div class="card" style="margin-bottom:16px">
+      <h3>3.2 生命周期 × 核心指标 热力图 —— 三阶段的价值定位</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px">横轴为「核心指标」，颜色越深 = 该阶段在该指标上越优（ROAS/复购率越高越好，CPA 越低越好）。</p>
+      <div class="legend">
+        <span class="li"><span class="sw" style="background:#fbbf24"></span>孕期</span>
+        <span class="li"><span class="sw" style="background:#f472b6"></span>哺乳期</span>
+        <span class="li"><span class="sw" style="background:#5b8def"></span>育儿期</span>
+        <span class="li" style="margin-left:auto">颜色越深 = 越优（CPA 反向）</span>
+      </div>
+      <div class="hm" style="grid-template-columns:70px repeat(4,1fr)">
+        <div class="hm-head"></div>
+        <div class="hm-head">ROAS(Meta)</div>
+        <div class="hm-head">CPA(最低)</div>
+        <div class="hm-head">复购率</div>
+        <div class="hm-head">首单体量</div>
+
+        <div class="hm-rowh">孕期</div>
+        <div class="hm-cell" style="background:rgba(251,191,36,1)">6.77</div>
+        <div class="hm-cell" style="background:rgba(52,211,153,1)">$16.45</div>
+        <div class="hm-cell" style="background:rgba(251,191,36,.3)">13.5%</div>
+        <div class="hm-cell" style="background:rgba(251,191,36,.55)">32,276</div>
+
+        <div class="hm-rowh">哺乳期</div>
+        <div class="hm-cell" style="background:rgba(244,114,182,.78)">6.14</div>
+        <div class="hm-cell" style="background:rgba(52,211,153,.45)">$21.90</div>
+        <div class="hm-cell" style="background:rgba(244,114,182,1)">18.8%</div>
+        <div class="hm-cell" style="background:rgba(244,114,182,.5)">28,829</div>
+
+        <div class="hm-rowh">育儿期</div>
+        <div class="hm-cell" style="background:rgba(91,141,239,.9)">6.76</div>
+        <div class="hm-cell" style="background:rgba(52,211,153,.4)">$19.69</div>
+        <div class="hm-cell" style="background:rgba(91,141,239,.35)">14.0%</div>
+        <div class="hm-cell" style="background:rgba(91,141,239,1)">61,832</div>
+      </div>
+      <div class="callout">💡 <b>读图结论：</b>① <b>孕期</b> = ROAS 高 + CPA 最低（绿色最深）= 拉新入口；② <b>哺乳期</b> = 复购率最深 = 存量金矿；③ <b>育儿期</b> = 首单体量最深 = 增量引擎。三阶段各司其职，构成「拉新→复购→扩容」完整漏斗。</div>
+    </div>
+
+    <!-- 3.3 拉新/复购定位 -->
+    <div class="card" style="margin-bottom:16px">
+      <h3>3.3 拉新 vs 复购 定位矩阵（Amazon NTB 口径）</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px">横轴 = NTB 新客占比（拉新程度），纵轴 = 复购率。气泡位置决定每阶段的「战略角色」。</p>
+      <div class="quad">
+        <span class="ql" style="top:6px; left:12px; color:#6fe3bc">★ 拉新入口（高新客 + 中复购）</span>
+        <span class="ql" style="top:6px; right:12px; color:#f5cd6b">★ 存量金矿（中高复购）</span>
+        <span class="ql" style="bottom:6px; left:12px; color:#9aa6bd">增量引擎（高体量）</span>
+        <span class="ql" style="bottom:6px; right:12px; color:#9aa6bd">—</span>
+        <div class="axis-x">NTB 新客占比（拉新程度）→</div>
+        <div class="axis-y">用户复购率 →</div>
+        <div class="pt" style="left:62%; top:42%"><div class="b" style="background:#fbbf24"></div><div class="n">孕期<br><span style="color:var(--dim)">NTB 26.8% / 复购 13.5%</span></div></div>
+        <div class="pt" style="left:42%; top:20%"><div class="b" style="background:#f472b6"></div><div class="n">哺乳期<br><span style="color:var(--dim)">NTB 23.5% / 复购 18.8%</span></div></div>
+        <div class="pt" style="left:55%; top:68%"><div class="b" style="background:#5b8def"></div><div class="n">育儿期<br><span style="color:var(--dim)">NTB 25.9% / 复购 14.0%</span></div></div>
+      </div>
+      <div class="callout">💡 <b>战略结论：</b>孕期是<b>拉新入口</b>（NTB 26.8% 最高，先靠它获客），哺乳期是<b>复购金矿</b>（复购率 18.8% 最高，靠耗材变现），育儿期是<b>体量引擎</b>（61,832 首单，靠品类扩张放大）。三阶段形成「获客 → 复购 → 扩容」完整漏斗。</div>
+    </div>
+
+    <!-- 3.4 TGI 三季趋势 -->
+    <div class="card" style="margin-bottom:16px">
+      <h3>3.4 Amazon 人群 TGI 三季趋势 —— 谁在升/降</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px">242 个母婴人群 2025Q3→2026Q1 的 TGI 变化：上升的全是「站内婴儿硬件」，下降的全是「站外泛母婴」。</p>
+      <div class="grid g2">
+        <div>
+          <h4 style="font-size:13px; color:#34d399; margin-bottom:8px">🟢 上升：站内婴儿硬件 in-market</h4>
+          <table>
+            <tr><th>人群</th><th class="num">Q3</th><th class="num">Q1</th><th class="num">Δ</th></tr>
+            <tr><td>婴儿床垫垫片</td><td class="num">21.2</td><td class="num">58.1</td><td class="num up">+36.9</td></tr>
+            <tr><td>摇篮挂饰</td><td class="num">15.9</td><td class="num">46.4</td><td class="num up">+30.6</td></tr>
+            <tr><td>奶瓶消毒器/暖奶器</td><td class="num">21.4</td><td class="num">51.7</td><td class="num up">+30.3</td></tr>
+            <tr><td>婴儿地板座椅</td><td class="num">22.6</td><td class="num">49.6</td><td class="num up">+27.0</td></tr>
+            <tr><td>婴儿背带/背巾</td><td class="num">27.2</td><td class="num">49.6</td><td class="num up">+22.3</td></tr>
+          </table>
+        </div>
+        <div>
+          <h4 style="font-size:13px; color:#f87171; margin-bottom:8px">🔴 下降：站外 Off-Amazon 人群</h4>
+          <table>
+            <tr><th>人群</th><th class="num">Q3</th><th class="num">Q1</th><th class="num">Δ</th></tr>
+            <tr><td>站外·婴儿安全设备</td><td class="num">53.1</td><td class="num">31.6</td><td class="num dn">-21.5</td></tr>
+            <tr><td>站外·婴儿辅食</td><td class="num">40.3</td><td class="num">20.6</td><td class="num dn">-19.8</td></tr>
+            <tr><td>站外·学步杯</td><td class="num">42.5</td><td class="num">23.1</td><td class="num dn">-19.4</td></tr>
+            <tr><td>站外·学步喂养</td><td class="num">39.0</td><td class="num">22.7</td><td class="num dn">-16.3</td></tr>
+            <tr><td>母婴店铺 Persona</td><td class="num">54.7</td><td class="num">40.7</td><td class="num dn">-14.0</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="callout">💡 <b>通用规律：</b>Momcozy 在 Amazon 的画像正「<b>收窄聚焦</b>」——购买集中度从泛母婴兴趣向「真正要买婴儿硬件的新父母」迁移。投放应<b>顺趋势加码上升的硬件人群</b>，站外泛人群降权。</div>
+    </div>
+
+    <!-- 3.5 交叉销售矩阵 -->
+    <div class="card" style="margin-bottom:16px">
+      <h3>3.5 品类交叉复购矩阵（首单 → 复购，用户数）</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px">行 = 首单品类，列 = 复购品类。数值 = 复购用户数，越高说明越该做交叉/捆绑销售。</p>
+      <table>
+        <tr><th>首单品类 \ 复购</th><th class="num">吸奶器</th><th class="num">吸奶器配件</th><th class="num">哺乳内衣</th><th class="num">奶瓶清洗机</th><th class="num">耗材洗涤</th><th>解读</th></tr>
+        <tr><td style="color:#f8a6cc"><b>吸奶器</b></td><td class="num"><b style="color:#f8a6cc">2,769</b></td><td class="num"><b style="color:#f8a6cc">1,493</b></td><td class="num">679</td><td class="num">268</td><td class="num">242</td><td>吸奶器买家 → 配件复购最强（耗材飞轮）</td></tr>
+        <tr><td style="color:#f8a6cc"><b>吸奶器配件</b></td><td class="num">633</td><td class="num"><b style="color:#f8a6cc">4,437</b></td><td class="num">183</td><td class="num">110</td><td class="num">210</td><td>配件自复购全场最高（4,437）</td></tr>
+        <tr><td style="color:#fbbf24"><b>哺乳内衣</b></td><td class="num"><b style="color:#fbbf24">859</b></td><td class="num">387</td><td class="num"><b style="color:#fbbf24">2,312</b></td><td class="num">186</td><td class="num">171</td><td>内衣是吸奶器的<b>种草入口</b></td></tr>
+        <tr><td style="color:#5b8def"><b>奶瓶清洗机</b></td><td class="num">401</td><td class="num">310</td><td class="num">213</td><td class="num">616</td><td class="num"><b style="color:#5b8def">576</b></td><td>清洗机 → 洗涤剂耗材飞轮</td></tr>
+        <tr><td style="color:#fbbf24"><b>孕妇枕</b></td><td class="num">204</td><td class="num">69</td><td class="num">338</td><td class="num">136</td><td class="num">69</td><td>孕期三件套（枕→托腹带 458）</td></tr>
+      </table>
+      <div class="callout">💡 <b>两个高价值交叉对：</b>① <b>吸奶器 → 配件</b>（1,493）——耗材飞轮最硬，做订阅式配件；② <b>哺乳内衣 → 吸奶器</b>（859）——低价内衣导流高价吸奶器，放在漏斗前端引流。③ <b>清洗机 → 洗涤剂</b>（576）——育儿期耗材飞轮。</div>
+    </div>
+
+    <!-- 3.6 SA渗透率 + NTB -->
+    <div class="card">
+      <h3>3.6 SA 渗透率 + NTB 新客占比 —— Amazon 拉新金矿</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px">三季 SA 渗透率趋势 + NTB 新客占比，锁定 Amazon 的拉新黄金人群。</p>
+      <div class="grid g2">
+        <div>
+          <h4 style="font-size:13px; color:var(--sub); margin-bottom:8px">SA 渗透率上升（站内硬件）</h4>
+          <table>
+            <tr><th>人群</th><th class="num">Q3</th><th class="num">Q1</th><th class="num">Δ</th></tr>
+            <tr><td>婴儿摇篮床</td><td class="num">54.6</td><td class="num">85.2</td><td class="num up">+30.6</td></tr>
+            <tr><td>奶瓶消毒器/暖奶器</td><td class="num">61.2</td><td class="num">87.7</td><td class="num up">+26.6</td></tr>
+            <tr><td>婴儿床品套装</td><td class="num">56.3</td><td class="num">84.1</td><td class="num up">+27.8</td></tr>
+            <tr><td>婴儿护理健康套装</td><td class="num">57.1</td><td class="num">83.7</td><td class="num up">+26.6</td></tr>
+          </table>
+        </div>
+        <div>
+          <h4 style="font-size:13px; color:#f5cd6b; margin-bottom:8px">🟡 拉新金矿</h4>
+          <table>
+            <tr><th>人群</th><th class="num">NTB</th><th class="num">SA Q3→Q1</th></tr>
+            <tr><td style="color:#f5cd6b"><b>Baby Products New to category</b></td><td class="num" style="color:#f5cd6b"><b>93.9%</b></td><td class="num">17.6%→46.3%</td></tr>
+            <tr><td>婴儿浴巾/连帽巾</td><td class="num">58.5%</td><td class="num">—</td></tr>
+            <tr><td>婴儿包被 swaddle</td><td class="num">54.3%</td><td class="num">—</td></tr>
+          </table>
+          <div class="small-note">NTB = 新客占比；该人群三季渗透率翻倍，是拉新黄金人群。</div>
+        </div>
+      </div>
+      <div class="callout warm">💡 <b>金矿结论：</b>「<b>LS · Baby Products Purchasers — New to category</b>」NTB 高达 <b>93.9%</b>，且 SA 渗透率三季翻倍（17.6%→46.3%）——几乎全是新客，是 Amazon 拉新的第一优先级人群，应重点加码。</div>
+    </div>
+  </section>
+
+  <!-- ============ 4 联通性 ============ -->
+  <section>
+    <h2><span class="no">4</span>三阶段的联通性（Connectivity）</h2>
+    <p class="sec-desc">三个阶段不是三拨人，而是<b>同一个「品质型新妈妈」在时间轴上的连续承接</b>。</p>
+
+    <div class="card" style="margin-bottom:16px">
+      <h3>4.1 跨阶段核心人群 —— 精明品质妈妈（联通锚点）</h3>
+      <p style="color:var(--sub); font-size:13px; margin-bottom:14px">TikTok 逐视频归因里，「精明品质妈妈」投入 <b>$517K 全场最大</b>，横跨孕期→育儿期，是三阶段共同的主力人群。</p>
+      <div class="bar-row"><div class="bl">精明品质妈妈</div><div class="track"><div class="fill" style="width:100%; --pc:#8b5cf6"></div></div><div class="bv">$517K</div></div>
+      <div class="bar-row"><div class="bl">新手妈妈/孕期准备</div><div class="track"><div class="fill" style="width:63%; --pc:#fbbf24"></div></div><div class="bv">$325K</div></div>
+      <div class="bar-row"><div class="bl">哺乳期母亲</div><div class="track"><div class="fill" style="width:11%; --pc:#f472b6"></div></div><div class="bv">$59K</div></div>
+      <div class="bar-row"><div class="bl">职场妈妈</div><div class="track"><div class="fill" style="width:8%; --pc:#5b8def"></div></div><div class="bv">$41K</div></div>
+      <div class="small-note">TikTok 归因花费 —— 精明品质妈妈是跨阶段的绝对主力。</div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <h3>4.2 生命周期流动（首单 → 复购 品类）</h3>
+      <div class="conn-strip">
+        <span class="pnode" style="color:#f5cd6b">孕期 32,276</span>
+        <span class="link">→ 哺乳 720 / 育儿 1,521</span>
+        <span class="pnode" style="color:#f8a6cc">哺乳期 28,829</span>
+        <span class="link">→ 育儿 2,198</span>
+        <span class="pnode" style="color:#8fb0f5">育儿期 61,832</span>
+      </div>
+      <div class="small-note">孕期获客后，既流向哺乳期（720 人）也直接流向育儿期（1,521 人）——孕期获客能贯穿整个生命周期，是联通的关键入口。</div>
+    </div>
+
+    <div class="card">
+      <h3>4.3 需求场景矩阵 —— 三阶段如何承接同一个妈妈</h3>
+      <div class="matrix" style="grid-template-columns:130px repeat(3,1fr)">
+        <div class="cell head"></div>
+        <div class="cell head" style="color:#f5cd6b">孕期</div>
+        <div class="cell head" style="color:#f8a6cc">哺乳期</div>
+        <div class="cell head" style="color:#8fb0f5">育儿期</div>
+        <div class="cell rowh">核心需求</div><div class="cell yes">★ 待产舒适</div><div class="cell yes">★ 哺乳/追奶</div><div class="cell yes">★ 带娃效率</div>
+        <div class="cell rowh">核心产品</div><div class="cell mid">◐ 孕妇枕/托腹带</div><div class="cell yes">★ 吸奶器+配件</div><div class="cell mid">◐ 清洗机/推车</div>
+        <div class="cell rowh">内容痛点</div><div class="cell mid">◐ 孕期焦虑</div><div class="cell yes">★ 堵奶/乳腺炎</div><div class="cell mid">◐ 清洁消毒</div>
+        <div class="cell rowh">渠道重心</div><div class="cell mid">◐ Meta+TikTok</div><div class="cell yes">★ Google+Amazon</div><div class="cell mid">◐ Meta+Google+Amazon</div>
+        <div class="cell rowh">战略角色</div><div class="cell mid">◐ 拉新入口</div><div class="cell yes">★ 复购金矿</div><div class="cell mid">◐ 体量引擎</div>
+      </div>
+      <div class="small-note">★ 核心场景 · ◐ 联动场景。三阶段是同一个妈妈的连续需求面，而非三个独立人群。</div>
+    </div>
+  </section>
+
+  <!-- ============ 5 可执行人群包清单 ============ -->
+  <section>
+    <h2><span class="no">5</span>可执行人群包清单（含出价分层）</h2>
+    <p class="sec-desc">按「DTC 链路」与「Amazon 链路」分别给人群包，含建议出价分层，可直接交付投放。</p>
+
+    <div class="card" style="margin-bottom:16px">
+      <h3>出价分层规则（T0–T3 + 排除）</h3>
+      <table>
+        <tr><th>分层</th><th>建议出价调整</th><th>人群类型</th><th>说明</th></tr>
+        <tr><td><span class="tier-badge tb0">T0 核心溢价包</span></td><td class="num"><b>+30% ~ +50%</b></td><td>孕期人群 + 婴儿硬件 in-market + New-to-category</td><td>高确定性 ROI，抢量</td></tr>
+        <tr><td><span class="tier-badge tb1">T1 主力标准包</span></td><td class="num">标准 ±10%</td><td>哺乳期耗材复购人群 + 吸奶器 lookalike</td><td>维持标准出价保量</td></tr>
+        <tr><td><span class="tier-badge tb2">T2 前置事件包</span></td><td class="num">+15% ~ +25%</td><td>孕期准备者（Getting Married / Future Movers）</td><td>前置种草，适度溢价</td></tr>
+        <tr><td><span class="tier-badge tb3">T3 测试探索包</span></td><td class="num">-20% ~ -30%</td><td>泛家庭大盘 / 职场妈妈 hands-free</td><td>低成本探索，跑数据</td></tr>
+        <tr><td><span class="tier-badge tb3">排除项</span></td><td class="num">Negative</td><td>站外 Off-Amazon 泛人群 / 无孩 / 7 岁以上</td><td>压低或排除，避免浪费</td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <h3>核心人群包速览</h3>
+      <div class="grid g2">
+        <div>
+          <table>
+            <tr><th style="color:#8fb0f5">DTC 链路（Meta/Google/TikTok）</th><th>分层</th><th class="num">依据</th></tr>
+            <tr><td>孕期兴趣包（孕妇枕/托腹带）</td><td><span class="tier-badge tb0">T0</span></td><td class="num">CPA $13.9</td></tr>
+            <tr><td>吸奶器 lookalike + 配件</td><td><span class="tier-badge tb1">T1</span></td><td class="num">复购 4,437</td></tr>
+            <tr><td>Getting Married / Future Movers</td><td><span class="tier-badge tb2">T2</span></td><td class="num">孕产前置</td></tr>
+            <tr><td>职场妈妈 hands-free 兴趣</td><td><span class="tier-badge tb3">T3</span></td><td class="num">ROI 3.0</td></tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr><th style="color:#b79cff">Amazon 链路（ASI/DSP）</th><th>分层</th><th class="num">依据</th></tr>
+            <tr><td>Baby Products New to category</td><td><span class="tier-badge tb0">T0</span></td><td class="num">NTB 93.9%</td></tr>
+            <tr><td>婴儿硬件 in-market（消毒器/座椅/背带）</td><td><span class="tier-badge tb0">T0</span></td><td class="num">TGI +30.3</td></tr>
+            <tr><td>奶瓶奶嘴/肠绞痛/尿布疹</td><td><span class="tier-badge tb1">T1</span></td><td class="num">TGI 49.6–52.2</td></tr>
+            <tr><td>站外 Off-Amazon 泛母婴</td><td><span class="tier-badge tb3">排除</span></td><td class="num">TGI -21.5</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">📦 <b>如何喂给投放：</b>① DTC：Meta 用「孕期兴趣 + Getting Married/Future Movers」建 T0/T2 包，TikTok 用「精明品质妈妈」测评对比素材；② Amazon：DSP 里把「New to category + 婴儿硬件 in-market」合并成<b>统一「新手父母」主包</b>，按 TGI 上升趋势加价；③ 哺乳期耗材复购单独建<b>再营销包</b>，做配件/储奶袋订阅。</div>
+  </section>
+
+  <!-- ============ 6 行动建议 ============ -->
+  <section>
+    <h2><span class="no">6</span>落地行动建议</h2>
+    <p class="sec-desc">把画像洞察转化为可执行的投放与产品动作。</p>
+    <div class="grid g2">
+      <div class="card">
+        <h3>人群包策略</h3>
+        <ul class="insight-list">
+          <li><span class="pill-num">1</span>建立<b>统一「新手父母」主包</b>：孕期 + New-to-category + 婴儿硬件 in-market，DTC/Amazon 复用。</li>
+          <li><span class="pill-num">2</span>按<b>生命周期分层</b>：孕期（拉新）、哺乳期（耗材复购）、育儿期（品类扩张）。</li>
+          <li><span class="pill-num">3</span>「Getting Married / Future Movers」作为<b>孕产前置触发包</b>，单独溢价（T2）。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>产品与创意策略</h3>
+        <ul class="insight-list">
+          <li><span class="pill-num">4</span>孕期：加码预算 11.4%→20%+，主打孕妇枕/托腹带/哺乳内衣三件套，素材对齐孕期焦虑。</li>
+          <li><span class="pill-num">5</span>哺乳期：吸奶器首单后 7 天再营销推配件/储奶袋订阅，素材对齐「堵奶/追奶/测评对比」（精明妈妈最爱，ROI 6.0）。</li>
+          <li><span class="pill-num">6</span>育儿期：对孕期/哺乳期用户做 lookalike，投清洗机/推车/辅食机；Amazon 顺 TGI 上升趋势加码硬件人群。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    数据来源：广告孕育周期人群细分（2026.1–7）· AMC_780/1182/1183 ASI 渗透率（2025Q3–2026Q1）· 首单产品复购数据 · 26H2 高频搜索词 · 报告由 WorkBuddy 生成
+  </div>
+</div>
+</body>
+</html>

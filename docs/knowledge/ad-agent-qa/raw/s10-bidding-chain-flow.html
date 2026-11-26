@@ -1,0 +1,222 @@
+<!--pnid:UbaL4ASp2KNyxhyvvdef8q--><!DOCTYPE html><!--pnid:4swXNyb98K2SXr238h7ZZo-->
+<html data-page-node-id="OQpo5l7ekuxbVompuCYstG" lang="zh-CN"><!--pnid:u7CvzPD53BPxuLhwBP4P4R-->
+<head data-page-node-id="2ErH7RS6swo5ZXPd0be42X"><!--pnid:gt1jz3yabTbHyeM3qtIfBu-->
+<script data-page-node-id="SuWS3saTGZx6AxdsbcD2Gz" src="/smartpage_comm/inject.js"></script><!--pnid:2XWRy094k910yyzNCibjQW-->
+<meta data-page-node-id="3LzoDDZt9w1J8fqMK3NCEm" charset="UTF-8"><!--pnid:8siJ6WQI57u3m3M2hH9Yth-->
+<title data-page-node-id="D2TsfyDmp6irdH73iNNQQm" data-pnid-children="AcQcY2le3Fe2pDxyngfEFZ">广告平台竞价全链路流程图：从用户访问到数据回传</title><!--pnid:uMUJEmhtqhQQH3uLib87OX-->
+<style data-page-node-id="H4bGnlgL9rH7YBmqMaTun5" data-pnid-children="cvxKtAwroOMhVlH1Zt4Hfa">
+  :root{
+    --req:#4A7BD6; --recall:#5B67D6; --bid:#2E9E6B; --show:#E08A3C; --conv:#D4A02A; --loop:#C84C4C;
+    --line:#c8cfd8; --text:#2b2f36; --muted:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",Arial,sans-serif;background:#eef1f5;color:var(--text);padding:24px 0;}
+  .page{max-width:980px;margin:0 auto;}
+  .titlebar{background:#fff;border-radius:14px;padding:22px 28px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .titlebar h1{font-size:22px;font-weight:700;}
+  .sub{font-size:13px;color:var(--muted);margin-top:6px;}
+  .legend{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:18px 4px;}
+  .stage{padding:7px 16px;border-radius:18px;color:#fff;font-size:13px;font-weight:600;}
+  .s-req{background:var(--req);} .s-recall{background:var(--recall);} .s-bid{background:var(--bid);}
+  .s-show{background:var(--show);} .s-conv{background:var(--conv);} .s-loop{background:var(--loop);}
+
+  .node{background:#fff;border-radius:12px;padding:16px 20px;margin:0 4px;border-left:5px solid var(--line);box-shadow:0 1px 4px rgba(0,0,0,.04);}
+  .c-req{border-left-color:var(--req);} .c-recall{border-left-color:var(--recall);} .c-bid{border-left-color:var(--bid);}
+  .c-show{border-left-color:var(--show);} .c-conv{border-left-color:var(--conv);} .c-loop{border-left-color:var(--loop);}
+  .head{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;}
+  .num{width:28px;height:28px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
+  .c-req .num{background:var(--req);} .c-recall .num{background:var(--recall);} .c-bid .num{background:var(--bid);}
+  .c-show .num{background:var(--show);} .c-conv .num{background:var(--conv);} .c-loop .num{background:var(--loop);}
+  .head h3{font-size:16px;font-weight:700;flex:1;}
+  .tech{font-size:11.5px;color:var(--muted);background:#f2f4f7;padding:3px 9px;border-radius:6px;}
+  .node p{font-size:13.5px;line-height:1.65;color:#333;}
+  .io{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;}
+  .tag{display:inline-block;padding:3px 9px;border-radius:6px;background:#f2f4f7;font-size:12px;}
+  .tag b{color:var(--text);}
+  .flds{margin-top:7px;padding-top:6px;border-top:1px dashed rgba(0,0,0,.12);}
+  .fld{display:inline-block;padding:2px 8px;border-radius:6px;background:rgba(155,187,244,.20);border:1px solid rgba(155,187,244,.55);color:#4054B3;font-size:11.5px;margin:2px 4px 2px 0;}
+  .fld b{color:#4054B3;}
+  .note{margin-top:6px;font-size:11.5px;color:#888;line-height:1.55;}
+  .note b{color:#4054B3;}
+  .arrow{width:2px;height:26px;background:var(--line);margin:0 auto;position:relative;}
+  .arrow::after{content:"";position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--line);}
+  .formula{background:#fdf6e3;border:1px solid #e8d99a;border-radius:10px;padding:12px 16px;margin:10px 4px;font-size:12.5px;line-height:1.7;color:#5a4a1a;}
+  .formula b{color:#8a6d1a;}
+  .loopbox{border:2px dashed var(--loop);border-radius:10px;padding:12px 16px;margin:10px 4px;background:#fdf3f3;font-size:12.5px;color:#7a3a3a;text-align:center;}
+  .tips{background:#fff;border-radius:10px;padding:14px 18px;margin:14px 4px;font-size:12.5px;line-height:1.7;color:#444;box-shadow:0 1px 4px rgba(0,0,0,.04);}
+  .tips b{color:#222;}
+</style><!--pnid:RQZamjziMgvw4hExamtyQL-->
+</head><!--pnid:F0upWAGrK8oCgPRIy0Tz26-->
+<body data-page-node-id="YKosxmzkzujLcGkX4G6NCq"><!--pnid:3sTzqaFndskQV7UqjwQpNM-->
+<div data-page-node-id="ym7FEPZ2BRhMdu2H8pY3J5" class="page"><!--pnid:k0aQMfLEvQTjTTAR7rh9G5-->
+
+  <div data-page-node-id="Ce80ICtjBvQ9t9wR5uF4Cu" class="titlebar"><!--pnid:MXUtCelK5XTscSqdSMKNSq-->
+    <h1 data-page-node-id="D2JWEGQjHSBvNYFgHo0gqI"><!--pnid:2apMEbGKRlLeJd19rsfsin-->广告平台竞价全链路流程图（v2 工业界标准）</h1><!--pnid:PXnnJVAwyhkzgGYvD05sAE-->
+    <div data-page-node-id="Ib5KFogylWI6GWfT4AwwxU" class="sub"><!--pnid:7dzeAYC0qzI5GiBReBCbSp-->一次广告展示背后的 14 步：从离线索引构建到数据回传驱动模型迭代（含 Pacing / GSP / SKAN / MMP / RTB）</div><!--pnid:5n1rVR3AOWeHyYN0ZZiMMW-->
+    <div data-page-node-id="UV3tFA9xxx73rSKaaMKXFV" class="sub" style="margin-top:6px; font-size:12px; color:#555"><!--pnid:LqHiG4vXLcIrRKDxlePftq-->紫色标签 = <b data-page-node-id="tlO9SvY67uRjn6JCGiyaiO"><!--pnid:BCNKpxc0lknwHVcCSh09KD-->关键广告配置字段</b><!--pnid:up18gIBkvqYXPUSlYgGAU5-->（将影响该环节输出结果的后台可配字段）</div><!--pnid:GHgKQOfmu01xK1dGJWkbDa-->
+  </div><!--pnid:OAtMGBM6PPabPxHIkVkgKq-->
+
+  <div data-page-node-id="npYiknAapMMA4O3tvJFQYT" class="legend"><!--pnid:BcXBGiN0ORpVNQwtiFXHnn-->
+    <div data-page-node-id="wqxZPAcUIY13XjvVpcSMqi" class="stage s-req"><!--pnid:PKd0BHeJt5q0SGGfQWRig3-->① 离线索引与请求</div><!--pnid:71xn1N89cGQFYUIEoFMY46-->
+    <div data-page-node-id="YAlWBXKpfA1ae9EFFa8Wrp" class="stage s-recall"><!--pnid:AJA084GZQpBPtWJ2rfgqVE-->② 召回与初筛</div><!--pnid:VBTO3S5IOvcZoKGXROevLo-->
+    <div data-page-node-id="qoNQey25xrvVerGE4X03PQ" class="stage s-bid"><!--pnid:Lv2EMSQ4fNSHbboSwNLGvB-->③ 预估与竞价</div><!--pnid:HyAgihQyHMVFlRezdT37PY-->
+    <div data-page-node-id="qCW9BCfcQDDnnb59pUg5sE" class="stage s-show"><!--pnid:VwZsHoyovy2gy2SR1tus8K-->④ 扣费与渲染</div><!--pnid:YS5LyruKFBy63ZqN1TMaEr-->
+    <div data-page-node-id="g91fG6rhWDFQI4Rj0iHFMA" class="stage s-conv"><!--pnid:ASBiykjUVSlAaFH3z7HMSO-->⑤ 曝光点击</div><!--pnid:nUSqyfkSPmtTB5Rg5pFMup-->
+    <div data-page-node-id="8Wf77uGVIXVBpTErDlubHx" class="stage s-loop"><!--pnid:9UjVshEvGkFeRXBi0XDBCP-->⑥ 回传闭环</div><!--pnid:rsJ7Nwh8mL53SNn0XqJKJG-->
+  </div><!--pnid:3uE4JEebfA1ZAr0dGIskzE-->
+
+  <!--pnid:oTqGNB4orBLhjPSp7H8pnL--><!-- Step 0 离线硬过滤 --><!--pnid:fae9nykFFBJ2fvV5oHuF4J-->
+  <div data-page-node-id="HyGhyISolz1YoYDLghEauL" class="node c-req"><!--pnid:T7TMg6lDfnfAIOs1LvTh5o-->
+    <div data-page-node-id="qFbgTIP51cLrjIBkmMlfJU" class="head"><div data-page-node-id="FHIFgn3eKu1SpK8GgPqtkk" class="num"><!--pnid:DLqB8HhL1YJVVmOEV2eAoi-->0</div><h3 data-page-node-id="maNcNrPJQHHXDUxSNlMOjO"><!--pnid:FjJO39U1ZekE2gDL4ZNUtq-->硬状态预过滤（离线索引构建）</h3><div data-page-node-id="zRp4WZAxDXHlXtV4GZhFU1" class="tech"><!--pnid:HRVVQ9RF4f4F8YN7dp1Af0-->离线 / 近线倒排索引</div></div><!--pnid:kVKIWakwb6kX4k2UFhsIzL-->
+    <p data-page-node-id="4FCcysbcGs5SGYMkgJMdnO"><!--pnid:FqLuzKDFd5zJFa2uWy8sHe-->在广告请求到达<b data-page-node-id="mCe6I3ZNzRf9wDeOuBgc3D"><!--pnid:AXwvQvax10M6XYcqrBBgpU-->之前</b><!--pnid:Ih4yiPlw5QDkQAkFfVifps-->，离线/近线阶段就已从在线检索库中剔除：账户被封、余额不足、素材审核拒绝/下线、计划已暂停、投放时段未开始/已结束。这些硬状态不随单次请求变化，提前剔除省算力。</p><!--pnid:FSm6CBd0qySgjsiwhBap4b-->
+    <div data-page-node-id="lG0azZ3fAChTReU2cj11xG" class="io"><span data-page-node-id="ufZgPTutRLHZbvHC4VpRzx" class="tag"><b data-page-node-id="3F93L87Qj07vyMHNsFfvTf"><!--pnid:7XZYQWdWhOFwDIEyBAMD8d-->输入：</b><!--pnid:JHCGmU1GNrzPpc2HyeiGEZ-->全量广告计划 + 账户/素材审核状态 + 投放时段</span><span data-page-node-id="SLNKrwCx0poxDiZ4zU1qLn" class="tag"><b data-page-node-id="0hrBNYpuVvlkxUgtkgPWYH"><!--pnid:lWnjUcZy9QKSYqYNdg8iQt-->输出：</b><!--pnid:mxbXE27sSHKX1IgLHUPI9h-->在线检索库中状态可投的广告索引</span></div><!--pnid:kdznmcJ7YnN9UzAVIjv839-->
+    <div data-page-node-id="PPFmEX7ZXsiRUhQqq6JMsd" class="io flds"><span data-page-node-id="kPnfse4pcPZl3mBV1iAnVC" class="fld"><b data-page-node-id="Hnfv3Opm6N5xAO0d9CVKsZ"><!--pnid:auc0HQo04jlvAma9Whdozu-->关键广告配置字段：</b></span><span data-page-node-id="D8L6MTeOppPyo0snyLXJUb" class="fld"><!--pnid:c6pG2xKplcLm4A5hBBKgVL-->账户资质</span><span data-page-node-id="cMNL0aYgAr3JavzmrhjUwZ" class="fld"><!--pnid:JITuaqrUBrZ144l0QQklFt-->日预算/总预算（是否耗尽）</span><span data-page-node-id="EnOaL6OIgqEfb0EJsEb9AC" class="fld"><!--pnid:GgvAOthoEEoTvA06BerZ0f-->素材审核状态</span><span data-page-node-id="6PBvK3oSz6uKwFCwTYjZIl" class="fld"><!--pnid:ChhkVG9v8b9Q8KAuRF74Q8-->法定年龄/地域硬门槛</span><span data-page-node-id="QvmAEARUwpKQogrV1INNBm" class="fld"><!--pnid:HWr8R3aS38J8Pnl84wElB1-->投放时段（dayparting）</span></div><!--pnid:UbD5KjJV44DycwGxaJkwi0-->
+  </div><!--pnid:XVVUgaMZKbdgG5PAy15rbj-->
+  <div data-page-node-id="XjECBRZsmqXX1Uhx1clkfQ" class="arrow"></div><!--pnid:bbsJV5GRS06VDpwoROi4OX-->
+
+  <!--pnid:Hp47qMJsienBF4sytFrLiH--><!-- Step 1 端上请求 --><!--pnid:3re7enPu9yjcyCxoc1HYdX-->
+  <div data-page-node-id="e72rpFZszUIIUQvKo1NFEv" class="node c-req"><!--pnid:UmSjvgsQaR8gLc7gUyfE7Z-->
+    <div data-page-node-id="IAz0MVAgOS9ANHeKaxTBu4" class="head"><div data-page-node-id="Ss1XbWf0tCqEl47lxGopGp" class="num"><!--pnid:W2qdnsTFwkTAYaXUw90ZlI-->1</div><h3 data-page-node-id="7AyooBRAVUpNU72yEO1BeE"><!--pnid:7Y1ckvAm9oTvbj75SS4x0m-->用户访问与广告请求发起</h3><div data-page-node-id="RHnXaNPQT1b4c9mcD9OW9i" class="tech"><!--pnid:e8bh3JDfj1k8xAHCVACI5X-->端上 SDK / App / 网页</div></div><!--pnid:l5KvevAHk95eDdCfoEiNHI-->
+    <p data-page-node-id="KVfXm3AirMPzfFFIJO4HAz"><!--pnid:w4vTCYDONU23J2nLO9nwh9-->用户打开 App 或浏览网页，刷到一个广告位；客户端 SDK 发出广告请求，携带 device_id/IDFA、版位 ID、<b data-page-node-id="kmvnLUsh00nGC658VrBKYK"><!--pnid:U7b2uheLQqmINd0UdaAZV2-->隐私授权状态</b><!--pnid:ZYd7eJsrEC96hzR9mEp6sQ-->（iOS ATT 是否授权、Web 同意弹窗）、设备信息。</p><!--pnid:OyUdaV9GEE2dN42kOVJZDg-->
+    <div data-page-node-id="47sIxtBqalEQz8hrLcjGHu" class="io"><span data-page-node-id="8wA5vzoxhHCfpeA7zchWCZ" class="tag"><b data-page-node-id="3MbI3HlX6eKnYQtpYsHTF4"><!--pnid:iO40Ob46ixLvq7a3Gqpja6-->输入：</b><!--pnid:k2jfjqTdZ4SrYU0Y8SwfsZ-->用户触发动作 + 隐私授权状态</span><span data-page-node-id="EKpDUKdio7P03ZQkUBEb9y" class="tag"><b data-page-node-id="LOF248CasLal4hAoEPUnMw"><!--pnid:4pCYPiV88vQjKPSBNS9KEi-->输出：</b><!--pnid:ch0IvI7nmfuF1CzvpelEBW-->带 device_id / 版位 ID / ATT 状态的广告请求</span></div><!--pnid:n2Fe03HkubnOABDhkU2QDM-->
+    <div data-page-node-id="zKFCY3yBe4dAXDMQw0EHss" class="io flds"><span data-page-node-id="z855FTtd828GeuOHNMdLDU" class="fld"><b data-page-node-id="visrBTcKVN6mHWlECk4Al0"><!--pnid:AAVHTOIlEUsVrsjbY50CDb-->关键广告配置字段：</b></span><span data-page-node-id="4kVvyqMJA3GyPpgKL8xVYT" class="fld" style="border-color:#ddd; background:#f4f4f4; color:#888"><!--pnid:RLuTwDmEDCd8e4NCn0kbJk-->无（端上行为；隐私授权状态决定后续信号可用度，但由系统/用户决定，非广告主配置）</span></div><!--pnid:h0iPqm68NBhF0iJRGDwXbk-->
+  </div><!--pnid:snEFYZTDmkTIHcHUnp3LpA-->
+  <div data-page-node-id="pCLAYFDx8xK9mbGUVHBb8W" class="arrow"></div><!--pnid:ZakHAW1IJJ8w4lr2bClacy-->
+
+  <!--pnid:QgjB1MF460Cfmp7E6rMWCo--><!-- Step 2 DMP --><!--pnid:jsG9uF7w8j3gBCw6WGot4p-->
+  <div data-page-node-id="SKPGsq77grLHsPenHxzONZ" class="node c-req"><!--pnid:5nUkC38xWnlmYquNY6NEhU-->
+    <div data-page-node-id="VGDAU1SXM3RJBsbMzqZ6Ah" class="head"><div data-page-node-id="5dAxuB6dEm48yKbyn29vWK" class="num"><!--pnid:eFI1LdHLjobrgEnNV0GH6C-->2</div><h3 data-page-node-id="WHP7ppQbRn0HqptaAXsVba"><!--pnid:cyHv8fHa3SEaBODcu3BjNl-->用户画像与频控记录拉取</h3><div data-page-node-id="IioITVd3qWm8WIGdWNq4C0" class="tech"><!--pnid:GD8iOLNFaIoIkFcfF8I72I-->DMP / 用户画像服务 / 频控存储</div></div><!--pnid:v1y4l8YDEKqukCX8qqa7WF-->
+    <p data-page-node-id="zUWx41yQmqGlmQOHi7KDHZ"><!--pnid:8bVmolVTiWH5t2BAEfpSB5-->广告服务器根据 device_id 拉取用户画像：年龄、性别、地域、设备、历史行为、兴趣标签、已转化/已点击记录；同时拉取该用户的<b data-page-node-id="BMPJj2PmBvgy33pkQJRr06"><!--pnid:rQL97oW9KXqy2EWkCHZgdb-->频控历史</b><!--pnid:Ev44A188XjxIOZ65yu3D92-->（已看过哪些广告、看了几次）。iOS ATT 未授权时 IDFA 缺失，降级为 SKAN 模式。</p><!--pnid:q7sUoxVy0yLaexOXMsI8aU-->
+    <div data-page-node-id="zXjfZPapNIDWu4vQQSAppF" class="io"><span data-page-node-id="C8QSkSQnW3hoNrn47x79ig" class="tag"><b data-page-node-id="oFwVEp9vYgrXpyZNi7PFJt"><!--pnid:A2B0ynpfBKNZTXAYkarjdj-->输入：</b><!--pnid:Ru7o6AhngKosK02oGrV9j8-->device_id、版位 ID、当前时间、隐私授权状态</span><span data-page-node-id="FN0uR8syPG34of93pHZWuF" class="tag"><b data-page-node-id="3HYSmZXfjmGsKosXWz6EzD"><!--pnid:hrefZ2Odl3D6V23Tgu3lna-->输出：</b><!--pnid:5W40CLWBAGOTDILi41mG4Q-->用户画像包 + 频控历史 + 隐私信号等级</span></div><!--pnid:9qcuoYzc3aHLZwUWEg0OB4-->
+    <div data-page-node-id="OPLYdYX3n5p6RfUBKXFgBl" class="io flds"><span data-page-node-id="PDXOV4q3Ubn8220VbkPNlP" class="fld"><b data-page-node-id="IfEGW6ym8UNHSf4iZ9bWpi"><!--pnid:GyiaqOcoEHyEcTllLuqe0F-->关键广告配置字段：</b></span><span data-page-node-id="kM30CcxFHQIcvo26CO8Bmb" class="fld" style="background:#f4f4f4; color:#888; border-color:#ddd"><!--pnid:43azVS6a1euGw81pfWRFQF-->无（DMP 拉全量画像；频控历史在 Step 4 用于过滤，广告主定向在 Step 3 用于匹配）</span></div><!--pnid:LlTlwnRWKkKwIA5GFiU165-->
+  </div><!--pnid:bE3ZKjXgSO8qSvlFJcDCEn-->
+  <div data-page-node-id="5JFD40XG6HjAvprmrltuiM" class="arrow"></div><!--pnid:46PChf1Y4hEXuIXbH0j34O-->
+
+  <!--pnid:nQAotY1M3JswYdrofwWkA5--><!-- Step 3 多路召回 --><!--pnid:6aq4p6DNIaVGnXkRmj7gEX-->
+  <div data-page-node-id="MFOdAV390WUBpNE4ChzSrD" class="node c-recall"><!--pnid:nLL5lcPJ1yorArgPoRyKWt-->
+    <div data-page-node-id="5bGYUeCsiNYKT5ZZoAAaWv" class="head"><div data-page-node-id="Zb0uScZX5ECn6Ag4SA35n9" class="num"><!--pnid:gdgosS8UP6FoANK2gGmQnU-->3</div><h3 data-page-node-id="AxoBNYwDXk7S3i1AEDbPVl"><!--pnid:r3aZ2YoFAlYvGSmRs1WEVA-->多路召回：定向与候选集抽取</h3><div data-page-node-id="Cwqr0Pv2n6PvBFiKaWGGB7" class="tech"><!--pnid:HQIiefr98n1XuCaX0hFOMu-->召回引擎：定向 / 兴趣 / Lookalike / 关键词 / 向量检索</div></div><!--pnid:NYNHawRF3BC3nADT5rIeU5-->
+    <p data-page-node-id="QGtQnDjXkbH2LIjzkkEY04"><!--pnid:XmtYMaBwwfiQPm29F6ucAk-->从在线检索库中，通过兴趣、行为、Lookalike、关键词、向量检索等多路并行，召回 <b data-page-node-id="OG9HuNN1LPAlFLlfgO7K9F"><!--pnid:66RWE5Iu1WqWacxdRmy8i3-->"计划×创意"组合</b><!--pnid:G3oMJ7zVc1TIE3gNZRxlY5-->候选约 1000 个。智能投放系统（Meta Adv+、巨量全域推广、Google PMax）中，<b data-page-node-id="Roqw43NFXbSbqrrhvgwAJy"><!--pnid:JAn77EgwFwEOR3mHCZpRCu-->创意本身就是重要召回特征</b><!--pnid:3xmUXwY3DbTmePlngx9hPc-->，没有具体创意就没有确定的 pCTR/pCVR。</p><!--pnid:PUZHHE8iTKJSQQhR4kCWRn-->
+    <div data-page-node-id="MDcTPgFL2QkMHYXZZ7EjmR" class="io"><span data-page-node-id="w3F3wQwzag03zAwz0J6uB8" class="tag"><b data-page-node-id="rpId2MmT5au40DBkJmik6h"><!--pnid:RVUtDSQqa2RdC5HafcRptP-->输入：</b><!--pnid:lQn0TfMCuWcDXg16jpy8ua-->用户画像、版位、历史点击/转化</span><span data-page-node-id="N1AyAJM0xwQmDFDzjfVy8f" class="tag"><b data-page-node-id="xB4eh1sQNAlgBpdOcimbf6"><!--pnid:bl9lUkf576yUnvg3SfpVk5-->输出：</b><!--pnid:dHc316PUbdHSslQuSCP3CX-->候选"计划×创意"组合集合（约 1000 个）</span></div><!--pnid:2u5OgGJyNhoYC1zXddlTEk-->
+    <div data-page-node-id="RtxeBn9olnIjpeX9lr8piG" class="io flds"><span data-page-node-id="x4odOTXG2cEwPlUgKukkqY" class="fld"><b data-page-node-id="APHnBudVLLzDqDSc4N8Oij"><!--pnid:oA90ArcM7zl9OLll7oTBtq-->关键广告配置字段：</b></span><span data-page-node-id="tqfxKDFmtCCL4OodLZVxrf" class="fld"><!--pnid:CuW3Ug5kG5FqeZMEd3UtAQ-->定向（兴趣/行为/Lookalike/地域/年龄/性别）</span><span data-page-node-id="Wwspg2WS4gHBKhmKZdmf1w" class="fld"><!--pnid:vxjHaiAoJ6KLx3rFnMj92P-->关键词及匹配方式</span><span data-page-node-id="EKrmM1mUAYRq3tjBwdAEjS" class="fld"><!--pnid:kQxArcozl1GNNW0XZsd6Ht-->排除人群</span><span data-page-node-id="Y5turCwOFqHDMEvGwVF50k" class="fld"><!--pnid:rzlrteC6VCmFOqeXcfeZ8c-->投放版位</span><span data-page-node-id="5wV2qTO8wKmzFoEBmLJyyy" class="fld"><!--pnid:4VPbTVYq5PblAmKoYmyaKF-->投放目标</span></div><!--pnid:eUxuKhNo6PI5Z484tQPvk9-->
+    <div data-page-node-id="V9GZe906JshehMBPRt7E5u" class="note"><!--pnid:bhtVNheK3jGB7hsed6NR8r-->💡 <b data-page-node-id="VcxjD8not7nJ1aXfjlIr4K"><!--pnid:KgnC2HoNphnNKnL4uOFHyn-->投放目标</b><!--pnid:EhjFERCwemUYzM8PrPhE4i-->决定召回通道："转化"目标走 Lookalike / 再营销召回，"曝光"目标走品牌通道，确实改变本环节输出。</div><!--pnid:irgEVytFojc5eiZZkC6CYy-->
+  </div><!--pnid:mByqtwm2IDR8unT0rGugfi-->
+  <div data-page-node-id="G9qnrZszP51pK3xGlrU472" class="arrow"></div><!--pnid:cXGErFH5zXa3C3Mr8WukAF-->
+
+  <!--pnid:B2LEX8EGX4lb3z9ndVSGS8--><!-- Step 4 实时过滤（频控前置） --><!--pnid:XHsbx4HamgIiGZRZvdKwFP-->
+  <div data-page-node-id="0j34hapFEC8MZZqZeuECYA" class="node c-recall"><!--pnid:FPGi6wVfMVZvuKvrDHMiVS-->
+    <div data-page-node-id="6kc1VXxgg1HVAU24tVOxSh" class="head"><div data-page-node-id="6uABR1s5lYZevwZ9YlVDMV" class="num"><!--pnid:39XRA67lBbztGDz6gkOxwk-->4</div><h3 data-page-node-id="RaRABFkPXnDgOlnVDzNL6H"><!--pnid:WSfrYptidzceS5RIaeT32A-->实时过滤：频控与版位硬约束剔除</h3><div data-page-node-id="CucEhsuDBIYYA1MzrEfTn3" class="tech"><!--pnid:FxqA9Tm9hxrdsKnlc3unTI-->频控模块 + 预算模块 + 版位规格校验</div></div><!--pnid:lUEUxIuiguT2Zur5v23Axo-->
+    <p data-page-node-id="nM0jJWtHIVcx2D3W55CxuV"><!--pnid:lgABRKKDwnotoTlmwGBYzJ-->对召回的 1000 个候选做实时硬过滤：①<b data-page-node-id="9VLAj2sDDLfVErDWqLg4SD"><!--pnid:1P2T0NkrHDn2l72Gbd6p51-->频控上限</b><!--pnid:eytSZ3aavQ3o9E4YJW8T2s-->（同一用户对该广告已看 N 次则剔除，如 3 次/7 天）；②版位素材规格不符；③预算余额实时双检（防止召回期间预算花完）。<b data-page-node-id="TFKIpoLnVQJzNqdlw7vMyF"><!--pnid:gbt2ruKvAoAShryzOAWF7A-->频控前置到召回阶段</b><!--pnid:mhzJfG6oRFNMDVTb7mJMl4-->可大幅降低后续精排算力损耗。</p><!--pnid:AEl0DZXX5zzxfD1BfnBrVW-->
+    <div data-page-node-id="CVKqjiIElpleqlKFMGrcjb" class="io"><span data-page-node-id="ntxBN2gZM9yAjD3koawDOu" class="tag"><b data-page-node-id="oy98isNlMG5ouKJTe9Qkr1"><!--pnid:Ze2qPdUlFzMbWH5WPkvN8D-->输入：</b><!--pnid:74SUHe2PghElCO6oSR0tGO-->候选组合 + 频控历史 + 实时预算余额 + 版位规格</span><span data-page-node-id="nEVtCpWBF6Z73FG55kqoqH" class="tag"><b data-page-node-id="dEUHcOR0RrseKDBZcKexws"><!--pnid:hMGrvY42Zs9SdFRsGaxsbn-->输出：</b><!--pnid:fpMBNtF5iF0c8GNGm6KNw9-->通过硬约束的候选（几百个）</span></div><!--pnid:HB4SWhfpcmWW3mdAuxz7q1-->
+    <div data-page-node-id="VXMNSwV9iGuWJt0WsWDxHb" class="io flds"><span data-page-node-id="gsQh9HsG2rARjcoBYAefG3" class="fld"><b data-page-node-id="mm0DTIK3w8tnlK97EwBqhP"><!--pnid:6swSoDj52H1O9BTXN4XL68-->关键广告配置字段：</b></span><span data-page-node-id="Jg4l06NmfGbYhiLBWDyJGX" class="fld"><!--pnid:T9lGc8omusMJdQKddOXRZY-->频控上限</span><span data-page-node-id="Av2uPysiHDqqColZjAA89x" class="fld"><!--pnid:0ZGwQQJZvH3wKwl6l0s7Xm-->日预算/总预算（实时余额）</span><span data-page-node-id="U4XroCv2HVBBdqzOH4Nim7" class="fld"><!--pnid:HlFGSxifiAYr5D7NMdRsDr-->版位素材规格</span></div><!--pnid:lHjLrKr8A1FhNoBMFv14aT-->
+  </div><!--pnid:8DAAvJxAMHmjK3DjfG8p5t-->
+  <div data-page-node-id="rwlIAXnPUgYg2CC7VEOmFr" class="arrow"></div><!--pnid:a6e0Cqufc9ziJ1MtqWf2BR-->
+
+  <!--pnid:aeClGo7rUHkplOHyUSfsYm--><!-- Step 5 多目标预估 --><!--pnid:PIhActYIoE486PUk3nxAd8-->
+  <div data-page-node-id="nUweGsp37Rh2cNcn1TjmoL" class="node c-bid"><!--pnid:nD4kJFldj2vkmcPmqTDGDy-->
+    <div data-page-node-id="rrQ3JZjM5yKkMsRYCNxdHt" class="head"><div data-page-node-id="TLloBcTBeOKCuKZrZKyxDJ" class="num"><!--pnid:OFmjv6GPl4BmZG3cBDEFDY-->5</div><h3 data-page-node-id="tx3uyLPyZC3kpsvdCZagPG"><!--pnid:QXKlAamot5RTyCheG0tnFI-->多目标预估：pCTR / pCVR / pValue</h3><div data-page-node-id="4n334Ra5gE3Qpu2d8fy8Hd" class="tech"><!--pnid:Vt2tLwShb8E1oVmfDDzTv7-->深度学习预估模型（融合用户+广告创意+上下文特征）</div></div><!--pnid:qGAy1hOQsMtkzbgDYeZ0UO-->
+    <p data-page-node-id="3p2Do5kyUon6eE9LNSLpf9"><!--pnid:Ck7QL9bDqOJ314SL1bmD2B-->对每个"计划×创意"组合，深度学习模型同时预估：点击率 pCTR、转化率 pCVR、转化价值 pValue。模型融合三类特征：用户特征、<b data-page-node-id="DQuEXuUtYh5BdV7v4L55Rz"><!--pnid:BeIRMIXADzzRGXmLJVviFd-->广告/创意特征</b><!--pnid:uCNQw5z9gC9fldpbZ62JNg-->、上下文特征。<b data-page-node-id="Q9oDDEzNFHZ3BSpzaPSjaV"><!--pnid:j95i5orkTPjSih4TX9LTOk-->没有具体创意就没有确定的 pCTR/pCVR</b><!--pnid:k3yGjHvEYKhEvdRNVT5ngt-->——这是和旧版"先无创意计划精排"的核心区别。</p><!--pnid:JCn4t993jRSowoqdZ4SD1j-->
+    <div data-page-node-id="5pj5RFl0GP9ES3vOx8VqUA" class="io"><span data-page-node-id="mK8HEMkKU9RtpPmyz43KT0" class="tag"><b data-page-node-id="4flRTxSYAOSdqv7XkGOvId"><!--pnid:nDUXTwU367C0ZqoTfrPCmY-->输入：</b><!--pnid:pCm0Nn9l6zyqNEQWcXlEEA-->候选"计划×创意"组合 + 用户特征 + 上下文特征</span><span data-page-node-id="H19Qoe8AGURAv7Sai9ijC4" class="tag"><b data-page-node-id="mQQKztgf1DMhty1ulvJMrh"><!--pnid:Gg43s9b87gP4AwqKF0kDLc-->输出：</b><!--pnid:tOm9hnJQqZvj7zEP1O1e6i-->每个组合的 pCTR、pCVR、pValue</span></div><!--pnid:dnQFKn8C182m6trhGTXw8F-->
+    <div data-page-node-id="bS8HqQY34o5NrvXyuj3hxW" class="io flds"><span data-page-node-id="vjXySpjwYBZYFta4gyL5RT" class="fld"><b data-page-node-id="LIGUSucwDHFxQCpLvSk0T1"><!--pnid:msokrigFsKkG8HQ2s7ir8H-->关键广告配置字段：</b></span><span data-page-node-id="5I1F3zCBGPcjGyCtczdX8c" class="fld"><!--pnid:5LUUguXyibhFtP1l5SW1su-->转化事件</span><span data-page-node-id="uqhr9GbBDMXcnOc2LQ46Ru" class="fld"><!--pnid:8DCJ9uKzHStTsKmN7gTmWt-->投放目标</span><span data-page-node-id="qe3nw6uwGZbye20lt6au1l" class="fld"><!--pnid:dpf4G5TBZGwc97DOGcAR24-->转化价值（客单价）</span></div><!--pnid:PFxBD1ZTTjGEv1RwtQroQX-->
+  </div><!--pnid:k3PpXNYGJfiPVmy6BlEpiQ-->
+  <div data-page-node-id="9k4bg32divr2crNtDhq154" class="arrow"></div><!--pnid:eZZt5w4DLIXGuKopEflzLZ-->
+
+  <!--pnid:WaSBEaoEIxh9z3TWcdlMBh--><!-- Step 6 智能出价与 eCPM --><!--pnid:brcDeQZU9Zi5rHGNKugFl4-->
+  <div data-page-node-id="XDlq27SaZMQxvVreLWa58U" class="node c-bid"><!--pnid:xXNIoqlhtqaewgzgvZB7F4-->
+    <div data-page-node-id="VkCappqGfOEDenVhEplpgy" class="head"><div data-page-node-id="EfjnqwAibrH1q2pjKvXCCv" class="num"><!--pnid:3hDgEBdHkyQFpiNZuvlmzR-->6</div><h3 data-page-node-id="GVyznv0nJ72VoLWL0Foyp6"><!--pnid:Ha0BIuVZSbnK8osXwMDl1E-->智能出价与 eCPM 换算（含 Pacing 与质量分）</h3><div data-page-node-id="JvPGoepfs0JFZmrCN6DxFG" class="tech"><!--pnid:m9JoGu0Pb3S2VoEpe1BJ0W-->自动出价 / Pacing / 质量分调控</div></div><!--pnid:HQDseLwJDVqapmR3JUf4kY-->
+    <p data-page-node-id="2GYZmC29lm8MagC9GoBYxj"><!--pnid:GnBATsuAYhMXzYWiDWDcXb-->后台出价并非固定值：系统根据<b data-page-node-id="rpg3eFEn9ZOrMhJXQMAkeh"><!--pnid:88puE28LCGuZcvHc7Oawju-->预算消耗速度（Pacing）</b><!--pnid:tZpfBMMUXWGPACJKyA7A91-->、全天时段、冷启动/学习期动态微调（消耗过快降价、冷启动提价）。再按 eCPM 公式换算为曝光级竞价分，并叠加<b data-page-node-id="7dvcYY6Ek5FMHcA4XU1Zhp"><!--pnid:FJoBZFGy1AOP45C3Q8lmCD-->广告质量分（Ad Quality Score）</b><!--pnid:hDdzUG4TZElUXeESkMKLm5-->作为调控项。</p><!--pnid:WXFstprNbvlpcky4065LUa-->
+    <div data-page-node-id="5cOdlRHRqcSXA04XaWMC5n" class="io"><span data-page-node-id="aGuOE1iZL0SC0WNoznAH9T" class="tag"><b data-page-node-id="xsDLAq5khLEJvKgUCF2X26"><!--pnid:zFgue8yoSPQlOruDBjpBE4-->输入：</b><!--pnid:RVGa9iPqHspxx6fqRA5eBK-->pCTR/pCVR/pValue + 后台出价 + Pacing 状态 + 质量分</span><span data-page-node-id="uyW6w0AMN9KhhbRexEkHQ6" class="tag"><b data-page-node-id="FtHSY1P3j9sKYAPueqqvOI"><!--pnid:OSl2lpoKmw1Aiw6AFHdMlj-->输出：</b><!--pnid:9pWiiiDniCrK66Ag5PO0tx-->每个候选的综合竞价得分 Total Score</span></div><!--pnid:sS0aXOwE7NttafC5KbGxGZ-->
+    <div data-page-node-id="udtRE0IBXcBbq9DtyTFhw9" class="io flds"><span data-page-node-id="cdWkP3RnKubivVJ2HQtUTA" class="fld"><b data-page-node-id="4kXt6WVEsejOHgrutgkN7d"><!--pnid:Rj8FMNEtOqkVc6hPDcUD5X-->关键广告配置字段：</b></span><span data-page-node-id="avKp5Px2RrMsb3phU9orIv" class="fld"><!--pnid:aQiS0RXpn4BWRuHtLnJ8KK-->出价方式（CPC/CPM/oCPM/tCPA/tROAS）</span><span data-page-node-id="kYWiWnGDDmTG84lYfHcYrD" class="fld"><!--pnid:N5E44W4RFdpr9sRX7VXfZ7-->出价金额/目标 CPA/tROAS</span><span data-page-node-id="LOC07KPpCyDl6SJqTvyyq0" class="fld"><!--pnid:qUajPVJExXbur6aqyoTvRG-->投放目标</span></div><!--pnid:Ru0xKeGwwCl1ecMo9m44us-->
+  </div><!--pnid:FrB01STfbzzhOrxQuDwaXC-->
+
+  <div data-page-node-id="7wAhcwGUE1OXwrOV8XLv5n" class="formula"><!--pnid:hABlctDewbZ81MO0S3Pngu-->
+    <b data-page-node-id="OMxC1ypPGiIaAlfCilYkDJ"><!--pnid:M37GsfwCBB11BN9e8Mdkfn-->工业界标准 eCPM / Total Score 公式：</b><br data-page-node-id="qAZcbrFXjeFmVIXfKDekA2"><!--pnid:475wyyR0CvZx7KCMjX8fQn-->
+    CPC 出价：eCPM = 出价 × pCTR × 1000<br data-page-node-id="SGclLdIgmHlYV1QAQobFj1"><!--pnid:YXvBZeK4dFMw0MkW3icKt3-->
+    oCPM / tCPA 出价：eCPM = Target CPA × pCTR × pCVR × 1000 × PacingFactor<br data-page-node-id="gpB9JKcw9debzqxlFrOl7V"><!--pnid:pixvHle8dYpBwcC8lZfuZJ-->
+    tROAS 价值出价：eCPM = (pValue / Target ROAS) × pCTR × pCVR × 1000<br data-page-node-id="PbUAP9Gd1ewRkhxi7c1V0F"><!--pnid:59WsO6wUunE25YB3vSa8NV-->
+    <b data-page-node-id="rwNBZLdkTA0JpVbW1voAQk"><!--pnid:xsW7Dq4IIF3okwgDZyVjGa-->Total Score = eCPM + Ad Quality Score</b><!--pnid:1lmErDJKQkvZn6vMwryqvt-->（用户体验/素材质量/历史转化等质量分调控项）
+  </div><!--pnid:iT5GIXohE3meMaOYdaDsdG-->
+  <div data-page-node-id="FoJs0pvbPa2nrLxYUHtTQb" class="arrow"></div><!--pnid:iJmzHsPWNPtcYZCQ3WBw91-->
+
+  <!--pnid:iDw3TlNcDz19yKEuWMjrLS--><!-- Step 7 粗排精排 --><!--pnid:s4VGJVs4i840OwZC0CGCKi-->
+  <div data-page-node-id="yercY4gGAZJb4liF6SxTDN" class="node c-bid"><!--pnid:NAykuDsnM3qOxzD7vhcXpB-->
+    <div data-page-node-id="a85N4l1XTAElFiqlH0a2LR" class="head"><div data-page-node-id="fJEErr5Nc91XlPd35OdS8H" class="num"><!--pnid:VCZapA3L4xVERaFW3Aq9uM-->7</div><h3 data-page-node-id="43pI4jmPP0gEtumpqIR4hh"><!--pnid:Wf7mLnTYqdZEMeTFljZPgS-->粗排 → 精排双层排序</h3><div data-page-node-id="zbDr2oOmtOLEHgk7pOylar" class="tech"><!--pnid:VaKFQA9d5HXQetT4WCAEaS-->粗排（轻量模型）→ 精排（深度模型）</div></div><!--pnid:g0segpPA9AnwfkelmzDyot-->
+    <p data-page-node-id="xY7teQXigBi4r42mWG8JgM"><!--pnid:aS4ohssVAzbf912BV6zzLW-->粗排用轻量模型快速把几百个压到几十/一百个；精排用深度模型重新打分，按 Total Score 从高到低排序，取 Top 1（或 Top 1–3）胜出。</p><!--pnid:OjnTMneOtgWwYO0uuoDv4c-->
+    <div data-page-node-id="ChqvxZHloYmKZ3YbNCnTDL" class="io"><span data-page-node-id="IVDgqQanydrrP9lQnjxVgr" class="tag"><b data-page-node-id="lPTVgVBHaGHT6r8IqfCbcg"><!--pnid:mRdHUPADI1Kh0mulrxNIBV-->输入：</b><!--pnid:aBwvuYGjPBMs7rWucrFOJ0-->候选 Total Score、质量分、预算余额</span><span data-page-node-id="tmsQ9W3ZZBhEJM3difW1N0" class="tag"><b data-page-node-id="8REJ5YtEEsbGpO2jyKvrjy"><!--pnid:ck0cKLJg9X5GkDvczsPoud-->输出：</b><!--pnid:dnVZ9xyAWbxpjZ6QvG4DvD-->胜出的 1 条"计划×创意"组合</span></div><!--pnid:skatrwpI2wuGSCPRD8Bxjs-->
+    <div data-page-node-id="BpfZBWgzLLnDBcpclzWtR1" class="io flds"><span data-page-node-id="x3PfPHxavcYoCErG8yI7iA" class="fld"><b data-page-node-id="DOyh0oFsWSZSfKVeP7F7cG"><!--pnid:DzXkkZYfkLspqVsgQiJxE2-->关键广告配置字段：</b></span><span data-page-node-id="PekeTLBssO0D89oWgqsWJ9" class="fld"><!--pnid:BuBUCEsPE43F6VujYDqPGa-->质量度（素材/相关性）</span><span data-page-node-id="CCmEocp26qvVWN2CFtZcxk" class="fld"><!--pnid:vQyiKq2GSSuHXksOzm8F3N-->投放目标</span></div><!--pnid:FFHWZ49XJ0hUI5P9IGBbCX-->
+  </div><!--pnid:LFgvAFZ0Ku5aTEIZ5m62fB-->
+  <div data-page-node-id="VK9FfrpVUbwVwmIoby6OyM" class="arrow"></div><!--pnid:FbXMk7qqj9MQn2aZawFjFD-->
+
+  <!--pnid:JEDnRDbG9dXQ1jwUB3LVHR--><!-- Step 8 GSP 扣费 --><!--pnid:uRhwHl5wkZDzE7N7BuLHVB-->
+  <div data-page-node-id="V6ZaZp82mj6QOWZff0ivTJ" class="node c-show"><!--pnid:lGarBJJHYEH17DXDQbtKw3-->
+    <div data-page-node-id="4fOXPb9MbGhm2eNp0awdWu" class="head"><div data-page-node-id="MiEYnGfdvwNgFA07uzfqRu" class="num"><!--pnid:hMY5speCHdNNTdYblWk6Sk-->8</div><h3 data-page-node-id="WRNQ4XVleNZsHDRfw5IRQt"><!--pnid:kNPEEiyfZBdzJ8uMQ4UDek-->扣费结算：GSP / VCG 次高价</h3><div data-page-node-id="PSFHZN1Bq4VtRBbhRODWFF" class="tech"><!--pnid:Gvo1JjyVNefWjD2lYEC8qU-->广义第二价格 / VCG</div></div><!--pnid:CfG4iGduLFuIdTPUGCXGdS-->
+    <p data-page-node-id="DrgFEVeR247nDbJ2XaCYg6"><!--pnid:6besdb4V7DyMlH1F2dIDQv-->胜出广告按<b data-page-node-id="cUsSRJ4eDaOFBBnykL03Xj"><!--pnid:LctVW682iqCfGgX1m1DI5t-->广义第二价格（GSP）</b><!--pnid:w8uZB3aGc0wY6Q3rbPFvwL-->或 VCG 机制计费——实际扣费 = 下一名 eCPM × 换算系数 + 调价，<b data-page-node-id="G6o6989tFyomSjZnErr1l1"><!--pnid:d1MpRWzAagOwQhagBPBIsz-->而非自己的出价</b><!--pnid:xRmfclGO0DBF8NdA7y2DbE-->。这保证广告主不虚高出价。CPC/oCPM 扣费都基于此机制。</p><!--pnid:92Z8WMO3K0FeQLmDiCvKBI-->
+    <div data-page-node-id="ihlAxEBaPJCDgAkI7EvTjs" class="io"><span data-page-node-id="Kx2AXmhfkWT0cck8mdBMWE" class="tag"><b data-page-node-id="Db57XxGJsgOKDA2RbRkq80"><!--pnid:polnCpCtbmCvPiKLBeN7zR-->输入：</b><!--pnid:aOZ7MVseJX2MoAZu1JoQ7J-->胜出广告 + 次高 eCPM + 计费方式</span><span data-page-node-id="H7KfkHgqFpljFmqPP6LCjb" class="tag"><b data-page-node-id="pOrUnUaBcGA1Z6rU4848o5"><!--pnid:YZamsZzlUdLvAizWqEJzEJ-->输出：</b><!--pnid:PRVcIBzY18k5HyACtKECtf-->本次曝光/点击的实际扣费</span></div><!--pnid:alaBlLcN0I2csUJ9t1mCE3-->
+    <div data-page-node-id="QvanyOubTlW55ApUXZMB4b" class="io flds"><span data-page-node-id="caNLLGP1RP01lVPRcJS86s" class="fld"><b data-page-node-id="SO0ezDXIqfHYT4q1RaLyDd"><!--pnid:hrb7tK1XClQ56uZlGyCjwF-->关键广告配置字段：</b></span><span data-page-node-id="dUBhvK197D3qNqEyIxeD6Y" class="fld"><!--pnid:medv2g0xqB668BEJ1snHKx-->计费方式（CPC/CPM/oCPM）</span></div><!--pnid:pHePHfllelUJhirUtXjwzh-->
+  </div><!--pnid:HusgvM9d3ZmdpBzF4oEzEr-->
+  <div data-page-node-id="I426E24HFvdAv6NA0Pf6KR" class="arrow"></div><!--pnid:SCaFwlWmtJl8CqwVigeFPv-->
+
+  <!--pnid:5UBviaNM7aMQoWzrnd1v5p--><!-- Step 9 创意渲染 --><!--pnid:IFvSl4F7h5cMx7BJsDMD31-->
+  <div data-page-node-id="FL79Dl7bIr93kQ7eLungzK" class="node c-show"><!--pnid:1zhFojp1yxqqLHAgpNs9iU-->
+    <div data-page-node-id="UvalHKjM4cuL40VnnxlQOa" class="head"><div data-page-node-id="qHV36v0rwEgiOH7wlRTFHk" class="num"><!--pnid:Wptfh1tnLleO1HI4gCdZOv-->9</div><h3 data-page-node-id="heKBOChGiIesfPJhUbfJBr"><!--pnid:XS2y97ruudqxS18NGhfcje-->创意组合与端上渲染（DCO / RSA）</h3><div data-page-node-id="vEqD4WBWIVChcOnbNY6zqt" class="tech"><!--pnid:PEmuRZX3AdW9aJmkDN6zSO-->程序化创意 / 动态创意优化</div></div><!--pnid:Zra3mDAmfhJRa6CoPC6YDu-->
+    <p data-page-node-id="Cf9lvT4ESOj92ddVwwu3lO"><!--pnid:DbSniJPadJlEm7pV7NYjE2-->程序化创意（DCO/RSA）动态组合标题×封面×视频，下发到客户端渲染。Pin 固定位素材优先。<b data-page-node-id="M65KXgxY0NYYRx3GCxtYQt"><!--pnid:jfCE3FIDOk1bLgE0ggfcQO-->这一步是端上最终渲染，不重新排序</b><!--pnid:B39wAXikAFtEM0O4Cfnd7V-->——精排阶段（Step 5–7）已完成创意级 pCTR/pCVR 预估。</p><!--pnid:LF12vaT2clQ0AVhbl2GEJH-->
+    <div data-page-node-id="Mb8Oe07IlAxKVGcoBYfGPL" class="io"><span data-page-node-id="FM6fAXdm2LTo8GIBRn6mIv" class="tag"><b data-page-node-id="a8VHhArTmCLMTHHsYiL3wR"><!--pnid:Kf67DLeb8faR8QIaTLUjHr-->输入：</b><!--pnid:IEDmY1VvXe9t53y2g3ozik-->胜出的"计划×创意"组合 + 程序化创意配置</span><span data-page-node-id="xTF6Qyh0F8mqMmMlKZyXwB" class="tag"><b data-page-node-id="Y4YegHT9yRhWgqIFEFRcyV"><!--pnid:G2yOcUy5bnoGi1YH1lGQlC-->输出：</b><!--pnid:rnEIvQ1Y8A5PPRA7WMHGSq-->最终下发到端上的素材 + 文案 + CTA</span></div><!--pnid:YH4KmscmG93IblUTxZrj5M-->
+    <div data-page-node-id="kcELqC1AL1uE91JVxkHgqw" class="io flds"><span data-page-node-id="5GQ90rOMxDaiAGV5vWSwty" class="fld"><b data-page-node-id="sWHC6hTk9pw5vg4zRElZ81"><!--pnid:O4ZZyZAkFAEleS0NNfRRBR-->关键广告配置字段：</b></span><span data-page-node-id="nmgXxUTk0FYdQF3UNW2oip" class="fld"><!--pnid:3hc8ct9A1lkOQ4CH1svkQA-->程序化创意 / RSA</span><span data-page-node-id="xC2PPaIzvgPusMLnFxSKgL" class="fld"><!--pnid:okxXjEfoLanCUsCc8eXhCy-->Pin 固定位</span><span data-page-node-id="ecnGe3kucnh61Jm3wOwHUp" class="fld"><!--pnid:zJNOaiCjRVdoKH6fqTcntY-->素材池</span><span data-page-node-id="Utc6HPQx7hCdeS4p6jsoKc" class="fld"><!--pnid:dPV3xjvn7dktj5HCv8TC50-->Adv+ Creative</span></div><!--pnid:LsYwmVjimQWbAvU19aRStR-->
+  </div><!--pnid:2ZvBHj3XQiDlnzdguqYrvJ-->
+  <div data-page-node-id="JA8WK679VglmH4i9fwnSri" class="arrow"></div><!--pnid:yahRbqCKTDC3zA8taVoY6e-->
+
+  <!--pnid:U9PHaUPSGi7XSvYlPHLnZ3--><!-- Step 10 曝光 --><!--pnid:9mn4mOjcM37IQCPsjixO2w-->
+  <div data-page-node-id="5plo8yy8774IEWHTfbKPLX" class="node c-conv"><!--pnid:vvrRTLIxyCE75UHBOGcRMc-->
+    <div data-page-node-id="Ae8shWl6l1DhE1WFCJWrMG" class="head"><div data-page-node-id="ryA7UwEENDqTMAbWt33HKS" class="num"><!--pnid:6XBEC4mFRv37FDOU7nE845-->10</div><h3 data-page-node-id="Z8aF1AqGKKG2HDvMQEiobo"><!--pnid:rGEJcCJV8orExBD8ncTjpt-->素材展示与曝光计费（CPM 点）</h3><div data-page-node-id="HKVZMkhRENiykxJrKrHVW1" class="tech"><!--pnid:NVTv06MgARYXuNQuh2wFcV-->端上曝光监测</div></div><!--pnid:LS5EpZZbyqpgWvkxCxVNWt-->
+    <p data-page-node-id="jvs1h5LjDEw7mHiJhDo1B9"><!--pnid:vlowhbTQpOLV5dGWQMnueC-->素材在屏幕上展示并满足<b data-page-node-id="Pn6MS0ikiNPWPSjVOYRugX"><!--pnid:AWqkYOSlLGYaLlmVVZKueO-->有效曝光定义</b><!--pnid:eP5TBdYFbvmS3LpdEGHG7w-->（停留 1 秒 / 可见 50% 等），客户端上报曝光事件。这是 CPM 计费点，也是后续归因起点。</p><!--pnid:P6xQxPV9OCG6FbjT5Gs5wT-->
+    <div data-page-node-id="usE0LpjllJEFjyY8UffLuv" class="io"><span data-page-node-id="qfrbBJe1HgkWvtT7XZ8tXA" class="tag"><b data-page-node-id="EI3ITrbw9MoxJsMx9M32np"><!--pnid:5CWBUtJSn1gp7AuEyhXX3F-->输入：</b><!--pnid:b5wjKvpToQExyl9wPO47vD-->素材成功渲染并满足曝光定义</span><span data-page-node-id="YY9z0g8w6OqZ8cl1ZKzYAu" class="tag"><b data-page-node-id="TO3LRQqDHFCW4NtL3sJId1"><!--pnid:6c8NDXyNL9wzRvpdFB53LQ-->输出：</b><!--pnid:tmY9PQbjUAeqxvlFWVDCWD-->曝光日志（user × ad × creative × 时间）</span></div><!--pnid:8geDFNUj7vOcq5aROU3Yyn-->
+    <div data-page-node-id="o0frulgZIXh9eVTGXqgymM" class="io flds"><span data-page-node-id="BMCt2KnJiFWYxnxgyLqBW7" class="fld"><b data-page-node-id="vSbzAOuzP1fXNoAuR0Vfzr"><!--pnid:niMCZxgLSkzeUhCnn9yOje-->关键广告配置字段：</b></span><span data-page-node-id="JA2lhj5629x1SEgjUqghMR" class="fld"><!--pnid:ix8qBqnSqutXNqzTSr7Nhr-->计费方式（CPM 曝光计费）</span><span data-page-node-id="ZWMjJD2DkhhylRJGA2Fmyx" class="fld"><!--pnid:DPqqDECwE4LyjNHTpcHBHV-->投放版位</span><span data-page-node-id="n9sqjl5xAhQ8oBrIFG80Xu" class="fld"><!--pnid:lO0dsYe727g3D7pVGv7GuK-->曝光定义</span></div><!--pnid:RC3X1CKDOFeKmqCiAxnIfA-->
+    <div data-page-node-id="5DQS9sZRP1D5wUCfmTogCe" class="note"><!--pnid:TjCzzuUSzTPBmw3CHb4e0Y-->💡 <b data-page-node-id="Y4niArpljlaI55Gn901UNH"><!--pnid:KCtE38sdvgWkl1LgKIwmwG-->投放版位</b><!--pnid:no2D358mBXi1Ejm3ZmixqM-->决定曝光判定规则：信息流停留 1 秒、开屏展示完成、Banner 可见 50% 等，版位配置直接改变"什么时候算曝光"。</div><!--pnid:JVqqKB0FA5ZQ3XJHMA6caH-->
+  </div><!--pnid:7uthFXEgCzP5fH8q98Zznz-->
+  <div data-page-node-id="2ELpTGStjICuzYW6PbSOUC" class="arrow"></div><!--pnid:8BTbONaOSgFzsEv3Qer5xl-->
+
+  <!--pnid:EoVpm60Tgo77ECT385Kutw--><!-- Step 11 点击 --><!--pnid:mSqMaNP7Xs5sUGSmCf0pxJ-->
+  <div data-page-node-id="Jl7wgEZulzx1fo6Ba2aAE7" class="node c-conv"><!--pnid:7rPeyiJbfFGil6l3YFf7kX-->
+    <div data-page-node-id="KD9zCLlS2uvbk2pyLiswf5" class="head"><div data-page-node-id="dVOSYZ1mhFTbN4KIAFwvAf" class="num"><!--pnid:X95GGu1Cz80JkC8VQ6DpGc-->11</div><h3 data-page-node-id="8kXZP9wMrCq1zYmLrivFLW"><!--pnid:6h2H0D4yIoMdpARJjJ8ZHq-->用户点击与链路下发（CPC 点）</h3><div data-page-node-id="kT9UN3QY2wHaSanfOxA6Vs" class="tech"><!--pnid:ZVREPSHFb1v6E3CsreZ1fV-->端上点击监测 / DeepLink</div></div><!--pnid:NYm8UguqEepelyZlaDCFsC-->
+    <p data-page-node-id="oyqc8rry7FVwE8thPRF2p6"><!--pnid:qLFcRGZo0yKqQFLk18Vf6w-->用户对素材产生交互（点击/滑动/播放），客户端上报点击事件（CPC 此时计费）；同时携带 click_id、UTM、DeepLink 跳转落地页/App。</p><!--pnid:B0MamF0O2NBJNtZKsTqE14-->
+    <div data-page-node-id="c2GJP13Ocy2Nc8BA8C9YJi" class="io"><span data-page-node-id="LiXaZL6iF6kRH7pUTR5qDH" class="tag"><b data-page-node-id="m2dWXxukBEPrwV09A58yBs"><!--pnid:EFeUcBsk65KAAemgAkFcWx-->输入：</b><!--pnid:7n1Pv64sAaXi6W0HqKi6ox-->用户手势</span><span data-page-node-id="w0Yzw88rk82sH0vWfAiBGY" class="tag"><b data-page-node-id="gTJNx3hr2GDYodUQIpF5Ix"><!--pnid:6pRAY276arqE4qivWWVPq2-->输出：</b><!--pnid:b67nq7sr21tokPSTG8iFt7-->点击日志 + 跳转 URL（含 click_id / UTM / DeepLink）</span></div><!--pnid:tSVlYpX8Jc8kFCXpwmUkll-->
+    <div data-page-node-id="i4TYnbG1ZbBtAFm1gwGeyu" class="io flds"><span data-page-node-id="7EScVSsFO65JlQwLKArVqg" class="fld"><b data-page-node-id="HVxtXtVFIhUWENhcG2cN2B"><!--pnid:XMDEuBP2kswHCqJtyOEwXA-->关键广告配置字段：</b></span><span data-page-node-id="sebECjMGcG55zRyL2mv3Q3" class="fld"><!--pnid:E55EDTruymRGEQsgAI1zbK-->计费方式（CPC 点击计费）</span><span data-page-node-id="H2GnpJHrccLjTtCi237wr4" class="fld"><!--pnid:maVNVvpGLL3ofIi3klMAXB-->CTA 按钮</span><span data-page-node-id="ZoRokSVi2AoAbcHzp7arRI" class="fld"><!--pnid:GwltajKxBO5eGPVogNeSDw-->创意形式</span><span data-page-node-id="SWQGcEYuD9yB5pF15EK0fN" class="fld"><!--pnid:wdtyxeVH5JcndqXOcn6tCg-->UTM 参数</span><span data-page-node-id="awY9IS4LOKjvKq2Qi3ZPpt" class="fld"><!--pnid:HSMG02WbAJ09f2LjvC616P-->深度链接</span></div><!--pnid:EAhblNBXBaAdUz2VW9EPjH-->
+  </div><!--pnid:O20daRWEuGXejwIFhTxvEA-->
+  <div data-page-node-id="3dVFTHXS8c6T72MXQY0GQs" class="arrow"></div><!--pnid:wTxlsGy41Cyy0elwJt5sBn-->
+
+  <!--pnid:nZg9iEdtXdhvtzMnKqbWNd--><!-- Step 12 转化捕获与归因 --><!--pnid:wojEQCO2gvuP2j7Uin8BXa-->
+  <div data-page-node-id="nk08I3NQQ1tSougxUEWItW" class="node c-loop"><!--pnid:DYU4aAdSAHAE3dz9ZbZFNO-->
+    <div data-page-node-id="2YjKtxL7KmGKTselqZylqC" class="head"><div data-page-node-id="FPeKgXuQkOIynxaTFXI3Fa" class="num"><!--pnid:Sk5fJB1TkVa01PhFOVsbkY-->12</div><h3 data-page-node-id="MyBXayygMv1GrcrjzO52HH"><!--pnid:02ebhpUFGiEGhGyTI4oPwQ-->转化发生与 MMP / CAPI 归因</h3><div data-page-node-id="amMHISAli2rCPqY66bY0xI" class="tech"><!--pnid:UAqq0trwCJfjqrOQKfWvEG-->Pixel / CAPI / S2S / 第三方 MMP（AppsFlyer / Adjust）</div></div><!--pnid:WjNcGYjQwess524L8R1Kg0-->
+    <p data-page-node-id="ZJue8tUj38wv1nI5lEFfdW"><!--pnid:FAPCZ7N15EePwo6FyRoMbN-->用户在落地页/App 内发生转化（注册/付费/激活）。第三方 MMP 或广告主 CAPI 捕获事件，<b data-page-node-id="kkl835mdkomdSwnLCqFA1Y"><!--pnid:bEcb2rwCn5wQUb22giHJpd-->跨渠道去重</b><!--pnid:Wr6Riyq85W8IwHqyqUikZB-->（自然量 vs 付费量、Google vs Meta），在归因窗口内匹配到之前的曝光/点击。iOS ATT 未授权时走 <b data-page-node-id="Y7XbSXOrxLcpcGB5KRXa1E"><!--pnid:RWuhJSaZZI34XRjIRTtqRU-->SKAN</b><!--pnid:dnqAvhDREl4DmSb4KlazSz-->，延迟 24–48h 且无单用户 click_id。</p><!--pnid:fd4G3FTIsW1ZRq8N8rUxIa-->
+    <div data-page-node-id="u5kcd6XfbuFj066KGbacwd" class="io"><span data-page-node-id="PGYW379F8m3iWm28mFbJsU" class="tag"><b data-page-node-id="bL9zO0UFJi1LnmLDegDFeZ"><!--pnid:T5lMVTjKOlcKnzqc6KgUYn-->输入：</b><!--pnid:zdj6f3lBrBqViRqiXYSFiH-->转化事件 + click_id/device_id + 隐私信号等级</span><span data-page-node-id="k9erTZyKCI1jgvnLrbC52F" class="tag"><b data-page-node-id="JB1EK0nHD8td49PZxBidfD"><!--pnid:hhUzMTJ3jbf93damitmD1p-->输出：</b><!--pnid:NV1nEgERkWiWf3WBBWoKDh-->带归因的转化日志（跨渠道去重后）</span></div><!--pnid:tnMLo8fTTb4oPygB7kGGaD-->
+    <div data-page-node-id="XBbr0R5qAQG2FfsCnlXI4y" class="io flds"><span data-page-node-id="IH2lq15jMTPop9l5bdQjlT" class="fld"><b data-page-node-id="RhOlXwktVHoWkXGlrO8401"><!--pnid:RmuRiH987KlHD21MuFbeMg-->关键广告配置字段：</b></span><span data-page-node-id="vh0LEQHkBYszT303CI2YLR" class="fld"><!--pnid:rdFwHnS06dAyCCVqjQJO0c-->转化归因（Pixel/CAPI/S2S/MMP）</span><span data-page-node-id="GFECaNHbm7vdDjugLeUvXA" class="fld"><!--pnid:wPBsVYFN4sQDniSGLZfsEu-->转化事件</span><span data-page-node-id="wWqGe4V2hfYIYBQ67hfC1a" class="fld"><!--pnid:sifvc9G4QTlHyaZKR9iiZp-->归因窗口</span><span data-page-node-id="ERaeuFwqgZTCHkK2Db6GFP" class="fld"><!--pnid:rBy4eKPedwThp7fAWGzAM8-->时区币种</span><span data-page-node-id="Puma9AFzRZpXO1WoxjDDV5" class="fld"><!--pnid:FmChm0yUpR15Df5DnVHyAh-->转化价值</span></div><!--pnid:vAazbVrfKhbjzG4on1Zyzn-->
+  </div><!--pnid:wqUtinjy5M7At39Xth6FkO-->
+  <div data-page-node-id="jnVF0iTwQJRTcqARx38jrF" class="arrow"></div><!--pnid:CQRpCf5COYqflLxzibyzOk-->
+
+  <!--pnid:PAYeD3AVDqf3mCKiTlNeT8--><!-- Step 13 模型更新与自动扩量闭环 --><!--pnid:CEEIHCvbgpeCVjKWeII5CG-->
+  <div data-page-node-id="GP3dqUgePO5MqMnNyQdsIV" class="node c-loop"><!--pnid:65BRHoCznlXS8lGW1SGFDz-->
+    <div data-page-node-id="R81jc1BuQzZdfZYURyBXAf" class="head"><div data-page-node-id="k4SsA1QiL64CuC1PVwOJAS" class="num"><!--pnid:zk6GfE4JzGuAekPSkEKQ5a-->13</div><h3 data-page-node-id="kI7QSVopbvKQtDRcuzVube"><!--pnid:zAU1PNpV3H1ENwI6T5acT0-->模型更新与自动扩量闭环</h3><div data-page-node-id="kKacqcrmh3A9CneakyUIIz" class="tech"><!--pnid:WQ79SAk0lE9fAee9iBRDxi-->实时流计算（Flink）+ 预估模型在线更新（Online Learning）</div></div><!--pnid:KqK1fU8m7drnA6SYbsBsDr-->
+    <p data-page-node-id="TloLZ25NMSS0f7ETm8JVYN"><!--pnid:JbUsd1rHq1sboRsszHstLx-->归因后的"曝光-点击-转化"完整样本流进入模型训练体系，实时更新 pCTR/pCVR 特征权重，并触发自动扩量（Adv+ Lookalike）算法。</p><!--pnid:P5ZUbyHp45SmbFoA3A8d2D-->
+    <div data-page-node-id="yrZmvhQRBAH7Zfl9zAJ0KG" class="io"><span data-page-node-id="D0m1MK2bMsakqPn3E9tdUv" class="tag"><b data-page-node-id="Ik56gsW8yJY4XDY52f96es"><!--pnid:9cupO02ADXoNICwtwE05rQ-->输入：</b><!--pnid:gT5ylkG4IDvjnEEPlzQQ5u-->归因好的完整样本</span><span data-page-node-id="qTGRbQPBbic5dDXtriTx9P" class="tag"><b data-page-node-id="7QMSsOgTUe2wxN0yl3ot83"><!--pnid:sw7bBAK5HPQsrUVDyIWGTl-->输出：</b><!--pnid:TQBoA0PYHyhkYt1gYuLG1m-->更新后的 pCTR / pCVR / 出价模型</span></div><!--pnid:b8hMh16fWWzwCdGkY5r0u2-->
+    <div data-page-node-id="PIbCb6ltyYkq60YhxwKAqt" class="io flds"><span data-page-node-id="Xt29EUBPaHDSvFgjHxtj22" class="fld"><b data-page-node-id="E9z7ZciQHN2e9PlBC8jFHs"><!--pnid:nmp1aw4MkAAWkxZBosXyG7-->关键广告配置字段：</b></span><span data-page-node-id="DMsaBkdKNNvB3nS7ZZGviT" class="fld"><!--pnid:RmbcahW9NvJIItENEUOmVw-->转化数据质量/完整性</span><span data-page-node-id="WUMEY0LFBmvq4U5Xh23nYR" class="fld"><!--pnid:kgOj7eNKuFJuWvchXDfBWE-->自动扩量开关</span></div><!--pnid:nXItJmK4ofU1lHPpYWZdjI-->
+  </div><!--pnid:VxUruHkgYr6xU7YfTF1lI8-->
+
+  <div data-page-node-id="ktX3i0JfGrwhlE429kOamh" class="loopbox"><!--pnid:JLhgl22nqF37vpfhOoVN9Y-->↑ 第 13 步的模型更新，会实时反哺第 2 步（用户画像与兴趣更新）、第 3 步（智能扩量与召回更准）、第 5 步（pCTR/pCVR 预估更准）、第 8 步（DCO 素材组合优选）——形成算法自我进化的飞轮</div><!--pnid:pbH2jTk0F1ZwJI5RDNGbdX-->
+
+  <!--pnid:BiKpQb7dtwI9AfOAuTDmx1--><!-- 四大核心机制 --><!--pnid:qPazOYvidDGudwyQzL7n6h-->
+  <div data-page-node-id="Xn2rlaiMqQrvcLia1pPBe3" class="tips"><!--pnid:e8H2PLYR7AIVkxqbBagFPF-->
+    <b data-page-node-id="jlKrQ1Tb01Hl5pdhJvLcPe"><!--pnid:J61ogGADTuiDBRpsDoY4Uj-->优化师与算法工程师必须掌握的四大核心机制：</b><br data-page-node-id="hsoIl6ayhd6bsSZGVzSmyt"><!--pnid:LWgFxYHD5wyn54Ylv6tCfk-->
+    ① <b data-page-node-id="F0wuQ12O34Skv1KodumKF7"><!--pnid:XFsPH7pHHQ5uVn0YoKKr3b-->创意即召回（Creative as Targeting）：</b><!--pnid:SKUHuvqP2RKtu58TclWKg2-->在智能广告时代（Meta Adv+ / 巨量全域），第 3 步召回与第 8 步创意优选已深度融合。好的创意素材本身就是最好的定向标签。<br data-page-node-id="MHguBUwxfM7FVgPJrxP3hv"><!--pnid:WbgcoVPWXDUtAubJ0RvDBo-->
+    ② <b data-page-node-id="EJ8YVspSUTuZKgwZaVGov6"><!--pnid:EBRLSmEcftlifcBvU1mHo8-->eCPM 与 GSP 次高价扣费：</b><!--pnid:LMKCKUboYVtY8YNvGNwn1j-->第 6 步按 eCPM 得分竞价争夺 Top 1 排名，但第 7 步结算时采用广义第二价格（GSP）扣费，实际扣费取决于第二名的 eCPM + $0.01。<br data-page-node-id="OBDXKK8euazYXeN9xZcJSI"><!--pnid:OnKy2BLXTqnBmMsAeT0uPA-->
+    ③ <b data-page-node-id="Nw6SpNISzu5XC4oT4Y23Y6"><!--pnid:d7YakySJ61WQ9LkOBkkBJh-->Pacing 动态调价因子：</b><!--pnid:ih5XiGN0tE65nrqoZnNSlF-->竞价公式中的 Pacing 因子会根据预算消耗进度动态调控出价。早晨消耗太快会触发降价，临近结算消耗太慢会触发提价。<br data-page-node-id="lvpnjAlGvME45IbF8D9p30"><!--pnid:jFAUBPnVyemEpfRlLAVOa3-->
+    ④ <b data-page-node-id="eNsIQmthnhI4OoqvsoCExW"><!--pnid:2hubJGNbBdrHVHiWX8tgCH-->数据回传（CAPI）决定模型上限：</b><!--pnid:5LVszYIakInroItIDCNekZ-->第 12 步的回传完整度直接决定第 13 步模型的训练质量。接入 CAPI 服务端回传及设置正确的归因窗口，是提升 oCPM/tCPA 效果的底层基石。
+  </div><!--pnid:Ddu2sZdN7zZoGN8cNmwduL-->
+
+  <!--pnid:8wcnvoBDM9cb3YTtg9Hjgm--><!-- 底部注释 --><!--pnid:yQV3rwggv0Sy2lwdfyExoe-->
+  <div data-page-node-id="6EX51AHFCX94FP5h7YcUB4" style="padding:10px; background:#f7f8fa; border-radius:8px; text-align:center; font-size:12px; color:#888; margin:14px 4px 0"><!--pnid:e03xCQZDB9UUxpSz4I8xjH-->
+    注：本图已融合国内外主流平台（Meta、Google、巨量引擎、腾讯广告、TikTok 及 OpenRTB 程序化竞价）的通用技术底层规范。
+  </div><!--pnid:ExNqbGuOQNhKHGw9Z8aWCe-->
+
+</div><!--pnid:QCfHdPlFwtiyt7FicLfjjS-->
+</body><!--pnid:8YymJRAX3Y9XaPIP6iruIK-->
+</html><!--pnid:1PfFQGMEIxrMosxkrSNTQn-->
+<!--pnid:8kHgMaB6N935HoEFniK8xS--><!-- （注：内容由AI生成） --><!--pnid:Ty3CgfTt9wtScfFPj29qQO-->

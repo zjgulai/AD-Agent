@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "document": {
+      "content": "# 红人素材广告加推Agent Loop建设\n\n<cite doc-id=\"Vz2hw4OsoiMEDUkuB13cRnrsn7d\" file-type=\"wiki\" title=\"广告agent梳理\" type=\"doc\"></cite>\n\n<sub-page-list space-id=\"7618038175864212422\" wiki-token=\"YwzBwYCxPin0zNkAT1VcVyPdnRf\"></sub-page-list>",
+      "document_id": "E9XhdQ0aRo9ZYixpVmPcnRjnn2c",
+      "revision_id": 21
+    }
+  },
+  "_notice": {
+    "update": {
+      "command": "lark-cli update",
+      "current": "1.0.99",
+      "latest": "1.0.100",
+      "message": "lark-cli 1.0.100 available, current 1.0.99, run: lark-cli update"
+    }
+  }
+}

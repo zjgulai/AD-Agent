@@ -1,0 +1,279 @@
+<!--pnid:GgC4HCOZIjJyYvEMdWCsyP--><!DOCTYPE html><!--pnid:O1eKLqcGDoqt2c63XMP7oN-->
+<html data-page-node-id="jZcEgxmvgkiVDHMdESpac0" lang="zh-CN"><!--pnid:nboKfJ5If9uGvGES7cPjBp-->
+<head data-page-node-id="B3v1iXSYP8JPhu1pFCBXOK"><!--pnid:cRPeKUdZoxrbJvPxSoH1Af-->
+<script data-page-node-id="czNzCKuvCQNVuE2pUQdg5J" src="/smartpage_comm/inject.js"></script><!--pnid:7sEtBQXRkatAlXzRi8EssB-->
+<meta data-page-node-id="ESslMnVcdyp3wFA18ZqBH4" charset="UTF-8"><!--pnid:CpQxqtKQX6LvacRC96SSxT-->
+<meta data-page-node-id="enDPlFumc98WFXrh5306mU" content="width=device-width, initial-scale=1" name="viewport"><!--pnid:EHgkdEPAOjFF6E833m15dw-->
+<title data-page-node-id="9ixpoa60gMpe54YP3hVCPu" data-pnid-children="8zINGw1VXMDa653pMNDWw1">广告平台算法自动优化字段详解：逻辑 × 输入 × 输出 × 跨平台差异</title><!--pnid:8HA9EWBY1g9XcBvkpzTWUC-->
+<style data-page-node-id="cwivgacVe0ZLXdfvfpyUxG" data-pnid-children="9mx5Rj4T1LwoGxoUhhd8xk">
+  :root{
+    --text:#1A1B1C; --text2:#4B5563; --muted:#6B7280;
+    --blue:#8BC8EA; --indigo:#9BBBF4; --green:#94D8C3; --orange:#F4B393;
+    --k1:#2E6F9E; --k2:#4054B3; --k3:#237A64; --k4:#8C4A1F;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#F4F3EE;font-family:'PingFang SC','Microsoft YaHei','Hiragino Sans GB','Segoe UI',Arial,sans-serif;color:var(--text);line-height:1.55;}
+  .page{max-width:1100px;margin:0 auto;padding:18px 14px 30px;}
+  .titlebar{text-align:center;padding:12px 14px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;font-size:16px;font-weight:600;}
+  .titlebar .sub{font-size:12px;font-weight:400;color:var(--muted);margin-top:3px;}
+  .legend{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 10px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;margin:12px 0 10px;font-size:12.5px;color:var(--text2);}
+  .chip{display:inline-block;padding:2px 8px;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:6px;font-size:11.5px;}
+  .chip b{color:var(--text);}
+  .sec{padding:9px 12px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;margin-top:14px;font-size:13.5px;font-weight:600;border-left:5px solid var(--blue);}
+  .sec.s-b{border-left-color:var(--blue);} .sec.s-i{border-left-color:var(--indigo);} .sec.s-g{border-left-color:var(--green);} .sec.s-o{border-left-color:var(--orange);}
+
+  .fcard{border:1px solid rgba(0,0,0,.08);border-radius:11px;padding:10px 12px;background:#fff;margin-top:8px;}
+  .fh{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-bottom:6px;}
+  .no{font-size:11px;font-weight:700;color:#fff;background:#4054B3;border-radius:6px;padding:1px 7px;}
+  .fh b{font-size:14px;}
+  .plat{font-size:11.5px;color:var(--muted);}
+  .plat span{display:inline-block;padding:1px 6px;background:rgba(0,0,0,.05);border-radius:5px;margin-right:3px;font-size:10.5px;}
+  .grid{display:grid;grid-template-columns:1fr;gap:6px;}
+  .fl{font-size:12.5px;color:var(--text2);line-height:1.6;}
+  .fl .k{display:inline-block;min-width:92px;font-weight:700;}
+  .k1{color:var(--k1);} .k2{color:var(--k2);} .k3{color:var(--k3);} .k4{color:var(--k4);}
+  .case{margin-top:6px;padding:7px 10px;background:rgba(250,173,20,.10);border:1px solid rgba(250,173,20,.45);border-radius:8px;font-size:12px;color:var(--text2);}
+  .case b{color:var(--k4);}
+  .diff{margin-top:6px;padding:7px 10px;background:rgba(155,187,244,.12);border:1px solid rgba(155,187,244,.5);border-radius:8px;font-size:12px;color:var(--text2);}
+  .diff b{color:var(--k2);}
+  .diff table{width:100%;border-collapse:collapse;margin-top:4px;font-size:11.5px;}
+  .diff th{background:rgba(0,0,0,.04);text-align:left;padding:3px 6px;font-weight:600;border-bottom:1px solid rgba(0,0,0,.08);}
+  .diff td{padding:3px 6px;border-bottom:1px solid rgba(0,0,0,.05);vertical-align:top;}
+  .diff td:first-child{font-weight:600;color:var(--text);white-space:nowrap;}
+  .mem{margin-top:12px;padding:9px 12px;background:rgba(0,0,0,.025);border:1px solid rgba(0,0,0,.08);border-radius:12px;font-size:12.5px;color:var(--text2);}
+  .mem b{color:var(--text);}
+  @media(min-width:760px){ .grid.two{grid-template-columns:1fr 1fr;gap:8px;} }
+</style><!--pnid:XWBtDe1zch4q2FsKiHTX2W-->
+</head><!--pnid:CS89F7GKPz2m0qGlNpSiN6-->
+<body data-page-node-id="BRJ0u9QMgqJNWFZJWcTjDH"><!--pnid:0guPooxnCv8coMAxh8lVyS-->
+<div data-page-node-id="wxxWp1Sgi6Mt3630ljJvcR" class="page"><!--pnid:Pz3MoyjrXf5BH133nGnHrq-->
+
+  <div data-page-node-id="HvfS1rPTx4Ybt1IlS4qUj2" class="titlebar"><!--pnid:fYLPli8JEQ0AxDe4R9JIEy-->
+    广告平台"算法自动"字段详解
+    <div data-page-node-id="tEUCF7Rp3NvDqcxM4lB9w2" class="sub"><!--pnid:3x45WBR1C9YHnV8SFbNWHK-->每个字段：①优化逻辑 ②关键输入 ③关键输出 ④跨平台差异与变更 case｜覆盖巨量 / 腾讯 / 快手 / 百度 / Meta / TikTok / Google</div><!--pnid:3LTJnu8tHSLehLYhpAXoqG-->
+  </div><!--pnid:7C6GphOkZJkHePLve62vJa-->
+
+  <div data-page-node-id="jQLFUtliGmTMcZLVFd4H19" class="legend"><!--pnid:5ABrcEjGk3MxxTEVrweWIP-->
+    <span data-page-node-id="P8sdNJbSpJ7TifwSmf7BJH"><b data-page-node-id="UrIFudfdCR8EhRjUEddSrV"><!--pnid:VFVrY4MSeS8SmxOn3kNB79-->阅读约定：</b></span><!--pnid:iQ3TF44fizFIY9XbLbhvHP-->
+    <span data-page-node-id="fG8K75FBi5tqTSe6o3rWc2" class="chip"><!--pnid:4z2e0eZ3CjsD1LKzFnREHB-->① <b data-page-node-id="ZGGShlClu0O5kqmPoZYqL8"><!--pnid:nvJi22Oe5B3UHivbLniyvB-->蓝</b><!--pnid:oehwSVkBFb0Ra5Jrz33mq4--> = 算法怎么跑</span><!--pnid:qAti0DlcvQFTHI9hVSEd0x-->
+    <span data-page-node-id="BVhe6HEeCbUdoO5XjB1Rkd" class="chip"><!--pnid:NcQDrGcTxs6FoqbMqBdXKP-->② <b data-page-node-id="z7bQ8jFkv6IeY9KRWMtwIw"><!--pnid:OysNJdfVd24J4RyCXvHl4L-->紫</b><!--pnid:S4WsgyJNRpuFIyUbZja8W6--> = 需要喂给算法什么</span><!--pnid:SiTbUkHFg1w2JZJodldVPM-->
+    <span data-page-node-id="sUYVXUGBG3zGyGPpANZUWP" class="chip"><!--pnid:Fo4vm3FtR0gK9klaXEIDua-->③ <b data-page-node-id="NS9Muq3lj5C89tDru38QUS"><!--pnid:rFjCgEK9pEuMOLucfJVDRQ-->绿</b><!--pnid:gk9e8XctafAWwG4VQVFxq0--> = 算法吐出什么</span><!--pnid:whMd3IkooTYzSay5NdzvoM-->
+    <span data-page-node-id="zDyi8ptPy2FGvkw1la3OUk" class="chip"><!--pnid:vBBz2F4qSYJPBcuZtmnEhg-->④ <b data-page-node-id="J5gJ3o2njNFTNlL0oFrqaj"><!--pnid:juiYeUMgCsHUUTg9xCweIk-->橙</b><!--pnid:tVwzwFNBB1cGP6Jx7KVmdN--> = 变更 case</span><!--pnid:EzzSRXFibHe1vX56IxAzi3-->
+    <span data-page-node-id="PoaXHXwhvSgU5ShXEXtYGo" class="chip"><b data-page-node-id="gbBKBl3AT5TSiUvI1k2qyj"><!--pnid:r413nUVgjOo1h36uwzih6Z-->蓝框</b><!--pnid:e8Cn2hjqycbvtBA0O9nYFS--> = 跨平台差异</span><!--pnid:y4A5g5DnCe8JsVIomRWSGf-->
+  </div><!--pnid:pnB8URsEDe5KXcYzgYEWtk-->
+
+  <!--pnid:HOE3a7IwrWOAn2WFE1LSG9--><!-- ============ 组 A 预算与出价 ============ --><!--pnid:w8AOCLMj4D1XaOODaT4s4o-->
+  <div data-page-node-id="XMb8KbEElTxz80VLszEBQ4" class="sec s-b"><!--pnid:OrnwQfOuj8QPFD8iSjNCaA-->组 A · 预算与竞价（算法决定"花多少、出多少"）</div><!--pnid:06pooZ48Lyd4bUGN1dcRuT-->
+
+  <!--pnid:iHoHcMMvdDIO1YIFwyI53h--><!-- 字段 1 预算分配 --><!--pnid:hhZbPKkEgIPzvDBDgAt8eH-->
+  <div data-page-node-id="ycuTqCcIQlT0nZSoAAIVV9" class="fcard"><!--pnid:b9beSvomtBBAGnKVB5mwOy-->
+    <div data-page-node-id="O3KEKTCejSoCTcoGHpWjit" class="fh"><span data-page-node-id="T0ghLMhNzfQEP5pn2fWtVM" class="no"><!--pnid:OhHNCAuPHg5t2srK6V5YfF-->1</span><b data-page-node-id="HL1CfoIltPlEawodnKdwtl"><!--pnid:N7zZkafU7nWF3CCnXnvAnP-->预算分配（跨组/跨计划挪钱）</b><span data-page-node-id="OKe6eD2a2NxDCBmjVNSLVI" class="plat"><!--pnid:z08RozJ8halT3XCG2gtmCC-->覆盖：<span data-page-node-id="DFBJfrCYY5KS0ZCSArGQb3"><!--pnid:j1MAUnXSMfXljeWMZvbSgA-->Meta CBO</span><span data-page-node-id="IHpvClhYSbCrxbWjfKuRAM"><!--pnid:qrR0ermtEes4H6bFAkdJGv-->Google 系列预算</span><span data-page-node-id="SEacC2TfMXuGyhzPBrVO5u"><!--pnid:R9iAQAcdY635zON3w2y7CU-->巨量系列预算</span><span data-page-node-id="ABuucqBHEi2JpuCZWjdca4"><!--pnid:Z6S8Zmz9KVGlAJdpJPPrxt-->腾讯/快手（需开）</span></span></div><!--pnid:UGLdK9Y4CoYuN9QLsU7Vx4-->
+    <div data-page-node-id="91CxBVlFqSBUshHMZA4QA1" class="grid two"><!--pnid:v37Yb3B0M25ScWEJowg485-->
+      <div data-page-node-id="8bmfcYkT85DcjieJbZNLds" class="fl"><span data-page-node-id="caJi5ttoXmq3QjD6BIaRWs" class="k k1"><!--pnid:EHoCDqlBFdc72fOUACmp27-->① 优化逻辑</span><!--pnid:NhNxe4m7RytwJU1aWqEYPG-->算法实时预测每个广告组/计划的转化概率与转化价值，把总预算动态倾斜给"赢家组"；探索期留少量预算测新组，避免新组被直接掐死；当某组模型成熟后逐步加钱。</div><!--pnid:8Qc9jgo3j1C3ODcOEnHz2L-->
+      <div data-page-node-id="duNj3DANWT1iel5GZKVS8H" class="fl"><span data-page-node-id="9AUfPQ5PyDlKzuSWXfozej" class="k k2"><!--pnid:7jqefvftq7pM5GJKjjLAoD-->② 关键输入</span><!--pnid:SM6BYRq5NiUYB4ByoBbxuX-->系列总预算、各组转化回传（Pixel/API）、出价目标值（tCPA/tROAS）、组内素材表现、组级剩余预算。</div><!--pnid:kvygZYPlDX9QRIUnkY4jh5-->
+      <div data-page-node-id="dPJ2XW4naQibKFV4iZPGf5" class="fl"><span data-page-node-id="dL42ccJVgVdEweTy0YjzdN" class="k k3"><!--pnid:NBX9mDj7SOmpEJkhvN12zs-->③ 关键输出</span><!--pnid:RlUOilmyJzBKp0QxlWEVaG-->各广告组/计划的实时预算分配比例（系列总预算不变，内部再分配）。</div><!--pnid:MGVSfOX7XV9V6O5nbvIRSC-->
+      <div data-page-node-id="NhuHkCFTjyY4y86m5uxf7h" class="fl"><span data-page-node-id="oC4oO08FiQ6qZ3XOTi60Bg" class="k k4"><!--pnid:yZJMapgcVL5tntxFWgaEDe-->④ 变更 case</span><!--pnid:zjKt7AhPLEudQ5CJU9tDHZ-->日预算 $100：组 A 由 $50 调至 $80、组 B 由 $30 调至 $15、组 C 由 $20 调至 $5。</div><!--pnid:WmKNLEQ29inGB0jRhh2lbi-->
+    </div><!--pnid:IK1A1c7WM1E23UHbm2e8Ra-->
+    <div data-page-node-id="JqQacFfSrOTVyQyElKytXG" class="diff"><b data-page-node-id="MzFg68Hb7RbZtoMEfSQLlB"><!--pnid:JEP9yFdhERBVRZsoSzD2XF-->跨平台差异：</b><!--pnid:iEcgnxpZGD8hhkGFY2ql5E-->
+      <table data-page-node-id="xAsOPUZ2vW9mxkWLN8iHgD"><!--pnid:w3XHplbUQoEImxWrK7VDQV-->
+        <tr data-page-node-id="PZHG5ynEitjqURV5axD2Ax"><th data-page-node-id="ABNWG8eZPyHHPqBc0H1B3F"><!--pnid:y899xrTwJevckCiNdPxkme-->平台</th><th data-page-node-id="Y16M1Co0wieIJpr9r2nxJ7"><!--pnid:TNhFlDBbHMDojmAnEaVaZB-->差异点</th></tr><!--pnid:Ung4Esal7oBReDCc7qO9vH-->
+        <tr data-page-node-id="w4jgBhY9NMVHSi5eTRbiCL"><td data-page-node-id="A3B7rbg7WEE2f8Cj7bpTn8"><!--pnid:3NwAtp42S4R0fEU8eLB7HH-->Meta CBO</td><td data-page-node-id="4iOR4ApBK9eNVdfRqyhyeU"><!--pnid:tHfcaLjl1qN43q4M8AWSKh-->广告系列预算优化，组级预算锁死失效，算法跨组挪钱；新组有 7 天学习期保护。</td></tr><!--pnid:TLKBnDgA4mt0hUh5MJePDU-->
+        <tr data-page-node-id="uIbhiJQ3zlXIgq6BzXfSI0"><td data-page-node-id="iZVvqvFWzHI6BnBBo8pnGH"><!--pnid:ybEudVH6O8Lii5em92TVTa-->Google</td><td data-page-node-id="cjqkH30g9QgNiUxA0RKsqw"><!--pnid:HTsn6EOOiPG6BulSeOEdRU-->默认组级 ABO；PMax 内全托管自动分配；标准系列需手动开"优化型计划预算"。</td></tr><!--pnid:pdRdwLmt3qroVpryF6hm4n-->
+        <tr data-page-node-id="2qBFKfo0oiNDI5UZ0tH5e7"><td data-page-node-id="vFTYC5unFr2IQvqLyiQRUT"><!--pnid:Dt8vYrtlrGt0dTUfSqiZWx-->巨量</td><td data-page-node-id="j2UhAi2yi6YpivzpBUJKbY"><!--pnid:y9n1Miw0t3KYAzc3E2E68X-->支持"系列预算自动分配"，按计划跑量能力分钱；千川电商场景常用。</td></tr><!--pnid:50wbsmcBCxQEW6qQCRIstO-->
+        <tr data-page-node-id="cb5XYHVrkq8UTGAtOTZe0D"><td data-page-node-id="Ui7LHepz4FA2e2wkOq2j5h"><!--pnid:QwnSUtAiMjp5paUCWMFW4j-->腾讯/快手</td><td data-page-node-id="BBlLB10ilGvj83Sk3lRrwa"><!--pnid:zarMC1WCikLt7O7FARQr0F-->默认 ABO 组级锁预算；跨组自动分配能力弱，需手动调整。</td></tr><!--pnid:S4VdnMxt5wvDsVDq6uQP22-->
+      </table><!--pnid:PjD480tX8LeuFQAH1nquMN-->
+    </div><!--pnid:fGVWXYZAMAedBGYJ8SXt2n-->
+  </div><!--pnid:weVdiqK3fyFpUhzaQvhnI2-->
+
+  <!--pnid:gDMoEPtwbarGTxaXxOpxN5--><!-- 字段 2 智能出价 --><!--pnid:7vR4cZxIuD6wE8jA9OYRhX-->
+  <div data-page-node-id="TsGkfcqC9NQ5c04jzxJ2ek" class="fcard"><!--pnid:919EmdDoeUiQfac6tZE2f0-->
+    <div data-page-node-id="qspJj8F15KbuekpLNAh3Ps" class="fh"><span data-page-node-id="93WzNwdTAJM8hk8ogrgFxb" class="no"><!--pnid:QPQPRAapb1DktMsDnYLTHn-->2</span><b data-page-node-id="TTi8q026V59YXQvxlCfjPL"><!--pnid:trJIfDEOmYPe8tEpkg9Dtu-->智能出价（每拍实时调价）</b><span data-page-node-id="Hnd3OX3vII5Tb5n4PvLxVf" class="plat"><!--pnid:MNm3aBdPlreKod5iP9WYmi-->覆盖：<span data-page-node-id="lbOq75RzAZ1EpSoUiIkzGL"><!--pnid:mE85eJ9RmC0l5IfAlfZUtO-->全平台</span><!--pnid:pZI1DCq6iLVVxpBMQK8v6e--> 巨量 OCPM/OCPC · 腾讯 OCPM · 快手 OCPM · Meta Cost cap · Google tCPA/tROAS · TikTok tROAS</span></div><!--pnid:SHsiesUXxWEA3xlEw4jSpd-->
+    <div data-page-node-id="6sNdUnk9RGaut4AWIna26A" class="grid two"><!--pnid:0jwyIQKXNHGzy4ZYxL7h2M-->
+      <div data-page-node-id="CXmhkDjoQBMISlFDMFP2Us" class="fl"><span data-page-node-id="ZUspPpvaK9xPZUFjvxlQHI" class="k k1"><!--pnid:SWTxeTvyrlYjykJhx75IWo-->① 优化逻辑</span><!--pnid:meLYYed1AZSV3daMSL1bls-->每一次广告拍卖前，算法按设备/时段/地点/查询词/用户画像实时预测"这个人转化的概率和价值"，在 tCPA/tROAS 约束内计算期望价值出价；高意向用户出高价抢，低意向用户出低价或不抢。</div><!--pnid:Y8NYh5arZFdTsHyTHXcQwH-->
+      <div data-page-node-id="10tiEwnmznkiEyvi10E85B" class="fl"><span data-page-node-id="f10GkPe9ZlP9NGb2BmWDcj" class="k k2"><!--pnid:Q4zevhsx4iO60FzbWPPWY1-->② 关键输入</span><!--pnid:HJwOsuYgGWNvDLvdfJnLPv-->出价目标值（目标 CPA/ROAS）、转化回传事件、当前拍卖上下文（设备/位置/时段/竞价对手）、预算余额。</div><!--pnid:MItzhbIlttl51jG10rLKhX-->
+      <div data-page-node-id="qlcbTYAU8Alq0XWND4RUix" class="fl"><span data-page-node-id="HYLnqo1tPFJtowMC8cBRjp" class="k k3"><!--pnid:44znAacVehtFi5iXsVfCcI-->③ 关键输出</span><!--pnid:3xqwl49kWtw9hi2ewpr3vC-->每次拍卖的实际出价金额（在目标值上下浮动）。</div><!--pnid:9eOOksW9CBcqjkam6tn4UK-->
+      <div data-page-node-id="4VL25oU749akHcJT35X8ul" class="fl"><span data-page-node-id="gPP4ysuQ8i8aqe5ZIeo1b9" class="k k4"><!--pnid:0jvcsEQlIL2A59zdJyvkSI-->④ 变更 case</span><!--pnid:MR2IHYRI6EqNxlstXlwP9W-->tCPA $10 下：低价时段（凌晨）出价 $0.90，高价时段（晚高峰）出价 $1.60，单次实际成交 $1.35。</div><!--pnid:E4LF5dBHYWdHTPWmNx6rIX-->
+    </div><!--pnid:48qhDB8qsUQMGdzrBWanGt-->
+    <div data-page-node-id="aA02JL25sfAzPn6CrBhsQX" class="diff"><b data-page-node-id="UB59SQfazaXH7EVv57WUrs"><!--pnid:qQVzn0giHtaQW00UDS8BPb-->跨平台差异：</b><!--pnid:8RQDmchmK17GApaqC9Jriz-->
+      <table data-page-node-id="aiv3jQYa7tn8yzexcTfqyq"><!--pnid:7o6hf8ZHG1m0Mw4eixN6ZT-->
+        <tr data-page-node-id="ul1Gzm2W0dGuqfHSTtzlxE"><th data-page-node-id="tYbAa6mdjEPrftsuPSnkXC"><!--pnid:ZHWpHbxRjAWIEnzhnfEcMV-->平台</th><th data-page-node-id="tzAYftJOryOCTG97IQUxpM"><!--pnid:o2MmhlTN1txnES3TE3EFHN-->差异点</th></tr><!--pnid:z1b9DH4aBbegYrTcmf4MC0-->
+        <tr data-page-node-id="BXWqSWJx2pTE1sl8uuOoUX"><td data-page-node-id="2Diq81CMBDdZufADl5Xe9w"><!--pnid:Sc1O7Sq85CmeRA7A4F6C6Y-->Google tCPA/tROAS</td><td data-page-node-id="kHF3g2Ly6DNshmHjMK5Khx"><!--pnid:OLghsxBOXu3YJUmTW0Q2BW-->最成熟；分设备/时段/地点/地理位置智能出价；需要历史转化数据（至少 30 天 30 个转化）才稳。</td></tr><!--pnid:u91AyP3FP8nVFngvO3miS9-->
+        <tr data-page-node-id="irfA9kENDvsnJoFT6KoJd6"><td data-page-node-id="WhsEoG0WNgEEBAkrQ0Lhw8"><!--pnid:5l4D1ixRNMKXvYnUUB2kui-->Meta Cost cap / Lowest cost</td><td data-page-node-id="54VgwqF8tC9xK7QMUFryxV"><!--pnid:fjapTqiBoW2CUB3CyWVIZv-->Cost cap 锁成本上限拿最多量；Bid cap 锁每次出价上限；Lowest cost 不设限拿最多量。</td></tr><!--pnid:Ih1CMIAfAGmWNhtteyteiB-->
+        <tr data-page-node-id="QkRGj3X2yZmB1BoBiORhde"><td data-page-node-id="vH5y1FKAf7W2eDotHAgi7L"><!--pnid:O1iR4cQFu0AJWUJESlZ69z-->巨量 OCPM</td><td data-page-node-id="NVNOvzc5x5MZzDvjlp0Ayp"><!--pnid:RitwNQHX0jhKuodWXFWUMx-->新计划需积累约 20 个转化过学习期；学习期内频繁改预算/出价会重启学习。</td></tr><!--pnid:LoOiqohL5FEiDdhAIxLbnD-->
+        <tr data-page-node-id="Vpoy1966YCwyIQPMHkEX4t"><td data-page-node-id="m1tHYfiImv56G6PRdC4Xhi"><!--pnid:7GHcQFCbiYJiOyNi6A8o7K-->TikTok tROAS</td><td data-page-node-id="eIt0RXI6yRXUdBczl6Yl3o"><!--pnid:NTuYjCwdPTka4CQTdOpq47-->类似 Meta；SPC 模式下出价由算法全权定，人只给目标 ROAS。</td></tr><!--pnid:qgau83J1SxJekKGpJMIK9D-->
+        <tr data-page-node-id="qMYcQceAO4RL4qciwstWi6"><td data-page-node-id="sFC9FGRdAlGNnNDUgbKUlC"><!--pnid:PFjOA0frO2hKN1X2tuQZHz-->百度 OCPM</td><td data-page-node-id="y5GolRn0mXh8mJtgBaQeEA"><!--pnid:VsRVcZbeKL71CvucdyjDr8-->需要转化回传稳定；搜索场景下智能出价叠加关键词匹配。</td></tr><!--pnid:nwA2w3hVPAvrG6kMI1hR5J-->
+      </table><!--pnid:5QeVkHuWiZ1B4QSYsEy3UG-->
+    </div><!--pnid:KiTC3j0IvKJ80Xm1cYHMB5-->
+  </div><!--pnid:G0fnSQwwdDUG0BMDZJllZt-->
+
+  <!--pnid:WVTk0VxPMnePdpwHZ1aAQc--><!-- ============ 组 B 定向与人群 ============ --><!--pnid:xYohw17gT6t4GNnmR4BR0y-->
+  <div data-page-node-id="KP9wgkmGWDQmY7nxUtFLyi" class="sec s-i"><!--pnid:QRXGDqDOBhWHGmyovjbaQC-->组 B · 定向与人群（算法决定"投给谁、在哪投"）</div><!--pnid:faijGpo1tFWgYNNp9n4Epl-->
+
+  <!--pnid:4RbK3KAGRKCR4RbwRJzDv3--><!-- 字段 3 受众扩量 --><!--pnid:fJqzxgclZmTVtIbEbIfkDq-->
+  <div data-page-node-id="abAXg1TxylxjJv47FeH1Ox" class="fcard"><!--pnid:9SFLcSduAicmgfaLom2wAY-->
+    <div data-page-node-id="oiYFERLowLEJGNIDea0fNF" class="fh"><span data-page-node-id="4vNumpokzDtFgWPIPxVhdb" class="no"><!--pnid:bO8weEYoj5CqMVwneCEYZZ-->3</span><b data-page-node-id="0HzD2g3KRL9qGReqMgarq3"><!--pnid:BQyI99KBnsIuhuPIpnz4ec-->受众扩量 / 自动定向</b><span data-page-node-id="cRju9DPISsGlBINKy2yTbO" class="plat"><!--pnid:GsxQT4Fdwd6awroNqaO7dE-->覆盖：<span data-page-node-id="nyvEaBpydes8eMuhckqhCa"><!--pnid:7bDCZiXsIKToxq79xBgvmK-->Meta Adv+ Audience</span><span data-page-node-id="0r0bq7VYlNUVfapJDWGhss"><!--pnid:NmQk6pDpbnKKHfLtVan7Vm-->Google 优化型受众</span><span data-page-node-id="eqS258wNzCmjxYU64DCa6f"><!--pnid:Lq6ELEg99S4g7gIx8itBas-->巨量智能推荐定向</span><span data-page-node-id="6A26wmuVZyXTqtUyiWNL14"><!--pnid:ZethusKCpr6u5p5Mm8Fkos-->快手自动定向</span><span data-page-node-id="eCgAWVBiqah86m5vEYqhiH"><!--pnid:FFMRyjEOiQsq8MdGIEtVyT-->TikTok SPC</span></span></div><!--pnid:kDBSOi8z7x25oijLQeYayC-->
+    <div data-page-node-id="RoTHPJItx8KMEcZXRpFnda" class="grid two"><!--pnid:dosVm25tbWWemWHEGBsweN-->
+      <div data-page-node-id="A05ICf6a2Byr7l0Bpr9fqu" class="fl"><span data-page-node-id="ATjPG25Szv2J2gPid8REPn" class="k k1"><!--pnid:7UggRxDBS8ylVVkHl2jx8v-->① 优化逻辑</span><!--pnid:v55soE1ICvX9rxaV5tZpIK-->把人工勾选的兴趣/行为/Lookalike 从"硬筛条件"降级为"种子信号"；算法在种子人群内外做探索-利用（explore-exploit）：种子内找高价值人群，种子外找相似新人群；地域与法定年龄下限仍锁死。</div><!--pnid:qEAlLFPoZCjxvickBxoaA4-->
+      <div data-page-node-id="VWF2AKVYifkxjWFzrHboxA" class="fl"><span data-page-node-id="gQvznuauwZvgMzEGcV96AS" class="k k2"><!--pnid:vehYAhIaCInHkRl5uSVpvn-->② 关键输入</span><!--pnid:KppsTrDEzcfVed8KDcROel-->种子画像（兴趣标签/行为/Lookalike/自定义人群包）、转化回传、排除名单、素材内容信号。</div><!--pnid:DZZOdLK6kGYhzDVs2UPcAe-->
+      <div data-page-node-id="RsXgwATHqfFGFAmuhUWxYY" class="fl"><span data-page-node-id="qIjVBrq3ypIysMNaR4mxU0" class="k k3"><!--pnid:C8DVVGDjPUcBKbx5HAY0Gs-->③ 关键输出</span><!--pnid:B2FoYym5B5iJqCoJiqGQhQ-->实际投放人群（可能超出人工勾选范围）。</div><!--pnid:bX03CoBs6fOabAldfC6XVH-->
+      <div data-page-node-id="82SCgXaOUM38cBTVwlNXpO" class="fl"><span data-page-node-id="7Tg1lV5tYPHzcHhmMTrAMo" class="k k4"><!--pnid:c1azr5MaI7gdA7zukmWt7h-->④ 变更 case</span><!--pnid:aGxOBpXk4hvihO6eaw8YMp-->种子兴趣"健身"扩至"户外/健康食品"；年龄 25–45 实际覆盖到 25–48（下限不动）；种子 5 万人扩至 21 万人。</div><!--pnid:Atv9WfJrIZcqglC4FwmFQb-->
+    </div><!--pnid:mofAQOMKPExkOuSsMN5j88-->
+    <div data-page-node-id="GOtXQWiSybDVgHX6azGo6r" class="diff"><b data-page-node-id="bUbgO7xHFialTQ3eK4BPLR"><!--pnid:x0S4xWfM1yfLtRGXFXLyCJ-->跨平台差异：</b><!--pnid:2ie5iJlmCqOsJtnK06cj3B-->
+      <table data-page-node-id="bxV3kZ5nMmhFQ596vHYDUv"><!--pnid:7i86MddqsD8FG4UJGKibcv-->
+        <tr data-page-node-id="NgFag0WpcSYI0ktUbvqAfN"><th data-page-node-id="Cocub7m6HTkR8HBePQ9uof"><!--pnid:vIxA56wBjqCeD5Vur3q8yG-->平台</th><th data-page-node-id="rkmjWYOdaUO2EJzCebAB1P"><!--pnid:5smkBCne2VN3P7uuIjdQ5E-->差异点</th></tr><!--pnid:vlEZO6dDN3x1Ly74LQtiAl-->
+        <tr data-page-node-id="lf9UqhewpAX3LcqePpl5m7"><td data-page-node-id="DEL4tEOQ8aV26DjllWqT6c"><!--pnid:MQypmKtCQH71pDedxeXnF9-->Meta Adv+ Audience</td><td data-page-node-id="N3AZxOsJUJkCnZbg0pas4p"><!--pnid:RXkI7BK0CarO6aFiMtKJdl-->画像变"建议"，人可保留也可关掉；Adv+ Shopping 最激进。</td></tr><!--pnid:MVDIqJcSLoNMUcJfstLCWo-->
+        <tr data-page-node-id="E6HJUsS80bDktC0lvk7yoz"><td data-page-node-id="AKaB8GSmTU3HSLkfj6uMN6"><!--pnid:5NDNvi0xCxO2t16tblFCn0-->Google 优化型受众</td><td data-page-node-id="ePrYM6DSM585y9KueRppfS"><!--pnid:LLyYDBgk5SQhoWcsmPVGbp-->在关键词定向之外，把展示扩展到搜索行为相似但未命中词的用户；搜索广告专属。</td></tr><!--pnid:F4SHsgroZnfjOqtbVuQNrQ-->
+        <tr data-page-node-id="QyjTiS0Kz3bFagU7YybCn5"><td data-page-node-id="14OVvgk5U2OuZrTCFGprDo"><!--pnid:qFRD4QhLdpf5xRtVVo5Nez-->巨量"系统智能推荐定向"</td><td data-page-node-id="PMF0kVvtGscuBlCWWSz9EI"><!--pnid:S030tNUc2atFZYqTy6vCDl-->基于视频内容和互动行为自动找相似达人粉丝和兴趣人群；千川场景常用。</td></tr><!--pnid:zBi02zNJyHopw6g0qNBqFn-->
+        <tr data-page-node-id="ytkG4GQe42BM9Tr2HOTFLV"><td data-page-node-id="k9MYWD8PhCjo0oVsoXFpDb"><!--pnid:79rmAkDIrpHaLOoO026j7Z-->TikTok SPC</td><td data-page-node-id="Mm0qEuCFaQ3talc3vfuLUy"><!--pnid:Y6tCejMnGyZS26mlfSoAHp-->最激进：人几乎不选定向，算法全权；适合有足够转化数据的电商账户。</td></tr><!--pnid:Q4YHwbAa0CrpmZP45p8Kp6-->
+        <tr data-page-node-id="Z2M07BwvYzMRgyY4Jm05GB"><td data-page-node-id="khaL9OVHKzMPIMdsR6qjFG"><!--pnid:oWuRYbH1ExklV5z8N58CaZ-->百度</td><td data-page-node-id="DdIXpJKFtVt3kLwLHF3ldG"><!--pnid:SVpbvicwWHq9VQFlN889T2-->信息流有人群扩量，但搜索广告以"词"为核心，人群扩量弱。</td></tr><!--pnid:ZigEfH7Suq7eOP5TEKEwR4-->
+      </table><!--pnid:ikQ6pyhla2CM2gFokpAxmq-->
+    </div><!--pnid:qkhsfxELhuJqDKF1xG66eu-->
+  </div><!--pnid:eLMkTTvHBea4KCR35tG0Bq-->
+
+  <!--pnid:0eQBwwtJl1O7HTHwZvWCj4--><!-- 字段 4 版位自动分配 --><!--pnid:qMK7HlHrUl7tpABEJWiHYg-->
+  <div data-page-node-id="mE2HswtVn82aFmL3g99PP7" class="fcard"><!--pnid:NnwCxIFLMwBj3ZtBZv24gI-->
+    <div data-page-node-id="7sWxuSfS2DZ7gMpdtW3mAg" class="fh"><span data-page-node-id="OWl1BdCWyCQcLvdbyfGEG4" class="no"><!--pnid:7MaOYuMHhXHR7Moh5BaQyh-->4</span><b data-page-node-id="aUZHnLz01nteOkkE3BDDTg"><!--pnid:joyR5VDnPSv3FAPzyovF8g-->版位自动分配</b><span data-page-node-id="km09dYsl4OQQRQHHQh3P6P" class="plat"><!--pnid:x7nx192TgY4hXtk0DqYZL7-->覆盖：<span data-page-node-id="GlhJvLl0pQePrItFEWORrR"><!--pnid:Mj8FjEpyPtWmxnPvgMoNrF-->Meta Adv+ Placements</span><span data-page-node-id="0Epa2haldGngL7jJH9ykju"><!--pnid:1RZyBp8WCiY7P3RTyePdEo-->巨量优选广告位</span><span data-page-node-id="vj4MRBT9eyIo0m6yQxDgej"><!--pnid:wp7roemBDd5EIdXTJDkDh9-->腾讯优选版位</span><span data-page-node-id="3hCATGuKPntmoabnAfertx"><!--pnid:heRxKVAxtUDybCv5niwm5j-->TikTok 自动版位</span></span></div><!--pnid:F5hXcUbmnbsOtiARbQkmzO-->
+    <div data-page-node-id="HV9mjRuywKeDm96JZNdSGH" class="grid two"><!--pnid:ydxck2FwPna3wJ4EmqjFcH-->
+      <div data-page-node-id="M1nFUD5mJZpxgIGg988FKW" class="fl"><span data-page-node-id="33FwrpPoogFnQLKg5lPP83" class="k k1"><!--pnid:WVaWGPgF4cdVW498iiEiGu-->① 优化逻辑</span><!--pnid:3PmSZ0Sl6iTlOwD74BNEIz-->在多个版位（Feed / Reels / Stories / Audience Network / 穿山甲 / 优量汇）之间，按各版位的转化性价比实时分配预算与展示；哪版位 CPA 低就多花，哪版位质量差就砍。</div><!--pnid:A3ydwFSQ5k9m0etfvUvuoI-->
+      <div data-page-node-id="hi3UyQneRHcK35fQt2J2xQ" class="fl"><span data-page-node-id="EScC56lQoD0R4GWYSCFcOs" class="k k2"><!--pnid:XsXmzCTtQcPYJn2McEmVoJ-->② 关键输入</span><!--pnid:MGEooMuXptzAKHMSZoLlGE-->允许的版位清单（建议）、各版位素材规格、历史转化回传、用户设备。</div><!--pnid:ataMDupQEeAfxPB9DWiNOj-->
+      <div data-page-node-id="urFxU7vihZfX9AsB6sxWOV" class="fl"><span data-page-node-id="e75VtpsLy3frTR9C4tnFEX" class="k k3"><!--pnid:u01vqgw6YzDAisxcwxz7tw-->③ 关键输出</span><!--pnid:l8pFQBDcf4vT91KKEIGMBS-->跨版位的预算/展示占比。</div><!--pnid:wk2CyxnPmOXCs6DvA6r0YM-->
+      <div data-page-node-id="bIDiaxpb76074Aknb4XATk" class="fl"><span data-page-node-id="0nnYwSQ8KixYEbWrkFlwkC" class="k k4"><!--pnid:x94Dd1yXc9WHhnedyQ9sUO-->④ 变更 case</span><!--pnid:DGpKokHGtTKCajs5l5UhR7-->Feed 70%→52%、Reels 20%→38%、Stories 10%→10%；穿山甲从 0% 自动涨到 15%。</div><!--pnid:IqAPiYNfq5ncDr3DUn19j3-->
+    </div><!--pnid:tYfmeW2mYv4OEyYQ94MaBU-->
+    <div data-page-node-id="j9PnM88ADcNSYLWjF2BYL6" class="diff"><b data-page-node-id="5DYhRtxm5aaMwwaMsabsqv"><!--pnid:VFDAgdvK1ByS0QlZByZEaD-->跨平台差异：</b><!--pnid:VrnHyBSo1es1iuWt9HMBxA-->
+      <table data-page-node-id="V9Nd1JXU7j3XaYgdsXOMHN"><!--pnid:y1LefLfAOZ5EUYgaqevl3J-->
+        <tr data-page-node-id="0DPHXzyxhQwhJjfUfLCLlI"><th data-page-node-id="dv8PXzblFXBMuZNvxrGjR5"><!--pnid:6SP8tWOmfqB0UBjRYQsUfA-->平台</th><th data-page-node-id="3dvoIvSsHvqhxvM6WrzHdB"><!--pnid:uh9qShkYLnvpSNIFEDcj3K-->差异点</th></tr><!--pnid:1FOnT7bOxDoeIEASq93tCL-->
+        <tr data-page-node-id="uMh9p397SME8iLM8pndiqi"><td data-page-node-id="2hn1txMHTGFKcQuGDMeDwD"><!--pnid:T794lBTNn9LqMKXPXDDZPu-->Meta</td><td data-page-node-id="pgyuyrKmFEpaAL0BUVFH63"><!--pnid:dPzqLVkLsdjFTIGHZWtSRu-->Adv+ Placements 全版位自动；Audience Network 流量质量差需单独监控。</td></tr><!--pnid:cUwUO5GgCb8C3nEs743ANT-->
+        <tr data-page-node-id="4lREBs5BC0gWoAJ1v5OnX0"><td data-page-node-id="n7XqTErKUEsRKnDlDSFnV4"><!--pnid:NhQXt4fqROzk5CfFrROktU-->巨量</td><td data-page-node-id="C0E0iT3Nzz0ZGaBl7u5sNH"><!--pnid:hhjCvih55ee358VVOmFyZu-->"优选广告位"在抖音/头条/西瓜/穿山甲间分配；穿山甲（联盟流量）转化率低，新手建议手动关。</td></tr><!--pnid:vPgtoWCC931cLkbcJcBmzK-->
+        <tr data-page-node-id="pke5dFYk5GOjYBpLI4mOKO"><td data-page-node-id="deLfLSphs0Oi87WFn54C5X"><!--pnid:YY2VcnQDMl3bxYjqjlqKsQ-->腾讯</td><td data-page-node-id="qGWrUbZ2HWXOC9vGUJNedc"><!--pnid:SDxkArxlwSqqVjKThZESuz-->"优选版位"跨朋友圈/公众号/小程序/优量汇；朋友圈是高质量但贵，优量汇便宜但杂。</td></tr><!--pnid:NnsOSfdA4Yew6HwBni44FO-->
+        <tr data-page-node-id="bvGbbK9reNpz6O5FCHcK4x"><td data-page-node-id="HF71XNbr3qIVw9VtRYq2bj"><!--pnid:6poCCQ7p3dfa0NmBtrEljP-->Google</td><td data-page-node-id="YDNDsUAW2SATG0Bw8NUzMT"><!--pnid:DsOIkiOAUu6oKfumWXquKF-->版位控制粗，主要在展示网络内自动分配；搜索结果页位置由质量度决定。</td></tr><!--pnid:EMpoagQDx9jQc7Kekf81sd-->
+      </table><!--pnid:osWCcdBl3Bx28tfG3rx6Qq-->
+    </div><!--pnid:1JEtdIJDaDXVUI1GZTf5VV-->
+  </div><!--pnid:gGp3UDxCCG96Jd1HM6ucNi-->
+
+  <!--pnid:AuvkL9AFIkRqFUSrDGGG3D--><!-- 字段 5 关键词匹配扩展 --><!--pnid:08cltXYgAt0CATeFgYd9T9-->
+  <div data-page-node-id="frJtlL591keoAirlS7o9wR" class="fcard"><!--pnid:QEHDrQW9SEIj1HGOR3TJSd-->
+    <div data-page-node-id="TbpgFtKe95AHOdySd9zH35" class="fh"><span data-page-node-id="Q77CVB8nbvTsp04G2HCUgq" class="no"><!--pnid:gtOHccrkRHsDEN6fHcqC0u-->5</span><b data-page-node-id="XQMCXF3CjdIBtPfVx3tiRN"><!--pnid:M0VUImsX4cpSENeBHj5EUw-->关键词匹配扩展（广泛匹配）</b><span data-page-node-id="F98yESjWhGifqahb73lheE" class="plat"><!--pnid:yZ1zSHBCNkk0c0fO7VhfR0-->覆盖：<span data-page-node-id="pkiG64DHTURYjcP3eOyOVp"><!--pnid:0ZQ8EKQh2f2ao80K8TusjC-->Google 广泛匹配</span><span data-page-node-id="KXweZXERDwjo5kCLp5Ofca"><!--pnid:FrDGNZceyRRune9xuGLRQl-->百度智能匹配</span><!--pnid:wOOUa1njYUCnMe0d7R0iPL-->（搜索广告专属，信息流平台无）</span></div><!--pnid:RZJd6hBY0s93ExNjBqBPYz-->
+    <div data-page-node-id="bAWiEuDWbttzKq76skfItE" class="grid two"><!--pnid:OaADXUgTlI4dGAaF6BSPcA-->
+      <div data-page-node-id="15KkHDSoZVywm2GGAsqVBO" class="fl"><span data-page-node-id="tkGv8SVhH01OlQ4XyC6ze6" class="k k1"><!--pnid:BKe3XXHJHVogBkUKfITfKu-->① 优化逻辑</span><!--pnid:c9ibYZq5nuC2kkpLj7hwF3-->从人工勾选的种子词出发，自动把广告触发扩展到同义、相关、错拼、口语化查询，并按查询词单独调价；用否定词兜底防跑偏。</div><!--pnid:ihRXuZZYvULRYeNRnno3c9-->
+      <div data-page-node-id="POAfJvEvpZpR5Atk6M3lOo" class="fl"><span data-page-node-id="8kPUPSaEadlEFMnhLl9bko" class="k k2"><!--pnid:0eJJWzbOU7VUcLzArCc1P9-->② 关键输入</span><!--pnid:Q7o6iSQfQZ8i0E5DWjfWHC-->人工种子词、否定词表、落地页内容信号、历史搜索词报告、转化回传。</div><!--pnid:WhUtNvDCPNbyuSgjFTEBHu-->
+      <div data-page-node-id="NCefuxy3X9dqEZxc3AF2g8" class="fl"><span data-page-node-id="T3IKrnnuwEoP9ZxoUCzNNc" class="k k3"><!--pnid:FcbwadDBNnDdxPmaFeUOQe-->③ 关键输出</span><!--pnid:EF2waU7B6MjDhbUEg9zNxj-->实际触发广告的查询词集合（超出人工词表）。</div><!--pnid:EPhddPKNcIHh8y2E5YWGJz-->
+      <div data-page-node-id="bk6tW2CcnM2QDWc48LrfAD" class="fl"><span data-page-node-id="7zKYFpAel4kNuS8pkJFpRu" class="k k4"><!--pnid:rvLDHwal90C2fNqbmYJyLA-->④ 变更 case</span><!--pnid:Q5TxwN0gor931GBNNiCHVf-->种子词"跑鞋"→ 实际触发"运动鞋 男""jogging shoes""跑步鞋 女""慢跑鞋 折扣"。</div><!--pnid:L9uSDkuG1iHNiGzMDQpBUA-->
+    </div><!--pnid:lFmxNqyguN8kDFuK6HdpbE-->
+    <div data-page-node-id="z5NRBHdV9G4IaxbT5qcuHj" class="diff"><b data-page-node-id="QX7gW3CChj5C5a6mTUlSZn"><!--pnid:b0MwztWdr2dMywUSecYGcz-->跨平台差异：</b><!--pnid:sENAqs3A4v4bujafGKlzaz-->
+      <table data-page-node-id="1BZevvOJUKuaUafisMNDhq"><!--pnid:R6ui7tcu7HpVA6LWD1bVmC-->
+        <tr data-page-node-id="p1OHcRWm1EBnVEXSLXaz7Y"><th data-page-node-id="mKcULbaQ9Pvbizzszopgob"><!--pnid:4qbGYgWKy3yVmgbt278hN8-->平台</th><th data-page-node-id="1OciNL0aFkN1yz0E7W5ohp"><!--pnid:7v1VELeQU5qxs7mKoyTPGm-->差异点</th></tr><!--pnid:8yZzbrzFTcgAarPo9W5mH5-->
+        <tr data-page-node-id="EVwcdPdSw7pIg1lYBvHsXV"><td data-page-node-id="KvdE945e1HuZqt8oRIwdOb"><!--pnid:8iEN9aB4NHOT9Sb9qwHahB-->Google 广泛匹配</td><td data-page-node-id="BBkEcZfZ8gHURquLkFm3AD"><!--pnid:xBxIJ3NFMHs8Y1vthKUv5b-->最激进，配合智能出价可大幅拓量；必须每周看"搜索词报告"加否定词。</td></tr><!--pnid:Lnc6tewS8wkMS4WNHIKEGc-->
+        <tr data-page-node-id="7IytuiLDXQCSl2lbOLo6s0"><td data-page-node-id="duZa4dedwgX1iegtvk0uEp"><!--pnid:jagI4csxG8lKqF5lGAPqd8-->百度智能匹配</td><td data-page-node-id="tYAYo9R4dfjm1czexl72Vb"><!--pnid:pMQAGpCmC0EX9mgD8oMfqL-->相对保守；匹配逻辑基于百度自有搜索意图库；医疗/金融等强监管行业要慎用。</td></tr><!--pnid:1f3aNEHmwuhyH2MyjsGDEd-->
+        <tr data-page-node-id="zhJQto6zyJlPaKSKEEeoFS"><td data-page-node-id="BkxFmaCnHOYKus873c8UNv"><!--pnid:atMOsiBvJFyTWjwOzmVkrm-->其他平台</td><td data-page-node-id="fcHbo2qW1Zv0tDynEb9O7Z"><!--pnid:phXQKe9Chwpfi0g3vdEylE-->巨量/腾讯/快手/TikTok/Meta 是信息流，无关键词概念，对应能力是"受众扩量"。</td></tr><!--pnid:G7mVTxG64tKWBzQxzmB0F5-->
+      </table><!--pnid:S5d7a4Rwv5xjFrYsle4La3-->
+    </div><!--pnid:rY3iNgzBWhTa33p6zOiSDO-->
+  </div><!--pnid:Uf2K79XugaCdVB3WJFqRD0-->
+
+  <!--pnid:EclFhfu3SoENBlyzRIDcJo--><!-- ============ 组 C 素材 ============ --><!--pnid:9qFYbKWEpJCrV9COe3wKao-->
+  <div data-page-node-id="eaEFPBl8y48cAmX18PPET2" class="sec s-g"><!--pnid:OhbNyCp1CNueHQjIXaU3Dr-->组 C · 素材组合与找人（算法决定"用哪条素材、给谁看"）</div><!--pnid:ejhHdumC2o0Fk7NSC4B3wU-->
+
+  <!--pnid:aU1BA4VpqszGxYCN7pis4H--><!-- 字段 6 素材自动组合 --><!--pnid:Ob27DclWRCvXlDDxSGvAel-->
+  <div data-page-node-id="GFtW5WNbTpa2zFJult9DFr" class="fcard"><!--pnid:KSciE9Hc4Ckjb0uGO90LGf-->
+    <div data-page-node-id="1GtD2aukCwke4n7N9bZCYW" class="fh"><span data-page-node-id="TzCOAKARfzgetnhGep88Tj" class="no"><!--pnid:WTVFoB7agDNmi0nMJ5Mghn-->6</span><b data-page-node-id="GDEBJhatIAbGsZ5UpI4GVk"><!--pnid:LjBSj6BgfZnsiT1yRM7PYB-->素材自动组合（程序化创意 / RSA / DCO）</b><span data-page-node-id="Qyeec8iQg8KFfFm52XXbiA" class="plat"><!--pnid:OqKzI7ht8c7gEHUp5JwtpY-->覆盖：<span data-page-node-id="FeM1j915W7IXwvEA506DSo"><!--pnid:TBsXEBHOfyUjEOgalhmVRX-->Google RSA</span><span data-page-node-id="hKCOrufeDFo3eHb41cNEsI"><!--pnid:gX1OH7l7jSUSpp3VwHp8j1-->巨量程序化创意</span><span data-page-node-id="EASXZPF1XyRQS3llnB6oDB"><!--pnid:R4dBFui1CyNKAnnEkmyFpi-->腾讯 DCO</span><span data-page-node-id="zCF1cV8eachKTU9W9wJraE"><!--pnid:aslqXAnUo66vEJkHYsjV1F-->快手程序化</span><span data-page-node-id="3WGkxiD1WGltZMiRBtB63X"><!--pnid:9n3DDHkCz6wOpltFEWmfjM-->Meta Adv+ Creative</span><span data-page-node-id="pGx8shcFnR1YjnBDnpEkK1"><!--pnid:Kqgs4HagWWJ1YL7YZjpWW4-->TikTok 智能创意</span></span></div><!--pnid:ByJHHTfPWHUWs1uTUorpkU-->
+    <div data-page-node-id="O42yScOChEgPOviqSQdEGm" class="grid two"><!--pnid:G21AxMtWJnXv1WRmJrofUx-->
+      <div data-page-node-id="tFR25uDF7FwsArjVE8ycCu" class="fl"><span data-page-node-id="FVC4UDMhT4i6j5HiOKe2dB" class="k k1"><!--pnid:40S8nhbnJuRYdRB6zJKl9W-->① 优化逻辑</span><!--pnid:BAoQSO3JX59P8BRx2acA0p-->人上传一个素材池（多条视频/图片、多条标题/描述），算法自动排列组合成 N 个变体，实时测试哪组合 CTR/CVR/ROAS 最好；被 Pin 住的位不参与组合。</div><!--pnid:cWukRqHHdylvoXSmNSBdRz-->
+      <div data-page-node-id="7hLEXb8RiN0AEdazUsRJBg" class="fl"><span data-page-node-id="VaGqQCaG7eLEvzhEEYzO19" class="k k2"><!--pnid:j4hnNKoL8hljzJMDlKiJDX-->② 关键输入</span><!--pnid:ugAPiL2GsiIKxx4EzTNL5M-->素材池（多视频/多图/多标题/多描述）、Pin 位设置、品牌文案/CTA、转化回传。</div><!--pnid:u1oeNJaMAJd002OYMj7CqD-->
+      <div data-page-node-id="BA2vQLem2hD4ARYHCejkiC" class="fl"><span data-page-node-id="rXbPzmJM7EZ2ZmMXDZ357A" class="k k3"><!--pnid:jJg1gbVHhOQDnqXKLEptjN-->③ 关键输出</span><!--pnid:F1NZDHatO9G7fk5tB3d7Kx-->实际展示的"视频×标题×描述"组合变体。</div><!--pnid:4v2ztTkQfnbGX1rHLJ8uoM-->
+      <div data-page-node-id="jnJWZxgBCXNNF5j6x14CZh" class="fl"><span data-page-node-id="pkwvhKfDt29tNgPnXH26E3" class="k k4"><!--pnid:QIyXNNmkON4Bq7HRGVLVR0-->④ 变更 case</span><!--pnid:llPzcHUnZz4jMBnr2smIOh-->Google RSA：标题1×描述3 替换原标题2×描述1；巨量程序化创意：视频A+标题B 胜出，占展示 60%。</div><!--pnid:kUAzsWEFPaCjC1Jk26YBFH-->
+    </div><!--pnid:9gMd0KUKOxU1EHoEX9zt4F-->
+    <div data-page-node-id="n787m6E5KUFJYTJkfVJ2mk" class="diff"><b data-page-node-id="GLU73c5anEAJ8WenJXXQAg"><!--pnid:V7fzYb3uYXS56Zg0XOVRJL-->跨平台差异：</b><!--pnid:NWtkACGsHFncdvXPmL6XsC-->
+      <table data-page-node-id="D90G9r0qRVnuoWLGveNzWG"><!--pnid:nFes09jeMDTQUvtYV9WBx0-->
+        <tr data-page-node-id="NDidvuAEpwMzWF1iExEZQN"><th data-page-node-id="3zhHVmiCAC0B0GY5QkSGOB"><!--pnid:A9toeGalgMKO6XlFeWAQOk-->平台</th><th data-page-node-id="IM8qZGgxfDNDNWJvcuf1oB"><!--pnid:fgH2LqaKyu3uRfkB9fFxlQ-->差异点</th></tr><!--pnid:yHDhUcZEMUwf72GNWbW6o5-->
+        <tr data-page-node-id="jhd9rhlbiU6MTYM7B50D77"><td data-page-node-id="GpFegzyd9S0rLN0D4HSs6U"><!--pnid:LdSTJVUG0d3AvME5ECY0KM-->Google RSA</td><td data-page-node-id="e2ILsftKq3Dp3C6JHtiZTp"><!--pnid:9XGCas1hFvtiQkudvcTVcD-->最多 15 标题+4 描述，自动排列；Pin 位锁死关键信息；搜索广告专属。</td></tr><!--pnid:rp4PRO2phIgu3LEOph4qSF-->
+        <tr data-page-node-id="7igMX3IFu62UPF5UlIdfxy"><td data-page-node-id="CrSLEHaLZ6YJBCBZ8wxWfK"><!--pnid:q3t80K9CKYFxbOiHzTWpMB-->巨量程序化创意</td><td data-page-node-id="eDw67fX0lcqIVYO3lxbjBt"><!--pnid:7EX5zNV4odSWTzUQj62tHK-->多视频+多标题+多封面自动组合；千川电商场景标配。</td></tr><!--pnid:f4KQ1ub9AQDu91cusyyd0A-->
+        <tr data-page-node-id="YzbGaEWXVYDj2GPET2E5HT"><td data-page-node-id="MBIsNd2eRJ9CC51zoijn0N"><!--pnid:AwNZVixZzgcq1DRaG4zbtC-->Meta Adv+ Creative</td><td data-page-node-id="JvKpYac0IBmAOJhHqTz8FD"><!--pnid:buevVdQTlrbJOWZzmWfxMf-->不仅组合，还自动裁比例、叠字、加音乐、生成文案变体。</td></tr><!--pnid:yFg25N1xUxgXcs3OkPHZI2-->
+        <tr data-page-node-id="FvHQMBqoyqnsqKPBboDMXp"><td data-page-node-id="96XdGKIP2Y7N0lV1tigJBL"><!--pnid:TlPkSLU7wtPtxcQHS0rCpR-->腾讯 DCO / 快手程序化</td><td data-page-node-id="vqxUH2XuCy8dv8ZViFKDsZ"><!--pnid:9AuN4qQaTlf1sSWtdnKzPZ-->逻辑类似巨量，能力稍弱。</td></tr><!--pnid:UMMlGFI8WFgYj2ONr4X5Ed-->
+      </table><!--pnid:704QxrZdkz4VKvVACCiu3M-->
+    </div><!--pnid:RFEAUIcXVCBZ7ZsVGqsd4D-->
+  </div><!--pnid:ODb1dZPec4Snpi7gfE6a8L-->
+
+  <!--pnid:Zal1EwdJjdwf9QmCF4mf1M--><!-- 字段 7 素材展示权重 --><!--pnid:LANdRyxebYYrDpXHwdTv5k-->
+  <div data-page-node-id="ts3wNCQeqKtraqTdRt3UMW" class="fcard"><!--pnid:pvFzQXOg1AZmZPisYNtYXZ-->
+    <div data-page-node-id="mmFPydnfxWACCVvFJXKR13" class="fh"><span data-page-node-id="UOnZlQIvU1zrSHpL2gFjrg" class="no"><!--pnid:wN3ghPzaEwH0e9pfC86CgI-->7</span><b data-page-node-id="FLp44xptZ6HIr9XOwZEeHQ"><!--pnid:86mPTguL4EfJg6RSRYXzSH-->素材展示权重（同组多创意自动分配流量）</b><span data-page-node-id="5Xq3CCSqI5ur6h3ciyGvTf" class="plat"><!--pnid:yRorD5AL1ev8DQ0bTFt1xh-->覆盖：<span data-page-node-id="mi7HDIT0TrUiW0kDKK1GBA"><!--pnid:MHwlwfHvH0pDtIxwPgccdy-->全平台通用</span></span></div><!--pnid:pVSqs3HxlYUeCsCJpojdqM-->
+    <div data-page-node-id="O1i3GIGJ5L4Bd6KTFmciUw" class="grid two"><!--pnid:QeFqqECAY8Cq8VrvUbqYOU-->
+      <div data-page-node-id="CgpKHiNmdC97FGJju1PeVW" class="fl"><span data-page-node-id="r9pXiPu2kojkYkFucZhZaH" class="k k1"><!--pnid:MLGrTeW5c6b12n9epLzaeS-->① 优化逻辑</span><!--pnid:S9yXXdWPVHVmR75yRyXLxl-->同一广告组/计划下挂多条创意，算法按各创意的实时表现（CTR/CVR/ROAS）自动分配流量；胜出创意拿更多展示，衰退创意逐渐被限流。</div><!--pnid:y1FJ4n3zss3QPXaXJXjRT7-->
+      <div data-page-node-id="jPILBoOaOUnCDutHxNjrxd" class="fl"><span data-page-node-id="oeAh5359iZ0fLmVy8zlgxv" class="k k2"><!--pnid:EPGzvagFgccfHpvqDd4l5F-->② 关键输入</span><!--pnid:ETPFm7yXQp6sUMUh65KWcE-->同组全部创意、各创意转化回传、创意上线时长（防新创意被埋）。</div><!--pnid:jGM1VX6aPDoZYK7gqHNZOn-->
+      <div data-page-node-id="kMkWn49uXq8kZ9d0BPtqtL" class="fl"><span data-page-node-id="aSKkCQPMbHbNFhilvVlEm8" class="k k3"><!--pnid:rUGjQYojU7DoERJ0IYRJj7-->③ 关键输出</span><!--pnid:4w3Hdov5P19uQftBEZKYuV-->各创意的实时展示占比。</div><!--pnid:dcGVxnwDKRQgt9WnyyKZVV-->
+      <div data-page-node-id="K7ZNnFGNRHlAAHJ59vLMrO" class="fl"><span data-page-node-id="LE1N34uc1XA9A2sZQvHmF6" class="k k4"><!--pnid:5Bty5QPleijOSCpbZGQLt3-->④ 变更 case</span><!--pnid:4ecMtUnqblOZgbMDg5iCRo-->创意 A 75% / 创意 B 15% / 创意 C 10%（原各 33%）。</div><!--pnid:y542jBJsomxp66RKcCM7rT-->
+    </div><!--pnid:dykKq56vmSICOYiJNoU754-->
+    <div data-page-node-id="4PjUoxyfK5IYFgBlsM0VgP" class="diff"><b data-page-node-id="bxwWnwvhB9yUKMH5ZRJbgP"><!--pnid:zFvxwGQHSzteQTxPu6iUaN-->跨平台差异：</b><!--pnid:6ZMTPTOV2CggZSrat0TVs2-->各平台逻辑基本一致；差异在"新创意冷启动保护"——巨量/Google 对新创意有学习期保护，前几百次展示不直接按效果砍；Meta 较激进，新创意表现差会很快被压流量。</div><!--pnid:UyIYXb5cMViStcDsaAfYHR-->
+  </div><!--pnid:64xqbWtQk78gcqaKUxmVz5-->
+
+  <!--pnid:oT7LEAg6UjmqxiiICNR8cH--><!-- 字段 8 创意即定向 --><!--pnid:rD4TYgrrGpDQqsfJQTlffV-->
+  <div data-page-node-id="DQUPQ7aAJQzInkVVyGNs3Q" class="fcard"><!--pnid:YhgCfTc1xufWoPEt8tXJcA-->
+    <div data-page-node-id="HiTGNGbMYOLioXzkfu5x9J" class="fh"><span data-page-node-id="vy4TKpnTOYdl9gYNbYqpI0" class="no"><!--pnid:53RfbOaErsOipVwuQn4WDk-->8</span><b data-page-node-id="9w6S1leoSPzymiQqJO64LS"><!--pnid:xlQvnbUQFL8i61URvZfouH-->创意即定向（素材内容自动找人）</b><span data-page-node-id="Sfc2cFTeakoHig0ieWdBne" class="plat"><!--pnid:OQ4AT8YjDJSS99RDHzORO8-->覆盖：<span data-page-node-id="sumODpip3gYGy2kAU52UB8"><!--pnid:fnhWwAMnUWDiB2T4v9rkad-->巨量"创意即定向"</span><span data-page-node-id="fMeAa9oCFvHbUGRGFXktiB"><!--pnid:OyQ8RI11JDby1hHK1Cj5Iz-->Meta Creative as Targeting</span><span data-page-node-id="EBBvbAucokD7ea4JFmf2rv"><!--pnid:IDdj1dJ5sEYEiH8gCarXSg-->TikTok 智能定向</span></span></div><!--pnid:sPigb4BwZU7EO7CdznthRl-->
+    <div data-page-node-id="6nby21PqySq9RiVljByNIt" class="grid two"><!--pnid:W0l60VL0tz9fcBq1NpRcyE-->
+      <div data-page-node-id="tGp5hKXCmS5infORX5ktYu" class="fl"><span data-page-node-id="sqm9hWSVZWxtDPJJTNAQvw" class="k k1"><!--pnid:IvtksBUBx4kqLIfTzk9Ppx-->① 优化逻辑</span><!--pnid:VlxuW8ORJNksRkXOth0Jof-->算法用 CV/NLP/音频理解模型直接分析素材本体：识别画面中的物体、人物、场景，文案中的关键词，音频中的语义；再把这些语义信号自动匹配给历史上对这类内容感兴趣的人群，无需人手动勾选兴趣标签。</div><!--pnid:y1aMrukO8peaczpFtnJUGf-->
+      <div data-page-node-id="DU01INxp9ENxMBMSgJYAne" class="fl"><span data-page-node-id="mPdhpUBF2Q2gmEgUMOi4uK" class="k k2"><!--pnid:JHvjWwVYYDvcdDhZDMGZEU-->② 关键输入</span><!--pnid:CefhFYTz7sXecPmHvBTgph-->素材文件本体（图片/视频/音频/文案）、转化回传、平台用户兴趣图谱。</div><!--pnid:8gTe8JNcVgO9PoGQWeTUSy-->
+      <div data-page-node-id="568IsFDqLRkuSQuKEU67Wm" class="fl"><span data-page-node-id="tsAVMNHWjRvlcTa0pgl1A0" class="k k3"><!--pnid:8MvEWZqOhNQB8sswS8Aiby-->③ 关键输出</span><!--pnid:nLG8FB2bg0lMjXPTjXO4Qz-->"素材 → 人群"的自动匹配。</div><!--pnid:3eYrujZt3HjDoRSvNPqFYq-->
+      <div data-page-node-id="Cr6I1FE9Iw2s3xy91WJmgD" class="fl"><span data-page-node-id="p3dQUpc5pHr57dJPHsWvkM" class="k k4"><!--pnid:pHEIuE83ebQ4RN6MrIn7Cr-->④ 变更 case</span><!--pnid:kLc4W3kWWN2V0tfuMq2qae-->视频画面出现"婴儿"→ 自动把该素材推给母婴兴趣人群；无需在后台勾选"母婴"标签。</div><!--pnid:B1C17O2QmHbbDwIdqRAHtw-->
+    </div><!--pnid:sFyWe5HOecGncvvhOEZsKl-->
+    <div data-page-node-id="OKqc6PvtMd1rSWmPN3hf3y" class="diff"><b data-page-node-id="J7b6ohGzIwfG24ECWrjQOO"><!--pnid:n5b5GUde14FH1T93vmIYi6-->跨平台差异：</b><!--pnid:DTFjgOrk2ZEZZPDyNwG3vp-->
+      <table data-page-node-id="6YtvEeRiMrNrewcYz8I8Jb"><!--pnid:l2GU2QDfGW07JpvywAnCIr-->
+        <tr data-page-node-id="NLBmes64QZdDO3eZ2ROjIp"><th data-page-node-id="ELo7YfPYmUwSxK6pkDvjBx"><!--pnid:Cst61qjRUobEWc7BEI2izN-->平台</th><th data-page-node-id="EBYtYYCnnRPwOjb7E6QyX9"><!--pnid:Tmei80Z49lcwMJJKTjoCOK-->差异点</th></tr><!--pnid:cK65iD4Rtm4pTWnzdSD1sc-->
+        <tr data-page-node-id="ennuhuXKbVa4OCGqGd2BsK"><td data-page-node-id="9JWBw5oG9T5Za1yyle2Fpf"><!--pnid:b8sq78GrmhiGgBnTJfoe8X-->巨量</td><td data-page-node-id="d9G8VK3YXHRC4TEdGHbC7D"><!--pnid:EP8h5C4pBAhUCVp4uJ7wme-->"创意即定向"最成熟，视频内容识别能力强；信息流场景标配。</td></tr><!--pnid:0AYxjBJLuCVPbVZlvCD1lF-->
+        <tr data-page-node-id="NiJjMkLB2sg6xCmYNHSFpg"><td data-page-node-id="4unfQwGPOkBI2UJIRFDJFO"><!--pnid:0ZU0BjlbpfdTpQTDidIRxw-->Meta</td><td data-page-node-id="oa5nZ6O7tXlmrchZCmIwYA"><!--pnid:P1BD7dIBv0jsrICpVQGghs-->Creative as Targeting：分析图片/视频/文案语义自动扩人。</td></tr><!--pnid:F5oAVwiS3z8GKbwVJuCmyq-->
+        <tr data-page-node-id="Chqsd5u1Ev3VRnPoW1kZKx"><td data-page-node-id="Hkhw7r4LyEzWd3JvZSa5U8"><!--pnid:ECPUMSc6NFW8Enpn2NxDy8-->TikTok</td><td data-page-node-id="hJL4d5LVpjVGnzIGQHnsAG"><!--pnid:jnplTueDtvsp5WP9DtNOXE-->类似 Meta，短视频语义理解。</td></tr><!--pnid:xgiinr44sQIzIhfdD1b7MX-->
+        <tr data-page-node-id="nx9gZs1UG9tSPjlFAwan2P"><td data-page-node-id="Lm2MeZbgUUvvbhnBpDNG7E"><!--pnid:pp3WUEHPmjyuXidCM1Pf4y-->Google/百度</td><td data-page-node-id="xBacCTQtNYP3ruwDjXd2sg"><!--pnid:q1hH5Hbicp3PC5gzqPheFz-->无直接对应能力；Google 靠 PMax 间接实现，搜索广告靠关键词。</td></tr><!--pnid:OUQKMEuVIbYenQzeDkXJKj-->
+      </table><!--pnid:2BayP5d7METzG4wQ5PDLUA-->
+    </div><!--pnid:KWVqRdh8MNOBgHtCAbq6DF-->
+  </div><!--pnid:6nQhFuPiZrubJOamCPak5u-->
+
+  <!--pnid:tRwYOCjAnxppGGT7LAr60E--><!-- 字段 9 动态文案/AI 素材 --><!--pnid:gTjeEttNSJ4yyGd8eL8Iew-->
+  <div data-page-node-id="hOmQMmq1jytFzEeG0C7dES" class="fcard"><!--pnid:8py4A1VGfpGeR96fgphhek-->
+    <div data-page-node-id="TaxSmvQdHAFQPMdzP0ZnEj" class="fh"><span data-page-node-id="MvB2DccCiJEYvv7yAXRSTS" class="no"><!--pnid:RVWHWYUR7bDJ3B5OxyY9hz-->9</span><b data-page-node-id="JS0BVBcpXSyo3TpKBIbIDP"><!--pnid:ALCAnoYVFJtlCIwJgGuEx9-->动态文案 / AI 素材生成</b><span data-page-node-id="yXNXXs2SGcyC9sB2Stz5AB" class="plat"><!--pnid:s3lRAzVD9jGRVefWAs44rI-->覆盖：<span data-page-node-id="UI4okc4H5TexcJ9KZWFTnl"><!--pnid:4lKXHdKOz0kCzLMsKKKWT6-->Google DSA</span><span data-page-node-id="zmdaLQtwCwdQJNzcUqqHqm"><!--pnid:cTfE2nz0EZjkQ2PUtgijSa-->百度 AI 创意</span><span data-page-node-id="ox1KCQqPOAmRWVUvBWbkEx"><!--pnid:hA4wsUE5mG82gmAINJLKsk-->巨量动态创意词</span><span data-page-node-id="qBHE5AQiKiaJYx9DtDGhKj"><!--pnid:KRoaNHFCJ1ZZrjp2kVYqMQ-->Meta Adv+ Creative</span></span></div><!--pnid:ce0xsGhPrY6j71ZwnDoZ92-->
+    <div data-page-node-id="88hFKm2o7UWEMNEDpyewn3" class="grid two"><!--pnid:23e2S4cIFAWOgFWG3A7XB1-->
+      <div data-page-node-id="cnEeNUXNsR3ZdpFTLjzTlx" class="fl"><span data-page-node-id="xklFAisDGtgscyxikdHDV3" class="k k1"><!--pnid:8nsthvShhdAEmGBSMoJset-->① 优化逻辑</span><!--pnid:sqkyUV7S8pE7wV2xjhdwiO-->算法从落地页/产品库自动抓取信息，动态插入标题（如"用户搜的关键词+促销语"），或自动生成标题、配图、变体；人只提供模板和落地页。</div><!--pnid:aX9VeEosYHcg4ZY56e3rqr-->
+      <div data-page-node-id="VgdkExdE6DA7tbAd8ULR6g" class="fl"><span data-page-node-id="Ht9lYa3gbirhsaOPqaHMEr" class="k k2"><!--pnid:NJJgLLVIZO3jAjdYZiA5QF-->② 关键输入</span><!--pnid:pFeQhlEqBBpQIpw8L0VqHY-->落地页 URL、产品 Feed、模板标题（带占位符）、品牌素材。</div><!--pnid:ezCpYcmvXf3HearHDugAOB-->
+      <div data-page-node-id="qwN8IgisGZkqfZNPnNAKxj" class="fl"><span data-page-node-id="Y0GQITy2HFXSNgEFcLM3Ve" class="k k3"><!--pnid:0lH87VHtqYAh1fhCgtO5Vw-->③ 关键输出</span><!--pnid:qBeBp5PCM8cCyyPgz01co4-->动态插入的文案 / AI 生成的素材变体。</div><!--pnid:if5mELdIUX8RSxDVbJTW4B-->
+      <div data-page-node-id="GYMJ0KARNZClyjDSCgW43V" class="fl"><span data-page-node-id="bVZD0H5elAiPTwc96Wq58g" class="k k4"><!--pnid:L7aZvxzVIh4SgOg4ATPruY-->④ 变更 case</span><!--pnid:StFIfCFTRzRShhFNW5CjsI-->Google DSA：用户搜"跑鞋"，自动生成标题"跑鞋 - 限时折扣 - 官网直售"并链到对应商品页；巨量"动态创意词"在标题中插入用户搜索词。</div><!--pnid:R8wl8g7Thr4y6o2uxVeim2-->
+    </div><!--pnid:OjhInwYcv2uAQsxAuZHetv-->
+    <div data-page-node-id="Gh8VWBmtoqlAYIKyYkaAT0" class="diff"><b data-page-node-id="uwyWlJ1a9xXif88FTisly9"><!--pnid:vkbHDEobFa7uTua7g7XhEo-->跨平台差异：</b><!--pnid:NcwG1ZEo6DNB0vuhPQlDon-->
+      <table data-page-node-id="JCw5BPTBUQIsa1EZaR0qJP"><!--pnid:RwOQXLtAT4EN4aOcvWZElB-->
+        <tr data-page-node-id="Jze9KXjSWS2mFu9YBE71Dg"><th data-page-node-id="BnFFQB4mOF8FEkvyB2ZHKR"><!--pnid:JqVU5HkrrvAPF99UaNsyFL-->平台</th><th data-page-node-id="g4aHKkURhq8w3OeFCHErtq"><!--pnid:ci4eypfREP1FaW5qZS2OHU-->差异点</th></tr><!--pnid:AcIuvwa76AuqwSJGLfeFYC-->
+        <tr data-page-node-id="GqAy5BP7Fa363tvtCKo5I4"><td data-page-node-id="kmQ7Tr2xUq5eNoqVB70LdV"><!--pnid:4I6W7JWki9qTmLDJAnUeFk-->Google DSA</td><td data-page-node-id="ndjPrQVMvkapznTqEncGQ2"><!--pnid:zKar5jZF54df7YtCVWBiBu-->动态搜索广告：无种子词，算法从落地页自动抓词和标题；适合 SKU 多的电商。</td></tr><!--pnid:Yv9EBybGleG8Toj9hIdIMX-->
+        <tr data-page-node-id="pT9W1p5HnJG8bYnMlRxvCq"><td data-page-node-id="8nofl4ubqGtPdGxFUEw0sL"><!--pnid:MwHj0R96dGzEiiNa3mGpxq-->百度 AI 创意</td><td data-page-node-id="jCzDKc1bWyJyfjRkcIY62a"><!--pnid:g5MMMAxqaunTKjBhWmBaXO-->基于落地页自动生成标题/配图；需人工审核。</td></tr><!--pnid:2h5E1nN175oVFDEiaRSvYO-->
+        <tr data-page-node-id="i17BJWu58WLXyw60wEBQEX"><td data-page-node-id="T3KwnqZ247BtyqDFbyu4y1"><!--pnid:RBxutXfDC342AJjE13wL1N-->巨量动态创意词</td><td data-page-node-id="2OgfT58WgGzhMfJI0OhkwB"><!--pnid:3EAXvnCou5mBO24NlEwnqa-->在标题模板中插入用户行为/搜索关键词。</td></tr><!--pnid:rIfJhsYA8lefXKIhU1BeyH-->
+        <tr data-page-node-id="uF4Qnr6nxBZMhDFfH72zRX"><td data-page-node-id="uzeSdmQrZZLBKX6UkdTaC5"><!--pnid:M6BMBb6lSK637W9fR4pCxX-->Meta Adv+ Creative</td><td data-page-node-id="A4A4zqxbQi5XA31vKHJqOD"><!--pnid:7JCZmh7VRVBdHzowxwXSWw-->自动裁比例、叠字、加背景音乐、生成多版本文案。</td></tr><!--pnid:gTRDhofVQps49gBHf6kdvv-->
+      </table><!--pnid:D6MxSiciWXuUv8MiMOFrPd-->
+    </div><!--pnid:iCYFF5AtFRv60Yo99uAKI7-->
+  </div><!--pnid:4k4Gc91mFgCNAwBq2qA6ZG-->
+
+  <!--pnid:4ZDAu6R3fgv18raGYQucEY--><!-- ============ 组 D 全托管 ============ --><!--pnid:P2WGDcEeBeRxq3mkVCMaN4-->
+  <div data-page-node-id="HEvaCGQ0MYrZ2aGMTtgApe" class="sec s-o"><!--pnid:7OiDVpRF2wa7yRotr4t1Eq-->组 D · 全托管模式（人只给目标+钱+素材，其余全交算法）</div><!--pnid:hW2CvQeSaA7BHO1KkAV4Hs-->
+
+  <div data-page-node-id="Ntk97F9ObJel4UOQ8eOEeP" class="fcard"><!--pnid:wruwJpsjOqOHcu6FzW0D7X-->
+    <div data-page-node-id="0Q5Omvm1kn3Of7M1HhdBww" class="fh"><span data-page-node-id="hCwmF7zkPyeRBdxfnWuJ9U" class="no"><!--pnid:AVooonEKRCwDwu74qdUUQL-->10</span><b data-page-node-id="MyX83OZk1nCwxlyRFRLjij"><!--pnid:DGqkhjYpn3UD5SBbZclhYB-->全托管投放（PMax / SPC / 放量投放 / ASC）</b><span data-page-node-id="eHlTRjoAzoxJp7mE51M9iR" class="plat"><!--pnid:W17QDwA3m2bx1bCBd4OcgJ-->覆盖：<span data-page-node-id="OxOVDvVPYBURSCxBSy0DDD"><!--pnid:a8NgTjHHWqgwJYPPRAT5NN-->Google PMax</span><span data-page-node-id="VaUYPItn3fyqizmh7WzEWl"><!--pnid:VlSCLrjXOhJ9r1x8nWXaMM-->TikTok SPC</span><span data-page-node-id="faz7KUMW3mjsBye2IAWLhe"><!--pnid:IIj6AQ9LAgWC9o2ud1dhRE-->巨量放量投放</span><span data-page-node-id="RlEwxsk28gl97JZw6R6ofI"><!--pnid:KW1IO8uPlmWAyOKTxC5uyX-->Meta Advantage+ Shopping</span></span></div><!--pnid:RsWChWi6z4bBSemLqnHXCc-->
+    <div data-page-node-id="Oz2dI92k9VqVMZiMrLe6QD" class="grid two"><!--pnid:drDdPM3epaIZeBGXEieTO1-->
+      <div data-page-node-id="9SuEo9YzBIepD5keS70OtH" class="fl"><span data-page-node-id="m2fxTBkEr3VcbKFOgEyx8C" class="k k1"><!--pnid:ziUBvMPqbFHdY8ekfw2fAY-->① 优化逻辑</span><!--pnid:MriLekBCRZJN0BcxbcfNSF-->这是上述所有算法字段的"打包版"：人只填①目标②预算③素材+落地页④转化回传，算法同时接管定向、版位、出价、预算分配、素材组合、关键词扩展全部决策；不再给人单独调这些字段的入口。</div><!--pnid:mVOfSm017DuxTLrh6I1anX-->
+      <div data-page-node-id="feeeJVLDV5J8Vgo4nE2g2C" class="fl"><span data-page-node-id="WKfbPpJqe3naXJt3RMOPOK" class="k k2"><!--pnid:gbNSggNZLMaOJPbQ0dxt48-->② 关键输入</span><!--pnid:Ze6hPiuhHfXKySNqPt4O1z-->投放目标、日预算、素材库、落地页、转化事件与回传、排除名单（仅保留排除权）、品牌资产。</div><!--pnid:Hhgu70yB81rAKcV4WRONSE-->
+      <div data-page-node-id="NVmtbzHhTkFvdS3UX0b7FN" class="fl"><span data-page-node-id="M3A6J0ud2xfiZwi4ObtUiT" class="k k3"><!--pnid:Scw4ATZLA8WcRQNgEfH6o5-->③ 关键输出</span><!--pnid:C4hCHywVNO4DGDVHzK2zFl-->跨所有版位/所有人群/所有素材的全自动投放结果；人只能看报表，不能单独改某个版位或人群。</div><!--pnid:EzDxShcZzPzb2E8mj0lNSK-->
+      <div data-page-node-id="cITd4TS912kFfLLGD5jUx8" class="fl"><span data-page-node-id="BB1sZOEhM60RgNKYDRihpX" class="k k4"><!--pnid:ZDgaRCyMlks6Fs9CC9gNDk-->④ 变更 case</span><!--pnid:YId6gBhjq2VJJtD9OfGxLn-->人填 $100 日预算+上传 10 条素材+配好转 Pixel 转化；Google PMax 自动在搜索/展示/YouTube/Gmail/Discover 全渠道找人；TikTok SPC 自动在 In-Feed/Pangle 分配。</div><!--pnid:lkl8Gohp5jyEsVKm1jEGPk-->
+    </div><!--pnid:wVZCBfEfPnx1zukpWeI4bd-->
+    <div data-page-node-id="2ueJ4u2BudQBsJd7VjZRqi" class="diff"><b data-page-node-id="Y8i3SkOtDYPQAocjZRnrbG"><!--pnid:g4Ew74ZBR6kHBw22WDdV97-->跨平台差异：</b><!--pnid:ckJAL73361nZfHJiXfpq79-->
+      <table data-page-node-id="iDFFjvnAf46uqBtTHA1b1A"><!--pnid:GlQf8ioP5A6DPHcStwMXJT-->
+        <tr data-page-node-id="oiq1Txns3yFBKy1DO0fxhU"><th data-page-node-id="KYOhebZ8W2NE1bcCbO5ER4"><!--pnid:8ByF08AnxChFj6QqHtLTE3-->平台</th><th data-page-node-id="13BFQruaFZHTVFpbXkCdRv"><!--pnid:AWEcndAGvNc6WRNHWt3ceg-->产品名</th><th data-page-node-id="9ted6Ikd8TsZzEjjcvfXkU"><!--pnid:ncwSlXjmfArr82MFvLePHQ-->特点</th></tr><!--pnid:BEt7Ut3UekXgAIqn377OUG-->
+        <tr data-page-node-id="OrHpzoL9k6JWlR6BlDrBo3"><td data-page-node-id="ylfFpxAxfRnGhJoGHZTugE"><!--pnid:tv8J7FCqIuyf8HWHkaFArk-->Google</td><td data-page-node-id="xnXEErJsOMAryBJxDgSCsi"><!--pnid:fH0RoYd4YXpezo753xdVWP-->Performance Max (PMax)</td><td data-page-node-id="J3wG6TWTZBHeX81CjtHHEy"><!--pnid:GH1t4uAsN5gFRvoAu9imXp-->覆盖 Google 全渠道；透明度最低（看不到具体词/人群）；需有足够转化数据。</td></tr><!--pnid:9FEKxomOLpwuIMH1qFUCuT-->
+        <tr data-page-node-id="t79wuVknC7hpnLJQvLbW4r"><td data-page-node-id="F3LAOwMCLrMaPZSjyypEn4"><!--pnid:InL68NSeBcPdY1h09TGIFO-->TikTok</td><td data-page-node-id="fOjEMMjvQJ57GLkB8PBPFa"><!--pnid:l6B6CD3BEpGKNQU2fHuLHu-->Smart Performance Campaign (SPC)</td><td data-page-node-id="EwzTayoEtLL7oYi6Tk0CnA"><!--pnid:dav6uTj0sPmteqpgqAOGQC-->电商场景托管；新账户冷启动友好；人几乎不能调定向。</td></tr><!--pnid:6wLzqCgG4y8gIHI0bBd8Em-->
+        <tr data-page-node-id="NfEPDHRyjXP89UbVSvbGQ9"><td data-page-node-id="4di5EMeXRAx3Dc1DHfAFUC"><!--pnid:P0Y909tPKscKVXAVTYfoak-->Meta</td><td data-page-node-id="cb3avNLqXobqxpwGxSWs0j"><!--pnid:HFYXol5RV7IiPYRELeiS1o-->Advantage+ Shopping Campaign (ASC)</td><td data-page-node-id="de8zew3pKXK7EJUBRr6Pik"><!--pnid:Bmc36rspvH0BOGrTc8QkEg-->电商托管；CBO+Adv+受众+Adv+版位+Adv+Creative 全开。</td></tr><!--pnid:zkA9zjOpxhn3cMmuqt7tXG-->
+        <tr data-page-node-id="CwPnGCtBCxTcTfyZw8Lfzm"><td data-page-node-id="0CC529Y2Af7bzt8LkbSxyx"><!--pnid:5inaPIPBOSKmBdKZcaezAl-->巨量</td><td data-page-node-id="Lo24cZ0YV1KT0cb5YKR8zL"><!--pnid:cmE2qZHH3ALcMVoDyK6GrS-->放量投放</td><td data-page-node-id="xQ6eubxLI62wqsqayyM4Hm"><!--pnid:LypHmrQA6jWTct9d4ewJhm-->在标准计划基础上放开定向；比 PMax 保留更多人工调参空间。</td></tr><!--pnid:jAYDcSSnGvsANyDz9FnhOZ-->
+      </table><!--pnid:e4SCK2NDx8xM7BvNH6maCE-->
+    </div><!--pnid:InpeNGkm2sC5jI725yKhgW-->
+  </div><!--pnid:0KTFxZiZOAfdprSUxHyFJE-->
+
+  <!--pnid:aYNFu1GJtDsM6zcua3dnXz--><!-- 总结 --><!--pnid:RxPurFRRbxkw8I94itBcSg-->
+  <div data-page-node-id="pYhodfOnkEfPXndkOGlW2I" class="mem"><b data-page-node-id="6wb6Nnj5nO0HHVn6LQkPOc"><!--pnid:ADwDHETpCd1ItNKZC0DUua-->一句话规律：</b><!--pnid:H14CObNmcLEIi1hB07REOu-->算法能优化的字段分四类——<b data-page-node-id="NbIO2fK3eNmf4g8lk6YpJK"><!--pnid:dVoJ9zh2EscK70BfLFd4Yz-->钱怎么分</b><!--pnid:snSBYVUH5bEx2zoZFpvPHH-->（预算分配）、<b data-page-node-id="wwxQWh1yFh2JVnIAViP00H"><!--pnid:ydyrypUNBHcIDmbdSywtSb-->价怎么出</b><!--pnid:XQq88PucOda5Bl4DPRIUn6-->（智能出价）、<b data-page-node-id="oBoxGGvngAicQgb73GbjkF"><!--pnid:TVBVWI0sR4ftAEX1KQMDwJ-->人怎么找</b><!--pnid:xUL39CT8tKoMXfaAnZHEPc-->（受众扩量/版位/关键词/创意即定向）、<b data-page-node-id="x9V9VtHhiv703oLNfellTP"><!--pnid:PoV1TUHXczFRvACz7drU0G-->素材怎么拼</b><!--pnid:RxhoI8hKqr5kT0BgyGZSBc-->（组合/权重/AI 生成）。全托管模式是把这四件事打包放权。</div><!--pnid:56CAtI9qUtDVr05QxIyika-->
+
+  <div data-page-node-id="0ondIpRgSOAYynvzecrJmU" class="mem" style="margin-top:8px"><b data-page-node-id="8ddJJCtUgtYV85wDhO0eHj"><!--pnid:GrefNVTzIOx6iZGN8C7Z2u-->判断一个算法字段"该不该放权"：</b><!--pnid:65WpLsAMceGXWn6s0N8oXD-->看它依赖什么数据。智能出价和预算分配依赖<b data-page-node-id="Q00cdSVXVRkwGxWgZdgUJv"><!--pnid:BW3spW9RA64C0GnPy1sNci-->转化回传质量</b><!--pnid:rx6FVsk3euYplPBuq0KJir-->；受众扩量和创意即定向依赖<b data-page-node-id="ZRNCrxDbhm83KCZRmHPc0Q"><!--pnid:xRBqbIgoA4fsxIgBr0F1IO-->历史转化数据量</b><!--pnid:dJybeoCOllQkcvSxUKsCEF-->；素材组合依赖<b data-page-node-id="n5b2nHEnURM1gYqFV5nQJc"><!--pnid:1kGkqGGbsrQDXlOudUQuwV-->素材池大小</b><!--pnid:5lBpn24Uaj5BDSBkp6XRGM-->。数据量不够时放权，算法会瞎跑——这也是为什么新账户前 2 周建议手动跑，等数据积累到 20–50 个转化再切智能模式。</div><!--pnid:zG9hO5K2x6MEFp9cOhhgAO-->
+
+  <div data-page-node-id="yBwUo4jmHBiDhQyEGNLkcq" class="mem" style="margin-top:8px; color:var(--muted); font-size:11.5px"><!--pnid:X1d1QroLhkhw1Je0u4JarJ-->注：各平台算法能力随版本迭代频繁，本图基于 2025–2026 年主流版本整理；具体阈值、学习期长度、产品命名以后台实际为准。</div><!--pnid:jlHBEEyybdy1ujq39vogHP-->
+
+</div><!--pnid:CvnkJ814fU1dPSDeS0oYkh-->
+</body><!--pnid:hT6vFUrhicYMl9U4Tk9qAk-->
+</html><!--pnid:Ca45mBtea9cLxhCTllQ9BU-->
+<!--pnid:949ryAzxUX7RfmftDyYXWr--><!-- （注：内容由AI生成） --><!--pnid:mwCYKCHK71Gt1SlYPLSEhr-->

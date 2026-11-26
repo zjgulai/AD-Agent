@@ -1,0 +1,27 @@
+01 · 诊断优化决策树(总)—— 层层下钻,抽丝剥茧								
+入口:任意『广告效果差』症状 → 按 T0 排雷 → 逐层下钻至根因 → 出口动作(A-xx)。T0~T5 顺序执行,命中 THEN 即处理并回看,未命中进入 ELSE/下一层。								
+节点	下钻层级	判断对象/入口	检查信号(字段)	IF 条件(数据表现)	THEN 动作/判定	ELSE / 次分支	指向(出口或下钻)	阈值依据
+T0.1	前置排雷	数据可信度	EQ / 归因差异	IF EQ(Purchase)<4 或 后台订单vs归因差>30%	THEN P0:修复像素/CAPI/去重;修复前停止一切层内诊断	ELSE 通过	→T0.2	EQ≥6,差≤20%
+T0.2	前置排雷	账户/页面状态	账户受限/主页评分	IF 账户受限或广告大量拒登	THEN P0:合规申诉+改素材	ELSE 通过	→T1.1	无违规
+T0.3	前置排雷	落地页可达	LP 打开/加载	IF 落地页打不开或>5s	THEN P0:技术修复(加载/404)	ELSE 通过	→T1.1	<3s
+T1.1	L1	账户结构	Learning占比/预算集中	IF Learning占比>40%(7天) 或 Top1 Campaign>50%预算	THEN P1:合并受众/拆分预算,优化结构	ELSE 通过	→T1.2	Learning<20%,集中<30%
+T1.2	L1	单 Campaign	Learning状态	IF Campaign 处于 Learning(<50转化)	THEN 只看趋势,不动策略	ELSE 进入绩效判断	→观察 或 T1.3	周转化≥50
+T1.3	L1	单 Campaign	Pacing	IF Pacing<60%(连续2天)	THEN P1:①提上限15% ②放宽受众 ③查频控(每步24h)	ELIF Pacing>130% → 降预算20%止血	→B/预算动作(A-04/05)	80~120%
+T1.4	L1	单 Campaign	ROAS/CPA vs 目标	IF ROAS≥目标1.3x 且 Learning完成	THEN P2:扩预算20%(A-03),48h验证	ELIF <0.7x(连续2-3天) → 下钻	→扩量 / T2.1	ROAS<0.7x=异常
+T2.1	症状路由	异常 Campaign	CTR(整体/Ad层)	IF CTR<0.5%(素材普遍低)	THEN 判素材问题 → L3 素材诊断	ELIF CTR正常但CVR<1% → 落地页	→L3 或 L4 漏斗	CTR素材≥0.8%/1.0%
+T2.2	症状路由	异常 Campaign	AdSet 离散度	IF 某AdSet CPA 2x+ 均值	THEN 交叉验证(受众vs素材)→ 定根因	ELSE 归因/结构排查	→L2 受众 或 L0	CPA离散<2x
+T2.3	症状路由	数据兜底	转化量与归因	IF 后台有单但归因购买少,或ROAS崩但转化量正常	THEN 判定归因/追踪问题 → L0 P0 修复	ELSE 继续层内诊断	→L0-01/02	归因差≤20%
+T3.1	L2	AdSet受众	受众×素材交叉	IF 同素材:好受众好/差受众差	THEN 判定受众问题 → 关停/降价(A-07)	ELIF 素材各受众都差 → 素材问题	→A-07 或 L3	交叉验证
+T3.2	L2	受众规模	规模指示器/消耗	IF 规模窄且预算花不完	THEN P2:放宽受众/合并重叠/开Adv+	ELSE 检查LAL质量	→受众扩展(A-08)	可撑50转化/日
+T3.3	L2	LAL种子	种子规模/新鲜度	IF LAL CPA高于兴趣定向30%+	THEN P1:重建种子(90天购买/高价值)	ELSE 正常使用	→换种子	种子≥1000,≤90天
+T3.4	L2	版位/频次	版位CPA/频次	IF 低质版位吃预算(AN) 或 频次>5且CTR跌	THEN 关版位/修素材适配;换素材+扩受众+设频控	ELSE 通过	→频控(A-13)/L3	频次7天≤3
+T4.1	L3	素材CTR	单素材CTR vs 均值	IF 素材CTR<0.5% 或 周环比-30%+	THEN P1:下架/迭代,48h补3-5条新方向(A-14)	ELSE 检查视频	→素材上新	素材CTR≥0.8%
+T4.2	L3	视频表现	3s播放/完播	IF 3s<20% → 重剪前3秒;ELIF 完播<5% → 提速	THEN P1:重剪hook/节奏(A-15)	ELSE 检查文案	→重剪	3s≥30%,完播15s≥25%
+T4.3	L3	文案/CTA	hook/折叠/CTA一致	IF CTA与落地页承诺不一致(跳戏)	THEN P0:以落地页为准改广告	ELSE 通过	→当天修复	CTA=LP承诺
+T5.0	L4	数据门槛	14天消耗	IF 近14天消耗<$50	THEN 只做整站整体诊断,不细分	ELSE 逐层照	→整体诊断/T5.1	≥$50
+T5.1	L4	点击→到达	到达率 LPV/出站点击	IF <60%	THEN P1:PageSpeed+链路修复(加载)	ELSE 下一层	→技术修复	≥70%
+T5.2	L4	到达→浏览	浏览率 VC/LPV	IF <60%	THEN P1:首屏承接(广告与LP同承诺+信任)	ELSE 下一层	→LP改版	≥60-70%
+T5.3	L4	浏览→加购	加购率 ATC/VC	IF <3%	THEN P1:产品说服力(价格/评价/描述/SKU)	ELSE 下一层	→运营优化	3~8%
+T5.4	L4	加购→结账	结账发起 IC/ATC	IF <40%	THEN P1:运费/总价透明+一键结算	ELSE 下一层	→结账优化	≥60%
+T5.5	L4	结账→购买	结算完成 Purchase/IC	IF <50%(或 ATC→P<20%)	THEN P0/P1:Guest/支付方式/信任/步骤精简	ELSE 完成漏斗	→结账A/B	≥70%
+T5.6	L4	归因兜底	后台订单vs归因	IF 差异>30%	THEN P0:修 Pixel/CAPI/去重,48h复测	ELSE 诊断闭环	→L0	≤20%
