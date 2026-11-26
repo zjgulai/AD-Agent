@@ -68,6 +68,15 @@ source: human+ai
 | [Momcozy 人群画像洞察（孕→哺→育）](cards/business-context/momcozy-audience-persona.md) | 核心人群是谁？三阶段定位/数据/渠道分工/T0-T3 出价分层/可执行人群包？ | S20 |
 | [吸奶器品线独立站全触点地图](cards/business-context/customer-touchpoint-map.md) | 7 阶段×120+ 触点怎么拆？站内外矩阵？渠道协同分工？竞品对标？自检清单？ | S21 |
 
+### 平台运营打法（platform-ops-kb 蒸馏）
+
+| 卡片 | 回答的问题 | 来源 |
+|------|-----------|------|
+| [TikTok Shop 广告增长打法](cards/platform-ops/tiktok-shop-growth-playbook.md) | GMV Max 是什么？SPS/NBFR/VoC 怎么读？affiliate 何时能放量？达人追踪怎么接 GMV Max？ | PO:* |
+| [Amazon 广告打法](cards/platform-ops/amazon-ads-playbook.md) | ACoS/TACoS 分工？诊断顺序？否定词前置？SB+SP 协同？AI 广告能力？ | PO:* |
+| [达人商业合作能力与合规](cards/platform-ops/creator-commerce-compliance.md) | Partnership Ads/IG Marketplace/Shopify Collabs/YouTube Shopping？FTC 披露红线？organic 能投广告吗？ | PO:* |
+| [母婴类目跨平台增长 Overlay](cards/platform-ops/baby-maternity-growth-overlay.md) | 母婴资质三层？内容/claim 红线？跨平台上架顺序？Momcozy 案例证明什么？ | PO:* |
+
 ## 按问题类型速查
 
 - **想了解整体架构/有哪些 Agent** → ad-agent-system-landscape
@@ -84,6 +93,10 @@ source: human+ai
 - **独立站触点/全生命周期/渠道协同/竞品对标** → customer-touchpoint-map
 - **Agent 设计前的业务调研方法论** → ad-ops-agent-research-framework
 - **监控预警与自动调整产品方案** → monitoring-optimization-agent-prd
+- **TikTok Shop/GMV Max/SPS/affiliate 放量** → tiktok-shop-growth-playbook
+- **Amazon 广告/ACoS/TACoS/否定词/SB+SP** → amazon-ads-playbook
+- **达人合作/Partnership Ads/FTC 披露/creator brief** → creator-commerce-compliance
+- **母婴类目合规/上架资质/Momcozy 案例** → baby-maternity-growth-overlay
 - **术语不懂** → glossary.md
 
 ## 对话层（conversational access）
@@ -93,7 +106,7 @@ source: human+ai
 | 层 | 入口 | 用途 |
 |----|------|------|
 | 查询协议 | [QUERY.md](QUERY.md) | 问题类型→资源路由表 + 冲突处理规则 + 引用规范 + 知识边界声明。任何 agent 按此协议即可对话式使用本库 |
-| 原子问答 | [qa/](qa/) | ~112 条自包含 Q→A 对（按集群分文件），每条带溯源。覆盖审计见 [qa/COVERAGE.md](qa/COVERAGE.md) |
+| 原子问答 | [qa/](qa/) | ~132 条自包含 Q→A 对（按集群分文件），每条带溯源。覆盖审计见 [qa/COVERAGE.md](qa/COVERAGE.md) |
 | 飞书机器人 | `src/kb_bot/`（项目根） | lark-oapi WebSocket + 本库检索 + OpenAI 兼容 LLM 的问答机器人 MVP |
 | 语义层 | [graph/](graph/) | 广告投放域知识图谱（SKOS-lite 模式层 + JSON 实例层）。schema v0 评审中；实例层 P3 抽取 |
 

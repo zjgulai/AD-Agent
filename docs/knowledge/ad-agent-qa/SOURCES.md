@@ -69,6 +69,18 @@ source: human+ai
 - **S21 全触点地图 HTML**：吸奶器品线独立站 7 阶段/6 维度/42 模块/120+ 触点，含站内外触点矩阵、渠道协同表、5 品牌竞品对标、自检清单 → `business-context/customer-touchpoint-map.md`。
 - 新集群 `cards/business-context/`：Momcozy 业务实操知识（人群/触点/打法/方法论），与 `fundamentals/`（行业通用机制）分层。
 
+## 第六批源（platform-operations-wiki 对象蒸馏，2026-11-26 追加）
+
+- 来源：`github.com/zjgulai/platform-operations-wiki` 仓 `docs/knowledge/platform-ops-kb/`（49 canonical objects，全部 `status: review`、`market: us`）。**不复制对象内容**，卡片以 `PO:<object_id>` 引用，图谱实例以 `object_id`+仓内路径做 provenance。
+- **蒸馏原则（P4/Q7=C）**：高频问答域蒸馏成卡进 `cards/platform-ops/` + `qa/platform-ops.md`；长尾对象仅进 `graph/instances/platform-ops-kb.*`。
+- **已蒸馏 4 卡**（source_docs 中 `PO:*` 前缀）：
+  - `tiktok-shop-growth-playbook` ← capability-tiktok-gmv-max、metric-tiktok-{sps,nbfr,product-voc-index}、scenario+workflow-tiktok-affiliate-readiness、experiment-tiktok-creator-tracking-and-gmv-max
+  - `amazon-ads-playbook` ← metric-amazon-{acos,tacos}、capability-amazon-{ads-prompts,sponsored-brands-collections}、experiment-amazon-{ads-diagnostic-loop,prelaunch-negative-keyword-filtering,sb-sp-coordination-scaling,cosmo-rufus-readiness}
+  - `creator-commerce-compliance` ← capability-{meta-partnership-ads,instagram-creator-marketplace,shopify-collabs,youtube-shopping-collections}、workflow-{creator-brief-assembly,meta-creator-amplification}、rule-ftc-endorsement-disclosures、scenario-creator-commercial-compliance
+  - `baby-maternity-growth-overlay` ← overlay-baby-and-maternity、scenario-baby-and-maternity-cross-platform-growth、case-momcozy-pumping-milk-wearable-pump-review-pattern
+- **仅进图谱未蒸馏**：其余 ~45 个对象（rule 卡×14、scenario×6、workflow×9、overlay×3、case/experiment×5、platform profile×6 等），见 `graph/instances/platform-ops-kb.nodes.json` coverage_notes。
+- **边界声明**：pops 对象均为 `review` 状态未业务复核；卡片中所有阈值/资格判定以官方源为准，`[待确认]` 处待业务或官方文档二次核实。
+
 ## 提取说明与已知缺口
 
 - **S1**：正文仅 1 个画板 + 附件清单。画板经 `docs +media-download` 取得 2560×2560 渲染图，先后用 macOS Vision OCR 与 Tesseract（chi_sim+eng, psm 11）双引擎提取交叉（`raw/s1-whiteboard-ocr.txt`、`raw/s1-whiteboard-ocr-tesseract.txt`）：Vision 中文好但英文节点名粘连，Tesseract 英文名（@ 前缀）好但中文破碎；双引擎复核确认 Loop 实为 10 个（新增「广告异常诊断与恢复」）、执行链路含 Tracking Agent、Campaign Structure Agent 属执行链⑥而非优化域、Search Term 否定关键词等。图中流程连线与布局关系按 OCR 行列近似还原，Agent→Loop 归属为 `[推断]`。6 个附件（2 PDF + 2 HTML + 1 docx + 1 份输出 HTML）经 `docs +media-preview` 完整下载至 `raw/s1-attachments/`；其中 `立项阶段动作梳理.pdf` 与 `DTC 广告优化师投放工作流程图.pdf` 为文本型 PDF 可直接抽取（含 MP 方法论与优化师工作流，与 S14 调研框架呼应）。**5 个有内容的附件已于第五批蒸馏为 S17–S21 → `business-context/` 集群 4 张卡**；DTC 流程图 PDF 为流程骨架图（73 词），内容与 MP 方法论文档同源，合并处理。
