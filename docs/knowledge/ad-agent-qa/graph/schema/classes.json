@@ -1,8 +1,8 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.1.1",
   "domain": "ad-ops",
   "updated": "2026-11-26",
-  "note": "广告投放域对象类型。instances 用 @type 引用这里的 id。parent 表示概念层级（非严格 OWL 继承）。",
+  "note": "v0.1：P2 试点抽取发现两个缺口补入——ad:Playbook（S4 策略树/S7 SOP/S6 工作流是一等公民容器）与 ad:WorkflowStage（S6 八环节时间轴阶段）。",
   "classes": [
     {"id": "ad:Platform", "label": "广告平台", "description": "Meta/TikTok/Google/Amazon/YouTube/DTC站等投放与经营平台", "examples": ["meta", "tiktok-shop", "amazon", "google", "dtc-site"]},
     {"id": "ad:AdProduct", "label": "广告产品/能力", "description": "平台级广告产品：CBO、Advantage+、GMV Max、Spark Ads、TrueView、Sponsored Brands", "parent": "ad:Platform"},
@@ -26,6 +26,8 @@
     {"id": "ad:SourceDoc", "label": "源文档", "description": "S1-S21 飞书源 + platform-ops-kb object_id；provenance 锚点"},
     {"id": "ad:KnowledgeAsset", "label": "知识资产", "description": "卡片/QA 对/术语条目等 KB 内资产（文档层节点）"},
     {"id": "ad:Rule", "label": "规则/契约", "description": "铁律、门禁、权限、契约规则：动作铁律、自动化分级、pending_data 标记"},
-    {"id": "ad:LifecycleStage", "label": "生命周期阶段", "description": "S11 产品 8 阶段 / S17 孕→产后四阶段 / 人群 T0-T3"}
+    {"id": "ad:LifecycleStage", "label": "生命周期阶段", "description": "S11 产品 8 阶段 / S17 孕→产后四阶段 / 人群 T0-T3"},
+    {"id": "ad:Playbook", "label": "打法手册/SOP", "description": "成体系的诊断/操作框架：S4 策略树、S7 Agent 训练版 SOP、S6 一日工作流；DiagnosisCheck/WorkflowStage 的 part_of 容器", "examples": ["s4-strategy-tree", "s7-agent-sop", "s6-daily-workflow"]},
+    {"id": "ad:WorkflowStage", "label": "工作流阶段", "description": "人类/Agent 日节奏的阶段节点：S6 M/W/I/B/C/R/D/P 八环节；区别于 DiagnosisCheck（诊断判定点）", "properties": ["stage_code", "time_window", "purpose"]}
   ]
 }
