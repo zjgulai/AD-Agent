@@ -38,12 +38,22 @@ set -a && source kb_bot/.env && set +a
 kb_bot/.venv/bin/python -m kb_bot.bot
 ```
 
+## 用户反馈通道
+
+两条反馈路径都写入 `logs/fb-YYYY-MM-DD.jsonl`（`ref_mid` 关联 qa 日志的 `mid`）：
+
+1. **卡片按钮**：每条回答卡片底部有「👍 有用 / 👎 不对 / 📝 补充」。需在飞书开放平台事件订阅中追加 **`card.action.trigger`**（卡片回调）事件，按钮才生效；未订阅时按钮显示但点击无响应。
+2. **回复兜底**：直接回复机器人的回答消息，文本含「不对/错/有误/👎」判 down、「👍/有用/正确」判 up、其余整段记为 comment——无需额外权限，立即可用。
+
+反馈由 `src/experience_drafter.py scan` 消费：down/comment → `user-feedback`（critical）、up → `user-upvote`（low）信号进入经验卡。
+
 ## 飞书应用配置（开放平台）
 
 1. 创建自建应用 → 拿 App ID/Secret
 2. 权限开通：`im:message`、`im:message:send_as_bot`（回复）、事件订阅 `im.message.receive_v1`
 3. 事件订阅方式选 **长连接**（WebSocket），不需要公网域名/加密密钥
-4. 可用范围：把机器人加进目标群，或开放给指定成员私聊
+4. 反馈按钮生效需追加订阅 `card.action.trigger`
+5. 可用范围：把机器人加进目标群，或开放给指定成员私聊
 
 ## 开发自检（无需凭证）
 

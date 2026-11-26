@@ -22,6 +22,10 @@ from pathlib import Path
 
 import lark_oapi as lark
 from lark_oapi.api.im.v1 import P2ImMessageReceiveV1
+from lark_oapi.event.callback.model.p2_card_action_trigger import (
+    CallBackToast,
+    P2CardActionTriggerResponse,
+)
 
 from .config import DEFAULT_KB_ROOT, Settings, load_settings
 from .kb import Chunk, KnowledgeBase
@@ -42,10 +46,56 @@ _log_lock = threading.Lock()
 
 def _log_qa(record: dict) -> None:
     """问答日志：每条一行 JSONL，按天分文件。失败只打 stderr 不影响应答。"""
+    _append_log("qa", record)
+
+
+_answer_mid_to_qmid: OrderedDict[str, str] = OrderedDict()
+
+_DOWN_MARKS = ("不对", "错", "有误", "👎", "❌", "错误")
+_UP_MARKS = ("👍", "有用", "正确", "✅", "好评", "不错")
+
+
+def _classify_feedback(text: str) -> tuple[str, str]:
+    """把回复文本判成 (verdict, comment)。down 优先于 up（"不对"含"对"）。"""
+    t = text.strip()
+    if any(m in t for m in _DOWN_MARKS):
+        return "down", t
+    if any(m in t for m in _UP_MARKS):
+        return "up", ""
+    return "comment", t
+
+
+def _handle_feedback(client: lark.Client, msg, text: str) -> bool:
+    """parent_id 命中已回答消息 → 记为反馈而非新问题。返回是否已处理。"""
+    parent = getattr(msg, "parent_id", "") or ""
+    qmid = _answer_mid_to_qmid.get(parent)
+    if not qmid:
+        return False
+    verdict, comment = _classify_feedback(text)
+    _log_fb({
+        "ts": datetime.datetime.now().isoformat(timespec="seconds"),
+        "mid": getattr(msg, "message_id", ""),
+        "chat_type": getattr(msg, "chat_type", ""),
+        "ref_mid": qmid,
+        "verdict": verdict,
+        "comment": comment[:500],
+        "channel": "reply",
+    })
+    _reply(client, msg.message_id, text="已记录反馈，感谢！")
+    print(f"[feedback] {verdict} ref={qmid} comment={comment[:60]!r}", file=sys.stderr)
+    return True
+
+
+def _log_fb(record: dict) -> None:
+    """用户反馈日志：fb-YYYY-MM-DD.jsonl，ref_mid 关联 qa 日志的 mid。"""
+    _append_log("fb", record)
+
+
+def _append_log(prefix: str, record: dict) -> None:
     try:
         _LOG_DIR.mkdir(parents=True, exist_ok=True)
         day = datetime.date.today().isoformat()
-        with _log_lock, (_LOG_DIR / f"qa-{day}.jsonl").open("a", encoding="utf-8") as f:
+        with _log_lock, (_LOG_DIR / f"{prefix}-{day}.jsonl").open("a", encoding="utf-8") as f:
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
     except Exception as exc:
         print(f"[log failed] {exc}", file=sys.stderr)
@@ -148,7 +198,7 @@ def _split_sources(answer: str) -> tuple[str, str]:
     return body, "\n".join(src)
 
 
-def _build_card(answer: str) -> str:
+def _build_card(answer: str, qmid: str = "") -> str:
     body, sources = _split_sources(_strip_markdown(answer))
     elements: list[dict] = [
         {"tag": "div", "text": {"tag": "plain_text", "content": body or "（无内容）"}}
@@ -157,6 +207,26 @@ def _build_card(answer: str) -> str:
         elements += [
             {"tag": "hr"},
             {"tag": "note", "elements": [{"tag": "plain_text", "content": sources}]},
+        ]
+    if qmid:
+        elements += [
+            {"tag": "hr"},
+            {
+                "tag": "action",
+                "actions": [
+                    {
+                        "tag": "button",
+                        "text": {"tag": "plain_text", "content": label},
+                        "type": btype,
+                        "value": {"fb": verdict, "qmid": qmid},
+                    }
+                    for label, btype, verdict in [
+                        ("👍 有用", "default", "up"),
+                        ("👎 不对", "danger", "down"),
+                        ("📝 补充", "default", "comment"),
+                    ]
+                ],
+            },
         ]
     card = {
         "config": {"wide_screen_mode": True},
@@ -169,7 +239,8 @@ def _build_card(answer: str) -> str:
     return json.dumps(card, ensure_ascii=False)
 
 
-def _reply(client: lark.Client, message_id: str, text: str | None = None, card: str | None = None) -> None:
+def _reply(client: lark.Client, message_id: str, text: str | None = None, card: str | None = None) -> str:
+    """回复消息，返回新消息的 message_id（失败返回空串）。"""
     if card is not None:
         msg_type, content = "interactive", card
     else:
@@ -188,6 +259,8 @@ def _reply(client: lark.Client, message_id: str, text: str | None = None, card: 
     resp = client.im.v1.message.reply(req)
     if not resp.success():
         print(f"[reply failed] code={resp.code} msg={resp.msg}", file=sys.stderr)
+        return ""
+    return getattr(getattr(resp, "data", None), "message_id", "") or ""
 
 
 _GRAPH: GraphIndex | None = None
@@ -262,7 +335,11 @@ def _handle_question(
             answer = "知识库暂无相关资料。可换个问法，或参考 qa/COVERAGE.md 的边界声明。"
         else:
             answer = asyncio.run(llm_chat(settings, question, hits))
-        _reply(client, message_id, card=_build_card(answer))
+        answer_mid = _reply(client, message_id, card=_build_card(answer, qmid=message_id))
+        if answer_mid:
+            _answer_mid_to_qmid[answer_mid] = message_id
+            if len(_answer_mid_to_qmid) > _seen_max:
+                _answer_mid_to_qmid.popitem(last=False)
     except Exception as exc:  # 不向飞书泄露内部错误细节
         status = f"error: {exc}"
         print(f"[answer error] {exc}", file=sys.stderr)
@@ -279,6 +356,32 @@ def _handle_question(
             "status": status,
         }
     )
+
+
+def on_card_action(data) -> P2CardActionTriggerResponse:
+    """卡片反馈按钮回调（需飞书后台订阅 card.action.trigger 事件）。"""
+    ev = data.event
+    val = (ev.action.value or {}) if ev.action else {}
+    verdict = val.get("fb")
+    qmid = str(val.get("qmid") or "")
+    if verdict in {"up", "down", "comment"} and qmid:
+        _log_fb({
+            "ts": datetime.datetime.now().isoformat(timespec="seconds"),
+            "mid": getattr(ev, "token", "") or "",
+            "chat_type": "card",
+            "ref_mid": qmid,
+            "verdict": verdict,
+            "comment": "",
+            "channel": "card",
+            "operator": getattr(getattr(ev, "operator", None), "open_id", ""),
+        })
+        print(f"[card feedback] {verdict} ref={qmid}", file=sys.stderr)
+    resp = P2CardActionTriggerResponse()
+    toast = CallBackToast()
+    toast.type = "success" if verdict == "up" else "info"
+    toast.content = "已记录反馈，感谢！"
+    resp.toast = toast
+    return resp
 
 
 def make_handler(client: lark.Client, kb: KnowledgeBase, settings: Settings, bot_open_id: str):
@@ -303,6 +406,9 @@ def make_handler(client: lark.Client, kb: KnowledgeBase, settings: Settings, bot
         if not question:
             if msg.message_type not in {"text", "post"}:
                 _reply(client, msg.message_id, "暂只支持文本/富文本提问。")
+            return
+        # 回复机器人回答 → 视为反馈而非新问题
+        if _handle_feedback(client, msg, question):
             return
         # WS 回调跑在 SDK 的 event loop 里，LLM 调用必须丢到工作线程，
         # 否则 asyncio.run 会报 "cannot be called from a running event loop"
@@ -359,6 +465,7 @@ def main() -> None:
     event_handler = (
         lark.EventDispatcherHandler.builder("", "")
         .register_p2_im_message_receive_v1(make_handler(client, kb, settings, bot_open_id))
+        .register_p2_card_action_trigger(on_card_action)
         .build()
     )
     ws_client = lark.ws.Client(

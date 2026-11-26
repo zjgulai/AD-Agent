@@ -29,6 +29,8 @@ REPEAT_HIGH = 3          # 同一问题出现次数 ≥ 此值 → high 优先�
 BOUNDARY_MARKS = ("暂无资料", "暂无可靠资料", "知识库暂无")
 
 SIGNAL_DEF = {
+    "user-feedback": ("user-feedback", "用户负反馈/补充：最高优先级信号，必看原文"),
+    "user-upvote": ("positive", "用户正反馈：答案获认可，可沉淀为稳定 QA"),
     "no-hit": ("qa-gap", "检索零命中：补 qa/ 原子问答，或确认属知识边界"),
     "low-score": ("retrieval-tuning", "命中但分数偏低：检查 qa 标题措辞/卡片切片是否可命中"),
     "repeat": ("qa-gap", "重复提问：考虑补 qa/ 条目或在卡片中前置该问法"),
@@ -36,7 +38,7 @@ SIGNAL_DEF = {
     "conflict-touch": ("graph-review", "命中冲突边实体：确认并列口径呈现是否充分"),
     "error": ("system-issue", "应答异常：查 bot 日志/LLM 配置，非知识问题"),
 }
-PRIORITY = {"high": 3, "medium": 2, "low": 1}
+PRIORITY = {"critical": 4, "high": 3, "medium": 2, "low": 1}
 
 
 def _norm_question(q: str) -> str:
@@ -74,6 +76,22 @@ def _classify(rec: dict) -> dict[str, str]:
     if any(m in answer for m in BOUNDARY_MARKS):
         out["boundary-answer"] = "medium"
     return out
+
+
+def _load_feedback(logs_dir: Path) -> list[dict]:
+    recs = []
+    for path in sorted(logs_dir.glob("fb-*.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            rec["_log"] = str(path)
+            recs.append(rec)
+    return recs
 
 
 def _conflict_nodes(graph, labels: list[str]) -> list[str]:
@@ -176,6 +194,12 @@ def _render_card(exp_id: str, day: str, bucket: dict) -> str:
         lines.append(f"- `{s}`（{k}）：{sug}")
     for nid in bucket.get("conflict_nodes") or []:
         lines += ["", "## 冲突边", "", f"- `{nid}` 存在 conflicts_with 边——确认回答已并列呈现各口径"]
+    fbs = bucket.get("feedbacks") or []
+    if fbs:
+        lines += ["", "## 用户反馈", ""]
+        for fb in fbs[:10]:
+            lines.append(f"- {fb.get('ts', '')} [{fb.get('verdict')}/{fb.get('channel', '')}] "
+                         f"{str(fb.get('comment') or '')[:120]}")
     lines += [
         "",
         "## 人审",
@@ -197,7 +221,10 @@ def _aggregate(recs: list[dict], graph) -> dict[str, dict]:
         b = buckets.setdefault(key, {
             "question": q, "occurrences": [], "signals": {},
             "hits": [], "graph_entities": set(), "answer_excerpt": "",
+            "mids": set(),
         })
+        if rec.get("mid"):
+            b["mids"].add(str(rec["mid"]))
         b["occurrences"].append({
             "ts": rec.get("ts", ""), "mid": rec.get("mid", ""),
             "chat_type": rec.get("chat_type", ""), "log": rec.get("_log", ""),
@@ -237,6 +264,28 @@ def cmd_scan(args) -> int:
             print(f"[graph load failed, conflict-touch disabled] {exc}", file=sys.stderr)
 
     buckets = _aggregate(recs, graph)
+
+    # 用户反馈：fb-*.jsonl 的 ref_mid → qa mid → 问题聚合桶
+    mid_to_key = {mid: key for key, b in buckets.items() for mid in b.get("mids", set())}
+    fb_applied = fb_orphan = 0
+    for fb in _load_feedback(logs_dir):
+        key = mid_to_key.get(str(fb.get("ref_mid") or ""))
+        if not key:
+            fb_orphan += 1
+            continue
+        b = buckets[key]
+        if fb.get("verdict") == "up":
+            b["signals"]["user-upvote"] = "low"
+        else:
+            b["signals"]["user-feedback"] = "critical"
+        b.setdefault("feedbacks", []).append({
+            "ts": fb.get("ts", ""), "verdict": fb.get("verdict", ""),
+            "comment": fb.get("comment", ""), "channel": fb.get("channel", ""),
+        })
+        fb_applied += 1
+    if fb_applied or fb_orphan:
+        print(f"feedback: {fb_applied} applied, {fb_orphan} orphan (ref_mid 无对应 qa 记录)")
+
     key_to_id = _question_key_to_id()
     today = datetime.date.today().isoformat()
     taken = {p.stem for p in EXP_DIR.glob("EXP-*.md")}

@@ -107,3 +107,28 @@ def test_scan_skips_clean_questions(exp_env):
     _write_log(logs, [_rec(question="正常问题")])
     assert ed.cmd_scan(SimpleNamespace(logs_dir=str(logs), dry_run=False)) == 0
     assert list(exp.glob("EXP-*.md")) == []
+
+
+def test_scan_user_feedback_signal(exp_env):
+    """fb-*.jsonl 的 ref_mid 关联 qa mid → user-feedback 信号（critical）。"""
+    logs, exp = exp_env
+    qa = _rec(question="有争议的问题", mid="om_q9", hits=[], answer="暂无资料")
+    _write_log(logs, [qa])
+    with (logs / "fb-2026-11-26.jsonl").open("w", encoding="utf-8") as f:
+        f.write(json.dumps({
+            "ts": "2026-11-26T11:00:00", "mid": "fb1", "chat_type": "card",
+            "ref_mid": "om_q9", "verdict": "down", "comment": "",
+            "channel": "card",
+        }, ensure_ascii=False) + "\n")
+        f.write(json.dumps({
+            "ts": "2026-11-26T11:01:00", "mid": "fb2", "chat_type": "p2p",
+            "ref_mid": "om_missing", "verdict": "down", "comment": "",
+            "channel": "reply",
+        }, ensure_ascii=False) + "\n")
+    assert ed.cmd_scan(SimpleNamespace(logs_dir=str(logs), dry_run=False)) == 0
+    cards = list(exp.glob("EXP-*.md"))
+    assert len(cards) == 1
+    text = cards[0].read_text(encoding="utf-8")
+    assert "signal: user-feedback" in text
+    assert "priority: critical" in text
+    assert "## 用户反馈" in text

@@ -19,6 +19,7 @@ source: human+ai
 
 ```
 src/kb_bot/logs/qa-*.jsonl          # 燃料：每次问答的 question/hits/graph_entities/answer/status
+src/kb_bot/logs/fb-*.jsonl          # 用户反馈：卡片按钮/回复命令 → ref_mid 关联 qa mid
         │
         ▼  python -m experience_drafter scan        （src/ 下运行，幂等）
 experience/EXP-*.md                 # 草稿卡：启发式信号聚合，status: draft
@@ -32,6 +33,8 @@ experience/EXP-*.md                 # 草稿卡：启发式信号聚合，status
 
 | signal | 含义 | suggestion_kind | 默认优先级 |
 |--------|------|-----------------|-----------|
+| `user-feedback` | 用户点「不对」或回复负反馈/补充（fb-*.jsonl） | user-feedback | **critical** |
+| `user-upvote` | 用户点「有用」（fb-*.jsonl） | positive | low |
 | `no-hit` | 检索零命中 | qa-gap | high |
 | `low-score` | 命中但最高分 < 9 | retrieval-tuning | medium |
 | `repeat` | 同一问题 ≥2 次（归一化去重） | qa-gap | 2 次 medium / ≥3 次 high |
