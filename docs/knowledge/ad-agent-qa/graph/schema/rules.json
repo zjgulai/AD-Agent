@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1.0",
+  "domain": "ad-ops",
+  "updated": "2026-11-26",
+  "note": "契约规则层：铁律/门禁/权限/待数据占位。对齐语义底座「29 句话」契约与 pending_data 机制。status: stable=多源一致或已裁决；pending_business=等业务口径；pending_data=等数据回填。",
+  "rules": [
+    {"id": "ad:rule:one-variable", "type": "ad:IronRule", "statement": "一次诊断只动一个主变量，其余冻结", "source": "S4", "applies_to": ["ad:Action"], "status": "stable"},
+    {"id": "ad:rule:no-judge-learning", "type": "ad:IronRule", "statement": "学习期内不判定投放效果、不做预算动作", "source": "S4/S6/S7", "applies_to": ["ad:Action", "ad:Symptom"], "status": "stable"},
+    {"id": "ad:rule:review-window", "type": "ad:IronRule", "statement": "动作后按 4h/24h/72h 窗口复核（S4 主口径；S4 sheet-01 G8 行 12h 判为笔误见 CONFLICTS C6）", "source": "S4", "applies_to": ["ad:Action"], "status": "stable"},
+    {"id": "ad:rule:attribution-maturity", "type": "ad:IronRule", "statement": "归因成熟度 ≥80% 才允许效果类结论", "source": "S4", "applies_to": ["ad:Action"], "status": "stable"},
+    {"id": "ad:rule:cooldown", "type": "ad:IronRule", "statement": "同一对象同类动作最小间隔 24h~72h", "source": "S4/S6/S7", "applies_to": ["ad:Action"], "status": "stable"},
+    {"id": "ad:rule:p0-halt", "type": "ad:IronRule", "statement": "P0 异常立即止血动作优先于一切优化", "source": "S4", "applies_to": ["ad:Action", "ad:Symptom"], "status": "stable"},
+    {"id": "ad:rule:eq-primary", "type": "ad:ThresholdRule", "statement": "EQ<4=P0 停止诊断（建议主口径，S4+S7 一致）；S6 G 树 EQ<6<6 为孤例待裁决", "source": "S4/S7", "conflict_ref": "C1", "applies_to": ["ad:Metric:eq"], "status": "pending_business"},
+    {"id": "ad:rule:ctr-dual", "type": "ad:ThresholdRule", "statement": "CTR 双口径并存：销售≥0.8%/引流≥1.0%（S4）vs 3–7%（S7 字段字典），引用须带口径限定", "source": "S4/S7", "conflict_ref": "C4", "applies_to": ["ad:Metric:ctr"], "status": "pending_business"},
+    {"id": "ad:rule:cpm-dual", "type": "ad:ThresholdRule", "statement": "CPM S7 字段字典自身双口径并存（$8–25 基准10参考5–12 vs <5/>12 异常），待业务指定唯一基准", "source": "S7", "conflict_ref": "C5", "applies_to": ["ad:Metric:cpm"], "status": "pending_business"},
+    {"id": "ad:rule:automation-levels", "type": "ad:PermissionRule", "statement": "自动化三级：L1 仅建议 / L2 执行前人工确认 / L3 低风险自动执行（S2 与 S5 同构）", "source": "S2/S5", "applies_to": ["ad:Agent", "ad:Action"], "status": "stable"},
+    {"id": "ad:rule:action-whitelist", "type": "ad:PermissionRule", "statement": "S5 自动执行白名单 5 动作 / 禁止自动执行 4 动作清单", "source": "S5", "applies_to": ["ad:Action"], "status": "stable"},
+    {"id": "ad:rule:breaker", "type": "ad:PermissionRule", "statement": "熔断器：异常率超阈自动降级/停用自动执行", "source": "S5", "applies_to": ["ad:Agent"], "status": "stable"},
+    {"id": "ad:rule:hitl-gate", "type": "ad:PermissionRule", "statement": "「投放负责人最终确认」为 Ads API 前 HITL 卡点（S1 链路⑨前）", "source": "S1", "applies_to": ["ad:Agent", "ad:Role"], "status": "stable"},
+    {"id": "ad:rule:five-part-output", "type": "ad:OutputContract", "statement": "诊断输出五段式：异常→证据→根因→动作→影响预估", "source": "S4", "applies_to": ["ad:DiagnosisCheck", "ad:Agent"], "status": "stable"},
+    {"id": "ad:rule:action-log", "type": "ad:OutputContract", "statement": "每次诊断与动作必填 21 列动作日志", "source": "S4/S5", "applies_to": ["ad:Action"], "status": "stable"},
+    {"id": "ad:rule:sample-gates", "type": "ad:ThresholdRule", "statement": "样本/学习分档按检查点区分（CONFLICTS C2/C3 已厘清）：P0-05 ≥$100+Purchase≥50 / L4-01 ≥$50 / S2-01 ≥$100+转化≥30 / 样本≥10", "source": "S4/S7", "applies_to": ["ad:DiagnosisCheck"], "status": "stable"},
+    {"id": "ad:rule:consistency-whitelist", "type": "ad:ThresholdRule", "statement": "高置信可直接引用：Pacing 60/130、归因差>30%、ROAS<0.7x、频次>5、到达率≥70%/<60%、加购率3~8%、结账发起率≥60%、Purchase/IC≥70%、冷却24~72h、复核4h/24h/72h", "source": "S4/S6/S7", "conflict_ref": "C13-C17", "status": "stable"}
+  ],
+  "pending_data": [
+    {"id": "ad:pd:l4-threshold-final", "what": "L4 数据门槛终裁（$50 vs $100+Purchase≥50）", "blocked_by": "业务确认", "conflict_ref": "C2"},
+    {"id": "ad:pd:eq-threshold-final", "what": "EQ P0 阈值终裁（<4 vs <6）", "blocked_by": "业务确认", "conflict_ref": "C1"},
+    {"id": "ad:pd:ctr-definition", "what": "CTR 指标定义（链接点击 vs 总点击）", "blocked_by": "平台口径/业务确认", "conflict_ref": "C4"},
+    {"id": "ad:pd:cpm-benchmark", "what": "CPM 唯一基准值", "blocked_by": "业务确认", "conflict_ref": "C5"},
+    {"id": "ad:pd:s6-version", "what": "S6 版本号（v6 vs v5.0）", "blocked_by": "业务确认", "conflict_ref": "C9"},
+    {"id": "ad:pd:s16-matrix", "what": "S16 33 列评估矩阵实质数据（当前仅表头）", "blocked_by": "业务调研填数", "conflict_ref": null},
+    {"id": "ad:pd:zalify", "what": "Zalify 竞品能力边界", "blocked_by": "飞书文档权限", "conflict_ref": null},
+    {"id": "ad:pd:s2-siblings", "what": "S2 是否存在 01/03 兄弟文档", "blocked_by": "wiki 空间权限", "conflict_ref": null},
+    {"id": "ad:pd:s1-visual-check", "what": "S1 画板原图终核（19 处 [待确认]）", "blocked_by": "人工对照原图", "conflict_ref": null}
+  ]
+}

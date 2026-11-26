@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.1.0",
+  "domain": "ad-ops",
+  "updated": "2026-11-26",
+  "note": "SKOS-lite 术语种子（v0 评审样例，非全量）。全量 88 条 glossary 术语在 P3 转换。字段对齐语义底座 GLOSSARY-V0：term_id/zh/en/alt_labels/definition/disambiguation/sources/status。",
+  "terms": [
+    {"id": "ad:term:eq", "type": "skos:Concept", "zh": "EQ", "en": "Event Quality / Event Match Quality", "alt_labels": ["事件质量分", "EMQ"], "definition": "衡量 Pixel/CAPI 回传数据与广告归因匹配度的质量分", "disambiguation": "S6 G 树排雷用 EQ<6、S4/S7 P0 判定用 EQ<4——见 CONFLICTS C1，引用须带口径", "sources": ["S4", "S6", "S7"], "status": "stable", "conflict_ref": "C1"},
+    {"id": "ad:term:ctr", "type": "skos:Concept", "zh": "CTR", "en": "Click-Through Rate", "alt_labels": ["点击率"], "definition": "点击/曝光比；多口径并存：S4 销售≥0.8%/引流≥1.0% vs S7 字段字典 3–7%", "disambiguation": "疑链接点击率 vs 总点击率或不同漏斗位——见 CONFLICTS C4 pending_business", "sources": ["S4", "S6", "S7"], "status": "stable", "conflict_ref": "C4"},
+    {"id": "ad:term:cvr", "type": "skos:Concept", "zh": "CVR", "en": "Conversion Rate", "alt_labels": ["转化率"], "definition": "转化/点击或转化/访客比", "disambiguation": "分子分母口径随漏斗定义变化", "sources": ["S4", "S5"], "status": "stable"},
+    {"id": "ad:term:cpm", "type": "skos:Concept", "zh": "CPM", "en": "Cost Per Mille", "alt_labels": ["千次曝光成本"], "definition": "每千次曝光成本", "disambiguation": "S7 字段字典自身双口径（$8–25 基准10参考5–12 vs <5/>12 异常）——见 CONFLICTS C5 pending_business", "sources": ["S4", "S7"], "status": "stable", "conflict_ref": "C5"},
+    {"id": "ad:term:roas", "type": "skos:Concept", "zh": "ROAS", "en": "Return On Ad Spend", "alt_labels": ["广告支出回报率"], "definition": "广告收入/广告花费", "disambiguation": "止血线 <0.7x（三源一致）；品牌资产口径另见语义底座 T-BR 系列", "sources": ["S1-S8"], "status": "stable"},
+    {"id": "ad:term:pacing", "type": "skos:Concept", "zh": "Pacing", "en": "Budget Pacing", "alt_labels": ["预算消耗节奏"], "definition": "预算消耗进度 vs 时间进度的比值", "disambiguation": "<60% 欠投 / >130% 超投，连续 2 天算趋势——三源一致高置信", "sources": ["S4", "S6", "S7"], "status": "stable"},
+    {"id": "ad:term:frequency", "type": "skos:Concept", "zh": "频次", "en": "Frequency", "alt_labels": ["曝光频次"], "definition": "同一用户平均曝光次数", "disambiguation": "疲劳阈值多档并存（≤3/≤5/>5/>10 四档见 CONFLICTS）", "sources": ["S4", "S6", "S7"], "status": "stable"},
+    {"id": "ad:term:l0-l4", "type": "skos:Concept", "zh": "L0–L4", "en": "Diagnosis Layers", "alt_labels": ["诊断五层"], "definition": "S7 诊断分层：L0 账户健康/L1 Campaign/L2 AdSet/L3 Ad 素材/L4 落地页漏斗", "disambiguation": "与 S4 G0-G8 节点编号、S6 M-W-I-B-C-R-D-P 环节编号是三套不同坐标系——勿混用", "sources": ["S7"], "status": "stable"},
+    {"id": "ad:term:t0-t5-tree", "type": "skos:Concept", "zh": "T0–T5", "en": "S7 Decision Tree Nodes", "alt_labels": ["主决策树节点"], "definition": "S7 主决策树：T0 前置排雷/T1 L1/T2 症状路由/T3 L2/T4 L3/T5 L4", "disambiguation": "≠ S17 受众 T0-T3 出价分层（同名不同物！引用必须带「决策树」或「出价分层」限定）", "sources": ["S7", "S17"], "status": "stable", "disambiguation_alert": true},
+    {"id": "ad:term:g0-g8", "type": "skos:Concept", "zh": "G0–G8", "en": "S4 Check Sequence", "alt_labels": ["固定检查顺序"], "definition": "S4 检查顺序：数据可信度→资格→追踪归因→目标事件→样本→预算→专项→分层→安全→复核", "sources": ["S4"], "status": "stable"},
+    {"id": "ad:term:action-iron-rules", "type": "skos:Concept", "zh": "动作铁律", "en": "Action Iron Rules", "alt_labels": [], "definition": "一次只动一个主变量、学习期不判效、动作后 4h/24h/72h 复核、归因成熟度≥80%", "sources": ["S4"], "status": "stable"},
+    {"id": "ad:term:cbo", "type": "skos:Concept", "zh": "CBO", "en": "Campaign Budget Optimization", "alt_labels": ["广告系列预算优化"], "definition": "Meta 系列级预算自动分配", "sources": ["S2", "S9"], "status": "stable"},
+    {"id": "ad:term:hitl", "type": "skos:Concept", "zh": "HITL", "en": "Human-In-The-Loop", "alt_labels": ["人工介入节点"], "definition": "Agent 推送卡片由人确认/修改后继续执行", "sources": ["S2", "S5"], "status": "stable"},
+    {"id": "ad:term:boost", "type": "skos:Concept", "zh": "加推", "en": "Ad Boost", "alt_labels": ["Boost", "Ad Boost Plan"], "definition": "将红人已有内容作为广告素材投放推广", "sources": ["S2", "S3"], "status": "stable"},
+    {"id": "ad:term:spark-ads", "type": "skos:Concept", "zh": "Spark Ads", "en": "TikTok Spark Ads", "alt_labels": ["授权码投放"], "definition": "TikTok 通过授权码把红人原生视频转为广告的格式", "sources": ["S2"], "status": "stable"},
+    {"id": "ad:term:learning-phase", "type": "skos:Concept", "zh": "学习期", "en": "Learning Phase", "alt_labels": ["Learning"], "definition": "广告系统学习投放模型阶段，期间不判效果", "disambiguation": "<50 转化不动预算（S6/S7）；S4 事件量分档不同（见 CONFLICTS C3/C17）", "sources": ["S4", "S6", "S7"], "status": "stable"},
+    {"id": "ad:term:arrv-rate", "type": "skos:Concept", "zh": "到达率", "en": "LPV/Outbound Click Rate", "alt_labels": [], "definition": "广告点击后真正到达落地页比例", "disambiguation": "基准 ≥70%，<60% 判链路问题", "sources": ["S7"], "status": "stable"},
+    {"id": "ad:term:checkout-init", "type": "skos:Concept", "zh": "结账发起率", "en": "IC/ATC Rate", "alt_labels": [], "definition": "加购用户中发起结账比例", "disambiguation": "基准 ≥60%", "sources": ["S7"], "status": "stable"}
+  ],
+  "pending_terms_note": "glossary.md 其余 ~70 条（Agent 名/平台字段/漏斗指标/业务术语）P3 批量转换；转换时同名异义必建 disambiguation"
+}

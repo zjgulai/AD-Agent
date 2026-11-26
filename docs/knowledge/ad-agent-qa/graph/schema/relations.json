@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1.0",
+  "domain": "ad-ops",
+  "updated": "2026-11-26",
+  "note": "关系类型注册表。domain/range 用类 id 或通配 ad:*。每条实例边实例化时必须带 source_ref + 生命周期字段。",
+  "relations": [
+    {"id": "ad:checks", "label": "检查", "domain": ["ad:DiagnosisCheck", "ad:Agent"], "range": ["ad:Metric", "ad:Symptom"], "cardinality": "N:M", "description": "诊断节点/Agent 检查某指标或症状（S7 L0-02 检查 EQ）"},
+    {"id": "ad:has_threshold", "label": "具有阈值", "domain": ["ad:Metric", "ad:DiagnosisCheck"], "range": ["ad:Benchmark"], "cardinality": "1:N", "description": "指标在某检查点的分档阈值；多口径并存时各建 Benchmark 节点"},
+    {"id": "ad:triggers", "label": "触发", "domain": ["ad:Symptom", "ad:DiagnosisCheck"], "range": ["ad:Action", "ad:DiagnosisCheck"], "cardinality": "N:M", "description": "条件满足触发动作或下一诊断节点（决策树边）"},
+    {"id": "ad:applies_when", "label": "适用条件", "domain": ["ad:Action", "ad:Playbook" ], "range": ["ad:Symptom", "ad:Audience", "ad:LifecycleStage"], "cardinality": "N:M", "description": "动作/打法的前置条件（学习期不判效、P0 止血等）"},
+    {"id": "ad:affects", "label": "影响", "domain": ["ad:Action", "ad:AdProduct", "ad:Metric"], "range": ["ad:Metric"], "cardinality": "N:M", "description": "动作/产品/指标对目标指标的影响（降预算→消耗↓）"},
+    {"id": "ad:belongs_to", "label": "属于", "domain": ["ad:*"], "range": ["ad:*"], "cardinality": "N:1", "description": "层级归属：AdSet belongs_to Campaign；L2 节点 belongs_to L1"},
+    {"id": "ad:part_of", "label": "组成部分", "domain": ["ad:*"], "range": ["ad:*"], "cardinality": "N:M", "description": "组成关系：Ad 属于 Campaign 结构；G0-G8 属于 S4 诊断引擎"},
+    {"id": "ad:conflicts_with", "label": "口径冲突", "domain": ["ad:Benchmark", "ad:Metric", "ad:term:*"], "range": ["ad:Benchmark", "ad:Metric", "ad:term:*"], "cardinality": "N:M", "description": "同名指标不同口径/阈值冲突；必带 conflict_status（见 CONFLICTS.md C1-C17）"},
+    {"id": "ad:variant_of", "label": "口径变体", "domain": ["ad:Benchmark", "ad:Metric"], "range": ["ad:Benchmark", "ad:Metric"], "cardinality": "N:M", "description": "同一概念的不同合法口径（访客数 vs 事件数漏斗），非冲突但需限定词"},
+    {"id": "ad:sourced_from", "label": "来源于", "domain": ["ad:*"], "range": ["ad:SourceDoc", "ad:KnowledgeAsset"], "cardinality": "N:M", "description": "provenance 主边：实例→源文档/卡片/QA/object_id"},
+    {"id": "ad:defined_in", "label": "定义于", "domain": ["ad:term:*", "ad:Metric"], "range": ["ad:KnowledgeAsset", "ad:SourceDoc"], "cardinality": "N:1", "description": "术语/指标的唯一定义位置（语义层核心边）"},
+    {"id": "ad:recommends", "label": "推荐", "domain": ["ad:KnowledgeAsset", "ad:Agent", "ad:Role"], "range": ["ad:*"], "cardinality": "N:M", "description": "卡片/QA/Agent 推荐某实体或动作"},
+    {"id": "ad:depends_on", "label": "依赖", "domain": ["ad:*"], "range": ["ad:*"], "cardinality": "N:M", "description": "前置依赖：L4 诊断 depends_on L0-L3 通过；动作 depends_on 数据门槛"},
+    {"id": "ad:escalates_to", "label": "升级至", "domain": ["ad:Agent", "ad:Action"], "range": ["ad:Role", "ad:HITLGate"], "cardinality": "N:1", "description": "HITL 卡点：Agent 动作→人工确认（投放负责人最终确认）"},
+    {"id": "ad:alternative_to", "label": "替代/竞品", "domain": ["ad:Competitor", "ad:AdProduct"], "range": ["ad:Competitor", "ad:AdProduct"], "cardinality": "N:M", "description": "竞品对标、平台产品替代关系"},
+    {"id": "ad:targets", "label": "定向", "domain": ["ad:AdSet", "ad:Campaign", "ad:Action"], "range": ["ad:Audience", "ad:Product"], "cardinality": "N:M", "description": "投放定向对象：人群包×版位×出价×年龄×频次×时段（S8 命名要素）"},
+    {"id": "ad:measures", "label": "衡量", "domain": ["ad:Metric"], "range": ["ad:AdEntity", "ad:Action", "ad:Campaign"], "cardinality": "N:M", "description": "指标衡量对象：ROAS measures Campaign"},
+    {"id": "ad:supersedes", "label": "取代", "domain": ["ad:*"], "range": ["ad:*"], "cardinality": "N:1", "description": "版本演进：S7 取代 S4 旧版（待确认）；经验卡升级为规则"},
+    {"id": "ad:deprecated_by", "label": "被淘汰", "domain": ["ad:*"], "range": ["ad:*"], "cardinality": "N:1", "description": "代谢机制：证伪/过期知识标记（飞轮淘汰边）"},
+    {"id": "ad:pending_data", "label": "待数据", "domain": ["ad:*"], "range": ["ad:Rule"], "cardinality": "N:M", "description": "占位符标记：阈值/规则待 G1 数据或业务确认回填（对齐语义底座 pending_data）"},
+    {"id": "ad:cross_domain_ref", "label": "跨域引用", "domain": ["ad:*"], "range": ["external:*"], "cardinality": "N:M", "description": "引用语义底座其他域实体（品牌域/运营域/平台域 term_id/object_id）"}
+  ],
+  "missing_classes_noted": [
+    "ad:HITLGate（人工确认门）——escalates_to 的 range，v0.1 补入 classes",
+    "ad:Playbook（打法手册）——applies_when 的 domain，v0.1 补入 classes"
+  ]
+}

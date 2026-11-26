@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1.0",
+  "domain": "ad-ops",
+  "updated": "2026-11-26",
+  "note": "广告投放域对象类型。instances 用 @type 引用这里的 id。parent 表示概念层级（非严格 OWL 继承）。",
+  "classes": [
+    {"id": "ad:Platform", "label": "广告平台", "description": "Meta/TikTok/Google/Amazon/YouTube/DTC站等投放与经营平台", "examples": ["meta", "tiktok-shop", "amazon", "google", "dtc-site"]},
+    {"id": "ad:AdProduct", "label": "广告产品/能力", "description": "平台级广告产品：CBO、Advantage+、GMV Max、Spark Ads、TrueView、Sponsored Brands", "parent": "ad:Platform"},
+    {"id": "ad:AdEntity", "label": "广告实体", "description": "投放账户结构对象", "abstract": true},
+    {"id": "ad:Campaign", "label": "广告系列", "parent": "ad:AdEntity", "description": "Campaign 层级（S7 L1）"},
+    {"id": "ad:AdSet", "label": "广告组", "parent": "ad:AdEntity", "description": "AdSet 层级（S7 L2），含定向/版位/出价"},
+    {"id": "ad:Creative", "label": "广告素材/创意", "parent": "ad:AdEntity", "description": "Ad 层级（S7 L3）；红人原视频、品牌素材等"},
+    {"id": "ad:LandingPage", "label": "落地页", "description": "承接流量的页面（S7 L4 漏斗起点）"},
+    {"id": "ad:Metric", "label": "指标", "description": "可量化衡量指标：EQ/CTR/CVR/CPM/ROAS/CPA/Pacing/频次/到达率等", "disambiguation": "同名指标多口径时建多个 term 节点 + conflicts_with 边"},
+    {"id": "ad:Benchmark", "label": "基准线/阈值", "description": "指标的正常/预警/异常分档；绑定检查点与来源", "properties": ["metric_ref", "checkpoint", "tier", "value", "source_ref"]},
+    {"id": "ad:DiagnosisCheck", "label": "诊断检查项", "description": "S4 G0-G8 / S7 L0-L4 / S6 M-W-I-B-C-R-D-P 的检查节点；厚图谱一等公民", "properties": ["node_id", "layer", "checklist_item"]},
+    {"id": "ad:Symptom", "label": "异常症状/条件", "description": "可判定的异常状态：EQ<4、消耗突降、频次>5；是 triggers 边的主语", "properties": ["predicate", "metric_ref", "operator", "value"]},
+    {"id": "ad:Action", "label": "动作", "description": "诊断后可执行的处置：动作库 A-xx、S4 动作、S7 异常动作速查", "properties": ["action_id", "risk_level", "cooldown"]},
+    {"id": "ad:Agent", "label": "Agent", "description": "系统中的 Agent 节点：素材发现/上线检查/诊断引擎/监控优化等（S1-S3）"},
+    {"id": "ad:AgentLoop", "label": "Agent Loop", "description": "S1 全景的 Loop 编排单元（实测 10 个）"},
+    {"id": "ad:Role", "label": "角色", "description": "人类角色：投放师/优化师/负责人/红人经纪等"},
+    {"id": "ad:Audience", "label": "受众/人群", "description": "人群包/画像/分层：浅中深层、T0-T3 出价分层、LAL/Lookalike"},
+    {"id": "ad:Product", "label": "产品/SKU", "description": "Momcozy 品线：吸奶器X1、清洗机等；S11 生命周期 8 阶段挂这里"},
+    {"id": "ad:Channel", "label": "渠道/触点", "description": "独立站/Amazon/DTC/社媒等触点（S21 触点地图）"},
+    {"id": "ad:Competitor", "label": "竞品", "description": "Navos/GrowthGPT/Zalify 等广告 Agent 竞品"},
+    {"id": "ad:SourceDoc", "label": "源文档", "description": "S1-S21 飞书源 + platform-ops-kb object_id；provenance 锚点"},
+    {"id": "ad:KnowledgeAsset", "label": "知识资产", "description": "卡片/QA 对/术语条目等 KB 内资产（文档层节点）"},
+    {"id": "ad:Rule", "label": "规则/契约", "description": "铁律、门禁、权限、契约规则：动作铁律、自动化分级、pending_data 标记"},
+    {"id": "ad:LifecycleStage", "label": "生命周期阶段", "description": "S11 产品 8 阶段 / S17 孕→产后四阶段 / 人群 T0-T3"}
+  ]
+}
