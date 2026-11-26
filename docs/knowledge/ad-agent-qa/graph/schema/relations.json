@@ -59,7 +59,10 @@
         "ad:Audience",
         "ad:LifecycleStage",
         "ad:Benchmark",
-        "ad:Metric"
+        "ad:Metric",
+        "ad:WorkflowStage",
+        "ad:Channel",
+        "ad:Product"
       ],
       "cardinality": "N:M",
       "description": "动作/打法的前置条件（学习期不判效、P0 止血、ROAS≥1.3x 扩量前提）"
@@ -70,7 +73,10 @@
       "domain": [
         "ad:Action",
         "ad:AdProduct",
-        "ad:Metric"
+        "ad:Metric",
+        "ad:Audience",
+        "ad:AdEntity",
+        "ad:Agent"
       ],
       "range": [
         "ad:Metric"
@@ -122,15 +128,13 @@
       "id": "ad:variant_of",
       "label": "口径变体",
       "domain": [
-        "ad:Benchmark",
-        "ad:Metric"
+        "ad:*"
       ],
       "range": [
-        "ad:Benchmark",
-        "ad:Metric"
+        "ad:*"
       ],
       "cardinality": "N:M",
-      "description": "同一概念的不同合法口径（访客数 vs 事件数漏斗），非冲突但需限定词"
+      "description": "同一概念的不同合法口径/范围/平台变体(口径差异非冲突),限定词见note"
     },
     {
       "id": "ad:sourced_from",
@@ -220,7 +224,8 @@
       ],
       "range": [
         "ad:Competitor",
-        "ad:AdProduct"
+        "ad:AdProduct",
+        "ad:Product"
       ],
       "cardinality": "N:M",
       "description": "竞品对标、平台产品替代关系"
@@ -249,7 +254,11 @@
       "range": [
         "ad:AdEntity",
         "ad:Action",
-        "ad:Campaign"
+        "ad:Campaign",
+        "ad:Channel",
+        "ad:LifecycleStage",
+        "ad:Audience",
+        "ad:Product"
       ],
       "cardinality": "N:M",
       "description": "指标衡量对象：ROAS measures Campaign"
@@ -301,6 +310,23 @@
       ],
       "cardinality": "N:M",
       "description": "引用语义底座其他域实体（品牌域/运营域/平台域 term_id/object_id）"
+    },
+    {
+      "id": "ad:involves",
+      "label": "涉及/由谁执行",
+      "domain": [
+        "ad:Agent",
+        "ad:AgentLoop",
+        "ad:WorkflowStage",
+        "ad:Action",
+        "ad:Playbook"
+      ],
+      "range": [
+        "ad:Role",
+        "ad:Audience"
+      ],
+      "cardinality": "N:M",
+      "description": "流程/动作/Agent涉及的人类角色或受众(HITL决策人、外部协作方)"
     }
   ],
   "missing_classes_noted": [

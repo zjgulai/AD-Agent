@@ -24,21 +24,32 @@ def main():
     rels = {r["id"]: r for r in load(os.path.join(SCHEMA, "relations.json"))["relations"]}
     errors, warnings = [], []
 
-    for nf in sorted(glob.glob(os.path.join(inst_dir, "*.nodes.json"))):
+    # Pass 1: load ALL nodes across shards into a global map (cross-shard refs allowed;
+    # same @id must agree on @type — merge semantics).
+    global_nodes, shard_nodes = {}, {}
+    node_files = sorted(glob.glob(os.path.join(inst_dir, "*.nodes.json")))
+    for nf in node_files:
         shard = os.path.basename(nf).replace(".nodes.json", "")
-        ef = os.path.join(inst_dir, shard + ".edges.json")
-        nodes_doc, edges_doc = load(nf), load(ef)
-        nodes = {n["@id"]: n for n in nodes_doc["nodes"]}
-        edges = edges_doc["edges"]
-        defaults = nodes_doc.get("defaults", {}) | edges_doc.get("defaults", {})
-
-        # node checks
+        nodes_doc = load(nf)
+        shard_nodes[shard] = nodes_doc
         for n in nodes_doc["nodes"]:
+            prev = global_nodes.get(n["@id"])
+            if prev and prev.get("@type") != n.get("@type"):
+                errors.append(f"{shard}: node {n['@id']} @type {n.get('@type')} conflicts with {prev.get('@type')} in another shard")
+            global_nodes.setdefault(n["@id"], n)
             t = n.get("@type")
             if t not in classes:
                 errors.append(f"{shard}: node {n['@id']} unknown @type {t}")
             if not n.get("src"):
                 warnings.append(f"{shard}: node {n['@id']} missing src provenance")
+
+    # Pass 2: validate each edges file against global node map.
+    for shard, nodes_doc in shard_nodes.items():
+        ef = os.path.join(inst_dir, shard + ".edges.json")
+        edges_doc = load(ef)
+        edges = edges_doc["edges"]
+        defaults = nodes_doc.get("defaults", {}) | edges_doc.get("defaults", {})
+        nodes = {n["@id"]: n for n in nodes_doc["nodes"]}  # local view for domain checks
 
         # edge checks
         for i, e in enumerate(edges):
@@ -50,16 +61,16 @@ def main():
             if not e.get("ref"):
                 errors.append(f"{eid}: missing ref provenance")
             for k in ("source", "target"):
-                if e.get(k) not in nodes:
-                    errors.append(f"{eid}: {k} {e.get(k)} not in nodes")
+                if e.get(k) not in global_nodes:
+                    errors.append(f"{eid}: {k} {e.get(k)} not in any shard")
             # lifecycle fields (defaults count as satisfied)
             for f in ("status", "confidence", "freshness", "last_verified"):
                 if f not in e and f not in defaults:
                     warnings.append(f"{eid}: missing lifecycle field {f}")
             # domain/range (skip if endpoints unknown)
             spec = rels[rt]
-            s_t = nodes.get(e.get("source"), {}).get("@type")
-            t_t = nodes.get(e.get("target"), {}).get("@type")
+            s_t = global_nodes.get(e.get("source"), {}).get("@type")
+            t_t = global_nodes.get(e.get("target"), {}).get("@type")
             if s_t and t_t:
                 def ok(spec_list, t):
                     return any(x == t or x == "ad:*" or (x.endswith(":*") and t.startswith(x[:-1])) for x in spec_list)

@@ -1,0 +1,368 @@
+{
+ "graph": "ad-ops",
+ "cluster": "influencer-boost",
+ "generated": "2026-11-26",
+ "defaults": {
+  "status": "active",
+  "confidence": "high",
+  "freshness": "fresh",
+  "last_verified": "2026-11-26"
+ },
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-ib-overview",
+   "target": "ad:src:s2",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-ib-overview",
+   "target": "ad:src:s3",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-ib-specs",
+   "target": "ad:src:s3",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-ib-specs",
+   "target": "ad:src:s2",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-ib-tracking",
+   "target": "ad:src:s3",
+   "ref": "card:influencer-boost/influencer-boost-build-tracking.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ib-overview",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ib-specs",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ib-tracking",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-build-tracking.md"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-orchestrator",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md#L112"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-discover",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L51"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-score",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L52"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-auth",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md#L48"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-strategy-meta",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L56"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-strategy-tiktok",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L56"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-strategy-youtube",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L56"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-create-meta",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L58"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-create-tiktok",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L58"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-create-youtube",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L58"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-check",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L62"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-monitor",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L63"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-analyze",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L64"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-optimize",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L65"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-review",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L66"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:agent:ib-assemble",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L57"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-score",
+   "target": "ad:agent:ib-discover",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L51-52",
+   "note": "发现→评分"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:ib-auth-request",
+   "target": "ad:agent:ib-score",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L72",
+   "note": "高评分未授权→授权索要"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:ib-boost-confirm",
+   "target": "ad:stage:ib-auth-request",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L73"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-strategy-meta",
+   "target": "ad:stage:ib-boost-confirm",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L74",
+   "note": "确认后生成策略"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-strategy-tiktok",
+   "target": "ad:stage:ib-boost-confirm",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L74"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-strategy-youtube",
+   "target": "ad:stage:ib-boost-confirm",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L74"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:ib-strategy-confirm",
+   "target": "ad:agent:ib-strategy-meta",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L74"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-create-meta",
+   "target": "ad:stage:ib-strategy-confirm",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L74",
+   "note": "策略确认+手动投放开启后创建"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-check",
+   "target": "ad:agent:ib-create-meta",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L58",
+   "note": "创建前过上线检查,被创建Agent调用"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-monitor",
+   "target": "ad:agent:ib-create-tiktok",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L63"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-analyze",
+   "target": "ad:agent:ib-monitor",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L64"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-optimize",
+   "target": "ad:agent:ib-analyze",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L65"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-review",
+   "target": "ad:agent:ib-optimize",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L66"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-discover",
+   "target": "ad:agent:ib-review",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L78",
+   "note": "复盘反哺素材发现闭环"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-strategy-meta",
+   "target": "ad:agent:ib-score",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md#L63",
+   "note": "策略生成调评分接口score≥70入池"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-create-meta",
+   "target": "ad:agent:ib-check",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md#L64",
+   "note": "合规预检调上线检查Agent"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-optimize",
+   "target": "ad:agent:ib-monitor",
+   "ref": "card:influencer-boost/influencer-boost-build-tracking.md#L44-45"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-review",
+   "target": "ad:agent:ib-analyze",
+   "ref": "card:influencer-boost/influencer-boost-build-tracking.md#L45-46"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:agent:ib-discover",
+   "target": "ad:agent:ib-orchestrator",
+   "ref": "card:influencer-boost/influencer-boost-build-tracking.md#L52",
+   "note": "编排框架是所有Agent底座"
+  },
+  {
+   "@type": "ad:pending_data",
+   "source": "ad:agent:ib-check",
+   "target": "ad:rule:ib-open-items",
+   "ref": "card:influencer-boost/influencer-boost-build-tracking.md#L109",
+   "note": "建设任务表无独立条目"
+  },
+  {
+   "@type": "ad:pending_data",
+   "source": "ad:agent:ib-analyze",
+   "target": "ad:rule:ib-open-items",
+   "ref": "card:influencer-boost/influencer-boost-build-tracking.md#L88-89",
+   "note": "表外引用"
+  },
+  {
+   "@type": "ad:pending_data",
+   "source": "ad:agent:ib-auth",
+   "target": "ad:rule:ib-open-items",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md#L48",
+   "note": "名称-职责错位"
+  },
+  {
+   "@type": "ad:pending_data",
+   "source": "ad:agent:ib-assemble",
+   "target": "ad:rule:ib-open-items",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L89",
+   "note": "S1vsS2/S3口径差异"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:agent:ib-strategy-meta",
+   "target": "ad:agent:ib-strategy-tiktok",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L56",
+   "note": "同职能按平台拆分"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:agent:ib-strategy-meta",
+   "target": "ad:agent:ib-strategy-youtube",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L56"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:agent:ib-create-meta",
+   "target": "ad:agent:ib-create-tiktok",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L58"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:agent:ib-create-meta",
+   "target": "ad:agent:ib-create-youtube",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L58"
+  },
+  {
+   "@type": "ad:involves",
+   "source": "ad:agent:ib-auth",
+   "target": "ad:role:creator",
+   "when": "素材授权状态跟踪/补签提醒",
+   "ref": "card:influencer-boost/influencer-boost-agent-specs.md#L49"
+  },
+  {
+   "@type": "ad:involves",
+   "source": "ad:stage:ib-auth-request",
+   "target": "ad:role:creator",
+   "when": "授权邀约接收/授权码提供",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L72"
+  },
+  {
+   "@type": "ad:involves",
+   "source": "ad:stage:ib-boost-confirm",
+   "target": "ad:role:influencer-owner",
+   "when": "确认/观察/拒绝加推",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L73"
+  },
+  {
+   "@type": "ad:involves",
+   "source": "ad:stage:ib-strategy-confirm",
+   "target": "ad:role:ad-owner",
+   "when": "确认策略/手动开启投放",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L74"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:agent:ib-optimize",
+   "target": "ad:metric:roas",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md#L65",
+   "note": "五维优化影响ROAS/CPA/CTR"
+  }
+ ]
+}

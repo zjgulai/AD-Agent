@@ -20,12 +20,17 @@ source: human+ai
 ```
 graph/
 ├── schema/        # 模式层：什么可以存在（类/关系/术语/规则）
-│   ├── classes.json     # 对象类型（Metric/DiagnosisNode/Action/Agent…）v0.1.1
-│   ├── relations.json   # 关系类型 v0.1.2（22 种，含 ad:implements）
+│   ├── classes.json     # 对象类型（Metric/DiagnosisCheck/Playbook/WorkflowStage…）v0.1.1
+│   ├── relations.json   # 关系类型 v0.1.2（22 种，含 ad:implements；P3 扩 domain/range）
 │   ├── terms.json       # SKOS-lite 术语（term_id + 消歧 + alt_labels）
 │   └── rules.json       # 契约规则（铁律/阈值/冲突登记指针）
 ├── instances/     # 实例层：按集群分片，<cluster>.nodes.json + <cluster>.edges.json
-│   └── meta-ads-diagnosis.*   # P2 试点：257 节点 / 570 边
+│   ├── meta-ads-diagnosis.*   # P2 试点：257 节点 / 570 边
+│   ├── ad-fundamentals.*      # P3：92 / 103（算法字段/竞价链路/生命周期）
+│   ├── business-context.*     # P3：81 / 78（受众分层/MP方法论/人群画像/触点）
+│   ├── influencer-boost.*     # P3：29 / 56（加推 loop+13 agents）
+│   ├── architecture-competitor.* # P3：81 / 91（S1架构+竞品）
+│   └── platform-ops-kb.*      # P3：71 / 112（外部KB 70 对象，object_id 溯源）
 ├── tools/
 │   └── validate.py     # 校验器：schema 一致性 + 溯源完整性 + domain/range
 └── provenance/    # 溯源约定见下（实际以边上 ref 字段承载）

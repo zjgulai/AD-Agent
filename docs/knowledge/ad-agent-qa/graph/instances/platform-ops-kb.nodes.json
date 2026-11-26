@@ -1,0 +1,1072 @@
+{
+ "graph": "ad-ops",
+ "cluster": "platform-ops-kb",
+ "generated": "2026-11-26",
+ "coverage_notes": "platform-ops-wiki广告域对象:profiles6/capabilities7/metrics6/rules15(排除amazon非广告3)/scenarios10/workflows11/overlays4/cases+experiments11=70对象。排除:PR editorial系、amazon PDP/评论/账户健康规则(非广告域)、source-register/governance/monitoring目录。全部external_status=review待业务复核。",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-26"
+ },
+ "nodes": [
+  {
+   "@id": "ad:src:pops-kb",
+   "@type": "ad:SourceDoc",
+   "label": "platform-ops-wiki知识库",
+   "props": {
+    "repo": "github.com/zjgulai/platform-operations-wiki",
+    "desc": "跨境电商平台运营决策知识系统;49 canonical objects全review状态;本shard仅收录广告投放域相关对象"
+   },
+   "src": [
+    "platform-operations-wiki:docs/knowledge/platform-ops-kb/index.md"
+   ]
+  },
+  {
+   "@id": "ad:platform:amazon",
+   "@type": "ad:Platform",
+   "label": "Amazon US",
+   "props": {
+    "object_id": "platform-profile-amazon-us",
+    "market": "us",
+    "external_status": "review",
+    "external_freshness": "watch"
+   },
+   "src": [
+    "platform-operations-wiki:20-platform-profiles/platform-profile-amazon-us-review.md#object_id=platform-profile-amazon-us"
+   ]
+  },
+  {
+   "@id": "ad:platform:youtube",
+   "@type": "ad:Platform",
+   "label": "YouTube Offsite US",
+   "props": {
+    "object_id": "platform-profile-youtube-offsite-us",
+    "market": "us",
+    "external_status": "review",
+    "external_freshness": "watch"
+   },
+   "src": [
+    "platform-operations-wiki:20-platform-profiles/platform-profile-youtube-offsite-us-review.md#object_id=platform-profile-youtube-offsite-us"
+   ]
+  },
+  {
+   "@id": "ad:platform:dtc-site",
+   "@type": "ad:Platform",
+   "label": "DTC独立站US",
+   "props": {
+    "object_id": "platform-profile-dtc-site-us",
+    "market": "us",
+    "external_status": "review",
+    "external_freshness": "watch"
+   },
+   "src": [
+    "platform-operations-wiki:20-platform-profiles/platform-profile-dtc-site-us-review.md#object_id=platform-profile-dtc-site-us"
+   ]
+  },
+  {
+   "@id": "ad:platform:tiktok-shop",
+   "@type": "ad:Platform",
+   "label": "TikTok Shop US",
+   "props": {
+    "object_id": "platform-profile-tiktok-shop-us",
+    "market": "us",
+    "external_status": "review",
+    "external_freshness": "watch"
+   },
+   "src": [
+    "platform-operations-wiki:20-platform-profiles/platform-profile-tiktok-shop-us-review.md#object_id=platform-profile-tiktok-shop-us"
+   ]
+  },
+  {
+   "@id": "ad:platform:meta-offsite",
+   "@type": "ad:Platform",
+   "label": "Meta Offsite US",
+   "props": {
+    "object_id": "platform-profile-meta-offsite-us",
+    "market": "us",
+    "external_status": "review",
+    "external_freshness": "watch"
+   },
+   "src": [
+    "platform-operations-wiki:20-platform-profiles/platform-profile-meta-offsite-us-review.md#object_id=platform-profile-meta-offsite-us"
+   ]
+  },
+  {
+   "@id": "ad:channel:affiliate",
+   "@type": "ad:Channel",
+   "label": "Affiliate Marketing US",
+   "props": {
+    "object_id": "platform-profile-affiliate-marketing-us",
+    "market": "us",
+    "kind": "channel_profile",
+    "note": "达人联盟营销,邻接influencer-boost域"
+   },
+   "src": [
+    "platform-operations-wiki:20-platform-profiles/platform-profile-affiliate-marketing-us-review.md#object_id=platform-profile-affiliate-marketing-us"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:amazon-ads-prompts",
+   "@type": "ad:AdProduct",
+   "label": "Amazon Ads Prompts",
+   "props": {
+    "object_id": "capability-amazon-ads-prompts-us",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/capability-amazon-ads-prompts-us-review.md#object_id=capability-amazon-ads-prompts-us"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:amazon-sponsored-brands",
+   "@type": "ad:AdProduct",
+   "label": "Amazon Sponsored Brands Collections",
+   "props": {
+    "object_id": "capability-amazon-sponsored-brands-collections-us",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/capability-amazon-sponsored-brands-collections-us-review.md#object_id=capability-amazon-sponsored-brands-collections-us"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:ig-creator-marketplace",
+   "@type": "ad:AdProduct",
+   "label": "Instagram Creator Marketplace",
+   "props": {
+    "object_id": "capability-instagram-creator-marketplace-us",
+    "platform": "meta",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/capability-instagram-creator-marketplace-us-review.md#object_id=capability-instagram-creator-marketplace-us"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:meta-partnership-ads",
+   "@type": "ad:AdProduct",
+   "label": "Meta Partnership Ads",
+   "props": {
+    "object_id": "capability-meta-partnership-ads-us",
+    "platform": "meta",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/capability-meta-partnership-ads-us-review.md#object_id=capability-meta-partnership-ads-us"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:shopify-collabs",
+   "@type": "ad:AdProduct",
+   "label": "Shopify Collabs",
+   "props": {
+    "object_id": "capability-shopify-collabs-us",
+    "platform": "dtc-site",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/capability-shopify-collabs-us-review.md#object_id=capability-shopify-collabs-us"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:tiktok-gmv-max",
+   "@type": "ad:AdProduct",
+   "label": "TikTok Shop GMV Max",
+   "props": {
+    "object_id": "capability-tiktok-gmv-max-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/capability-tiktok-gmv-max-us-review.md#object_id=capability-tiktok-gmv-max-us"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:youtube-shopping",
+   "@type": "ad:AdProduct",
+   "label": "YouTube Shopping Collections",
+   "props": {
+    "object_id": "capability-youtube-shopping-collections-us",
+    "platform": "youtube",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/capability-youtube-shopping-collections-us-review.md#object_id=capability-youtube-shopping-collections-us"
+   ]
+  },
+  {
+   "@id": "ad:metric:amazon-acos",
+   "@type": "ad:Metric",
+   "label": "ACoS广告花费销售比",
+   "props": {
+    "object_id": "metric-amazon-acos-us",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/metric-amazon-acos-us-review.md#object_id=metric-amazon-acos-us"
+   ]
+  },
+  {
+   "@id": "ad:metric:amazon-tacos",
+   "@type": "ad:Metric",
+   "label": "TACoS总广告花费销售比",
+   "props": {
+    "object_id": "metric-amazon-tacos-us",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/metric-amazon-tacos-us-review.md#object_id=metric-amazon-tacos-us"
+   ]
+  },
+  {
+   "@id": "ad:metric:dtc-lp-cvr",
+   "@type": "ad:Metric",
+   "label": "DTC落地页CVR",
+   "props": {
+    "object_id": "metric-dtc-landing-page-cvr-us",
+    "platform": "dtc-site",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/metric-dtc-landing-page-cvr-us-review.md#object_id=metric-dtc-landing-page-cvr-us"
+   ]
+  },
+  {
+   "@id": "ad:metric:tiktok-nbfr",
+   "@type": "ad:Metric",
+   "label": "NBFR非买家退货率",
+   "props": {
+    "object_id": "metric-tiktok-nbfr-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/metric-tiktok-nbfr-us-review.md#object_id=metric-tiktok-nbfr-us"
+   ]
+  },
+  {
+   "@id": "ad:metric:tiktok-voc-index",
+   "@type": "ad:Metric",
+   "label": "TikTok商品VoC指数",
+   "props": {
+    "object_id": "metric-tiktok-product-voc-index-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/metric-tiktok-product-voc-index-us-review.md#object_id=metric-tiktok-product-voc-index-us"
+   ]
+  },
+  {
+   "@id": "ad:metric:tiktok-sps",
+   "@type": "ad:Metric",
+   "label": "TikTok Shop绩效分SPS",
+   "props": {
+    "object_id": "metric-tiktok-sps-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:40-metric-and-capability-cards/metric-tiktok-sps-us-review.md#object_id=metric-tiktok-sps-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-meta-ads-review",
+   "@type": "ad:Rule",
+   "label": "Meta广告审核规则",
+   "props": {
+    "object_id": "rule-meta-ads-review-us",
+    "platform": "meta",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-meta-ads-review-us-review.md#object_id=rule-meta-ads-review-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-meta-partnership",
+   "@type": "ad:Rule",
+   "label": "Meta Partnership Ads品牌内容规则",
+   "props": {
+    "object_id": "rule-meta-partnership-branded-content-us",
+    "platform": "meta",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-meta-partnership-branded-content-us-review.md#object_id=rule-meta-partnership-branded-content-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-google-shopping",
+   "@type": "ad:Rule",
+   "label": "Google Shopping广告规则",
+   "props": {
+    "object_id": "rule-google-shopping-ads-us",
+    "platform": "google",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-google-shopping-ads-us-review.md#object_id=rule-google-shopping-ads-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-google-healthcare",
+   "@type": "ad:Rule",
+   "label": "Google医疗药品广告规则",
+   "props": {
+    "object_id": "rule-google-healthcare-and-medicines-us",
+    "platform": "google",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-google-healthcare-and-medicines-us-review.md#object_id=rule-google-healthcare-and-medicines-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-tiktok-affiliate",
+   "@type": "ad:Rule",
+   "label": "TikTok联盟营销规则",
+   "props": {
+    "object_id": "rule-tiktok-affiliate-marketing-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-tiktok-affiliate-marketing-us-review.md#object_id=rule-tiktok-affiliate-marketing-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-tiktok-content",
+   "@type": "ad:Rule",
+   "label": "TikTok内容政策",
+   "props": {
+    "object_id": "rule-tiktok-content-policy-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-tiktok-content-policy-us-review.md#object_id=rule-tiktok-content-policy-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-tiktok-creator-elig",
+   "@type": "ad:Rule",
+   "label": "TikTok达人准入资格",
+   "props": {
+    "object_id": "rule-tiktok-creator-eligibility-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-tiktok-creator-eligibility-us-review.md#object_id=rule-tiktok-creator-eligibility-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-tiktok-listing",
+   "@type": "ad:Rule",
+   "label": "TikTok商品上架规则",
+   "props": {
+    "object_id": "rule-tiktok-product-listing-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-tiktok-product-listing-us-review.md#object_id=rule-tiktok-product-listing-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-tiktok-prohibited",
+   "@type": "ad:Rule",
+   "label": "TikTok违禁品规则",
+   "props": {
+    "object_id": "rule-tiktok-prohibited-products-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-tiktok-prohibited-products-us-review.md#object_id=rule-tiktok-prohibited-products-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-tiktok-returns",
+   "@type": "ad:Rule",
+   "label": "TikTok退货退款规则",
+   "props": {
+    "object_id": "rule-tiktok-returns-refunds-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-tiktok-returns-refunds-us-review.md#object_id=rule-tiktok-returns-refunds-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-tiktok-seller",
+   "@type": "ad:Rule",
+   "label": "TikTok卖家条款",
+   "props": {
+    "object_id": "rule-tiktok-seller-terms-us",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-tiktok-seller-terms-us-review.md#object_id=rule-tiktok-seller-terms-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-youtube-paid-promo",
+   "@type": "ad:Rule",
+   "label": "YouTube付费推广披露",
+   "props": {
+    "object_id": "rule-youtube-paid-promotions-us",
+    "platform": "youtube",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-youtube-paid-promotions-us-review.md#object_id=rule-youtube-paid-promotions-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-youtube-tagging",
+   "@type": "ad:Rule",
+   "label": "YouTube商品标记规则",
+   "props": {
+    "object_id": "rule-youtube-product-tagging-us",
+    "platform": "youtube",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-youtube-product-tagging-us-review.md#object_id=rule-youtube-product-tagging-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-ftc-endorsement",
+   "@type": "ad:Rule",
+   "label": "FTC代言披露规则",
+   "props": {
+    "object_id": "rule-ftc-endorsement-disclosures-us",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-ftc-endorsement-disclosures-us-review.md#object_id=rule-ftc-endorsement-disclosures-us"
+   ]
+  },
+  {
+   "@id": "ad:rule:pops-ftc-reviews",
+   "@type": "ad:Rule",
+   "label": "FTC评论与证言规则",
+   "props": {
+    "object_id": "rule-ftc-reviews-and-testimonials-us",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:30-rule-cards/rule-ftc-reviews-and-testimonials-us-review.md#object_id=rule-ftc-reviews-and-testimonials-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-amazon-neg-filter",
+   "@type": "ad:Playbook",
+   "label": "Amazon负向流量过滤",
+   "props": {
+    "object_id": "scenario-amazon-negative-traffic-filtering-us",
+    "kind": "scenario_package",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-amazon-negative-traffic-filtering-us-review.md#object_id=scenario-amazon-negative-traffic-filtering-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-amazon-pdp-cvr",
+   "@type": "ad:Playbook",
+   "label": "Amazon PDP转化优化",
+   "props": {
+    "object_id": "scenario-amazon-pdp-conversion-optimization-us",
+    "kind": "scenario_package",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-amazon-pdp-conversion-optimization-us-review.md#object_id=scenario-amazon-pdp-conversion-optimization-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-baby-maternity-growth",
+   "@type": "ad:Playbook",
+   "label": "母婴跨平台增长",
+   "props": {
+    "object_id": "scenario-baby-and-maternity-cross-platform-growth-us",
+    "kind": "scenario_package",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-baby-and-maternity-cross-platform-growth-us-review.md#object_id=scenario-baby-and-maternity-cross-platform-growth-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-beauty-education",
+   "@type": "ad:Playbook",
+   "label": "个护美妆教育商务",
+   "props": {
+    "object_id": "scenario-beauty-and-personal-care-education-commerce-us",
+    "kind": "scenario_package",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-beauty-and-personal-care-education-commerce-us-review.md#object_id=scenario-beauty-and-personal-care-education-commerce-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-creator-compliance",
+   "@type": "ad:Playbook",
+   "label": "达人商业合规",
+   "props": {
+    "object_id": "scenario-creator-commercial-compliance-us",
+    "kind": "scenario_package",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-creator-commercial-compliance-us-review.md#object_id=scenario-creator-commercial-compliance-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-cross-platform-launch",
+   "@type": "ad:Playbook",
+   "label": "跨平台上市决策",
+   "props": {
+    "object_id": "scenario-cross-platform-launch-decision-us",
+    "kind": "scenario_package",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-cross-platform-launch-decision-us-review.md#object_id=scenario-cross-platform-launch-decision-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-dtc-traffic-capture",
+   "@type": "ad:Playbook",
+   "label": "DTC流量捕获",
+   "props": {
+    "object_id": "scenario-dtc-traffic-capture-us",
+    "kind": "scenario_package",
+    "platform": "dtc-site",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-dtc-traffic-capture-us-review.md#object_id=scenario-dtc-traffic-capture-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-review-acq-compliance",
+   "@type": "ad:Playbook",
+   "label": "评论获取合规",
+   "props": {
+    "object_id": "scenario-review-acquisition-compliance-us",
+    "kind": "scenario_package",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-review-acquisition-compliance-us-review.md#object_id=scenario-review-acquisition-compliance-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-sports-proof",
+   "@type": "ad:Playbook",
+   "label": "运动户外功能证明商务",
+   "props": {
+    "object_id": "scenario-sports-and-outdoors-function-proof-commerce-us",
+    "kind": "scenario_package",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-sports-and-outdoors-function-proof-commerce-us-review.md#object_id=scenario-sports-and-outdoors-function-proof-commerce-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-tiktok-affiliate-ready",
+   "@type": "ad:Playbook",
+   "label": "TikTok联盟就绪",
+   "props": {
+    "object_id": "scenario-tiktok-affiliate-readiness-us",
+    "kind": "scenario_package",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:50-scenario-packages/scenario-tiktok-affiliate-readiness-us-review.md#object_id=scenario-tiktok-affiliate-readiness-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-affiliate-seeding",
+   "@type": "ad:Playbook",
+   "label": "联盟种草商业就绪",
+   "props": {
+    "object_id": "workflow-affiliate-seeding-commercial-readiness-us",
+    "kind": "workflow_module",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-affiliate-seeding-commercial-readiness-us-review.md#object_id=workflow-affiliate-seeding-commercial-readiness-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-creator-brief",
+   "@type": "ad:Playbook",
+   "label": "达人Brief组装",
+   "props": {
+    "object_id": "workflow-creator-brief-assembly-us",
+    "kind": "workflow_module",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-creator-brief-assembly-us-review.md#object_id=workflow-creator-brief-assembly-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-creator-outreach",
+   "@type": "ad:Playbook",
+   "label": "达人外联披露审核",
+   "props": {
+    "object_id": "workflow-creator-outreach-disclosure-review-us",
+    "kind": "workflow_module",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-creator-outreach-disclosure-review-us-review.md#object_id=workflow-creator-outreach-disclosure-review-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-creator-roster",
+   "@type": "ad:Playbook",
+   "label": "达人名单优先级",
+   "props": {
+    "object_id": "workflow-creator-roster-prioritization-us",
+    "kind": "workflow_module",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-creator-roster-prioritization-us-review.md#object_id=workflow-creator-roster-prioritization-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-dtc-lp-handoff",
+   "@type": "ad:Playbook",
+   "label": "DTC落地页交接",
+   "props": {
+    "object_id": "workflow-dtc-landing-page-handoff-us",
+    "kind": "workflow_module",
+    "platform": "dtc-site",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-dtc-landing-page-handoff-us-review.md#object_id=workflow-dtc-landing-page-handoff-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-meta-creator-amp",
+   "@type": "ad:Playbook",
+   "label": "Meta达人内容放大",
+   "props": {
+    "object_id": "workflow-meta-creator-amplification-us",
+    "kind": "workflow_module",
+    "platform": "meta",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-meta-creator-amplification-us-review.md#object_id=workflow-meta-creator-amplification-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-entry-precheck",
+   "@type": "ad:Playbook",
+   "label": "平台准入合规预检",
+   "props": {
+    "object_id": "workflow-platform-entry-compliance-precheck-us",
+    "kind": "workflow_module",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-platform-entry-compliance-precheck-us-review.md#object_id=workflow-platform-entry-compliance-precheck-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-review-collection",
+   "@type": "ad:Playbook",
+   "label": "评论收集合规",
+   "props": {
+    "object_id": "workflow-review-collection-compliance-us",
+    "kind": "workflow_module",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-review-collection-compliance-us-review.md#object_id=workflow-review-collection-compliance-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-tiktok-aff-readiness",
+   "@type": "ad:Playbook",
+   "label": "TikTok联盟就绪检查",
+   "props": {
+    "object_id": "workflow-tiktok-affiliate-readiness-check-us",
+    "kind": "workflow_module",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-tiktok-affiliate-readiness-check-us-review.md#object_id=workflow-tiktok-affiliate-readiness-check-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-youtube-tagging",
+   "@type": "ad:Playbook",
+   "label": "YouTube商品标记发布",
+   "props": {
+    "object_id": "workflow-youtube-product-tagging-publish-us",
+    "kind": "workflow_module",
+    "platform": "youtube",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-youtube-product-tagging-publish-us-review.md#object_id=workflow-youtube-product-tagging-publish-us"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pops-wf-youtube-shopping-pub",
+   "@type": "ad:Playbook",
+   "label": "YouTube Shopping合辑发布",
+   "props": {
+    "object_id": "workflow-youtube-shopping-collection-publishing-us",
+    "kind": "workflow_module",
+    "platform": "youtube",
+    "market": "us",
+    "external_status": "review"
+   },
+   "src": [
+    "platform-operations-wiki:60-workflow-modules/workflow-youtube-shopping-collection-publishing-us-review.md#object_id=workflow-youtube-shopping-collection-publishing-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-overlay-baby",
+   "@type": "ad:KnowledgeAsset",
+   "label": "母婴类目Overlay",
+   "props": {
+    "object_id": "overlay-baby-and-maternity-us",
+    "kind": "overlay",
+    "platform": "cross-platform",
+    "market": "us/eu",
+    "external_status": "review",
+    "external_risk": "critical",
+    "note": "Momcozy主品类"
+   },
+   "src": [
+    "platform-operations-wiki:70-category-overlays/category-overlay-baby-and-maternity-us-review.md#object_id=overlay-baby-and-maternity-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-overlay-beauty",
+   "@type": "ad:KnowledgeAsset",
+   "label": "个护美妆类目Overlay",
+   "props": {
+    "object_id": "overlay-beauty-and-personal-care-us",
+    "kind": "overlay",
+    "platform": "cross-platform",
+    "market": "us/eu",
+    "external_status": "review",
+    "external_risk": "critical",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:70-category-overlays/category-overlay-beauty-and-personal-care-us-review.md#object_id=overlay-beauty-and-personal-care-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-overlay-sports",
+   "@type": "ad:KnowledgeAsset",
+   "label": "运动户外类目Overlay",
+   "props": {
+    "object_id": "overlay-sports-and-outdoors-us",
+    "kind": "overlay",
+    "platform": "cross-platform",
+    "market": "us/eu",
+    "external_status": "review",
+    "external_risk": "high",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:70-category-overlays/category-overlay-sports-and-outdoors-us-review.md#object_id=overlay-sports-and-outdoors-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-overlay-europe",
+   "@type": "ad:KnowledgeAsset",
+   "label": "欧洲市场跨平台Overlay",
+   "props": {
+    "object_id": "market-overlay-europe-cross-platform",
+    "kind": "overlay",
+    "platform": "cross-platform",
+    "market": "us/eu",
+    "external_status": "review",
+    "external_risk": "",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:70-category-overlays/market-overlay-europe-cross-platform-review.md#object_id=market-overlay-europe-cross-platform"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-case-momcozy-pump",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Momcozy吸奶器评测模式案例",
+   "props": {
+    "object_id": "case-momcozy-pumping-milk-wearable-pump-review-pattern-us",
+    "kind": "case_record",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "high",
+    "note": "Momcozy真实案例"
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/case-momcozy-pumping-milk-wearable-pump-review-pattern-us-review.md#object_id=case-momcozy-pumping-milk-wearable-pump-review-pattern-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-case-meta-seeding",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Meta社群种草与评论风险案例",
+   "props": {
+    "object_id": "case-meta-community-seeding-and-review-risk-us",
+    "kind": "case_record",
+    "platform": "meta",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "high",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/case-meta-community-seeding-and-review-risk-us-review.md#object_id=case-meta-community-seeding-and-review-risk-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-case-dtc-traffic",
+   "@type": "ad:KnowledgeAsset",
+   "label": "DTC多渠道流量捕获案例",
+   "props": {
+    "object_id": "case-dtc-multi-channel-traffic-capture-us",
+    "kind": "case_record",
+    "platform": "dtc-site",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "medium",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/case-dtc-multi-channel-traffic-capture-us-review.md#object_id=case-dtc-multi-channel-traffic-capture-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-case-cerave",
+   "@type": "ad:KnowledgeAsset",
+   "label": "CeraVe成分教育商务案例",
+   "props": {
+    "object_id": "case-cerave-routine-authority-education-commerce-us",
+    "kind": "case_record",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "high",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/case-cerave-routine-authority-education-commerce-us-review.md#object_id=case-cerave-routine-authority-education-commerce-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-case-owala",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Owala功能证明对比商务案例",
+   "props": {
+    "object_id": "case-owala-freesip-functional-proof-and-comparison-commerce-us",
+    "kind": "case_record",
+    "platform": "cross-platform",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "medium",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/case-owala-freesip-functional-proof-and-comparison-commerce-us-review.md#object_id=case-owala-freesip-functional-proof-and-comparison-commerce-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-case-youtube-micro",
+   "@type": "ad:KnowledgeAsset",
+   "label": "YouTube微达人筛选案例",
+   "props": {
+    "object_id": "case-youtube-microcreator-screening-us",
+    "kind": "case_record",
+    "platform": "youtube",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "medium",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/case-youtube-microcreator-screening-us-review.md#object_id=case-youtube-microcreator-screening-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-exp-amazon-ads-loop",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Amazon广告诊断循环实验",
+   "props": {
+    "object_id": "experiment-amazon-ads-diagnostic-loop-us",
+    "kind": "experiment_record",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "medium",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/experiment-amazon-ads-diagnostic-loop-us-review.md#object_id=experiment-amazon-ads-diagnostic-loop-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-exp-amazon-cosmo",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Amazon COSMO/Rufus就绪实验",
+   "props": {
+    "object_id": "experiment-amazon-cosmo-rufus-readiness-us",
+    "kind": "experiment_record",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/experiment-amazon-cosmo-rufus-readiness-us-review.md#object_id=experiment-amazon-cosmo-rufus-readiness-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-exp-amazon-neg-kw",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Amazon上线前否定词过滤实验",
+   "props": {
+    "object_id": "experiment-amazon-prelaunch-negative-keyword-filtering-us",
+    "kind": "experiment_record",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/experiment-amazon-prelaunch-negative-keyword-filtering-us-review.md#object_id=experiment-amazon-prelaunch-negative-keyword-filtering-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-exp-amazon-sb-sp",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Amazon SB/SP协同放量实验",
+   "props": {
+    "object_id": "experiment-amazon-sb-sp-coordination-scaling-us",
+    "kind": "experiment_record",
+    "platform": "amazon",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/experiment-amazon-sb-sp-coordination-scaling-us-review.md#object_id=experiment-amazon-sb-sp-coordination-scaling-us"
+   ]
+  },
+  {
+   "@id": "ad:asset:pops-exp-tiktok-gmv",
+   "@type": "ad:KnowledgeAsset",
+   "label": "TikTok达人追踪与GMV Max实验",
+   "props": {
+    "object_id": "experiment-tiktok-creator-tracking-and-gmv-max-us",
+    "kind": "experiment_record",
+    "platform": "tiktok-shop",
+    "market": "us",
+    "external_status": "review",
+    "external_risk": "high",
+    "note": ""
+   },
+   "src": [
+    "platform-operations-wiki:80-case-and-experiment-records/experiment-tiktok-creator-tracking-and-gmv-max-us-review.md#object_id=experiment-tiktok-creator-tracking-and-gmv-max-us"
+   ]
+  }
+ ]
+}

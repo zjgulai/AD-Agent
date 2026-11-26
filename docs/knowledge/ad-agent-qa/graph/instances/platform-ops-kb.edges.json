@@ -1,0 +1,692 @@
+{
+ "graph": "ad-ops",
+ "cluster": "platform-ops-kb",
+ "generated": "2026-11-26",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-26"
+ },
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:platform:amazon",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:platform:youtube",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:platform:dtc-site",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:platform:tiktok-shop",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:platform:meta-offsite",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:channel:affiliate",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:amazon-ads-prompts",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:amazon-sponsored-brands",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:ig-creator-marketplace",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:meta-partnership-ads",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:shopify-collabs",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:tiktok-gmv-max",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:adproduct:youtube-shopping",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:amazon-acos",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:amazon-tacos",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:dtc-lp-cvr",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:tiktok-nbfr",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:tiktok-voc-index",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:tiktok-sps",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-meta-ads-review",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-meta-partnership",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-google-shopping",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-google-healthcare",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-tiktok-affiliate",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-tiktok-content",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-tiktok-creator-elig",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-tiktok-listing",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-tiktok-prohibited",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-tiktok-returns",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-tiktok-seller",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-youtube-paid-promo",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-youtube-tagging",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-ftc-endorsement",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:pops-ftc-reviews",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-amazon-neg-filter",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-amazon-pdp-cvr",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-baby-maternity-growth",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-beauty-education",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-creator-compliance",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-cross-platform-launch",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-dtc-traffic-capture",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-review-acq-compliance",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-sports-proof",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-tiktok-affiliate-ready",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-affiliate-seeding",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-creator-brief",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-creator-outreach",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-creator-roster",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-dtc-lp-handoff",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-meta-creator-amp",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-entry-precheck",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-review-collection",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-tiktok-aff-readiness",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-youtube-tagging",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pops-wf-youtube-shopping-pub",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-overlay-baby",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-overlay-beauty",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-overlay-sports",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-overlay-europe",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-case-momcozy-pump",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-case-meta-seeding",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-case-dtc-traffic",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-case-cerave",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-case-owala",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-case-youtube-micro",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-exp-amazon-ads-loop",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-exp-amazon-cosmo",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-exp-amazon-neg-kw",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-exp-amazon-sb-sp",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:pops-exp-tiktok-gmv",
+   "target": "ad:src:pops-kb",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:amazon-ads-prompts",
+   "target": "ad:platform:amazon",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#amazon"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:amazon-sponsored-brands",
+   "target": "ad:platform:amazon",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#amazon"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:ig-creator-marketplace",
+   "target": "ad:platform:meta-offsite",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#meta"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:meta-partnership-ads",
+   "target": "ad:platform:meta-offsite",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#meta"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:shopify-collabs",
+   "target": "ad:platform:dtc-site",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#dtc-site"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:tiktok-gmv-max",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:adproduct:youtube-shopping",
+   "target": "ad:platform:youtube",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#youtube"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:metric:amazon-acos",
+   "target": "ad:platform:amazon",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#amazon"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:metric:amazon-tacos",
+   "target": "ad:platform:amazon",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#amazon"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:metric:dtc-lp-cvr",
+   "target": "ad:platform:dtc-site",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#dtc-site"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:metric:tiktok-nbfr",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:metric:tiktok-voc-index",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:metric:tiktok-sps",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-meta-ads-review",
+   "target": "ad:platform:meta-offsite",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#meta"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-meta-partnership",
+   "target": "ad:platform:meta-offsite",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#meta"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-google-shopping",
+   "target": "ad:platform:google",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#google"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-google-healthcare",
+   "target": "ad:platform:google",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#google"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-tiktok-affiliate",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-tiktok-content",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-tiktok-creator-elig",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-tiktok-listing",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-tiktok-prohibited",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-tiktok-returns",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-tiktok-seller",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-youtube-paid-promo",
+   "target": "ad:platform:youtube",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#youtube"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:rule:pops-youtube-tagging",
+   "target": "ad:platform:youtube",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#youtube"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-amazon-neg-filter",
+   "target": "ad:platform:amazon",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#amazon"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-amazon-pdp-cvr",
+   "target": "ad:platform:amazon",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#amazon"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-dtc-traffic-capture",
+   "target": "ad:platform:dtc-site",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#dtc-site"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-tiktok-affiliate-ready",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-wf-dtc-lp-handoff",
+   "target": "ad:platform:dtc-site",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#dtc-site"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-wf-meta-creator-amp",
+   "target": "ad:platform:meta-offsite",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#meta"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-wf-tiktok-aff-readiness",
+   "target": "ad:platform:tiktok-shop",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#tiktok-shop"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-wf-youtube-tagging",
+   "target": "ad:platform:youtube",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#youtube"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:pops-wf-youtube-shopping-pub",
+   "target": "ad:platform:youtube",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb#youtube"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:platform:tiktok-shop",
+   "target": "ad:platform:tiktok",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb",
+   "note": "Shop是TikTok广告体系子面"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:platform:meta-offsite",
+   "target": "ad:platform:meta",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb",
+   "note": "Offsite=站外引流场景"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:pops-exp-tiktok-gmv",
+   "target": "ad:adproduct:tiktok-gmv-max",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb",
+   "note": "实验验证GMV Max能力"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:pops-tiktok-affiliate-ready",
+   "target": "ad:playbook:pops-wf-tiktok-aff-readiness",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb",
+   "note": "场景包依赖工作流"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:playbook:pops-wf-meta-creator-amp",
+   "target": "ad:loop:influencer-boost",
+   "ref": "card:influencer-boost/influencer-boost-loop-overview.md",
+   "note": "pops工作流与influencer-boost loop同域"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:pops-case-momcozy-pump",
+   "target": "ad:product:momcozy-pump-x1",
+   "ref": "card:business-context/momcozy-audience-persona.md",
+   "note": "Momcozy案例佐证"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:pops-exp-amazon-ads-loop",
+   "target": "ad:metric:amazon-acos",
+   "ref": "platform-operations-wiki/docs/knowledge/platform-ops-kb",
+   "note": "诊断循环使用ACoS等指标"
+  }
+ ]
+}
