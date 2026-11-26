@@ -55,6 +55,20 @@ experience/EXP-*.md                 # 草稿卡：启发式信号聚合，status
 - `review.verdict`：`pending → approved / rejected / needs-info`
 - `review.action`：promoted 时回填实际修订位置（文件/commit/边 id）
 
+## 自动扫描（launchd）
+
+已注册 `com.ad-agent-qa.exp-scan`：**每天 09:00** 自动跑 `python -m experience_drafter scan`
+（工作目录 `src/`，无日志时空转 exit 0，幂等）。plist 在 `~/Library/LaunchAgents/`，
+运行输出在 `/tmp/exp_scan.log`。
+
+```bash
+launchctl list | grep exp-scan          # 查看状态/上次退出码
+launchctl kickstart -k gui/$(id -u)/com.ad-agent-qa.exp-scan   # 手动触发一次
+tail -f /tmp/exp_scan.log               # 看扫描输出
+```
+
+停用：`launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.ad-agent-qa.exp-scan.plist`
+
 ## 人审 SOP
 
 ```bash
