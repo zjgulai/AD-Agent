@@ -8,7 +8,7 @@ created: 2026-11-26
 updated: 2026-11-26
 owner: self
 source: human+ai
-source_docs: [PO:capability-tiktok-gmv-max-us, PO:metric-tiktok-sps-us, PO:metric-tiktok-nbfr-us, PO:metric-tiktok-voc-index-us, PO:scenario-tiktok-affiliate-readiness-us, PO:workflow-tiktok-affiliate-readiness-check-us, PO:experiment-tiktok-creator-tracking-and-gmv-max-us]
+source_docs: [PO:capability-tiktok-gmv-max-us, PO:metric-tiktok-sps-us, PO:metric-tiktok-nbfr-us, PO:metric-tiktok-product-voc-index-us, PO:scenario-tiktok-affiliate-readiness-us, PO:workflow-tiktok-affiliate-readiness-check-us, PO:experiment-tiktok-creator-tracking-and-gmv-max-us]
 fetched_at: 2026-11-26
 ---
 

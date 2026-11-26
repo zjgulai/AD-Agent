@@ -19,3 +19,5 @@ jobs:
         run: python -m pytest tests/ -q
       - name: graph validate
         run: python docs/knowledge/ad-agent-qa/graph/tools/validate.py
+      - name: kb audit
+        run: cd src && python -m kb_audit --strict
