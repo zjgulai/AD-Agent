@@ -403,6 +403,9 @@ def make_handler(client: lark.Client, kb: KnowledgeBase, settings: Settings, bot
         if not _should_answer(msg, bot_open_id):
             return
         question = _extract_text(msg.message_type, msg.content)
+        if question:
+            # 飞书把 @提及 编码为 @_user_N 占位符，清洗后再检索/记录
+            question = re.sub(r"@_user_\d+\s*", "", question).strip()
         if not question:
             if msg.message_type not in {"text", "post"}:
                 _reply(client, msg.message_id, "暂只支持文本/富文本提问。")
