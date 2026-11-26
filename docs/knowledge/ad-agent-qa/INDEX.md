@@ -109,5 +109,6 @@ source: human+ai
 | 原子问答 | [qa/](qa/) | ~132 条自包含 Q→A 对（按集群分文件），每条带溯源。覆盖审计见 [qa/COVERAGE.md](qa/COVERAGE.md) |
 | 飞书机器人 | `src/kb_bot/`（项目根） | lark-oapi WebSocket + 本库检索 + OpenAI 兼容 LLM 的问答机器人 MVP |
 | 语义层 | [graph/](graph/) | 广告投放域知识图谱 v0：611 节点 / 1010 边（SKOS-lite 模式层 + JSON 实例层）。查询契约见 `src/graph_query/`，bot 已接入实体链接 |
+| 经验卡池 | [experience/](experience/) | 自进化飞轮：bot 日志信号→草稿卡→人审晋升为知识修订。扫描器 `src/experience_drafter.py` |
 
 > qa/ 与 cards/ 同为 `status: review`，随卡片验收同步转 stable。
