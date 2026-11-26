@@ -75,7 +75,7 @@ source: human+ai
 
 - 红人 BD/建联/谈判流程（库内只有授权环节）
 - 素材拍摄/创意制作方法论
-- Google/TikTok 平台级 Momcozy 投放 playbook（只有机制层+渠道数据层）
+- Google 平台级 Momcozy 投放 playbook（TikTok Shop/Amazon 已由 platform-ops 蒸馏卡覆盖，Google 仍只有机制层）
 - 系统性预算规划方法（只有阶段预算心态）
 - 团队组织/编制、合规申诉细节、多语言本地化、物流履约、价格促销机制
 - Zalify 竞品能力（源文档无权限）
@@ -84,5 +84,5 @@ source: human+ai
 
 ## 6. 使用方式
 
-- **人/Agent 直接用**：读本文档 → 按 §2 路由 → 读 qa/ 条目作答 → 按 §4 附引用
-- **机器人用**：`src/kb_bot/` 实现本规范的自动化版（检索→组装上下文→LLM 生成→附引用）
+- **人/Agent 直接用**：读本文档 → 按 §2 路由 → 读 qa/ 条目作答 → 按 §4 附引用；结构化关系问题（阈值口径、实体冲突、多跳线索）可用 `src/graph_query/` 包查图谱（契约见 `graph/README.md`）
+- **机器人用**：`src/kb_bot/` 实现本规范的自动化版（检索→图谱实体链接注入→LLM 生成→附引用）

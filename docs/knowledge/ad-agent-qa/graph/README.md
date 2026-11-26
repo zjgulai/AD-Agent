@@ -39,6 +39,23 @@ experience/        # 经验卡池（飞轮）：draft → approved → promoted 
 logs/              # bot 问答日志（gitignore）
 ```
 
+## 消费接口：graph_query 包
+
+`src/graph_query/` 是图谱的**多消费者查询契约**（P5 起，bot 为第一消费者，SCN-011 Agent 复用同一接口）：
+
+```python
+from graph_query import GraphIndex
+g = GraphIndex(Path("docs/knowledge/ad-agent-qa/graph"))
+g.resolve("EQ<4 会触发什么")      # → [EntityHit] 实体链接（label/id/term/bigram 打分）
+g.neighbors("ad:metric:eq")       # → [{direction, relation, other, ...}] 一阶邻居
+g.context_for("母婴类目 TikTok 上架资质")  # → 紧凑文本块，供 LLM 注入上下文
+g.stats()                          # → "610 nodes / 1010 edges / 18 terms"
+```
+
+- **CLI**：`python -m graph_query resolve "<问题>"` / `neighbors <node_id>` / `context "<问题>"`（需在 `src/` 下运行）
+- **bot 集成方式**：检索命中后追加一条 `source=graph:ad-ops` 的合成 chunk（`kind=graph`，score=0.0），与卡片资料并列进 LLM 上下文；图谱加载失败自动降级为纯文档检索
+- **查询语义**：实体链接（resolve）→ 一阶邻居+口径消歧（context_for）；多跳图遍历检索（P5 未做）留待日志证据驱动
+
 ## 约定
 
 - **ID 方案**：`ad:` 前缀。类 `ad:Metric`；术语 `ad:term:eq`；实例 `ad:metric:eq`；诊断节点 `ad:diag:s7:l0-02`（系统前缀 s4/s6/s7 区分编号体系）

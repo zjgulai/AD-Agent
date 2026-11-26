@@ -108,6 +108,6 @@ source: human+ai
 | 查询协议 | [QUERY.md](QUERY.md) | 问题类型→资源路由表 + 冲突处理规则 + 引用规范 + 知识边界声明。任何 agent 按此协议即可对话式使用本库 |
 | 原子问答 | [qa/](qa/) | ~132 条自包含 Q→A 对（按集群分文件），每条带溯源。覆盖审计见 [qa/COVERAGE.md](qa/COVERAGE.md) |
 | 飞书机器人 | `src/kb_bot/`（项目根） | lark-oapi WebSocket + 本库检索 + OpenAI 兼容 LLM 的问答机器人 MVP |
-| 语义层 | [graph/](graph/) | 广告投放域知识图谱（SKOS-lite 模式层 + JSON 实例层）。schema v0 评审中；实例层 P3 抽取 |
+| 语义层 | [graph/](graph/) | 广告投放域知识图谱 v0：611 节点 / 1010 边（SKOS-lite 模式层 + JSON 实例层）。查询契约见 `src/graph_query/`，bot 已接入实体链接 |
 
 > qa/ 与 cards/ 同为 `status: review`，随卡片验收同步转 stable。

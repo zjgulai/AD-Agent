@@ -27,6 +27,12 @@ from .config import DEFAULT_KB_ROOT, Settings, load_settings
 from .kb import Chunk, KnowledgeBase
 from .llm import chat as llm_chat
 
+try:
+    from graph_query import GraphIndex
+except ImportError:  # 兼容从 src/kb_bot 直接运行的场景
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from graph_query import GraphIndex
+
 _seen_messages: OrderedDict[str, None] = OrderedDict()
 _seen_max = 1000
 
@@ -184,8 +190,48 @@ def _reply(client: lark.Client, message_id: str, text: str | None = None, card: 
         print(f"[reply failed] code={resp.code} msg={resp.msg}", file=sys.stderr)
 
 
+_GRAPH: GraphIndex | None = None
+_GRAPH_FAILED = False
+
+
+def _get_graph(kb: KnowledgeBase) -> GraphIndex | None:
+    """惰性加载图谱；目录缺失或加载异常时返回 None（降级为纯检索）。"""
+    global _GRAPH, _GRAPH_FAILED
+    if _GRAPH is not None or _GRAPH_FAILED:
+        return _GRAPH
+    graph_dir = kb.kb_root / "graph"
+    try:
+        g = GraphIndex(graph_dir)
+        if g.nodes:
+            _GRAPH = g
+            print(f"graph loaded: {g.stats()}", file=sys.stderr)
+        else:
+            _GRAPH_FAILED = True
+    except Exception as exc:
+        _GRAPH_FAILED = True
+        print(f"[graph load failed] {exc}", file=sys.stderr)
+    return _GRAPH
+
+
+def _graph_entities(graph: GraphIndex, question: str) -> list[str]:
+    return [h.label for h in graph.resolve(question, limit=3)]
+
+
+def _augment_hits(kb: KnowledgeBase, hits: list, question: str) -> tuple[list, list[str]]:
+    """把图谱上下文作为一条合成 chunk 追加到检索结果末尾。"""
+    graph = _get_graph(kb)
+    if graph is None:
+        return hits, []
+    entities = _graph_entities(graph, question)
+    ctx = graph.context_for(question)
+    if not ctx:
+        return hits, entities
+    return hits + [(Chunk(text=ctx, source="graph:ad-ops", kind="graph"), 0.0)], entities
+
+
 async def _answer(kb: KnowledgeBase, settings: Settings, question: str) -> str:
     hits = kb.retrieve(question, top_k=settings.retrieve_top_k)
+    hits, _ = _augment_hits(kb, hits, question)
     if not hits:
         return "知识库暂无相关资料。可换个问法，或参考 qa/COVERAGE.md 的边界声明。"
     return await llm_chat(settings, question, hits)
@@ -204,6 +250,7 @@ def _handle_question(
 ) -> None:
     ts = datetime.datetime.now().isoformat(timespec="seconds")
     hits = kb.retrieve(question, top_k=settings.retrieve_top_k)
+    hits, graph_entities = _augment_hits(kb, hits, question)
     hit_summary = [
         {"kind": c.kind, "source": c.source, "score": round(s, 3)}
         for c, s in hits[:5]
@@ -227,6 +274,7 @@ def _handle_question(
             "chat_type": chat_type,
             "question": question,
             "hits": hit_summary,
+            "graph_entities": graph_entities,
             "answer": answer,
             "status": status,
         }
@@ -278,6 +326,13 @@ def main() -> None:
         kb = KnowledgeBase(DEFAULT_KB_ROOT)
         for chunk, score in kb.retrieve(q, top_k=8):
             print(f"[{score:.2f}] {chunk.kind} {chunk.source}\n  {chunk.text[:120]}…\n")
+        graph = _get_graph(kb)
+        if graph is not None:
+            entities = _graph_entities(graph, q)
+            print(f"graph entities: {entities}")
+            ctx = graph.context_for(q)
+            if ctx:
+                print(f"\n[graph context]\n{ctx}")
         return
 
     if "--ask" in argv:
