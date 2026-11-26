@@ -10,12 +10,15 @@
 from __future__ import annotations
 
 import asyncio
+import datetime
 import json
 import os
 import re
 import sys
+import threading
 from collections import OrderedDict
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
 import lark_oapi as lark
 from lark_oapi.api.im.v1 import P2ImMessageReceiveV1
@@ -26,6 +29,20 @@ from .llm import chat as llm_chat
 
 _seen_messages: OrderedDict[str, None] = OrderedDict()
 _seen_max = 1000
+
+_LOG_DIR = Path(__file__).resolve().parent / "logs"
+_log_lock = threading.Lock()
+
+
+def _log_qa(record: dict) -> None:
+    """问答日志：每条一行 JSONL，按天分文件。失败只打 stderr 不影响应答。"""
+    try:
+        _LOG_DIR.mkdir(parents=True, exist_ok=True)
+        day = datetime.date.today().isoformat()
+        with _log_lock, (_LOG_DIR / f"qa-{day}.jsonl").open("a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception as exc:
+        print(f"[log failed] {exc}", file=sys.stderr)
 
 
 def _extract_text(message_type: str, content: str) -> str | None:
@@ -177,13 +194,43 @@ async def _answer(kb: KnowledgeBase, settings: Settings, question: str) -> str:
 _executor = ThreadPoolExecutor(max_workers=4, thread_name_prefix="kb-answer")
 
 
-def _handle_question(client: lark.Client, kb: KnowledgeBase, settings: Settings, message_id: str, question: str) -> None:
+def _handle_question(
+    client: lark.Client,
+    kb: KnowledgeBase,
+    settings: Settings,
+    message_id: str,
+    question: str,
+    chat_type: str = "",
+) -> None:
+    ts = datetime.datetime.now().isoformat(timespec="seconds")
+    hits = kb.retrieve(question, top_k=settings.retrieve_top_k)
+    hit_summary = [
+        {"kind": c.kind, "source": c.source, "score": round(s, 3)}
+        for c, s in hits[:5]
+    ]
+    answer: str | None = None
+    status = "ok"
     try:
-        answer = asyncio.run(_answer(kb, settings, question))
+        if not hits:
+            answer = "知识库暂无相关资料。可换个问法，或参考 qa/COVERAGE.md 的边界声明。"
+        else:
+            answer = asyncio.run(llm_chat(settings, question, hits))
         _reply(client, message_id, card=_build_card(answer))
     except Exception as exc:  # 不向飞书泄露内部错误细节
+        status = f"error: {exc}"
         print(f"[answer error] {exc}", file=sys.stderr)
         _reply(client, message_id, text="内部错误，稍后重试。")
+    _log_qa(
+        {
+            "ts": ts,
+            "mid": message_id,
+            "chat_type": chat_type,
+            "question": question,
+            "hits": hit_summary,
+            "answer": answer,
+            "status": status,
+        }
+    )
 
 
 def make_handler(client: lark.Client, kb: KnowledgeBase, settings: Settings, bot_open_id: str):
@@ -211,7 +258,9 @@ def make_handler(client: lark.Client, kb: KnowledgeBase, settings: Settings, bot
             return
         # WS 回调跑在 SDK 的 event loop 里，LLM 调用必须丢到工作线程，
         # 否则 asyncio.run 会报 "cannot be called from a running event loop"
-        _executor.submit(_handle_question, client, kb, settings, msg.message_id, question)
+        _executor.submit(
+            _handle_question, client, kb, settings, msg.message_id, question, msg.chat_type
+        )
 
     return on_message
 
