@@ -318,12 +318,14 @@ async function vGraph() {
         localStorage.setItem(POS_KEY, JSON.stringify({ sig: posSig, pos }));
       } catch (_) {}
     };
-    // stabilization 事件发在 body.emitter；轮询兜底防事件名/代理问题
-    network.body.emitter.once('stabilizationIterationsDone', trySave);
-    const saveTimer = setInterval(() => {
-      if (!document.getElementById('g-canvas')) { clearInterval(saveTimer); return; }
-      if (network.physics.physicsEnabled === false) { clearInterval(saveTimer); trySave(); }
-    }, 500);
+    // stabilization 事件发在 body.emitter；稳定后关闭物理（947 节点常驻 barnesHut 是持续 CPU 开销），
+    // 节点仍可拖拽。15s 兜底防事件未触发。
+    const finish = () => {
+      trySave();
+      try { network.setOptions({ physics: { enabled: false } }); } catch (_) {}
+    };
+    network.body.emitter.once('stabilizationIterationsDone', finish);
+    setTimeout(finish, 15000);
   }
   // 边标签按需显示：点击节点时仅标注其关联边（全量 1976 条边标签是主要渲染开销）
   function labelEdgesFor(edgeIds) {
