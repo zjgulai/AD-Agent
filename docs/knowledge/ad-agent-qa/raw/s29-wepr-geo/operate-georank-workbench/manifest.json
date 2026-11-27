@@ -1,0 +1,14 @@
+{
+  "name": "operate-georank-workbench",
+  "version": "1.0.0",
+  "owner": "WEPR",
+  "updated_at": "2026-07-18",
+  "status": "active",
+  "category": "platform-operations",
+  "modified": true,
+  "runtime_permissions": [
+    "network",
+    "file_write",
+    "interactive"
+  ]
+}

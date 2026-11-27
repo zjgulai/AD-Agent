@@ -41,6 +41,7 @@ source: human+ai
 | S26 | Amazon-Skills 电商 Agent Skills 合集 | https://github.com/nexscope-ai/Amazon-Skills | GitHub 仓库（MIT License） | `raw/s26-amazon-skills/`（52 skills 67 文件 1.6M） | 2026-11-27 |
 | S27 | eCommerce-Skills 电商 Agent Skills 合集 | https://github.com/nexscope-ai/eCommerce-Skills | GitHub 仓库（MIT License） | `raw/s27-ecom-skills/`（~110 skills 211 文件 1.8M） | 2026-11-27 |
 | S28 | goaskvivi DTC 出海诊断 Skill | https://github.com/vivi911/goaskvivi-dtc-diagnostic-skill | GitHub 仓库（无 LICENSE） | `raw/s28-vivi-dtc/`（49 文件 452K，简/繁双语 references） | 2026-11-27 |
+| S29 | wepr-growth-skills GEO/增长 Agent Skills 合集 | https://github.com/ShenyuanNext/wepr-growth-skills | GitHub 仓库（MIT License） | `raw/s29-wepr-geo/`（26 skills + LICENSE/README，3.9M） | 2026-11-27 |
 
 ## 第二批源（drive 文件夹 `QChKfhUSRl95AwdPhYfcd39ynmh`，2026-11-26 追加）
 
@@ -159,3 +160,12 @@ source: human+ai
 - E4 蒸馏产出：`cards/business-context/dtc-expansion-readiness-diagnostic.md` + QA（business-context Q21-25）+ `graph/instances/s28-vivi-dtc.*`。
 - **定位关系**：本卡是出海三层链的最上游——诊断（够不够格）→ S27 选市场扩张 → S27-E3 跨平台预算编排。AEO/GEO 概念 KB 首次覆盖。
 - **口径注意**：部分阈值（CTR 降 20% 换素材、30/7/180 天受众分层、iOS 丢数据 30-50%）为从业者经验值，卡内标注需自家校准；Meta 2026-07 前后对比政策变更已按源文记录。
+
+## 第十四批源（wepr-growth-skills GEO 套件蒸馏，2026-11-27 追加）
+
+- 来源：`github.com/ShenyuanNext/wepr-growth-skills`（WEPR Growth Skills，**MIT License**）。88 个 skill 的营销/增长合集，本批只收 GEO/AI 搜索域。
+- **原文已完整复制保存**至 `raw/s29-wepr-geo/`（26 skills + LICENSE + README，3.9M，保留仓库相对路径）。
+- **蒸馏边界**：收 GEO 套件全链——`wepr-geo-suite`（编排契约/质量门）、`panorama-audit`（12 诊断域+8 维质量模型+三级核验）、`intent-miner`（双层意图/五段式重写/十维评分）、`page-blueprint`+`content-refiner`（页面模块序/原子事实卡）、`effect-monitor`（六层监测模型/指标集/采样分级/谨慎归因）、`tracking`（三层价值/直接间接承接/Observed-Recoverable-Unobservable）、`execution-roadmap`（30/60/90+证据分级 A-E）、`knowledge-base-builder`+`citation-lab`（事实卡/引用观察分层）。另存档相邻域：`wepr-geoflow`+`operate-georank-workbench`（GEOFlow 产品运维文档）、`wepr-seo`/`plan-organic-growth`/`audit-digital-growth`（SEO-GEO 衔接）、3 个 AI 平台 crawler（采样工具层）、`wepr-advertising-workbench`/`wepr-growth-operations`/`wepr-marketing`/`wepr-douyin-keyword-research`（相邻待蒸）。**排除**：`dbs-*`×28（中文内容方法论体系）、`xiaohongshu-*`×6（中国平台）、`wepr-human-writing`/`editorial`/`presentation`/`slides`/`link-authority`/`market-signal`/`client-discovery`/`business-workbench`/`plan-paid-media`/`plan-xiaohongshu`/`plan-editorial`/`distill-creator`/`diagnose-pr`/`analyze-brand`/`create-marketing-content`/`launch-content-account`/`draft-corporate-appeals`/`pr-strategy`/`reddit-content`/`limited-ink-visuals`（非 GEO 域或中国平台向）。
+- F2 蒸馏产出：`cards/platform-ops/geo-ai-search-optimization.md` + QA（platform-ops Q84-93）+ `graph/instances/s29-wepr-geo.*`。
+- **口径翻译**：源文面向国内 AI 平台（DeepSeek/豆包/千问/Kimi/元宝+企微/口令承接），卡内已标注 Momcozy US DTC 主战场为 ChatGPT/Gemini/Perplexity，承接映射为 UTM 落地页/表单字段/自报来源。
+- **定位关系**：GEO 是 S28 诊断卡 AEO/GEO 就绪检查的下游执行域——诊断（够不够格）→ GEO 优化（怎么被 AI 引用）→ 归因（带来多少转化）。KB 首次覆盖 AI 搜索优化深度。

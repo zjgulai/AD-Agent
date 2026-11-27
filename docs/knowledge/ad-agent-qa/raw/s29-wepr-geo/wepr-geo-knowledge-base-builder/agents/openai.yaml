@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR GEO 品牌知识库"
+  short_description: "建设统一、可核验的品牌事实底座"
+  default_prompt: "使用 $wepr-geo-knowledge-base-builder 从可信资料建设品牌事实卡、FAQ 和来源索引。"

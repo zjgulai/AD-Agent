@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR GEO 标题优化"
+  short_description: "生成、评分并校验中文 GEO 标题"
+  default_prompt: "使用 $wepr-geo-title-optimizer 生成与正文匹配、自然且合规的 GEO 标题。"

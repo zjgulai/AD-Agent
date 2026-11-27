@@ -1,0 +1,24 @@
+interface:
+  display_name: "WEPR GEOFlow 工作台"
+  short_description: "开发运营 GEOFlow，并形成可执行的客户方案与内容交付规划"
+  default_prompt: "Use $wepr-geoflow for GEOFlow development, operations, frontend, channel, migration, or client-delivery work. Discover the real capability and permissions first, preserve contracts, and separate planning and preview from live activation or publication."
+compatibility:
+  canonical_format: "agent-skills"
+  adapter_targets:
+    - "openai"
+    - "claude"
+    - "generic"
+  activation:
+    mode: "manual"
+    paths: []
+  execution:
+    context: "inline"
+    shell: "bash"
+  trust:
+    source_tier: "local"
+    remote_inline_execution: "forbid"
+    remote_metadata_policy: "allow-metadata-only"
+  degradation:
+    openai: "metadata-adapter"
+    claude: "neutral-source-plus-adapter"
+    generic: "neutral-source"

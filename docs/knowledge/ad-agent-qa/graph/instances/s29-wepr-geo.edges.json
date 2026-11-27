@@ -1,0 +1,712 @@
+{
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:src:wepr-geo",
+   "ref": "s29-wepr-geo:cards/platform-ops/geo-ai-search-optimization.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-quality-8dim",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-panorama-audit/references/geo-quality-model.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-panorama-12domain",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-panorama-audit/references/official-site-evidence.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-intent-mining",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-intent-miner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-page-blueprint",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-page-blueprint/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-content-refiner",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-content-refiner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-attribution-3layer",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-roadmap-30-60-90",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:geo-knowledge-fact-cards",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-knowledge-base-builder/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:geo-page-not-citable",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-panorama-audit/references/official-site-evidence.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:geo-citation-count-not-trust",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-citation-lab/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:geo-synthetic-not-real",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:geo-no-ranking-promises",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-suite/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:geo-evidence-grading-ae",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:geo-cautious-attribution",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:geo-sampling-ethics",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-suite/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:geo-diagnose",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-panorama-audit/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:geo-intent",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-intent-miner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:geo-produce",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-page-blueprint/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:geo-monitor-attrib",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:stage:geo-roadmap",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:geo-quality-gates",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-panorama-audit/references/geo-quality-model.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:geo-observability-heuristic",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:geo-brand-mention-rate",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:geo-citation-recall-rate",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-citation-lab/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:geo-answer-accuracy",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:geo-recommendation-rate",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:brand-search-lift",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:geo-vs-seo",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-suite/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:ai-answer-platforms",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-tracking/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:atomic-fact-card",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-knowledge-base-builder/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:observed-recoverable-unobservable",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:query-fanout",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-page-blueprint/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:geo-correction-loop",
+   "target": "ad:src:wepr-geo",
+   "ref": "wepr-geo:raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-quality-8dim",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-quality-8dim",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-panorama-12domain",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-panorama-12domain",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-intent-mining",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-intent-mining",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-page-blueprint",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-page-blueprint",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-content-refiner",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-content-refiner",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-monitor-6layer",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-attribution-3layer",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-attribution-3layer",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-roadmap-30-60-90",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-roadmap-30-60-90",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:playbook:geo-knowledge-fact-cards",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:geo-knowledge-fact-cards",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:rule:geo-page-not-citable",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:geo-page-not-citable",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:rule:geo-citation-count-not-trust",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:geo-citation-count-not-trust",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:rule:geo-synthetic-not-real",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:geo-synthetic-not-real",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:rule:geo-no-ranking-promises",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:geo-no-ranking-promises",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:rule:geo-evidence-grading-ae",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:geo-evidence-grading-ae",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:rule:geo-cautious-attribution",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:geo-cautious-attribution",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:rule:geo-sampling-ethics",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:geo-sampling-ethics",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:concept:geo-vs-seo",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:geo-vs-seo",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:concept:ai-answer-platforms",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:ai-answer-platforms",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:concept:atomic-fact-card",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:atomic-fact-card",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:concept:observed-recoverable-unobservable",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:observed-recoverable-unobservable",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:concept:query-fanout",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:query-fanout",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:concept:geo-correction-loop",
+   "ref": "geo card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:geo-correction-loop",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-intent",
+   "target": "ad:stage:geo-diagnose",
+   "ref": "流程顺序"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-produce",
+   "target": "ad:stage:geo-intent",
+   "ref": "流程顺序"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-monitor-attrib",
+   "target": "ad:stage:geo-produce",
+   "ref": "流程顺序"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-roadmap",
+   "target": "ad:stage:geo-monitor-attrib",
+   "ref": "流程顺序"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-diagnose",
+   "target": "ad:playbook:geo-panorama-12domain",
+   "ref": "12域诊断"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-diagnose",
+   "target": "ad:playbook:geo-quality-8dim",
+   "ref": "质量评分"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-intent",
+   "target": "ad:playbook:geo-intent-mining",
+   "ref": "意图词库"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-produce",
+   "target": "ad:playbook:geo-page-blueprint",
+   "ref": "页面蓝图"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-produce",
+   "target": "ad:playbook:geo-content-refiner",
+   "ref": "内容改造"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-produce",
+   "target": "ad:playbook:geo-knowledge-fact-cards",
+   "ref": "事实底座"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-monitor-attrib",
+   "target": "ad:playbook:geo-monitor-6layer",
+   "ref": "六层监测"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-monitor-attrib",
+   "target": "ad:playbook:geo-attribution-3layer",
+   "ref": "三层归因"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:geo-roadmap",
+   "target": "ad:playbook:geo-roadmap-30-60-90",
+   "ref": "30/60/90"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-quality-8dim",
+   "target": "ad:bench:geo-quality-gates",
+   "ref": "评分门槛"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-attribution-3layer",
+   "target": "ad:bench:geo-observability-heuristic",
+   "ref": "可观测假设"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-attribution-3layer",
+   "target": "ad:concept:observed-recoverable-unobservable",
+   "ref": "三层观测"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-content-refiner",
+   "target": "ad:concept:atomic-fact-card",
+   "ref": "事实卡提取"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-page-blueprint",
+   "target": "ad:concept:query-fanout",
+   "ref": "子问题扇出"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-roadmap-30-60-90",
+   "target": "ad:concept:geo-correction-loop",
+   "ref": "纠偏闭环"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:metric:geo-brand-mention-rate",
+   "ref": "可见性指标"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:metric:geo-citation-recall-rate",
+   "ref": "引用指标"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:metric:geo-answer-accuracy",
+   "ref": "事实性指标"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:metric:geo-recommendation-rate",
+   "ref": "推荐率"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-attribution-3layer",
+   "target": "ad:metric:brand-search-lift",
+   "ref": "间接指标"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-panorama-12domain",
+   "target": "ad:rule:geo-evidence-grading-ae",
+   "ref": "证据分级"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-intent-mining",
+   "target": "ad:playbook:geo-knowledge-fact-cards",
+   "ref": "词库需事实底座"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-quality-8dim",
+   "target": "ad:rule:geo-page-not-citable",
+   "ref": "可引用性判定"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:rule:geo-citation-count-not-trust",
+   "ref": "引用质量"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:rule:geo-synthetic-not-real",
+   "ref": "采样证据等级"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-monitor-6layer",
+   "target": "ad:rule:geo-sampling-ethics",
+   "ref": "采样伦理"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-attribution-3layer",
+   "target": "ad:rule:geo-cautious-attribution",
+   "ref": "归因纪律"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-roadmap-30-60-90",
+   "target": "ad:rule:geo-no-ranking-promises",
+   "ref": "承诺边界"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:geo-vs-seo",
+   "target": "ad:channel:seo-sem",
+   "ref": "SEO/SEM渠道"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:geo-vs-seo",
+   "target": "ad:playbook:cbe-dsite-seo-sem",
+   "ref": "SEO-SEM协同playbook(S22)"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:geo-attribution-3layer",
+   "target": "ad:playbook:cbe-attribution-triangulation",
+   "ref": "归因三角测量(S22)"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:concept:seo-aeo-geo-readiness",
+   "ref": "S28 AEO/GEO就绪检查上游"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:asset:card-attribution-measurement",
+   "ref": "归因测量卡互补"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:card-geo-ai-search-optimization",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "出海诊断链下游"
+  }
+ ],
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ }
+}

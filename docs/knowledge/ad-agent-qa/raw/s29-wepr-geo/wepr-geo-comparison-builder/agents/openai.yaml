@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR GEO 品牌对比"
+  short_description: "制作公平、可核验的品牌对比内容"
+  default_prompt: "使用 $wepr-geo-comparison-builder 生成同口径、有证据支撑的品牌对比内容。"

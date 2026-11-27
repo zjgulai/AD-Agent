@@ -98,6 +98,7 @@ source: human+ai
 | [Amazon PPC 建计划与优化](cards/platform-ops/amazon-ppc-campaign-ops.md) | ACoS 财务框架/launch vs mature 目标？Auto→Broad→Exact 漏斗？出价阶梯？周操作阈值（10+点击0单/2+单迁移/20+点击调bid）？Brand Analytics 信号？ | S26 |
 | [跨平台 PPC 策略规划](cards/platform-ops/cross-platform-ppc-strategy.md) | 买家行为怎么选主平台？ROAS 三公式？预算分配三模板？平台 ROAS 基准？Mode B 🟢🟡🔴 重分配规则？学习期门槛？ | S27 |
 | [页面转化优化（CRO）](cards/platform-ops/cro-page-optimization.md) | 落地页七维诊断顺序？表单字段成本律？CTA 文案？message match？PDP/首页实验清单？ | S25 |
+| [GEO / AI 搜索优化](cards/platform-ops/geo-ai-search-optimization.md) | GEO vs SEO？8 维质量模型？12 诊断域+证据分级？意图词库五段式？监测六层指标？归因 20-30% 可观测边界？30/60/90？ | S29 |
 
 ## 按问题类型速查
 

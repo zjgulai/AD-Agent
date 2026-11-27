@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR DeepSeek 采样工具"
+  short_description: "多轮采样并分析 DeepSeek 中的品牌提及"
+  default_prompt: "使用 $wepr-deepseek-crawler 按关键词完成多轮 DeepSeek 采样，输出可核验的数据和 GEO 报告。"

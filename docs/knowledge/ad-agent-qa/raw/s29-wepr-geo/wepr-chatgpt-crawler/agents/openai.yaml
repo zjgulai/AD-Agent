@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR ChatGPT 采样工具"
+  short_description: "多轮采样并分析 ChatGPT 中的品牌提及"
+  default_prompt: "使用 $wepr-chatgpt-crawler 按关键词完成多轮 ChatGPT 采样，输出可核验的数据和 GEO 报告。"

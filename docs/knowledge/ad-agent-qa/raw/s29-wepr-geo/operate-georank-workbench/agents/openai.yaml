@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR GEOrank 操作台"
+  short_description: "安全执行 GEOrank 诊断与管理任务"
+  default_prompt: "使用 $operate-georank-workbench 确认权限后操作 GEOrank，并保留执行回执。"

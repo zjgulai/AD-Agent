@@ -1,0 +1,468 @@
+{
+ "nodes": [
+  {
+   "@id": "ad:src:wepr-geo",
+   "@type": "ad:SourceDoc",
+   "label": "wepr-growth-skills GEO套件",
+   "props": {
+    "repo": "github.com/ShenyuanNext/wepr-growth-skills",
+    "license": "MIT",
+    "desc": "88 skills营销/增长合集;本批收GEO/AI搜索域15专项+geoflow+seo+organic+crawlers;面向国内AI平台(DeepSeek/豆包/千问/Kimi/元宝),卡内已标注海外翻译"
+   },
+   "src": [
+    "raw/s29-wepr-geo/README.md",
+    "raw/s29-wepr-geo/LICENSE"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-geo-ai-search-optimization",
+   "@type": "ad:KnowledgeAsset",
+   "label": "GEO/AI搜索优化卡",
+   "props": {
+    "cluster": "platform-ops",
+    "qa": "platform-ops Q84-93"
+   },
+   "src": [
+    "cards/platform-ops/geo-ai-search-optimization.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-quality-8dim",
+   "@type": "ad:Playbook",
+   "label": "GEO质量8维评分模型",
+   "props": {
+    "dims": "语义密度/结构规范性/可引用性/权威信号/可读性/鲁棒性/新颖性/跨域贡献",
+    "rule": "任一维<3进修复清单;平均<4不投放不扩张;反幻觉是红线非评分项;7观测项先行"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-panorama-audit/references/geo-quality-model.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-panorama-12domain",
+   "@type": "ad:Playbook",
+   "label": "GEO全景诊断12域",
+   "props": {
+    "domains": "抓取覆盖/实体消歧/产品服务/价格口径/案例授权/9类问题覆盖矩阵/技术可抓取/结构化数据/权威信任/竞品对标/站外证据/风险台账",
+    "verify": "断言三级核验:官网内一致→官方多源→第三方佐证"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-panorama-audit/references/official-site-evidence.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-intent-mining",
+   "@type": "ad:Playbook",
+   "label": "GEO意图挖掘体系",
+   "props": {
+    "layers": "任务层3类(信息/导航验证/交易)×GEO操作层9类(信息/推荐/比较/交易/风险/价格/替代/场景/品牌验证)",
+    "rewrite": "五段式:user_question/standalone_rewrite/retrieval_rewrite/evidence_query/title_seed",
+    "score": "十维:商业价值/触发概率/内容缺口/植入空间/证据可得/竞争难度/对话延展/决策阶段/平台覆盖/合规风险",
+    "discipline": "机械槽位组合只做召回池;正式词库过语义质检"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-intent-miner/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-intent-miner/references/intent-mining-method.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-page-blueprint",
+   "@type": "ad:Playbook",
+   "label": "GEO页面蓝图与可抽取设计",
+   "props": {
+    "modules": "首屏直接答案→结构化摘要→事实卡→判断框架→对比表→实体关系→证据区→FAQ→案例→来源→CTA(不干扰答案区)",
+    "extract": "键值对/表格/步骤/原子事实/Schema @id连接;query fan-out覆盖定义/对比/风险/价格/替代/实施/案例子问题"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-page-blueprint/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-content-refiner",
+   "@type": "ad:Playbook",
+   "label": "GEO内容改造流程",
+   "props": {
+    "flow": "8维原文评分→原子事实卡(主体/属性/数值/时间/来源/边界/核验状态)→补直接回答/摘要/H2-H3/表格/FAQ/步骤/来源→删注水与不可核验强断言",
+    "guardrail": "不机械加字数和FAQ;相关性≠因果"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-content-refiner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-monitor-6layer",
+   "@type": "ad:Playbook",
+   "label": "GEO监测六层模型",
+   "props": {
+    "layers": "覆盖可见性/事实性/证据性/稳定性/竞争性/治理归因",
+    "metrics": "品牌出现率/候选率/推荐率/排序/竞品出现率/负面表述率/事实错误率/引用召回率/引用准确率/答案稳定性",
+    "sampling": "授权API>人工真实样本(记平台/时间/设备/地区/联网/Prompt版本/原文/截图)>浏览器合规采样>合成回放",
+    "promptlib": "7组:推荐/比较/替代/价格/风险/品牌验证/场景"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-attribution-3layer",
+   "@type": "ad:Playbook",
+   "label": "GEO归因三层价值模型",
+   "props": {
+    "layers": "品牌层背书(不可单点计量)/直接效果(专属落地页UTM/表单hidden field/优惠码/自报问卷)/间接效果(品牌词搜索量/UV/CTA/成交率)",
+    "direct": "GEO专属落地页+UTM/表单channel_group+ai_platform字段/post-purchase自报来源/referer在App内链路常丢失需补丁",
+    "indirect": "间接指标不能单独证明贡献;长决策链成交率滞后于流量线索"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-tracking/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-roadmap-30-60-90",
+   "@type": "ad:Playbook",
+   "label": "GEO 30/60/90落地路线图",
+   "props": {
+    "d30": "页面技术修复+事实底座AB级断言+首批监测Prompt库+基线采样",
+    "d60": "知识库/事实卡体系+内容矩阵(对比/榜单/FAQ/案例页)+站外证据",
+    "d90": "监测仪表盘+纠偏闭环+复盘迭代",
+    "northstar": "品牌推荐率/被引用率/答案准确率/问题覆盖率/证据支持率/线索贡献至少选3项",
+    "evidence": "A官方已证实/B第三方可佐证/C自述待佐证/D需补证/E禁止使用"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:geo-knowledge-fact-cards",
+   "@type": "ad:Playbook",
+   "label": "GEO品牌知识库与事实卡",
+   "props": {
+    "flow": "官网/产品页/帮助中心/白皮书/资质→实体清单→事实卡(主体/属性/值/证据/来源ID/更新时间/置信度/复用场景)→FAQ+禁用表述+Prompt输入包",
+    "freshness": "高波动事实(价格/资质/客户数/合规边界)显式复核节奏;强事实与待确认事实分开"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-knowledge-base-builder/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:geo-page-not-citable",
+   "@type": "ad:Rule",
+   "label": "有页面≠AI可引用",
+   "props": {
+    "desc": "不能把官网有页面等同AI可准确引用;必须查可抽取的定义/表格/FAQ/来源/更新时间/断言级事实;SEO排名/流量/知名度也不能直接当GEO优先级",
+    "severity": "red-line"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-panorama-audit/references/official-site-evidence.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:geo-citation-count-not-trust",
+   "@type": "ad:Rule",
+   "label": "引用数量≠可信度",
+   "props": {
+    "desc": "引用链接数不等于可信;引用必须真实支持对应断言;引用列表出现/证据支持/正文使用/品牌推荐是四个不同观察结果不能混算",
+    "severity": "red-line"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-citation-lab/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:geo-synthetic-not-real",
+   "@type": "ad:Rule",
+   "label": "合成样例≠真实采样",
+   "props": {
+    "desc": "合成Prompt/推断竞品/生成示例不得表述为真实平台数据;无原始答案/截图/采样环境/来源记录时只能标合成样例或推断",
+    "severity": "red-line"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-suite/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:geo-no-ranking-promises",
+   "@type": "ad:Rule",
+   "label": "GEO不承诺排名与效果数字",
+   "props": {
+    "desc": "不承诺排名/引用/推荐/线索/营收;平台指标是重复采样估计非ground truth;研究相关性不转换为客户增长承诺",
+    "severity": "red-line"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-suite/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-citation-lab/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:geo-evidence-grading-ae",
+   "@type": "ad:Rule",
+   "label": "GEO证据五级分级",
+   "props": {
+    "tiers": "A官方已证实/B第三方可佐证/C品牌自述待佐证/D需补证进pending/E禁止使用(未授权客户名/未公开数据/虚构指标)",
+    "conflict": "冲突断言写采用口径+冲突来源+待确认动作+负责人"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-knowledge-base-builder/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:geo-cautious-attribution",
+   "@type": "ad:Rule",
+   "label": "GEO归因默认观察相关",
+   "props": {
+    "desc": "设基线窗口+观察窗口+对照Prompt+竞品对照+外部事件记录;默认结论观察相关,证据充分才升级置信度;不拿固定倍数推总ROI",
+    "severity": "discipline"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:geo-sampling-ethics",
+   "@type": "ad:Rule",
+   "label": "GEO采样伦理四要求",
+   "props": {
+    "desc": "低频/可见/授权/可审计;不绕过平台限制批量滥采不模拟真人登录;发布/同步/密钥等高风险步骤须明确授权"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-suite/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:stage:geo-diagnose",
+   "@type": "ad:WorkflowStage",
+   "label": "GEO诊断阶段",
+   "props": {
+    "order": 1,
+    "desc": "12域全景诊断+8维质量评分+证据分级+机会地图(站内/站外)"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-panorama-audit/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:stage:geo-intent",
+   "@type": "ad:WorkflowStage",
+   "label": "GEO意图阶段",
+   "props": {
+    "order": 2,
+    "desc": "双层意图词库+五段式重写+十维评分+监测Prompt库"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-intent-miner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:stage:geo-produce",
+   "@type": "ad:WorkflowStage",
+   "label": "GEO生产阶段",
+   "props": {
+    "order": 3,
+    "desc": "页面蓝图+内容改造+事实卡+Schema+站外证据建设"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-page-blueprint/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-content-refiner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:stage:geo-monitor-attrib",
+   "@type": "ad:WorkflowStage",
+   "label": "GEO监测归因阶段",
+   "props": {
+    "order": 4,
+    "desc": "六层监测+三层归因+可观测边界+纠偏闭环"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-tracking/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:stage:geo-roadmap",
+   "@type": "ad:WorkflowStage",
+   "label": "GEO路线图阶段",
+   "props": {
+    "order": 5,
+    "desc": "30/60/90分解+六项目包+北极星指标+治理节奏"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:geo-quality-gates",
+   "@type": "ad:Benchmark",
+   "label": "GEO质量评分门槛",
+   "props": {
+    "rule": "任一维<3→修复清单;平均<4→不投放不扩张;反幻觉红线直接判不通过",
+    "dims": 8
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-panorama-audit/references/geo-quality-model.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:geo-observability-heuristic",
+   "@type": "ad:Benchmark",
+   "label": "GEO可观测转化比例假设",
+   "props": {
+    "value": "20%-30%",
+    "desc": "刚部署监测时可直接观测转化约占总贡献;海外官网承接强可更高/国内多触点更低;规划边界非普适事实禁推总ROI",
+    "caveat": "planning-heuristic"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:geo-brand-mention-rate",
+   "@type": "ad:Metric",
+   "label": "GEO品牌提及率",
+   "props": {
+    "desc": "AI答案中品牌出现/候选/推荐/排序的综合可见性",
+    "layer": "visibility"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:geo-citation-recall-rate",
+   "@type": "ad:Metric",
+   "label": "GEO引用召回率",
+   "props": {
+    "desc": "目标页面/事实被AI答案引用的比例;区分引用列表/证据支持/正文使用/品牌推荐四层",
+    "layer": "citation"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-citation-lab/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:geo-answer-accuracy",
+   "@type": "ad:Metric",
+   "label": "GEO答案准确率",
+   "props": {
+    "desc": "AI对品牌事实的描述准确率与事实错误率;负面表述率并列监测",
+    "layer": "factuality"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:geo-recommendation-rate",
+   "@type": "ad:Metric",
+   "label": "GEO推荐率",
+   "props": {
+    "desc": "品牌被AI主动推荐(非仅提及)的比率;北极星候选指标之一",
+    "layer": "recommendation"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:brand-search-lift",
+   "@type": "ad:Metric",
+   "label": "品牌词搜索量提升",
+   "props": {
+    "desc": "间接效果指标:GEO曝光后品牌词主动搜索变化;需与页面/承接动作一起解释",
+    "layer": "indirect"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:geo-vs-seo",
+   "@type": "ad:KnowledgeAsset",
+   "label": "GEO vs SEO 分工",
+   "props": {
+    "kind": "domain-boundary",
+    "desc": "SEO管传统搜索排名;GEO管AI答案提及/引用/推荐;互补不替代共享事实底座(Schema/结构化内容/权威信源)"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-suite/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:ai-answer-platforms",
+   "@type": "ad:KnowledgeAsset",
+   "label": "AI答案平台版图",
+   "props": {
+    "kind": "platform-map",
+    "overseas": "ChatGPT/Gemini/Perplexity(官网结构/落地页/UTM/表单字段承接)",
+    "domestic": "DeepSeek/豆包/千问/Kimi/元宝(口令/企微/问卷承接);Momcozy主战场=海外",
+    "note": "源文面向国内;海外承接已翻译"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-suite/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-tracking/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:atomic-fact-card",
+   "@type": "ad:KnowledgeAsset",
+   "label": "原子事实卡",
+   "props": {
+    "kind": "knowledge-primitive",
+    "desc": "主体/属性/数值/时间/来源/适用边界/核验状态/可引用句;事实底座最小单元,强事实与待确认事实分开"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-content-refiner/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-knowledge-base-builder/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:observed-recoverable-unobservable",
+   "@type": "ad:KnowledgeAsset",
+   "label": "可观测性三层",
+   "props": {
+    "kind": "measurement-framework",
+    "tiers": "Observed直接观测/Recoverable可部分恢复/Unobservable暂不可观测;GEO总效果无法被后台完整显性统计,目标是最小解释闭环非全量归因"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-tracking/references/attribution-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:query-fanout",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Query fan-out",
+   "props": {
+    "kind": "intent-technique",
+    "desc": "围绕主问题展开定义/对比/风险/价格/替代/实施/案例/FAQ子问题映射到页面模块;AI搜索把单查询扇出为多子查询"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-page-blueprint/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:geo-correction-loop",
+   "@type": "ad:KnowledgeAsset",
+   "label": "GEO纠偏闭环",
+   "props": {
+    "kind": "ops-loop",
+    "map": "错误事实→知识库修订;缺失证据→补采任务;弱页面→页面改造;负面表达→口径修正;引用缺口→站外发布;每任务落负责人+验收口径"
+   },
+   "src": [
+    "raw/s29-wepr-geo/wepr-geo-effect-monitor/SKILL.md",
+    "raw/s29-wepr-geo/wepr-geo-execution-roadmap/SKILL.md"
+   ]
+  }
+ ],
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ }
+}

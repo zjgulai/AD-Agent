@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR GEO 内容改造"
+  short_description: "把现有内容改造成 AI 易引用版本"
+  default_prompt: "使用 $wepr-geo-content-refiner 评估并改造现有内容，保留证据边界和发布建议。"

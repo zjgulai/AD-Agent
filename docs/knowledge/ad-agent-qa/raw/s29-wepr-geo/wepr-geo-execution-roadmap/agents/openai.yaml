@@ -1,0 +1,4 @@
+interface:
+  display_name: "WEPR GEO 实施路线图"
+  short_description: "把诊断结论转成 30/60/90 天行动"
+  default_prompt: "使用 $wepr-geo-execution-roadmap 将现有诊断转化为分阶段、可验收的实施计划。"

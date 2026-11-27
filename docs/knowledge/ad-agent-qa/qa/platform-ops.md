@@ -345,3 +345,43 @@ source: human+ai
 ### Q83. PDP 做 CRO 优先测哪些实验？
 **A**：卖点 benefit vs feature 导向、评价展示位置与数量、图片序列（生活方式 vs 白底）、尺寸/使用场景图、FAQ 位置、捆绑/对比模块；首页侧还有 hero 标题变体、首屏 CTA、社会证明位置、sticky nav、exit-intent popup。每次只改 1-2 个变量走 A/B 测试纪律。
 > 溯源：`cards/platform-ops/cro-page-optimization.md`（S25:cro/references/experiments）
+
+### Q84. GEO 和 SEO 有什么区别？Momcozy 该先做哪个？
+**A**：SEO 管传统搜索排名，GEO 管 AI 答案中的品牌提及/引用/推荐——互补不替代。AI 搜索（ChatGPT/Gemini/Perplexity）已成为独立流量入口，且 AI 答案天然带引用=高信任背书。先做 GEO 全景诊断（12 域+8 维评分）摸清现状，再按 30/60/90 排 SEO/GEO 并行任务；两者共享事实底座（Schema/结构化内容/权威信源）。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-suite）
+
+### Q85. GEO 页面质量怎么评？有量化标准吗？
+**A**：8 维 × 1-5 分——语义密度/结构规范性/可引用性/权威信号/可读性/鲁棒性/新颖性/跨域贡献，每项必须给证据。规则：任一维 <3 进修复清单，平均 <4 不建议投放或扩张；反幻觉是红线（虚构数据/客户/引用直接判不通过）。评分前先过 7 个观测项（官网覆盖/实体清晰/断言可抽取/来源支持/事实准确/问题覆盖/外部背书）。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-panorama-audit/references/geo-quality-model）
+
+### Q86. GEO 全景诊断要查哪些域？不能只看官网页面数吧？
+**A**：对，12 个必查域——抓取覆盖/品牌实体消歧（同名品牌）/产品服务模型/价格口径/案例证据授权/9 类用户问题覆盖矩阵/技术可抓取性（robots/JS渲染/PDF文本化）/结构化数据/权威信任信号/竞品对标/站外证据生态/风险台账。断言核验分三级：官网内一致→官方多源一致→第三方佐证。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-panorama-audit/references/official-site-evidence）
+
+### Q87. 品牌事实怎么分级管理才不会被 AI 引用错？
+**A**：证据成熟度五级——A 官方已证实/B 第三方可佐证/C 品牌自述待佐证/D 需补证进 pending 区/E 禁止使用（未授权客户名/未公开数据/虚构指标）。每条事实卡带主体/属性/数值/时间/来源/核验状态/可公开范围；高波动事实（价格/资质/客户数）要显式复核节奏。冲突断言写「采用口径+冲突来源+待确认动作」。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-execution-roadmap + knowledge-base-builder）
+
+### Q88. GEO 意图词库和 SEO 关键词有什么不同？
+**A**：双层结构——任务层（信息/导航验证/交易行动）× GEO 操作层 9 类（信息/推荐/比较/交易/风险/价格/替代/场景/品牌验证）。每条问题做五段式重写：口语问法/独立改写/检索短语/证据查询/选题种子；追问链路要带 root/parent/context_dependency——AI 搜索是多轮对话，词库要覆盖追问。十维评分后机械组合只当召回池，正式词库过语义质检。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-intent-miner）
+
+### Q89. 什么样的页面结构最容易被 AI 引用？
+**A**：模块序——首屏直接答案→结构化摘要→核心事实卡→判断框架→对比表→实体关系→证据区→FAQ→案例→来源→CTA（CTA 不干扰答案区）。AI 可抽取设计：键值对/表格/步骤/原子事实/Schema @id 连接，让答案片段可被整段抽走不丢上下文。改造存量内容先按 8 维打分→提原子事实卡→补直接回答/摘要/表格/FAQ→删注水和不可核验强断言，不机械加字数。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:page-blueprint + content-refiner）
+
+### Q90. GEO 效果怎么监测？指标有哪些？
+**A**：六层模型——覆盖可见性/事实性/证据性/稳定性/竞争性/治理归因。指标：品牌出现率/候选率/推荐率/排序/竞品出现率/负面表述率/事实错误率/引用召回率/引用准确率/答案稳定性。Prompt 库按推荐/比较/替代/价格/风险/品牌验证/场景 7 组组织，每组含核心+长尾+对照+追问。采样要记录平台/时间/设备/地区/联网状态/Prompt 版本/答案原文/截图；合成样例只能标合成不能标真实。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-effect-monitor）
+
+### Q91. GEO 带来的转化能归因吗？能追踪多少？
+**A**：三层价值——品牌层背书（不可单点计量）/直接效果（专属落地页 UTM/表单 hidden field/优惠码/自报来源问卷）/间接效果（品牌词搜索量/UV/CTA 点击率/成交率变化）。**可观测性边界：刚部署监测时可直接观测转化约占总贡献 20-30%**（海外官网承接强可更高）——这是规划假设不是普适事实，禁拿固定倍数推总 ROI；默认结论「观察相关」，证据足才升置信度。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-tracking）
+
+### Q92. GEO 项目 30/60/90 天怎么排？
+**A**：30 天快赢=页面技术修复（robots/Schema/可抽取结构）+事实底座 A/B 级断言+首批监测 Prompt 库+基线采样；60 天资产=知识库/事实卡体系+内容矩阵（对比/榜单/FAQ/案例页）+站外证据；90 天闭环=监测仪表盘+纠偏闭环（错误事实→知识库/弱页面→改造/引用缺口→站外发布）+复盘迭代。北极星指标至少选 3 项：品牌推荐率/被引用率/答案准确率/问题覆盖率/证据支持率/线索贡献。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-execution-roadmap）
+
+### Q93. GEO 有哪些常见误区要避开？
+**A**：五条红线——①不把 SEO 排名/流量/知名度直接当 GEO 优先级；②不把「有页面」当「AI 可引用」（要查可抽取的定义/表格/FAQ/来源/断言级事实）；③不把引用链接数量当可信度（引用必须真实支持断言）；④合成 Prompt/推断竞品/生成示例不得表述为真实平台数据；⑤不承诺排名/引用/推荐/营收数字。采样要低频、可见、授权、可审计。
+> 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-suite quality gates）
