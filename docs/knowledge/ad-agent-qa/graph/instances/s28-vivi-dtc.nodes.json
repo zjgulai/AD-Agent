@@ -1,0 +1,149 @@
+{
+ "graph": "ad",
+ "cluster": "s28-vivi-dtc",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "S28=vivi911 goaskvivi DTC诊断skill(无LICENSE按B决策);收diagnostic-framework 6维分阶段权重+ads-readiness清单+seo-aeo-geo/private-domain要点;排除报告模板/安装脚本/繁体重复版;出海三层链最上游(诊断→S27选市场→S27预算编排)",
+ "nodes": [
+  {
+   "@id": "ad:src:vivi-dtc",
+   "@type": "ad:SourceDoc",
+   "label": "goaskvivi DTC诊断Skill",
+   "props": {
+    "repo": "github.com/vivi911/goaskvivi-dtc-diagnostic-skill",
+    "license": "无LICENSE(按B决策存档)",
+    "desc": "DTC出海诊断报告skill;6维分阶段评分+5份checklists;东南亚华人市场视角(台/马/新/港)"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/SKILL.md",
+    "raw/s28-vivi-dtc/references/diagnostic-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "@type": "ad:KnowledgeAsset",
+   "label": "DTC出海诊断框架卡",
+   "props": {
+    "cluster": "business-context",
+    "qa": "business-context Q21-25"
+   },
+   "src": [
+    "cards/business-context/dtc-expansion-readiness-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:diagnostic-6dim-stage-weights",
+   "@type": "ad:Playbook",
+   "label": "出海诊断6维分阶段权重",
+   "props": {
+    "y1": "官网25/广告25/品牌15/SEO15/私域10/行动10",
+    "y2": "品牌25/私域20/官网15/广告15/SEO15/行动10",
+    "desc": "先判出海年限+复购定阶段再套权重;Y1能不能收钱/Y2+客户会不会回来"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/diagnostic-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:diagnostic-3tier-grading",
+   "@type": "ad:Rule",
+   "label": "诊断三档分级",
+   "props": {
+    "tiers": "0-59待加强先补基本功/60-79及格小预算测试/80-100优秀积极拓展",
+    "desc": "每维5项×0-5分=25分,总分100"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/diagnostic-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:ads-readiness-checklist",
+   "@type": "ad:Playbook",
+   "label": "广告投放准备度清单",
+   "props": {
+    "sections": "数据追踪/账户健康/素材/受众/预算测试/落地页一致性",
+    "desc": "逐项yes/no可打分;开投前强制检查Pixel/GA事件全通"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:capi-event-dedup",
+   "@type": "ad:KnowledgeAsset",
+   "label": "CAPI+event_id去重",
+   "props": {
+    "facts": "iOS14后浏览器Pixel丢数据30-50%;browser+server事件须event_id去重否则虚高;Purchase须带value+币别否则ROAS算不出",
+    "desc": "ads-readiness数据追踪段核心"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:retargeting-3tier-audiences",
+   "@type": "ad:KnowledgeAsset",
+   "label": "再营销受众三层分层",
+   "props": {
+    "tiers": "访客30天/加购未结账7天/购买客户180天;排除已购;不同层级配不同文案",
+    "desc": "受众管理器分层;同一套文案给所有人=精准度全无"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:creative-refresh-ctr20",
+   "@type": "ad:KnowledgeAsset",
+   "label": "素材更换双触发",
+   "props": {
+    "rule": "每2-4周常规迭代或CTR降20%即换;备≥5组角度+UGC+15-30s视频+前3s Hook",
+    "desc": "东南亚市场UGC>棚拍精修;IG无标题栏首句即标题;Meta2026-07前后对比不再自动拒登"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:seo-aeo-geo-readiness",
+   "@type": "ad:KnowledgeAsset",
+   "label": "SEO/AEO/GEO就绪检查",
+   "props": {
+    "items": "FAQ Schema/HowTo标记/TL;DR开门见山/外部权威引用/ALT格式/内容集群",
+    "desc": "AEO/GEO=AI搜索推荐就绪;KB首次覆盖"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/checklists/seo-aeo-geo.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:private-domain-sea",
+   "@type": "ad:KnowledgeAsset",
+   "label": "东南亚私域平台组合",
+   "props": {
+    "stack": "WhatsApp+LINE+Email;MY市场WhatsApp Business API关键;包裹卡片扫码领券回购引导",
+    "desc": "与欧美email/SMS私域互补的SEA渠道栈"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/checklists/private-domain.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:30day-action-cadence",
+   "@type": "ad:Playbook",
+   "label": "诊断后30天行动节奏",
+   "props": {
+    "weeks": "W1快速胜利/W2基础建设/W3内容素材/W4测试优化;30天只聚焦3件事;影响力×容易度排序",
+    "desc": "诊断报告的落地动作层"
+   },
+   "src": [
+    "raw/s28-vivi-dtc/references/diagnostic-framework.md"
+   ]
+  }
+ ]
+}

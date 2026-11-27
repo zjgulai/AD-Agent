@@ -93,3 +93,23 @@ source: human+ai
 ### Q20. 跨境卖 $25 商品毛利会掉多少？
 **A**：算例 landed cost $22.58（货本8+运费6.5+VAT5+保险/汇损/支付/退货准备3.08）→毛利从国内 68% 掉到 9.7%。对策：国际售价加价 10-20%、本地履约降运费、正确 HS 编码降关税、量大谈支付费率、压缩退货准备金。
 > 溯源：`cards/business-context/cross-border-expansion-framework.md`（S27:cross-border-ecommerce）
+
+### Q21. 品牌出海前准备度怎么量化评估？
+**A**：6 维 100 分制，先判阶段再套权重——第 1 年官网健康+广告准备度各 25%（能不能开始收钱），第 2 年+ 品牌定位 25%+私域 20%（客户会不会回来）。分级：0-59 🚨 先补基本功、60-79 ⚠️ 小预算测试、80-100 ✅ 积极拓展。
+> 溯源：`cards/business-context/dtc-expansion-readiness-diagnostic.md`（S28:goaskvivi-dtc-diagnostic）
+
+### Q22. 投 Meta 前 Pixel/CAPI 就绪标准是什么？
+**A**：Pixel fire 正常→ViewContent/AddToCart/Purchase 标准事件→Purchase 带 value+币别参数（否则 ROAS 算不出）→CAPI 服务器事件（iOS14 后只靠浏览器 Pixel 丢数据 30-50%）→browser+server event_id 去重防虚高→8 个 AEM 聚合事件优先级→域名已验证。开投前逐项强制检查。
+> 溯源：`cards/business-context/dtc-expansion-readiness-diagnostic.md`（S28:checklists/ads-readiness）
+
+### Q23. Meta 再营销受众怎么分层？
+**A**：三层——网站访客 30 天、加购未结账 7 天、购买客户 180 天；另建排除已购受众；冷/再营销/已购不同层级必须配不同文案，所有人看同一套文案=精准度全无。另需自订受众（访客/名单）做种子建 LAL。
+> 溯源：`cards/business-context/dtc-expansion-readiness-diagnostic.md`（S28:checklists/ads-readiness）
+
+### Q24. 广告素材多久换一次？
+**A**：每 2-4 周常规迭代，或 CTR 下降 20% 即换；备 ≥5 组不同角度+UGC 真实感素材（东南亚市场棚拍精修不吃香）+15-30 秒视频（30 秒内讲完重点，前 3 秒 Hook——Logo 动画直接滑走）；Before/After 类效果最好（Meta 2026-07 起前后对比不再自动拒登，违规宣称才拒）；IG 无标题栏第一句话就是标题。
+> 溯源：`cards/business-context/dtc-expansion-readiness-diagnostic.md`（S28:checklists/ads-readiness）
+
+### Q25. SEO/AEO/GEO 出海就绪查什么？
+**A**：FAQ Schema/HowTo 结构化标记、所有重要页面 TL;DR 开门见山结论（AI 摘要友好）、外部权威媒体/专家引用背书、图片 ALT 格式「产品名-品牌名-适用情境」、内容集群（Content Cluster）完整、hreflang/本地关键词调研（S27 卡互补）。
+> 溯源：`cards/business-context/dtc-expansion-readiness-diagnostic.md`（S28:checklists/seo-aeo-geo）

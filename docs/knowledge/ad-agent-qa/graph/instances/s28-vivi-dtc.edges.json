@@ -1,0 +1,272 @@
+{
+ "graph": "ad",
+ "cluster": "s28-vivi-dtc",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "同nodes",
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:src:vivi-dtc",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:src:vivi-dtc",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/diagnostic-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:cards/business-context/dtc-expansion-readiness-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:diagnostic-6dim-stage-weights",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/diagnostic-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:diagnostic-3tier-grading",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/diagnostic-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:ads-readiness-checklist",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:capi-event-dedup",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:retargeting-3tier-audiences",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:creative-refresh-ctr20",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/checklists/ads-readiness.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:seo-aeo-geo-readiness",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/checklists/seo-aeo-geo.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:private-domain-sea",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/checklists/private-domain.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:30day-action-cadence",
+   "target": "ad:src:vivi-dtc",
+   "ref": "vivi-dtc:raw/s28-vivi-dtc/references/diagnostic-framework.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:playbook:diagnostic-6dim-stage-weights",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:diagnostic-6dim-stage-weights",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:rule:diagnostic-3tier-grading",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:diagnostic-3tier-grading",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:playbook:ads-readiness-checklist",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:ads-readiness-checklist",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:concept:capi-event-dedup",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:capi-event-dedup",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:concept:retargeting-3tier-audiences",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:retargeting-3tier-audiences",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:concept:creative-refresh-ctr20",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:creative-refresh-ctr20",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:concept:seo-aeo-geo-readiness",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:seo-aeo-geo-readiness",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:concept:private-domain-sea",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:private-domain-sea",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:playbook:30day-action-cadence",
+   "ref": "dtc-diagnostic card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:30day-action-cadence",
+   "target": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:diagnostic-6dim-stage-weights",
+   "target": "ad:rule:diagnostic-3tier-grading",
+   "ref": "评分后分级"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:30day-action-cadence",
+   "target": "ad:playbook:diagnostic-6dim-stage-weights",
+   "ref": "行动清单按弱项生成"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:ads-readiness-checklist",
+   "target": "ad:concept:capi-event-dedup",
+   "ref": "数据追踪段"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:ads-readiness-checklist",
+   "target": "ad:concept:retargeting-3tier-audiences",
+   "ref": "受众段"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:ads-readiness-checklist",
+   "target": "ad:concept:creative-refresh-ctr20",
+   "ref": "素材段"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:creative-refresh-ctr20",
+   "target": "ad:metric:ctr",
+   "ref": "CTR降20%触发"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:retargeting-3tier-audiences",
+   "target": "ad:channel:email-sms",
+   "ref": "私域/EDM触达"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:seo-aeo-geo-readiness",
+   "target": "ad:channel:seo-sem",
+   "ref": "SEO承接"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:capi-event-dedup",
+   "target": "ad:asset:card-attribution-measurement",
+   "ref": "去重原理归因卡"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "诊断→选市场下游"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "准备度达标后预算编排"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:asset:card-governance",
+   "ref": "BM/账户健康交叉"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dtc-expansion-readiness-diagnostic",
+   "target": "ad:asset:card-creative-strategy-system",
+   "ref": "素材更换节奏与创意系统衔接"
+  }
+ ]
+}

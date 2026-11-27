@@ -74,6 +74,7 @@ source: human+ai
 | [Momcozy 人群画像洞察（孕→哺→育）](cards/business-context/momcozy-audience-persona.md) | 核心人群是谁？三阶段定位/数据/渠道分工/T0-T3 出价分层/可执行人群包？ | S20 |
 | [吸奶器品线独立站全触点地图](cards/business-context/customer-touchpoint-map.md) | 7 阶段×120+ 触点怎么拆？站内外矩阵？渠道协同分工？竞品对标？自检清单？ | S21 |
 | [跨境电商出海扩张框架](cards/business-context/cross-border-expansion-framework.md) | 出海选哪个市场？8 维评分？履约模式怎么选？各国 VAT/GST/IOSS？本地支付？landed cost 毛利杀手？四阶段路线图？ | S27 |
+| [DTC 出海诊断框架](cards/business-context/dtc-expansion-readiness-diagnostic.md) | 出海准备度怎么打分？6 维分阶段权重？Pixel/CAPI/再营销三层/素材更换节奏就绪标准？SEO/AEO/GEO 查什么？ | S28 |
 
 ### 平台运营打法（platform-ops-kb 蒸馏）
 

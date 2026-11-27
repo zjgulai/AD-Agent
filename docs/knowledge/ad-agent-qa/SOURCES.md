@@ -40,6 +40,7 @@ source: human+ai
 | S25 | marketingskills 营销 Agent Skills 合集 | https://github.com/coreyhaines31/marketingskills | GitHub 仓库（MIT License） | `raw/s25-marketingskills/`（8 skills 136 文件 1.6M） | 2026-11-27 |
 | S26 | Amazon-Skills 电商 Agent Skills 合集 | https://github.com/nexscope-ai/Amazon-Skills | GitHub 仓库（MIT License） | `raw/s26-amazon-skills/`（52 skills 67 文件 1.6M） | 2026-11-27 |
 | S27 | eCommerce-Skills 电商 Agent Skills 合集 | https://github.com/nexscope-ai/eCommerce-Skills | GitHub 仓库（MIT License） | `raw/s27-ecom-skills/`（~110 skills 211 文件 1.8M） | 2026-11-27 |
+| S28 | goaskvivi DTC 出海诊断 Skill | https://github.com/vivi911/goaskvivi-dtc-diagnostic-skill | GitHub 仓库（无 LICENSE） | `raw/s28-vivi-dtc/`（49 文件 452K，简/繁双语 references） | 2026-11-27 |
 
 ## 第二批源（drive 文件夹 `QChKfhUSRl95AwdPhYfcd39ynmh`，2026-11-26 追加）
 
@@ -148,3 +149,12 @@ source: human+ai
 - **蒸馏边界**：抽样确认后只收 2 个 skill——`ecommerce-ppc-strategy-planner`（买家行为选平台/ROAS 三公式/预算分配三模板/Mode B 🟢🟡🔴 重分配）+ `cross-border-ecommerce`（8 维市场评分/履约模式决策/六国税务合规/本地支付矩阵/landed cost/四阶段路线图）。**排除**：其余 ~108 个 skill（TikTok Shop 集群抽样全是 Core Capabilities 空话模板、选品/listing/邮件/SEO 等非广告域或已被 S22/S23 更深覆盖）。
 - E3 蒸馏产出：`cards/business-context/cross-border-expansion-framework.md`、`cards/platform-ops/cross-platform-ppc-strategy.md` + QA（business-context Q16-20、platform-ops Q74-78）+ `graph/instances/s27-ecom-skills.*`。
 - **口径注意**：平台 ROAS 基准（Google 4.5x/Meta 2.2x/TikTok 1.4x）为 2025-2026 第三方均值，卡内已标 ⚠️ 仅作 sanity check；税率/市场数据标注 eMarketer/Statista 2025 时效。
+
+## 第十三批源（goaskvivi DTC 诊断蒸馏，2026-11-27 追加）
+
+- 来源：`github.com/vivi911/goaskvivi-dtc-diagnostic-skill`（Vivi，**无 LICENSE**）。DTC 跨境出海诊断报告生成 skill，作者自述 22 年电商/Meta 广告/跨境品牌经验（台湾/马来/新加坡/香港市场视角）。
+- **原文已完整复制保存**至 `raw/s28-vivi-dtc/`（49 文件 452K，含 `references/` 简体 + `references-zh-tw/` 繁体双语 references、checklists/、market-knowledge/、industry-knowledge/；`.git` 不入档）。按既定 B 决策执行 raw 存档。
+- **蒸馏边界**：收 `references/diagnostic-framework.md`（6 维分阶段权重评分）+ `checklists/ads-readiness.md`（Pixel/CAPI/事件去重/AEM/素材/受众/预算清单）+ `checklists/seo-aeo-geo.md`+`website-health.md`+`private-domain.md`+`brand-positioning.md` 要点 + market-knowledge 东南亚市场注脚。**排除**：report-template/recommendation-templates（报告模板工程件）、tool-integrations（工具清单）、install.sh/build-portable.sh（安装脚本）、繁体版（与简体版同源重复）。
+- E4 蒸馏产出：`cards/business-context/dtc-expansion-readiness-diagnostic.md` + QA（business-context Q21-25）+ `graph/instances/s28-vivi-dtc.*`。
+- **定位关系**：本卡是出海三层链的最上游——诊断（够不够格）→ S27 选市场扩张 → S27-E3 跨平台预算编排。AEO/GEO 概念 KB 首次覆盖。
+- **口径注意**：部分阈值（CTR 降 20% 换素材、30/7/180 天受众分层、iOS 丢数据 30-50%）为从业者经验值，卡内标注需自家校准；Meta 2026-07 前后对比政策变更已按源文记录。
