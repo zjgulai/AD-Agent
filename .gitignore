@@ -7,3 +7,7 @@ tmp/
 logs/
 docs/knowledge/ad-agent-qa/graph/dist/
 staging/
+*.pem
+key_*.pem
+.playwright-mcp/
+/*.png
