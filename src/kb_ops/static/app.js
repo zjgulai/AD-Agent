@@ -183,19 +183,21 @@ async function vQaDetail(cluster) {
 
 /* ---------- Graph ---------- */
 
+/* sagegogo 深色主题 kg-* 域色板（sagegogo.com ontology-foundation） */
 const TYPE_COLORS = {
-  'ad:Playbook': '#4A90D9', 'ad:Benchmark': '#50C878', 'ad:Rule': '#E85D75',
-  'ad:WorkflowStage': '#F5A623', 'ad:KnowledgeAsset': '#9B59B6',
-  'ad:Metric': '#1ABC9C', 'ad:AdProduct': '#34495E', 'ad:Platform': '#16A085',
-  'ad:Channel': '#27AE60', 'ad:Concept': '#8E44AD', 'ad:Symptom': '#E67E22',
-  'ad:DiagnosisCheck': '#C0392B', 'ad:Action': '#2980B9', 'ad:Agent': '#8E44AD',
-  'ad:AgentLoop': '#7F8C8D', 'ad:Role': '#95A5A6', 'ad:Audience': '#F39C12',
-  'ad:Product': '#2C3E50', 'ad:Campaign': '#3D566E', 'ad:AdSet': '#5D6D7E',
-  'ad:AdEntity': '#707B7C', 'ad:Competitor': '#B03A2E', 'ad:SourceDoc': '#BDC3C7',
-  'ad:LifecycleStage': '#16A085', 'ad:HITLGate': '#C0392B',
+  'ad:Playbook': '#89a9f1', 'ad:Benchmark': '#7acbbf', 'ad:Rule': '#e79db6',
+  'ad:WorkflowStage': '#edb76c', 'ad:KnowledgeAsset': '#bd98e5',
+  'ad:Metric': '#b4cd85', 'ad:AdProduct': '#74bfe8', 'ad:Platform': '#7acbbf',
+  'ad:Channel': '#b4cd85', 'ad:Concept': '#bd98e5', 'ad:Symptom': '#e79db6',
+  'ad:DiagnosisCheck': '#e88f7f', 'ad:Action': '#89a9f1', 'ad:Agent': '#bd98e5',
+  'ad:AgentLoop': '#8ba0b8', 'ad:Role': '#c9d6e4', 'ad:Audience': '#edb76c',
+  'ad:Product': '#74bfe8', 'ad:Campaign': '#89a9f1', 'ad:AdSet': '#8ba0b8',
+  'ad:AdEntity': '#a9bcd4', 'ad:Competitor': '#e88f7f', 'ad:SourceDoc': '#7d92a8',
+  'ad:LifecycleStage': '#7acbbf', 'ad:HITLGate': '#e88f7f',
 };
-const COMM_COLORS = ['#E74C3C', '#3498DB', '#2ECC71', '#F39C12', '#9B59B6',
-  '#1ABC9C', '#E67E22', '#34495E', '#16A085', '#C0392B', '#8E44AD', '#F1C40F'];
+const COMM_COLORS = ['#89a9f1', '#bd98e5', '#7acbbf', '#edb76c', '#74bfe8',
+  '#e79db6', '#b4cd85', '#a9c6ee', '#cbb0ec', '#9fd8cf', '#f0cd8d',
+  '#e8b3c4', '#c8dba0', '#8ba0b8'];
 const DIRECTIONAL = new Set(['ad:depends_on', 'ad:triggers', 'ad:checks', 'ad:applies_when',
   'ad:affects', 'ad:measures', 'ad:has_threshold', 'ad:recommends', 'ad:implements',
   'ad:escalates_to', 'ad:supersedes', 'ad:deprecated_by', 'ad:sourced_from',
@@ -247,8 +249,8 @@ async function vGraph() {
       color: { background: TYPE_COLORS[n.type] || '#7F8C8D', border: commColor,
                highlight: { border: commColor } },
       borderWidth: n.community >= 0 ? 3 : 1,
-      font: { color: '#dfe3e8', size: 11, face: 'PingFang SC, sans-serif',
-              strokeWidth: 2, strokeColor: '#1a1d23' },
+      font: { color: '#eef4fa', size: 11, face: 'PingFang SC, sans-serif',
+              strokeWidth: 2, strokeColor: '#0a1a2c' },
       shape: 'dot', size: Math.min(6 + Math.sqrt(n.degree) * 2.5, 22),
       title: n.id + '\n' + n.type,
       _type: n.type, _cluster: n.cluster,
@@ -258,8 +260,8 @@ async function vGraph() {
     const dir = DIRECTIONAL.has(e.type);
     return { id: i, from: e.source, to: e.target, label: e.type.replace('ad:', ''),
       title: e.ref || '', arrows: dir ? 'to' : '',
-      color: { color: dir ? '#5b6b7f' : '#3a4150', highlight: '#6cb6ff' },
-      font: { color: '#6b7484', size: 8, align: 'middle' }, smooth: { type: 'continuous' } };
+      color: { color: dir ? '#4a627d' : '#33465c', highlight: '#89a9f1' },
+      font: { color: '#8ba0b8', size: 8, align: 'middle' }, smooth: { type: 'continuous' } };
   }));
 
   const network = new vis.Network(document.getElementById('g-canvas'),
@@ -309,7 +311,7 @@ async function vGraph() {
     $detail.innerHTML = `<h4>${esc(n.label)}</h4>
       <div class="meta">${esc(n.id)}<br>${esc(n.type)} · ${esc(n.cluster)} · 社区${n.community >= 0 ? n.community : '—'} · 度${n.degree}</div>
       ${rows ? `<table>${rows}</table>` : ''}
-      <div style="margin-top:8px;color:var(--mut)">邻居：</div>${nbrs || '<i>无</i>'}`;
+      <div style="margin-top:8px;color:var(--muted)">邻居：</div>${nbrs || '<i>无</i>'}`;
     $detail.querySelectorAll('.nbr').forEach(el => el.addEventListener('click', () => focusNode(el.dataset.id)));
   }
   function focusNode(id) {
