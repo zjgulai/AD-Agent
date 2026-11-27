@@ -73,3 +73,23 @@ source: human+ai
 ### Q15. 新站冷启动先补哪些触点？
 **A**：对照自检清单——认知阶段先保品牌词 SEO 前 3+场景词广告+垂类达人；兴趣阶段保首屏 UVP+Lead Magnet+对比工具+EDM 序列；考虑阶段保 PDP 评价量+Q&A+Live Chat+首单优惠+竞品对比页。
 > 溯源：`cards/business-context/customer-touchpoint-map.md`
+
+### Q16. 出海先开哪个市场怎么选？
+**A**：8 维加权评分——市场规模 20%/电商渗透 10%/竞争 15%/监管 15%/物流 15%/支付 10%/文化距离 10%/IP 5%，1-10 分加权求和取 top 2-3 深潜。别只追最大市场：CA/AU 这类中等规模低竞争易物流市场常胜 CN 级超大市场。
+> 溯源：`cards/business-context/cross-border-expansion-framework.md`（S27:cross-border-ecommerce）
+
+### Q17. 直发/FBA/本地 3PL 怎么选？
+**A**：按单量——<50 单/月直发试水、50-200 集货或本地 3PL、200+ 本地 3PL 或平台履约；平台卖家首日就平台履约；AOV>$100 高客单快递可行。运费走廊：CN→US 标准 $6-15/kg 7-12 天；US→AU 最贵 $15-25/kg 7-10 天。
+> 溯源：`cards/business-context/cross-border-expansion-framework.md`（S27:cross-border-ecommerce）
+
+### Q18. EU/UK 卖货 VAT/IOSS 怎么合规？
+**A**：EU IOSS 简化 ≤EUR150 B2C 进口 VAT（注册一次、结账收、单一申报）；在 EU 存货须注册所在国 VAT；⚠️ EUR150 免税额度 2028 年废除需提前布局。UK 脱欧独立：≤GBP135 卖家须注册 UK VAT 收税（marketplace facilitator 代收除外）；US de minimis $800 免税但有下调压力；CA 阈值极低（关税 CAD40/税 CAD20）且 NRI 身份可预清关。
+> 溯源：`cards/business-context/cross-border-expansion-framework.md`（S27:cross-border-ecommerce）
+
+### Q19. 不接本地支付方式会怎样？
+**A**：99% 跨境买家要求本地支付——NL 没 iDEAL≈没生意、BR 要 Pix 40%+分期、IN 要 UPI 50%+COD、SEA COD 占 30-40%、JP 有 Konbini 便利店支付。另：外币定价放弃率高 33%，永远显示本地货币+结账锁汇；>$50K/月国际流水考虑远期合约对冲。
+> 溯源：`cards/business-context/cross-border-expansion-framework.md`（S27:cross-border-ecommerce）
+
+### Q20. 跨境卖 $25 商品毛利会掉多少？
+**A**：算例 landed cost $22.58（货本8+运费6.5+VAT5+保险/汇损/支付/退货准备3.08）→毛利从国内 68% 掉到 9.7%。对策：国际售价加价 10-20%、本地履约降运费、正确 HS 编码降关税、量大谈支付费率、压缩退货准备金。
+> 溯源：`cards/business-context/cross-border-expansion-framework.md`（S27:cross-border-ecommerce）

@@ -39,6 +39,7 @@ source: human+ai
 | S24 | meta-ad-analysis 多渠道广告分析工具 | https://github.com/XingyuBillHou/meta-ad-analysis | GitHub 仓库（单文件 Streamlit 应用，无 LICENSE） | `raw/s24-meta-ad-analysis/`（14 文件 180K） | 2026-11-27 |
 | S25 | marketingskills 营销 Agent Skills 合集 | https://github.com/coreyhaines31/marketingskills | GitHub 仓库（MIT License） | `raw/s25-marketingskills/`（8 skills 136 文件 1.6M） | 2026-11-27 |
 | S26 | Amazon-Skills 电商 Agent Skills 合集 | https://github.com/nexscope-ai/Amazon-Skills | GitHub 仓库（MIT License） | `raw/s26-amazon-skills/`（52 skills 67 文件 1.6M） | 2026-11-27 |
+| S27 | eCommerce-Skills 电商 Agent Skills 合集 | https://github.com/nexscope-ai/eCommerce-Skills | GitHub 仓库（MIT License） | `raw/s27-ecom-skills/`（~110 skills 211 文件 1.8M） | 2026-11-27 |
 
 ## 第二批源（drive 文件夹 `QChKfhUSRl95AwdPhYfcd39ynmh`，2026-11-26 追加）
 
@@ -125,7 +126,7 @@ source: human+ai
 
 - 来源：`github.com/coreyhaines31/marketingskills`（Corey Haines，62k★，**MIT License**）。~50 个营销 Agent Skills，本批只收广告相关 8 域。
 - **原文已完整复制保存**至 `raw/s25-marketingskills/`（`skills/{ads,ad-creative,attribution,conversion-tracking,cro,influencer-marketing,aso,ab-testing}` + LICENSE + README，136 文件 1.6M，保留仓库相对路径）。
-- **蒸馏批次（E1a–E1c 已批准，S25 同一源分子批）**：E1a Meta 量化决策系统+Andromeda 打法+账户治理纪律→`meta-ads-diagnosis/`+`fundamentals/` 新卡×2；E1b 素材创意系统（hook-system/meta-creative-formats/platform-specs/short-form-specs）→待执行；E1c Google Search playbook+attribution 加深+payback/conversion-tracking 精选→待执行。
+- **蒸馏批次（E1a–E1c 已批准，S25 同一源分子批）**：E1a Meta 量化决策系统+Andromeda 打法+账户治理纪律→`meta-ads-diagnosis/`+`fundamentals/` 新卡×2；E1b/E1c 已完成（见下方各批产出行）。
 - **口径注意**：源文为 B2B SaaS 口径（TCPL=目标合格线索成本、qualified lead、B2B 基准线），蒸馏时逐点标注 DTC 翻译（TCPL→目标单均获客成本、qualified rate→有效订单率、B2B 基准→需重校准）；所有阈值为从业者起点值，源文自述「recalibrate against your own account」。
 - **蒸馏边界**：只蒸馏知识原子（阈值/公式/决策规则/平台事实/方法论框架），不复制 skill 的 prompt 工作流文本；conversion-tracking 的 GTM recipes/snippets（~100 个工程资产文件）保留存档但不逐一蒸馏，仅取 references 方法论文档。
 - E1a 蒸馏产出：`cards/meta-ads-diagnosis/meta-quantified-decision-engine.md`、`cards/fundamentals/ad-account-governance.md` + `qa/meta-ads-diagnosis.md` Q35-40 + `qa/fundamentals.md` Q30-36 + `graph/instances/s25-marketingskills.*`（36 节点/69 边）。
@@ -139,3 +140,11 @@ source: human+ai
 - **原文已完整复制保存**至 `raw/s26-amazon-skills/`（52 skills 67 文件 1.6M，保留仓库相对路径；`.git` 不入档）。
 - **蒸馏边界**：52 个 skill 逐一抽样——**只有 PPC 集群含知识**。收 `amazon-ppc-campaign`（ACoS 财务框架/Auto→Broad→Exact 漏斗/出价阶梯/周规则/Day1-21 启动节奏）+ `amazon-brand-analytics`（SFR 机会缺口>25% 共购阈值等 2 条信号）。**排除**：`amazon-advertising-strategy`/`amazon-display-ads`/`amazon-negative-keywords`/`amazon-dayparting-strategy`（模板化空话无阈值）、其余 47 个非广告域 skill（选品/FBA/Listing/物流/Vine/评级等——与广告域无关或已被 S22/S23 更深覆盖）。
 - **与 S22/S23 关系**：增量不冲突——S22 给 Amazon 架构/预算%/出价表/Day7-14-30，本批补**财务数学层**（break-even/target ACoS/Max CPC 公式、launch vs mature 目标 ACoS）+**周操作规则**（10+点击0单否定、2+单迁 Exact、出价调整表）。
+
+## 第十二批源（eCommerce-Skills 蒸馏，2026-11-27 追加）
+
+- 来源：`github.com/nexscope-ai/eCommerce-Skills`（Nexscope AI，1.5k★，**MIT License**）。~110 个电商 skill，全链路覆盖但多数为模板化空话。
+- **原文已完整复制保存**至 `raw/s27-ecom-skills/`（211 文件 1.8M，保留仓库相对路径；`.git`/banner.png 不入档）。
+- **蒸馏边界**：抽样确认后只收 2 个 skill——`ecommerce-ppc-strategy-planner`（买家行为选平台/ROAS 三公式/预算分配三模板/Mode B 🟢🟡🔴 重分配）+ `cross-border-ecommerce`（8 维市场评分/履约模式决策/六国税务合规/本地支付矩阵/landed cost/四阶段路线图）。**排除**：其余 ~108 个 skill（TikTok Shop 集群抽样全是 Core Capabilities 空话模板、选品/listing/邮件/SEO 等非广告域或已被 S22/S23 更深覆盖）。
+- E3 蒸馏产出：`cards/business-context/cross-border-expansion-framework.md`、`cards/platform-ops/cross-platform-ppc-strategy.md` + QA（business-context Q16-20、platform-ops Q74-78）+ `graph/instances/s27-ecom-skills.*`。
+- **口径注意**：平台 ROAS 基准（Google 4.5x/Meta 2.2x/TikTok 1.4x）为 2025-2026 第三方均值，卡内已标 ⚠️ 仅作 sanity check；税率/市场数据标注 eMarketer/Statista 2025 时效。

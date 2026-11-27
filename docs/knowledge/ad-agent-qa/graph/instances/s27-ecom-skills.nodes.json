@@ -1,0 +1,209 @@
+{
+ "graph": "ad",
+ "cluster": "s27-ecom-skills",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "S27=nexscope eCommerce-Skills;只蒸馏 ecommerce-ppc-strategy-planner(选平台/ROAS/预算/ModeB)+cross-border-ecommerce(8维评分/履约/税务/支付/landed cost/路线图);其余~108 skill模板化或非广告域已排除",
+ "nodes": [
+  {
+   "@id": "ad:src:ecom-skills",
+   "@type": "ad:SourceDoc",
+   "label": "eCommerce-Skills",
+   "props": {
+    "repo": "github.com/nexscope-ai/eCommerce-Skills",
+    "license": "MIT",
+    "desc": "Nexscope 电商 skills ~110个;本shard只蒸馏 ecommerce-ppc-strategy-planner+cross-border-ecommerce 2个;其余模板化空话或非广告域已排除"
+   },
+   "src": [
+    "raw/s27-ecom-skills/LICENSE",
+    "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md",
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-cross-border-expansion-framework",
+   "@type": "ad:KnowledgeAsset",
+   "label": "跨境电商出海扩张框架卡",
+   "props": {
+    "cluster": "business-context",
+    "qa": "business-context Q16-20"
+   },
+   "src": [
+    "cards/business-context/cross-border-expansion-framework.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-cross-platform-ppc-strategy",
+   "@type": "ad:KnowledgeAsset",
+   "label": "跨平台PPC策略规划卡",
+   "props": {
+    "cluster": "platform-ops",
+    "qa": "platform-ops Q74-78"
+   },
+   "src": [
+    "cards/platform-ops/cross-platform-ppc-strategy.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:market-scoring-8dim",
+   "@type": "ad:Playbook",
+   "label": "出海市场8维加权评分",
+   "props": {
+    "weights": "规模20/渗透10/竞争15/监管15/物流15/支付10/文化10/IP5",
+    "desc": "1-10分加权求和取top2-3深潜;中等规模低竞争市场常胜超大市场"
+   },
+   "src": [
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:fulfillment-by-volume",
+   "@type": "ad:Playbook",
+   "label": "履约模式按单量决策",
+   "props": {
+    "rule": "<50直发/50-200集货或3PL/200+本地3PL或平台履约;AOV>100快递可行",
+    "desc": "direct/3PL/FBA/dropship/集货五选一"
+   },
+   "src": [
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:landed-cost-formula",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Landed Cost落地成本公式",
+   "props": {
+    "formula": "货本+运费+关税+进口税+保险+汇损+支付费+退货准备",
+    "desc": "$25商品US→UK毛利68%→9.7%的算例;跨境毛利杀手"
+   },
+   "src": [
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:payment-localization-matrix",
+   "@type": "ad:Playbook",
+   "label": "本地支付方式矩阵",
+   "props": {
+    "rule": "永远显示本地货币(外币放弃率+33%);结账锁汇;>$50K/月流水对冲",
+    "desc": "NL要iDEAL/BR要Pix+分期/IN要UPI+COD/SEA COD 30-40%/JP Konbini"
+   },
+   "src": [
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:expansion-4phases",
+   "@type": "ad:Playbook",
+   "label": "出海四阶段路线图",
+   "props": {
+    "phases": "P1研究搭建1-2月→P2软启动2-3月→P3放量3-6月→P4优化6-12月",
+    "desc": "里程碑:50单成功履约→200+/月正贡献毛利→市场自负盈亏"
+   },
+   "src": [
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:expansion-readiness-6check",
+   "@type": "ad:Rule",
+   "label": "出海就绪六项检查",
+   "props": {
+    "checks": "本土盈利/扛+20%单量/预算覆盖/精力/产品合法/理解landed cost",
+    "desc": "六项不全先补再出海"
+   },
+   "src": [
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:tax-compliance-quickref",
+   "@type": "ad:KnowledgeAsset",
+   "label": "六国税务合规速查",
+   "props": {
+    "facts": "EU IOSS≤EUR150+2028免税额废除/UK≤GBP135须注册VAT/US de minimis$800/CA CAD40-20极低+NRI/AU AUD75K门槛/JP消费税10%",
+    "desc": "B2C关键税点速查,标注eMarketer/Avalara时效"
+   },
+   "src": [
+    "raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:buyer-behavior-platform-match",
+   "@type": "ad:Playbook",
+   "label": "买家行为→主平台匹配",
+   "props": {
+    "map": "搜索型→Google/视觉型→Meta/demo型→TikTok;预算<1000只投一个主平台",
+    "desc": "Mode A第一驱动;不确定按品类推断标⚠️"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cross-platform-roas-framework",
+   "@type": "ad:Playbook",
+   "label": "跨平台ROAS三公式",
+   "props": {
+    "formulas": "break-even=1÷毛利率;target=break-even×1.5~2;MaxCPA=AOV×毛利率",
+    "desc": "所有平台预算决策的地基;与Amazon ACoS框架同构不同名"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:budget-split-3templates",
+   "@type": "ad:Playbook",
+   "label": "预算分配三模板",
+   "props": {
+    "templates": "搜索型Google50-60%/视觉型Meta45-55%/演示型TikTok40-50%;retargeting单列10-20%",
+    "desc": "按主平台类型的预算占比模板"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:modeb-triage-reallocation",
+   "@type": "ad:Playbook",
+   "label": "ModeB三档重分配",
+   "props": {
+    "triage": "🟢超target+20-30%/🟡区间内先优化/🔴低于break-even砍50%或暂停",
+    "desc": "纯ROAS排序会误杀漏斗上游prospecting"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:learning-period-2-4w",
+   "@type": "ad:Rule",
+   "label": "新campaign学习期2-4周",
+   "props": {
+    "gate": "新campaign上线2-4周内不做优化判断",
+    "desc": "Mode B硬门槛;一周ROAS0.8不等于该关"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:platform-roas-benchmarks",
+   "@type": "ad:KnowledgeAsset",
+   "label": "平台ROAS行业基准",
+   "props": {
+    "bench": "Google Shopping4.5x/Meta2.2x(retargeting3.6x)/TikTok1.4x/全行业2.87x",
+    "asof": "2025-2026第三方均值⚠️sanity check用"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+   ]
+  }
+ ]
+}

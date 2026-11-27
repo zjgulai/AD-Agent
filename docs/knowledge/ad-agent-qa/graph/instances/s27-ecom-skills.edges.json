@@ -1,0 +1,410 @@
+{
+ "graph": "ad",
+ "cluster": "s27-ecom-skills",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "同nodes;边域遵守schema:measures限Metric等;recommends限KnowledgeAsset/Agent/Role源",
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:src:ecom-skills",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/LICENSE"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:src:ecom-skills",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:src:ecom-skills",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:cards/business-context/cross-border-expansion-framework.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:cards/platform-ops/cross-platform-ppc-strategy.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:market-scoring-8dim",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:fulfillment-by-volume",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:landed-cost-formula",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:payment-localization-matrix",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:expansion-4phases",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:expansion-readiness-6check",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:tax-compliance-quickref",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/cross-border-ecommerce/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:buyer-behavior-platform-match",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cross-platform-roas-framework",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:budget-split-3templates",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:modeb-triage-reallocation",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:learning-period-2-4w",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:platform-roas-benchmarks",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:playbook:market-scoring-8dim",
+   "ref": "cross-border card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:market-scoring-8dim",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:playbook:fulfillment-by-volume",
+   "ref": "cross-border card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:fulfillment-by-volume",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:concept:landed-cost-formula",
+   "ref": "cross-border card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:landed-cost-formula",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:playbook:payment-localization-matrix",
+   "ref": "cross-border card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:payment-localization-matrix",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:playbook:expansion-4phases",
+   "ref": "cross-border card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:expansion-4phases",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:rule:expansion-readiness-6check",
+   "ref": "cross-border card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:expansion-readiness-6check",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:concept:tax-compliance-quickref",
+   "ref": "cross-border card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:tax-compliance-quickref",
+   "target": "ad:asset:card-cross-border-expansion-framework",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:playbook:buyer-behavior-platform-match",
+   "ref": "ppc-strategy card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:buyer-behavior-platform-match",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:playbook:cross-platform-roas-framework",
+   "ref": "ppc-strategy card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:cross-platform-roas-framework",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:playbook:budget-split-3templates",
+   "ref": "ppc-strategy card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:budget-split-3templates",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:playbook:modeb-triage-reallocation",
+   "ref": "ppc-strategy card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:modeb-triage-reallocation",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:rule:learning-period-2-4w",
+   "ref": "ppc-strategy card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:learning-period-2-4w",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:concept:platform-roas-benchmarks",
+   "ref": "ppc-strategy card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:platform-roas-benchmarks",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:market-scoring-8dim",
+   "target": "ad:playbook:expansion-4phases",
+   "ref": "评分结果定路线图市场"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:expansion-4phases",
+   "target": "ad:rule:expansion-readiness-6check",
+   "ref": "出海前先过就绪检查"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:fulfillment-by-volume",
+   "target": "ad:concept:landed-cost-formula",
+   "ref": "履约选择影响landed cost"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:payment-localization-matrix",
+   "target": "ad:concept:landed-cost-formula",
+   "ref": "支付费是landed cost组分"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:buyer-behavior-platform-match",
+   "target": "ad:playbook:cross-platform-roas-framework",
+   "ref": "选平台后才算ROAS目标"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:budget-split-3templates",
+   "target": "ad:playbook:buyer-behavior-platform-match",
+   "ref": "预算模板跟主平台走"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:modeb-triage-reallocation",
+   "target": "ad:playbook:cross-platform-roas-framework",
+   "ref": "重分配判定靠ROAS公式"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:modeb-triage-reallocation",
+   "target": "ad:rule:learning-period-2-4w",
+   "ref": "学习期内不动"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:asset:card-dsite-sem-ads-playbook",
+   "ref": "出海市场SEM承接"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-border-expansion-framework",
+   "target": "ad:asset:card-attribution-measurement",
+   "ref": "跨市场归因"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:asset:card-dsite-sem-ads-playbook",
+   "ref": "Google侧6C细节"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:asset:card-attribution-measurement",
+   "ref": "跨平台ROAS口径先归因"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:asset:card-payback-budget-gate",
+   "ref": "回本周期比单点ROAS更长期"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cross-platform-ppc-strategy",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "Amazon侧ACoS框架同构"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:platform-roas-benchmarks",
+   "target": "ad:platform:google",
+   "ref": "Google基准"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:platform-roas-benchmarks",
+   "target": "ad:platform:meta",
+   "ref": "Meta基准"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:platform-roas-benchmarks",
+   "target": "ad:platform:tiktok",
+   "ref": "TikTok基准"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:buyer-behavior-platform-match",
+   "target": "ad:playbook:partnership-ads-playbook",
+   "ref": "Meta侧放大机制衔接"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cross-platform-roas-framework",
+   "target": "ad:metric:roas",
+   "ref": "ROAS目标管理对象"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:modeb-triage-reallocation",
+   "target": "ad:metric:roas",
+   "ref": "按ROAS分档"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cross-platform-roas-framework",
+   "target": "ad:metric:cpa",
+   "ref": "MaxCPA约束"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:modeb-triage-reallocation",
+   "target": "ad:metric:cpa",
+   "ref": "CPA视角同判"
+  }
+ ]
+}

@@ -73,6 +73,7 @@ source: human+ai
 | [MP 项目管理方法论](cards/business-context/mp-project-methodology.md) | 投放需求→MP→上线→调节→复盘全链路怎么跑？横切底座四件套？哪些环节已识别为 AI 机会？ | S18/S19 |
 | [Momcozy 人群画像洞察（孕→哺→育）](cards/business-context/momcozy-audience-persona.md) | 核心人群是谁？三阶段定位/数据/渠道分工/T0-T3 出价分层/可执行人群包？ | S20 |
 | [吸奶器品线独立站全触点地图](cards/business-context/customer-touchpoint-map.md) | 7 阶段×120+ 触点怎么拆？站内外矩阵？渠道协同分工？竞品对标？自检清单？ | S21 |
+| [跨境电商出海扩张框架](cards/business-context/cross-border-expansion-framework.md) | 出海选哪个市场？8 维评分？履约模式怎么选？各国 VAT/GST/IOSS？本地支付？landed cost 毛利杀手？四阶段路线图？ | S27 |
 
 ### 平台运营打法（platform-ops-kb 蒸馏）
 
@@ -92,6 +93,7 @@ source: human+ai
 | [广告创意策略系统](cards/platform-ops/ad-creative-strategy-system.md) | Hook 三组件管线？创意策略循环/证据分级？Meta 51 格式 S→F？Andromeda 下 partnership ads？竖屏 safe-zone/字幕/音频？防 AI 痕迹？ | S25 |
 | [Google Search 广告手册](cards/platform-ops/google-search-playbook.md) | 意图阶梯怎么解锁？品牌词暂停测试？独立预算为什么？Broad 三条件？周检搜索词三遍？PMax 护栏？ | S25 |
 | [Amazon PPC 建计划与优化](cards/platform-ops/amazon-ppc-campaign-ops.md) | ACoS 财务框架/launch vs mature 目标？Auto→Broad→Exact 漏斗？出价阶梯？周操作阈值（10+点击0单/2+单迁移/20+点击调bid）？Brand Analytics 信号？ | S26 |
+| [跨平台 PPC 策略规划](cards/platform-ops/cross-platform-ppc-strategy.md) | 买家行为怎么选主平台？ROAS 三公式？预算分配三模板？平台 ROAS 基准？Mode B 🟢🟡🔴 重分配规则？学习期门槛？ | S27 |
 
 ## 按问题类型速查
 

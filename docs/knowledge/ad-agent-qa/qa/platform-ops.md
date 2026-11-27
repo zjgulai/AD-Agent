@@ -305,3 +305,23 @@ source: human+ai
 ### Q73. Brand Analytics 数据怎么反哺广告？
 **A**：两条——SFR 报告找「高搜索频率低 click share」机会缺口（你的 click share vs 品类均值，按 High/Medium/Low 分级）；Market Basket 找 >25% 共购率捆绑候选（10+ 共购才算统计显著），用于 bundle/交叉推广/品类扩张判断。
 > 溯源：`cards/platform-ops/amazon-ppc-campaign-ops.md`（S26:amazon-brand-analytics）
+
+### Q74. 新品投广告先投 Google/Meta/TikTok 哪个？
+**A**：先问买家行为——主动搜索型→Google Shopping 主；视觉种草型→Meta 主；要看演示才懂→TikTok 主；不确定按品类推断并标 ⚠️ estimated。预算 < $1,000/月只投一个主平台不摊薄；有网站流量或邮件列表且预算 > $1,000/月必含 retargeting（通常是全盘最高 ROAS）。
+> 溯源：`cards/platform-ops/cross-platform-ppc-strategy.md`（S27:ecommerce-ppc-strategy-planner）
+
+### Q75. 跨平台 ROAS 目标和 Max CPA 怎么算？
+**A**：Break-even ROAS = 1÷毛利率（25%→4.0x、50%→2.0x、75%→1.33x）；Target ROAS = Break-even×1.5~2 留利润缓冲；Max CPA = AOV×毛利率。例：$34 商品 76.5% 毛利→break-even 1.31x / target 2.5x / Max CPA $26.01。
+> 溯源：`cards/platform-ops/cross-platform-ppc-strategy.md`（S27:ecommerce-ppc-strategy-planner）
+
+### Q76. Google ROAS 4x、Meta prospecting 1.5x，预算该全挪给 Google 吗？
+**A**：先对照各自 break-even/target 分三档——🟢超 target 加预算 20-30%；🟡在 break-even~target 间先优化不加钱；🔴低于 break-even 砍 50% 或暂停。警惕纯 ROAS 排序误杀漏斗上游：Meta prospecting 低 ROAS 但在为 retargeting/Google 供受众。
+> 溯源：`cards/platform-ops/cross-platform-ppc-strategy.md`（S27:ecommerce-ppc-strategy-planner）
+
+### Q77. 新 campaign 跑一周 ROAS 0.8 要不要关停？
+**A**：不要。新 campaign 需 2-4 周度过学习期，期间数据不具统计意义。先查预算是否过低导致学习受限、定向是否过窄，再决定是否动结构；Mode B 审计的硬门槛就是 2-4 周。
+> 溯源：`cards/platform-ops/cross-platform-ppc-strategy.md`（S27:ecommerce-ppc-strategy-planner）
+
+### Q78. 各平台 ROAS 基准大概多少？
+**A**：2025-2026 行业均值——Google Shopping 4.5x（top quartile 6x+）、Meta 2.2x（retargeting 3.6x，top 4-5x）、TikTok 1.4x（top 2x+）、全行业 2.87x。⚠️ 第三方基准只做 sanity check，判定永远以自家 break-even/target 为准。
+> 溯源：`cards/platform-ops/cross-platform-ppc-strategy.md`（S27:ecommerce-ppc-strategy-planner）
