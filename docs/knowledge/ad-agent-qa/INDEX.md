@@ -56,6 +56,8 @@ source: human+ai
 | [产品不同阶段广告投放策略（8 阶段）](cards/fundamentals/product-lifecycle-ad-strategy.md) | 产品各生命周期阶段投什么目标/出价？每阶段必做实验？常见坑？ | S11 |
 | [归因与测量体系](cards/fundamentals/attribution-measurement.md) | 各平台归因转化为什么不能相加？Cookie 末日是不是谣言？GA4/Google Ads DDA 迁移？增量测试怎么设计？Meridian vs Robyn？ | S22 |
 | [广告账户治理纪律](cards/fundamentals/ad-account-governance.md) | 周检六问+四态判定？AI 审计怎么防没查的也打分？品牌/非品牌怎么拆？净现金放量观？再营销异 offer 原则？ | S25 |
+| [归因模型算例与差异诊断](cards/fundamentals/attribution-models-reconciliation.md) | 同一笔订单六模型各分多少？DDA 何时可信？Ads-GA4 差 20% 正常吗？退款不对称？direct/品牌词虚高怎么读？ | S25 |
+| [Payback 预算闸门](cards/fundamentals/payback-period-budget-gate.md) | LTV:CAC 为什么不可信？毛利回本怎么算？cohort 恢复路径？渠道能不能投的四步判据？ | S25 |
 
 ### 竞品分析
 
@@ -88,6 +90,7 @@ source: human+ai
 | [Amazon Listing AI 评分细则](cards/platform-ops/amazon-listing-ai-score-rubric.md) | Listing 适不适合 AI 推荐？8 维怎么打分？75字符/Item Highlights 新规过渡期？N/A 怎么处理？ | S23 |
 | [Amazon 评论洞察 VOC](cards/platform-ops/amazon-review-voc-ops.md) | 差评怎么分类归因？6 类痛点+严重度？VOC 怎么反哺 Listing/广告/QA？ | S23 |
 | [广告创意策略系统](cards/platform-ops/ad-creative-strategy-system.md) | Hook 三组件管线？创意策略循环/证据分级？Meta 51 格式 S→F？Andromeda 下 partnership ads？竖屏 safe-zone/字幕/音频？防 AI 痕迹？ | S25 |
+| [Google Search 广告手册](cards/platform-ops/google-search-playbook.md) | 意图阶梯怎么解锁？品牌词暂停测试？独立预算为什么？Broad 三条件？周检搜索词三遍？PMax 护栏？ | S25 |
 
 ## 按问题类型速查
 

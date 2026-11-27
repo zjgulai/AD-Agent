@@ -789,6 +789,396 @@
    "source": "ad:asset:card-decision-engine",
    "target": "ad:asset:card-creative-strategy-system",
    "ref": "kill/keep/scale feeds creative roadmap signals"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:cards/platform-ops/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:cards/fundamentals/attribution-models-reconciliation.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-payback-budget-gate",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:cards/fundamentals/payback-period-budget-gate.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:google-intent-ladder",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:match-type-gates",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:weekly-search-terms-ritual",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:independent-budgets",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:pmax-guardrails",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:brand-pause-test",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:offline-conversion-import",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:google-search-scorecard",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:six-attribution-models",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/attribution/references/attribution-models.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:dda-shapley",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/attribution/references/attribution-models.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:model-consistency",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/attribution/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:platform-gap-normal-band",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/conversion-tracking/references/discrepancies.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:tracking-loss-environment",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/conversion-tracking/references/discrepancies.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:refund-asymmetry",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/conversion-tracking/references/discrepancies.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:mta-impression-blindspot",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/attribution/references/measurement-paradigms.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:channel-level-override",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/attribution/references/measurement-paradigms.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:kill-ltv-cac",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/payback-period.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:payback-gross-margin",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/payback-period.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:cohort-recovery-path",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/payback-period.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:channel-affordability-4step",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ads/references/payback-period.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:playbook:google-intent-ladder",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:rule:match-type-gates",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:playbook:weekly-search-terms-ritual",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:rule:independent-budgets",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:playbook:pmax-guardrails",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:concept:brand-pause-test",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:playbook:offline-conversion-import",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:bench:google-search-scorecard",
+   "ref": "google-search-playbook card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:concept:six-attribution-models",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:concept:dda-shapley",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:rule:model-consistency",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:bench:platform-gap-normal-band",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:concept:tracking-loss-environment",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:rule:refund-asymmetry",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:concept:mta-impression-blindspot",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:concept:channel-level-override",
+   "ref": "attribution-models-reconciliation card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-payback-budget-gate",
+   "target": "ad:rule:kill-ltv-cac",
+   "ref": "payback-period-budget-gate card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-payback-budget-gate",
+   "target": "ad:concept:payback-gross-margin",
+   "ref": "payback-period-budget-gate card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-payback-budget-gate",
+   "target": "ad:concept:cohort-recovery-path",
+   "ref": "payback-period-budget-gate card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-payback-budget-gate",
+   "target": "ad:playbook:channel-affordability-4step",
+   "ref": "payback-period-budget-gate card"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:google-intent-ladder",
+   "target": "ad:concept:brand-pause-test",
+   "ref": "brand rung pause test"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:google-intent-ladder",
+   "target": "ad:rule:independent-budgets",
+   "ref": "rung budgets independent"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:google-intent-ladder",
+   "target": "ad:rule:match-type-gates",
+   "ref": "broad only after rungs prove"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:google-intent-ladder",
+   "target": "ad:playbook:weekly-search-terms-ritual",
+   "ref": "weekly mining feeds ladder"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:pmax-guardrails",
+   "target": "ad:playbook:offline-conversion-import",
+   "ref": "import before scaling"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:pmax-guardrails",
+   "target": "ad:adproduct:google-pmax",
+   "ref": "PMax product"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:adproduct:google-search-ads",
+   "ref": "Search ads product"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:asset:card-dsite-sem-ads-playbook",
+   "ref": "architecture vs ops complement"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-google-search-playbook",
+   "target": "ad:playbook:offline-conversion-import",
+   "ref": "order value import detail"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:dda-shapley",
+   "target": "ad:concept:six-attribution-models",
+   "ref": "DDA vs rule models"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:channel-level-override",
+   "target": "ad:concept:mta-impression-blindspot",
+   "ref": "override responds to MTA bias"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:channel-level-override",
+   "target": "ad:bench:platform-gap-normal-band",
+   "ref": "evidence window bounded"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:rule:refund-asymmetry",
+   "target": "ad:bench:platform-gap-normal-band",
+   "ref": "refund asymmetry is structural not bug"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:asset:card-attribution-measurement",
+   "ref": "paradigm layer complement"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-models-reconciliation",
+   "target": "ad:concept:channel-level-override",
+   "ref": "triangulation rule"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:offline-conversion-import",
+   "target": "ad:asset:card-attribution-measurement",
+   "ref": "CRM wins reconciliation"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:channel-affordability-4step",
+   "target": "ad:rule:kill-ltv-cac",
+   "ref": "gate rejects LTV:CAC"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:channel-affordability-4step",
+   "target": "ad:concept:payback-gross-margin",
+   "ref": "step2 margin payback"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:channel-affordability-4step",
+   "target": "ad:concept:cohort-recovery-path",
+   "ref": "step2 cohort path"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:cohort-recovery-path",
+   "target": "ad:concept:payback-gross-margin",
+   "ref": "recovery uses margin payback inputs"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-payback-budget-gate",
+   "target": "ad:asset:card-attribution-measurement",
+   "ref": "CAC attribution inputs"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-payback-budget-gate",
+   "target": "ad:playbook:google-intent-ladder",
+   "ref": "channel gate before spend rungs"
   }
  ]
 }

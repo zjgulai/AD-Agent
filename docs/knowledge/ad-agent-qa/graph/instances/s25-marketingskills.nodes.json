@@ -734,6 +734,274 @@
    "src": [
     "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
    ]
+  },
+  {
+   "@id": "ad:asset:card-google-search-playbook",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Google Search广告手册卡",
+   "props": {
+    "cluster": "platform-ops",
+    "qa": "platform-ops Q64-68"
+   },
+   "src": [
+    "cards/platform-ops/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-attribution-models-reconciliation",
+   "@type": "ad:KnowledgeAsset",
+   "label": "归因模型算例与差异诊断卡",
+   "props": {
+    "cluster": "fundamentals",
+    "qa": "fundamentals Q37-40"
+   },
+   "src": [
+    "cards/fundamentals/attribution-models-reconciliation.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-payback-budget-gate",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Payback预算闸门卡",
+   "props": {
+    "cluster": "fundamentals",
+    "qa": "fundamentals Q41-42"
+   },
+   "src": [
+    "cards/fundamentals/payback-period-budget-gate.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:google-intent-ladder",
+   "@type": "ad:Playbook",
+   "label": "Google意图阶梯五层解锁",
+   "props": {
+    "rungs": "brand→high-intent non-brand→competitor→problem-aware→demand-gen",
+    "desc": "每层须证明真实成交才解锁下一层；Search收割不创造需求；跳层=烧钱"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:match-type-gates",
+   "@type": "ad:Rule",
+   "label": "Broad匹配三条件门禁",
+   "props": {
+    "desc": "月转化30++智能出价上线+否定词表够紧才开Broad；Phrase+Exact起步；AI Max同门禁"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:weekly-search-terms-ritual",
+   "@type": "ad:Playbook",
+   "label": "每周搜索词三遍扫描",
+   "props": {
+    "passes": "浪费否定/赢家建词/漂移收紧",
+    "desc": "3+点击零转化→否定；已转化未建词→Exact/Phrase；错误含义→收紧匹配"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:independent-budgets",
+   "@type": "ad:Rule",
+   "label": "独立预算铁律",
+   "props": {
+    "desc": "Brand独立永不共享；共享预算让品牌词饿死需要数据的campaign——纸面盈利实则全瞎"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:pmax-guardrails",
+   "@type": "ad:Playbook",
+   "label": "PMax护栏五件套",
+   "props": {
+    "desc": "品牌排除+一方受众信号+上线即否定词+先导离线转化再扩量+按campaign查线索质量；价值排序brand>non-brand>remarketing>PMax>demand-gen"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:brand-pause-test",
+   "@type": "ad:KnowledgeAsset",
+   "label": "品牌词暂停测试",
+   "props": {
+    "desc": "唯一竞价者且自然吃SERP时可测暂停；看品牌总转化(付费+自然)非只看付费；总量持平=蚕食自己"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:offline-conversion-import",
+   "@type": "ad:Playbook",
+   "label": "离线/订单价值回传",
+   "props": {
+    "desc": "B2B口径=CRM SQL/opportunity导回；DTC翻译=真实订单order_id+金额/毛利回传(EC/gclid)；订单系统是裁决方平台自报不可信"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:google-search-scorecard",
+   "@type": "ad:Benchmark",
+   "label": "Search周记分卡八指标",
+   "props": {
+    "metrics": "spend·转化·CPL·成交率·成交·单成本站本·展示份额·浪费词",
+    "desc": "Lost IS(budget)vsLost IS(rank)区分钱不够vs Ad Rank不够"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/google-search-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:six-attribution-models",
+   "@type": "ad:KnowledgeAsset",
+   "label": "六归因模型同旅程算例",
+   "props": {
+    "journey": "5触点38天$12k",
+    "desc": "first→LinkedIn/last→Direct(垃圾抽屉)/last-non-direct→branded/linear均分/time-decay末触集中/position首末各40%；first+last并排报告差值即洞察"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/attribution/references/attribution-models.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:dda-shapley",
+   "@type": "ad:KnowledgeAsset",
+   "label": "DDA/Shapley算法归因",
+   "props": {
+    "threshold": "~200转化+~2000交互/30天",
+    "desc": "量不足塌缩成last-click噪声；只能给被追踪触点打分；相关非因果须增量测试验证；Google UI现只剩DDA+last-click"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/attribution/references/attribution-models.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:model-consistency",
+   "@type": "ad:Rule",
+   "label": "归因模型一致性铁律",
+   "props": {
+    "desc": "选一个模型保持一致+配模型外检查；为让渠道好看换模型=最快失去归因信任"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/attribution/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:platform-gap-normal-band",
+   "@type": "ad:Benchmark",
+   "label": "平台差异正常带10-30%",
+   "props": {
+    "normal": "Ads-vs-GA4 10-30%天然差",
+    "investigate": ">40%/方向翻转/突然变化/读零",
+    "desc": "日期归因/模型范围/view-through/计数/建模/延迟七因素；永远别比截止<3天窗口"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/conversion-tracking/references/discrepancies.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:tracking-loss-environment",
+   "@type": "ad:KnowledgeAsset",
+   "label": "环境性漏计量级表",
+   "props": {
+    "top": "consent硬阻塞EU~55%/CMv2错配~90%/广告拦截~30%全球B2B 40-60%/Safari ITP带参页24h/重定向剥gclid 100%",
+    "desc": "server-side只恢复部分；consent denial不可恢复也不应恢复"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/conversion-tracking/references/discrepancies.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:refund-asymmetry",
+   "@type": "ad:Rule",
+   "label": "退款处理平台不对称",
+   "props": {
+    "desc": "Google Ads可adjust(restate/retract须order_id+时限)；GA4有refund事件；Meta无退款机制Purchase永远算数→老实接调整的店Meta ROAS结构性虚高"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/conversion-tracking/references/discrepancies.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:mta-impression-blindspot",
+   "@type": "ad:KnowledgeAsset",
+   "label": "MTA impression盲区偏差",
+   "props": {
+    "desc": "无点击impression渠道进不了journey→系统性高估需求捕获低估需求创造；MTA不是干净下界(再营销/品牌词常高估)；永不作大预算重分配唯一依据"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/attribution/references/measurement-paradigms.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:channel-level-override",
+   "@type": "ad:KnowledgeAsset",
+   "label": "渠道级归因override规则",
+   "props": {
+    "desc": "增量/调研/平台差距一致指低估时：报表层把窗口内部分转化从Direct/品牌词移入被低估渠道；原始MTA保留；别发明平台差距乘数"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/attribution/references/measurement-paradigms.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:kill-ltv-cac",
+   "@type": "ad:Rule",
+   "label": "杀LTV:CAC四宗罪",
+   "props": {
+    "flaws": "假设全churn/假设churn均匀(实际前3月集中)/混合ARPU掩盖分计划/忽略收入延迟",
+    "desc": "3:1可盖在会破产的渠道上——比率从不问现金何时回来"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/payback-period.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:payback-gross-margin",
+   "@type": "ad:KnowledgeAsset",
+   "label": "毛利回本公式",
+   "props": {
+    "formula": "CAC/(monthly ARPU×gross margin)",
+    "desc": "revenue-only=CAC/ARPU假设100%毛利；3-12月是规划参考非批准线；同CAC不同价位affordability天差地别"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/payback-period.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:cohort-recovery-path",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Cohort累计恢复路径",
+   "props": {
+    "formula": "Σ(ARPU_t×margin_t×retained_t)找首个覆盖CAC月",
+    "desc": "年末留存率相同恢复路径可差2月；未恢复就如实报别编日期"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/payback-period.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:channel-affordability-4step",
+   "@type": "ad:Playbook",
+   "label": "渠道affordability四步闸",
+   "props": {
+    "steps": "全口径CAC→毛利回本+实测cohort路径→与跑道自选目标比→每月重跑",
+    "desc": "与breakeven配套：breakeven管最多付多少，payback管现金占多久"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/payback-period.md"
+   ]
   }
  ]
 }

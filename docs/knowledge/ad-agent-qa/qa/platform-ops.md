@@ -265,3 +265,23 @@ source: human+ai
 ### Q63. AI 批量生成广告怎么避免「一看就是 AI」？
 **A**：禁对比揭示「It's not X, it's Y」、否定排比、stock phrases、em dash、泛化 hook/CTA slop；批次内变化句式。测试假设必须可证伪（指名指标+对比对象+预期方向）。每条创意溯源到语料库（评论原话/赢家广告/评论区异议），无来源不进 icebox；语料为空停下来要料不许无 grounding 降级生成。
 > 溯源：`cards/platform-ops/ad-creative-strategy-system.md`（S25:ad-creative/SKILL.md）
+
+### Q64. Google Search 预算先投哪里？
+**A**：意图阶梯逐层解锁——brand（常开）→high-intent non-brand（利润中心大部分预算）→competitor（须对比落地页）→problem-aware→demand-gen（有富余才上）。每层须证明转化为真实成交才解锁下一层；Search 收割需求不创造需求，品类搜索量近零就把预算放上游社媒。
+> 溯源：`cards/platform-ops/google-search-playbook.md`（S25:google-search-playbook）
+
+### Q65. 广泛匹配什么时候能开？
+**A**：三条件全满足——campaign 月转化 30+、智能出价已上线、否定词表够紧。顺序：Phrase+Exact 起步→每周挖搜索词报告→条件满足才上 Broad。AI Max for Search 同门禁，且要排除不该接广告流量的 URL、周检它选的落地页。
+> 溯源：`cards/platform-ops/google-search-playbook.md`（S25:google-search-playbook）
+
+### Q66. 为什么品牌词/非品牌/竞品要独立预算？
+**A**：共享预算下最便宜转化最高的 campaign（永远是品牌词）会饿死需要数据的 campaign——账户纸面盈利但重要地方全瞎。Brand 独立预算永不共享；竞品词 CPC/CVR 经济性不同也独立。品牌词默认投（不投竞品投），唯一例外是你是唯一竞价者且自然结果吃掉 SERP 时可测暂停——看品牌总转化（付费+自然）不只看付费。
+> 溯源：`cards/platform-ops/google-search-playbook.md`（S25:google-search-playbook）
+
+### Q67. PMax 会不会蚕食品牌 Search？
+**A**：会——须账户级品牌排除+一方数据受众信号+上线第一天否定词+先导离线转化再扩量。Optmyzr 2025-02 研究 91% 账户存在 Search↔PMax 完全关键词重叠。价值排序：brand Search>non-brand>remarketing>PMax>demand-gen；PMax 永不首发、永不弱追踪/小预算。
+> 溯源：`cards/platform-ops/google-search-playbook.md`（S25:google-search-playbook）
+
+### Q68. 每周搜索词报告怎么处理？
+**A**：三遍扫描——①浪费：3+点击零转化的无关词→否定；②赢家：已转化未建词的搜索词→Exact/Phrase 加进正确 ad group；③漂移：broad/phrase 拉来错误含义→收紧匹配或否定。注意否定 broad 要求所有词都在（"free trial" 不挡单独 "free"）；不过度否定——含糊词先攒数据再砍。
+> 溯源：`cards/platform-ops/google-search-playbook.md`（S25:google-search-playbook）
