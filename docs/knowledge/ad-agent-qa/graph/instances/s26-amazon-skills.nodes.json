@@ -1,0 +1,187 @@
+{
+ "graph": "ad",
+ "cluster": "s26-amazon-skills",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "S26=nexscope Amazon-Skills;只蒸馏 amazon-ppc-campaign+amazon-brand-analytics;其余47 skill非广告域或模板化已排除;与S22 Amazon卡互补",
+ "nodes": [
+  {
+   "@id": "ad:src:amazon-skills",
+   "@type": "ad:SourceDoc",
+   "label": "Amazon-Skills",
+   "props": {
+    "repo": "github.com/nexscope-ai/Amazon-Skills",
+    "license": "MIT",
+    "desc": "Nexscope 电商 skills 52个;本shard只蒸馏 amazon-ppc-campaign+amazon-brand-analytics;其余47个非广告域或模板化无知识"
+   },
+   "src": [
+    "raw/s26-amazon-skills/LICENSE",
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-amazon-ppc-campaign-ops",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Amazon PPC建计划与优化卡",
+   "props": {
+    "cluster": "platform-ops",
+    "qa": "platform-ops Q69-73"
+   },
+   "src": [
+    "cards/platform-ops/amazon-ppc-campaign-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:acos-financial-framework",
+   "@type": "ad:Playbook",
+   "label": "ACoS财务框架三公式",
+   "props": {
+    "formulas": "break-even=广告前利润率;target=break-even−目标利润;MaxCPC=售价×targetACoS×CVR",
+    "desc": "三个公式定所有出价决策；MaxCPC是盈利天花板非实际bid"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:launch-vs-mature-acos",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Launch vs Mature目标ACoS",
+   "props": {
+    "ratio": "launch约1.7倍成熟线",
+    "window": "前4-8周",
+    "desc": "新品期允许激进ACoS换排名评论后收回"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:keyword-funnel-migration",
+   "@type": "ad:Playbook",
+   "label": "关键词漏斗Auto→Broad→Exact",
+   "props": {
+    "rule": "2+订单迁上/源campaign加否定防重复花费",
+    "desc": "Auto发现新词→Broad宽匹配测试→Exact放量赢家；否定词隔离是漏斗成立前提"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:bid-ladder",
+   "@type": "ad:Playbook",
+   "label": "出价阶梯Exact/Broad/Auto",
+   "props": {
+    "ladder": "Exact=suggested或MaxCPC取低;Broad=Exact×70-80%;Auto=50-70%;ProductTargeting=50-70%",
+    "desc": "无suggested数据时的品类相对起点；7天后按实际ACoS调"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:search-term-weekly-actions",
+   "@type": "ad:Playbook",
+   "label": "搜索词周操作三动作",
+   "props": {
+    "migrate": "2+订单→Exact",
+    "negate": "10+点击0销售→否定",
+    "watch": "<20点击→观察名单",
+    "desc": "每周搜索词报告处理循环"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:bid-adjustment-table",
+   "@type": "ad:Playbook",
+   "label": "出价调整ACoS百分比表",
+   "props": {
+    "min_clicks": "20+点击才调",
+    "table": ">200%降30-50%/100-199%降20%/target+10~99%降10-15%/target±10%不动/低于target加10-20%/10+点击0单暂停"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:launch-day-schedule",
+   "@type": "ad:Playbook",
+   "label": "新品Day1-21启动节奏",
+   "props": {
+    "days": "D1建P1P2→D3查曝光→D7加P3P4+审否定→D14迁移赢家→D21调bid",
+    "desc": "与S22 Day7/14/30检查点互补"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:four-campaign-structure",
+   "@type": "ad:Playbook",
+   "label": "标准4campaign结构",
+   "props": {
+    "structure": "P1 Auto必建/P2 Exact top10-15词必建/P3 Broad一周后/P4 ProductTargeting有ASIN时",
+    "desc": "预算紧先上P1+P2；分campaign防内部竞争"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:max-cpc-ceiling",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Max CPC盈利天花板",
+   "props": {
+    "formula": "售价×Target ACoS×CVR",
+    "desc": "suggested>MaxCPC三选一:亏损冲排名/提价/弃词;CVR基准10-15%"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:sfr-opportunity-gap",
+   "@type": "ad:KnowledgeAsset",
+   "label": "SFR机会缺口信号",
+   "props": {
+    "method": "搜索频率排名vs click share vs品类均值",
+    "desc": "高搜索频率低click share=机会缺口"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-brand-analytics/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:market-basket-25pct",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Market Basket共购阈值",
+   "props": {
+    "threshold": ">25%共购=捆绑候选;10+共购才显著",
+    "desc": "bundle/交叉推广/品类扩张信号"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-brand-analytics/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:neg-3seed-lists",
+   "@type": "ad:Rule",
+   "label": "否定词三类种子",
+   "props": {
+    "types": "跨campaign/无关词/通用浪费",
+    "desc": "上线即建否定词种子清单"
+   },
+   "src": [
+    "raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+   ]
+  }
+ ]
+}

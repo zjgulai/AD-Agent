@@ -1,0 +1,332 @@
+{
+ "graph": "ad",
+ "cluster": "s26-amazon-skills",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "同nodes",
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:src:amazon-skills",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/LICENSE"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:src:amazon-skills",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:cards/platform-ops/amazon-ppc-campaign-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:acos-financial-framework",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:launch-vs-mature-acos",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:keyword-funnel-migration",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:bid-ladder",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:search-term-weekly-actions",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:bid-adjustment-table",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:launch-day-schedule",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:four-campaign-structure",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:max-cpc-ceiling",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:sfr-opportunity-gap",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-brand-analytics/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:market-basket-25pct",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-brand-analytics/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:neg-3seed-lists",
+   "target": "ad:src:amazon-skills",
+   "ref": "amazon-skills:raw/s26-amazon-skills/amazon-ppc-campaign/SKILL.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:acos-financial-framework",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:concept:launch-vs-mature-acos",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:keyword-funnel-migration",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:bid-ladder",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:search-term-weekly-actions",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:bid-adjustment-table",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:launch-day-schedule",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:four-campaign-structure",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:concept:max-cpc-ceiling",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:concept:sfr-opportunity-gap",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:concept:market-basket-25pct",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:rule:neg-3seed-lists",
+   "ref": "amazon-ppc-campaign-ops card"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:acos-financial-framework",
+   "target": "ad:concept:max-cpc-ceiling",
+   "ref": "MaxCPC公式组件"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:acos-financial-framework",
+   "target": "ad:metric:amazon-acos",
+   "ref": "ACoS目标管理对象"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:keyword-funnel-migration",
+   "target": "ad:rule:neg-3seed-lists",
+   "ref": "漏斗隔离靠否定"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:keyword-funnel-migration",
+   "target": "ad:playbook:four-campaign-structure",
+   "ref": "漏斗在4campaign上跑"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:bid-ladder",
+   "target": "ad:concept:max-cpc-ceiling",
+   "ref": "bid上限约束"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:search-term-weekly-actions",
+   "target": "ad:playbook:keyword-funnel-migration",
+   "ref": "周操作驱动漏斗迁移"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:search-term-weekly-actions",
+   "target": "ad:playbook:bid-adjustment-table",
+   "ref": "同一数据两种动作"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:launch-day-schedule",
+   "target": "ad:playbook:four-campaign-structure",
+   "ref": "D1/D7建计划顺序"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:launch-day-schedule",
+   "target": "ad:concept:launch-vs-mature-acos",
+   "ref": "launch期目标放宽"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:four-campaign-structure",
+   "target": "ad:adproduct:amazon-sp",
+   "ref": "SP承载Auto/Broad/Exact"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:playbook:acos-financial-framework",
+   "target": "ad:channel:amazon-asi",
+   "ref": "Amazon站内广告"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:playbook:keyword-funnel-migration",
+   "target": "ad:channel:amazon-asi",
+   "ref": "Amazon站内"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:asset:card-amazon-ads-operations",
+   "ref": "财务数学vs架构框架互补"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:asset:card-amazon-keyword-listing-ops",
+   "ref": "关键词上游"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:cbe-amazon-campaign-arch",
+   "ref": "S22架构树"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-amazon-ppc-campaign-ops",
+   "target": "ad:playbook:cbe-amazon-weekly-ryg",
+   "ref": "S22周复盘RYG"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:sfr-opportunity-gap",
+   "target": "ad:playbook:cbe-amazon-keyword-tiers",
+   "ref": "SFR缺口喂词库分层"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:acos-financial-framework",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:keyword-funnel-migration",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:bid-ladder",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:search-term-weekly-actions",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:bid-adjustment-table",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:launch-day-schedule",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:four-campaign-structure",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:max-cpc-ceiling",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:neg-3seed-lists",
+   "target": "ad:asset:card-amazon-ppc-campaign-ops",
+   "ref": "cluster membership under card"
+  }
+ ]
+}

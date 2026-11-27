@@ -285,3 +285,23 @@ source: human+ai
 ### Q68. 每周搜索词报告怎么处理？
 **A**：三遍扫描——①浪费：3+点击零转化的无关词→否定；②赢家：已转化未建词的搜索词→Exact/Phrase 加进正确 ad group；③漂移：broad/phrase 拉来错误含义→收紧匹配或否定。注意否定 broad 要求所有词都在（"free trial" 不挡单独 "free"）；不过度否定——含糊词先攒数据再砍。
 > 溯源：`cards/platform-ops/google-search-playbook.md`（S25:google-search-playbook）
+
+### Q69. Amazon 广告目标 ACoS 怎么从毛利算？launch 和成熟差多少？
+**A**：Break-even ACoS=广告前利润率；Target ACoS=break-even−目标利润率。例：$39.99 售价成本 $18.50→毛利 53.7%→成熟 target 30%/launch target 50%（前 4-8 周激进换排名）。Max CPC=售价×Target ACoS×CVR 是盈利天花板，实际 bid 取 Amazon suggested range 与 MaxCPC 的低者。
+> 溯源：`cards/platform-ops/amazon-ppc-campaign-ops.md`（S26:amazon-ppc-campaign）
+
+### Q70. Amazon Auto/Broad/Exact 怎么分工不打架？
+**A**：关键词漏斗——Auto 发现新词→2+ 订单迁 Broad/Exact、2+ 销售迁 Exact；隔离靠 Exact 的所有词在 Broad/Auto 加 Negative Exact。标准 4 campaign：P1 Auto+P2 Exact 必建，P3 Broad 数据一周后加，P4 Product Targeting 有竞品 ASIN 时加。
+> 溯源：`cards/platform-ops/amazon-ppc-campaign-ops.md`（S26:amazon-ppc-campaign）
+
+### Q71. Amazon 搜索词报告每周怎么处理？
+**A**：三动作——2+ 订单迁移上 Exact（源 campaign 加否定）；**10+ 点击 0 销售**加否定；<20 点击进观察名单。出价调整只对 20+ 点击词：ACoS>200% 降 30-50%、100-199% 降 20%、target+10%~99% 降 10-15%、低于 target 加 10-20%、10+ 点击 0 销售暂停。
+> 溯源：`cards/platform-ops/amazon-ppc-campaign-ops.md`（S26:amazon-ppc-campaign）
+
+### Q72. Amazon 新品广告 Day1-21 怎么排？
+**A**：Day1 建 P1 Auto+P2 Exact→Day3 查曝光（太低提 bid 向 suggested）→Day7 加 P3 Broad+P4 Product Targeting 并审 Auto 搜索词加明显否定→Day14 全量分析迁移 2+ 单赢家→Day21 对 20+ 点击词调 bid。launch 期目标 ACoS 可放宽到 ~1.7 倍成熟线。
+> 溯源：`cards/platform-ops/amazon-ppc-campaign-ops.md`（S26:amazon-ppc-campaign）
+
+### Q73. Brand Analytics 数据怎么反哺广告？
+**A**：两条——SFR 报告找「高搜索频率低 click share」机会缺口（你的 click share vs 品类均值，按 High/Medium/Low 分级）；Market Basket 找 >25% 共购率捆绑候选（10+ 共购才算统计显著），用于 bundle/交叉推广/品类扩张判断。
+> 溯源：`cards/platform-ops/amazon-ppc-campaign-ops.md`（S26:amazon-brand-analytics）

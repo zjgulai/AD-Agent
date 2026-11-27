@@ -91,6 +91,7 @@ source: human+ai
 | [Amazon 评论洞察 VOC](cards/platform-ops/amazon-review-voc-ops.md) | 差评怎么分类归因？6 类痛点+严重度？VOC 怎么反哺 Listing/广告/QA？ | S23 |
 | [广告创意策略系统](cards/platform-ops/ad-creative-strategy-system.md) | Hook 三组件管线？创意策略循环/证据分级？Meta 51 格式 S→F？Andromeda 下 partnership ads？竖屏 safe-zone/字幕/音频？防 AI 痕迹？ | S25 |
 | [Google Search 广告手册](cards/platform-ops/google-search-playbook.md) | 意图阶梯怎么解锁？品牌词暂停测试？独立预算为什么？Broad 三条件？周检搜索词三遍？PMax 护栏？ | S25 |
+| [Amazon PPC 建计划与优化](cards/platform-ops/amazon-ppc-campaign-ops.md) | ACoS 财务框架/launch vs mature 目标？Auto→Broad→Exact 漏斗？出价阶梯？周操作阈值（10+点击0单/2+单迁移/20+点击调bid）？Brand Analytics 信号？ | S26 |
 
 ## 按问题类型速查
 

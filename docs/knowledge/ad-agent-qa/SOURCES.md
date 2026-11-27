@@ -38,6 +38,7 @@ source: human+ai
 | S21 | 吸奶器品线独立站_全触点地图（S1 附件 HTML） | S1 wiki 内嵌附件 | HTML 可视化文档 | `raw/s1-attachments/吸奶器品线独立站_全触点地图.html` | 2026-11-26 |
 | S24 | meta-ad-analysis 多渠道广告分析工具 | https://github.com/XingyuBillHou/meta-ad-analysis | GitHub 仓库（单文件 Streamlit 应用，无 LICENSE） | `raw/s24-meta-ad-analysis/`（14 文件 180K） | 2026-11-27 |
 | S25 | marketingskills 营销 Agent Skills 合集 | https://github.com/coreyhaines31/marketingskills | GitHub 仓库（MIT License） | `raw/s25-marketingskills/`（8 skills 136 文件 1.6M） | 2026-11-27 |
+| S26 | Amazon-Skills 电商 Agent Skills 合集 | https://github.com/nexscope-ai/Amazon-Skills | GitHub 仓库（MIT License） | `raw/s26-amazon-skills/`（52 skills 67 文件 1.6M） | 2026-11-27 |
 
 ## 第二批源（drive 文件夹 `QChKfhUSRl95AwdPhYfcd39ynmh`，2026-11-26 追加）
 
@@ -129,3 +130,12 @@ source: human+ai
 - **蒸馏边界**：只蒸馏知识原子（阈值/公式/决策规则/平台事实/方法论框架），不复制 skill 的 prompt 工作流文本；conversion-tracking 的 GTM recipes/snippets（~100 个工程资产文件）保留存档但不逐一蒸馏，仅取 references 方法论文档。
 - E1a 蒸馏产出：`cards/meta-ads-diagnosis/meta-quantified-decision-engine.md`、`cards/fundamentals/ad-account-governance.md` + `qa/meta-ads-diagnosis.md` Q35-40 + `qa/fundamentals.md` Q30-36 + `graph/instances/s25-marketingskills.*`（36 节点/69 边）。
 - **新实体**：`ad:metric:tcpl`、`ad:bench:graduation-criteria`、`ad:bench:fatigue-frequency-bands`、`ad:playbook:meta-decision-system`/`meta-andromeda-playbook`/`operating-check-6q`/`retargeting-4component`/`partnership-ads-playbook`/`zombie-campaigns`/`ad-sequencing-path`/`cbo-8020-structure`/`scaling-protocol`/`swap-rules-no-zombie`/`weekly-quality-eval`、`ad:workflowstage:day7-delivery-check`/`weekly-cadence-mwf`、`ad:rule`×8（广告数上限/创意量约束/审计四态/禁跨窗加总/禁编否定词/MISSING不估算/实盘草案先行/优化non-brand/净现金>ROAS）、`ad:concept`×8。
+- E1b 蒸馏产出：`cards/platform-ops/ad-creative-strategy-system.md` + `qa/platform-ops.md` Q59-63 + s25 shard +25 节点/66 边。
+- E1c 蒸馏产出：`cards/platform-ops/google-search-playbook.md`、`cards/fundamentals/attribution-models-reconciliation.md`、`cards/fundamentals/payback-period-budget-gate.md` + QA（platform-ops Q64-68、fundamentals Q37-42）+ s25 shard +23 节点/65 边。
+
+## 第十一批源（Amazon-Skills 蒸馏，2026-11-27 追加）
+
+- 来源：`github.com/nexscope-ai/Amazon-Skills`（Nexscope AI，907★，**MIT License**）。52 个电商 skill，覆盖选品/FBA/Listing/广告/物流全链路。
+- **原文已完整复制保存**至 `raw/s26-amazon-skills/`（52 skills 67 文件 1.6M，保留仓库相对路径；`.git` 不入档）。
+- **蒸馏边界**：52 个 skill 逐一抽样——**只有 PPC 集群含知识**。收 `amazon-ppc-campaign`（ACoS 财务框架/Auto→Broad→Exact 漏斗/出价阶梯/周规则/Day1-21 启动节奏）+ `amazon-brand-analytics`（SFR 机会缺口>25% 共购阈值等 2 条信号）。**排除**：`amazon-advertising-strategy`/`amazon-display-ads`/`amazon-negative-keywords`/`amazon-dayparting-strategy`（模板化空话无阈值）、其余 47 个非广告域 skill（选品/FBA/Listing/物流/Vine/评级等——与广告域无关或已被 S22/S23 更深覆盖）。
+- **与 S22/S23 关系**：增量不冲突——S22 给 Amazon 架构/预算%/出价表/Day7-14-30，本批补**财务数学层**（break-even/target ACoS/Max CPC 公式、launch vs mature 目标 ACoS）+**周操作规则**（10+点击0单否定、2+单迁 Exact、出价调整表）。
