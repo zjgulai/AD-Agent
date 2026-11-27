@@ -5,7 +5,7 @@ module: ad-agent-qa
 topic: source-conflicts
 status: stable
 created: 2026-11-26
-updated: 2026-11-26
+updated: 2026-11-27
 owner: self
 source: human+ai
 ---
@@ -37,6 +37,7 @@ source: human+ai
 | C15 | **ROAS 止血线** | S4/S6/S7 一致：<0.7x（盈亏平衡×0.7）连续 2-3 天 | — | **无冲突** | — |
 | C16 | **频次疲劳** | S4/S6/S7 一致：>5 且 CTR 跌 | — | **无冲突** | — |
 | C17 | **Learning 期门槛** | S6/S7 一致：<50 转化不动预算；Learning>7 天介入 | S4 P0-04 事件量分档不同（见 C3） | 基本一致（S4 属不同检查点） | — |
+| C18 | **营销预算占营收%** | CBE brand-budget-ops（全营销口径）：Y1 25-40% / Y2-3 18-25% / Y4+ 12-18% | S27 strategy-builder（paid-media 口径）：新 15-20% / 早期 10-15% / 成长 7-12% / 成熟 5-8% | 口径差异（分母范围不同：含品牌/内容/PR/人力 vs 仅付费媒体；Gartner 2025 全营销=7.7% 营收为第三口径） | ✅ 已厘清：两口径互补不冲突，卡内并列标注；引用须带口径限定词 |
 
 ## 裁决分级（2026-11-26 P0 分诊）
 
@@ -57,6 +58,7 @@ source: human+ai
 | C11 | ✅ 已裁决 | 双引擎 OCR 实测：10 Loop / 约 31 节点；任务概述「约 7 Loop/约 20 Agent」为约数 |
 | C12 | ✅ 已厘清 | 素材疲劳 -30% 周环比 vs CTR/峰值<0.70 是两个并列有效信号，非互斥判据 |
 | C13–C17 | ✅ 无冲突 | Pacing 60/130、归因差>30%、ROAS<0.7x、频次>5、Learning<50——多源一致，高置信可引用 |
+| C18 | ✅ 已厘清（口径标注） | 营销预算占比两口径（全营销 vs paid-media）分母范围不同，互补关系；F4 图谱以 `variant_of` 边显式链接两基准节点 |
 
 **pending_business 清单**（4 项，等业务裁决，不阻塞图谱/对话层）：C1（EQ 阈值终裁）、C4（CTR 定义）、C5（CPM 基准）、C9（S6 版本号）。
 

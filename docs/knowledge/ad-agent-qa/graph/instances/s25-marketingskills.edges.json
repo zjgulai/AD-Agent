@@ -1665,6 +1665,12 @@
    "source": "ad:rule:ugc-4week-judge",
    "target": "ad:metric:cvr",
    "ref": "安装/转化判断"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:retargeting-4component",
+   "target": "ad:concept:retargeting-3tier-audiences",
+   "ref": "F4卫生:再营销4组件执行依赖受众三层分层定义(S28)"
   }
  ]
 }

@@ -447,6 +447,12 @@
    "source": "ad:bench:channel-roi-per-dollar",
    "target": "ad:channel:email-sms",
    "ref": "email/SMS行"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:budget-split-3templates",
+   "target": "ad:playbook:cbe-annual-budget-ops",
+   "ref": "F4卫生:渠道内三模板分配受年度科目预算约束(S22)"
   }
  ]
 }

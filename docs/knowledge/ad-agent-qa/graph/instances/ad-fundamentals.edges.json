@@ -1,109 +1,666 @@
 {
-"graph":"ad-ops","cluster":"ad-fundamentals","generated":"2026-11-26",
-"defaults":{"status":"active","confidence":"high","freshness":"fresh","last_verified":"2026-11-26"},
-"edges":[
-{"@type":"ad:sourced_from","source":"ad:asset:card-algo-fields","target":"ad:src:s9","ref":"card:fundamentals/ad-algo-auto-fields.md"},
-{"@type":"ad:sourced_from","source":"ad:asset:card-bidding-chain","target":"ad:src:s10","ref":"card:fundamentals/ad-bidding-full-chain.md"},
-{"@type":"ad:sourced_from","source":"ad:asset:card-lifecycle","target":"ad:src:s11","ref":"card:fundamentals/product-lifecycle-ad-strategy.md"},
-{"@type":"ad:recommends","source":"ad:asset:card-algo-fields","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md"},
-{"@type":"ad:recommends","source":"ad:asset:card-bidding-chain","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md"},
-{"@type":"ad:recommends","source":"ad:asset:card-lifecycle","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md"},
-{"@type":"ad:part_of","source":"ad:product:field-budget-alloc","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L31"},
-{"@type":"ad:part_of","source":"ad:product:field-smart-bidding","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L37"},
-{"@type":"ad:part_of","source":"ad:product:field-audience-expand","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L45"},
-{"@type":"ad:part_of","source":"ad:product:field-placement-auto","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L49"},
-{"@type":"ad:part_of","source":"ad:product:field-keyword-expand","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L53"},
-{"@type":"ad:part_of","source":"ad:product:field-creative-combo","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L59"},
-{"@type":"ad:part_of","source":"ad:product:field-creative-weight","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L63"},
-{"@type":"ad:part_of","source":"ad:product:field-creative-targeting","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L67"},
-{"@type":"ad:part_of","source":"ad:product:field-dynamic-copy","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L71"},
-{"@type":"ad:part_of","source":"ad:product:field-fully-managed","target":"ad:playbook:algo-auto-fields","ref":"card:fundamentals/ad-algo-auto-fields.md#L77"},
-{"@type":"ad:part_of","source":"ad:stage:b0-pre-filter","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L33"},
-{"@type":"ad:part_of","source":"ad:stage:b1-ad-request","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L34"},
-{"@type":"ad:part_of","source":"ad:stage:b2-profile-fetch","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L35"},
-{"@type":"ad:part_of","source":"ad:stage:b3-multi-recall","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L41"},
-{"@type":"ad:part_of","source":"ad:stage:b4-hard-filter","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L42"},
-{"@type":"ad:part_of","source":"ad:stage:b5-estimation","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L48"},
-{"@type":"ad:part_of","source":"ad:stage:b6-smart-bid","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L49"},
-{"@type":"ad:part_of","source":"ad:stage:b7-ranking","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L50"},
-{"@type":"ad:part_of","source":"ad:stage:b8-gsp-billing","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L64"},
-{"@type":"ad:part_of","source":"ad:stage:b9-creative-render","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L65"},
-{"@type":"ad:part_of","source":"ad:stage:b10-impression","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L71"},
-{"@type":"ad:part_of","source":"ad:stage:b11-click","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L72"},
-{"@type":"ad:part_of","source":"ad:stage:b12-attribution","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L78"},
-{"@type":"ad:part_of","source":"ad:stage:b13-model-update","target":"ad:playbook:bidding-pipeline","ref":"card:fundamentals/ad-bidding-full-chain.md#L79"},
-{"@type":"ad:part_of","source":"ad:lifecycle:testing","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L33"},
-{"@type":"ad:part_of","source":"ad:lifecycle:preheat","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L34"},
-{"@type":"ad:part_of","source":"ad:lifecycle:launch","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L35"},
-{"@type":"ad:part_of","source":"ad:lifecycle:first-sales","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L36"},
-{"@type":"ad:part_of","source":"ad:lifecycle:growth","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L37"},
-{"@type":"ad:part_of","source":"ad:lifecycle:sustained","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L38"},
-{"@type":"ad:part_of","source":"ad:lifecycle:eol","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L39"},
-{"@type":"ad:part_of","source":"ad:lifecycle:promo","target":"ad:playbook:lifecycle-strategy","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L40"},
-{"@type":"ad:belongs_to","source":"ad:product:cbo","target":"ad:platform:meta","ref":"card:fundamentals/ad-algo-auto-fields.md#L35"},
-{"@type":"ad:belongs_to","source":"ad:product:advplus-audience","target":"ad:platform:meta","ref":"card:fundamentals/ad-algo-auto-fields.md#L47"},
-{"@type":"ad:belongs_to","source":"ad:product:advplus-placements","target":"ad:platform:meta","ref":"card:fundamentals/ad-algo-auto-fields.md#L51"},
-{"@type":"ad:belongs_to","source":"ad:product:advplus-creative","target":"ad:platform:meta","ref":"card:fundamentals/ad-algo-auto-fields.md#L61"},
-{"@type":"ad:belongs_to","source":"ad:product:asc","target":"ad:platform:meta","ref":"card:fundamentals/ad-algo-auto-fields.md#L78"},
-{"@type":"ad:belongs_to","source":"ad:product:pmax","target":"ad:platform:google","ref":"card:fundamentals/ad-algo-auto-fields.md#L78"},
-{"@type":"ad:belongs_to","source":"ad:product:rsa","target":"ad:platform:google","ref":"card:fundamentals/ad-algo-auto-fields.md#L61"},
-{"@type":"ad:belongs_to","source":"ad:product:dsa","target":"ad:platform:google","ref":"card:fundamentals/ad-algo-auto-fields.md#L73"},
-{"@type":"ad:belongs_to","source":"ad:product:keyword-broad-match","target":"ad:platform:google","ref":"card:fundamentals/ad-algo-auto-fields.md#L55"},
-{"@type":"ad:belongs_to","source":"ad:product:tiktok-spc","target":"ad:platform:tiktok","ref":"card:fundamentals/ad-algo-auto-fields.md#L78"},
-{"@type":"ad:belongs_to","source":"ad:product:jl-ocpm","target":"ad:platform:jl","ref":"card:fundamentals/ad-algo-auto-fields.md#L41"},
-{"@type":"ad:belongs_to","source":"ad:product:jl-cat","target":"ad:platform:jl","ref":"card:fundamentals/ad-algo-auto-fields.md#L69"},
-{"@type":"ad:belongs_to","source":"ad:product:jl-programmatic","target":"ad:platform:jl","ref":"card:fundamentals/ad-algo-auto-fields.md#L61"},
-{"@type":"ad:belongs_to","source":"ad:product:jl-auto-targeting","target":"ad:platform:jl","ref":"card:fundamentals/ad-algo-auto-fields.md#L47"},
-{"@type":"ad:belongs_to","source":"ad:product:jl-placement-opt","target":"ad:platform:jl","ref":"card:fundamentals/ad-algo-auto-fields.md#L51"},
-{"@type":"ad:belongs_to","source":"ad:product:jl-scale","target":"ad:platform:jl","ref":"card:fundamentals/ad-algo-auto-fields.md#L78"},
-{"@type":"ad:depends_on","source":"ad:stage:b1-ad-request","target":"ad:stage:b0-pre-filter","ref":"card:fundamentals/ad-bidding-full-chain.md#L33-34"},
-{"@type":"ad:depends_on","source":"ad:stage:b2-profile-fetch","target":"ad:stage:b1-ad-request","ref":"card:fundamentals/ad-bidding-full-chain.md#L35"},
-{"@type":"ad:depends_on","source":"ad:stage:b3-multi-recall","target":"ad:stage:b2-profile-fetch","ref":"card:fundamentals/ad-bidding-full-chain.md#L41"},
-{"@type":"ad:depends_on","source":"ad:stage:b4-hard-filter","target":"ad:stage:b3-multi-recall","ref":"card:fundamentals/ad-bidding-full-chain.md#L42"},
-{"@type":"ad:depends_on","source":"ad:stage:b5-estimation","target":"ad:stage:b4-hard-filter","ref":"card:fundamentals/ad-bidding-full-chain.md#L48"},
-{"@type":"ad:depends_on","source":"ad:stage:b6-smart-bid","target":"ad:stage:b5-estimation","ref":"card:fundamentals/ad-bidding-full-chain.md#L49"},
-{"@type":"ad:depends_on","source":"ad:stage:b7-ranking","target":"ad:stage:b6-smart-bid","ref":"card:fundamentals/ad-bidding-full-chain.md#L50"},
-{"@type":"ad:depends_on","source":"ad:stage:b8-gsp-billing","target":"ad:stage:b7-ranking","ref":"card:fundamentals/ad-bidding-full-chain.md#L64"},
-{"@type":"ad:depends_on","source":"ad:stage:b9-creative-render","target":"ad:stage:b8-gsp-billing","ref":"card:fundamentals/ad-bidding-full-chain.md#L65"},
-{"@type":"ad:depends_on","source":"ad:stage:b10-impression","target":"ad:stage:b9-creative-render","ref":"card:fundamentals/ad-bidding-full-chain.md#L71"},
-{"@type":"ad:depends_on","source":"ad:stage:b11-click","target":"ad:stage:b10-impression","ref":"card:fundamentals/ad-bidding-full-chain.md#L72"},
-{"@type":"ad:depends_on","source":"ad:stage:b12-attribution","target":"ad:stage:b11-click","ref":"card:fundamentals/ad-bidding-full-chain.md#L78"},
-{"@type":"ad:depends_on","source":"ad:stage:b13-model-update","target":"ad:stage:b12-attribution","ref":"card:fundamentals/ad-bidding-full-chain.md#L79"},
-{"@type":"ad:depends_on","source":"ad:lifecycle:preheat","target":"ad:lifecycle:testing","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L33-34","note":"演进顺序,非严格依赖;promo横切不入链"},
-{"@type":"ad:depends_on","source":"ad:lifecycle:launch","target":"ad:lifecycle:preheat","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L34-35"},
-{"@type":"ad:depends_on","source":"ad:lifecycle:first-sales","target":"ad:lifecycle:launch","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L35-36"},
-{"@type":"ad:depends_on","source":"ad:lifecycle:growth","target":"ad:lifecycle:first-sales","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L36-37"},
-{"@type":"ad:depends_on","source":"ad:lifecycle:sustained","target":"ad:lifecycle:growth","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L37-38"},
-{"@type":"ad:depends_on","source":"ad:lifecycle:eol","target":"ad:lifecycle:sustained","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L38-39"},
-{"@type":"ad:alternative_to","source":"ad:product:bid-tcpa","target":"ad:product:bid-troas","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L36","note":"首销期出价A/B实验对照"},
-{"@type":"ad:alternative_to","source":"ad:product:bid-tcpa","target":"ad:product:bid-maxconv","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L36"},
-{"@type":"ad:alternative_to","source":"ad:product:bid-troas","target":"ad:product:bid-maxconv","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L36"},
-{"@type":"ad:alternative_to","source":"ad:product:cbo","target":"ad:product:field-budget-alloc","ref":"card:fundamentals/ad-algo-auto-fields.md#L88","note":"CBO是预算分配的Meta具体实现,ABO为人工对照(未建节点)"},
-{"@type":"ad:alternative_to","source":"ad:product:pmax","target":"ad:product:jl-scale","ref":"card:fundamentals/ad-algo-auto-fields.md#L78","note":"全托管跨平台对照:巨量放量保留更多人工调参"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-pmf-test","target":"ad:lifecycle:testing","when":"测试期PMF验证","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L46"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-hook-test","target":"ad:lifecycle:preheat","when":"预热期Hook素材测试","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L47"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-bid-ab","target":"ad:lifecycle:first-sales","when":"首销期出价策略A/B","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L49"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-lp-cro","target":"ad:lifecycle:first-sales","when":"首销期落地页CRO","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L49"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-budget-ramp","target":"ad:lifecycle:growth","when":"增长期预算爬坡","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L50"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-lal-scale","target":"ad:lifecycle:growth","when":"增长期LAL扩量1%→3%→5%","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L50"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-incrementality","target":"ad:lifecycle:sustained","when":"常态期增量测试$75K+/月","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L51"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-creative-refresh","target":"ad:lifecycle:sustained","when":"常态期素材抗疲劳周更20%","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L51"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-winback","target":"ad:lifecycle:eol","when":"衰退清仓期老客唤醒","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L52"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-bundle","target":"ad:lifecycle:eol","when":"衰退清仓期Bundle方案","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L52"},
-{"@type":"ad:applies_when","source":"ad:action:lifecycle-promo-bid","target":"ad:lifecycle:promo","when":"大促期出价抢量","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L53"},
-{"@type":"ad:affects","source":"ad:action:lifecycle-lal-scale","target":"ad:metric:reach","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L50","note":"LAL扩量提升触达/新客"},
-{"@type":"ad:affects","source":"ad:action:lifecycle-budget-ramp","target":"ad:metric:roas","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L50","note":"爬坡观察ROAS/CPA/CPM容忍区间"},
-{"@type":"ad:affects","source":"ad:action:lifecycle-winback","target":"ad:metric:cac","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L52","note":"唤醒成本比新客低5倍"},
-{"@type":"ad:affects","source":"ad:action:lifecycle-creative-refresh","target":"ad:metric:ctr","ref":"card:fundamentals/product-lifecycle-ad-strategy.md#L51","note":"抗疲劳保CTR"},
-{"@type":"ad:affects","source":"ad:product:field-smart-bidding","target":"ad:metric:cpa","ref":"card:fundamentals/ad-algo-auto-fields.md#L38","note":"智能出价在tCPA约束内优化实际出价"},
-{"@type":"ad:affects","source":"ad:product:field-budget-alloc","target":"ad:metric:roas","ref":"card:fundamentals/ad-algo-auto-fields.md#L32","note":"预算倾斜赢家组提升整体ROAS"},
-{"@type":"ad:affects","source":"ad:product:field-creative-weight","target":"ad:metric:ctr","ref":"card:fundamentals/ad-algo-auto-fields.md#L64","note":"胜出创意拿更多流量"},
-{"@type":"ad:checks","source":"ad:stage:b4-hard-filter","target":"ad:metric:frequency","ref":"card:fundamentals/ad-bidding-full-chain.md#L42","note":"频控上限硬过滤(如3次/7天)"},
-{"@type":"ad:checks","source":"ad:stage:b6-smart-bid","target":"ad:metric:pacing","ref":"card:fundamentals/ad-bidding-full-chain.md#L49","note":"PacingFactor动态调价"},
-{"@type":"ad:checks","source":"ad:stage:b12-attribution","target":"ad:metric:attribution-gap","ref":"card:fundamentals/ad-bidding-full-chain.md#L78","note":"归因窗口匹配/跨渠道去重"},
-{"@type":"ad:checks","source":"ad:stage:b12-attribution","target":"ad:metric:eq","ref":"card:fundamentals/ad-bidding-full-chain.md#L78","note":"SKAN模式无单用户click_id影响EQ"},
-{"@type":"ad:depends_on","source":"ad:product:field-smart-bidding","target":"ad:stage:b6-smart-bid","ref":"card:fundamentals/ad-algo-auto-fields.md#L37;card:fundamentals/ad-bidding-full-chain.md#L49","note":"字段机制在B6环节落地"},
-{"@type":"ad:depends_on","source":"ad:product:field-budget-alloc","target":"ad:stage:b6-smart-bid","ref":"card:fundamentals/ad-algo-auto-fields.md#L31","note":"Pacing调价含预算消耗速度"},
-{"@type":"ad:depends_on","source":"ad:product:field-creative-weight","target":"ad:stage:b9-creative-render","ref":"card:fundamentals/ad-algo-auto-fields.md#L63","note":"素材权重在渲染前已定"}
-]
+ "graph": "ad-ops",
+ "cluster": "ad-fundamentals",
+ "generated": "2026-11-26",
+ "defaults": {
+  "status": "active",
+  "confidence": "high",
+  "freshness": "fresh",
+  "last_verified": "2026-11-26"
+ },
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-algo-fields",
+   "target": "ad:src:s9",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-bidding-chain",
+   "target": "ad:src:s10",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-lifecycle",
+   "target": "ad:src:s11",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-algo-fields",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-bidding-chain",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-lifecycle",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-budget-alloc",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L31"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-smart-bidding",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L37"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-audience-expand",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L45"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-placement-auto",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L49"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-keyword-expand",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L53"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-creative-combo",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L59"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-creative-weight",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L63"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-creative-targeting",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L67"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-dynamic-copy",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L71"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:product:field-fully-managed",
+   "target": "ad:playbook:algo-auto-fields",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L77"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b0-pre-filter",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L33"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b1-ad-request",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L34"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b2-profile-fetch",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L35"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b3-multi-recall",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L41"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b4-hard-filter",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L42"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b5-estimation",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L48"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b6-smart-bid",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L49"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b7-ranking",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L50"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b8-gsp-billing",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L64"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b9-creative-render",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L65"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b10-impression",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L71"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b11-click",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L72"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b12-attribution",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L78"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:stage:b13-model-update",
+   "target": "ad:playbook:bidding-pipeline",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L79"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:testing",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L33"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:preheat",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L34"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:launch",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L35"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:first-sales",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L36"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:growth",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L37"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:sustained",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L38"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:eol",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L39"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:promo",
+   "target": "ad:playbook:lifecycle-strategy",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L40"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:cbo",
+   "target": "ad:platform:meta",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L35"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:advplus-audience",
+   "target": "ad:platform:meta",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L47"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:advplus-placements",
+   "target": "ad:platform:meta",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L51"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:advplus-creative",
+   "target": "ad:platform:meta",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L61"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:asc",
+   "target": "ad:platform:meta",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L78"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:pmax",
+   "target": "ad:platform:google",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L78"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:rsa",
+   "target": "ad:platform:google",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L61"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:dsa",
+   "target": "ad:platform:google",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L73"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:keyword-broad-match",
+   "target": "ad:platform:google",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L55"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:tiktok-spc",
+   "target": "ad:platform:tiktok",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L78"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:jl-ocpm",
+   "target": "ad:platform:jl",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L41"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:jl-cat",
+   "target": "ad:platform:jl",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L69"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:jl-programmatic",
+   "target": "ad:platform:jl",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L61"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:jl-auto-targeting",
+   "target": "ad:platform:jl",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L47"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:jl-placement-opt",
+   "target": "ad:platform:jl",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L51"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:product:jl-scale",
+   "target": "ad:platform:jl",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L78"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b1-ad-request",
+   "target": "ad:stage:b0-pre-filter",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L33-34"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b2-profile-fetch",
+   "target": "ad:stage:b1-ad-request",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L35"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b3-multi-recall",
+   "target": "ad:stage:b2-profile-fetch",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L41"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b4-hard-filter",
+   "target": "ad:stage:b3-multi-recall",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L42"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b5-estimation",
+   "target": "ad:stage:b4-hard-filter",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L48"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b6-smart-bid",
+   "target": "ad:stage:b5-estimation",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L49"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b7-ranking",
+   "target": "ad:stage:b6-smart-bid",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L50"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b8-gsp-billing",
+   "target": "ad:stage:b7-ranking",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L64"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b9-creative-render",
+   "target": "ad:stage:b8-gsp-billing",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L65"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b10-impression",
+   "target": "ad:stage:b9-creative-render",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L71"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b11-click",
+   "target": "ad:stage:b10-impression",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L72"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b12-attribution",
+   "target": "ad:stage:b11-click",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L78"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:stage:b13-model-update",
+   "target": "ad:stage:b12-attribution",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L79"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:lifecycle:preheat",
+   "target": "ad:lifecycle:testing",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L33-34",
+   "note": "演进顺序,非严格依赖;promo横切不入链"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:lifecycle:launch",
+   "target": "ad:lifecycle:preheat",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L34-35"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:lifecycle:first-sales",
+   "target": "ad:lifecycle:launch",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L35-36"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:lifecycle:growth",
+   "target": "ad:lifecycle:first-sales",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L36-37"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:lifecycle:sustained",
+   "target": "ad:lifecycle:growth",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L37-38"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:lifecycle:eol",
+   "target": "ad:lifecycle:sustained",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L38-39"
+  },
+  {
+   "@type": "ad:alternative_to",
+   "source": "ad:product:bid-tcpa",
+   "target": "ad:product:bid-troas",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L36",
+   "note": "首销期出价A/B实验对照"
+  },
+  {
+   "@type": "ad:alternative_to",
+   "source": "ad:product:bid-tcpa",
+   "target": "ad:product:bid-maxconv",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L36"
+  },
+  {
+   "@type": "ad:alternative_to",
+   "source": "ad:product:bid-troas",
+   "target": "ad:product:bid-maxconv",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L36"
+  },
+  {
+   "@type": "ad:alternative_to",
+   "source": "ad:product:cbo",
+   "target": "ad:product:field-budget-alloc",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L88",
+   "note": "CBO是预算分配的Meta具体实现,ABO为人工对照(未建节点)"
+  },
+  {
+   "@type": "ad:alternative_to",
+   "source": "ad:product:pmax",
+   "target": "ad:product:jl-scale",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L78",
+   "note": "全托管跨平台对照:巨量放量保留更多人工调参"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-pmf-test",
+   "target": "ad:lifecycle:testing",
+   "when": "测试期PMF验证",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L46"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-hook-test",
+   "target": "ad:lifecycle:preheat",
+   "when": "预热期Hook素材测试",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L47"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-bid-ab",
+   "target": "ad:lifecycle:first-sales",
+   "when": "首销期出价策略A/B",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L49"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-lp-cro",
+   "target": "ad:lifecycle:first-sales",
+   "when": "首销期落地页CRO",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L49"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-budget-ramp",
+   "target": "ad:lifecycle:growth",
+   "when": "增长期预算爬坡",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L50"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-lal-scale",
+   "target": "ad:lifecycle:growth",
+   "when": "增长期LAL扩量1%→3%→5%",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L50"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-incrementality",
+   "target": "ad:lifecycle:sustained",
+   "when": "常态期增量测试$75K+/月",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L51"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-creative-refresh",
+   "target": "ad:lifecycle:sustained",
+   "when": "常态期素材抗疲劳周更20%",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L51"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-winback",
+   "target": "ad:lifecycle:eol",
+   "when": "衰退清仓期老客唤醒",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L52"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-bundle",
+   "target": "ad:lifecycle:eol",
+   "when": "衰退清仓期Bundle方案",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L52"
+  },
+  {
+   "@type": "ad:applies_when",
+   "source": "ad:action:lifecycle-promo-bid",
+   "target": "ad:lifecycle:promo",
+   "when": "大促期出价抢量",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L53"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:action:lifecycle-lal-scale",
+   "target": "ad:metric:reach",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L50",
+   "note": "LAL扩量提升触达/新客"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:action:lifecycle-budget-ramp",
+   "target": "ad:metric:roas",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L50",
+   "note": "爬坡观察ROAS/CPA/CPM容忍区间"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:action:lifecycle-winback",
+   "target": "ad:metric:cac",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L52",
+   "note": "唤醒成本比新客低5倍"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:action:lifecycle-creative-refresh",
+   "target": "ad:metric:ctr",
+   "ref": "card:fundamentals/product-lifecycle-ad-strategy.md#L51",
+   "note": "抗疲劳保CTR"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:product:field-smart-bidding",
+   "target": "ad:metric:cpa",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L38",
+   "note": "智能出价在tCPA约束内优化实际出价"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:product:field-budget-alloc",
+   "target": "ad:metric:roas",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L32",
+   "note": "预算倾斜赢家组提升整体ROAS"
+  },
+  {
+   "@type": "ad:affects",
+   "source": "ad:product:field-creative-weight",
+   "target": "ad:metric:ctr",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L64",
+   "note": "胜出创意拿更多流量"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:b4-hard-filter",
+   "target": "ad:metric:frequency",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L42",
+   "note": "频控上限硬过滤(如3次/7天)"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:b6-smart-bid",
+   "target": "ad:metric:pacing",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L49",
+   "note": "PacingFactor动态调价"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:b12-attribution",
+   "target": "ad:metric:attribution-gap",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L78",
+   "note": "归因窗口匹配/跨渠道去重"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:stage:b12-attribution",
+   "target": "ad:metric:eq",
+   "ref": "card:fundamentals/ad-bidding-full-chain.md#L78",
+   "note": "SKAN模式无单用户click_id影响EQ"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:product:field-smart-bidding",
+   "target": "ad:stage:b6-smart-bid",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L37;card:fundamentals/ad-bidding-full-chain.md#L49",
+   "note": "字段机制在B6环节落地"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:product:field-budget-alloc",
+   "target": "ad:stage:b6-smart-bid",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L31",
+   "note": "Pacing调价含预算消耗速度"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:product:field-creative-weight",
+   "target": "ad:stage:b9-creative-render",
+   "ref": "card:fundamentals/ad-algo-auto-fields.md#L63",
+   "note": "素材权重在渲染前已定"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:action:lifecycle-creative-refresh",
+   "target": "ad:concept:creative-refresh-ctr20",
+   "ref": "F4卫生:同一素材更换纪律两表述——S11周更20%抗疲劳 vs S28每2-4周或CTR-20%双触发;阈值口径近似"
+  }
+ ]
 }

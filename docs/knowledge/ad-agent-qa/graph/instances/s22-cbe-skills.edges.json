@@ -1285,6 +1285,42 @@
    "source": "ad:playbook:cbe-rfm-segmentation",
    "target": "ad:metric:cac",
    "ref": "CAC效率约束"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-annual-budget-ops",
+   "target": "ad:concept:payback-gross-margin",
+   "ref": "F4卫生:breakeven ROAS=1/毛利率与S25毛利回本公式同族"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:bench:cbe-tiktok-roas-breakeven",
+   "target": "ad:playbook:cross-platform-roas-framework",
+   "ref": "F4卫生:TikTok breakeven ROAS用同一公式族"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-dsite-aipl-budget",
+   "target": "ad:playbook:cbe-annual-budget-ops",
+   "ref": "F4卫生:渠道内AIPL预算受年度科目分配约束"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-tiktok-stage-budget",
+   "target": "ad:playbook:cbe-annual-budget-ops",
+   "ref": "F4卫生:平台阶段预算受年度科目分配约束"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:bench:cbe-budget-stage-pct",
+   "target": "ad:concept:marketing-budget-pct-revenue",
+   "ref": "F4卫生:同指标不同口径——CBE全营销Y1 25-40% vs S27 paid-media 15-20%,差值=品牌/内容/人力"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-attribution-measurement",
+   "target": "ad:asset:card-attribution-models-reconciliation",
+   "ref": "F4卫生:三角测量框架↔六模型算例互补(S22↔S25)"
   }
  ]
 }

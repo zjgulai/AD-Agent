@@ -327,6 +327,18 @@
    "source": "ad:rule:neg-3seed-lists",
    "target": "ad:asset:card-amazon-ppc-campaign-ops",
    "ref": "cluster membership under card"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:acos-financial-framework",
+   "target": "ad:playbook:cross-platform-roas-framework",
+   "ref": "F4卫生:ACoS与ROAS互为倒数,break-even/target/MaxCPC三公式族同构(S27)"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:bid-adjustment-table",
+   "target": "ad:playbook:acos-financial-framework",
+   "ref": "F4卫生:出价调整表以ACoS财务框架为判定基准"
   }
  ]
 }
