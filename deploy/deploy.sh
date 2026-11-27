@@ -14,11 +14,13 @@ TAG="${1:-$(git -C "$REPO_ROOT" rev-parse --short HEAD)-$(date +%Y%m%d)}"
 IMAGE="kb-workbench:$TAG"
 
 echo "==> [1/5] 归档 HEAD 源码上下文并传输到 $SERVER:$REMOTE_DIR/build"
-ssh -i "$KEY" -o BatchMode=yes "$SERVER" "mkdir -p $REMOTE_DIR/build $DATA_DIR/staging"
+# 容器以 uid 10001(kb) 运行，staging 卷须属主一致否则上传 500
+ssh -i "$KEY" -o BatchMode=yes "$SERVER" \
+  "mkdir -p $REMOTE_DIR/build $DATA_DIR/staging && chown -R 10001:10001 $DATA_DIR/staging"
 git -C "$REPO_ROOT" archive HEAD | ssh -i "$KEY" -o BatchMode=yes "$SERVER" \
   "tar -x -C $REMOTE_DIR/build"
 
-echo "==> [2/5] 服务器侧构建 $IMAGE（python:3.12-slim 已缓存，pip 走 tuna）"
+echo "==> [2/5] 服务器侧构建 ${IMAGE}（python:3.12-slim 已缓存，pip 走 tuna）"
 ssh -i "$KEY" -o BatchMode=yes "$SERVER" \
   "cd $REMOTE_DIR/build && docker build -t $IMAGE ."
 
