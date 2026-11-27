@@ -5,6 +5,7 @@
   lint          → kb_ops.lint_semantic
   audit         → kb_ops.audit_runner
   search <q>    → kb_ops.retrieval
+  mcp           → kb_ops.mcp_server（stdio MCP Server）
 """
 
 from __future__ import annotations
@@ -15,7 +16,7 @@ import sys
 def main() -> None:
     if len(sys.argv) < 2 or sys.argv[1] in {"-h", "--help", "help"}:
         print("usage: python -m kb_ops <command> [args]")
-        print("commands: graph-export | lint | audit | search | web")
+        print("commands: graph-export | lint | audit | search | web | mcp")
         sys.exit(0 if len(sys.argv) < 2 or sys.argv[1] in {"-h", "--help", "help"} else 1)
 
     cmd, rest = sys.argv[1], sys.argv[2:]
@@ -36,6 +37,9 @@ def main() -> None:
     elif cmd == "search":
         from . import retrieval
         retrieval.main()
+    elif cmd == "mcp":
+        from . import mcp_server
+        mcp_server.main()
     else:
         print(f"unknown command: {cmd}", file=sys.stderr)
         sys.exit(1)

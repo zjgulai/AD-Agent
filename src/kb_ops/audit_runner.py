@@ -79,9 +79,14 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="KB 审计聚合（validate + kb_audit）")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--strict", action="store_true", help="有 FAIL 时 exit 1")
+    ap.add_argument("--no-overview", action="store_true",
+                    help="不刷新 OVERVIEW.md")
     args = ap.parse_args()
 
     result = run_all(strict=args.strict)
+    if not args.no_overview:
+        from . import overview  # 延迟导入避免 service↔audit_runner 循环
+        overview.write_overview(kb_root(), audit_result=result)
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     else:

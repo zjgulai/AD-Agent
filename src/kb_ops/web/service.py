@@ -23,6 +23,7 @@ _NAME_RE = re.compile(r"^[a-z0-9][a-z0-9\-]*$")
 _DOC_NAMES = {
     "INDEX.md", "SOURCES.md", "CONFLICTS.md", "QUERY.md", "UPDATING.md",
     "REVIEW.md", "REVIEW-PRECHECK.md", "REVIEW-SEMANTIC.md", "glossary.md",
+    "OVERVIEW.md",
 }
 _QA_ITEM = re.compile(r"###\s+(Q\d+)\.\s*(.+?)\n\*\*A\*\*：\s*(.+?)(?=\n###\s+Q|\Z)", re.S)
 
@@ -204,12 +205,19 @@ def _parse_conflicts(root: Path) -> dict:
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
         if all(set(c) <= {"-", ":", " "} for c in cells):
             continue
+        if cells[0] in {"#", "id", "ID", ""}:
+            continue  # 表头行
         if "冲突总表" in section and len(cells) >= 6:
             rows.append({"id": cells[0], "conflict": cells[1], "side_a": cells[2],
                          "side_b": cells[3], "nature": cells[4], "status": cells[5]})
         elif "裁决" in section and len(cells) >= 3:
             adj.append({"id": cells[0], "status": cells[1], "decision": cells[2]})
     return {"rows": rows, "adjudication": adj}
+
+
+def parse_conflicts(root: Path) -> dict:
+    """CONFLICTS.md 解析（冲突总表 + 裁决记录），供 health 与 MCP 复用。"""
+    return _parse_conflicts(root)
 
 
 def health(root: Path, refresh: bool = False) -> dict:

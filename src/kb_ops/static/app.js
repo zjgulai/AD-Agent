@@ -539,7 +539,10 @@ async function showDocRaw(title, markdown) {
 
 async function vHealth(refresh) {
   $view.innerHTML = `<div class="loading">${refresh ? '重新审计中（可能需要数秒）…' : '加载健康数据…'}</div>`;
-  const h = await api(`/health${refresh ? '?refresh=1' : ''}`);
+  const [h, ov] = await Promise.all([
+    api(`/health${refresh ? '?refresh=1' : ''}`),
+    api('/doc/OVERVIEW.md').catch(() => null),
+  ]);
   const v = h.audit.validate || {}, a = h.audit.audit || {};
   const lintFindings = [];
   (h.missing_card_files || []).forEach(m => lintFindings.push(`卡片文件缺失：${m.node} → ${m.path}`));
@@ -596,6 +599,10 @@ async function vHealth(refresh) {
           ${orphans.length ? `<details style="margin-top:8px"><summary class="muted">孤儿节点列表（前 ${orphans.length}）</summary>
             <div class="finding-list">${orphans.slice(0, 40).map(n => `<div>${esc(n.id)} — ${esc(n.label)}（${esc(n.type)}）</div>`).join('')}</div></details>` : ''}
         </div>
+        ${ov ? `<div class="panel">
+          <h3>KB 概览 <button class="ghost" style="float:right;font-size:12px" onclick="showDoc('OVERVIEW.md')">原文</button></h3>
+          <div class="md" style="font-size:13px">${await md(ov.markdown)}</div>
+        </div>` : `<div class="panel"><h3>KB 概览</h3><div class="muted">OVERVIEW.md 未生成——运行 <code>python -m kb_ops audit</code> 刷新</div></div>`}
       </div>
       <div>
         <div class="panel">

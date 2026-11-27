@@ -4,7 +4,7 @@ doc_type: knowledge
 module: ad-agent-qa
 topic: review-precheck
 status: review
-created: 2026-11-27
+created: 2026-11-28
 owner: self
 source: ai
 ---
