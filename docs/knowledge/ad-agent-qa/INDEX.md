@@ -44,6 +44,7 @@ source: human+ai
 | [Meta 诊断优化 SOP · Agent 训练版](cards/meta-ads-diagnosis/meta-diagnosis-sop-agent-training.md) | T0-T5 主决策树怎么走？L0-L4 五层各管什么？与 S4 策略树什么关系？ | S7 |
 | [Meta 诊断五层规程与配套工具](cards/meta-ads-diagnosis/meta-diagnosis-layers-l0-l4.md) | L0-L4 每层诊断项细节？异常速查表？字段字典阈值？ | S7 |
 | [Meta 投后数据明细与巡检模板](cards/meta-ads-diagnosis/meta-post-launch-data-inspection.md) | 投后巡检采集哪些数据？三层级字段模板怎么设计？巡检/操作记录列块怎么闭环？ | S8 |
+| [多渠道周期报告生成契约](cards/meta-ads-diagnosis/multi-channel-report-contract.md) | 日/周/月报三段式结构？大盘 ROAS 怎么算？增长引擎 vs 拖后腿？行动指令怎么防「正确的废话」？ | S24 |
 
 ### 广告基础机制与策略（行业通用）
 

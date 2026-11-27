@@ -125,3 +125,27 @@ source: human+ai
 ### Q28. 这套诊断 SOP 适用什么场景？S6 和规则资产版什么关系？
 **A**：适用 Meta（Facebook/Instagram/AN）广告，DTC 母婴/消费品为主（阈值为 DTC 中高客单 $100-300 经验值，实际±50% 浮动、大促放大 1.5-2x）；案例账户 Momcozy（US-Pump-M5、US-Wearable-M9）；可扩展 TikTok/Google 但需重新校准阈值；目标以销售/DTC 为主兼容引流/线索/应用安装等 8 类。S6 是人类执行版（按一天时间×环节组织，告诉投放师现在该停在哪）；S4/S5/S7 是规则资产版（按 G0–G8×65 节点或 T0–T5+L0–L4 组织，告诉 Agent 异常对象怎么穿透定位根因）；两者阈值大体同源，S6 的 P0 修复引用 S7 的 L0/L4 节点编号；对 Agent 而言 S6 提供日节奏编排与动作白名单的人类基准 `[推断]`。
 > 溯源：`meta-diagnosis-sop.md` / `meta-diagnosis-sop-agent-training.md` / `meta-operator-daily-workflow.md`
+
+### Q29. 多渠道广告日报/周报/月报的标准结构是什么？
+**A**：三段式——①大盘纵览（Shopify 总销售额+总广告消耗→大盘 ROAS≈销售额÷消耗，趋势方向+关键节点）②渠道拆解（每渠道 spend/ROAS/orders 表格 + 增长引擎 vs 拖后腿二分 + cross-channel 对比）③行动指令（≥3~5 条量化建议：渠道名+加减预算 %/金额+关停/放量方式）。报告类型分单日快照/日期区间/周末三日汇总/Week 汇总行/月报五种口径，各自有对应解读要求。
+> 溯源：`multi-channel-report-contract.md`
+
+### Q30. 什么是「大盘 ROAS」？和渠道 ROAS 什么关系？
+**A**：大盘 ROAS ≈ Shopify 总销售额 ÷ 全渠道总广告消耗（MER 朴素口径），衡量整体投入产出比与业务体量；渠道 ROAS 是单渠道口径。报告第一章用大盘 ROAS 评估整体，第二章用渠道 ROAS 排序找增长引擎（消耗增长且 ROAS 健康）vs 拖后腿（ROAS 偏低/消耗虚高/转化下滑）。跨源口径不一致时以 Shopify 行内 `Ad Spent_<渠道>` 列为准。
+> 溯源：`multi-channel-report-contract.md`
+
+### Q31. AI 生成的广告报告怎么防止「正确的废话」？
+**A**：四条硬纪律——所有结论必须引用具体数字（消耗/ROAS/销售额/订单数），禁止空泛描述；禁止「持续观察」「进一步优化」类表述；行动指令每条必须含渠道名+量化幅度（+20%/-500 USD/暂停 XX 广告组）；渠道无数据时注明「该渠道此区间无数据」而非编造。另有工程分工防线：数据表格由代码确定性生成，LLM 只写洞察文字（分节模式三次调用各写一章，单章 temperature ≤0.4 防截断）。
+> 溯源：`multi-channel-report-contract.md`
+
+### Q32. 同一品牌为什么拆多个 Meta 广告账户？报告里怎么处理？
+**A**：品牌矩阵/品线分投场景常见（meta-ad-analysis 案例：WearNuage/NuageBra/Nuage2026/NuageWear 四个账户 Sheet）。报告按账户维度各自拆解再 cross-channel 对比；已停投账户自动跳过不纳入当期分析。
+> 溯源：`multi-channel-report-contract.md`
+
+### Q33. AppLovin 在多渠道广告报告里算什么角色？
+**A**：效果广告渠道之一（案例中以 Axon 名义出现），与 Google/Meta 并列做 spend/ROAS/orders 对比，纳入增长引擎/拖后腿二分。KB 中 AppLovin 方法论目前空白，本批仅登记平台实体与报告口径 `[待确认]`。
+> 溯源：`multi-channel-report-contract.md`
+
+### Q34. 多渠道报告契约和投放师一日工作流 SOP 什么关系？
+**A**：互补不冲突——S6 管单渠道 Meta 的日内操作节奏与动作铁律（回答「今天做什么」）；本契约管多渠道周期报告的输出结构与量化纪律（回答「这周期整体怎么样、预算往哪调」）。S6 的五段式日报偏「今日动作闭环」，本卡三段式偏「跨渠道体量判断+预算指令」；两者可在 Agent 编排中串联（日内操作→周期报告）。
+> 溯源：`multi-channel-report-contract.md` / `meta-operator-daily-workflow.md`

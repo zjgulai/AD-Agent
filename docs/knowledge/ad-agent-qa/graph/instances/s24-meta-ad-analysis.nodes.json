@@ -1,0 +1,167 @@
+{
+ "graph": "ad-ops",
+ "cluster": "s24-meta-ad-analysis",
+ "generated": "2026-11-27",
+ "coverage_notes": "S24 meta-ad-analysis蒸馏:多渠道周期报告生成契约(三段式结构+量化行动纪律+确定性表格/LLM洞察分工+分节生成模式)+AppLovin平台实体+Shopify大盘数据源+Meta多账户矩阵模式。排除:Excel解析管道、SMTP邮件、Streamlit工程实现(无领域知识)。",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "nodes": [
+  {
+   "@id": "ad:src:meta-ad-analysis",
+   "@type": "ad:SourceDoc",
+   "label": "meta-ad-analysis",
+   "props": {
+    "repo": "github.com/XingyuBillHou/meta-ad-analysis",
+    "license": "无LICENSE(用户确认为内部知识库使用并授权原文存档)",
+    "desc": "单文件Streamlit应用3087行:多渠道Excel→LLM报告→Word/MD/HTML;本shard仅蒸馏报告契约层;原文存档raw/s24-meta-ad-analysis/"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/README.md",
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py"
+   ]
+  },
+  {
+   "@id": "ad:platform:applovin",
+   "@type": "ad:Platform",
+   "label": "AppLovin (Axon)",
+   "props": {
+    "desc": "移动增长广告平台;案例中以Axon名义出现在Shopify Ad Spent列;KB方法论空白仅登记实体",
+    "status": "review"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1284-1296"
+   ]
+  },
+  {
+   "@id": "ad:platform:shopify",
+   "@type": "ad:Platform",
+   "label": "Shopify 电商后台",
+   "props": {
+    "desc": "全店销售/订单/MER事实源(大盘锚点);非广告渠道,是报告第一章大盘ROAS的分子来源;Ad Spent_<渠道>列为跨源spend权威口径",
+    "role": "commerce-backend"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1274-1300"
+   ]
+  },
+  {
+   "@id": "ad:playbook:report-3section",
+   "@type": "ad:Playbook",
+   "label": "多渠道周期报告三段式契约",
+   "props": {
+    "desc": "①大盘纵览(大盘ROAS≈总销售额/总消耗+趋势)②渠道拆解(增长引擎vs拖后腿+cross-channel)③行动指令(量化预算/关停/放量);适用日/周/月报",
+    "report_types": "日报单日快照/周报区间序列/月报体量结构;另有Week汇总行/周末三日两种附加口径"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1114-1200",
+    "card:meta-ads-diagnosis/multi-channel-report-contract.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:sectional-report-gen",
+   "@type": "ad:Playbook",
+   "label": "分节三次调用报告生成模式",
+   "props": {
+    "desc": "报告分3次LLM调用各写一章再合并,防长文截断;单章temperature≤0.4;第二章表格由代码生成LLM只写2.3洞察bullet",
+    "min_chars": "180/200/280"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1951-1991"
+   ]
+  },
+  {
+   "@id": "ad:concept:deterministic-table-llm-insight",
+   "@type": "ad:KnowledgeAsset",
+   "label": "确定性表格+LLM洞察分工",
+   "props": {
+    "kind": "prompt-pattern",
+    "desc": "数据表格由代码关键词族确定性提取(Spend/ROAS/Orders),LLM只产出洞察文字;消除数字幻觉面;spend口径优先Shopify Ad Spent_<渠道>列"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1298-1400",
+    "card:meta-ads-diagnosis/multi-channel-report-contract.md#5"
+   ]
+  },
+  {
+   "@id": "ad:concept:multi-meta-account-matrix",
+   "@type": "ad:KnowledgeAsset",
+   "label": "品牌×多Meta账户矩阵模式",
+   "props": {
+    "kind": "account-structure",
+    "desc": "同品牌拆多个Meta广告账户(案例WearNuage/NuageBra/Nuage2026/NuageWear);按账户拆解再cross-channel对比;已停投账户自动跳过",
+    "evidence": "单案例观察,适用性[待确认]"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1148-1158",
+    "card:meta-ads-diagnosis/multi-channel-report-contract.md#6"
+   ]
+  },
+  {
+   "@id": "ad:rule:report-cite-numbers",
+   "@type": "ad:Rule",
+   "label": "报告结论必须引用具体数字",
+   "props": {
+    "severity": "hard",
+    "desc": "所有结论必须引用原始数据具体数字(消耗/ROAS/ROI/销售额/订单数),禁止空泛描述;整报告≥800字"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1189-1199"
+   ]
+  },
+  {
+   "@id": "ad:rule:no-vague-action",
+   "@type": "ad:Rule",
+   "label": "行动建议禁空泛表述",
+   "props": {
+    "severity": "hard",
+    "banned": "持续观察/进一步优化",
+    "desc": "行动指令必须具体可执行:渠道名+量化调整幅度(百分比或金额)"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1182-1187"
+   ]
+  },
+  {
+   "@id": "ad:rule:quantified-action-items",
+   "@type": "ad:Rule",
+   "label": "行动指令量化格式",
+   "props": {
+    "severity": "hard",
+    "format": "【渠道/账号】动作描述(+20%/-500USD/暂停XX广告组)",
+    "count": "整报告≥3条;分节模式≥5条",
+    "coverage": "加预算/减预算/暂停/放量"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1981-1990"
+   ]
+  },
+  {
+   "@id": "ad:rule:no-data-no-fabrication",
+   "@type": "ad:Rule",
+   "label": "缺失渠道注明不编造",
+   "props": {
+    "severity": "hard",
+    "desc": "某渠道该区间无数据→注明'该渠道此区间无数据';不编造数据,不因此中断其他渠道分析"
+   },
+   "src": [
+    "raw/s24-meta-ad-analysis/ad_analysis_app.py#L1156-1157"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-report-contract",
+   "@type": "ad:KnowledgeAsset",
+   "label": "多渠道周期报告生成契约卡",
+   "props": {
+    "card": "meta-ads-diagnosis/multi-channel-report-contract.md",
+    "status": "review"
+   },
+   "src": [
+    "card:meta-ads-diagnosis/multi-channel-report-contract.md"
+   ]
+  }
+ ]
+}

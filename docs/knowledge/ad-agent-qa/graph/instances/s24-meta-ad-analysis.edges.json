@@ -1,0 +1,50 @@
+{
+ "graph": "ad-ops",
+ "cluster": "s24-meta-ad-analysis",
+ "generated": "2026-11-27",
+ "coverage_notes": "S24 meta-ad-analysis蒸馏:多渠道周期报告生成契约(三段式结构+量化行动纪律+确定性表格/LLM洞察分工+分节生成模式)+AppLovin平台实体+Shopify大盘数据源+Meta多账户矩阵模式。排除:Excel解析管道、SMTP邮件、Streamlit工程实现(无领域知识)。",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "edges": [
+  {"@type":"ad:sourced_from","source":"ad:platform:applovin","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1148-1158"},
+  {"@type":"ad:sourced_from","source":"ad:platform:shopify","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1274-1300"},
+  {"@type":"ad:sourced_from","source":"ad:playbook:report-3section","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1114-1200"},
+  {"@type":"ad:sourced_from","source":"ad:playbook:sectional-report-gen","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1951-1991"},
+  {"@type":"ad:sourced_from","source":"ad:concept:deterministic-table-llm-insight","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1298-1400"},
+  {"@type":"ad:sourced_from","source":"ad:concept:multi-meta-account-matrix","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1148-1158"},
+  {"@type":"ad:sourced_from","source":"ad:rule:report-cite-numbers","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1189-1199"},
+  {"@type":"ad:sourced_from","source":"ad:rule:no-vague-action","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1182-1187"},
+  {"@type":"ad:sourced_from","source":"ad:rule:quantified-action-items","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1981-1990"},
+  {"@type":"ad:sourced_from","source":"ad:rule:no-data-no-fabrication","target":"ad:src:meta-ad-analysis","ref":"raw/s24-meta-ad-analysis/ad_analysis_app.py#L1156-1157"},
+
+  {"@type":"ad:part_of","source":"ad:rule:report-cite-numbers","target":"ad:playbook:report-3section","ref":"composition","note":"硬性纪律:所有结论引具体数字"},
+  {"@type":"ad:part_of","source":"ad:rule:no-vague-action","target":"ad:playbook:report-3section","ref":"composition","note":"禁持续观察/进一步优化类空泛表述"},
+  {"@type":"ad:part_of","source":"ad:rule:quantified-action-items","target":"ad:playbook:report-3section","ref":"composition","note":"行动指令格式与数量下限"},
+  {"@type":"ad:part_of","source":"ad:rule:no-data-no-fabrication","target":"ad:playbook:report-3section","ref":"composition","note":"缺失渠道注明不编造"},
+  {"@type":"ad:part_of","source":"ad:concept:deterministic-table-llm-insight","target":"ad:playbook:sectional-report-gen","ref":"composition","note":"分节模式的数据/洞察分工底座"},
+
+  {"@type":"ad:belongs_to","source":"ad:playbook:report-3section","target":"ad:platform:dtc-site","ref":"cluster-membership","note":"DTC多渠道(Shopify+Google+Meta+AppLovin)周期报告"},
+  {"@type":"ad:belongs_to","source":"ad:playbook:sectional-report-gen","target":"ad:platform:dtc-site","ref":"cluster-membership"},
+  {"@type":"ad:belongs_to","source":"ad:concept:deterministic-table-llm-insight","target":"ad:platform:dtc-site","ref":"cluster-membership"},
+  {"@type":"ad:belongs_to","source":"ad:concept:multi-meta-account-matrix","target":"ad:platform:meta","ref":"cluster-membership","note":"同品牌多Meta账户拆分模式"},
+  {"@type":"ad:variant_of","source":"ad:platform:shopify","target":"ad:platform:dtc-site","ref":"card:meta-ads-diagnosis/multi-channel-report-contract.md#6","note":"Shopify是DTC独立站的电商后台承载/大盘数据源"},
+
+  {"@type":"ad:depends_on","source":"ad:playbook:sectional-report-gen","target":"ad:concept:deterministic-table-llm-insight","ref":"card:meta-ads-diagnosis/multi-channel-report-contract.md#5","note":"分节模式建立在确定性表格+LLM洞察分工之上"},
+  {"@type":"ad:applies_when","source":"ad:playbook:report-3section","target":"ad:channel:dtc-site","ref":"card:meta-ads-diagnosis/multi-channel-report-contract.md","note":"适用DTC跨渠道品牌周期报告场景"},
+  {"@type":"ad:measures","source":"ad:metric:mer","target":"ad:channel:dtc-site","ref":"card:meta-ads-diagnosis/multi-channel-report-contract.md#3","note":"大盘ROAS≈总销售额/总消耗即MER朴素口径,衡量DTC渠道整体效率"},
+
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:playbook:report-3section","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:playbook:sectional-report-gen","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:concept:deterministic-table-llm-insight","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:concept:multi-meta-account-matrix","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:rule:report-cite-numbers","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:rule:no-vague-action","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:rule:quantified-action-items","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:rule:no-data-no-fabrication","ref":"card-distillation"},
+  {"@type":"ad:recommends","source":"ad:asset:card-report-contract","target":"ad:asset:card-workflow","ref":"cross-card","note":"互补:S6管日内操作节奏本卡管周期报告输出契约"}
+ ]
+}

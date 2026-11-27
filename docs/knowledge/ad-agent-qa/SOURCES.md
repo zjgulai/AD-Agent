@@ -36,6 +36,7 @@ source: human+ai
 | S19 | DTC 广告优化师投放工作流程图（S1 附件 PDF） | S1 wiki 内嵌附件 | PDF（流程图，73 词） | `raw/s1-attachments/DTC 广告优化师投放工作流程图.pdf` | 2026-11-26 |
 | S20 | Momcozy人群画像洞察报告（S1 附件 HTML） | S1 wiki 内嵌附件 | HTML 可视化报告 | `raw/s1-attachments/Momcozy人群画像洞察报告.html` | 2026-11-26 |
 | S21 | 吸奶器品线独立站_全触点地图（S1 附件 HTML） | S1 wiki 内嵌附件 | HTML 可视化文档 | `raw/s1-attachments/吸奶器品线独立站_全触点地图.html` | 2026-11-26 |
+| S24 | meta-ad-analysis 多渠道广告分析工具 | https://github.com/XingyuBillHou/meta-ad-analysis | GitHub 仓库（单文件 Streamlit 应用，无 LICENSE） | `raw/s24-meta-ad-analysis/`（14 文件 180K） | 2026-11-27 |
 
 ## 第二批源（drive 文件夹 `QChKfhUSRl95AwdPhYfcd39ynmh`，2026-11-26 追加）
 
@@ -109,3 +110,11 @@ source: human+ai
 - **原文已完整复制保存**至 `raw/s23-wb-growth/`（agents/ + amazon-listing-builder/ + amazon-listing-alexa-optimizer/ + review-analysis/ + sellersprite-amazon-research/ + README/settings，89 文件 740K）。
 - **蒸馏边界**：只收知识密度高的 4 块——listing-builder（COSMO/Alexa 理论+八步工作流）、alexa-optimizer（8 维评分细则）、review-analysis（6 类痛点 VOC）、agents/ads-strategist（铁律进图谱）。**排除**：全部 RPA/MCP 工具管道 skill（sorftime/sellersprite/fastmoss/keyword/product/category-research/amazon-analyse/sif/exa/xiyou/simple-review-analyzer）、sellersprite comprehensive 模板（无增量知识）、tactical 选品信号 ×18（用户明确不收）、fastmoss report 模板。
 - 蒸馏产出：`cards/platform-ops/amazon-listing-semantic-ops.md`、`amazon-listing-ai-score-rubric.md`、`amazon-review-voc-ops.md` + `qa/platform-ops.md` Q47-58 + `graph/instances/s23-wb-growth.*`。
+
+## 第九批源（meta-ad-analysis 蒸馏，2026-11-27 追加）
+
+- 来源：`github.com/XingyuBillHou/meta-ad-analysis`（单文件 Streamlit 应用 `ad_analysis_app.py` 3087 行，**无 LICENSE——用户确认为内部知识库使用并授权原文存档**）。
+- **原文已完整复制保存**至 `raw/s24-meta-ad-analysis/`（14 文件 180K）。
+- **蒸馏边界**：仓库是工具而非知识库，仅 `build_system_prompt`/`REPORT_SECTIONS`/`build_channel_tables_markdown` 三处含领域知识。**只蒸馏报告生成契约**——三段式结构、大盘 ROAS（≈MER）、增长引擎/拖后腿二分、量化行动指令纪律、确定性表格+LLM 洞察分工、分节三次调用模式。**排除**：Excel 解析管道（合并表头/日期桶识别）、SMTP 邮件投递、Streamlit UI 工程实现。
+- 蒸馏产出：`cards/meta-ads-diagnosis/multi-channel-report-contract.md` + `qa/meta-ads-diagnosis.md` Q29-34 + `graph/instances/s24-meta-ad-analysis.*`（12 节点/25 边）。
+- **新实体**：`ad:platform:applovin`（Axon，KB 首次登记）、`ad:platform:shopify`（电商后台/大盘数据源，variant_of dtc-site）、`ad:concept:multi-meta-account-matrix`（品牌×多 Meta 账户模式，单案例 `[待确认]`）。
