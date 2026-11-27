@@ -101,6 +101,9 @@ source: human+ai
 | [跨平台 PPC 策略规划](cards/platform-ops/cross-platform-ppc-strategy.md) | 买家行为怎么选主平台？ROAS 三公式？预算分配三模板？平台 ROAS 基准？Mode B 🟢🟡🔴 重分配规则？学习期门槛？ | S27 |
 | [页面转化优化（CRO）](cards/platform-ops/cro-page-optimization.md) | 落地页七维诊断顺序？表单字段成本律？CTA 文案？message match？PDP/首页实验清单？ | S25 |
 | [GEO / AI 搜索优化](cards/platform-ops/geo-ai-search-optimization.md) | GEO vs SEO？8 维质量模型？12 诊断域+证据分级？意图词库五段式？监测六层指标？归因 20-30% 可观测边界？30/60/90？ | S29 |
+| [独立站转化率漏斗优化](cards/platform-ops/dsite-cro-funnel-ops.md) | 有流量没出单先查什么？Shopify 各环节基准/正常流失率？六模块检查清单？结账放弃原因对症？AOV/紧迫感红线？流量来源→落地页？ | S22 |
+| [独立站 SEO 全链路增长](cards/platform-ops/dsite-seo-growth-playbook.md) | 关键词 Tier 分层攻克顺序？四嵌入点？Shopify 参数 URL 坑？四层内容漏斗+EEAT+信息增益？外链 S-A-E 分级+锚文本分布？SEO×SEM 协同？ | S22 |
+| [独立站 SEO 流量下滑诊断](cards/platform-ops/dsite-seo-diagnostic-rescue.md) | 怎么判断算法降权 vs 个别波动？关键词流失<10pp 判读？Markets URL 污染？外链 DS/锚文本病态？博客 ROI/HCU？Phase 0-4 重启？ | S22 |
 
 ## 按问题类型速查
 

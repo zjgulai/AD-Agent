@@ -1027,6 +1027,479 @@
    "src": [
     "raw/s22-cbe-skills/brand-strategy/brand-budget-ops.md"
    ]
+  },
+  {
+   "@id": "ad:asset:card-dsite-cro-funnel-ops",
+   "@type": "ad:KnowledgeAsset",
+   "label": "独立站转化率漏斗优化卡",
+   "props": {
+    "path": "cards/platform-ops/dsite-cro-funnel-ops.md",
+    "status": "review",
+    "qa": "platform-ops Q94-98"
+   },
+   "src": [
+    "card:platform-ops/dsite-cro-funnel-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-cro-six-module",
+   "@type": "ad:Playbook",
+   "label": "CRO六模块框架(信任/发现/产品信息/结账/AOV/紧迫感)",
+   "props": {
+    "methodology": "马啸天Steve零售比喻",
+    "scope": "DTC独立站全店",
+    "desc": "信任=门面/发现=导购/产品信息=货架说明/结账=收银台/AOV=搭配销售/紧迫感=最后推动"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-cro-funnel-diagnosis",
+   "@type": "ad:Playbook",
+   "label": "漏斗漏损诊断矩阵",
+   "props": {
+    "stages": "访问→浏览→加购→结账→购买",
+    "normal_loss": "浏览→加购70-85%最大漏损段",
+    "method": "先算各段实际流失vs正常区间找超额漏损"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-aicpl-lp-matching",
+   "@type": "ad:Playbook",
+   "label": "AICPL五阶段×流量来源→着陆页",
+   "props": {
+    "stages": "Awareness/Interest/Consideration/Purchase/Loyalty",
+    "sources": "品牌搜索/品类/产品/Meta拉新/Meta再营销/TikTok/KOL/邮件8映射",
+    "check": "广告→LP一致性五查(视觉/信息/优惠/产品/CTA)"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-shopify-cvr-tiers",
+   "@type": "ad:Benchmark",
+   "label": "Shopify转化漏斗基准五档",
+   "props": {
+    "atc": "<2%差/2-4一般/4-8良好/8-12优秀/>12顶尖",
+    "reach_checkout": "<1/1-2/2-5/5-8/>8",
+    "cvr": "<0.5/0.5-1/1-2/2-3.5/>3.5",
+    "cart_abandon": ">80/70-80/60-70/50-60/<50",
+    "checkout_abandon": ">70/55-70/40-55/25-40/<25",
+    "note": "行业基准非本站实测"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-category-cvr",
+   "@type": "ad:Benchmark",
+   "label": "品类CVR基准(平均/良好/优秀)",
+   "props": {
+    "pet": "2/3.5/5%+",
+    "health": "1.6/2.8/4.5%+",
+    "beauty": "1.8/3/5%+",
+    "fashion": "1.4/2.5/4%+",
+    "home": "0.8/1.5/3%+",
+    "food": "1.5/2.5/4%+",
+    "momcozy_ref": "母婴无直接行,参考宠物/健康档"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-traffic-source-cvr",
+   "@type": "ad:Benchmark",
+   "label": "流量来源预期CVR",
+   "props": {
+    "brand_search": "3-8%",
+    "email_direct": "2-5%",
+    "nonbrand_shopping": "1-3%",
+    "meta": "0.5-2%",
+    "organic_social": "0.5-2%",
+    "tiktok": "0.3-1.5%",
+    "rule": "实际显著低于预期=着陆页/承接问题按来源分诊"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-checkout-abandon-reasons",
+   "@type": "ad:Benchmark",
+   "label": "结账放弃原因占比",
+   "props": {
+    "extra_costs": "48%",
+    "account_req": "24%",
+    "slow_delivery": "22%",
+    "trust": "18%",
+    "complex_flow": "17%",
+    "no_total": "16%",
+    "unclear_returns": "12%",
+    "few_payments": "9%"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-urgency-authenticity",
+   "@type": "ad:Rule",
+   "label": "紧迫感真实性四红线",
+   "props": {
+    "banned": [
+     "假倒计时(刷新重置)",
+     "虚假低库存",
+     "天天最后一天",
+     "先涨后降假折扣"
+    ],
+    "severity": "critical",
+    "why": "一次被识破永久损害信任"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-tracking-first-cro",
+   "@type": "ad:Rule",
+   "label": "追踪完整性先于CRO优化",
+   "props": {
+    "checks": "console报错/像素firing链view→ATC→checkout→purchase/CWV/死链/移动端sticky",
+    "severity": "critical",
+    "why": "追踪损坏使所有漏斗与A/B数据失真,静默失效"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-review-count-bench",
+   "@type": "ad:Rule",
+   "label": "评价数量基准",
+   "props": {
+    "prelaunch": "≥4-5条真实评价",
+    "stable": "SKU≥20条",
+    "excellent": "SKU≥50条含图/视频"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-dsite-seo-growth-playbook",
+   "@type": "ad:KnowledgeAsset",
+   "label": "独立站SEO全链路增长卡",
+   "props": {
+    "path": "cards/platform-ops/dsite-seo-growth-playbook.md",
+    "status": "review",
+    "qa": "platform-ops Q99-102"
+   },
+   "src": [
+    "card:platform-ops/dsite-seo-growth-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-seo-three-pillar",
+   "@type": "ad:Playbook",
+   "label": "SEO三支柱六步流程",
+   "props": {
+    "pillars": "技术基建→内容建筑→外链声誉",
+    "order": "先基建再内容后外链",
+    "timeline": "新站见效6-12个月",
+    "methodology": "马啸天包工头/张亚楠三支柱/何略韬五步原理"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-seo-keyword-strategy",
+   "@type": "ad:Playbook",
+   "label": "关键词战略(意图×页面/Tier分层/四嵌入点)",
+   "props": {
+    "intents": "信息→博客/导航→首页/商业→对比Collection/交易→产品页",
+    "tiers": "T1核心5K+/T2重要1-5K/T3长尾100-1K/T4微长尾10-100",
+    "attack_order": "M1-3打T4→M4-6推T3→M7-12挑T2→Y2+争T1",
+    "embed4": "Title/Alt/Meta/URL",
+    "density": "1-2%自然为准"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-seo-content-architecture",
+   "@type": "ad:Playbook",
+   "label": "内容架构(四层漏斗+集群+EEAT+信息增益)",
+   "props": {
+    "funnel": "TOFU信息/MOFU商业/BOFU交易/Post-purchase留存",
+    "cluster": "支柱页+子主题群+产品页内链规则",
+    "eeat": "Experience第一人称/Expertise署名/Authority引用/Trust政策全站",
+    "infogain": "发布前四问:多给了什么/原创数据/第一人称/独特角度",
+    "capacity": "兼职4篇/月→团队16篇/月"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-link-building-tiers",
+   "@type": "ad:Playbook",
+   "label": "外链S-A-E分层+获取四策略",
+   "props": {
+    "tiers": "S:EDU/GOV DR70+不可买/A:权威GP DR50-70 $200-500/B:行业博客DR30-50 $100-300/C:PR $150-400/D:资源页免费/E:论坛",
+    "strategies": "GuestPost七步/PR(HARO+新闻稿+数据PR)/资源页搜索命令/失效链接建设",
+    "semrush": "≥3竞品xlsx→独占vs普遍外链缺口分析"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-seo-channel-synergy",
+   "@type": "ad:Playbook",
+   "label": "SEO全渠道协同",
+   "props": {
+    "pairs": "SEO×SEM/社交/PR/红人/GEO",
+    "errors": "内部抢词/数据孤岛/内容重复/目标冲突",
+    "kpi": "统一=搜索渠道总利润",
+    "geo": "详见geo-ai-search-optimization卡"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-seo-cwv",
+   "@type": "ad:Benchmark",
+   "label": "Core Web Vitals阈值",
+   "props": {
+    "lcp": "≤2.5s良好/2.5-4需改/>4差",
+    "inp": "≤200ms/200-500/>500",
+    "cls": "≤0.1/0.1-0.25/>0.25",
+    "ttfb": "≤800ms",
+    "fcp": "≤1.8s"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-anchor-distribution",
+   "@type": "ad:Benchmark",
+   "label": "锚文本分布基准",
+   "props": {
+    "brand": "5-10%",
+    "exact": "20-30%(单一≤15%)",
+    "longtail": "50-60%主力",
+    "bare_url": "3-5%",
+    "generic": "5-10%",
+    "brand_generic_sum": ">=15%",
+    "risk": "过度精确匹配触发Penguin"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-backlink-monthly-cadence",
+   "@type": "ad:Benchmark",
+   "label": "外链月度节奏与预算(新站)",
+   "props": {
+    "m1_3": "5-10链/$300-500",
+    "m4_6": "10-20链/$800-1500",
+    "m7_12": "15-30链/$1500-3000",
+    "y2+": "20-40链/$2000-5000"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-shopify-param-url",
+   "@type": "ad:Rule",
+   "label": "Shopify参数URL canonical/noindex规则",
+   "props": {
+    "page": "?page=分页→canonical首页",
+    "sort": "?sort_by→canonical+noindex",
+    "variant": "?variant→canonical主产品页",
+    "tag": "?tag过滤→评估后多noindex",
+    "preview": "?preview→noindex",
+    "severity": "critical"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-ai-content-compliance",
+   "@type": "ad:Rule",
+   "label": "AI内容合规四档",
+   "props": {
+    "allow": "AI生成+人工深度编辑+独特见解",
+    "risk": "AI+轻微改写",
+    "high_risk": "纯AI无人工",
+    "recommended": "AI辅助研究+人工撰写;AI+第一人称经验=信息增益",
+    "basis": "Google关心质量非生产方式"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-infogain-gate",
+   "@type": "ad:Rule",
+   "label": "信息增益发布门槛",
+   "props": {
+    "questions": [
+     "比现有搜索结果多给了什么",
+     "有无原创数据/图片/视频",
+     "有无第一人称经验或专家见解",
+     "读者获得什么别处没有的价值"
+    ],
+    "fail": "答案全否=不应发布"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "@type": "ad:KnowledgeAsset",
+   "label": "独立站SEO流量下滑诊断卡",
+   "props": {
+    "path": "cards/platform-ops/dsite-seo-diagnostic-rescue.md",
+    "status": "review",
+    "qa": "platform-ops Q103-106"
+   },
+   "src": [
+    "card:platform-ops/dsite-seo-diagnostic-rescue.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-seo-7dim-diagnostic",
+   "@type": "ad:Playbook",
+   "label": "SEO七维取证诊断",
+   "props": {
+    "dims": "趋势降权特征/关键词流失结构/流量集中度/多语言Markets污染/外链DS+锚文本病态/博客ROI+HCU/KPI体系",
+    "principle": "诊断先于方案数据先于经验",
+    "input": "Semrush导出最低组合,trend必须≥12月"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-seo-restart-phase04",
+   "@type": "ad:Playbook",
+   "label": "SEO重启Phase0-4路线图",
+   "props": {
+    "p0": "Week1-2止血(技术审计+URL收敛+博客分级)",
+    "p1": "Week3-4净化(hreflang+删合+信任页)",
+    "p2": "Week4-8内容重构(VOC词库+决策页)",
+    "p3": "Week6-12站外信号(KOL反挖+编辑链+视频SERP)",
+    "p4": "Week8+持续运营(KPI框架+月复盘)",
+    "milestone": "M6恢复80%峰值/M12 Top10商业词翻倍",
+    "prereq": "VOC+竞品+反链底座未完成不批量生产"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-algo-demotion-signals",
+   "@type": "ad:Benchmark",
+   "label": "算法降权特征阈值",
+   "props": {
+    "traffic": "同比-30~-70%持续≥4周",
+    "kw_sync": "关键词数同步腰斩差距<10pp",
+    "duration": "4-8周阶梯下行",
+    "recovery": "≥2月不回升",
+    "vs_noise": "<20%单周回升/关键词稳=个别波动"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-traffic-concentration",
+   "@type": "ad:Benchmark",
+   "label": "流量集中度阈值",
+   "props": {
+    "top1": "<30%健康/>50%危险",
+    "top5": "<60%/<90%危险",
+    "longtail": "Top10外贡献>20%健康/<5%危险",
+    "top5_page_drop": "任一-30%+=失血"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-backlink-ds-health",
+   "@type": "ad:Benchmark",
+   "label": "外链DS分布与锚文本病态阈值",
+   "props": {
+    "ds40": "≥30%健康/<10%病态",
+    "ds20_lt": "<50%健康/>70%病态",
+    "median": "≥20",
+    "empty_anchor": "<15%健康/>30%病态",
+    "single_nonbrand": "<10%/>20%",
+    "biz_kw_anchor": ">=40%/<10%",
+    "coupon_anchor": "<10%/>30%"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-blog-roi-hcu",
+   "@type": "ad:Benchmark",
+   "label": "博客ROI与HCU信号",
+   "props": {
+    "per_post_monthly": "≥30健康/1-30警示/<1病态",
+    "distribution": "80/20健康vs99/1病态",
+    "hcu_signals": "均值<1+HCU窗口期集体去索引+AI模板化批量",
+    "caveat": "ROI<1也可能是关键词与商业意图脱节需交叉验证"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-kpi-mix-health",
+   "@type": "ad:Benchmark",
+   "label": "KPI体系占比健康",
+   "props": {
+    "process": "≤30%(文章数/外链数/词数)",
+    "result": ">=60%(GSC点击/Top10词/DR)",
+    "business": ">=10%(自然营收/转化率)",
+    "pathology": "完成率100-130%但流量下行/免责声明/章节停更"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-diagnosis-data-first",
+   "@type": "ad:Rule",
+   "label": "SEO取证纪律(数据先于经验)",
+   "props": {
+    "principle": "任何我觉得必须先被原始数据驳倒或印证",
+    "neutral": "服务商问题中性表述不点名合同签约",
+    "granularity": "首版到周/月级里程碑不下沉具体URL/outreach",
+    "severity": "critical"
+   },
+   "src": [
+    "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+   ]
   }
  ]
 }

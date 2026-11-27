@@ -1321,6 +1321,504 @@
    "source": "ad:asset:card-attribution-measurement",
    "target": "ad:asset:card-attribution-models-reconciliation",
    "ref": "F4卫生:三角测量框架↔六模型算例互补(S22↔S25)"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:cards/platform-ops/dsite-cro-funnel-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-cro-six-module",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-cro-funnel-diagnosis",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-aicpl-lp-matching",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-shopify-cvr-tiers",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-category-cvr",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-traffic-source-cvr",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-checkout-abandon-reasons",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-urgency-authenticity",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-tracking-first-cro",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-review-count-bench",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-conversion-ux.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:cards/platform-ops/dsite-seo-growth-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-seo-three-pillar",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-seo-keyword-strategy",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-seo-content-architecture",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-link-building-tiers",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-seo-channel-synergy",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-seo-cwv",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-anchor-distribution",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-backlink-monthly-cadence",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-shopify-param-url",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-ai-content-compliance",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-infogain-gate",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:cards/platform-ops/dsite-seo-diagnostic-rescue.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-seo-7dim-diagnostic",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-seo-restart-phase04",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-algo-demotion-signals",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-traffic-concentration",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-backlink-ds-health",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-blog-roi-hcu",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-kpi-mix-health",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-diagnosis-data-first",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:s22-cbe-skills/brand-strategy/dsite-seo-diagnostic.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:playbook:cbe-cro-six-module",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:playbook:cbe-cro-funnel-diagnosis",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:playbook:cbe-aicpl-lp-matching",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:bench:cbe-shopify-cvr-tiers",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:bench:cbe-category-cvr",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:bench:cbe-traffic-source-cvr",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:bench:cbe-checkout-abandon-reasons",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:rule:cbe-urgency-authenticity",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:rule:cbe-tracking-first-cro",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:rule:cbe-review-count-bench",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:playbook:cbe-seo-three-pillar",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:playbook:cbe-seo-keyword-strategy",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:playbook:cbe-seo-content-architecture",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:playbook:cbe-link-building-tiers",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:playbook:cbe-seo-channel-synergy",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:bench:cbe-seo-cwv",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:bench:cbe-anchor-distribution",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:bench:cbe-backlink-monthly-cadence",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:rule:cbe-shopify-param-url",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:rule:cbe-ai-content-compliance",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:rule:cbe-infogain-gate",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:playbook:cbe-seo-7dim-diagnostic",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:playbook:cbe-seo-restart-phase04",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:bench:cbe-algo-demotion-signals",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:bench:cbe-traffic-concentration",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:bench:cbe-backlink-ds-health",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:bench:cbe-blog-roi-hcu",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:bench:cbe-kpi-mix-health",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:rule:cbe-diagnosis-data-first",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-cro-funnel-diagnosis",
+   "target": "ad:bench:cbe-shopify-cvr-tiers",
+   "ref": "漏斗诊断用CVR基准判读"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-aicpl-lp-matching",
+   "target": "ad:playbook:cbe-cro-six-module",
+   "ref": "LP分层是六模块落地页表达"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-cro-funnel-diagnosis",
+   "target": "ad:rule:cbe-tracking-first-cro",
+   "ref": "漏斗诊断依赖追踪完整性(追踪损坏数据失真)"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:playbook:cbe-seo-three-pillar",
+   "ref": "重启方案复用playbook六步框架"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-seo-7dim-diagnostic",
+   "target": "ad:playbook:cbe-seo-three-pillar",
+   "ref": "诊断维度映射到三支柱框架"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-seo-keyword-strategy",
+   "target": "ad:rule:cbe-shopify-param-url",
+   "ref": "关键词落地页需先解决参数URL"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-seo-content-architecture",
+   "target": "ad:rule:cbe-ai-content-compliance",
+   "ref": "内容生产受AI合规四档约束"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-seo-content-architecture",
+   "target": "ad:rule:cbe-infogain-gate",
+   "ref": "内容发布受信息增益四问门槛约束"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-link-building-tiers",
+   "target": "ad:bench:cbe-anchor-distribution",
+   "ref": "外链建设受锚文本分布约束"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:cvr",
+   "target": "ad:bench:cbe-shopify-cvr-tiers",
+   "ref": "Shopify漏斗基准分档阈值"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:atc-rate",
+   "target": "ad:bench:cbe-shopify-cvr-tiers",
+   "ref": "Shopify漏斗基准分档阈值"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:cbe-seo-channel-synergy",
+   "target": "ad:playbook:cbe-dsite-seo-sem",
+   "ref": "全渠道协同含SEO-SEM专项"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:asset:card-geo-ai-search-optimization",
+   "ref": "GEO是SEO的AI搜索延伸"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:asset:card-cro-page-optimization",
+   "ref": "漏斗层↔页面元素层互补"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "CRO假设需A/B纪律判读"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-cro-funnel-ops",
+   "target": "ad:asset:card-user-lifecycle-retention-ops",
+   "ref": "L阶段承接Welcome Flow"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-growth-playbook",
+   "target": "ad:asset:card-dsite-sem-ads-playbook",
+   "ref": "SEO↔SEM双引擎"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-dsite-seo-diagnostic-rescue",
+   "target": "ad:playbook:cbe-attribution-triangulation",
+   "ref": "流量归因异常联动三角测量"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:playbook:cbe-seo-channel-synergy",
+   "target": "ad:playbook:cbe-dsite-seo-sem",
+   "ref": "渠道协同vs SEO-SEM专项"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:cbe-seo-keyword-strategy",
+   "target": "ad:channel:seo-sem",
+   "ref": "关键词战略属搜索渠道"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:cbe-cro-six-module",
+   "target": "ad:platform:dtc-site",
+   "ref": "CRO框架作用于DTC独立站"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:cbe-seo-three-pillar",
+   "target": "ad:platform:dtc-site",
+   "ref": "SEO三支柱作用于DTC独立站"
   }
  ]
 }

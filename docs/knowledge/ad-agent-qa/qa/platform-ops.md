@@ -385,3 +385,55 @@ source: human+ai
 ### Q93. GEO 有哪些常见误区要避开？
 **A**：五条红线——①不把 SEO 排名/流量/知名度直接当 GEO 优先级；②不把「有页面」当「AI 可引用」（要查可抽取的定义/表格/FAQ/来源/断言级事实）；③不把引用链接数量当可信度（引用必须真实支持断言）；④合成 Prompt/推断竞品/生成示例不得表述为真实平台数据；⑤不承诺排名/引用/推荐/营收数字。采样要低频、可见、授权、可审计。
 > 溯源：`cards/platform-ops/geo-ai-search-optimization.md`（S29:wepr-geo-suite quality gates）
+
+### Q94. 独立站有流量没出单，先查什么？
+**A**：先跑地基层再谈优化——console 报错、GA4/Meta/TikTok 像素 firing 链（view→ATC→checkout→purchase 是否触发/重复/去重错）、CWV（LCP>2.5s 红旗）、死链与导航↔落地页信息气味、移动端 sticky ATC。追踪损坏会让所有漏斗和 A/B 数据失真，修复是最高优先级；静态抓取拿不到的项标「未核验」不臆断。
+> 溯源：`cards/platform-ops/dsite-cro-funnel-ops.md`（S22:dsite-conversion-ux §1.6）
+
+### Q95. Shopify 各转化环节的基准和正常流失率是多少？
+**A**：五档基准——加购率 <2%差/2-4%一般/4-8%良好/8-12%优秀/>12%顶尖；到达结账 <1/1-2/2-5/5-8/>8%；购买 CVR <0.5/0.5-1/1-2/2-3.5/>3.5%；购物车放弃 >80/70-80/60-70/50-60/<50%；结账放弃 >70/55-70/40-55/25-40/<25%。漏损矩阵：浏览→加购正常流失 70-85%（最大漏损段，查产品页）、加购→结账 30-50%、到结账→购买 20-40%。品类修正：宠物/健康 CVR 高于家居/电子。
+> 溯源：`cards/platform-ops/dsite-cro-funnel-ops.md`（S22:dsite-conversion-ux §1.1-1.2）
+
+### Q96. 结账放弃率高按什么原因对症？
+**A**：按占比排序——额外费用 48%（结账前展示全部费用+包邮门槛）、要求注册 24%（Guest Checkout，+10-20% CVR）、配送慢 22%（明示送达时间）、支付安全疑虑 18%（徽章+多支付方式）、流程复杂 17%（单页或≤3 步）、看不到总价 16%、退货不清 12%、支付方式少 9%（加本地支付/BNPL，AOV+20-30%）。
+> 溯源：`cards/platform-ops/dsite-cro-funnel-ops.md`（S22:dsite-conversion-ux §模块四）
+
+### Q97. 不加流量怎么提升营收？紧迫感有限制吗？
+**A**：AOV 矩阵——捆绑 +15-30%、数量折扣 +10-25%、包邮门槛 +10-20%、购物车交叉推荐 +10-15%、升级版本 +20-40%、订阅折扣提 LTV；加购→结账段 exit-intent 弹窗挽回 2-5%+弃购邮件三封（1h/24h/72h）。紧迫感红线四条：假倒计时、虚假低库存、天天「最后一天」、先涨后降假折扣——必须真实否则永久损害信任。
+> 溯源：`cards/platform-ops/dsite-cro-funnel-ops.md`（S22:dsite-conversion-ux §模块五/六）
+
+### Q98. 不同流量来源的落地页怎么匹配？
+**A**：8 映射——品牌搜索→首页、品类搜索→Collection、产品搜索→PDP、Meta 拉新→专属页（品牌故事+爆品+优惠）、Meta 再营销→产品页/购物车、TikTok→短视频页、KOL→专属页（背书+专属码）、邮件→个性化页；叠加 AICPL 五阶段（认知→兴趣→考虑→购买→忠诚）定首屏重点与 CTA。广告→落地页过一致性五查（视觉/信息/优惠/产品/CTA），承诺断裂即跳出。
+> 溯源：`cards/platform-ops/dsite-cro-funnel-ops.md`（S22:dsite-conversion-ux §3.5/5.1-5.2）
+
+### Q99. 新站 SEO 关键词先打哪类？多久见效？
+**A**：Tier4 微长尾（月搜 10-100/KD 0-10）Month1-3 快速见效 → Tier3 长尾（100-1K/10-30）Month4-6 积累权重 → Tier2（1-5K/30-50）Month7-12 → Tier1 核心词（5K+/50-80）Year2+ 需强外链。筛选漏斗：全量 200-500 词→月搜≥50→KD 达标→相关度≥7→核心 30-80 词。四嵌入点：Title/Alt/Meta/URL 各嵌一次。新站见效 6-12 个月。
+> 溯源：`cards/platform-ops/dsite-seo-growth-playbook.md`（S22:dsite-seo-playbook §2.3-2.4）
+
+### Q100. Shopify 做 SEO 最大的技术坑是什么？
+**A**：参数 URL 重复收录——?page 分页 canonical 指首页、?sort_by 排序 canonical+noindex、?variant 变体 canonical 指主产品页、?tag 过滤大部分 noindex、?preview noindex。另：每个 Collection 写 300-500 字独特描述、产品按销量/评分排序、清无用 App 减 JS/CSS、Review App Schema 输出要查。CWV 阈值 LCP≤2.5s/INP≤200ms/CLS≤0.1。
+> 溯源：`cards/platform-ops/dsite-seo-growth-playbook.md`（S22:dsite-seo-playbook §1.2-1.3）
+
+### Q101. 外链分几级？锚文本怎么分布才不被惩罚？
+**A**：S-A-B-C-D-E 六级——S 级 EDU/GOV（DR70+，不可买）→A 级权威 Guest Post（DR50-70，$200-500/条，月 2-4）→B 级行业博客（DR30-50，$100-300，月 4-8）→C 级 PR（$150-400/篇）→D 级资源页（免费-$50）→E 级论坛。质量五查：DR≥30/Similarweb≥20K/月/品类相关/已索引/正文内嵌+出站≤50。锚文本：品牌 5-10%+精确 20-30%+长尾 50-60%+裸 URL 3-5%+通用 5-10%；单一精确锚≤15%。
+> 溯源：`cards/platform-ops/dsite-seo-growth-playbook.md`（S22:dsite-seo-playbook §4.1-4.3）
+
+### Q102. AI 生成的内容能直接发吗？
+**A**：分四档——AI 生成+人工深度编辑+独特见解=允许（Google 关心质量非生产方式）；AI+轻微改写=风险；纯 AI 无人工=高风险；AI 辅助研究+人工撰写=推荐最佳实践；AI+第一人称经验=信息增益核心。发布前过信息增益四问：比现有搜索结果多给了什么？有无原创数据/第一人称/独特角度？答不出不发。
+> 溯源：`cards/platform-ops/dsite-seo-growth-playbook.md`（S22:dsite-seo-playbook §1.5/3.4）
+
+### Q103. 老站自然流量掉了怎么判断是不是算法降权？
+**A**：三信号齐=降权特征——流量同比 -30~-70% 持续≥4 周、关键词数同步腰斩（两者幅度差<10pp）、拐点撞上公开核心/HCU 更新时点；加 4-8 周阶梯下行+≥2 月不回升。单日断崖或流量降但关键词稳=个别波动，往单页失血（Top1>50%/Top5>90% 占比）或外链维度查。
+> 溯源：`cards/platform-ops/dsite-seo-diagnostic-rescue.md`（S22:dsite-seo-diagnostic 维度1-3）
+
+### Q104. Shopify Markets 多语言站 SEO 最易踩什么坑？
+**A**：URL 笛卡尔积爆炸——/de-eg/、/es-fr/ 式无意义地区-语言组合、错翻/拼写错误 slug（brakeletts 类）、中英混搭 slug、hreflang 冲突。健康阈值：每地区一级目录流量占该市场≥50%、异常组合 URL=0、错翻 slug=0。产出去重清单按 301/noindex/删除/重译分类。
+> 溯源：`cards/platform-ops/dsite-seo-diagnostic-rescue.md`（S22:dsite-seo-diagnostic 维度4）
+
+### Q105. 外链怎么判断是刷量结构？博客没流量是被 HCU 了吗？
+**A**：外链病态信号——DS≥40 占比<10% 或 DS<20 占比>70%；EmptyAnchor>30%、单一非品牌锚>20%、业务词锚<10%、优惠券类锚>30%；Top 来源若优惠券/聚合站为主=PBN 嫌疑。博客 ROI：平均每篇月访问<1 才进 HCU 嫌疑区（1-30 仅低效），需叠加 HCU 窗口期+AI 模板化特征交叉验证——ROI<1 也可能是关键词与商业意图脱节。
+> 溯源：`cards/platform-ops/dsite-seo-diagnostic-rescue.md`（S22:dsite-seo-diagnostic 维度5-6）
+
+### Q106. SEO 流量下滑诊断完重启先做什么？
+**A**：Phase 0 止血（Week1-2）：技术审计+多语言 URL 收敛+博客大盘分级（保留/升级/合并/noindex/删除）+历史交付盘点；Phase1 净化（Week3-4）hreflang 修复+信任页；Phase2 内容重构（Week4-8）VOC 词库+决策路径文；Phase3 站外信号（Week6-12）；Phase4 持续运营。**数据底座前置**：Trustpilot VOC+竞品拆解+反链候选池未完成前不启动批量生产。里程碑 Month6 恢复 80% 峰值。
+> 溯源：`cards/platform-ops/dsite-seo-diagnostic-rescue.md`（S22:dsite-seo-diagnostic Step5）
