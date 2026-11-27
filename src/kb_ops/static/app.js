@@ -242,10 +242,42 @@ async function vGraph() {
     adj.get(e.target).push({ rel: lbl, other: e.source, dir: 'in', ref: e.ref || '' });
   });
 
+  // 布局位置缓存：同版本图谱二次进入直接禁用物理引擎，秒开
+  const POS_KEY = 'kb-graph-pos-v1';
+  let posCache = null, posSig = '';
+  try {
+    let h = 5381;
+    const sigSrc = (data.generated || '') + '|' + NODES.length + '|' + EDGES.length + '|' +
+      NODES.map(n => n.id).join('');
+    for (let i = 0; i < sigSrc.length; i++) h = ((h << 5) + h + sigSrc.charCodeAt(i)) | 0;
+    posSig = String(h);
+    posCache = JSON.parse(localStorage.getItem(POS_KEY) || 'null');
+    if (posCache && posCache.sig !== posSig) posCache = null;
+  } catch (_) { posCache = null; }
+
+  // 确定性种子布局：按 cluster 分组摆圆环，物理引擎只需少量迭代收敛
+  const seedPos = {};
+  if (!posCache) {
+    const clusters = [...new Set(NODES.map(n => n.cluster))].sort();
+    const R = 700 + clusters.length * 55;
+    clusters.forEach((c, ci) => {
+      const a = (ci / clusters.length) * Math.PI * 2;
+      const cx = Math.cos(a) * R, cy = Math.sin(a) * R;
+      const members = NODES.filter(n => n.cluster === c);
+      members.forEach((n, ni) => {
+        const golden = ni * 2.399963;
+        const rr = 25 + Math.sqrt(ni / Math.max(members.length, 1)) * 210;
+        seedPos[n.id] = [cx + Math.cos(golden) * rr, cy + Math.sin(golden) * rr];
+      });
+    });
+  }
+
   const nodesDS = new vis.DataSet(NODES.map(n => {
     const commColor = n.community >= 0 ? COMM_COLORS[n.community % COMM_COLORS.length] : '#555';
+    const p = posCache ? posCache.pos[n.id] : seedPos[n.id];
     return {
       id: n.id, label: n.label,
+      ...(p ? { x: p[0], y: p[1] } : {}),
       color: { background: TYPE_COLORS[n.type] || '#7F8C8D', border: commColor,
                highlight: { border: commColor } },
       borderWidth: n.community >= 0 ? 3 : 1,
@@ -256,19 +288,51 @@ async function vGraph() {
       _type: n.type, _cluster: n.cluster,
     };
   }));
+  const edgeRel = e => e.type.replace('ad:', '');
   const edgesDS = new vis.DataSet(EDGES.map((e, i) => {
     const dir = DIRECTIONAL.has(e.type);
-    return { id: i, from: e.source, to: e.target, label: e.type.replace('ad:', ''),
-      title: e.ref || '', arrows: dir ? 'to' : '',
+    return { id: i, from: e.source, to: e.target,
+      title: edgeRel(e) + (e.ref ? ' — ' + e.ref : ''),
+      arrows: dir ? 'to' : '',
       color: { color: dir ? '#4a627d' : '#33465c', highlight: '#89a9f1' },
       font: { color: '#8ba0b8', size: 8, align: 'middle' }, smooth: { type: 'continuous' } };
   }));
 
   const network = new vis.Network(document.getElementById('g-canvas'),
     { nodes: nodesDS, edges: edgesDS },
-    { physics: { stabilization: true, barnesHut: { gravitationalConstant: -6000, springLength: 90 } },
+    { physics: posCache ? { enabled: false, stabilization: { enabled: false } } : {
+        stabilization: { enabled: true, iterations: 400, updateInterval: 80, fit: true },
+        barnesHut: { gravitationalConstant: -6000, springLength: 90, theta: 0.6 } },
       interaction: { hover: true, tooltipDelay: 120, navigationButtons: true },
       nodes: { shape: 'dot' } });
+  if (posCache) {
+    requestAnimationFrame(() => network.fit(undefined, { animation: false }));
+  } else {
+    let saved = false;
+    const trySave = () => {
+      if (saved) return;
+      saved = true;
+      try {
+        const pos = {};
+        for (const [id, nd] of Object.entries(network.body.nodes)) pos[id] = [nd.x, nd.y];
+        localStorage.setItem(POS_KEY, JSON.stringify({ sig: posSig, pos }));
+      } catch (_) {}
+    };
+    // stabilization 事件发在 body.emitter；轮询兜底防事件名/代理问题
+    network.body.emitter.once('stabilizationIterationsDone', trySave);
+    const saveTimer = setInterval(() => {
+      if (!document.getElementById('g-canvas')) { clearInterval(saveTimer); return; }
+      if (network.physics.physicsEnabled === false) { clearInterval(saveTimer); trySave(); }
+    }, 500);
+  }
+  // 边标签按需显示：点击节点时仅标注其关联边（全量 1976 条边标签是主要渲染开销）
+  function labelEdgesFor(edgeIds) {
+    const keep = new Set(edgeIds);
+    const ups = edgeIds.map(id => ({ id, label: edgeRel(EDGES[id]) }));
+    const clear = edgesDS.get({ filter: e => e.label && !keep.has(e.id) })
+      .map(e => ({ id: e.id, label: '' }));
+    if (ups.length || clear.length) edgesDS.update([...ups, ...clear]);
+  }
   graphTeardown = () => { try { network.destroy(); } catch (_) {} };
   window.__kbGraph = { network, nodesDS, edgesDS, showDetail, focusNode };  // 调试/测试钩子
 
@@ -318,8 +382,10 @@ async function vGraph() {
     network.focus(id, { scale: 1.2, animation: true });
     showDetail(id);
   }
-  network.on('click', p => { if (p.nodes.length) showDetail(p.nodes[0]); });
-  network.once('stabilizationIterationsDone', () => network.setOptions({ physics: { enabled: false } }));
+  network.on('click', p => {
+    labelEdgesFor(p.edges || []);
+    if (p.nodes.length) showDetail(p.nodes[0]);
+  });
   document.getElementById('g-hint').textContent =
     `${data.stats.nodes} 节点 · ${data.stats.edges} 边 · ${data.stats.communities} 社区`;
 }
