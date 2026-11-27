@@ -5,3 +5,4 @@ __pycache__/
 .DS_Store
 tmp/
 logs/
+docs/knowledge/ad-agent-qa/graph/dist/
