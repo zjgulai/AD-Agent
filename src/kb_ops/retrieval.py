@@ -113,22 +113,20 @@ class BM25Index:
         return sorted(scores.items(), key=lambda x: x[1], reverse=True)[:top_k]
 
 
-def search_kb(kb_root: Path, query: str, top_k: int = 5):
-    """对 ad-agent-qa KB 做 BM25 检索，返回 [(Chunk, score)]。
-
-    分块加载复用 kb_bot.kb（qa/card/glossary 三类 chunk），只替换打分器。
-    """
-    from kb_bot.kb import KnowledgeBase  # src/ 同级包，tests/conftest 已注入 src 路径
-
-    kb = KnowledgeBase(kb_root)
+def build_index(kb) -> BM25Index:
+    """为 KnowledgeBase 建 BM25 索引（doc_id = chunk 下标）。"""
     index = BM25Index()
     for i, chunk in enumerate(kb.chunks):
         index.add(str(i), chunk.text)
+    return index
+
+
+def search_chunks(kb, index: BM25Index, query: str, top_k: int = 5):
+    """对已建索引检索，返回 [(Chunk, score)]（含 kind 权重，与 retrieve 同族口径）。"""
     hits = index.search(query, top_k=top_k * 2)  # 多取再按 kind 微调
     out: list[tuple[object, float]] = []
     for doc_id, score in hits:
         chunk = kb.chunks[int(doc_id)]
-        # 与 kb.py retrieve 同族的 kind 权重，保持口径一致
         if chunk.kind == "qa":
             score *= 1.25
         elif chunk.kind == "glossary":
@@ -136,6 +134,19 @@ def search_kb(kb_root: Path, query: str, top_k: int = 5):
         out.append((chunk, round(score, 3)))
     out.sort(key=lambda x: x[1], reverse=True)
     return out[:top_k]
+
+
+def search_kb(kb_root: Path, query: str, top_k: int = 5):
+    """对 ad-agent-qa KB 做 BM25 检索，返回 [(Chunk, score)]。
+
+    分块加载复用 kb_bot.kb（qa/card/glossary 三类 chunk），只替换打分器。
+    """
+    from .paths import ensure_src_path
+    ensure_src_path()
+    from kb_bot.kb import KnowledgeBase
+
+    kb = KnowledgeBase(kb_root)
+    return search_chunks(kb, build_index(kb), query, top_k)
 
 
 def main() -> None:

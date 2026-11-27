@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ad-agent-qa · KB Workbench</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <div class="brand">KB Workbench<span>ad-agent-qa</span></div>
+  <nav id="nav">
+    <a href="#/cards" data-nav="cards">Cards</a>
+    <a href="#/qa" data-nav="qa">QA</a>
+    <a href="#/graph" data-nav="graph">Graph</a>
+    <a href="#/health" data-nav="health">Health</a>
+    <a href="#/search" data-nav="search">Search</a>
+  </nav>
+  <div id="stats-chips"></div>
+</header>
+<main id="view"><div class="loading">加载中…</div></main>
+<div id="modal" class="modal hidden"><div class="modal-box"><div class="modal-head"><span id="modal-title"></span><button id="modal-close">✕</button></div><div id="modal-body" class="md"></div></div></div>
+<script src="/marked.min.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

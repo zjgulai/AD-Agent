@@ -16,7 +16,7 @@ import webbrowser
 from datetime import date
 from pathlib import Path
 
-from .paths import graph_dir, graph_dist_dir
+from .paths import kb_root as default_kb_root
 
 # vis.js 中需要箭头的方向性关系；对称关系（conflicts_with/variant_of 等）不画箭头
 _DIRECTIONAL = {
@@ -161,9 +161,11 @@ def _inputs_hash(inst_dir: Path) -> str:
     return h.hexdigest()
 
 
-def export(out_dir: Path | None = None, use_cache: bool = True) -> tuple[Path, Path, dict]:
-    inst_dir = graph_dir() / "instances"
-    out_dir = out_dir or graph_dist_dir()
+def export(root: Path | None = None, out_dir: Path | None = None, use_cache: bool = True) -> tuple[Path, Path, dict]:
+    """导出图谱；root 默认 env/default KB_ROOT，out_dir 默认 root/graph/dist。"""
+    root = root or default_kb_root()
+    inst_dir = root / "graph" / "instances"
+    out_dir = out_dir or (root / "graph" / "dist")
     out_dir.mkdir(parents=True, exist_ok=True)
     json_path = out_dir / "graph.json"
     html_path = out_dir / "graph.html"
@@ -364,7 +366,7 @@ def main() -> None:
     ap.add_argument("--no-cache", action="store_true")
     args = ap.parse_args()
 
-    json_path, html_path, data = export(args.out_dir, use_cache=not args.no_cache)
+    json_path, html_path, data = export(out_dir=args.out_dir, use_cache=not args.no_cache)
     s = data["stats"]
     print(f"graph: {s['nodes']} nodes / {s['edges']} edges / {s['communities']} communities")
     print(f"  json → {json_path}")

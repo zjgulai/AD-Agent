@@ -46,7 +46,7 @@ def test_load_shards_has_cluster(kb_root):
 
 
 def test_export_produces_json_and_html(kb_root, tmp_path):
-    json_path, html_path, data = graph_export.export(tmp_path, use_cache=False)
+    json_path, html_path, data = graph_export.export(out_dir=tmp_path, use_cache=False)
     assert json_path.is_file() and html_path.is_file()
     payload = json.loads(json_path.read_text(encoding="utf-8"))
     assert payload["stats"]["nodes"] == len(payload["nodes"]) > 500
@@ -59,9 +59,9 @@ def test_export_produces_json_and_html(kb_root, tmp_path):
 
 
 def test_export_cache(tmp_path, kb_root):
-    p1, h1, d1 = graph_export.export(tmp_path, use_cache=True)
+    p1, h1, d1 = graph_export.export(out_dir=tmp_path, use_cache=True)
     mtime = h1.stat().st_mtime_ns
-    p2, h2, d2 = graph_export.export(tmp_path, use_cache=True)
+    p2, h2, d2 = graph_export.export(out_dir=tmp_path, use_cache=True)
     assert h2.stat().st_mtime_ns == mtime  # 缓存命中不重建
 
 

@@ -16,7 +16,6 @@ from pathlib import Path
 
 from .paths import REPO_ROOT, kb_root
 
-_VALIDATE = kb_root() / "graph" / "tools" / "validate.py"
 _AUDIT_MODULE = "kb_audit"
 _AUDIT_CWD = REPO_ROOT / "src"
 
@@ -53,10 +52,16 @@ def parse_audit(stdout: str) -> dict:
     }
 
 
-def run_all(strict: bool = False) -> dict:
-    """跑全部审计，返回 {validate, audit, ok}。strict 时任一 FAIL → ok=False。"""
+def run_all(strict: bool = False, root: Path | None = None) -> dict:
+    """跑全部审计，返回 {validate, audit, ok}。strict 时任一 FAIL → ok=False。
+
+    root 仅作用于 validate.py 的 instances 目录；kb_audit CLI 固定审 repo KB
+    （自定义 KB_ROOT 属测试场景，audit 结果以 repo KB 为准）。
+    """
+    root = root or kb_root()
+    validate = root / "graph" / "tools" / "validate.py"
     py = sys.executable
-    v = _run([py, str(_VALIDATE)], cwd=REPO_ROOT)
+    v = _run([py, str(validate), str(root / "graph" / "instances")], cwd=REPO_ROOT)
     a = _run([py, "-m", _AUDIT_MODULE] + (["--strict"] if strict else []), cwd=_AUDIT_CWD)
     result = {
         "validate": {**parse_validate(v["stdout"] + v["stderr"]),

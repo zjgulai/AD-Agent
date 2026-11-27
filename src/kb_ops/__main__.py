@@ -15,13 +15,16 @@ import sys
 def main() -> None:
     if len(sys.argv) < 2 or sys.argv[1] in {"-h", "--help", "help"}:
         print("usage: python -m kb_ops <command> [args]")
-        print("commands: graph-export | lint | audit | search")
+        print("commands: graph-export | lint | audit | search | web")
         sys.exit(0 if len(sys.argv) < 2 or sys.argv[1] in {"-h", "--help", "help"} else 1)
 
     cmd, rest = sys.argv[1], sys.argv[2:]
     sys.argv = [f"kb_ops.{cmd.replace('-', '_')}", *rest]
 
-    if cmd == "graph-export":
+    if cmd == "web":
+        from .web.__main__ import main as web_main
+        web_main()
+    elif cmd == "graph-export":
         from . import graph_export
         graph_export.main()
     elif cmd == "lint":
