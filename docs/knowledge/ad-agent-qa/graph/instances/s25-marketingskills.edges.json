@@ -423,6 +423,372 @@
    "source": "ad:rule:no-cross-window-sum",
    "target": "ad:bench:merged:attribution-gap",
    "ref": "supersession"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:cards/platform-ops/ad-creative-strategy-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:creative-strategy-loop",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:hook-generation-pipeline",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:meta-format-tier-taxonomy",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/meta-creative-formats.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:production-tiers-t1t3",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:creative-retro",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:creator-format-library",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/short-form-video-specs.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:platform-ad-specs",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/platform-specs.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:evidence-ranked-concepts",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:unicorn-vs-supporting-cast",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/meta-creative-formats.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:andromeda-persona-targeting",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/meta-creative-formats.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:fidelity-laddering",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:account-state-branch",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:capacity-check",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:organic-vs-baked-audio",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/short-form-video-specs.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:hook-three-component-no-dup",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:check:hook-diagnostic-funnel",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:onramp-premise-bridge",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:grounded-inputs-required",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:safe-zone-720x1200",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/short-form-video-specs.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:no-ai-tells",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:falsifiable-test-hypothesis",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:one-component-per-iteration",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:thumbstop-rate",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:hold-rate",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:playbook:creative-strategy-loop",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:playbook:hook-generation-pipeline",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:playbook:meta-format-tier-taxonomy",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:playbook:creator-format-library",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:playbook:platform-ad-specs",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:rule:grounded-inputs-required",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:rule:no-ai-tells",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:rule:falsifiable-test-hypothesis",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creative-strategy-system",
+   "target": "ad:asset:card-decision-engine",
+   "ref": "ad-creative-strategy-system card related section"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creative-strategy-loop",
+   "target": "ad:concept:evidence-ranked-concepts",
+   "ref": "creative-roadmap step2"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creative-strategy-loop",
+   "target": "ad:concept:account-state-branch",
+   "ref": "creative-roadmap step3"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creative-strategy-loop",
+   "target": "ad:concept:capacity-check",
+   "ref": "creative-roadmap step4 capacity"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creative-strategy-loop",
+   "target": "ad:playbook:creative-retro",
+   "ref": "creative-roadmap step5"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creative-retro",
+   "target": "ad:check:hook-diagnostic-funnel",
+   "ref": "retro reads funnel not ROAS"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creative-retro",
+   "target": "ad:concept:evidence-ranked-concepts",
+   "ref": "retro re-ranks evidence"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:hook-generation-pipeline",
+   "target": "ad:rule:hook-three-component-no-dup",
+   "ref": "hook-system 3 components"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:hook-generation-pipeline",
+   "target": "ad:rule:grounded-inputs-required",
+   "ref": "hook-system grounding"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:hook-generation-pipeline",
+   "target": "ad:concept:fidelity-laddering",
+   "ref": "hook-system fidelity"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:check:hook-diagnostic-funnel",
+   "target": "ad:metric:thumbstop-rate",
+   "ref": "funnel stage1"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:check:hook-diagnostic-funnel",
+   "target": "ad:metric:hold-rate",
+   "ref": "funnel stage2"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:check:hook-diagnostic-funnel",
+   "target": "ad:metric:ctr",
+   "ref": "funnel stage3"
+  },
+  {
+   "@type": "ad:checks",
+   "source": "ad:check:hook-diagnostic-funnel",
+   "target": "ad:metric:cvr",
+   "ref": "funnel stage4"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:check:hook-diagnostic-funnel",
+   "target": "ad:rule:one-component-per-iteration",
+   "ref": "one fix per cycle"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:check:hook-diagnostic-funnel",
+   "target": "ad:rule:onramp-premise-bridge",
+   "ref": "hold=on-ramp metric"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:meta-format-tier-taxonomy",
+   "target": "ad:concept:unicorn-vs-supporting-cast",
+   "ref": "tier list ranking question"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:meta-format-tier-taxonomy",
+   "target": "ad:concept:andromeda-persona-targeting",
+   "ref": "creator-fronted rationale"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:andromeda-persona-targeting",
+   "target": "ad:playbook:meta-andromeda-playbook",
+   "ref": "persona targeting inside Andromeda playbook"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:partnership-ads-playbook",
+   "target": "ad:concept:andromeda-persona-targeting",
+   "ref": "partnership ads seed audience mechanism"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:meta-format-tier-taxonomy",
+   "target": "ad:concept:rolling-reach-signal",
+   "ref": "reach drop deploys creator formats"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creator-format-library",
+   "target": "ad:playbook:meta-format-tier-taxonomy",
+   "ref": "format library shares tier logic"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creator-format-library",
+   "target": "ad:rule:safe-zone-720x1200",
+   "ref": "all formats obey Part1 spec"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:creator-format-library",
+   "target": "ad:concept:organic-vs-baked-audio",
+   "ref": "audio organic call"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:production-tiers-t1t3",
+   "target": "ad:concept:fidelity-laddering",
+   "ref": "T3 gate = prior low-fi funnel signal"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:production-tiers-t1t3",
+   "target": "ad:concept:evidence-ranked-concepts",
+   "ref": "tier assignment by evidence"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:platform-ad-specs",
+   "target": "ad:playbook:creative-strategy-loop",
+   "ref": "delivery checklist"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-decision-engine",
+   "target": "ad:asset:card-creative-strategy-system",
+   "ref": "kill/keep/scale feeds creative roadmap signals"
   }
  ]
 }

@@ -453,6 +453,287 @@
    "src": [
     "cards/fundamentals/ad-account-governance.md"
    ]
+  },
+  {
+   "@id": "ad:asset:card-creative-strategy-system",
+   "@type": "ad:KnowledgeAsset",
+   "label": "广告创意策略系统卡",
+   "props": {
+    "cluster": "platform-ops",
+    "qa": "platform-ops Q59-63"
+   },
+   "src": [
+    "cards/platform-ops/ad-creative-strategy-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:creative-strategy-loop",
+   "@type": "ad:Playbook",
+   "label": "创意策略循环 Signals→Concepts→Roadmap→Briefs→Retro",
+   "props": {
+    "cadence": "月度深潜60-90min+周20min刷新",
+    "desc": "先诊断账户状态再排素材优先级；产能校验砍slate；月度retro评概念不评广告"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:hook-generation-pipeline",
+   "@type": "ad:Playbook",
+   "label": "Hook生成管线 Segment→Motivation→Format→Hook",
+   "props": {
+    "output": "hook matrix跨单元覆盖",
+    "desc": "先选受众切片→客户原话动机→先定形式再写词→三组件hook"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:meta-format-tier-taxonomy",
+   "@type": "ad:Playbook",
+   "label": "Meta 51创意格式S→F分级",
+   "props": {
+    "source": "Dara Denney tier list改编",
+    "desc": "unicorn scaler vs supporting cast二分；S=founder/partnership/VSL；F=press/podcast/notes-app fake-native"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/meta-creative-formats.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:production-tiers-t1t3",
+   "@type": "ad:Playbook",
+   "label": "生产层级T1迭代/T2 remix/T3制作",
+   "props": {
+    "desc": "T1小时级改hook/caption用于赢家；T2天级remix有初步信号；T3周级全新制作只给已验证角度"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:creative-retro",
+   "@type": "ad:Playbook",
+   "label": "月度创意retro",
+   "props": {
+    "desc": "评概念不评广告；读漏斗不读ROAS；每条learning必须落地icebox/重排/kill"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:creator-format-library",
+   "@type": "ad:Playbook",
+   "label": "Creator短视频格式库9式",
+   "props": {
+    "formats": "Reaction+Demo/Yapper/Investigation/David&Goliath/Authority/VSL/green-screen/no-yapping/reaction",
+    "desc": "结构非剧本；casting是瓶颈；Authority须真实资质+合规审"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/short-form-video-specs.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:platform-ad-specs",
+   "@type": "ad:Playbook",
+   "label": "跨平台广告字符规范表",
+   "props": {
+    "desc": "Google RSA 30x15/90x4；Meta主文案125可见/标题40；TikTok 80；交付前逐条过字符校验"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/platform-specs.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:evidence-ranked-concepts",
+   "@type": "ad:KnowledgeAsset",
+   "label": "创意概念证据六级分级",
+   "props": {
+    "tiers": "1自家转化广告>2客户逐字>3竞品60天+>4有机互动>5跨领域>6直觉",
+    "desc": "高证据赢roadmap优先级；生产层级另由验证强度/产能/风险定"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:unicorn-vs-supporting-cast",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Unicorn scaler vs supporting cast",
+   "props": {
+    "desc": "unicorn刺穿冷净新增受众扛放量；supporting只转化中低漏斗——格式按角色不按好坏评"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/meta-creative-formats.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:andromeda-persona-targeting",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Andromeda persona定向机制",
+   "props": {
+    "desc": "按persona非兴趣定向；creator粉丝=预组装画像种子→partnership ads继承种子向外扩展；rolling MoM reach下降=饱和信号"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/meta-creative-formats.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:fidelity-laddering",
+   "@type": "ad:KnowledgeAsset",
+   "label": "保真阶梯 low-fi假设→high-fi验证",
+   "props": {
+    "desc": "直觉一两天低保真出信号；已验证角度才配高保真制作；阶梯单向运行"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:account-state-branch",
+   "@type": "ad:KnowledgeAsset",
+   "label": "账户状态分支 探索vs放量",
+   "props": {
+    "desc": "探索态宽度优先+单指标重定义赢；放量态深挖赢家变体+保留小额探索"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:capacity-check",
+   "@type": "ad:KnowledgeAsset",
+   "label": "产能校验规则",
+   "props": {
+    "desc": "roadmap对齐团队真实保质产能；20概念对8产能=20条妥协货；按证据等级砍到slate装得下"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/creative-roadmap.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:organic-vs-baked-audio",
+   "@type": "ad:KnowledgeAsset",
+   "label": "有机vs烘焙音频决策",
+   "props": {
+    "desc": "organic挂app内trending sound赚算法加权；付费广告烘进视频；这一个决策显著影响organic reach"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/short-form-video-specs.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:hook-three-component-no-dup",
+   "@type": "ad:Rule",
+   "label": "Hook三组件不重复分工规则",
+   "props": {
+    "desc": "视频hook=视觉动作+口播+字幕三槽互补不重复；静态图=视觉+headline两组件；一槽重复=三分之一hook"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
+  },
+  {
+   "@id": "ad:check:hook-diagnostic-funnel",
+   "@type": "ad:DiagnosisCheck",
+   "label": "Hook诊断漏斗四段隔离(诊断检查)",
+   "props": {
+    "desc": "thumbstop弱→视觉；hold弱→on-ramp(3-15s)；CTR弱→中段承诺；CVR弱→落地页一致性；高thumbstop+低hold=clickbait陷阱"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:onramp-premise-bridge",
+   "@type": "ad:Rule",
+   "label": "On-ramp前提桥规则",
+   "props": {
+    "desc": "on-ramp须逻辑延续hook前提而非拐去产品pitch；每次hook测试同时是on-ramp测试"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:grounded-inputs-required",
+   "@type": "ad:Rule",
+   "label": "Grounded Inputs语料库铁律",
+   "props": {
+    "desc": "winning-ads/reviews/ad-comments三源；每概念带语料出处；语料为空停下要料不许无grounding降级生成；禁发明claims/stats"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:safe-zone-720x1200",
+   "@type": "ad:Rule",
+   "label": "竖屏安全带720×1200",
+   "props": {
+    "desc": "1080×1920画布上220/下500/左右各180px边距→中央文字带y=220-1420；字幕静态白字黑描边自动缩字号"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/short-form-video-specs.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:no-ai-tells",
+   "@type": "ad:Rule",
+   "label": "No AI tells文案黑名单",
+   "props": {
+    "desc": "禁对比揭示/否定排比/stock phrases/em dash/泛化hook·CTA slop；批次内变化句式"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:falsifiable-test-hypothesis",
+   "@type": "ad:Rule",
+   "label": "可证伪测试假设规则",
+   "props": {
+    "desc": "假设须带指标+对比对象+预期方向；赢或输都教受众认知"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:one-component-per-iteration",
+   "@type": "ad:Rule",
+   "label": "一次迭代只改一个组件",
+   "props": {
+    "desc": "视觉或on-ramp或offer框架三选一；匹配单变量测试规则"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:thumbstop-rate",
+   "@type": "ad:Metric",
+   "label": "Thumbstop率 3秒停留",
+   "props": {
+    "desc": "停段指标；弱→visual action/caption问题"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:hold-rate",
+   "@type": "ad:Metric",
+   "label": "Hold rate 3s→15s/50%观看",
+   "props": {
+    "desc": "留段指标=on-ramp质量；与thumbstop分开诊断"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ad-creative/references/hook-system.md"
+   ]
   }
  ]
 }

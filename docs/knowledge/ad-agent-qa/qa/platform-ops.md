@@ -245,3 +245,23 @@ source: human+ai
 ### Q58. VOC 评论洞察怎么反哺 Listing 和广告？
 **A**：三向闭环——高频负面词→五点「边界说明」补强+页面说明（评分维度6红线）；「描述不符」差评→文案/图片纠偏；差评高频问题→QA 必答清单；高频正面词→强化进 Listing。广告侧：差评暴露的真实痛点=素材「诚实边界」，承诺不能超出产品实际能力。
 > 溯源：`cards/platform-ops/amazon-review-voc-ops.md`（WB:review-analysis）
+
+### Q59. 广告 hook 怎么系统化生成？
+**A**：管线 Segment→Motivation→Format→Hook 三组件——视频 hook=视觉动作+口播+字幕三槽不重复分工（静态图塌缩为视觉+headline）。输出 hook matrix 跨 segment×motivation 单元覆盖而非单列改写。动机用客户评论原话不改写营销腔；先选形式再写词。诊断漏斗：thumbstop 弱改视觉开场、hold rate 弱改 on-ramp(3-15s)、CTR 弱改中段承诺、CVR 弱修落地页一致性；一次迭代只改一个组件。
+> 溯源：`cards/platform-ops/ad-creative-strategy-system.md`（S25:ad-creative/hook-system）
+
+### Q60. 新素材概念怎么排序优先级？
+**A**：先按证据分级（自家转化广告>客户逐字>竞品60天+>有机互动>跨领域>直觉）再按格式角色——unicorn scaler 刺穿冷受众 vs supporting cast 只转化中低漏斗。Meta 51 格式 S→F：S=founder content/partnership ads/VSL；按团队真实产能砍 slate（20概念对8产能=20条妥协货）。每月 retro 评概念不评广告。
+> 溯源：`cards/platform-ops/ad-creative-strategy-system.md`（S25:ad-creative/creative-roadmap+meta-formats）
+
+### Q61. Andromeda 时代为什么 partnership ads/creator 内容优先？
+**A**：Andromeda 按 persona 定向不按兴趣列表——创作者粉丝=预组装画像种子，partnership ad 从创作者 handle 投放继承种子向外扩展，是触达净新增受众的第一杠杆（#1 投资优先级）。rolling MoM reach 下降=受众饱和信号→部署 creator-fronted 格式。选人按画像重合度不看粉丝数。
+> 溯源：`cards/platform-ops/ad-creative-strategy-system.md`（S25:ad-creative/meta-creative-formats）
+
+### Q62. 竖屏广告视频怎么避开平台 UI？
+**A**：1080×1920 画布留中央 720×1200 文字安全带（上220px/下500px/左右各180px——动作栏/字幕栈/音乐键压边缘）；字幕白字黑描边无 pill、静态不动画、自动缩字号到带内。有机内容不烘音乐 app 内挂 trending sound 赚算法加权，付费广告烘进视频。
+> 溯源：`cards/platform-ops/ad-creative-strategy-system.md`（S25:ad-creative/short-form-video-specs）
+
+### Q63. AI 批量生成广告怎么避免「一看就是 AI」？
+**A**：禁对比揭示「It's not X, it's Y」、否定排比、stock phrases、em dash、泛化 hook/CTA slop；批次内变化句式。测试假设必须可证伪（指名指标+对比对象+预期方向）。每条创意溯源到语料库（评论原话/赢家广告/评论区异议），无来源不进 icebox；语料为空停下来要料不许无 grounding 降级生成。
+> 溯源：`cards/platform-ops/ad-creative-strategy-system.md`（S25:ad-creative/SKILL.md）

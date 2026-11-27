@@ -87,6 +87,7 @@ source: human+ai
 | [Amazon Listing 语义化打造](cards/platform-ops/amazon-listing-semantic-ops.md) | COSMO/Alexa 对 Listing 意味着什么？八步工作流？五点决策链？ST/QA 怎么写？数据从哪抓？ | S23 |
 | [Amazon Listing AI 评分细则](cards/platform-ops/amazon-listing-ai-score-rubric.md) | Listing 适不适合 AI 推荐？8 维怎么打分？75字符/Item Highlights 新规过渡期？N/A 怎么处理？ | S23 |
 | [Amazon 评论洞察 VOC](cards/platform-ops/amazon-review-voc-ops.md) | 差评怎么分类归因？6 类痛点+严重度？VOC 怎么反哺 Listing/广告/QA？ | S23 |
+| [广告创意策略系统](cards/platform-ops/ad-creative-strategy-system.md) | Hook 三组件管线？创意策略循环/证据分级？Meta 51 格式 S→F？Andromeda 下 partnership ads？竖屏 safe-zone/字幕/音频？防 AI 痕迹？ | S25 |
 
 ## 按问题类型速查
 
