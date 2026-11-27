@@ -97,3 +97,23 @@ source: human+ai
 ### Q21. 效果监控 Agent 依赖的「上线检查 Agent」是什么？
 **A**：建设任务表中无此条目 `[待确认]`。可能对应 S2 Loop 全景中的上线检查环节（⑦），但未在建设任务中单列，需向表负责人确认是否遗漏或归并到其他任务。
 > 溯源：`cards/influencer-boost/influencer-boost-build-tracking.md`
+
+### Q22. 达人合作有哪几种模式怎么选？
+**A**：五档光谱——paid influencer（一次性交易）、affiliate creator（佣金低风险转化）、gifted/seeding（送样铺量）、brand ambassador（数月 cohort 持续存在）、organic advocate（真实信任最慢）。多数计划是混合体：macro 位做 reach+micro cohort 做转化+affiliate 层做规模。
+> 溯源：`cards/influencer-boost/creator-partnership-models.md`（S25:influencer-marketing）
+
+### Q23. 找达人看粉丝数还是受众？
+**A**：看受众不看粉丝——12k 粉垂类精准受众胜过 500k 泛娱乐。micro（10k-50k）是 reach 与信任最佳平衡；micro+nano 组合总花费等效一个 macro 位但转化更高且产出更多可复用素材。
+> 溯源：`cards/influencer-boost/creator-partnership-models.md`（S25:influencer-marketing）
+
+### Q24. 给广告素材付费的 creator plan 怎么设计？
+**A**：Wispr 模式——creator 为广告账户做视频按 spend ~7% 分成+月度保底（达配额才生效）；从 4-5 人按缺口招募、40-60 封顶；每周与 media buyer 开会打通账户经验；briefing 给「对谁/处境/一个论点/一条证据」不给脚本；防抄袭靠鼓励测新形式（Meta 聚类限流模仿者）。
+> 溯源：`cards/influencer-boost/creator-partnership-models.md`（S25:influencer-marketing/references/paid-ads-creator-program）
+
+### Q25. UGC 矩阵号玩法的合规红线是什么？
+**A**：原版「伪装素人」2026 年被 FTC 点名——修正后每条 #ad+付费合作标签（含新号）、不许付假评论、不许假体验假效果、creator 必须真用产品；披露反而降低平台 inauthentic-behavior 封号风险。付费达人帖=广告，使用权/whitelisting/佣金基数/保底配额须书面约定先于第一条视频。
+> 溯源：`cards/influencer-boost/creator-partnership-models.md`（S25:influencer-marketing/references/ugc-creator-program）
+
+### Q26. UGC 计划多久能判断成败？
+**A**：至少 4 周——第 4 周应看到多 creator 多形式起量+重复产品问题+概念多次驱动收藏分享安装。日常按产品问题/收藏/分享/安装数据判断不按播放量；找能复现的形式，hit 变 channel 靠 remake（一次只改一个变量）。每 creator 3 条/天隔 ~2 小时，每条发前审 playbook。
+> 溯源：`cards/influencer-boost/creator-partnership-models.md`（S25:influencer-marketing/references/ugc-creator-program）

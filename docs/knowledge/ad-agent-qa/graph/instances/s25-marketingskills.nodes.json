@@ -8,7 +8,7 @@
   "freshness": "watch",
   "last_verified": "2026-11-27"
  },
- "coverage_notes": "S25 marketingskills 蒸馏:E1a Meta量化决策引擎+Andromeda打法+账户治理纪律;B2B口径TCPL/qualified lead已标DTC翻译点;阈值为从业者起点值需自家数据重校准;E1b/E1c子批次将扩展本shard",
+ "coverage_notes": "S25 marketingskills 蒸馏:E1a Meta量化决策引擎+Andromeda打法+账户治理纪律;B2B口径TCPL/qualified lead已标DTC翻译点;阈值为从业者起点值需自家数据重校准;E1b/E1c子批次将扩展本shard | F1追加:cro(七维诊断/字段成本律/message match/页面实验)+ab-testing(假设/样本量MDE/peeking/p值ASA/guardrail/optin)+influencer-marketing(五档光谱/受众对齐/PaidAdsCreator保底/VolumeUGC四形式与合规);aso跳过,B2B newsletter/telegram不适用",
  "nodes": [
   {
    "@id": "ad:src:marketingskills",
@@ -1001,6 +1001,270 @@
    },
    "src": [
     "raw/s25-marketingskills/skills/ads/references/payback-period.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-cro-page-optimization",
+   "@type": "ad:KnowledgeAsset",
+   "label": "页面转化优化CRO卡",
+   "props": {
+    "cluster": "platform-ops",
+    "qa": "platform-ops Q79-83"
+   },
+   "src": [
+    "cards/platform-ops/cro-page-optimization.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cro-7dim-diagnosis",
+   "@type": "ad:Playbook",
+   "label": "CRO七维诊断框架",
+   "props": {
+    "dims": "价值主张/标题/CTA/视觉层级/信任信号/异议处理/摩擦点(按影响排序)",
+    "desc": "5秒价值主张+message match是最高频杀手"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/cro/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:form-field-cost",
+   "@type": "ad:Rule",
+   "label": "表单字段成本律",
+   "props": {
+    "rule": "3字段基线;4-6字段降10-25%;7+降25-50%+;敏感字段放最后;单列布局",
+    "desc": "每字段拷问跟进是否真用"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/cro/references/form.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:message-match",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Message Match广告落地页一致",
+   "props": {
+    "rule": "广告承诺=落地页首屏5秒内接住同一卖点",
+    "desc": "CRO最高频转化杀手之一"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/cro/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:page-type-experiments",
+   "@type": "ad:Playbook",
+   "label": "页面类型实验清单",
+   "props": {
+    "pages": "首页/PDP/定价促销/留资表单/内容页",
+    "desc": "experiments.md按页面类型假设表;DTC迁移版"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/cro/references/experiments.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-ab-testing-methodology",
+   "@type": "ad:KnowledgeAsset",
+   "label": "A/B测试方法论卡",
+   "props": {
+    "cluster": "fundamentals",
+    "qa": "fundamentals Q43-47"
+   },
+   "src": [
+    "cards/fundamentals/ab-testing-methodology.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:abtest-hypothesis-framework",
+   "@type": "ad:Playbook",
+   "label": "实验假设框架",
+   "props": {
+    "structure": "Because[观察]we believe[改动]will cause[结果]for[受众];know when[指标]",
+    "desc": "弱假设vs强假设对比"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:sample-size-mde",
+   "@type": "ad:Rule",
+   "label": "样本量三输入MDE",
+   "props": {
+    "inputs": "基线转化率+MDE+α0.05/power80%;5%基线20%lift=8.2k/变体",
+    "desc": "MDE由业务影响+成本+历史现实性三方定"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ab-testing/references/sample-size-guide.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:no-peeking",
+   "@type": "ad:Rule",
+   "label": "Peeking禁忌",
+   "props": {
+    "rule": "到量前看结果早停=假阳性主因;预承诺样本量",
+    "desc": "opt-in元素例外走triggered analysis"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:p-value-asa",
+   "@type": "ad:KnowledgeAsset",
+   "label": "p值ASA解读纪律",
+   "props": {
+    "facts": "p值≠随机概率/≠原假设真概率/≠再赢概率;95%CI是覆盖率程序非后验概率;显著≠业务价值",
+    "desc": "ASA声明口径"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:guardrail-metrics",
+   "@type": "ad:KnowledgeAsset",
+   "label": "指标三层primary-secondary-guardrail",
+   "props": {
+    "tiers": "primary判胜负/secondary解释why/guardrail防伤害(显著恶化即停)",
+    "desc": "例:定价页primary=方案选择率guardrail=退款率"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:optin-triggered-analysis",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Opt-in元素triggered analysis",
+   "props": {
+    "rule": "只触达交互者的改动按整体转化率测会欠功效;两臂同触发点只比到达者(不按点击过滤)",
+    "desc": "或跳过受控测试做版本ID方向性对比"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-creator-partnership-models",
+   "@type": "ad:KnowledgeAsset",
+   "label": "达人合作计划模型卡",
+   "props": {
+    "cluster": "influencer-boost",
+    "qa": "influencer-boost Q22-26"
+   },
+   "src": [
+    "cards/influencer-boost/creator-partnership-models.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:influencer-ambassador-spectrum",
+   "@type": "ad:KnowledgeAsset",
+   "label": "达人合作五档光谱",
+   "props": {
+    "models": "paid/affiliate/gifted/ambassador/organic;越右越关系型越耐用越慢",
+    "desc": "多数计划混合体"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:creator-tier-audience-fit",
+   "@type": "ad:KnowledgeAsset",
+   "label": "达人分层与受众对齐测试",
+   "props": {
+    "tiers": "nano1-10k/micro10-50k/mid50-500k/macro500k+;看受众不看粉丝;micro+nano组合>单macro",
+    "desc": "12k垂类受众胜500k泛娱乐"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:paid-ads-creator-program",
+   "@type": "ad:Playbook",
+   "label": "Paid-Ads Creator Program",
+   "props": {
+    "model": "Wispr模式:creator为广告账户做视频按spend~7%分成+月度保底",
+    "desc": "4-5人起步按缺口招/40-60封顶;Meta聚类限流相似视频;每周media buyer会议"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/references/paid-ads-creator-program.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:smart-retainer-minimum",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Smart Retainer保底机制",
+   "props": {
+    "rule": "月度最低收入达配额才生效;佣金不足补到保底超保底只拿佣金",
+    "desc": "无历史时招人+赌creator信号"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/references/paid-ads-creator-program.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:volume-ugc-program",
+   "@type": "ad:Playbook",
+   "label": "Volume UGC Creator Program",
+   "props": {
+    "model": "Playkit模式:品牌关联账号矩阵号量产原生短视频;10人×3条/天≈900测试/月",
+    "desc": "内容量是资产;~$3.87CPC厂商数据仅方向参考;先建playbook再招人"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:ugc-4formats",
+   "@type": "ad:KnowledgeAsset",
+   "label": "UGC四形式配比",
+   "props": {
+    "formats": "talking70%转化主力/wall-of-text最viral转化最差/slideshow便宜量产可AI/hook-and-demo老化需包装",
+    "desc": "同创意跨形式测分辨创意vs呈现失败"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:ugc-conversion-ladder",
+   "@type": "ad:KnowledgeAsset",
+   "label": "UGC转化四触点",
+   "props": {
+    "steps": "hook点名产品/caption自然点名/合规运营评论区/回复视频答问题",
+    "desc": "评论区自我识别高意向面;回复视频最高意向"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:ugc-4week-judge",
+   "@type": "ad:Rule",
+   "label": "UGC计划4周判断线",
+   "props": {
+    "rule": "至少4周;按产品问题/收藏/分享/安装判断不按播放量;找能复现的形式",
+    "desc": "remake一次只改一个变量"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:ftc-creator-disclosure",
+   "@type": "ad:Rule",
+   "label": "FTC达人广告披露红线",
+   "props": {
+    "rules": "每条#ad+付费合作标签含新号;不许付假评论;必须真用产品;效果宣称同广告标准;书面约定先于首条视频",
+    "desc": "FTC追责广告主;披露降低平台封号风险"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/influencer-marketing/SKILL.md"
    ]
   }
  ]

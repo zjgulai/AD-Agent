@@ -32,6 +32,7 @@ source: human+ai
 | [红人素材广告加推 Agent Loop · 角色·触点·链路全景](cards/influencer-boost/influencer-boost-loop-overview.md) | 红人优质素材如何自动化转化为广告？角色分工、触点、13 个 Agent 编排与 HITL 节点？ | S2 |
 | [红人加推 Agent 清单与职责规格](cards/influencer-boost/influencer-boost-agent-specs.md) | 每个 Agent 的输入/输出/处理逻辑/负责人是什么？建设进度如何？ | S3 |
 | [红人加推建设任务与进度](cards/influencer-boost/influencer-boost-build-tracking.md) | 21 项建设任务的状态、依赖、优先级、预估人天？ | S3 |
+| [达人合作计划模型](cards/influencer-boost/creator-partnership-models.md) | 五档合作光谱怎么选？受众对齐测试？Paid-Ads Creator Program（保底/分成/招募）？Volume UGC 矩阵号？FTC 合规红线？ | S25 |
 
 ### Meta 广告诊断与优化
 
@@ -58,6 +59,7 @@ source: human+ai
 | [广告账户治理纪律](cards/fundamentals/ad-account-governance.md) | 周检六问+四态判定？AI 审计怎么防没查的也打分？品牌/非品牌怎么拆？净现金放量观？再营销异 offer 原则？ | S25 |
 | [归因模型算例与差异诊断](cards/fundamentals/attribution-models-reconciliation.md) | 同一笔订单六模型各分多少？DDA 何时可信？Ads-GA4 差 20% 正常吗？退款不对称？direct/品牌词虚高怎么读？ | S25 |
 | [Payback 预算闸门](cards/fundamentals/payback-period-budget-gate.md) | LTV:CAC 为什么不可信？毛利回本怎么算？cohort 恢复路径？渠道能不能投的四步判据？ | S25 |
+| [A/B 测试方法论](cards/fundamentals/ab-testing-methodology.md) | 假设框架？样本量/MDE 怎么算？peeking 禁忌？p 值/CI 怎么读？guardrail 指标？opt-in 元素 triggered analysis？ | S25 |
 
 ### 竞品分析
 
@@ -95,6 +97,7 @@ source: human+ai
 | [Google Search 广告手册](cards/platform-ops/google-search-playbook.md) | 意图阶梯怎么解锁？品牌词暂停测试？独立预算为什么？Broad 三条件？周检搜索词三遍？PMax 护栏？ | S25 |
 | [Amazon PPC 建计划与优化](cards/platform-ops/amazon-ppc-campaign-ops.md) | ACoS 财务框架/launch vs mature 目标？Auto→Broad→Exact 漏斗？出价阶梯？周操作阈值（10+点击0单/2+单迁移/20+点击调bid）？Brand Analytics 信号？ | S26 |
 | [跨平台 PPC 策略规划](cards/platform-ops/cross-platform-ppc-strategy.md) | 买家行为怎么选主平台？ROAS 三公式？预算分配三模板？平台 ROAS 基准？Mode B 🟢🟡🔴 重分配规则？学习期门槛？ | S27 |
+| [页面转化优化（CRO）](cards/platform-ops/cro-page-optimization.md) | 落地页七维诊断顺序？表单字段成本律？CTA 文案？message match？PDP/首页实验清单？ | S25 |
 
 ## 按问题类型速查
 

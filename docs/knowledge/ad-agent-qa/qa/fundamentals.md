@@ -181,3 +181,23 @@ source: human+ai
 ### Q42. CAC $300 的客户多久回本？两个 cohort 年末留存相同回本一样吗？
 **A**：看计划和毛利——$9 计划 revenue-only 33.3 月别投、$99 计划 3.0 月但 20% 毛利下实际 15.2 月、$999 计划 0.3 月可扩（先确认回款时点）。cohort 不同：早流失（每月留存 70%）第 6 月恢复、晚流失（前 11 月 100%）第 4 月——年末留存率相同但月度恢复路径不同，`CAC/(ARPU×年留存)` 给两者同样的错误答案。
 > 溯源：`cards/fundamentals/payback-period-budget-gate.md`（S25:payback-period）
+
+### Q43. A/B 测试跑到一半能停吗？
+**A**：不能——peeking 是假阳性主因。预先算好样本量并承诺到底；没到量的结果只是 preliminary。例外：opt-in 元素（只触达交互者）可用 triggered analysis 或干脆跳过受控测试做方向性对比。
+> 溯源：`cards/fundamentals/ab-testing-methodology.md`（S25:ab-testing）
+
+### Q44. A/B 测试样本量怎么算？
+**A**：三输入——基线转化率、MDE（值得检测的最小变化，由业务影响+成本+历史现实性定）、α=0.05/power=80%。速查：5% 基线测 20% lift 需 8.2k/变体、测 10% lift 需 31k/变体；流量不够就调大 MDE 或换高基线页面。
+> 溯源：`cards/fundamentals/ab-testing-methodology.md`（S25:ab-testing/references/sample-size-guide）
+
+### Q45. p<0.05 显著就能上线吗？
+**A**：不一定——p 值是「数据与原假设不兼容」的概率陈述，不是业务价值证明。还要看效应量是否过 MDE、guardrail（退款率/客服工单）有无恶化、secondary 是否一致、分群有无反向信号。
+> 溯源：`cards/fundamentals/ab-testing-methodology.md`（S25:ab-testing）
+
+### Q46. 一次想测标题+图片+CTA 三个改动行吗？
+**A**：原则一次只测一个变量。但小流量现实下可接受「整体改版 vs control」的 bundle 测试（测的是组合不是单变量），结论须标注「不知道哪个起作用」；流量够则拆开测。
+> 溯源：`cards/fundamentals/ab-testing-methodology.md`（S25:ab-testing）
+
+### Q47. opt-in 元素（视频播放按钮）怎么做 A/B 测试？
+**A**：按整体转化率测会欠功效（90% 未交互访客只贡献噪声）。两条路：triggered analysis——两臂同一触发点只比到达者（不按点击过滤，变体会改变谁点击）；或跳过受控测试直接上线更好版本，用版本 ID 做方向性对比。
+> 溯源：`cards/fundamentals/ab-testing-methodology.md`（S25:ab-testing）

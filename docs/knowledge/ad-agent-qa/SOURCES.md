@@ -134,6 +134,7 @@ source: human+ai
 - **新实体**：`ad:metric:tcpl`、`ad:bench:graduation-criteria`、`ad:bench:fatigue-frequency-bands`、`ad:playbook:meta-decision-system`/`meta-andromeda-playbook`/`operating-check-6q`/`retargeting-4component`/`partnership-ads-playbook`/`zombie-campaigns`/`ad-sequencing-path`/`cbo-8020-structure`/`scaling-protocol`/`swap-rules-no-zombie`/`weekly-quality-eval`、`ad:workflowstage:day7-delivery-check`/`weekly-cadence-mwf`、`ad:rule`×8（广告数上限/创意量约束/审计四态/禁跨窗加总/禁编否定词/MISSING不估算/实盘草案先行/优化non-brand/净现金>ROAS）、`ad:concept`×8。
 - E1b 蒸馏产出：`cards/platform-ops/ad-creative-strategy-system.md` + `qa/platform-ops.md` Q59-63 + s25 shard +25 节点/66 边。
 - E1c 蒸馏产出：`cards/platform-ops/google-search-playbook.md`、`cards/fundamentals/attribution-models-reconciliation.md`、`cards/fundamentals/payback-period-budget-gate.md` + QA（platform-ops Q64-68、fundamentals Q37-42）+ s25 shard +23 节点/65 边。
+- **F1 蒸馏产出（S25 收尾，剩余 3 域）**：`cards/platform-ops/cro-page-optimization.md`、`cards/fundamentals/ab-testing-methodology.md`、`cards/influencer-boost/creator-partnership-models.md` + QA（platform-ops Q79-83、fundamentals Q43-47、influencer-boost Q22-26）+ s25 shard 追加节点/边。**aso 域跳过**（app store 域，超出电商广告 KB 范围）；influencer-marketing 的 newsletter/telegram references 为 B2B 渠道不适用未蒸。至此 S25 八域全部处理完毕。
 
 ## 第十一批源（Amazon-Skills 蒸馏，2026-11-27 追加）
 

@@ -325,3 +325,23 @@ source: human+ai
 ### Q78. 各平台 ROAS 基准大概多少？
 **A**：2025-2026 行业均值——Google Shopping 4.5x（top quartile 6x+）、Meta 2.2x（retargeting 3.6x，top 4-5x）、TikTok 1.4x（top 2x+）、全行业 2.87x。⚠️ 第三方基准只做 sanity check，判定永远以自家 break-even/target 为准。
 > 溯源：`cards/platform-ops/cross-platform-ppc-strategy.md`（S27:ecommerce-ppc-strategy-planner）
+
+### Q79. 落地页转化差先按什么顺序查？
+**A**：七维按影响排序——①价值主张 5 秒清晰度（客户语言非黑话）②标题与流量来源 message match③单一主 CTA 不滚动可见且文案传价值（强「Get My Report」弱「Learn More」）④视觉层级可扫读⑤CTA 附近信任信号⑥异议处理（FAQ/保证）⑦摩擦点（字段/移动端/速度）。
+> 溯源：`cards/platform-ops/cro-page-optimization.md`（S25:cro）
+
+### Q80. 表单每多一个字段掉多少转化？
+**A**：经验法则——3 字段基线，4-6 字段完成率降 10-25%，7+ 降 25-50%+。逐字段拷问「跟进真的用它吗」，能自动补全不问，敏感字段（电话/公司）放最后，单列布局移动端完成率更高。
+> 溯源：`cards/platform-ops/cro-page-optimization.md`（S25:cro/references/form）
+
+### Q81. CTA 按钮文案怎么写？
+**A**：传达价值而非动作——弱「Submit/Sign Up/Learn More」，强「Start Free Trial/Get My Report/See Pricing」。一个清晰主行动+不滚动可见+在关键决策点重复出现；主次 CTA 要有层级。
+> 溯源：`cards/platform-ops/cro-page-optimization.md`（S25:cro）
+
+### Q82. 广告卖点和落地页不一致怎么办？
+**A**：message match 断裂是常见转化杀手——广告承诺什么，落地页首屏必须 5 秒内接住同一卖点。诊断时把广告素材文案和落地页首屏并排看，标题/图片/CTA 三处对齐。
+> 溯源：`cards/platform-ops/cro-page-optimization.md`（S25:cro）
+
+### Q83. PDP 做 CRO 优先测哪些实验？
+**A**：卖点 benefit vs feature 导向、评价展示位置与数量、图片序列（生活方式 vs 白底）、尺寸/使用场景图、FAQ 位置、捆绑/对比模块；首页侧还有 hero 标题变体、首屏 CTA、社会证明位置、sticky nav、exit-intent popup。每次只改 1-2 个变量走 A/B 测试纪律。
+> 溯源：`cards/platform-ops/cro-page-optimization.md`（S25:cro/references/experiments）

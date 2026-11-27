@@ -8,7 +8,7 @@
   "freshness": "watch",
   "last_verified": "2026-11-27"
  },
- "coverage_notes": "S25 marketingskills 蒸馏:E1a Meta量化决策引擎+Andromeda打法+账户治理纪律;B2B口径TCPL/qualified lead已标DTC翻译点;阈值为从业者起点值需自家数据重校准;E1b/E1c子批次将扩展本shard",
+ "coverage_notes": "S25 marketingskills 蒸馏:E1a Meta量化决策引擎+Andromeda打法+账户治理纪律;B2B口径TCPL/qualified lead已标DTC翻译点;阈值为从业者起点值需自家数据重校准;E1b/E1c子批次将扩展本shard | F1同nodes",
  "edges": [
   {
    "@type": "ad:sourced_from",
@@ -1179,6 +1179,492 @@
    "source": "ad:asset:card-payback-budget-gate",
    "target": "ad:playbook:google-intent-ladder",
    "ref": "channel gate before spend rungs"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-cro-page-optimization",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/cards/platform-ops/cro-page-optimization.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cro-7dim-diagnosis",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/cro/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:form-field-cost",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/cro/references/form.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:message-match",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/cro/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:page-type-experiments",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/cro/references/experiments.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/cards/fundamentals/ab-testing-methodology.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:abtest-hypothesis-framework",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:sample-size-mde",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/ab-testing/references/sample-size-guide.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:no-peeking",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:p-value-asa",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:guardrail-metrics",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:optin-triggered-analysis",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/ab-testing/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/cards/influencer-boost/creator-partnership-models.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:influencer-ambassador-spectrum",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:creator-tier-audience-fit",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:paid-ads-creator-program",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/references/paid-ads-creator-program.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:smart-retainer-minimum",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/references/paid-ads-creator-program.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:volume-ugc-program",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:ugc-4formats",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:ugc-conversion-ladder",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:ugc-4week-judge",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/references/ugc-creator-program.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:ftc-creator-disclosure",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/raw/s25-marketingskills/skills/influencer-marketing/SKILL.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cro-page-optimization",
+   "target": "ad:playbook:cro-7dim-diagnosis",
+   "ref": "cro card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:cro-7dim-diagnosis",
+   "target": "ad:asset:card-cro-page-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cro-page-optimization",
+   "target": "ad:rule:form-field-cost",
+   "ref": "cro card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:form-field-cost",
+   "target": "ad:asset:card-cro-page-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cro-page-optimization",
+   "target": "ad:concept:message-match",
+   "ref": "cro card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:message-match",
+   "target": "ad:asset:card-cro-page-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cro-page-optimization",
+   "target": "ad:playbook:page-type-experiments",
+   "ref": "cro card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:page-type-experiments",
+   "target": "ad:asset:card-cro-page-optimization",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:playbook:abtest-hypothesis-framework",
+   "ref": "abtest card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:abtest-hypothesis-framework",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:rule:sample-size-mde",
+   "ref": "abtest card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:sample-size-mde",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:rule:no-peeking",
+   "ref": "abtest card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:no-peeking",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:concept:p-value-asa",
+   "ref": "abtest card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:p-value-asa",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:concept:guardrail-metrics",
+   "ref": "abtest card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:guardrail-metrics",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:concept:optin-triggered-analysis",
+   "ref": "abtest card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:optin-triggered-analysis",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:concept:influencer-ambassador-spectrum",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:influencer-ambassador-spectrum",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:concept:creator-tier-audience-fit",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:creator-tier-audience-fit",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:playbook:paid-ads-creator-program",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:paid-ads-creator-program",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:concept:smart-retainer-minimum",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:smart-retainer-minimum",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:playbook:volume-ugc-program",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:volume-ugc-program",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:concept:ugc-4formats",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:ugc-4formats",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:concept:ugc-conversion-ladder",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:ugc-conversion-ladder",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:rule:ugc-4week-judge",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:ugc-4week-judge",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:rule:ftc-creator-disclosure",
+   "ref": "influencer card"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:rule:ftc-creator-disclosure",
+   "target": "ad:asset:card-creator-partnership-models",
+   "ref": "cluster"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cro-7dim-diagnosis",
+   "target": "ad:concept:message-match",
+   "ref": "诊断第二维"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:page-type-experiments",
+   "target": "ad:playbook:cro-7dim-diagnosis",
+   "ref": "实验从诊断短板出"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cro-page-optimization",
+   "target": "ad:asset:card-ab-testing-methodology",
+   "ref": "CRO假设走AB判读"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:abtest-hypothesis-framework",
+   "target": "ad:rule:sample-size-mde",
+   "ref": "假设定后算样本量"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:abtest-hypothesis-framework",
+   "target": "ad:concept:guardrail-metrics",
+   "ref": "假设含primary/guardrail"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:rule:no-peeking",
+   "target": "ad:rule:sample-size-mde",
+   "ref": "承诺到量才可判"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:optin-triggered-analysis",
+   "target": "ad:rule:no-peeking",
+   "ref": "opt-in例外路径"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:paid-ads-creator-program",
+   "target": "ad:concept:smart-retainer-minimum",
+   "ref": "保底机制组件"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:volume-ugc-program",
+   "target": "ad:concept:ugc-4formats",
+   "ref": "形式库组件"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:volume-ugc-program",
+   "target": "ad:concept:ugc-conversion-ladder",
+   "ref": "转化路径组件"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:volume-ugc-program",
+   "target": "ad:rule:ugc-4week-judge",
+   "ref": "判断线"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:volume-ugc-program",
+   "target": "ad:rule:ftc-creator-disclosure",
+   "ref": "合规前置"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:paid-ads-creator-program",
+   "target": "ad:rule:ftc-creator-disclosure",
+   "ref": "合规前置"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:playbook:partnership-ads-playbook",
+   "ref": "付费合作广告放大"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:playbook:pops-creator-compliance",
+   "ref": "合规细节(PO creator-compliance playbook)"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-cro-page-optimization",
+   "target": "ad:asset:card-cross-platform-ppc-strategy",
+   "ref": "message match对端"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-ab-testing-methodology",
+   "target": "ad:asset:card-cro-page-optimization",
+   "ref": "实验对象是页面"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-creator-partnership-models",
+   "target": "ad:asset:card-touchpoints",
+   "ref": "达人触点位置"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:rule:sample-size-mde",
+   "target": "ad:metric:cvr",
+   "ref": "基线转化率输入"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:optin-triggered-analysis",
+   "target": "ad:metric:cvr",
+   "ref": "触发分析指标"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:rule:ugc-4week-judge",
+   "target": "ad:metric:cvr",
+   "ref": "安装/转化判断"
   }
  ]
 }
