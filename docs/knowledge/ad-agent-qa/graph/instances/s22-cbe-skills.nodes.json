@@ -19,72 +19,1014 @@
     "license": "CC BY-NC 4.0",
     "desc": "跨境电商运营skill合集58文件;本shard蒸馏amazon/×6、brand-strategy/{attribution-measurement,dsite-sem-ads,tiktok-growth}、docs/scoring-conventions;原文存档raw/s22-cbe-skills/"
    },
-   "src": ["raw/s22-cbe-skills/README.md"]
+   "src": [
+    "raw/s22-cbe-skills/README.md"
+   ]
   },
-
-  {"@id": "ad:adproduct:amazon-sp", "@type": "ad:AdProduct", "label": "Amazon Sponsored Products", "props": {"platform": "amazon", "billing": "CPC", "role": "关键词/商品定位主力"}, "src": ["card:platform-ops/amazon-ads-operations.md#架构"]},
-  {"@id": "ad:adproduct:amazon-sd", "@type": "ad:AdProduct", "label": "Amazon Sponsored Display", "props": {"platform": "amazon", "role": "再营销/受众触达"}, "src": ["card:platform-ops/amazon-ads-operations.md#架构"]},
-  {"@id": "ad:adproduct:amazon-amc", "@type": "ad:AdProduct", "label": "Amazon Marketing Cloud", "props": {"platform": "amazon", "role": "高级受众分析/闭环归因", "as_of": "2026-11"}, "src": ["card:platform-ops/amazon-ads-operations.md#AMC"]},
-  {"@id": "ad:adproduct:google-search-ads", "@type": "ad:AdProduct", "label": "Google Search Ads", "props": {"platform": "google", "intent": "高意图搜索"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:adproduct:google-shopping-ads", "@type": "ad:AdProduct", "label": "Google Shopping", "props": {"platform": "google", "intent": "产品比价/标品"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:adproduct:google-pmax", "@type": "ad:AdProduct", "label": "Performance Max", "props": {"platform": "google", "role": "AI全渠道自动化", "prereq": "需足够转化数据"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:adproduct:google-demand-gen", "@type": "ad:AdProduct", "label": "Google Demand Gen", "props": {"platform": "google", "role": "全漏斗认知"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:adproduct:google-youtube-ads", "@type": "ad:AdProduct", "label": "Google YouTube Ads", "props": {"platform": "google", "intent": "视频+意图"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:adproduct:google-display-remarketing", "@type": "ad:AdProduct", "label": "Google Display Remarketing", "props": {"platform": "google", "windows": "弃购1-3d/浏览4-14d/老客15-30d"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:adproduct:tiktok-spark-ads", "@type": "ad:AdProduct", "label": "TikTok Spark Ads", "props": {"platform": "tiktok", "feature": "加热已有内容/互动归原视频/CPM低", "budget_share": "40-50%"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#Spark"]},
-  {"@id": "ad:adproduct:tiktok-infeed-ads", "@type": "ad:AdProduct", "label": "TikTok In-Feed Ads", "props": {"platform": "tiktok", "feature": "全新素材/互动归广告/CPM高", "budget_share": "50-60%"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#Spark"]},
-
-  {"@id": "ad:metric:cbe-3s-completion", "@type": "ad:Metric", "label": "TikTok 3秒完播率", "props": {"unit": "%", "note": "用户平均1.5秒决定去留;前3秒定生死"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#Hook"]},
-  {"@id": "ad:metric:cbe-mde", "@type": "ad:Metric", "label": "最小可检测效应 MDE", "props": {"use": "增量实验设计起点;先定MDE再倒推预算/时长"}, "src": ["card:fundamentals/attribution-measurement.md#geo"]},
-  {"@id": "ad:metric:cbe-incremental-lift", "@type": "ad:Metric", "label": "增量提升 Lift%", "props": {"formula": "(实验组转化-对照组转化)÷对照组转化×100", "window": "关闭后追踪1-2周"}, "src": ["card:fundamentals/attribution-measurement.md#geo"]},
-
-  {"@id": "ad:bench:cbe-amazon-ctr-cvr", "@type": "ad:Benchmark", "label": "Amazon 广告 CTR/CVR 健康线", "props": {"scope": "amazon-ads", "note": "阈值表见 amazon-ads-operations 卡§健康线"}, "src": ["card:platform-ops/amazon-ads-operations.md#健康线"]},
-  {"@id": "ad:bench:cbe-tiktok-3s-completion", "@type": "ad:Benchmark", "label": "TikTok 3秒完播率分档", "props": {"pass": ">40%", "good": ">55%", "excellent": ">70%"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#Hook"]},
-  {"@id": "ad:bench:cbe-tiktok-roas-breakeven", "@type": "ad:Benchmark", "label": "TikTok 盈亏平衡 ROAS", "props": {"formula": "最低ROAS+0.2~0.5安全边际", "margin": "保守+0.5/均衡+0.3/激进+0.2"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#财务公式"]},
-  {"@id": "ad:bench:cbe-dsite-funnel-health", "@type": "ad:Benchmark", "label": "独立站广告漏斗健康范围", "props": {"ctr": ">1%(搜索>3%)", "cvr": ">1%", "roas": ">2x(按利润率校准)"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#数据金字塔"]},
-  {"@id": "ad:bench:cbe-dsite-cpa-max", "@type": "ad:Benchmark", "label": "最大可接受 CPA(LTV口径)", "props": {"formula": "LTV×目标利润率"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#LTV"]},
-
-  {"@id": "ad:playbook:cbe-amazon-campaign-arch", "@type": "ad:Playbook", "label": "Amazon Campaign 架构树+预算分配", "props": {"covers": "SP/SB/SD分工、预算%、出价表、Day7/14/30检查点", "methodology": "amazon-ad-architecture+ad-diagnosis"}, "src": ["card:platform-ops/amazon-ads-operations.md#架构"]},
-  {"@id": "ad:playbook:cbe-amazon-weekly-ryg", "@type": "ad:Playbook", "label": "Amazon 周复盘 RYG", "props": {"covers": "周度红黄绿复盘+调后不行的归因路径"}, "src": ["card:platform-ops/amazon-ads-operations.md#周复盘"]},
-  {"@id": "ad:playbook:cbe-amazon-keyword-tiers", "@type": "ad:Playbook", "label": "Amazon T1/T2/T3 关键词分层", "props": {"covers": "词库分层法+VOC挖词+广告→Listing反哺"}, "src": ["card:platform-ops/amazon-keyword-listing-ops.md#词库"]},
-  {"@id": "ad:playbook:cbe-dsite-google-6c", "@type": "ad:Playbook", "label": "Google Ads 6-Campaign 架构", "props": {"methodology": "宋靖Mirror", "covers": "Brand/Non-Brand/Shopping/Pmax/Remarketing/YouTube"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:playbook:cbe-dsite-meta-5c", "@type": "ad:Playbook", "label": "Meta Ads 5-Campaign 架构", "props": {"covers": "Prospecting-TOF/MOF+Retargeting-BOF+Retention+Testing"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:playbook:cbe-dsite-tiktok-4c", "@type": "ad:Playbook", "label": "TikTok Ads 4-Campaign 架构", "props": {"covers": "Spark/Prospecting/Retargeting/Testing"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#架构"]},
-  {"@id": "ad:playbook:cbe-dsite-aipl-budget", "@type": "ad:Playbook", "label": "AIPL 漏斗预算模型", "props": {"methodology": "宋靖Mirror", "covers": "A/I/P/L分配+按成熟度调整+Google广告类型×漏斗优先级"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#AIPL"]},
-  {"@id": "ad:playbook:cbe-dsite-cold-start", "@type": "ad:Playbook", "label": "独立站冷启动 SOP", "props": {"covers": "Day1-30学习期路径+预算规则+扩量约束"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#冷启动"]},
-  {"@id": "ad:playbook:cbe-dsite-promo-3phase", "@type": "ad:Playbook", "label": "大促 SEM 三阶段", "props": {"methodology": "朱峰April", "covers": "T-4周预热/大促期预算倾斜/实时监控触发器/T+收尾"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#大促"]},
-  {"@id": "ad:playbook:cbe-dsite-seo-sem", "@type": "ad:Playbook", "label": "SEO-SEM 协同", "props": {"methodology": "张子轩", "covers": "双向数据赋能/SERP双重占位/PMF验证链/四大协同错误"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#SEO-SEM"]},
-  {"@id": "ad:playbook:cbe-tiktok-content-system", "@type": "ad:Playbook", "label": "TikTok 内容体系(公式/Hook/流量池/矩阵)", "props": {"methodology": "爆款营销四维拆解+流量池算法", "covers": "F1-F6叙事/六类Hook/3秒完播/L1-L4流量池/70-30矩阵"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#内容体系"]},
-  {"@id": "ad:playbook:cbe-tiktok-creator-5layer", "@type": "ad:Playbook", "label": "TikTok 达人五层策略", "props": {"methodology": "万雨言Yuya", "covers": "L1蓄水-L5投流+协同逻辑+启动顺序+达人SOP"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#达人五层"]},
-  {"@id": "ad:playbook:cbe-tiktok-4step-adtest", "@type": "ad:Playbook", "label": "TikTok 四步广告测试法", "props": {"methodology": "极致打品攻略", "covers": "Broad→Demographic→Cohort→Targeted"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#四步测试"]},
-  {"@id": "ad:playbook:cbe-tiktok-stage-budget", "@type": "ad:Playbook", "label": "TikTok 阶段×预算分配", "props": {"covers": "Launch/Growth/Scale达人vs广告vs直播占比", "boundaries": "日单量0-30/30-300/300+"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#预算"]},
-  {"@id": "ad:playbook:cbe-attribution-triangulation", "@type": "ad:Playbook", "label": "归因三角测量", "props": {"covers": "归因/MTA+增量+MMM分工+时效闸( Cookie末日讹传/GA4-GoogleAds DDA迁移)+平台数字不相加红线"}, "src": ["card:fundamentals/attribution-measurement.md#三角"]},
-  {"@id": "ad:playbook:cbe-attribution-mmm-select", "@type": "ad:Playbook", "label": "MMM 选型与校准", "props": {"covers": "Meridian vs Robyn对照+增量回灌先验+假设披露义务"}, "src": ["card:fundamentals/attribution-measurement.md#MMM"]},
-
-  {"@id": "ad:rule:cbe-amazon-day-checkpoints", "@type": "ad:Rule", "label": "Amazon Day7/14/30 检查点", "props": {"type": "operational-gate", "note": "各检查点动作表见卡片"}, "src": ["card:platform-ops/amazon-ads-operations.md#Day7-14-30"]},
-  {"@id": "ad:rule:cbe-amazon-budget-pct", "@type": "ad:Rule", "label": "Amazon 预算分配百分比", "props": {"type": "budget-allocation", "note": "SP/SB/SD/SD视阶段与品类调整;表见卡片"}, "src": ["card:platform-ops/amazon-ads-operations.md#预算"]},
-  {"@id": "ad:rule:cbe-amazon-listing-hard", "@type": "ad:Rule", "label": "Amazon Listing 硬规则", "props": {"type": "platform-policy", "rules": "标题≤75字符/同词≤2次/后台SearchTerms<250字节/五点描述规则", "as_of": "2026-07-27双字段规则"}, "src": ["card:platform-ops/amazon-keyword-listing-ops.md#硬规则"]},
-  {"@id": "ad:rule:cbe-amazon-neg-3cat", "@type": "ad:Rule", "label": "Amazon 否定词三类库", "props": {"type": "negative-keyword", "cats": "属性不符/用途不符/品牌不符;阈值:花费>2×CPA且0转化→Negative Exact"}, "src": ["card:platform-ops/amazon-keyword-listing-ops.md#否定词"]},
-  {"@id": "ad:rule:cbe-prompts-passive-billing", "@type": "ad:Rule", "label": "Amazon Prompts 广告被动扣费", "props": {"type": "platform-policy", "as_of": "2026-03-25起CPC计费", "note": "自动定向+被动曝光;需单独预算与监控"}, "src": ["card:platform-ops/amazon-ads-operations.md#Prompts"]},
-  {"@id": "ad:rule:cbe-dsite-scale-20-3d", "@type": "ad:Rule", "label": "扩量约束", "props": {"type": "scaling", "rules": "预算每次≤20%/间隔≥3天;新账户日预算≥目标CPA 5倍;前14天不频繁调整"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#扩量"]},
-  {"@id": "ad:rule:cbe-ab-1var-95", "@type": "ad:Rule", "label": "素材A/B测试规则", "props": {"type": "testing", "rules": "每次只测1变量/每变体≥1000曝光或100点击/95%置信度/获胜扩量失败即停/每周新2-3变体"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#素材测试"]},
-  {"@id": "ad:rule:cbe-tiktok-budget-stage", "@type": "ad:Rule", "label": "TikTok 阶段预算铁律", "props": {"type": "budget-allocation", "matrix": "Launch达人70%+广告30%→Growth 50/50→Scale达人40%+广告60%;日预算$20-50→$100-500→$500+"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#预算"]},
-  {"@id": "ad:rule:cbe-attribution-no-sum", "@type": "ad:Rule", "label": "平台归因转化禁止相加", "props": {"type": "measurement-redline", "severity": "critical", "reason": "各平台归因窗口/口径不同同一订单可被多平台认领;一方订单数据为分母"}, "src": ["card:fundamentals/attribution-measurement.md#红线"]},
-  {"@id": "ad:rule:cbe-mde-first", "@type": "ad:Rule", "label": "增量实验 MDE 倒推设计", "props": {"type": "experiment-design", "severity": "critical", "reason": "先定MDE再算预算/时长;功效不足宁可不测"}, "src": ["card:fundamentals/attribution-measurement.md#geo"]},
-  {"@id": "ad:rule:cbe-dda-migration", "@type": "ad:Rule", "label": "DDA 归因迁移时限", "props": {"type": "platform-policy", "as_of": "2026-07中旬起新转化不可选/2026-09全部强制迁DDA", "action": "盘点挂旧模型的转化操作主动迁移;低转化账户标注DDA不稳定"}, "src": ["card:fundamentals/attribution-measurement.md#时效闸"]},
-
-  {"@id": "ad:stage:cbe-amazon-launch-checkpoints", "@type": "ad:WorkflowStage", "label": "Amazon 新品检查点 Day7/14/30", "props": {"type": "operational-gate-sequence"}, "src": ["card:platform-ops/amazon-ads-operations.md#Day7-14-30"]},
-  {"@id": "ad:stage:cbe-dsite-coldstart-d1-30", "@type": "ad:WorkflowStage", "label": "独立站冷启动 Day1-30", "props": {"phases": "像素预热D1-3/数据积累D4-14/转化测试D15-30/扩量D31+"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#冷启动"]},
-  {"@id": "ad:stage:cbe-dsite-cadence", "@type": "ad:WorkflowStage", "label": "独立站优化节奏 日/周/月", "props": {"daily": "15min预算异常/暂停低效/素材疲劳", "weekly": "1h六层复盘", "monthly": "2h渠道ROI/素材/竞品/SEO协同"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md#优化节奏"]},
-  {"@id": "ad:stage:cbe-tt-adtest-broad", "@type": "ad:WorkflowStage", "label": "TikTok测试Step1 Broad Reach", "props": {"audience": "宽泛(仅国别+年龄+性别)", "budget": "$20-30/条/天×3-5天", "kill": "CPA>目标2倍"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#四步测试"]},
-  {"@id": "ad:stage:cbe-tt-adtest-demo", "@type": "ad:WorkflowStage", "label": "TikTok测试Step2 Demographic", "props": {"audience": "兴趣+行为标签细化", "budget": "$30-50/组/天×3-5天"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#四步测试"]},
-  {"@id": "ad:stage:cbe-tt-adtest-cohort", "@type": "ad:WorkflowStage", "label": "TikTok测试Step3 Cohort", "props": {"audience": "自定义受众/购买Lookalike", "budget": "$50-100/组/天×5-7天"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#四步测试"]},
-  {"@id": "ad:stage:cbe-tt-adtest-targeted", "@type": "ad:WorkflowStage", "label": "TikTok测试Step4 Targeted放量", "props": {"audience": "Step2-3最佳人群组合", "budget": "按ROAS逐步加码每次≤20%;每周新素材2-3条"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md#四步测试"]},
-
-  {"@id": "ad:asset:card-amazon-ads-operations", "@type": "ad:KnowledgeAsset", "label": "Amazon 广告运营打法卡", "props": {"path": "cards/platform-ops/amazon-ads-operations.md", "status": "review"}, "src": ["card:platform-ops/amazon-ads-operations.md"]},
-  {"@id": "ad:asset:card-amazon-keyword-listing-ops", "@type": "ad:KnowledgeAsset", "label": "Amazon 关键词与Listing运营卡", "props": {"path": "cards/platform-ops/amazon-keyword-listing-ops.md", "status": "review"}, "src": ["card:platform-ops/amazon-keyword-listing-ops.md"]},
-  {"@id": "ad:asset:card-dsite-sem-ads-playbook", "@type": "ad:KnowledgeAsset", "label": "独立站SEM广告打法卡", "props": {"path": "cards/platform-ops/dsite-sem-ads-playbook.md", "status": "review"}, "src": ["card:platform-ops/dsite-sem-ads-playbook.md"]},
-  {"@id": "ad:asset:card-tiktok-content-ads-playbook", "@type": "ad:KnowledgeAsset", "label": "TikTok内容×广告打法卡", "props": {"path": "cards/platform-ops/tiktok-content-ads-playbook.md", "status": "review"}, "src": ["card:platform-ops/tiktok-content-ads-playbook.md"]},
-  {"@id": "ad:asset:card-attribution-measurement", "@type": "ad:KnowledgeAsset", "label": "归因与测量体系卡", "props": {"path": "cards/fundamentals/attribution-measurement.md", "status": "review"}, "src": ["card:fundamentals/attribution-measurement.md"]}
+  {
+   "@id": "ad:adproduct:amazon-sp",
+   "@type": "ad:AdProduct",
+   "label": "Amazon Sponsored Products",
+   "props": {
+    "platform": "amazon",
+    "billing": "CPC",
+    "role": "关键词/商品定位主力"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:amazon-sd",
+   "@type": "ad:AdProduct",
+   "label": "Amazon Sponsored Display",
+   "props": {
+    "platform": "amazon",
+    "role": "再营销/受众触达"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:amazon-amc",
+   "@type": "ad:AdProduct",
+   "label": "Amazon Marketing Cloud",
+   "props": {
+    "platform": "amazon",
+    "role": "高级受众分析/闭环归因",
+    "as_of": "2026-11"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#AMC"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:google-search-ads",
+   "@type": "ad:AdProduct",
+   "label": "Google Search Ads",
+   "props": {
+    "platform": "google",
+    "intent": "高意图搜索"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:google-shopping-ads",
+   "@type": "ad:AdProduct",
+   "label": "Google Shopping",
+   "props": {
+    "platform": "google",
+    "intent": "产品比价/标品"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:google-pmax",
+   "@type": "ad:AdProduct",
+   "label": "Performance Max",
+   "props": {
+    "platform": "google",
+    "role": "AI全渠道自动化",
+    "prereq": "需足够转化数据"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:google-demand-gen",
+   "@type": "ad:AdProduct",
+   "label": "Google Demand Gen",
+   "props": {
+    "platform": "google",
+    "role": "全漏斗认知"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:google-youtube-ads",
+   "@type": "ad:AdProduct",
+   "label": "Google YouTube Ads",
+   "props": {
+    "platform": "google",
+    "intent": "视频+意图"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:google-display-remarketing",
+   "@type": "ad:AdProduct",
+   "label": "Google Display Remarketing",
+   "props": {
+    "platform": "google",
+    "windows": "弃购1-3d/浏览4-14d/老客15-30d"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:tiktok-spark-ads",
+   "@type": "ad:AdProduct",
+   "label": "TikTok Spark Ads",
+   "props": {
+    "platform": "tiktok",
+    "feature": "加热已有内容/互动归原视频/CPM低",
+    "budget_share": "40-50%"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#Spark"
+   ]
+  },
+  {
+   "@id": "ad:adproduct:tiktok-infeed-ads",
+   "@type": "ad:AdProduct",
+   "label": "TikTok In-Feed Ads",
+   "props": {
+    "platform": "tiktok",
+    "feature": "全新素材/互动归广告/CPM高",
+    "budget_share": "50-60%"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#Spark"
+   ]
+  },
+  {
+   "@id": "ad:metric:cbe-3s-completion",
+   "@type": "ad:Metric",
+   "label": "TikTok 3秒完播率",
+   "props": {
+    "unit": "%",
+    "note": "用户平均1.5秒决定去留;前3秒定生死"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#Hook"
+   ]
+  },
+  {
+   "@id": "ad:metric:cbe-mde",
+   "@type": "ad:Metric",
+   "label": "最小可检测效应 MDE",
+   "props": {
+    "use": "增量实验设计起点;先定MDE再倒推预算/时长"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md#geo"
+   ]
+  },
+  {
+   "@id": "ad:metric:cbe-incremental-lift",
+   "@type": "ad:Metric",
+   "label": "增量提升 Lift%",
+   "props": {
+    "formula": "(实验组转化-对照组转化)÷对照组转化×100",
+    "window": "关闭后追踪1-2周"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md#geo"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-amazon-ctr-cvr",
+   "@type": "ad:Benchmark",
+   "label": "Amazon 广告 CTR/CVR 健康线",
+   "props": {
+    "scope": "amazon-ads",
+    "note": "阈值表见 amazon-ads-operations 卡§健康线"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#健康线"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-tiktok-3s-completion",
+   "@type": "ad:Benchmark",
+   "label": "TikTok 3秒完播率分档",
+   "props": {
+    "pass": ">40%",
+    "good": ">55%",
+    "excellent": ">70%"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#Hook"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-tiktok-roas-breakeven",
+   "@type": "ad:Benchmark",
+   "label": "TikTok 盈亏平衡 ROAS",
+   "props": {
+    "formula": "最低ROAS+0.2~0.5安全边际",
+    "margin": "保守+0.5/均衡+0.3/激进+0.2"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#财务公式"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-dsite-funnel-health",
+   "@type": "ad:Benchmark",
+   "label": "独立站广告漏斗健康范围",
+   "props": {
+    "ctr": ">1%(搜索>3%)",
+    "cvr": ">1%",
+    "roas": ">2x(按利润率校准)"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#数据金字塔"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-dsite-cpa-max",
+   "@type": "ad:Benchmark",
+   "label": "最大可接受 CPA(LTV口径)",
+   "props": {
+    "formula": "LTV×目标利润率"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#LTV"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-amazon-campaign-arch",
+   "@type": "ad:Playbook",
+   "label": "Amazon Campaign 架构树+预算分配",
+   "props": {
+    "covers": "SP/SB/SD分工、预算%、出价表、Day7/14/30检查点",
+    "methodology": "amazon-ad-architecture+ad-diagnosis"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-amazon-weekly-ryg",
+   "@type": "ad:Playbook",
+   "label": "Amazon 周复盘 RYG",
+   "props": {
+    "covers": "周度红黄绿复盘+调后不行的归因路径"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#周复盘"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-amazon-keyword-tiers",
+   "@type": "ad:Playbook",
+   "label": "Amazon T1/T2/T3 关键词分层",
+   "props": {
+    "covers": "词库分层法+VOC挖词+广告→Listing反哺"
+   },
+   "src": [
+    "card:platform-ops/amazon-keyword-listing-ops.md#词库"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-dsite-google-6c",
+   "@type": "ad:Playbook",
+   "label": "Google Ads 6-Campaign 架构",
+   "props": {
+    "methodology": "宋靖Mirror",
+    "covers": "Brand/Non-Brand/Shopping/Pmax/Remarketing/YouTube"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-dsite-meta-5c",
+   "@type": "ad:Playbook",
+   "label": "Meta Ads 5-Campaign 架构",
+   "props": {
+    "covers": "Prospecting-TOF/MOF+Retargeting-BOF+Retention+Testing"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-dsite-tiktok-4c",
+   "@type": "ad:Playbook",
+   "label": "TikTok Ads 4-Campaign 架构",
+   "props": {
+    "covers": "Spark/Prospecting/Retargeting/Testing"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#架构"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-dsite-aipl-budget",
+   "@type": "ad:Playbook",
+   "label": "AIPL 漏斗预算模型",
+   "props": {
+    "methodology": "宋靖Mirror",
+    "covers": "A/I/P/L分配+按成熟度调整+Google广告类型×漏斗优先级"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#AIPL"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-dsite-cold-start",
+   "@type": "ad:Playbook",
+   "label": "独立站冷启动 SOP",
+   "props": {
+    "covers": "Day1-30学习期路径+预算规则+扩量约束"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#冷启动"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-dsite-promo-3phase",
+   "@type": "ad:Playbook",
+   "label": "大促 SEM 三阶段",
+   "props": {
+    "methodology": "朱峰April",
+    "covers": "T-4周预热/大促期预算倾斜/实时监控触发器/T+收尾"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#大促"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-dsite-seo-sem",
+   "@type": "ad:Playbook",
+   "label": "SEO-SEM 协同",
+   "props": {
+    "methodology": "张子轩",
+    "covers": "双向数据赋能/SERP双重占位/PMF验证链/四大协同错误"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#SEO-SEM"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-tiktok-content-system",
+   "@type": "ad:Playbook",
+   "label": "TikTok 内容体系(公式/Hook/流量池/矩阵)",
+   "props": {
+    "methodology": "爆款营销四维拆解+流量池算法",
+    "covers": "F1-F6叙事/六类Hook/3秒完播/L1-L4流量池/70-30矩阵"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#内容体系"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-tiktok-creator-5layer",
+   "@type": "ad:Playbook",
+   "label": "TikTok 达人五层策略",
+   "props": {
+    "methodology": "万雨言Yuya",
+    "covers": "L1蓄水-L5投流+协同逻辑+启动顺序+达人SOP"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#达人五层"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-tiktok-4step-adtest",
+   "@type": "ad:Playbook",
+   "label": "TikTok 四步广告测试法",
+   "props": {
+    "methodology": "极致打品攻略",
+    "covers": "Broad→Demographic→Cohort→Targeted"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#四步测试"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-tiktok-stage-budget",
+   "@type": "ad:Playbook",
+   "label": "TikTok 阶段×预算分配",
+   "props": {
+    "covers": "Launch/Growth/Scale达人vs广告vs直播占比",
+    "boundaries": "日单量0-30/30-300/300+"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#预算"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-attribution-triangulation",
+   "@type": "ad:Playbook",
+   "label": "归因三角测量",
+   "props": {
+    "covers": "归因/MTA+增量+MMM分工+时效闸( Cookie末日讹传/GA4-GoogleAds DDA迁移)+平台数字不相加红线"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md#三角"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-attribution-mmm-select",
+   "@type": "ad:Playbook",
+   "label": "MMM 选型与校准",
+   "props": {
+    "covers": "Meridian vs Robyn对照+增量回灌先验+假设披露义务"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md#MMM"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-amazon-day-checkpoints",
+   "@type": "ad:Rule",
+   "label": "Amazon Day7/14/30 检查点",
+   "props": {
+    "type": "operational-gate",
+    "note": "各检查点动作表见卡片"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#Day7-14-30"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-amazon-budget-pct",
+   "@type": "ad:Rule",
+   "label": "Amazon 预算分配百分比",
+   "props": {
+    "type": "budget-allocation",
+    "note": "SP/SB/SD/SD视阶段与品类调整;表见卡片"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#预算"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-amazon-listing-hard",
+   "@type": "ad:Rule",
+   "label": "Amazon Listing 硬规则",
+   "props": {
+    "type": "platform-policy",
+    "rules": "标题≤75字符/同词≤2次/后台SearchTerms<250字节/五点描述规则",
+    "as_of": "2026-07-27双字段规则"
+   },
+   "src": [
+    "card:platform-ops/amazon-keyword-listing-ops.md#硬规则"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-amazon-neg-3cat",
+   "@type": "ad:Rule",
+   "label": "Amazon 否定词三类库",
+   "props": {
+    "type": "negative-keyword",
+    "cats": "属性不符/用途不符/品牌不符;阈值:花费>2×CPA且0转化→Negative Exact"
+   },
+   "src": [
+    "card:platform-ops/amazon-keyword-listing-ops.md#否定词"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-prompts-passive-billing",
+   "@type": "ad:Rule",
+   "label": "Amazon Prompts 广告被动扣费",
+   "props": {
+    "type": "platform-policy",
+    "as_of": "2026-03-25起CPC计费",
+    "note": "自动定向+被动曝光;需单独预算与监控"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#Prompts"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-dsite-scale-20-3d",
+   "@type": "ad:Rule",
+   "label": "扩量约束",
+   "props": {
+    "type": "scaling",
+    "rules": "预算每次≤20%/间隔≥3天;新账户日预算≥目标CPA 5倍;前14天不频繁调整"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#扩量"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-ab-1var-95",
+   "@type": "ad:Rule",
+   "label": "素材A/B测试规则",
+   "props": {
+    "type": "testing",
+    "rules": "每次只测1变量/每变体≥1000曝光或100点击/95%置信度/获胜扩量失败即停/每周新2-3变体"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#素材测试"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-tiktok-budget-stage",
+   "@type": "ad:Rule",
+   "label": "TikTok 阶段预算铁律",
+   "props": {
+    "type": "budget-allocation",
+    "matrix": "Launch达人70%+广告30%→Growth 50/50→Scale达人40%+广告60%;日预算$20-50→$100-500→$500+"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#预算"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-attribution-no-sum",
+   "@type": "ad:Rule",
+   "label": "平台归因转化禁止相加",
+   "props": {
+    "type": "measurement-redline",
+    "severity": "critical",
+    "reason": "各平台归因窗口/口径不同同一订单可被多平台认领;一方订单数据为分母"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md#红线"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-mde-first",
+   "@type": "ad:Rule",
+   "label": "增量实验 MDE 倒推设计",
+   "props": {
+    "type": "experiment-design",
+    "severity": "critical",
+    "reason": "先定MDE再算预算/时长;功效不足宁可不测"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md#geo"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-dda-migration",
+   "@type": "ad:Rule",
+   "label": "DDA 归因迁移时限",
+   "props": {
+    "type": "platform-policy",
+    "as_of": "2026-07中旬起新转化不可选/2026-09全部强制迁DDA",
+    "action": "盘点挂旧模型的转化操作主动迁移;低转化账户标注DDA不稳定"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md#时效闸"
+   ]
+  },
+  {
+   "@id": "ad:stage:cbe-amazon-launch-checkpoints",
+   "@type": "ad:WorkflowStage",
+   "label": "Amazon 新品检查点 Day7/14/30",
+   "props": {
+    "type": "operational-gate-sequence"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md#Day7-14-30"
+   ]
+  },
+  {
+   "@id": "ad:stage:cbe-dsite-coldstart-d1-30",
+   "@type": "ad:WorkflowStage",
+   "label": "独立站冷启动 Day1-30",
+   "props": {
+    "phases": "像素预热D1-3/数据积累D4-14/转化测试D15-30/扩量D31+"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#冷启动"
+   ]
+  },
+  {
+   "@id": "ad:stage:cbe-dsite-cadence",
+   "@type": "ad:WorkflowStage",
+   "label": "独立站优化节奏 日/周/月",
+   "props": {
+    "daily": "15min预算异常/暂停低效/素材疲劳",
+    "weekly": "1h六层复盘",
+    "monthly": "2h渠道ROI/素材/竞品/SEO协同"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md#优化节奏"
+   ]
+  },
+  {
+   "@id": "ad:stage:cbe-tt-adtest-broad",
+   "@type": "ad:WorkflowStage",
+   "label": "TikTok测试Step1 Broad Reach",
+   "props": {
+    "audience": "宽泛(仅国别+年龄+性别)",
+    "budget": "$20-30/条/天×3-5天",
+    "kill": "CPA>目标2倍"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#四步测试"
+   ]
+  },
+  {
+   "@id": "ad:stage:cbe-tt-adtest-demo",
+   "@type": "ad:WorkflowStage",
+   "label": "TikTok测试Step2 Demographic",
+   "props": {
+    "audience": "兴趣+行为标签细化",
+    "budget": "$30-50/组/天×3-5天"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#四步测试"
+   ]
+  },
+  {
+   "@id": "ad:stage:cbe-tt-adtest-cohort",
+   "@type": "ad:WorkflowStage",
+   "label": "TikTok测试Step3 Cohort",
+   "props": {
+    "audience": "自定义受众/购买Lookalike",
+    "budget": "$50-100/组/天×5-7天"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#四步测试"
+   ]
+  },
+  {
+   "@id": "ad:stage:cbe-tt-adtest-targeted",
+   "@type": "ad:WorkflowStage",
+   "label": "TikTok测试Step4 Targeted放量",
+   "props": {
+    "audience": "Step2-3最佳人群组合",
+    "budget": "按ROAS逐步加码每次≤20%;每周新素材2-3条"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md#四步测试"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-amazon-ads-operations",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Amazon 广告运营打法卡",
+   "props": {
+    "path": "cards/platform-ops/amazon-ads-operations.md",
+    "status": "review"
+   },
+   "src": [
+    "card:platform-ops/amazon-ads-operations.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-amazon-keyword-listing-ops",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Amazon 关键词与Listing运营卡",
+   "props": {
+    "path": "cards/platform-ops/amazon-keyword-listing-ops.md",
+    "status": "review"
+   },
+   "src": [
+    "card:platform-ops/amazon-keyword-listing-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-dsite-sem-ads-playbook",
+   "@type": "ad:KnowledgeAsset",
+   "label": "独立站SEM广告打法卡",
+   "props": {
+    "path": "cards/platform-ops/dsite-sem-ads-playbook.md",
+    "status": "review"
+   },
+   "src": [
+    "card:platform-ops/dsite-sem-ads-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-tiktok-content-ads-playbook",
+   "@type": "ad:KnowledgeAsset",
+   "label": "TikTok内容×广告打法卡",
+   "props": {
+    "path": "cards/platform-ops/tiktok-content-ads-playbook.md",
+    "status": "review"
+   },
+   "src": [
+    "card:platform-ops/tiktok-content-ads-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-attribution-measurement",
+   "@type": "ad:KnowledgeAsset",
+   "label": "归因与测量体系卡",
+   "props": {
+    "path": "cards/fundamentals/attribution-measurement.md",
+    "status": "review"
+   },
+   "src": [
+    "card:fundamentals/attribution-measurement.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-user-lifecycle-retention-ops",
+   "@type": "ad:KnowledgeAsset",
+   "label": "用户生命周期与留存运营卡",
+   "props": {
+    "cluster": "business-context",
+    "qa": "business-context Q26-31"
+   },
+   "src": [
+    "cards/business-context/user-lifecycle-retention-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-marketing-budget-ops",
+   "@type": "ad:KnowledgeAsset",
+   "label": "年度营销预算系统卡",
+   "props": {
+    "cluster": "fundamentals",
+    "qa": "fundamentals Q48-53"
+   },
+   "src": [
+    "cards/fundamentals/marketing-budget-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-user-5stage-lifecycle",
+   "@type": "ad:Playbook",
+   "label": "用户五阶段生命周期模型",
+   "props": {
+    "stages": "Stage0前客→Stage1新客0-30d→Stage2成长2-3次/30-180d→Stage3成熟4+次/LTV>均值→Stage4衰退流失",
+    "methodology": "王治国神策生命周期分层",
+    "desc": "数据定义先行;流失阈值=复购周期倍数非拍脑袋"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-welcome-flow-35d",
+   "@type": "ad:Playbook",
+   "label": "35天Welcome Flow 12节拍",
+   "props": {
+    "beats": "Day0欢迎+码→D1品牌故事→D3社会证明→D5教育→D7场景→D10卖点→D14痛点→D18用户故事→D21推荐→D25专属优惠→D28到期→D35分流",
+    "desc": "全生命周期触达黄金窗口;ROI最高序列;期间购买即退出"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-automation-sequences-6",
+   "@type": "ad:Playbook",
+   "label": "六大自动化序列",
+   "props": {
+    "seqs": "Browse 1h/24h/72h;Cart 1h/24h/48h/72h;PostPurchase确认→复购前提醒;Winback预警→7/14/30/60天;VIP分层;Referral NPS9-10触发",
+    "desc": "购物车第一封铁律=无折扣"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-edm-infra-compliance",
+   "@type": "ad:Playbook",
+   "label": "EDM基础设施与合规",
+   "props": {
+    "infra": "SPF/DKIM/DMARC p=none起步;IP预热30天阶梯50-100封起;Sunset列表180天",
+    "freq": "高活2-3封/周中活1-2低活0.5-1不活1/月",
+    "compliance": "CAN-SPAM $16k/封 GDPR 4%/€20M CASL $10M LGPD 2%",
+    "desc": "IP预热失败=邮件系统崩溃头号原因"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-community-0-5000",
+   "@type": "ad:Playbook",
+   "label": "社群0→5000三阶段SOP",
+   "props": {
+    "stages": "种子0-500人4-8周→成长期500-5000人3-6月→成熟5000+ 80%UGC",
+    "funnel": "公域→社群0.5-1%→核心私域0.05-0.1%",
+    "platform": "美国=FB Group为主;日本LINE;东南亚WhatsApp",
+    "desc": "公域→私域转化漏斗各层基准"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-rfm-segmentation",
+   "@type": "ad:Playbook",
+   "label": "RFM分层与8分群策略",
+   "props": {
+    "min": "<200K用户用行为触发3-5群;>200K才上完整RFM",
+    "groups": "重要价值VIP+裂变/重要挽留高价值offer/流失清洗等8群",
+    "desc": "过度分层统计无意义"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbe-annual-budget-ops",
+   "@type": "ad:Playbook",
+   "label": "年度营销预算系统",
+   "props": {
+    "taxonomy": "10科目:AD30-45%/KOL15-25%/PR8-15%/RS10-18%/DG5-10%/EX5-10%/SP3-8%/TL2-5%/HR8-15%/调研2-5%",
+    "total3": "营收占比Y1 25-40%→Y4+12-18%;目标倒推;竞品对标",
+    "monthly": "Q4占27%(11月14%+12月13%)7月PrimeDay10%",
+    "desc": "位于payback闸门之上campaign日预算之下的中间层"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/brand-budget-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:lifecycle:user-prospect",
+   "@type": "ad:LifecycleStage",
+   "label": "前客 Prospects",
+   "props": {
+    "def": "访问未注册/购买;运营目标=转化首购",
+    "axis": "user-lifecycle"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:lifecycle:user-new",
+   "@type": "ad:LifecycleStage",
+   "label": "新客 0-30天",
+   "props": {
+    "def": "首购体验期;目标=建立认知推动二购",
+    "axis": "user-lifecycle"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:lifecycle:user-growth",
+   "@type": "ad:LifecycleStage",
+   "label": "成长 2-3次/30-180天",
+   "props": {
+    "def": "尝试多SKU;目标=扩大钱包份额",
+    "axis": "user-lifecycle"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:lifecycle:user-mature",
+   "@type": "ad:LifecycleStage",
+   "label": "成熟 4+次/LTV>均值",
+   "props": {
+    "def": "主推/高频互动;目标=维护+裂变",
+    "axis": "user-lifecycle"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:lifecycle:user-churn",
+   "@type": "ad:LifecycleStage",
+   "label": "衰退/流失",
+   "props": {
+    "def": "超X天无购买;目标=挽回或优雅告别",
+    "axis": "user-lifecycle"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-churn-cycle-multiplier",
+   "@type": "ad:Rule",
+   "label": "流失阈值=复购周期倍数",
+   "props": {
+    "rule": "快消品预警1.5×/流失2×/深度4×复购周期;半耐用品2.5×预警;拐点法校准",
+    "severity": "critical",
+    "momcozy": "耗材60天周期→预警90天流失150天"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-cart-first-email-no-discount",
+   "@type": "ad:Rule",
+   "label": "购物车挽回首封禁折扣",
+   "props": {
+    "rule": "1h提醒无折扣→24h社会证明→48h才5-10%→72h最大折扣",
+    "severity": "critical",
+    "why": "先折扣=训练用户放弃等折扣破坏价格体系"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-edm-ip-warmup-30d",
+   "@type": "ad:Rule",
+   "label": "新IP/域名30天预热",
+   "props": {
+    "rule": "Day1-3仅50-100封→逐周翻倍→Day30+全量;DMARC p=none起步",
+    "severity": "critical",
+    "why": "预热失败=域名永久拉黑头号崩溃原因"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-rfm-min-200k",
+   "@type": "ad:Rule",
+   "label": "RFM最小用户量门槛",
+   "props": {
+    "rule": "<200K用户用行为触发3-5群分层;>200K才上完整RFM评分",
+    "severity": "warning"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:cbe-budget-realloc-pct20",
+   "@type": "ad:Rule",
+   "label": "渠道预算再分配±20%上限",
+   "props": {
+    "rule": "月度调整±20%封顶;连续2月达标+20%/不达标-20%;超限需季度评审",
+    "severity": "warning"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/brand-budget-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-churn-thresholds",
+   "@type": "ad:Benchmark",
+   "label": "流失阈值行业基准",
+   "props": {
+    "fast_moving": "预警1.5×/流失2×/深度4×复购周期",
+    "semi_durable": "预警2.5×",
+    "momcozy_hint": "耗材60天→90/150天",
+    "desc": "留存曲线拐点法校准"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-cart-recovery-rates",
+   "@type": "ad:Benchmark",
+   "label": "弃购挽回转化基准",
+   "props": {
+    "browse": "回访8-15%/5-10%/转化2-4%",
+    "cart": "购物车恢复<3%为二级预警",
+    "welcome": "转化<3%预警",
+    "desc": "自动化序列效果基准"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-community-funnel",
+   "@type": "ad:Benchmark",
+   "label": "公域→私域转化漏斗基准",
+   "props": {
+    "funnel": "公域→半私域3-5%→社群0.5-1%→核心私域0.05-0.1%→品牌大使0.01-0.03%",
+    "desc": "社群冷启动期望管理"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/user-lifecycle-ops.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-budget-stage-pct",
+   "@type": "ad:Benchmark",
+   "label": "营销预算占营收% by阶段",
+   "props": {
+    "cbe_full": "Y1 25-40%/Y2-3 18-25%/Y4+ 12-18%(全营销)",
+    "s27_paid_only": "新15-20%/早期10-15%/成长7-12%/成熟5-8%(paid media)",
+    "desc": "两口径差值=品牌/内容/PR/人力预算"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/brand-budget-ops.md",
+    "raw/s27-ecommerce-skills/ecommerce-marketing-strategy-builder/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:cbe-monthly-weights",
+   "@type": "ad:Benchmark",
+   "label": "月度预算权重表",
+   "props": {
+    "q4": "11月14%+12月13%=Q4占27%",
+    "peaks": "7月PrimeDay10%;其余5-8%均摊",
+    "cashflow": "月末储备≥下月120%;大促提前2月充值;KOL 50-50结算"
+   },
+   "src": [
+    "raw/s22-cbe-skills/brand-strategy/brand-budget-ops.md"
+   ]
+  }
  ]
 }

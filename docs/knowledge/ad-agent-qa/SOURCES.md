@@ -96,7 +96,7 @@ source: human+ai
   - `brand-strategy/`：dsite-sem-ads（独立站 SEM）、tiktok-growth（TikTok 全链路）、attribution-measurement（归因测量）
   - `docs/scoring-conventions.md`（评分共享约定，被 skill 引用）
 - **蒸馏批次（B1-B4 已批准）**：B1 Amazon 广告深操作→`platform-ops/` 新卡×2；B2 独立站 SEM→`platform-ops/` 新卡；B3 TikTok 内容×广告→`platform-ops/` 新卡；B4 归因测量→`fundamentals/` 新卡。
-- **不收**：user-lifecycle-ops（留存域）、品牌策略链、选品/listing 主链（listing-copywriter 仅作广告链引用件保留）、finance 系、outbound/VOC 工具、influencer-marketing/affiliate-*（与 influencer-boost 集群重叠，待去重评估）。
+- **不收**：品牌策略链、选品/listing 主链（listing-copywriter 仅作广告链引用件保留）、finance 系、outbound/VOC 工具、influencer-marketing/affiliate-*（与 influencer-boost 集群重叠，待去重评估）。**F3 复活**：`user-lifecycle-ops`（留存域）与 `brand-budget-ops`（年度预算）已于 2026-11-27 补蒸——见文末「遗留 skill 复活批（F3）」。
 - **时效注意**：源文含大量 2026 年时效事实（Prompts 广告 2026-03-25 GA、标题 75 字符 2026-07-27 新政、AMC 免费窗 2026-12-31 截止、Google Ads 四归因模型 2026-09 强制迁移 DDA）——卡片保留 `as_of` 标注，时效敏感处以官方源复核。
 
 ## 提取说明与已知缺口
@@ -151,6 +151,7 @@ source: human+ai
 - **蒸馏边界**：抽样确认后只收 2 个 skill——`ecommerce-ppc-strategy-planner`（买家行为选平台/ROAS 三公式/预算分配三模板/Mode B 🟢🟡🔴 重分配）+ `cross-border-ecommerce`（8 维市场评分/履约模式决策/六国税务合规/本地支付矩阵/landed cost/四阶段路线图）。**排除**：其余 ~108 个 skill（TikTok Shop 集群抽样全是 Core Capabilities 空话模板、选品/listing/邮件/SEO 等非广告域或已被 S22/S23 更深覆盖）。
 - E3 蒸馏产出：`cards/business-context/cross-border-expansion-framework.md`、`cards/platform-ops/cross-platform-ppc-strategy.md` + QA（business-context Q16-20、platform-ops Q74-78）+ `graph/instances/s27-ecom-skills.*`。
 - **口径注意**：平台 ROAS 基准（Google 4.5x/Meta 2.2x/TikTok 1.4x）为 2025-2026 第三方均值，卡内已标 ⚠️ 仅作 sanity check；税率/市场数据标注 eMarketer/Statista 2025 时效。
+- **F3 补充**：`ecommerce-marketing-strategy-builder`（433 行 omnichannel 策略工作流）的渠道 ROI 基准表（email $36-40/SMS $21-71/SEO $7.48/Google $8/paid social $2.5）、营收占比口径（paid-media 15-20%→5-8%）、KPI 基线（LTV>3×CAC/复购 28%/email 占比 25-30%/blended ROAS 2.5×）已并入 `fundamentals/marketing-budget-ops.md`（CBE 预算卡的 S27 口径补充），图谱节点入 s27 shard。
 
 ## 第十三批源（goaskvivi DTC 诊断蒸馏，2026-11-27 追加）
 
@@ -169,3 +170,10 @@ source: human+ai
 - F2 蒸馏产出：`cards/platform-ops/geo-ai-search-optimization.md` + QA（platform-ops Q84-93）+ `graph/instances/s29-wepr-geo.*`。
 - **口径翻译**：源文面向国内 AI 平台（DeepSeek/豆包/千问/Kimi/元宝+企微/口令承接），卡内已标注 Momcozy US DTC 主战场为 ChatGPT/Gemini/Perplexity，承接映射为 UTM 落地页/表单字段/自报来源。
 - **定位关系**：GEO 是 S28 诊断卡 AEO/GEO 就绪检查的下游执行域——诊断（够不够格）→ GEO 优化（怎么被 AI 引用）→ 归因（带来多少转化）。KB 首次覆盖 AI 搜索优化深度。
+
+## 遗留 skill 复活批（F3，2026-11-27 追加）
+
+- **范围**：S22 CBE 仓库重克隆后全量盘点（`brand-strategy/` 现有 31 个 skill 文件，此前仅蒸馏 3 个）+ S27 raw 已在手的 `ecommerce-marketing-strategy-builder`。评估后只复活 2 个高价值 skill，其余留待后续批次。
+- **复活产出**：`cards/business-context/user-lifecycle-retention-ops.md`（五阶段生命周期/流失阈值公式/35天Welcome Flow/六大自动化序列/EDM基建合规/社群0→5000/RFM）+ `cards/fundamentals/marketing-budget-ops.md`（年度预算10科目/总额三法/月度权重/渠道ROI漏斗/±20%再平衡）+ QA（business-context Q26-31、fundamentals Q48-53）+ s22 shard +24节点/+59边、s27 shard +3节点/+7边。
+- **S22 新增 raw 存档**：`brand-strategy/user-lifecycle-ops.md`、`brand-budget-ops.md` 已复制入 `raw/s22-cbe-skills/`（CC BY-NC 4.0）。
+- **仍排除**：S22 其余 ~19 个 brand-strategy skill（brand-annual-plan/brand-imc-framework/brand-gtm-launch/dsite-seo-playbook/dsite-conversion-ux/influencer-marketing/tiktok-growth 已蒸/social-content-calendar/youtube-channel-ops/brand-market-scan/offline-retail-us/eu-channel-market-entry/trustpilot-voc-*/affiliate-program-ops/price-system-conflict-guard/crowdfunding-launch 等——多为品牌/内容/渠道扩展域，与广告投放 KB 距离较远，按需后续再评）；S27 strategy-builder 的 persona/competitive-landscape/90天计划工作流文本不蒸（prompt 模板性质），仅取其中基准表数值。

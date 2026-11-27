@@ -201,3 +201,27 @@ source: human+ai
 ### Q47. opt-in 元素（视频播放按钮）怎么做 A/B 测试？
 **A**：按整体转化率测会欠功效（90% 未交互访客只贡献噪声）。两条路：triggered analysis——两臂同一触发点只比到达者（不按点击过滤，变体会改变谁点击）；或跳过受控测试直接上线更好版本，用版本 ID 做方向性对比。
 > 溯源：`cards/fundamentals/ab-testing-methodology.md`（S25:ab-testing）
+
+### Q48. 年度营销预算占营收多少？
+**A**：两套口径互补——CBE「全营销投入」Y1 25-40%/Y2-3 18-25%/Y4+ 12-18%；S27「paid media only」新品牌 15-20%/早期 10-15%/成长期 7-12%/成熟期 5-8%。差值≈品牌/内容/PR/人力预算。无营收历史用目标倒推法（目标营收÷CVR×CPA+固定成本）。
+> 溯源：`cards/fundamentals/marketing-budget-ops.md`（S22:brand-budget-ops + S27:strategy-builder）
+
+### Q49. 盈亏平衡 ROAS 怎么算？和 Amazon ACoS 什么关系？
+**A**：breakeven ROAS=1/毛利率（毛利40%→2.5）；目标 ROAS=breakeven×(1+净利率/毛利率)（净利10%→≈3.1）。与 S26 Amazon target ACoS=break-even−利润目标 同族不同口径——前者是收入/花费比，后者是花费/收入比，注意换算别混用。
+> 溯源：`cards/fundamentals/marketing-budget-ops.md`（S22:brand-budget-ops）
+
+### Q50. 月度预算怎么排？大促前要做什么？
+**A**：Q4 集中——11月 14%+12月 13%=Q4 占 27%，7月 Prime Day 10%，其余月份 5-8% 均摊。现金流三规则：月末储备≥下月预算120%；大促预算提前2月充值广告账户；KOL 付款 50-50（上线一半/数据达标一半）。
+> 溯源：`cards/fundamentals/marketing-budget-ops.md`（S22:brand-budget-ops:monthly-weights）
+
+### Q51. 渠道表观 ROAS 差异大（email $40 vs social $2.5）怎么判断？
+**A**：口径差异——S27 基准是全漏斗归因（email 捕获的是广告引流后的承接），social $2.5 是平台直接归因。Meta 引流后 EDM/自然搜索的贡献被低估。判断真实贡献要用 cohort/payback 卡的 LTV 口径，别只比表观 ROAS。
+> 溯源：`cards/fundamentals/marketing-budget-ops.md`（S27:strategy-builder benchmarks）
+
+### Q52. 单渠道预算能加多少？什么信号说明到天花板了？
+**A**：月度调整 ±20% 上限；连续2月达标→+20%、连续2月不达标→−20%，超 20% 需季度评审。天花板5信号任一命中即考虑转移：CPM 连涨3周+/转化率持续降/频次>3 受众饱和/竞品入场 CPO 涨/边际 ROAS 跌破基准50%。
+> 溯源：`cards/fundamentals/marketing-budget-ops.md`（S22:brand-budget-ops:reallocation）
+
+### Q53. 年度预算一级科目怎么分？
+**A**：10 类——媒介广告 AD 30-45%（Amazon/Google/Meta/TikTok 二级展开）/KOL 15-25%（头腰尾分层）/PR 8-15%/内容 RS 10-18%/设计 DG 5-10%/展会 EX 5-10%/私域 SP 3-8%/工具 TL 2-5%/人力 HR 8-15%/调研 2-5%。健康检查：获客类 50-65%、CAC:LTV<1:3。
+> 溯源：`cards/fundamentals/marketing-budget-ops.md`（S22:brand-budget-ops:budget-taxonomy）

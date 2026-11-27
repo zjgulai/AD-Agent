@@ -405,6 +405,48 @@
    "source": "ad:playbook:modeb-triage-reallocation",
    "target": "ad:metric:cpa",
    "ref": "CPA视角同判"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:channel-roi-per-dollar",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-marketing-strategy-builder/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:kpi-baseline-s27",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-marketing-strategy-builder/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:marketing-budget-pct-revenue",
+   "target": "ad:src:ecom-skills",
+   "ref": "ecommerce-skills:raw/s27-ecom-skills/ecommerce-marketing-strategy-builder/SKILL.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:bench:channel-roi-per-dollar",
+   "ref": "marketing-budget-ops card cross-ref S27"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:bench:kpi-baseline-s27",
+   "ref": "marketing-budget-ops card cross-ref S27"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:concept:marketing-budget-pct-revenue",
+   "ref": "marketing-budget-ops card cross-ref S27"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:bench:channel-roi-per-dollar",
+   "target": "ad:channel:email-sms",
+   "ref": "email/SMS行"
   }
  ]
 }

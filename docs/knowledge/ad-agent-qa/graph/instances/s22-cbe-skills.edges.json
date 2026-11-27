@@ -931,6 +931,360 @@
    "target": "ad:adproduct:google-search-ads",
    "ref": "dsite-sem-ads.md#架构",
    "note": "Pmax需转化数据;冷启动期Search/Shopping优先"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:business-context/user-lifecycle-retention-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:src:cbe-skills",
+   "ref": "card:fundamentals/marketing-budget-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-user-5stage-lifecycle",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-welcome-flow-35d",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-automation-sequences-6",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-edm-infra-compliance",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-community-0-5000",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-rfm-segmentation",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbe-annual-budget-ops",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/brand-budget-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-budget-realloc-pct20",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/brand-budget-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-budget-stage-pct",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/brand-budget-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-monthly-weights",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/brand-budget-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:lifecycle:user-prospect",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:lifecycle:user-new",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:lifecycle:user-growth",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:lifecycle:user-mature",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:lifecycle:user-churn",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-churn-cycle-multiplier",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-cart-first-email-no-discount",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-edm-ip-warmup-30d",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:cbe-rfm-min-200k",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-churn-thresholds",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-cart-recovery-rates",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:cbe-community-funnel",
+   "target": "ad:src:cbe-skills",
+   "ref": "cross-border-ecommerce-skills:brand-strategy/user-lifecycle-ops.md"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:playbook:cbe-welcome-flow-35d",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:playbook:cbe-automation-sequences-6",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:playbook:cbe-edm-infra-compliance",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:playbook:cbe-community-0-5000",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:playbook:cbe-rfm-segmentation",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:rule:cbe-churn-cycle-multiplier",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:rule:cbe-cart-first-email-no-discount",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:rule:cbe-edm-ip-warmup-30d",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:rule:cbe-rfm-min-200k",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:bench:cbe-churn-thresholds",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:bench:cbe-cart-recovery-rates",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:bench:cbe-community-funnel",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:playbook:cbe-annual-budget-ops",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:rule:cbe-budget-realloc-pct20",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:bench:cbe-budget-stage-pct",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:bench:cbe-monthly-weights",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:user-prospect",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "user-lifecycle axis"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:user-new",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "user-lifecycle axis"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:user-growth",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "user-lifecycle axis"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:user-mature",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "user-lifecycle axis"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:lifecycle:user-churn",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "user-lifecycle axis"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-welcome-flow-35d",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "targets Stage1新客"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-automation-sequences-6",
+   "target": "ad:playbook:cbe-user-5stage-lifecycle",
+   "ref": "sequences trigger on stage"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:rule:cbe-churn-cycle-multiplier",
+   "target": "ad:bench:cbe-churn-thresholds",
+   "ref": "阈值基准支撑"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:rule:cbe-cart-first-email-no-discount",
+   "target": "ad:bench:cbe-cart-recovery-rates",
+   "ref": "恢复率基准"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-marketing-budget-ops",
+   "target": "ad:asset:card-payback-budget-gate",
+   "ref": "科目→渠道→计划逐层下钻到payback闸门"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-annual-budget-ops",
+   "target": "ad:playbook:cross-platform-roas-framework",
+   "ref": "breakeven ROAS公式同族复用(S27)"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-annual-budget-ops",
+   "target": "ad:metric:roas",
+   "ref": "ROAS目标管理对象"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:asset:card-touchpoints",
+   "ref": "生命周期序列与全触点地图互补"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-user-lifecycle-retention-ops",
+   "target": "ad:channel:email-sms",
+   "ref": "EDM/SMS是私域主触达渠道"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-user-5stage-lifecycle",
+   "target": "ad:metric:retention-rate",
+   "ref": "留存率度量"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-user-5stage-lifecycle",
+   "target": "ad:metric:repurchase-rate",
+   "ref": "复购率度量"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-rfm-segmentation",
+   "target": "ad:metric:ltv",
+   "ref": "LTV分层输入"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:cbe-rfm-segmentation",
+   "target": "ad:metric:cac",
+   "ref": "CAC效率约束"
   }
  ]
 }

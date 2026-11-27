@@ -204,6 +204,44 @@
    "src": [
     "raw/s27-ecom-skills/ecommerce-ppc-strategy-planner/SKILL.md"
    ]
+  },
+  {
+   "@id": "ad:bench:channel-roi-per-dollar",
+   "@type": "ad:Benchmark",
+   "label": "渠道ROI $/1 spend基准",
+   "props": {
+    "bench": "email $36-40/SMS $21-71/SEO $7.48/Google $8/paid social $2.5",
+    "desc": "全漏斗归因口径;与平台表观ROAS不可直接比",
+    "asof": "strategy-builder"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-marketing-strategy-builder/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:kpi-baseline-s27",
+   "@type": "ad:Benchmark",
+   "label": "电商KPI基线",
+   "props": {
+    "bench": "LTV>3×CAC/复购率28%+/email收入占比25-30%/blended ROAS 2.5×+",
+    "desc": "全漏斗口径基准"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-marketing-strategy-builder/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:marketing-budget-pct-revenue",
+   "@type": "ad:KnowledgeAsset",
+   "label": "营销预算占营收% paid-media口径",
+   "props": {
+    "bench": "新品牌15-20%/早期10-15%/成长期7-12%/成熟期5-8%",
+    "desc": "与CBE全营销口径互补;差值=品牌内容PR人力",
+    "asof": "Gartner 2025营销=7.7%营收"
+   },
+   "src": [
+    "raw/s27-ecom-skills/ecommerce-marketing-strategy-builder/SKILL.md"
+   ]
   }
  ]
 }

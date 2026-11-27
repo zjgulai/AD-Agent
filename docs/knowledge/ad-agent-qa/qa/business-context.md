@@ -113,3 +113,27 @@ source: human+ai
 ### Q25. SEO/AEO/GEO 出海就绪查什么？
 **A**：FAQ Schema/HowTo 结构化标记、所有重要页面 TL;DR 开门见山结论（AI 摘要友好）、外部权威媒体/专家引用背书、图片 ALT 格式「产品名-品牌名-适用情境」、内容集群（Content Cluster）完整、hreflang/本地关键词调研（S27 卡互补）。
 > 溯源：`cards/business-context/dtc-expansion-readiness-diagnostic.md`（S28:checklists/seo-aeo-geo）
+
+### Q26. 用户生命周期怎么分阶段？流失阈值怎么定？
+**A**：五阶段数据定义——Stage0 前客（访问未购）→Stage1 新客（首购0-30天）→Stage2 成长期（2-3次/30-180天）→Stage3 成熟期（4+次/LTV>均值）→Stage4 衰退流失。流失阈值=复购周期倍数：快消品预警1.5×/流失2×/深度4×周期；Momcozy 耗材若周期60天→预警90天、流失150天。留存曲线拐点法校准。
+> 溯源：`cards/business-context/user-lifecycle-retention-ops.md`（S22:user-lifecycle-ops）
+
+### Q27. 购物车挽回第一封邮件能给折扣吗？
+**A**：不能。标准时序：加购→1h EDM 无折扣提醒→24h EDM+SMS 社会证明→48h 5-10% 折扣→72h 最大折扣。先给折扣=训练用户「放弃=拿折扣」，破坏价格体系。回访率基准 8-15%/5-10%，转化 2-4%。
+> 溯源：`cards/business-context/user-lifecycle-retention-ops.md`（S22:user-lifecycle-ops:cart-abandonment）
+
+### Q28. 新 EDM IP 为什么危险？怎么预热？
+**A**：IP 预热失败是邮件系统崩溃头号原因——新 IP/域名需 30 天阶梯预热：Day1-3 只发 50-100 封→逐周翻倍→Day30+ 才可全量。配套三支柱：SPF/DKIM/DMARC（p=none 起步）、硬退信即清、180天无互动转 Sunset 列表。
+> 溯源：`cards/business-context/user-lifecycle-retention-ops.md`（S22:user-lifecycle-ops:edm-infra）
+
+### Q29. Welcome Flow 为什么 ROI 最高？35 天怎么排？
+**A**：全生命周期触达的黄金窗口期。12 节拍：Day0 欢迎+优惠码→Day1 品牌故事→Day3 社会证明→Day5 教育→Day7 场景种草→Day10 卖点→Day14 痛点方案→Day18 用户故事→Day21 个性化推荐→Day25 专属优惠→Day28 到期提醒→Day35 分流（已购→Post-Purchase/有互动→培育/零互动→休眠月更）。期间购买即退出欢迎流。
+> 溯源：`cards/business-context/user-lifecycle-retention-ops.md`（S22:user-lifecycle-ops:welcome-flow）
+
+### Q30. 私域社群从 0 到规模怎么起？美国市场用什么平台？
+**A**：FB Group 为主（18-30 另配 Discord/IG）。三阶段：种子期 0-500 人 4-8 周（购后邮件/包裹卡片/客服引导，转化 5-20%）→成长期 500-5000 人 3-6 月（日更内容+周主题+月活动）→成熟期 5000+（80% UGC、月活>30%、社群收入占比>15%）。漏斗：公域→社群 0.5-1%→核心私域 0.05-0.1%。
+> 溯源：`cards/business-context/user-lifecycle-retention-ops.md`（S22:user-lifecycle-ops:community）
+
+### Q31. RFM 分层在用户量少时值得做吗？
+**A**：<200K 用户别上 RFM——统计无意义。用行为触发分层（3-5 群）：高活跃提频/沉睡用户挽回序列/新客 Welcome。>200K 才做完整 RFM 评分（R/F/M 各 1-5 分）→8 分群策略映射：重要价值 VIP+裂变、重要挽留高价值 offer、流失清洗。
+> 溯源：`cards/business-context/user-lifecycle-retention-ops.md`（S22:user-lifecycle-ops:rfm）

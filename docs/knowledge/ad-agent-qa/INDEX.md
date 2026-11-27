@@ -60,6 +60,7 @@ source: human+ai
 | [归因模型算例与差异诊断](cards/fundamentals/attribution-models-reconciliation.md) | 同一笔订单六模型各分多少？DDA 何时可信？Ads-GA4 差 20% 正常吗？退款不对称？direct/品牌词虚高怎么读？ | S25 |
 | [Payback 预算闸门](cards/fundamentals/payback-period-budget-gate.md) | LTV:CAC 为什么不可信？毛利回本怎么算？cohort 恢复路径？渠道能不能投的四步判据？ | S25 |
 | [A/B 测试方法论](cards/fundamentals/ab-testing-methodology.md) | 假设框架？样本量/MDE 怎么算？peeking 禁忌？p 值/CI 怎么读？guardrail 指标？opt-in 元素 triggered analysis？ | S25 |
+| [年度营销预算系统](cards/fundamentals/marketing-budget-ops.md) | 总额三法？10 科目怎么分？月度权重/大促充值？盈亏平衡 ROAS？渠道再平衡 ±20% 规则？天花板信号？ | S22/S27 |
 
 ### 竞品分析
 
@@ -77,6 +78,7 @@ source: human+ai
 | [吸奶器品线独立站全触点地图](cards/business-context/customer-touchpoint-map.md) | 7 阶段×120+ 触点怎么拆？站内外矩阵？渠道协同分工？竞品对标？自检清单？ | S21 |
 | [跨境电商出海扩张框架](cards/business-context/cross-border-expansion-framework.md) | 出海选哪个市场？8 维评分？履约模式怎么选？各国 VAT/GST/IOSS？本地支付？landed cost 毛利杀手？四阶段路线图？ | S27 |
 | [DTC 出海诊断框架](cards/business-context/dtc-expansion-readiness-diagnostic.md) | 出海准备度怎么打分？6 维分阶段权重？Pixel/CAPI/再营销三层/素材更换节奏就绪标准？SEO/AEO/GEO 查什么？ | S28 |
+| [用户生命周期与留存运营](cards/business-context/user-lifecycle-retention-ops.md) | 五阶段模型？流失阈值=复购周期倍数？Welcome Flow 35天？六大自动化序列？EDM IP预热/社群 0→5000？RFM 何时值得做？ | S22 |
 
 ### 平台运营打法（platform-ops-kb 蒸馏）
 
