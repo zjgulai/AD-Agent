@@ -45,6 +45,7 @@ source: human+ai
 | [Meta 诊断五层规程与配套工具](cards/meta-ads-diagnosis/meta-diagnosis-layers-l0-l4.md) | L0-L4 每层诊断项细节？异常速查表？字段字典阈值？ | S7 |
 | [Meta 投后数据明细与巡检模板](cards/meta-ads-diagnosis/meta-post-launch-data-inspection.md) | 投后巡检采集哪些数据？三层级字段模板怎么设计？巡检/操作记录列块怎么闭环？ | S8 |
 | [多渠道周期报告生成契约](cards/meta-ads-diagnosis/multi-channel-report-contract.md) | 日/周/月报三段式结构？大盘 ROAS 怎么算？增长引擎 vs 拖后腿？行动指令怎么防「正确的废话」？ | S24 |
+| [Meta 量化决策引擎](cards/meta-ads-diagnosis/meta-quantified-decision-engine.md) | 广告留还是杀怎么定量化？TCPL 锚点/广告数上限/80-20 双 CBO/毕业标准/衰退分档/放量协议？ | S25 |
 
 ### 广告基础机制与策略（行业通用）
 
@@ -54,6 +55,7 @@ source: human+ai
 | [广告竞价全链路流程图（14 步）](cards/fundamentals/ad-bidding-full-chain.md) | 一次广告展示背后 14 步怎么走？eCPM/GSP/Pacing/SKAN 怎么工作？哪些配置字段影响哪个环节？ | S10 |
 | [产品不同阶段广告投放策略（8 阶段）](cards/fundamentals/product-lifecycle-ad-strategy.md) | 产品各生命周期阶段投什么目标/出价？每阶段必做实验？常见坑？ | S11 |
 | [归因与测量体系](cards/fundamentals/attribution-measurement.md) | 各平台归因转化为什么不能相加？Cookie 末日是不是谣言？GA4/Google Ads DDA 迁移？增量测试怎么设计？Meridian vs Robyn？ | S22 |
+| [广告账户治理纪律](cards/fundamentals/ad-account-governance.md) | 周检六问+四态判定？AI 审计怎么防没查的也打分？品牌/非品牌怎么拆？净现金放量观？再营销异 offer 原则？ | S25 |
 
 ### 竞品分析
 

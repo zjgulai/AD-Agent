@@ -149,3 +149,27 @@ source: human+ai
 ### Q34. 多渠道报告契约和投放师一日工作流 SOP 什么关系？
 **A**：互补不冲突——S6 管单渠道 Meta 的日内操作节奏与动作铁律（回答「今天做什么」）；本契约管多渠道周期报告的输出结构与量化纪律（回答「这周期整体怎么样、预算往哪调」）。S6 的五段式日报偏「今日动作闭环」，本卡三段式偏「跨渠道体量判断+预算指令」；两者可在 Agent 编排中串联（日内操作→周期报告）。
 > 溯源：`multi-channel-report-contract.md` / `meta-operator-daily-workflow.md`
+
+### Q35. Meta 广告「留还是杀」怎么定量化，不靠感觉？
+**A**：先定 TCPL 锚点（B2B=目标合格线索成本；DTC 翻译=目标单均获客成本，可从 deal math/历史 CPA×0.8/占位值三法取值，每月复审）。规则全部用其倍数表达：消耗 <3×TCPL 不评判（数据门槛）；≥3×TCPL 零像素转化=换概念放弃迭代；像素有转化但合格率 <40%=换角度；单均成本 >1.5×TCPL=换。Day7 用 CBO fair share 分配做投放检查（Meta 预筛信号），每周滚动 14 天数据跑质量评估+衰退检查。
+> 溯源：`meta-quantified-decision-engine.md`（S25:meta-decision-system）
+
+### Q36. Meta 广告数开多少合适？预算不变怎么上新测试？
+**A**：上限=(日预算×14)/(2×TCPL)——14 天窗口内每条广告至少要 2×TCPL 消耗才能被公平评判；实际跑上限的 40–70%（赢家+2–3 测试位）。80/20 双 CBO 结构：Scaling Campaign 扛 ~80% 预算只放已毕业广告，Testing Campaign ~20% 预算跑新概念——分离的本质是预算保护（CBO 内验证广告永远抢新广告的消耗）。达上限时开新测试必须先杀旧广告腾坑。新概念先跑静态图验证，通过后才产视频/UGC（图片优先验证）。
+> 溯源：`meta-quantified-decision-engine.md`（S25:meta-decision-system）
+
+### Q37. 什么广告能毕业进 Scaling Campaign？毕业后怎么防衰退？
+**A**：五条全满足——≥5 合格转化、合格率 ≥60%、单均成本 ≤TCPL、运行 ≥14 天、近 7 天仍有 ≥1 合格转化。防衰退：频次分档（冷启动安全 1.0–2.5/危急 >4.0，再营销 2.0–4.0/>6.0），Scaling 广告用更严门槛（预警 频次 3.0–3.5 或成本 +20%→立即备 2 个迭代版；>3.5 或成本 +40% 或 >1.5×TCPL 持续 2 周→换）。换广告铁律：永不裸停（备 2–3 替补 7 天内上线）、在跑广告永不改素材（改=重置 learning）、按死因换（投放杀改 hook/视觉、质量杀改角度+ICP 语言、成本杀改 offer+受众、衰退换新执行）。
+> 溯源：`meta-quantified-decision-engine.md`（S25:meta-decision-system）
+
+### Q38. Meta 预算每次加多少？加太快会怎样？撞墙信号是什么？
+**A**：每 5 天 +20% 封顶，单次 ≥+30% 会重置学习；放量后单均成本 >1.5×TCPL 立即回滚砍预算 20–30%、稳定 2 周后 +10%/周恢复。放量前提：验证广告数达下一档最低库存（≈月预算÷$5,000 B2B 口径）+账户频次<3.0+成本≤TCPL 连续 2 周+已备 3+ 替补。撞墙信号=账户级平均频次 >3.5（区别于素材级衰退分档）：扩 lookalike 1%→2–3%、加新种子受众、测 broad、激活跨渠道 UTM 受众、重开再营销，或上 partnership ads 恢复净新增触达（rolling reach MoM 走平是领先指标，先于频次撞墙）。
+> 溯源：`meta-quantified-decision-engine.md`（S25:meta-decision-system）
+
+### Q39. Advantage+ 什么时候从手动切换？门槛是什么？
+**A**：三前提——验证过的 offer+验证过的受众+优化事件每周 ~50 个转化（learning-phase 出门槛，日预算≈目标 CPA×50÷7）。达不到 50/周就优化更上游的高频事件再再营销。Advantage+ 与严格受众锁定（ABM 名单）冲突。Campaign Score 方向性参考（70+ 健康、<50=在对抗算法），绝不为刷分牺牲转化质量。
+> 溯源：`meta-quantified-decision-engine.md`（S25:meta-decision-system）
+
+### Q40. Meta partnership ads（创作者联动广告）怎么玩？为什么是当前最高杠杆？
+**A**：Andromeda 按 persona 定向，创作者粉丝=预组装画像种子，partnership ad（从创作者 handle 发 branded content）继承该种子让算法向外扩展——触达 Meta 已知受众之外的净新增人群，是放量期「加新种子受众」的主要手段。四步：①先自然/低成本测试创作者内容，只放大已赚到 save/share/看完的；②按画像重合度选人不看粉丝数（15K 精准粉>500K 泛粉）；③要 whitelisting/branded-content-partner 权限+3–6 月 usage rights+paid-amplification 权，冷启动避免纯分成；④签约视频时顺手让创作者出几张「本人会发的快拍风」静态图做 mini-funnel 承接。失败模式多为选错创作者而非 hook 错。
+> 溯源：`meta-quantified-decision-engine.md`（S25:meta-decision-system）

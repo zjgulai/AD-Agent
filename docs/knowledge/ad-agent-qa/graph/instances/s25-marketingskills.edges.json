@@ -1,0 +1,428 @@
+{
+ "graph": "ad-ops",
+ "cluster": "meta-ads-diagnosis+fundamentals",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "S25 marketingskills 蒸馏:E1a Meta量化决策引擎+Andromeda打法+账户治理纪律;B2B口径TCPL/qualified lead已标DTC翻译点;阈值为从业者起点值需自家数据重校准;E1b/E1c子批次将扩展本shard",
+ "edges": [
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:meta-decision-system",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:metric:tcpl",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:ad-count-ceiling",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:cbo-8020-structure",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:workflowstage:day7-delivery-check",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:weekly-quality-eval",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:graduation-criteria",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:bench:fatigue-frequency-bands",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:scaling-protocol",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:workflowstage:weekly-cadence-mwf",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:swap-rules-no-zombie",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:creative-production-math",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:partnership-ads-playbook",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:rolling-reach-signal",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-decision-system.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:meta-andromeda-playbook",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:creative-volume-constraint",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:creative-as-targeting",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:audience-knowledge-creative-ratio",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:zombie-campaigns",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:ad-similarity-60pct",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:concept-angle-awareness-matrix",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:ad-sequencing-path",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:one-keyword-hack",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:operating-check-6q",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/operating-check.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:audit-four-state",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/audit-guardrails.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:no-cross-window-sum",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/audit-guardrails.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:no-invented-negatives",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/audit-guardrails.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:missing-not-estimated",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/audit-guardrails.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:draft-first-live-accounts",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/references/audit-guardrails.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:concept:brand-vs-nonbrand-split",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:optimize-nonbrand-roas",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:rule:net-cash-over-roas",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/SKILL.md"
+  },
+  {
+   "@type": "ad:sourced_from",
+   "source": "ad:playbook:retargeting-4component",
+   "target": "ad:src:marketingskills",
+   "ref": "marketingskills:s25-marketingskills/skills/ads/SKILL.md"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:meta-decision-system",
+   "target": "ad:platform:meta",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:meta-andromeda-playbook",
+   "target": "ad:platform:meta",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:operating-check-6q",
+   "target": "ad:platform:meta",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:cbo-8020-structure",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:workflowstage:day7-delivery-check",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:weekly-quality-eval",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:bench:graduation-criteria",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:bench:fatigue-frequency-bands",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:scaling-protocol",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:workflowstage:weekly-cadence-mwf",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:swap-rules-no-zombie",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:creative-production-math",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:playbook:partnership-ads-playbook",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:part_of",
+   "source": "ad:concept:rolling-reach-signal",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "composition"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:meta-decision-system",
+   "target": "ad:metric:tcpl",
+   "ref": "decision-flow"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:tcpl",
+   "target": "ad:bench:graduation-criteria",
+   "ref": "threshold-binding"
+  },
+  {
+   "@type": "ad:has_threshold",
+   "source": "ad:metric:tcpl",
+   "target": "ad:bench:fatigue-frequency-bands",
+   "ref": "threshold-binding"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:workflowstage:weekly-cadence-mwf",
+   "target": "ad:playbook:weekly-quality-eval",
+   "ref": "decision-flow"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:scaling-protocol",
+   "target": "ad:bench:graduation-criteria",
+   "ref": "decision-flow"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:swap-rules-no-zombie",
+   "target": "ad:bench:fatigue-frequency-bands",
+   "ref": "decision-flow"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:playbook:partnership-ads-playbook",
+   "target": "ad:concept:rolling-reach-signal",
+   "ref": "decision-flow"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:playbook:partnership-ads-playbook",
+   "target": "ad:adproduct:meta-partnership-ads",
+   "ref": "variant"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:meta-decision-system",
+   "target": "ad:platform:meta",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:operating-check-6q",
+   "target": "ad:platform:google",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:operating-check-6q",
+   "target": "ad:platform:tiktok",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:belongs_to",
+   "source": "ad:playbook:operating-check-6q",
+   "target": "ad:platform:meta",
+   "ref": "cluster-membership"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-decision-engine",
+   "target": "ad:playbook:meta-decision-system",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-decision-engine",
+   "target": "ad:playbook:meta-andromeda-playbook",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-decision-engine",
+   "target": "ad:concept:creative-as-targeting",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-governance",
+   "target": "ad:playbook:operating-check-6q",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-governance",
+   "target": "ad:rule:audit-four-state",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-governance",
+   "target": "ad:concept:brand-vs-nonbrand-split",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:recommends",
+   "source": "ad:asset:card-governance",
+   "target": "ad:playbook:retargeting-4component",
+   "ref": "card-distillation"
+  },
+  {
+   "@type": "ad:variant_of",
+   "source": "ad:playbook:meta-decision-system",
+   "target": "ad:playbook:cbe-dsite-meta-5c",
+   "ref": "variant"
+  },
+  {
+   "@type": "ad:depends_on",
+   "source": "ad:concept:brand-vs-nonbrand-split",
+   "target": "ad:metric:mer",
+   "ref": "decision-flow"
+  },
+  {
+   "@type": "ad:supersedes",
+   "source": "ad:rule:no-cross-window-sum",
+   "target": "ad:bench:merged:attribution-gap",
+   "ref": "supersession"
+  }
+ ]
+}

@@ -37,6 +37,7 @@ source: human+ai
 | S20 | Momcozy人群画像洞察报告（S1 附件 HTML） | S1 wiki 内嵌附件 | HTML 可视化报告 | `raw/s1-attachments/Momcozy人群画像洞察报告.html` | 2026-11-26 |
 | S21 | 吸奶器品线独立站_全触点地图（S1 附件 HTML） | S1 wiki 内嵌附件 | HTML 可视化文档 | `raw/s1-attachments/吸奶器品线独立站_全触点地图.html` | 2026-11-26 |
 | S24 | meta-ad-analysis 多渠道广告分析工具 | https://github.com/XingyuBillHou/meta-ad-analysis | GitHub 仓库（单文件 Streamlit 应用，无 LICENSE） | `raw/s24-meta-ad-analysis/`（14 文件 180K） | 2026-11-27 |
+| S25 | marketingskills 营销 Agent Skills 合集 | https://github.com/coreyhaines31/marketingskills | GitHub 仓库（MIT License） | `raw/s25-marketingskills/`（8 skills 136 文件 1.6M） | 2026-11-27 |
 
 ## 第二批源（drive 文件夹 `QChKfhUSRl95AwdPhYfcd39ynmh`，2026-11-26 追加）
 
@@ -118,3 +119,13 @@ source: human+ai
 - **蒸馏边界**：仓库是工具而非知识库，仅 `build_system_prompt`/`REPORT_SECTIONS`/`build_channel_tables_markdown` 三处含领域知识。**只蒸馏报告生成契约**——三段式结构、大盘 ROAS（≈MER）、增长引擎/拖后腿二分、量化行动指令纪律、确定性表格+LLM 洞察分工、分节三次调用模式。**排除**：Excel 解析管道（合并表头/日期桶识别）、SMTP 邮件投递、Streamlit UI 工程实现。
 - 蒸馏产出：`cards/meta-ads-diagnosis/multi-channel-report-contract.md` + `qa/meta-ads-diagnosis.md` Q29-34 + `graph/instances/s24-meta-ad-analysis.*`（12 节点/25 边）。
 - **新实体**：`ad:platform:applovin`（Axon，KB 首次登记）、`ad:platform:shopify`（电商后台/大盘数据源，variant_of dtc-site）、`ad:concept:multi-meta-account-matrix`（品牌×多 Meta 账户模式，单案例 `[待确认]`）。
+
+## 第十批源（marketingskills 蒸馏，2026-11-27 追加）
+
+- 来源：`github.com/coreyhaines31/marketingskills`（Corey Haines，62k★，**MIT License**）。~50 个营销 Agent Skills，本批只收广告相关 8 域。
+- **原文已完整复制保存**至 `raw/s25-marketingskills/`（`skills/{ads,ad-creative,attribution,conversion-tracking,cro,influencer-marketing,aso,ab-testing}` + LICENSE + README，136 文件 1.6M，保留仓库相对路径）。
+- **蒸馏批次（E1a–E1c 已批准，S25 同一源分子批）**：E1a Meta 量化决策系统+Andromeda 打法+账户治理纪律→`meta-ads-diagnosis/`+`fundamentals/` 新卡×2；E1b 素材创意系统（hook-system/meta-creative-formats/platform-specs/short-form-specs）→待执行；E1c Google Search playbook+attribution 加深+payback/conversion-tracking 精选→待执行。
+- **口径注意**：源文为 B2B SaaS 口径（TCPL=目标合格线索成本、qualified lead、B2B 基准线），蒸馏时逐点标注 DTC 翻译（TCPL→目标单均获客成本、qualified rate→有效订单率、B2B 基准→需重校准）；所有阈值为从业者起点值，源文自述「recalibrate against your own account」。
+- **蒸馏边界**：只蒸馏知识原子（阈值/公式/决策规则/平台事实/方法论框架），不复制 skill 的 prompt 工作流文本；conversion-tracking 的 GTM recipes/snippets（~100 个工程资产文件）保留存档但不逐一蒸馏，仅取 references 方法论文档。
+- E1a 蒸馏产出：`cards/meta-ads-diagnosis/meta-quantified-decision-engine.md`、`cards/fundamentals/ad-account-governance.md` + `qa/meta-ads-diagnosis.md` Q35-40 + `qa/fundamentals.md` Q30-36 + `graph/instances/s25-marketingskills.*`（36 节点/69 边）。
+- **新实体**：`ad:metric:tcpl`、`ad:bench:graduation-criteria`、`ad:bench:fatigue-frequency-bands`、`ad:playbook:meta-decision-system`/`meta-andromeda-playbook`/`operating-check-6q`/`retargeting-4component`/`partnership-ads-playbook`/`zombie-campaigns`/`ad-sequencing-path`/`cbo-8020-structure`/`scaling-protocol`/`swap-rules-no-zombie`/`weekly-quality-eval`、`ad:workflowstage:day7-delivery-check`/`weekly-cadence-mwf`、`ad:rule`×8（广告数上限/创意量约束/审计四态/禁跨窗加总/禁编否定词/MISSING不估算/实盘草案先行/优化non-brand/净现金>ROAS）、`ad:concept`×8。

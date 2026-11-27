@@ -1,0 +1,458 @@
+{
+ "graph": "ad-ops",
+ "cluster": "meta-ads-diagnosis+fundamentals",
+ "generated": "2026-11-27",
+ "defaults": {
+  "status": "active",
+  "confidence": "medium",
+  "freshness": "watch",
+  "last_verified": "2026-11-27"
+ },
+ "coverage_notes": "S25 marketingskills 蒸馏:E1a Meta量化决策引擎+Andromeda打法+账户治理纪律;B2B口径TCPL/qualified lead已标DTC翻译点;阈值为从业者起点值需自家数据重校准;E1b/E1c子批次将扩展本shard",
+ "nodes": [
+  {
+   "@id": "ad:src:marketingskills",
+   "@type": "ad:SourceDoc",
+   "label": "marketingskills",
+   "props": {
+    "repo": "github.com/coreyhaines31/marketingskills",
+    "license": "MIT",
+    "desc": "Corey Haines 营销 skills 合集(62k★);本shard蒸馏 ads/ad-creative/attribution/conversion-tracking/cro/influencer-marketing/aso/ab-testing 八域;B2B口径需DTC翻译"
+   },
+   "src": [
+    "raw/s25-marketingskills/LICENSE",
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:meta-decision-system",
+   "@type": "ad:Playbook",
+   "label": "Meta 量化决策引擎(TCPL锚点)",
+   "props": {
+    "desc": "kill/keep/scale/graduate 全部表达为 TCPL 倍数的算术决策系统;含 Day7投放检查/周度质量评估/毕业五条件/衰退分档/放量协议/周节奏",
+    "anchor": "TCPL=目标合格线索成本(B2B);DTC翻译=目标单均获客成本;三法定值+每月复审",
+    "source_file": "skills/ads/references/meta-decision-system.md"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:metric:tcpl",
+   "@type": "ad:Metric",
+   "label": "TCPL 目标合格线索成本",
+   "props": {
+    "desc": "决策引擎唯一锚点;DTC 口径≈目标单均获客成本;定法:deal math>历史CPA×0.8>占位值;每月复审;全部下游阈值用其倍数",
+    "caliber": "B2B原文=Target Cost Per Qualified Lead;DTC翻译点已标注"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:ad-count-ceiling",
+   "@type": "ad:Rule",
+   "label": "广告数上限公式",
+   "props": {
+    "severity": "hard",
+    "formula": "(日预算×14)/(2×TCPL)",
+    "desc": "14天评估窗口内每条广告至少需2×TCPL消耗才获公平评判;实际跑上限40-70%(赢家+2-3测试位);达上限开新测试须先杀旧"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:cbo-8020-structure",
+   "@type": "ad:Playbook",
+   "label": "80/20双CBO Scaling/Testing结构",
+   "props": {
+    "desc": "同受众两CBO:Scaling~80%预算只放已毕业广告;Testing~20%预算跑新概念;分离本质是预算保护非人群分层;ABO强制均分会继续给已降权广告花钱",
+    "corollary": "图片优先验证:新概念先静态图,通过后才产视频/UGC"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:workflowstage:day7-delivery-check",
+   "@type": "ad:WorkflowStage",
+   "label": "Day7投放检查(CBO预筛信号)",
+   "props": {
+    "desc": "CBO花钱倾向=Meta预筛诊断;fair share=(日预算÷活跃广告)×7×0.5以下kill;累计≥1×TCPL且近7天日均<$10 kill;零消耗立即kill;投放杀只改hook/视觉/形式",
+    "day": 7
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:weekly-quality-eval",
+   "@type": "ad:Playbook",
+   "label": "周度质量评估(Stage2)",
+   "props": {
+    "desc": "滚动14天数据按序执行触发即停:①<3×TCPL消耗等待(95%置信设计,2×误杀率13%)②≥3×TCPL零像素转化=换概念③合格率<40%换角度/40-60%再观察/≥60%过④成本≤TCPL候选赢家/1-1.5×观察/>1.5×换",
+    "data_gate": "3xTCPL",
+    "qualified_rate_bands": "<40%换/40-60%观察/≥60%过"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:graduation-criteria",
+   "@type": "ad:Benchmark",
+   "label": "Testing→Scaling毕业五条件",
+   "props": {
+    "desc": "≥5合格转化+合格率≥60%+单均成本≤TCPL+运行≥14天+近7天仍有≥1合格转化;全满足才可毕业",
+    "kind": "graduation-gate"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:bench:fatigue-frequency-bands",
+   "@type": "ad:Benchmark",
+   "label": "素材衰退频次分档",
+   "props": {
+    "desc": "冷启动1.0-2.5/2.5-4.0/>4.0;再营销2.0-4.0/4.0-6.0/>6.0;ABM 2.0-5.0/5.0-8.0/>8.0(安全/预警/危急);Scaling广告更严:预警频次3.0-3.5或成本+20%",
+    "aux_signals": "CTR降20%+/CPM升30%+/relevance below avg/CPA升(定向不变)"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:scaling-protocol",
+   "@type": "ad:Playbook",
+   "label": "放量协议与回滚",
+   "props": {
+    "desc": "前提:验证广告达下一档最低库存(≈月预算÷$5K)+频次<3.0+成本≤TCPL连续2周+备3+替补;速率+20%/5天(≥+30%重置学习);成本>1.5×TCPL回滚砍20-30%稳定2周后+10%/周;撞墙=账户频次均值>3.5",
+    "wall_response": "扩lookalike 1%→2-3%/新种子受众/broad/UTM受众/再营销/partnership ads"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:workflowstage:weekly-cadence-mwf",
+   "@type": "ad:WorkflowStage",
+   "label": "Meta周节奏 Mon/Wed/Fri",
+   "props": {
+    "desc": "周一决策日(滚动14天数据+Stage2+衰退检查);周三上线日(新测试上架+Stage1);周五放量日(步进/回滚);每月创意库审计+TCPL复审",
+    "cadence": "Mon=decision/Wed=launch/Fri=scale"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:swap-rules-no-zombie",
+   "@type": "ad:Playbook",
+   "label": "换广告铁律",
+   "props": {
+    "desc": "永不裸停:备2-3迭代版替补7天内上线(危急立即);管线空→预算导验证广告;按死因换:投放杀改hook/视觉、质量杀改角度+ICP语言、成本杀改offer+受众、衰退换新执行;在跑广告永不改素材(改=重置learning,暂停不重置)",
+    "severity": "hard"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:creative-production-math",
+   "@type": "ad:KnowledgeAsset",
+   "label": "创意产能数学",
+   "props": {
+    "kind": "capacity-model",
+    "desc": "测试吞吐≈(月预算×0.20)÷(3×TCPL)/月,实际1.5-2×(投放杀提前释放);胜率:迭代25%/新概念10%/混合1/6→要N赢家备6N测试;验证广告最低库存≈月预算÷$5K;预算不能跑在创意供给前面;迭代优先级hook>视觉>形式>文案CTA"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:partnership-ads-playbook",
+   "@type": "ad:Playbook",
+   "label": "Partnership Ads 创作者联动打法",
+   "props": {
+    "desc": "Andromeda按persona定向,创作者粉丝=预组装画像种子;四步:①先自然/低成本测试只放大已验证内容②按画像重合度选人不看粉丝数③whitelisting+usage rights(3-6月)+paid-amplification权,冷启动避免纯分成④签约视频顺手出低保真静态图做mini-funnel;失败模式多为选错创作者",
+    "position": "放量期撞墙(频次>3.5/rolling reach走平)时加新种子受众的主要手段"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md",
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:rolling-reach-signal",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Rolling Reach MoM 净新增触达信号",
+   "props": {
+    "kind": "health-signal",
+    "desc": "环比月独立触达人数=净新增受众仪表;CPL/ROAS好看但reach走平=在回收缩水人群;MoM下降→先上partnership ads;领先指标先于频次3.5和CPM飙升;月度随TCPL复审追踪"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-decision-system.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:meta-andromeda-playbook",
+   "@type": "ad:Playbook",
+   "label": "Andromeda时代Meta打法(2025+)",
+   "props": {
+    "desc": "创意量是约束('hungry panda');静态图2026常胜视频(算法偏置+成本1/10+原生感);creative IS targeting(只选国家让素材定向);长文案优于短文案(更宽上下文窗口);一关键词hack/AI variant farming/zombie campaigns/原生感广告/创作者广告按概念区分/ad sequencing",
+    "era": "Meta Andromeda算法2025上线后;与旧interest-stacking打法相反",
+    "source_file": "skills/ads/references/meta-andromeda-playbook.md"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:creative-volume-constraint",
+   "@type": "ad:Rule",
+   "label": "创意量约束与静态图优先",
+   "props": {
+    "severity": "hard",
+    "desc": "Andromeda需持续新鲜创意否则疲劳;静态图常胜精致视频:算法可每会话展示更多静态图→更便宜;制作成本1/10速度10倍;每周固定1小时产新创意;volume>polish;down-and-dirty原生静态图可胜2.5月制作VSL"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:creative-as-targeting",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Creative IS the Targeting",
+   "props": {
+    "kind": "paradigm-shift",
+    "desc": "旧打法堆interest收窄受众;新打法broad(只选国家)+具体创意让算法匹配;受众知识80%+投进创意而非定向过滤器(Meta);长文案给Andromeda更宽上下文窗口;验证法:复制赢家广告去掉定向只留国家,7天side-by-side看CPA,broad通常赢"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md",
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:audience-knowledge-creative-ratio",
+   "@type": "ad:KnowledgeAsset",
+   "label": "受众知识→创意vs定向平台配比",
+   "props": {
+    "kind": "heuristic-matrix",
+    "desc": "受众洞察应用比(方向性非精确):Meta创意80%+/定向20%;Google Search创意40%/定向60%(关键词仍是主信号);PMax/DemandGen创意70%;LinkedIn创意40%/定向60%;TikTok创意70%;Twitter/X各50%;共同失败模式:弱创意+12个interest堆叠=小受众看烂广告",
+    "platform_ratios": "Meta 80/20 creative-first post-Andromeda"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:zombie-campaigns",
+   "@type": "ad:Playbook",
+   "label": "Zombie Campaigns 复活术",
+   "props": {
+    "desc": "CBO后Meta给80%变体零消耗;对高conviction的死变体单独建ad set('zombie campaign')投放;通常20%复活为赢家(首轮分配漏掉的);变体相似度>~60%被Meta归并限流,百个创作者同款口播≈一个概念"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:ad-similarity-60pct",
+   "@type": "ad:KnowledgeAsset",
+   "label": "广告相似度~60%归并限流",
+   "props": {
+    "kind": "platform-fact",
+    "desc": "Meta判定过于相似的广告(从业者口径~60%相似度)归并并限制delivery;百创作者同款talking-head≈一个概念;复制品还会拉低赢家reach;素材规划须按概念×角度×认知层级矩阵区分"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:concept-angle-awareness-matrix",
+   "@type": "ad:KnowledgeAsset",
+   "label": "概念×角度×认知层级矩阵",
+   "props": {
+    "kind": "planning-framework",
+    "desc": "每条广告=一个概念(单一产品真相,90%广告)×一个角度(场景利益)×一个认知层级(新品类/改善现有);矩阵显示哪个功能用哪种说法对哪个受众在赢;没有它就白花钱买读不回来的教训(Wispr Flow 100→3500 ads/9mo 案例)"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:ad-sequencing-path",
+   "@type": "ad:Playbook",
+   "label": "广告序列路径(hook→problem→proof→offer)",
+   "props": {
+    "desc": "Meta排序模型读用户活动为有序时间线,第二条广告相对第一条被评判;典型路径hook→problem→proof→offer,后广告默认前广告已看不再重复解释;显式sequencing仅限Awareness/Engagement目标+Target frequency+生命周期预算≥7天+Advantage budget关;转化目标不可用→用engagement retargeting近似",
+    "availability": "2026初分批开放,需查当前帮助文档"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:one-keyword-hack",
+   "@type": "ad:KnowledgeAsset",
+   "label": "一关键词身份触发hack",
+   "props": {
+    "kind": "tactic",
+    "desc": "赢家广告复制+在标题/正文插入niche身份关键词('462 leads/week'→'462 dental leads/week');关键词既是观众身份触发又是Andromeda定向信号;显著降CPL打开受众口袋;AI variant farming同理:喂赢家广告给LLM写'100人看不出是不同人写的'版本按demographic微调"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/meta-andromeda-playbook.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:operating-check-6q",
+   "@type": "ad:Playbook",
+   "label": "周检六问与四态判定",
+   "props": {
+    "desc": "固定顺序:消耗→流量→转化→素材衰退→落地页→追踪,遇真因即停;输入同窗口+滚动6-8期基线,缺输入标MISSING;对照change history;单期对单期不是趋势;收尾恰好一个call:HOLD/FIX/TEST/INVESTIGATE(INVESTIGATE最高);附facts/hypotheses/missing data三清单;周五一页纸读数",
+    "frequency": "每周例行;活跃测试/新上线/大额账户每日",
+    "source_file": "skills/ads/references/operating-check.md"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/operating-check.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:audit-four-state",
+   "@type": "ad:Rule",
+   "label": "审计四态评分语义",
+   "props": {
+    "severity": "hard",
+    "states": "Pass/Fail/Unknown/NA",
+    "desc": "每项检查只能得四态之一;健康=可验证项pass/fail比,覆盖=可验证占比;Unknown只降覆盖不降健康('没查到像素'≠'像素坏了');≥80%覆盖给正式分/60-79%标provisional/<60%只报发现不给分;部分源失败从汇总整体剔除(失败源不是零)"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/audit-guardrails.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:no-cross-window-sum",
+   "@type": "ad:Rule",
+   "label": "禁跨归因窗口加总",
+   "props": {
+    "severity": "hard",
+    "desc": "归因窗口/转化定义不同(Meta 7d-click vs Google 30d)时拒绝相加;并列呈现各自窗口+定义,或用GA4/CRM/收入中立源给混合视图;不同窗口/定义/币种不混算"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/audit-guardrails.md",
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:no-invented-negatives",
+   "@type": "ad:Rule",
+   "label": "禁凭想象编否定词",
+   "props": {
+    "severity": "hard",
+    "desc": "无search terms报告先要报告;每个候选否定词过overblocking review(会不会挡掉转化词);候选一个不许编;硬性拒绝清单:CPA超阈值全暂停→改为证据型kill rule;健康分请求遇大缺口→拒绝打分"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/audit-guardrails.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:missing-not-estimated",
+   "@type": "ad:Rule",
+   "label": "MISSING不估算",
+   "props": {
+    "severity": "hard",
+    "desc": "缺输入标MISSING不进计算;不用基准反推/不估算/不填充;列不出缺失数据的建议只当假设呈现;审计结论以facts/hypotheses/missing data三清单收尾"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/audit-guardrails.md",
+    "raw/s25-marketingskills/skills/ads/references/operating-check.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:draft-first-live-accounts",
+   "@type": "ad:Rule",
+   "label": "实盘账户草案先行",
+   "props": {
+    "severity": "hard",
+    "desc": "连实盘账户(MCP/API)默认只读分析;变更以可审查计划(现状→变更→预期效果→回滚)提出,经用户明确批准该具体计划才执行;最小可逆变更优先:暂停>删除、单变量>重构、20%步进>翻倍;删除campaign毁学习历史一律转暂停/归档对话"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/references/audit-guardrails.md"
+   ]
+  },
+  {
+   "@id": "ad:concept:brand-vs-nonbrand-split",
+   "@type": "ad:KnowledgeAsset",
+   "label": "品牌/非品牌拆分原则",
+   "props": {
+    "kind": "measurement-discipline",
+    "desc": "有品牌词搜索的场景先拆brand/non-brand再评估;brand收割存量认知非增量,低brand CPA永不报胜利(除非holdout实验证明增量);业务层看blended ROAS/CAC,优化层看non-brand ROAS;brand便宜转化会灌大blended掩盖non-brand低效"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:optimize-nonbrand-roas",
+   "@type": "ad:Rule",
+   "label": "优化指标用non-brand ROAS",
+   "props": {
+    "severity": "hard",
+    "desc": "设目标/出价/预算的指标=剥离品牌后的non-brand ROAS;blended只作顶线健康数;否则brand便宜转化让non-brand目标定松、低效藏在brand后"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:rule:net-cash-over-roas",
+   "@type": "ad:Rule",
+   "label": "净现金流>ROAS百分比",
+   "props": {
+    "severity": "hard",
+    "desc": "放量看业务级净现金非广告账户ROAS%;ROAS10→5但消耗10k→100k净赚更多;先算break-even ROAS(获客绝对上限含LTV)放量到逼近天花板;更优直接优化净自由现金流;配套:预算+20%/5天封顶/创始人月审3小时/未转化线索外呼拿objections"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:playbook:retargeting-4component",
+   "@type": "ad:Playbook",
+   "label": "再营销4组件+异offer原则",
+   "props": {
+    "desc": "没买第一大原因是offer不对,重复同offer加倍错误;4组件同时跑:objection-handling(外呼未转化线索逐字异议做headline)+proof测评轮播+other-offers CBO+value-first免费价值广告;窗口分级Hot1-7天/Warm7-30天3-5次周/Cold30-90天1-2次周;排除现有客户/近7-14天转化者/跳出<10s",
+    "lift_claim": "实测ROAS lift 2-3→6+(Sabri Suby原则,DTC推断)"
+   },
+   "src": [
+    "raw/s25-marketingskills/skills/ads/SKILL.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-decision-engine",
+   "@type": "ad:KnowledgeAsset",
+   "label": "Meta量化决策引擎卡",
+   "props": {
+    "card": "meta-ads-diagnosis/meta-quantified-decision-engine.md",
+    "status": "review"
+   },
+   "src": [
+    "cards/meta-ads-diagnosis/meta-quantified-decision-engine.md"
+   ]
+  },
+  {
+   "@id": "ad:asset:card-governance",
+   "@type": "ad:KnowledgeAsset",
+   "label": "广告账户治理纪律卡",
+   "props": {
+    "card": "fundamentals/ad-account-governance.md",
+    "status": "review"
+   },
+   "src": [
+    "cards/fundamentals/ad-account-governance.md"
+   ]
+  }
+ ]
+}
