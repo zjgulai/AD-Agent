@@ -8,9 +8,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile
 from fastapi.staticfiles import StaticFiles
 
+from .. import ingest as ingest_ops
 from ..paths import kb_root as default_kb_root
 from . import service
 
@@ -73,6 +74,56 @@ def create_app(kb_root: str | Path | None = None) -> FastAPI:
             return {"name": name, "markdown": service.get_doc(root, name)}
         except FileNotFoundError:
             raise HTTPException(404, "doc not found")
+
+    # ---- 摄入管道（staging 写操作；不触碰 KB 源） ----
+
+    @app.post("/api/ingest/upload")
+    async def api_ingest_upload(file: UploadFile = File(...)) -> dict:
+        data = await file.read()
+        try:
+            return ingest_ops.ingest_bytes(file.filename or "upload.bin", data)
+        except ValueError as e:
+            raise HTTPException(400, str(e))
+
+    @app.get("/api/ingest")
+    def api_ingest_list() -> dict:
+        return {"items": ingest_ops.list_items()}
+
+    @app.get("/api/ingest/{item_id}")
+    def api_ingest_item(item_id: str) -> dict:
+        try:
+            return ingest_ops.get_item(item_id)
+        except (FileNotFoundError, ValueError):
+            raise HTTPException(404, "item not found")
+
+    @app.get("/api/ingest/{item_id}/content")
+    def api_ingest_content(item_id: str) -> dict:
+        try:
+            return {"markdown": ingest_ops.get_content(item_id)}
+        except (FileNotFoundError, ValueError):
+            raise HTTPException(404, "item not found")
+
+    @app.get("/api/ingest/{item_id}/brief")
+    def api_ingest_brief_get(item_id: str) -> dict:
+        try:
+            return {"brief": ingest_ops.get_brief(item_id)}
+        except (FileNotFoundError, ValueError):
+            raise HTTPException(404, "brief not found")
+
+    @app.post("/api/ingest/{item_id}/brief")
+    def api_ingest_brief_gen(item_id: str) -> dict:
+        try:
+            return {"brief": ingest_ops.generate_brief(item_id)}
+        except (FileNotFoundError, ValueError):
+            raise HTTPException(404, "item not found")
+
+    @app.post("/api/ingest/{item_id}/status")
+    async def api_ingest_status(item_id: str, request: Request) -> dict:
+        body = await request.json()
+        try:
+            return ingest_ops.set_status(item_id, str(body.get("status", "")))
+        except (FileNotFoundError, ValueError) as e:
+            raise HTTPException(400, str(e))
 
     app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
     return app

@@ -13,6 +13,20 @@ async function api(path) {
   return r.json();
 }
 
+async function apiPost(path, body) {
+  const r = await fetch('/api' + path, {
+    method: 'POST',
+    headers: body instanceof FormData ? {} : { 'Content-Type': 'application/json' },
+    body: body instanceof FormData ? body : JSON.stringify(body || {}),
+  });
+  if (!r.ok) {
+    let msg = `${r.status}`;
+    try { msg = (await r.json()).detail || msg; } catch (_) {}
+    throw new Error(msg);
+  }
+  return r.json();
+}
+
 async function md(text) {
   const out = marked.parse(text, { gfm: true, breaks: true });
   return typeof out === 'string' ? out : await out;
@@ -47,6 +61,8 @@ async function route() {
     if (seg[0] === 'qa' && seg[1]) return await vQaDetail(seg[1]);
     if (seg[0] === 'qa') return await vQaList();
     if (seg[0] === 'graph') return await vGraph();
+    if (seg[0] === 'ingest' && seg[1]) return await vIngestDetail(seg[1]);
+    if (seg[0] === 'ingest') return await vIngest();
     if (seg[0] === 'health') return await vHealth(params.get('refresh') === '1');
     if (seg[0] === 'search') return await vSearch(params.get('q') || '');
     location.hash = '#/cards';
@@ -304,6 +320,149 @@ async function vGraph() {
   network.once('stabilizationIterationsDone', () => network.setOptions({ physics: { enabled: false } }));
   document.getElementById('g-hint').textContent =
     `${data.stats.nodes} 节点 · ${data.stats.edges} 边 · ${data.stats.communities} 社区`;
+}
+
+/* ---------- Ingest ---------- */
+
+const INGEST_STATUS = {
+  uploaded: '已上传', extracted: '已提取', briefed: '已简报',
+  distilled: '已蒸馏', published: '已发布',
+};
+
+async function vIngest() {
+  const { items } = await api('/ingest');
+  $view.innerHTML = `
+    <div class="ingest-layout">
+      <div>
+        <div class="upload-box" id="dropzone">
+          <div class="muted">拖入文件或点击选择</div>
+          <div class="hint">支持 PDF / DOCX / XLSX / PPTX / HTML / TXT / MD / CSV / 图片（≤50MB）</div>
+          <input type="file" id="fileinput" multiple style="display:none">
+          <div style="margin-top:10px"><button id="pickbtn">选择文件</button></div>
+          <div id="upload-status" class="muted" style="margin-top:8px"></div>
+        </div>
+        <div class="panel item-list" id="ilist">
+          ${items.length ? items.map(it => `
+            <div class="item-row" data-id="${esc(it.id)}">
+              <span class="status-badge st-${it.status}">${INGEST_STATUS[it.status] || it.status}</span>
+              <div style="flex:1;min-width:0">
+                <div class="fn">${esc(it.filename)}</div>
+                <div class="sub">${esc(it.id)} · ${(it.size_bytes / 1024).toFixed(0)}KB · ${esc((it.uploaded_at || '').slice(5, 16))}</div>
+              </div>
+            </div>`).join('') : '<div class="muted" style="padding:20px;text-align:center">暂无摄入记录</div>'}
+        </div>
+      </div>
+      <div class="panel" id="idetail"><div class="muted" style="padding:30px;text-align:center">← 选择左侧记录查看详情，或上传新文件</div></div>
+    </div>`;
+
+  // 上传
+  const input = document.getElementById('fileinput');
+  const pick = document.getElementById('pickbtn');
+  const dz = document.getElementById('dropzone');
+  const status = document.getElementById('upload-status');
+  pick.addEventListener('click', () => input.click());
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('drag'));
+  dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('drag'); uploadFiles(e.dataTransfer.files); });
+  input.addEventListener('change', () => uploadFiles(input.files));
+
+  async function uploadFiles(files) {
+    for (const f of files) {
+      status.textContent = `上传中: ${f.name}…`;
+      try {
+        const fd = new FormData();
+        fd.append('file', f);
+        const it = await apiPost('/ingest/upload', fd);
+        status.textContent = `✓ ${it.filename} → ${it.id}（${it.content_chars} 字）`;
+        location.hash = `#/ingest/${it.id}`;
+        return;
+      } catch (e) {
+        status.textContent = `✗ ${f.name}: ${e.message}`;
+      }
+    }
+  }
+
+  document.querySelectorAll('.item-row').forEach(el =>
+    el.addEventListener('click', () => { location.hash = `#/ingest/${el.dataset.id}`; }));
+}
+
+async function vIngestDetail(id) {
+  const it = await api(`/ingest/${encodeURIComponent(id)}`);
+  const errs = (it.errors || []).map(e => `<div class="muted">⚠ ${esc(e)}</div>`).join('');
+  $view.innerHTML = `
+    <a class="back-link" href="#/ingest">← 返回摄入列表</a>
+    <div class="card-meta">
+      <span class="status-badge st-${it.status}">${INGEST_STATUS[it.status] || it.status}</span>
+      <span class="tag">${esc(it.filename)}</span>
+      <span class="tag">${esc(it.ext)}</span>
+      <span class="tag">${(it.size_bytes / 1024).toFixed(1)} KB</span>
+      <span class="tag">${it.content_chars} 字 / ${it.tables} 表</span>
+      <span class="tag">${esc(it.uploaded_at || '')}</span>
+    </div>
+    ${errs}
+    <div class="panel">
+      <h3>提取预览</h3>
+      <div class="extract-preview">${esc(it.extracted_preview || '（无内容）')}</div>
+      <div class="action-row">
+        <button onclick="ingestContent('${esc(id)}')">查看提取全文</button>
+        <button class="primary" onclick="ingestBrief('${esc(id)}')">${it.has_brief ? '重新生成简报' : '生成蒸馏简报'}</button>
+        ${it.has_brief ? '<button onclick="ingestShowBrief(\'' + esc(id) + '\')">查看简报</button>' : ''}
+        ${it.status === 'briefed' ? '<button onclick="ingestStatus(\'' + esc(id) + '\',\'distilled\')">标记已蒸馏</button>' : ''}
+        ${it.status === 'distilled' ? '<button onclick="ingestStatus(\'' + esc(id) + '\',\'published\')">标记已发布</button>' : ''}
+      </div>
+      <div id="briefbox"></div>
+    </div>`;
+}
+
+let _ingestBriefRaw = '';
+
+window.ingestBrief = async function (id) {
+  const box = document.getElementById('briefbox');
+  box.innerHTML = '<div class="muted">生成简报中（含 BM25 相关度分析）…</div>';
+  try {
+    const d = await apiPost(`/ingest/${id}/brief`);
+    _ingestBriefRaw = d.brief;
+    const html = await md(d.brief);
+    box.innerHTML = `<h3>蒸馏简报</h3>
+      <div class="action-row"><button onclick="ingestCopyBrief(this)">复制简报 markdown</button></div>
+      <div class="doc-body" style="padding:14px 18px">${html}</div>`;
+  } catch (e) {
+    box.innerHTML = `<div class="error">简报生成失败：${esc(e.message)}</div>`;
+  }
+};
+
+window.ingestCopyBrief = function (btn) {
+  navigator.clipboard.writeText(_ingestBriefRaw).then(() => {
+    btn.textContent = '已复制';
+    setTimeout(() => { btn.textContent = '复制简报 markdown'; }, 1500);
+  });
+};
+
+window.ingestShowBrief = async function (id) {
+  const d = await api(`/ingest/${id}/brief`);
+  _ingestBriefRaw = d.brief;
+  await showDocRaw('蒸馏简报 ' + id, d.brief);
+};
+
+window.ingestContent = async function (id) {
+  const d = await api(`/ingest/${id}/content`);
+  await showDocRaw('提取全文 ' + id, d.markdown);
+};
+
+window.ingestStatus = async function (id, status) {
+  try {
+    await apiPost(`/ingest/${id}/status`, { status });
+    location.reload();
+  } catch (e) {
+    alert('状态更新失败: ' + e.message);
+  }
+};
+
+async function showDocRaw(title, markdown) {
+  const html = await md(markdown);
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-body').innerHTML = html;
+  document.getElementById('modal').classList.remove('hidden');
 }
 
 /* ---------- Health ---------- */

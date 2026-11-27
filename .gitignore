@@ -6,3 +6,4 @@ __pycache__/
 tmp/
 logs/
 docs/knowledge/ad-agent-qa/graph/dist/
+staging/
